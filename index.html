@@ -15,53 +15,65 @@
 				<h1>Open Dynamic Robot Initiative</h1>
 				<h3>An Open Torque-Controlled Modular Robot Architecture for
                         Legged Locomotion Research</h3>
-				<div align="center" style="padding-top: 20px">
-					<img style="height:220px" src="solo.jpg" />
+                <div align="center" style="padding-top: 20px">
+                    <img style="height:220px" src="leg_stand.png" />
+                    <img style="height:220px" src="solo.jpg" />
+                    <img style="height:220px" src="solo2.png" />
 				</div>
 			</div>
 			<div id="main">
 
                 <h2>Introduction</h2>
 				<p>
-                        We present an open-source leg architecture for
-                        dynamic legged robot research. We designed a simple and
-                        modular actuator-design concept leveraging standard plastic 3D
-                        printing and off-the-shelf parts. Our proposed concept allows
-                        for rapid distribution and duplication, with little engineering
-                        know-how. The light-weight system design enables inexpensive
-                        yet high performance force and effective force-control control,
-                        up to 11.3 dimensionless leg stiffness without active damping.
-                        Its robustness and powerful actuation allows for stark impacts
-                        from drops and dynamic locomotion maneuvers. A single leg is
-                        actuated by a low-geared but powerful brushless DC actuator
-                        module, allowing up to 3.4 Nm joint torque, and 17 N effective
-                        (virtual leg length) force. Assembled from its modular actuator
-                        nodes, we present the quadruped robot Solo, its locomotion
-                        capabilities and dexterity. With a weight of 2.2 kg, Solo is the
-                        most light-weight force-controlled modular quadruped robot, to
-                        the best of our knowledge. This feature makes it intrinsically
-                        safe and ideal for academic research and education: it requires
-                        less peak power to locomote, and it can safely be handled by
-                        a single researcher.
-                </p>
+                    This website is the entry point to the ressources of the Open Dynamic Robot Initiative.
+                    This project originated in an effort to build a low cost and low complexity actuator module using brushless motors
+                    that can be used to build different types of torque controlled robots with mostly 3D printed
+                    and off-the-shelves components. This module, and extensions, can be used to build legged robots or manipulators.
+                </p>    
+
                 <h2>Videos</h2>
-				
-                    <h2>Build you own robot!</h2>
+                <div align="center">
+                <video width="480" height="270" controls>
+                    <source src="solo_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> 
+                </div>
+
+                <h2>Build you own robot!</h2>
+                    All the hardware (drawings) and software has been open sourced under the BSD 3-clause license so the robots
+                    can easily be reproduced by other research laboratories. Everyone is welcomes to contribute to the project!
                     <p>All the sources are hosted on the <a href="https://github.com/open-dynamic-robot-initiative">Open Dynamic Robot Initiative Github site</a></p>
 					<ul>
 						<li>
-							The source for the mechanics and electronics is available here:
-							<a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">Open Robot Actuator Hardware Repository</a>
+							The sources for the mechanics and electronics are available in the
+                            <a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">Open Robot Actuator Hardware Repository</a>
+                            and contains the actuator module, the one legged-robot, the quadruped Solo, the foot contact sensor and the electronics described in
+                            the paper <a href="">An Open Torque-Controlled Modular Robot Architecture for Legged Locomotion Research</a>
 						</li>
 						<li>
-							The software is available here:
-							<a href="https://github.com/open-dynamic-robot-initiative/open-dynamic-robot-initiative.github.io/wiki/Open-Dynamic-Robot-Initiative-Documentation">Open Dynamic Robot Initiative Software Documentation</a>
+                            A general software overview and documentation for the projects is available in the 
+                                <a href="https://github.com/open-dynamic-robot-initiative/open-dynamic-robot-initiative.github.io/wiki/Open-Dynamic-Robot-Initiative-Documentation">Open Dynamic Robot Initiative Software Documentation</a>
+                            The main software is available in several libraries:
+                            <ul style="padding-left: 20px">
+                                <li><a href="https://github.com/open-dynamic-robot-initiative/blmc_drivers">The Brushless Motor Control Real-Time CAN API</a>
+                                    that contain the API for real-time communication with the motor control board
+                                </li>
+                                <li><a href="https://github.com/open-dynamic-robot-initiative/amd_motorware_ext">MotorWare Extensions</a>
+                                    that contains some modules that extend the Texas Instruments MotorWare library as well as a patch file to apply some required modifications on the original MotorWare library itself.
+                                </li>
+                                <li><a href="https://github.com/open-dynamic-robot-initiative/user_config_f28069m_drv8305">MotorWare Configuration Files</a> 
+                                    that  contains the global configuration files that are used by all our MotorWare projects.</li>
+                            </ul>
 						</li>
 					</ul>
 				</p>
 
                 <h2>Partners</h2>
-                <p>This work is done in collaboration between <a href="https://is.tuebingen.mpg.de/">MPI<a/> and <a href="https://engineering.nyu.edu/">NYU</a></p>
-
+                <p>This work is done in collaboration between the <a href="https://mg.is.tuebingen.mpg.de/">Motion Generation and Control Group</a>,
+                    <a href="https://dlg.is.mpg.de/">the Dynamic Locomotion Group</a> and the <a href="https://is.tuebingen.mpg.de/en/robotics">Robotics Central Scientific Facility</a>
+                    at the <a href="https://is.tuebingen.mpg.de/">Max-Planck Institute for Intelligent System<a/> ,
+                    the <a href="https://wp.nyu.edu/machinesinmotion">Machines in Motion Laboratory</a> at <a href="https://engineering.nyu.edu/">New York University's Tandon School of Engineering</a>
+                    and the <a href="https://gepettoweb.laas.fr/"> Gepetto Team</a> at the <a href="https://www.laas.fr/public/">LAAS/CNRS</a>.
+                </p>
 	</body>
 </html>
