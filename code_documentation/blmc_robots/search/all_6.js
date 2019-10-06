@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['gear_5fratio',['gear_ratio',['../structblmc__robots_1_1MotorParameters.html#a6a8158b9ac1633bab6181043d04ab655',1,'blmc_robots::MotorParameters']]],
   ['get_5fati_5fforce',['get_ati_force',['../classblmc__robots_1_1Teststand.html#af4bf3a4692fdeacdad78a7213c3fbe98',1,'blmc_robots::Teststand']]],
   ['get_5fati_5ftorque',['get_ati_torque',['../classblmc__robots_1_1Teststand.html#a27ba45a099b4ff6852f5acd0226aa915',1,'blmc_robots::Teststand']]],
   ['get_5fbase_5fpositions',['get_base_positions',['../classblmc__robots_1_1Stuggihop.html#a6da73065d935420daf4959b8f912128c',1,'blmc_robots::Stuggihop']]],

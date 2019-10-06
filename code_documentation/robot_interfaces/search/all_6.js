@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['step',['step',['../classrobot__interfaces_1_1Robot.html#a010c2a282a7e8276769fc05adb977dbb',1,'robot_interfaces::Robot']]]
+  ['njointrobottypes',['NJointRobotTypes',['../structrobot__interfaces_1_1NJointRobotTypes.html',1,'robot_interfaces']]],
+  ['njointrobottypes_3c_203_20_3e',['NJointRobotTypes&lt; 3 &gt;',['../structrobot__interfaces_1_1NJointRobotTypes.html',1,'robot_interfaces']]]
 ];

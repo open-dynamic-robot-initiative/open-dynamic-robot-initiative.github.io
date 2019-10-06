@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['profile_5fstep_5fsize_5frad',['profile_step_size_rad',['../structblmc__robots_1_1HomingState.html#a06b1c01870f9531cbe766728603f468b',1,'blmc_robots::HomingState']]]
+  ['initial_5fposition_5frad_5f',['initial_position_rad_',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a5f17c2843ed4cb09953338143e91b45f',1,'blmc_robots::NJointBlmcRobotDriver']]]
 ];

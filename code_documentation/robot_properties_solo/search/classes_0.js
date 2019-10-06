@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['soloconfig',['SoloConfig',['../classrobot__properties__solo_1_1config_1_1SoloConfig.html',1,'robot_properties_solo::config']]]
+  ['quadruped12robot',['Quadruped12Robot',['../classrobot__properties__solo_1_1quadruped12wrapper_1_1Quadruped12Robot.html',1,'robot_properties_solo::quadruped12wrapper']]]
 ];

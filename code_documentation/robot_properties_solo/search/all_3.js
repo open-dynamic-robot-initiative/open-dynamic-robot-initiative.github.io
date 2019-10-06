@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gepetto_5fgui_5floader',['gepetto_gui_loader',['../namespacerobot__properties__solo_1_1gepetto__gui__loader.html',1,'robot_properties_solo']]]
+  ['quadruped12robot',['Quadruped12Robot',['../classrobot__properties__solo_1_1quadruped12wrapper_1_1Quadruped12Robot.html',1,'robot_properties_solo::quadruped12wrapper']]]
 ];

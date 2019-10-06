@@ -1,0 +1,28 @@
+var classblmc__robots_1_1NJointBlmcRobotDriver =
+[
+    [ "Action", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a86e2eb08f5daf8a889d7c129319ed935", null ],
+    [ "MotorBoards", "classblmc__robots_1_1NJointBlmcRobotDriver.html#af9a1e5d7dae33b324452fba3418a6fcf", null ],
+    [ "Motors", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a629509d3a20e1dbcba5ccf8ce56f1bfe", null ],
+    [ "Observation", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a3a7f4bab9e6953021b8f5d79eb2cf461", null ],
+    [ "Vector", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a460169096851e04fa3f295cf3b379d9c", null ],
+    [ "NJointBlmcRobotDriver", "classblmc__robots_1_1NJointBlmcRobotDriver.html#adc7fa5f39a36ded699bffed3c87cdc90", null ],
+    [ "apply_action", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a4fbd75b68c4dfa8e9320befd546f406a", null ],
+    [ "apply_action_uninitialized", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a51acd154a4769b2fbc35536fc32ca354", null ],
+    [ "create_motor_boards", "classblmc__robots_1_1NJointBlmcRobotDriver.html#ae8d7e4d37b3a0ba6966311c9813caec0", null ],
+    [ "get_latest_observation", "classblmc__robots_1_1NJointBlmcRobotDriver.html#acfe921e947e9dbe5eb74a7c9fb777dfd", null ],
+    [ "get_max_torques", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a923c06860fa6aaddd49541b3a836d177", null ],
+    [ "get_measured_index_angles", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a5c07ab80770b80db37e8471ec3b77685", null ],
+    [ "home_on_index_after_negative_end_stop", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a56f4a67a3ae5ff481eebd969d1e6374c", null ],
+    [ "initialize", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a41b2ff96e0a687b0e1ae06ce1502d4db", null ],
+    [ "move_to_position", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a45e11f35ef2fb862e3873e44d92e03f5", null ],
+    [ "pause_motors", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a581bdda9cafb5966425988bc6ca5821f", null ],
+    [ "shutdown", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a1dc679a59e08fdd97d4bb92f41178445", null ],
+    [ "calibration_parameters_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a988ffd84e127525f630640d8450e7e25", null ],
+    [ "home_offset_rad_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a4397347cbb3ad2e75abc4ad1613b119e", null ],
+    [ "initial_position_rad_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a5f17c2843ed4cb09953338143e91b45f", null ],
+    [ "is_initialized_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#abda748741eda4ad890d6e55b09b173d4", null ],
+    [ "joint_modules_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a350c204742b25ae2808670b1b56099b8", null ],
+    [ "max_torque_Nm_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a4c4b68c6ce49317b2bc15e20c136c2d5", null ],
+    [ "motor_boards_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a68e9cafdfc02da872dbc86c2fd162408", null ],
+    [ "safety_kd_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a1c884b0a6a398dc17c9f642349637143", null ]
+];
