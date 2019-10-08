@@ -1,6 +1,7 @@
 var searchData=
 [
   ['safemotor_5fptr',['SafeMotor_ptr',['../namespaceblmc__robots.html#a9850cf917156e20846aef3f8195aea0f',1,'blmc_robots']]],
+  ['safety_5fkd_5f',['safety_kd_',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a1c884b0a6a398dc17c9f642349637143',1,'blmc_robots::NJointBlmcRobotDriver']]],
   ['search_5fdistance_5flimit_5frad',['search_distance_limit_rad',['../structblmc__robots_1_1HomingState.html#a3ce572a7b025bbdf1eaaa5b72dc11dde',1,'blmc_robots::HomingState']]],
   ['send_5ftarget_5fcurrent',['send_target_current',['../classblmc__robots_1_1TestBench8Motors.html#a5194da9e85b4391e9ff6c5bf5a07faf2',1,'blmc_robots::TestBench8Motors']]],
   ['send_5ftarget_5fjoint_5ftorque',['send_target_joint_torque',['../classblmc__robots_1_1Quadruped.html#ae309b6b40fd711ab01e3bbb63406d6e5',1,'blmc_robots::Quadruped::send_target_joint_torque()'],['../classblmc__robots_1_1SingleLeg.html#a0525a29e9b76527936525ca0e47cafe0',1,'blmc_robots::SingleLeg::send_target_joint_torque()'],['../classblmc__robots_1_1SingleMotor.html#a09a829c726847cf4e8fd34175ce1a139',1,'blmc_robots::SingleMotor::send_target_joint_torque()'],['../classblmc__robots_1_1Stuggihop.html#ac8bae7764c409c8312408ea8adb1165f',1,'blmc_robots::Stuggihop::send_target_joint_torque()'],['../classblmc__robots_1_1Teststand.html#aabb484d65bca5a341dd24abd91c47b9b',1,'blmc_robots::Teststand::send_target_joint_torque()']]],
@@ -29,8 +30,8 @@ var searchData=
   ['sliders_3c_202_20_3e',['Sliders&lt; 2 &gt;',['../classblmc__robots_1_1Sliders.html',1,'blmc_robots']]],
   ['status',['status',['../structblmc__robots_1_1HomingState.html#af821e232c974385ae24e20a7f75665f7',1,'blmc_robots::HomingState']]],
   ['step_5fcount',['step_count',['../structblmc__robots_1_1HomingState.html#a16adc4753efe03def5ef3ebf7abc632c',1,'blmc_robots::HomingState']]],
-  ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html#aea7781a2eb5a410ca8ab2bbfe425cb6a',1,'blmc_robots::Stuggihop']]],
   ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html',1,'blmc_robots']]],
+  ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html#aea7781a2eb5a410ca8ab2bbfe425cb6a',1,'blmc_robots::Stuggihop']]],
   ['stuggihop_2ehpp',['stuggihop.hpp',['../stuggihop_8hpp.html',1,'']]],
   ['succeeded',['SUCCEEDED',['../namespaceblmc__robots.html#aa1075809042ff261e4b0a20d161448b6afd9f6519d3f45276829fe74eb2c4bb85',1,'blmc_robots']]]
 ];

@@ -8,14 +8,20 @@ var hierarchy =
     [ "blmc_robots::BlmcJointModules< 3 >", "classblmc__robots_1_1BlmcJointModules.html", [
       [ "blmc_robots::RealDisentanglementPlatform", "classblmc__robots_1_1RealDisentanglementPlatform.html", null ]
     ] ],
+    [ "blmc_robots::BlmcJointModules< N_JOINTS >", "classblmc__robots_1_1BlmcJointModules.html", null ],
+    [ "blmc_robots::CalibrationParameters", "structblmc__robots_1_1CalibrationParameters.html", null ],
     [ "DisentanglementPlatform", null, [
       [ "blmc_robots::RealDisentanglementPlatform", "classblmc__robots_1_1RealDisentanglementPlatform.html", null ]
     ] ],
-    [ "Finger", null, [
-      [ "blmc_robots::RealFinger", "classblmc__robots_1_1RealFinger.html", null ]
-    ] ],
     [ "blmc_robots::HomingState", "structblmc__robots_1_1HomingState.html", null ],
+    [ "blmc_robots::MotorParameters", "structblmc__robots_1_1MotorParameters.html", null ],
     [ "blmc_robots::Quadruped", "classblmc__robots_1_1Quadruped.html", null ],
+    [ "RobotDriver", null, [
+      [ "blmc_robots::NJointBlmcRobotDriver< N_JOINTS, N_MOTOR_BOARDS >", "classblmc__robots_1_1NJointBlmcRobotDriver.html", null ],
+      [ "blmc_robots::NJointBlmcRobotDriver< 3, 2 >", "classblmc__robots_1_1NJointBlmcRobotDriver.html", [
+        [ "blmc_robots::RealFingerDriver", "classblmc__robots_1_1RealFingerDriver.html", null ]
+      ] ]
+    ] ],
     [ "blmc_robots::SingleLeg", "classblmc__robots_1_1SingleLeg.html", null ],
     [ "blmc_robots::SingleMotor", "classblmc__robots_1_1SingleMotor.html", null ],
     [ "blmc_robots::Slider", "classblmc__robots_1_1Slider.html", null ],
