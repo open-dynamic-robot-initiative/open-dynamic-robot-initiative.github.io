@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['njointrobottypes',['NJointRobotTypes',['../structrobot__interfaces_1_1NJointRobotTypes.html',1,'robot_interfaces']]],
-  ['njointrobottypes_3c_203_20_3e',['NJointRobotTypes&lt; 3 &gt;',['../structrobot__interfaces_1_1NJointRobotTypes.html',1,'robot_interfaces']]]
+  ['monitoredrobotdriver',['MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html',1,'robot_interfaces']]],
+  ['monitoredrobotdriver',['MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#ade65bb7eae65caa082ec76374822a927',1,'robot_interfaces::MonitoredRobotDriver']]]
 ];

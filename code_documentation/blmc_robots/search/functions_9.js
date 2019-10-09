@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quadruped',['Quadruped',['../classblmc__robots_1_1Quadruped.html#a12bfe07e7cbab3bd4f5e091b830ee266',1,'blmc_robots::Quadruped']]]
+  ['onejointdriver',['OneJointDriver',['../classblmc__robots_1_1OneJointDriver.html#a46e69fca2bc996f4cb68d4471a00dddb',1,'blmc_robots::OneJointDriver']]]
 ];

@@ -47,7 +47,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -117,7 +116,7 @@ $(document).ready(function(){initNavTree('classrobot__interfaces_1_1RobotDriver.
 <p>Driver for interfacing the actual robot hardware or simulation.  
  <a href="classrobot__interfaces_1_1RobotDriver.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="finger_8hpp_source.html">finger.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="robot__driver_8hpp_source.html">robot_driver.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for robot_interfaces::RobotDriver&lt; Action, Observation &gt;:</div>
 <div class="dyncontent">
@@ -129,8 +128,8 @@ Inheritance diagram for robot_interfaces::RobotDriver&lt; Action, Observation &g
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a251cdab16035ce1cff9ee4d2465beb6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a251cdab16035ce1cff9ee4d2465beb6c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()=0</td></tr>
+<tr class="memitem:a251cdab16035ce1cff9ee4d2465beb6c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a251cdab16035ce1cff9ee4d2465beb6c">initialize</a> ()=0</td></tr>
+<tr class="memdesc:a251cdab16035ce1cff9ee4d2465beb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the robot.  <a href="#a251cdab16035ce1cff9ee4d2465beb6c">More...</a><br /></td></tr>
 <tr class="separator:a251cdab16035ce1cff9ee4d2465beb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21e8e2ef50bcf6174c8e76c48975a232"><td class="memItemLeft" align="right" valign="top">virtual Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a21e8e2ef50bcf6174c8e76c48975a232">apply_action</a> (const Action &amp;desired_action)=0</td></tr>
 <tr class="memdesc:a21e8e2ef50bcf6174c8e76c48975a232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply action immediately and block until it is executed.  <a href="#a21e8e2ef50bcf6174c8e76c48975a232">More...</a><br /></td></tr>
@@ -225,15 +224,45 @@ template&lt;typename Action , typename Observation &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a251cdab16035ce1cff9ee4d2465beb6c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Action , typename Observation &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">robot_interfaces::RobotDriver</a>&lt; Action, Observation &gt;::initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize the robot. </p>
+<p>Any initialization procedures that need to be done before sending actions to the robot should be done in this method (e.g. homing to find the absolute position). </p>
+
+<p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#a9e1dcc67c242a108b23dfd2bdd8f12a0">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/workspace/software/workspace/src/catkin/robots/robot_interfaces/include/robot_interfaces/<a class="el" href="finger_8hpp_source.html">finger.hpp</a></li>
+<li>/workspace/software/workspace/src/catkin/robots/robot_interfaces/include/robot_interfaces/<a class="el" href="robot__driver_8hpp_source.html">robot_driver.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacerobot__interfaces.html">robot_interfaces</a></li><li class="navelem"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html">RobotDriver</a></li>
+    <li class="navelem"><b>robot_interfaces</b></li><li class="navelem"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html">RobotDriver</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

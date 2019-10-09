@@ -7,6 +7,7 @@ var namespaceblmc__robots =
     [ "MotorParameters", "structblmc__robots_1_1MotorParameters.html", "structblmc__robots_1_1MotorParameters" ],
     [ "NJointBlmcRobotDriver", "classblmc__robots_1_1NJointBlmcRobotDriver.html", "classblmc__robots_1_1NJointBlmcRobotDriver" ],
     [ "OldDisentanglementPlatform", "classblmc__robots_1_1OldDisentanglementPlatform.html", "classblmc__robots_1_1OldDisentanglementPlatform" ],
+    [ "OneJointDriver", "classblmc__robots_1_1OneJointDriver.html", "classblmc__robots_1_1OneJointDriver" ],
     [ "Quadruped", "classblmc__robots_1_1Quadruped.html", "classblmc__robots_1_1Quadruped" ],
     [ "RealDisentanglementPlatform", "classblmc__robots_1_1RealDisentanglementPlatform.html", "classblmc__robots_1_1RealDisentanglementPlatform" ],
     [ "RealFingerDriver", "classblmc__robots_1_1RealFingerDriver.html", "classblmc__robots_1_1RealFingerDriver" ],
