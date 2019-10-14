@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('classblmc__robots_1_1NJointBlmcRobotDr
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classblmc__robots_1_1NJointBlmcRobotDriver-members.html">List of all members</a>  </div>
@@ -159,9 +160,9 @@ typedef std::array&lt; std::shared_ptr&lt; blmc_drivers::CanBusMotorBoard &gt;, 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adc7fa5f39a36ded699bffed3c87cdc90"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc7fa5f39a36ded699bffed3c87cdc90"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>NJointBlmcRobotDriver</b> (const MotorBoards &amp;motor_boards, const Motors &amp;motors, const <a class="el" href="structblmc__robots_1_1MotorParameters.html">MotorParameters</a> &amp;motor_parameters, const <a class="el" href="structblmc__robots_1_1CalibrationParameters.html">CalibrationParameters</a> &amp;calibration_parameters, const Vector &amp;safety_kd)</td></tr>
-<tr class="separator:adc7fa5f39a36ded699bffed3c87cdc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a029a8a1f675b5fdaa3b13e63162c80e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a029a8a1f675b5fdaa3b13e63162c80e3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>NJointBlmcRobotDriver</b> (const MotorBoards &amp;motor_boards, const Motors &amp;motors, const <a class="el" href="structblmc__robots_1_1MotorParameters.html">MotorParameters</a> &amp;motor_parameters, const <a class="el" href="structblmc__robots_1_1CalibrationParameters.html">CalibrationParameters</a> &amp;calibration_parameters, const Vector &amp;safety_kd, const bool has_endstop)</td></tr>
+<tr class="separator:a029a8a1f675b5fdaa3b13e63162c80e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a581bdda9cafb5966425988bc6ca5821f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a581bdda9cafb5966425988bc6ca5821f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>pause_motors</b> ()</td></tr>
 <tr class="separator:a581bdda9cafb5966425988bc6ca5821f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,6 +180,12 @@ Vector&#160;</td><td class="memItemRight" valign="bottom"><b>get_max_torques</b>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae8d7e4d37b3a0ba6966311c9813caec0"><td class="memItemLeft" align="right" valign="top">static MotorBoards&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#ae8d7e4d37b3a0ba6966311c9813caec0">create_motor_boards</a> (const std::array&lt; std::string, N_MOTOR_BOARDS &gt; &amp;can_ports)</td></tr>
 <tr class="separator:ae8d7e4d37b3a0ba6966311c9813caec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4da9d51841e9b2995e597ae52c460586"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a4da9d51841e9b2995e597ae52c460586">has_endstop_</a></td></tr>
+<tr class="memdesc:a4da9d51841e9b2995e597ae52c460586"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the joints have mechanical end stops, false if not.  <a href="#a4da9d51841e9b2995e597ae52c460586">More...</a><br /></td></tr>
+<tr class="separator:a4da9d51841e9b2995e597ae52c460586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -318,10 +325,10 @@ template&lt;size_t N_JOINTS, size_t N_MOTOR_BOARDS&gt; </div>
   </table>
   </dd>
 </dl>
+<p>Distance after which encoder index search is aborted.</p>
 <p>Min. number of steps when moving to the end stop.</p>
 <p>Size of the window when computing average velocity.</p>
-<p>Velocity limit at which the joints are considered to be stopped.</p>
-<p>Distance after which encoder index search is aborted. </p>
+<p>Velocity limit at which the joints are considered to be stopped </p>
 
 </div>
 </div>
@@ -421,6 +428,24 @@ template&lt;size_t N_JOINTS, size_t N_MOTOR_BOARDS&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a4da9d51841e9b2995e597ae52c460586"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N_JOINTS, size_t N_MOTOR_BOARDS&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html">blmc_robots::NJointBlmcRobotDriver</a>&lt; N_JOINTS, N_MOTOR_BOARDS &gt;::has_endstop_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>True if the joints have mechanical end stops, false if not. </p>
+<p>If set to true, it is assumed that all joints of the robot have end stops that mechanically prevent them from moving out of the valid range.</p>
+<p>If present, the end stops are used for a fully automated homing procedure in which the joints first move until they hit the end stop before starting the encoder index search. This way it is ensured that the correct index is used for homing without any need for manual set up. </p>
+
+</div>
+</div>
 <a class="anchor" id="a4397347cbb3ad2e75abc4ad1613b119e"></a>
 <div class="memitem">
 <div class="memproto">

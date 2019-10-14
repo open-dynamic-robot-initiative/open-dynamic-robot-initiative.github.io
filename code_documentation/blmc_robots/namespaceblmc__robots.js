@@ -9,6 +9,7 @@ var namespaceblmc__robots =
     [ "OldDisentanglementPlatform", "classblmc__robots_1_1OldDisentanglementPlatform.html", "classblmc__robots_1_1OldDisentanglementPlatform" ],
     [ "OneJointDriver", "classblmc__robots_1_1OneJointDriver.html", "classblmc__robots_1_1OneJointDriver" ],
     [ "Quadruped", "classblmc__robots_1_1Quadruped.html", "classblmc__robots_1_1Quadruped" ],
+    [ "RandomFingerDriver", "classblmc__robots_1_1RandomFingerDriver.html", "classblmc__robots_1_1RandomFingerDriver" ],
     [ "RealDisentanglementPlatform", "classblmc__robots_1_1RealDisentanglementPlatform.html", "classblmc__robots_1_1RealDisentanglementPlatform" ],
     [ "RealFingerDriver", "classblmc__robots_1_1RealFingerDriver.html", "classblmc__robots_1_1RealFingerDriver" ],
     [ "SingleLeg", "classblmc__robots_1_1SingleLeg.html", "classblmc__robots_1_1SingleLeg" ],

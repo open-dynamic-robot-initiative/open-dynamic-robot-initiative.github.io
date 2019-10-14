@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "robot_interfaces::Robot< Action, Observation >::Data", "structrobot__interfaces_1_1Robot_1_1Data.html", null ],
     [ "robot_interfaces::DisentanglementPlatform", "classrobot__interfaces_1_1DisentanglementPlatform.html", null ],
+    [ "robot_interfaces::FingerLogger", "classrobot__interfaces_1_1FingerLogger.html", null ],
     [ "robot_interfaces::NJointRobotTypes< N >", "structrobot__interfaces_1_1NJointRobotTypes.html", null ],
     [ "robot_interfaces::NJointRobotTypes< 3 >", "structrobot__interfaces_1_1NJointRobotTypes.html", [
       [ "robot_interfaces::FingerTypes", "structrobot__interfaces_1_1FingerTypes.html", null ]
