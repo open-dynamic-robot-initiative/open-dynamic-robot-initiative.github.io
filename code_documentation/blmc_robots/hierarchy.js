@@ -17,8 +17,8 @@ var hierarchy =
     [ "blmc_robots::MotorParameters", "structblmc__robots_1_1MotorParameters.html", null ],
     [ "blmc_robots::Quadruped", "classblmc__robots_1_1Quadruped.html", null ],
     [ "RobotDriver", null, [
+      [ "blmc_robots::FakeFingerDriver", "classblmc__robots_1_1FakeFingerDriver.html", null ],
       [ "blmc_robots::NJointBlmcRobotDriver< N_JOINTS, N_MOTOR_BOARDS >", "classblmc__robots_1_1NJointBlmcRobotDriver.html", null ],
-      [ "blmc_robots::RandomFingerDriver", "classblmc__robots_1_1RandomFingerDriver.html", null ],
       [ "blmc_robots::NJointBlmcRobotDriver< 1, 1 >", "classblmc__robots_1_1NJointBlmcRobotDriver.html", [
         [ "blmc_robots::OneJointDriver", "classblmc__robots_1_1OneJointDriver.html", null ]
       ] ],

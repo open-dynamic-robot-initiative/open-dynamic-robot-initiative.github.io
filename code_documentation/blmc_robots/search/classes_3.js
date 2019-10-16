@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['motorparameters',['MotorParameters',['../structblmc__robots_1_1MotorParameters.html',1,'blmc_robots']]]
+  ['homingstate',['HomingState',['../structblmc__robots_1_1HomingState.html',1,'blmc_robots']]]
 ];
