@@ -1,7 +1,7 @@
 var structrobot__interfaces_1_1NJointRobotTypes =
 [
+    [ "Action", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action" ],
     [ "Observation", "structrobot__interfaces_1_1NJointRobotTypes_1_1Observation.html", "structrobot__interfaces_1_1NJointRobotTypes_1_1Observation" ],
-    [ "Action", "structrobot__interfaces_1_1NJointRobotTypes.html#a832c353d42a08685f32444b61775d221", null ],
     [ "Backend", "structrobot__interfaces_1_1NJointRobotTypes.html#aee4f8ae91b6d7b31852c4e5ad82635ca", null ],
     [ "BackendPtr", "structrobot__interfaces_1_1NJointRobotTypes.html#af7a865b80531a7b8e36368ad8bd8ce7e", null ],
     [ "Data", "structrobot__interfaces_1_1NJointRobotTypes.html#ac8bfc88d9343d3725d80ae5cde63812c", null ],

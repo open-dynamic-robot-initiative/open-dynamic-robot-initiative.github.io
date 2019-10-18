@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "robot_interfaces::NJointRobotTypes< N >::Action", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html", null ],
     [ "robot_interfaces::Robot< Action, Observation >::Data", "structrobot__interfaces_1_1Robot_1_1Data.html", null ],
     [ "robot_interfaces::DisentanglementPlatform", "classrobot__interfaces_1_1DisentanglementPlatform.html", null ],
     [ "robot_interfaces::FingerLogger", "classrobot__interfaces_1_1FingerLogger.html", null ],
