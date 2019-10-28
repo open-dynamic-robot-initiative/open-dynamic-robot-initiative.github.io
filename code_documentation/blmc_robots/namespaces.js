@@ -1,4 +1,4 @@
 var namespaces =
 [
-    [ "blmc_robots", "namespaceblmc__robots.html", null ]
+    [ "blmc_robots", "namespaceblmc__robots.html", "namespaceblmc__robots" ]
 ];
