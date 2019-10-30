@@ -32,5 +32,6 @@ var dir_c66acd4681b95343b3d51cde3fc288b6 =
     ] ],
     [ "teststand.hpp", "teststand_8hpp.html", [
       [ "Teststand", "classblmc__robots_1_1Teststand.html", "classblmc__robots_1_1Teststand" ]
-    ] ]
+    ] ],
+    [ "two_joint_driver.hpp", "two__joint__driver_8hpp.html", "two__joint__driver_8hpp" ]
 ];

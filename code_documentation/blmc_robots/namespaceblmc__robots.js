@@ -19,5 +19,6 @@ var namespaceblmc__robots =
     [ "Sliders", "classblmc__robots_1_1Sliders.html", "classblmc__robots_1_1Sliders" ],
     [ "Stuggihop", "classblmc__robots_1_1Stuggihop.html", "classblmc__robots_1_1Stuggihop" ],
     [ "TestBench8Motors", "classblmc__robots_1_1TestBench8Motors.html", "classblmc__robots_1_1TestBench8Motors" ],
-    [ "Teststand", "classblmc__robots_1_1Teststand.html", "classblmc__robots_1_1Teststand" ]
+    [ "Teststand", "classblmc__robots_1_1Teststand.html", "classblmc__robots_1_1Teststand" ],
+    [ "TwoJointDriver", "classblmc__robots_1_1TwoJointDriver.html", "classblmc__robots_1_1TwoJointDriver" ]
 ];

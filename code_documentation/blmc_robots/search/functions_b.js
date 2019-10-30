@@ -16,5 +16,6 @@ var searchData=
   ['set_5fzero_5fangles',['set_zero_angles',['../classblmc__robots_1_1BlmcJointModules.html#abc94960666d33b6a5071d4cf25f7794d',1,'blmc_robots::BlmcJointModules']]],
   ['singleleg',['SingleLeg',['../classblmc__robots_1_1SingleLeg.html#a1b1ef6964010aa2042b042ff3d5d864f',1,'blmc_robots::SingleLeg']]],
   ['singlemotor',['SingleMotor',['../classblmc__robots_1_1SingleMotor.html#a074ba2d9a982316a4aecac65b7c1b581',1,'blmc_robots::SingleMotor']]],
+  ['stopdemos',['StopDemos',['../demo__test__bench__8__motors_8cpp.html#a75d8b98fafbd2fb243e91c6164b114ce',1,'demo_test_bench_8_motors.cpp']]],
   ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html#aea7781a2eb5a410ca8ab2bbfe425cb6a',1,'blmc_robots::Stuggihop']]]
 ];

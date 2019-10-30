@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "pt",
+  0: "bpt",
   1: "t",
-  2: "p"
+  2: "bp"
 };
 
 var indexSectionNames =

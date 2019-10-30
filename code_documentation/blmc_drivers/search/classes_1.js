@@ -4,5 +4,7 @@ var searchData=
   ['canbusconnection',['CanBusConnection',['../classblmc__drivers_1_1CanBusConnection.html',1,'blmc_drivers']]],
   ['canbusframe',['CanBusFrame',['../classblmc__drivers_1_1CanBusFrame.html',1,'blmc_drivers']]],
   ['canbusinterface',['CanBusInterface',['../classblmc__drivers_1_1CanBusInterface.html',1,'blmc_drivers']]],
-  ['canbusmotorboard',['CanBusMotorBoard',['../classblmc__drivers_1_1CanBusMotorBoard.html',1,'blmc_drivers']]]
+  ['canbusmotorboard',['CanBusMotorBoard',['../classblmc__drivers_1_1CanBusMotorBoard.html',1,'blmc_drivers']]],
+  ['consttorquecontrol',['ConstTorqueControl',['../classblmc__drivers_1_1ConstTorqueControl.html',1,'blmc_drivers']]],
+  ['controller',['Controller',['../classController.html',1,'']]]
 ];

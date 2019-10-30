@@ -1,9 +1,9 @@
 var NAVTREEINDEX0 =
 {
-".html":[0,0,0],
+".html":[0,0,2],
 ".html":[1,0,0],
-".html":[1,0,0,0],
 ".html":[1,0,0,1],
+".html":[1,0,0,0],
 "annotated.html":[1,0],
 "classes.html":[1,1],
 "classrobot__properties__solo_1_1config_1_1Solo12Config.html":[1,0,0,0,0],
@@ -70,9 +70,11 @@ var NAVTREEINDEX0 =
 "classrobot__properties__solo_1_1quadruped12wrapper_1_1Quadruped12Robot.html#ad203f83c70bea7d6427df5a823abd178":[1,0,0,1,0,4],
 "hierarchy.html":[1,2],
 "index.html":[],
+"namespacedisplay__solo.html":[0,0,0],
+"namespacedisplay__solo12.html":[0,0,1],
 "namespacemembers.html":[0,1,0],
 "namespacemembers_func.html":[0,1,1],
-"namespacerobot__properties__solo_1_1gepetto__gui__loader.html":[0,0,0,0],
+"namespacerobot__properties__solo_1_1gepetto__gui__loader.html":[0,0,2,0],
 "namespaces.html":[0,0],
 "pages.html":[]
 };

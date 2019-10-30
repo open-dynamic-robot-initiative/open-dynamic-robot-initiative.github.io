@@ -5,8 +5,8 @@ var searchData=
   ['can_5fframe_5ft',['can_frame_t',['../os__interface_8hpp.html#a8bc67ce447b2fa424a45f3e01162035f',1,'os_interface.hpp']]],
   ['can_5fid_5ft',['can_id_t',['../os__interface_8hpp.html#ab9491ad99890aa9ecf1785d1edd23d64',1,'os_interface.hpp']]],
   ['can_5frecv_5ftimeout',['CAN_RECV_TIMEOUT',['../classblmc__drivers_1_1MotorBoardStatus.html#a9fd931e24550f5e5877d7a6cf499f6cfa25dd0ce676d69449a6fe0a02fa6e6a5d',1,'blmc_drivers::MotorBoardStatus']]],
-  ['canbus',['CanBus',['../classblmc__drivers_1_1CanBus.html#a7d376f1ebd6dd8bc3299f6fc9f3d42c6',1,'blmc_drivers::CanBus']]],
   ['canbus',['CanBus',['../classblmc__drivers_1_1CanBus.html',1,'blmc_drivers']]],
+  ['canbus',['CanBus',['../classblmc__drivers_1_1CanBus.html#a7d376f1ebd6dd8bc3299f6fc9f3d42c6',1,'blmc_drivers::CanBus']]],
   ['canbusconnection',['CanBusConnection',['../classblmc__drivers_1_1CanBusConnection.html',1,'blmc_drivers']]],
   ['canbusframe',['CanBusFrame',['../classblmc__drivers_1_1CanBusFrame.html',1,'blmc_drivers']]],
   ['canbusinterface',['CanBusInterface',['../classblmc__drivers_1_1CanBusInterface.html',1,'blmc_drivers']]],
@@ -16,8 +16,11 @@ var searchData=
   ['close_5fcan_5fdevice',['close_can_device',['../namespaceosi.html#a92dc20de3b4933a10f24c98cecf2568b',1,'osi']]],
   ['commandtimeseries',['CommandTimeseries',['../classblmc__drivers_1_1MotorBoardInterface.html#ae2afe94a023d9f08a4c689e9b7660f15',1,'blmc_drivers::MotorBoardInterface']]],
   ['conditionvariable',['ConditionVariable',['../namespaceosi.html#a31b1ce104b168554e4832b5d3b684073',1,'osi']]],
+  ['consttorquecontrol',['ConstTorqueControl',['../classblmc__drivers_1_1ConstTorqueControl.html#a2253fc0273462fa35c21f1424dcc919c',1,'blmc_drivers::ConstTorqueControl']]],
+  ['consttorquecontrol',['ConstTorqueControl',['../classblmc__drivers_1_1ConstTorqueControl.html',1,'blmc_drivers']]],
   ['content_5f',['content_',['../classblmc__drivers_1_1MotorBoardCommand.html#ac417b63a8cc8801a6757f4dce3b0810c',1,'blmc_drivers::MotorBoardCommand']]],
   ['contents',['Contents',['../classblmc__drivers_1_1MotorBoardCommand.html#ad61acf8dcb8f6fcb382fc5cbc1e44615',1,'blmc_drivers::MotorBoardCommand']]],
   ['controlindex',['ControlIndex',['../classblmc__drivers_1_1MotorBoardInterface.html#a82ed4d0fa527521707281396095a88ca',1,'blmc_drivers::MotorBoardInterface']]],
+  ['controller',['Controller',['../classController.html',1,'Controller'],['../classController.html#aceedb7c8fbd0fab8080fd7273d9dc65d',1,'Controller::Controller()']]],
   ['crit_5ftemp',['CRIT_TEMP',['../classblmc__drivers_1_1MotorBoardStatus.html#a9fd931e24550f5e5877d7a6cf499f6cfa43b0778d39a1aa2c193e2b511f2fe511',1,'blmc_drivers::MotorBoardStatus']]]
 ];

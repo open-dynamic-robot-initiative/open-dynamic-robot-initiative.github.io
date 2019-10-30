@@ -2,6 +2,8 @@ var hierarchy =
 [
     [ "blmc_drivers::CanBusConnection", "classblmc__drivers_1_1CanBusConnection.html", null ],
     [ "blmc_drivers::CanBusFrame", "classblmc__drivers_1_1CanBusFrame.html", null ],
+    [ "blmc_drivers::ConstTorqueControl", "classblmc__drivers_1_1ConstTorqueControl.html", null ],
+    [ "Controller", "classController.html", null ],
     [ "blmc_drivers::DeviceInterface", "classblmc__drivers_1_1DeviceInterface.html", [
       [ "blmc_drivers::AnalogSensorInterface", "classblmc__drivers_1_1AnalogSensorInterface.html", [
         [ "blmc_drivers::AnalogSensor", "classblmc__drivers_1_1AnalogSensor.html", null ]
@@ -21,6 +23,11 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "Hardware", "structHardware.html", null ],
+    [ "LegController", "classLegController.html", null ],
     [ "blmc_drivers::MotorBoardCommand", "classblmc__drivers_1_1MotorBoardCommand.html", null ],
-    [ "blmc_drivers::MotorBoardStatus", "classblmc__drivers_1_1MotorBoardStatus.html", null ]
+    [ "blmc_drivers::MotorBoardStatus", "classblmc__drivers_1_1MotorBoardStatus.html", null ],
+    [ "blmc_drivers::PDController", "classblmc__drivers_1_1PDController.html", null ],
+    [ "blmc_drivers::SinePositionControl", "classblmc__drivers_1_1SinePositionControl.html", null ],
+    [ "blmc_drivers::SineTorqueControl", "classblmc__drivers_1_1SineTorqueControl.html", null ]
 ];

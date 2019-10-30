@@ -7,6 +7,7 @@ var namespaceblmc__drivers =
     [ "CanBusFrame", "classblmc__drivers_1_1CanBusFrame.html", "classblmc__drivers_1_1CanBusFrame" ],
     [ "CanBusInterface", "classblmc__drivers_1_1CanBusInterface.html", "classblmc__drivers_1_1CanBusInterface" ],
     [ "CanBusMotorBoard", "classblmc__drivers_1_1CanBusMotorBoard.html", "classblmc__drivers_1_1CanBusMotorBoard" ],
+    [ "ConstTorqueControl", "classblmc__drivers_1_1ConstTorqueControl.html", "classblmc__drivers_1_1ConstTorqueControl" ],
     [ "DeviceInterface", "classblmc__drivers_1_1DeviceInterface.html", null ],
     [ "Leg", "classblmc__drivers_1_1Leg.html", "classblmc__drivers_1_1Leg" ],
     [ "LegInterface", "classblmc__drivers_1_1LegInterface.html", "classblmc__drivers_1_1LegInterface" ],
@@ -15,5 +16,8 @@ var namespaceblmc__drivers =
     [ "MotorBoardInterface", "classblmc__drivers_1_1MotorBoardInterface.html", "classblmc__drivers_1_1MotorBoardInterface" ],
     [ "MotorBoardStatus", "classblmc__drivers_1_1MotorBoardStatus.html", "classblmc__drivers_1_1MotorBoardStatus" ],
     [ "MotorInterface", "classblmc__drivers_1_1MotorInterface.html", "classblmc__drivers_1_1MotorInterface" ],
-    [ "SafeMotor", "classblmc__drivers_1_1SafeMotor.html", "classblmc__drivers_1_1SafeMotor" ]
+    [ "PDController", "classblmc__drivers_1_1PDController.html", "classblmc__drivers_1_1PDController" ],
+    [ "SafeMotor", "classblmc__drivers_1_1SafeMotor.html", "classblmc__drivers_1_1SafeMotor" ],
+    [ "SinePositionControl", "classblmc__drivers_1_1SinePositionControl.html", "classblmc__drivers_1_1SinePositionControl" ],
+    [ "SineTorqueControl", "classblmc__drivers_1_1SineTorqueControl.html", "classblmc__drivers_1_1SineTorqueControl" ]
 ];

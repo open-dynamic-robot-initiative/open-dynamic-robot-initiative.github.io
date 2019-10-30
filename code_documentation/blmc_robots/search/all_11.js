@@ -30,6 +30,7 @@ var searchData=
   ['sliders_3c_202_20_3e',['Sliders&lt; 2 &gt;',['../classblmc__robots_1_1Sliders.html',1,'blmc_robots']]],
   ['status',['status',['../structblmc__robots_1_1HomingState.html#af821e232c974385ae24e20a7f75665f7',1,'blmc_robots::HomingState']]],
   ['step_5fcount',['step_count',['../structblmc__robots_1_1HomingState.html#a16adc4753efe03def5ef3ebf7abc632c',1,'blmc_robots::HomingState']]],
+  ['stopdemos',['StopDemos',['../demo__test__bench__8__motors_8cpp.html#a75d8b98fafbd2fb243e91c6164b114ce',1,'demo_test_bench_8_motors.cpp']]],
   ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html',1,'blmc_robots']]],
   ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html#aea7781a2eb5a410ca8ab2bbfe425cb6a',1,'blmc_robots::Stuggihop']]],
   ['stuggihop_2ehpp',['stuggihop.hpp',['../stuggihop_8hpp.html',1,'']]],
