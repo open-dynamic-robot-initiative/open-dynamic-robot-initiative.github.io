@@ -10,6 +10,7 @@ var classblmc__robots_1_1BlmcJointModules =
     [ "get_measured_velocities", "classblmc__robots_1_1BlmcJointModules.html#a87320890796f67050faa4fa506d5142d", null ],
     [ "get_sent_torques", "classblmc__robots_1_1BlmcJointModules.html#a9c71bc7db0ff4cd08bc2686a244caa65", null ],
     [ "get_zero_angles", "classblmc__robots_1_1BlmcJointModules.html#a4ca83d65d009aaafe4522d431490bb1d", null ],
+    [ "go_to", "classblmc__robots_1_1BlmcJointModules.html#afc82da986738d3a2265e5cf6337d3251", null ],
     [ "send_torques", "classblmc__robots_1_1BlmcJointModules.html#a26d4d675142bc783c1f983d135a41a09", null ],
     [ "set_motor_array", "classblmc__robots_1_1BlmcJointModules.html#a905addfe3271be5bc88bd785c5cbb032", null ],
     [ "set_position_control_gains", "classblmc__robots_1_1BlmcJointModules.html#ada76994634fd0f15fb5df311a61e97d7", null ],

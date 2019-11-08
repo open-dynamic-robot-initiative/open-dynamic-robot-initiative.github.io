@@ -4,6 +4,7 @@ var searchData=
   ['get_5fati_5ftorque',['get_ati_torque',['../classblmc__robots_1_1Teststand.html#a27ba45a099b4ff6852f5acd0226aa915',1,'blmc_robots::Teststand']]],
   ['get_5fbase_5fpositions',['get_base_positions',['../classblmc__robots_1_1Stuggihop.html#a6da73065d935420daf4959b8f912128c',1,'blmc_robots::Stuggihop']]],
   ['get_5fbase_5fvelocities',['get_base_velocities',['../classblmc__robots_1_1Stuggihop.html#a7f869117918d0d5d5813d29222430d88',1,'blmc_robots::Stuggihop']]],
+  ['get_5fcoefficients',['get_coefficients',['../classblmc__robots_1_1Polynome.html#a31e2774f54d5a8a242878d6157e412c9',1,'blmc_robots::Polynome']]],
   ['get_5fcontact_5fsensors_5fstates',['get_contact_sensors_states',['../classblmc__robots_1_1Quadruped.html#ad60c4b223ab5d257043567784c0382ca',1,'blmc_robots::Quadruped::get_contact_sensors_states()'],['../classblmc__robots_1_1Teststand.html#a0486afbd05d4f7c354ebad8432c178bd',1,'blmc_robots::Teststand::get_contact_sensors_states()']]],
   ['get_5fhardstop2zero_5foffsets',['get_hardstop2zero_offsets',['../classblmc__robots_1_1Quadruped.html#a66056ff38ae444eda25c927918db3bae',1,'blmc_robots::Quadruped::get_hardstop2zero_offsets()'],['../classblmc__robots_1_1Stuggihop.html#a0669e1c16bd6698966149cebad9c43fc',1,'blmc_robots::Stuggihop::get_hardstop2zero_offsets()']]],
   ['get_5fheight_5fsensors',['get_height_sensors',['../classblmc__robots_1_1Teststand.html#af8a0d1cc608f91a0a752758c7554087a',1,'blmc_robots::Teststand']]],

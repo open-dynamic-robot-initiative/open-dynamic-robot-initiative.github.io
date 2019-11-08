@@ -8,6 +8,8 @@ var searchData=
   ['teststand',['Teststand',['../classblmc__robots_1_1Teststand.html',1,'blmc_robots']]],
   ['teststand',['Teststand',['../classblmc__robots_1_1Teststand.html#a4747b0754cd3dd669c02f27662baef7e',1,'blmc_robots::Teststand']]],
   ['teststand_2ehpp',['teststand.hpp',['../teststand_8hpp.html',1,'']]],
+  ['timepolynome',['TimePolynome',['../classblmc__robots_1_1TimePolynome.html#a0855aaf796c9d67302a5f2225355d745',1,'blmc_robots::TimePolynome']]],
+  ['timepolynome',['TimePolynome',['../classblmc__robots_1_1TimePolynome.html',1,'blmc_robots']]],
   ['todo_20list',['Todo List',['../todo.html',1,'']]],
   ['torque_5fconstant_5fnmpa',['torque_constant_NmpA',['../structblmc__robots_1_1MotorParameters.html#a960e7f64dae8cd08837f8bff620eacfb',1,'blmc_robots::MotorParameters']]],
   ['torque_5fratio',['torque_ratio',['../structblmc__robots_1_1CalibrationParameters.html#a85b403cbe9a0720b3b6ed46187e31fa6',1,'blmc_robots::CalibrationParameters']]],

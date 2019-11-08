@@ -1,5 +1,6 @@
 var dir_c66acd4681b95343b3d51cde3fc288b6 =
 [
+    [ "mathematics", "dir_b867e7a52b07e17308b4571a9c461c4a.html", "dir_b867e7a52b07e17308b4571a9c461c4a" ],
     [ "blmc_joint_module.hpp", "blmc__joint__module_8hpp.html", "blmc__joint__module_8hpp" ],
     [ "common_header.hpp", "common__header_8hpp.html", "common__header_8hpp" ],
     [ "fake_finger_driver.hpp", "fake__finger__driver_8hpp_source.html", null ],

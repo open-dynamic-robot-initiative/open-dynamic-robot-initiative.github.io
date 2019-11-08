@@ -17,6 +17,9 @@ var hierarchy =
     [ "blmc_robots::HomingState", "structblmc__robots_1_1HomingState.html", null ],
     [ "blmc_robots.logger.Logger", "classblmc__robots_1_1logger_1_1Logger.html", null ],
     [ "blmc_robots::MotorParameters", "structblmc__robots_1_1MotorParameters.html", null ],
+    [ "blmc_robots::Polynome< ORDER >", "classblmc__robots_1_1Polynome.html", [
+      [ "blmc_robots::TimePolynome< ORDER >", "classblmc__robots_1_1TimePolynome.html", null ]
+    ] ],
     [ "blmc_robots::Quadruped", "classblmc__robots_1_1Quadruped.html", null ],
     [ "Robot", "structRobot.html", null ],
     [ "RobotDriver", null, [

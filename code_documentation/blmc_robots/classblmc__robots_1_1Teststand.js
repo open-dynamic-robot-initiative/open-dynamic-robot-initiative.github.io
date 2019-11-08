@@ -6,7 +6,7 @@ var classblmc__robots_1_1Teststand =
     [ "VectorSlider", "classblmc__robots_1_1Teststand.html#a201214fc01f68b97ceba62af3fb8cccf", null ],
     [ "Teststand", "classblmc__robots_1_1Teststand.html#a4747b0754cd3dd669c02f27662baef7e", null ],
     [ "acquire_sensors", "classblmc__robots_1_1Teststand.html#a4203e25148ab5b4ddfef3b46647213c6", null ],
-    [ "calibrate", "classblmc__robots_1_1Teststand.html#a80c9c4483ab006e8001229c109ec7ed7", null ],
+    [ "calibrate", "classblmc__robots_1_1Teststand.html#ad4660570e3e1b77717004b3ce8056faf", null ],
     [ "get_ati_force", "classblmc__robots_1_1Teststand.html#af4bf3a4692fdeacdad78a7213c3fbe98", null ],
     [ "get_ati_torque", "classblmc__robots_1_1Teststand.html#a27ba45a099b4ff6852f5acd0226aa915", null ],
     [ "get_contact_sensors_states", "classblmc__robots_1_1Teststand.html#a0486afbd05d4f7c354ebad8432c178bd", null ],
