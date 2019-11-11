@@ -11,16 +11,17 @@ var namespaceblmc__robots =
     [ "OldDisentanglementPlatform", "classblmc__robots_1_1OldDisentanglementPlatform.html", "classblmc__robots_1_1OldDisentanglementPlatform" ],
     [ "OneJointDriver", "classblmc__robots_1_1OneJointDriver.html", "classblmc__robots_1_1OneJointDriver" ],
     [ "Polynome", "classblmc__robots_1_1Polynome.html", "classblmc__robots_1_1Polynome" ],
-    [ "Quadruped", "classblmc__robots_1_1Quadruped.html", "classblmc__robots_1_1Quadruped" ],
     [ "RealDisentanglementPlatform", "classblmc__robots_1_1RealDisentanglementPlatform.html", "classblmc__robots_1_1RealDisentanglementPlatform" ],
     [ "RealFingerDriver", "classblmc__robots_1_1RealFingerDriver.html", "classblmc__robots_1_1RealFingerDriver" ],
     [ "SingleLeg", "classblmc__robots_1_1SingleLeg.html", "classblmc__robots_1_1SingleLeg" ],
     [ "SingleMotor", "classblmc__robots_1_1SingleMotor.html", "classblmc__robots_1_1SingleMotor" ],
     [ "Slider", "classblmc__robots_1_1Slider.html", "classblmc__robots_1_1Slider" ],
     [ "Sliders", "classblmc__robots_1_1Sliders.html", "classblmc__robots_1_1Sliders" ],
+    [ "Solo", "classblmc__robots_1_1Solo.html", "classblmc__robots_1_1Solo" ],
     [ "Stuggihop", "classblmc__robots_1_1Stuggihop.html", "classblmc__robots_1_1Stuggihop" ],
     [ "TestBench8Motors", "classblmc__robots_1_1TestBench8Motors.html", "classblmc__robots_1_1TestBench8Motors" ],
     [ "Teststand", "classblmc__robots_1_1Teststand.html", "classblmc__robots_1_1Teststand" ],
+    [ "ThreadCalibrationData", "structblmc__robots_1_1ThreadCalibrationData.html", "structblmc__robots_1_1ThreadCalibrationData" ],
     [ "TimePolynome", "classblmc__robots_1_1TimePolynome.html", "classblmc__robots_1_1TimePolynome" ],
     [ "TwoJointDriver", "classblmc__robots_1_1TwoJointDriver.html", "classblmc__robots_1_1TwoJointDriver" ]
 ];

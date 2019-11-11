@@ -7,5 +7,5 @@ var searchData=
   ['motorparameters',['MotorParameters',['../structblmc__robots_1_1MotorParameters.html',1,'blmc_robots']]],
   ['move_5ftimeout',['move_timeout',['../structblmc__robots_1_1CalibrationParameters.html#a1075d6b60013e060c22748a672bf08cb',1,'blmc_robots::CalibrationParameters']]],
   ['move_5fto_5fposition',['move_to_position',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a1defedb3825ccac7cd8511d209bcae61',1,'blmc_robots::NJointBlmcRobotDriver']]],
-  ['my_5fhandler',['my_handler',['../demo__test__bench__8__motors_8cpp.html#a13848d945610347db87a059fe0b43f35',1,'demo_test_bench_8_motors.cpp']]]
+  ['my_5fhandler',['my_handler',['../namespaceblmc__robots.html#a6cbe0854f5b1ab199d0a8933a1d87ccb',1,'blmc_robots']]]
 ];

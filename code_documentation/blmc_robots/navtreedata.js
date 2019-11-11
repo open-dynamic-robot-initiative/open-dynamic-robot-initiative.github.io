@@ -23,11 +23,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
-      ] ]
+      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];
@@ -35,7 +31,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classblmc__robots_1_1Stuggihop.html#ae693c1a57f25426d82cece8d5066d331"
+"classblmc__robots_1_1TestBench8Motors.html#a9bac22cb6522afd6412e8fbb56f11fbf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
