@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['observation',['Observation',['../structrobot__interfaces_1_1NJointRobotTypes_1_1Observation.html',1,'robot_interfaces::NJointRobotTypes']]]
+  ['robotbackend',['RobotBackend',['../classrobot__interfaces_1_1RobotBackend.html',1,'robot_interfaces']]],
+  ['robotdata',['RobotData',['../classrobot__interfaces_1_1RobotData.html',1,'robot_interfaces']]],
+  ['robotdriver',['RobotDriver',['../classrobot__interfaces_1_1RobotDriver.html',1,'robot_interfaces']]],
+  ['robotfrontend',['RobotFrontend',['../classrobot__interfaces_1_1RobotFrontend.html',1,'robot_interfaces']]]
 ];

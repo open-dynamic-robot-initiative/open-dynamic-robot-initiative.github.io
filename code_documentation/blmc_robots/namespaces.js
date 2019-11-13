@@ -1,6 +1,8 @@
 var namespaces =
 [
-    [ "blmc_robots", "namespaceblmc__robots.html", "namespaceblmc__robots" ],
+    [ "blmc_robots", null, [
+      [ "logger", "namespaceblmc__robots_1_1logger.html", null ]
+    ] ],
     [ "demo_data_logging", "namespacedemo__data__logging.html", null ],
     [ "demo_fake_finger", "namespacedemo__fake__finger.html", null ],
     [ "demo_finger_print_position", "namespacedemo__finger__print__position.html", null ],

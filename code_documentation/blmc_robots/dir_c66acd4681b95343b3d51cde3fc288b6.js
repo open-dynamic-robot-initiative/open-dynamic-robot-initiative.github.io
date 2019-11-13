@@ -11,7 +11,6 @@ var dir_c66acd4681b95343b3d51cde3fc288b6 =
       [ "NJointBlmcRobotDriver", "classblmc__robots_1_1NJointBlmcRobotDriver.html", "classblmc__robots_1_1NJointBlmcRobotDriver" ]
     ] ],
     [ "one_joint_driver.hpp", "one__joint__driver_8hpp.html", "one__joint__driver_8hpp" ],
-    [ "real_disentanglement_platform.hpp", "real__disentanglement__platform_8hpp_source.html", null ],
     [ "real_finger_driver.hpp", "real__finger__driver_8hpp_source.html", null ],
     [ "single_leg.hpp", "single__leg_8hpp.html", [
       [ "SingleLeg", "classblmc__robots_1_1SingleLeg.html", "classblmc__robots_1_1SingleLeg" ]

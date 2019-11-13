@@ -7,6 +7,8 @@ var searchData=
   ['send_5ftorques',['send_torques',['../classblmc__robots_1_1BlmcJointModules.html#a26d4d675142bc783c1f983d135a41a09',1,'blmc_robots::BlmcJointModules']]],
   ['set_5fcoefficients',['set_coefficients',['../classblmc__robots_1_1Polynome.html#ad8daa2f5ffa1891aac2663519950afae',1,'blmc_robots::Polynome']]],
   ['set_5fhardstop2zero_5foffsets',['set_hardstop2zero_offsets',['../classblmc__robots_1_1Stuggihop.html#a5f0707d8965fc98b36ca3fa42b57db5f',1,'blmc_robots::Stuggihop']]],
+  ['set_5fjoint_5fpolarities',['set_joint_polarities',['../classblmc__robots_1_1BlmcJointModules.html#a97f538c52a1c00846497417333f93230',1,'blmc_robots::BlmcJointModules']]],
+  ['set_5fjoint_5fpolarity',['set_joint_polarity',['../classblmc__robots_1_1BlmcJointModule.html#a137da65771a8628db4692e3bfc924f07',1,'blmc_robots::BlmcJointModule']]],
   ['set_5fmax_5fcurrent',['set_max_current',['../classblmc__robots_1_1SingleLeg.html#a54007e95c258ec05b63169f202d3a3a0',1,'blmc_robots::SingleLeg::set_max_current()'],['../classblmc__robots_1_1SingleMotor.html#af2add59e3d08949c658568b6d161b5ba',1,'blmc_robots::SingleMotor::set_max_current()'],['../classblmc__robots_1_1Stuggihop.html#a8be641fdc498b04a52bb721f14c449c3',1,'blmc_robots::Stuggihop::set_max_current()']]],
   ['set_5fmotor_5farray',['set_motor_array',['../classblmc__robots_1_1BlmcJointModules.html#a905addfe3271be5bc88bd785c5cbb032',1,'blmc_robots::BlmcJointModules']]],
   ['set_5fparameters',['set_parameters',['../classblmc__robots_1_1TimePolynome.html#ac7576e3ab26e11a183268dcc4721e6e5',1,'blmc_robots::TimePolynome']]],

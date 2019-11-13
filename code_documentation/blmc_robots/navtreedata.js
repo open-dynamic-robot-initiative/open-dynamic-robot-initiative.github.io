@@ -1,14 +1,12 @@
 var NAVTREE =
 [
   [ "blmc_robots", "index.html", [
-    [ "Todo List", "todo.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -30,8 +28,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"classblmc__robots_1_1TestBench8Motors.html#a9bac22cb6522afd6412e8fbb56f11fbf"
+".html",
+"classblmc__robots_1_1Teststand.html#a2fa7aacb213c7898bb04f791ca3687d1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

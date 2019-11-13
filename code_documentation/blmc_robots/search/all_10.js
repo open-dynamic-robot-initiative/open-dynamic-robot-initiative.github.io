@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['safemotor_5fptr',['SafeMotor_ptr',['../namespaceblmc__robots.html#a9850cf917156e20846aef3f8195aea0f',1,'blmc_robots']]],
+  ['safemotor_5fptr',['SafeMotor_ptr',['../common__header_8hpp.html#a9850cf917156e20846aef3f8195aea0f',1,'blmc_robots']]],
   ['safety_5fkd_5f',['safety_kd_',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a1c884b0a6a398dc17c9f642349637143',1,'blmc_robots::NJointBlmcRobotDriver']]],
   ['search_5fdistance_5flimit_5frad',['search_distance_limit_rad',['../structblmc__robots_1_1HomingState.html#a3ce572a7b025bbdf1eaaa5b72dc11dde',1,'blmc_robots::HomingState']]],
   ['send_5ftarget_5fcurrent',['send_target_current',['../classblmc__robots_1_1TestBench8Motors.html#a5194da9e85b4391e9ff6c5bf5a07faf2',1,'blmc_robots::TestBench8Motors']]],
@@ -10,6 +10,8 @@ var searchData=
   ['send_5ftorques',['send_torques',['../classblmc__robots_1_1BlmcJointModules.html#a26d4d675142bc783c1f983d135a41a09',1,'blmc_robots::BlmcJointModules']]],
   ['set_5fcoefficients',['set_coefficients',['../classblmc__robots_1_1Polynome.html#ad8daa2f5ffa1891aac2663519950afae',1,'blmc_robots::Polynome']]],
   ['set_5fhardstop2zero_5foffsets',['set_hardstop2zero_offsets',['../classblmc__robots_1_1Stuggihop.html#a5f0707d8965fc98b36ca3fa42b57db5f',1,'blmc_robots::Stuggihop']]],
+  ['set_5fjoint_5fpolarities',['set_joint_polarities',['../classblmc__robots_1_1BlmcJointModules.html#a97f538c52a1c00846497417333f93230',1,'blmc_robots::BlmcJointModules']]],
+  ['set_5fjoint_5fpolarity',['set_joint_polarity',['../classblmc__robots_1_1BlmcJointModule.html#a137da65771a8628db4692e3bfc924f07',1,'blmc_robots::BlmcJointModule']]],
   ['set_5fmax_5fcurrent',['set_max_current',['../classblmc__robots_1_1SingleLeg.html#a54007e95c258ec05b63169f202d3a3a0',1,'blmc_robots::SingleLeg::set_max_current()'],['../classblmc__robots_1_1SingleMotor.html#af2add59e3d08949c658568b6d161b5ba',1,'blmc_robots::SingleMotor::set_max_current()'],['../classblmc__robots_1_1Stuggihop.html#a8be641fdc498b04a52bb721f14c449c3',1,'blmc_robots::Stuggihop::set_max_current()']]],
   ['set_5fmotor_5farray',['set_motor_array',['../classblmc__robots_1_1BlmcJointModules.html#a905addfe3271be5bc88bd785c5cbb032',1,'blmc_robots::BlmcJointModules']]],
   ['set_5fparameters',['set_parameters',['../classblmc__robots_1_1TimePolynome.html#ac7576e3ab26e11a183268dcc4721e6e5',1,'blmc_robots::TimePolynome']]],
@@ -21,21 +23,19 @@ var searchData=
   ['set_5fzero_5fangles',['set_zero_angles',['../classblmc__robots_1_1BlmcJointModules.html#abc94960666d33b6a5071d4cf25f7794d',1,'blmc_robots::BlmcJointModules']]],
   ['single_5fleg_2ehpp',['single_leg.hpp',['../single__leg_8hpp.html',1,'']]],
   ['single_5fmotor_2ehpp',['single_motor.hpp',['../single__motor_8hpp.html',1,'']]],
-  ['singleleg',['SingleLeg',['../classblmc__robots_1_1SingleLeg.html',1,'blmc_robots']]],
   ['singleleg',['SingleLeg',['../classblmc__robots_1_1SingleLeg.html#a1b1ef6964010aa2042b042ff3d5d864f',1,'blmc_robots::SingleLeg']]],
+  ['singleleg',['SingleLeg',['../classblmc__robots_1_1SingleLeg.html',1,'blmc_robots']]],
   ['singlemotor',['SingleMotor',['../classblmc__robots_1_1SingleMotor.html',1,'blmc_robots']]],
   ['singlemotor',['SingleMotor',['../classblmc__robots_1_1SingleMotor.html#a074ba2d9a982316a4aecac65b7c1b581',1,'blmc_robots::SingleMotor']]],
   ['slider',['Slider',['../classblmc__robots_1_1Slider.html',1,'blmc_robots']]],
   ['slider_2ehpp',['slider.hpp',['../slider_8hpp.html',1,'']]],
-  ['slider_5fptr',['Slider_ptr',['../namespaceblmc__robots.html#a4cb9a95e8b2c0bf237ce29f5252c7b73',1,'blmc_robots']]],
+  ['slider_5fptr',['Slider_ptr',['../common__header_8hpp.html#a4cb9a95e8b2c0bf237ce29f5252c7b73',1,'blmc_robots']]],
   ['sliders',['Sliders',['../classblmc__robots_1_1Sliders.html',1,'blmc_robots']]],
-  ['sliders_3c_202_20_3e',['Sliders&lt; 2 &gt;',['../classblmc__robots_1_1Sliders.html',1,'blmc_robots']]],
-  ['solo',['Solo',['../classblmc__robots_1_1Solo.html#aaf891f75b87fc65976609b2b8781200b',1,'blmc_robots::Solo']]],
   ['solo',['Solo',['../classblmc__robots_1_1Solo.html',1,'blmc_robots']]],
+  ['solo',['Solo',['../classblmc__robots_1_1Solo.html#aaf891f75b87fc65976609b2b8781200b',1,'blmc_robots::Solo']]],
   ['status',['status',['../structblmc__robots_1_1HomingState.html#af821e232c974385ae24e20a7f75665f7',1,'blmc_robots::HomingState']]],
   ['step_5fcount',['step_count',['../structblmc__robots_1_1HomingState.html#a16adc4753efe03def5ef3ebf7abc632c',1,'blmc_robots::HomingState']]],
   ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html',1,'blmc_robots']]],
   ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html#aea7781a2eb5a410ca8ab2bbfe425cb6a',1,'blmc_robots::Stuggihop']]],
-  ['stuggihop_2ehpp',['stuggihop.hpp',['../stuggihop_8hpp.html',1,'']]],
-  ['succeeded',['SUCCEEDED',['../namespaceblmc__robots.html#aa1075809042ff261e4b0a20d161448b6afd9f6519d3f45276829fe74eb2c4bb85',1,'blmc_robots::SUCCEEDED()'],['../namespaceblmc__robots.html#ae2dd8b0230887c948d2583feb6beb051afd9f6519d3f45276829fe74eb2c4bb85',1,'blmc_robots::SUCCEEDED()']]]
+  ['stuggihop_2ehpp',['stuggihop.hpp',['../stuggihop_8hpp.html',1,'']]]
 ];
