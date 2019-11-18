@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fingerlogger',['FingerLogger',['../classrobot__interfaces_1_1FingerLogger.html',1,'robot_interfaces']]],
-  ['fingertypes',['FingerTypes',['../structrobot__interfaces_1_1FingerTypes.html',1,'robot_interfaces']]]
+  ['create_5fpython_5fbindings',['create_python_bindings',['../pybind__helper_8hpp.html#a82052567130c3000eeef9f5520885233',1,'robot_interfaces']]]
 ];

@@ -6,6 +6,7 @@ var hierarchy =
     [ "blmc_robots::BlmcJointModules< 8 >", "classblmc__robots_1_1BlmcJointModules.html", null ],
     [ "blmc_robots::BlmcJointModules< N_JOINTS >", "classblmc__robots_1_1BlmcJointModules.html", null ],
     [ "blmc_robots::CalibrationParameters", "structblmc__robots_1_1CalibrationParameters.html", null ],
+    [ "blmc_robots::NJointBlmcRobotDriver< N_JOINTS, N_MOTOR_BOARDS >::Config", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html", null ],
     [ "Hardware", "structHardware.html", null ],
     [ "blmc_robots::HomingState", "structblmc__robots_1_1HomingState.html", null ],
     [ "blmc_robots.logger.Logger", "classblmc__robots_1_1logger_1_1Logger.html", null ],

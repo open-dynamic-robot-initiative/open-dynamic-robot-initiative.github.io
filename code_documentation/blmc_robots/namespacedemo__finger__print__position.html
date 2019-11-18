@@ -113,6 +113,8 @@ $(document).ready(function(){initNavTree('namespacedemo__finger__print__position
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a3a56592f357b5badd772b76bd822dca1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><b>config_file_path</b></td></tr>
+<tr class="separator:a3a56592f357b5badd772b76bd822dca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac973269b6e955c65b37f15205ebe0db0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac973269b6e955c65b37f15205ebe0db0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>finger_data</b> = robot_interfaces.finger.Data()</td></tr>
 <tr class="separator:ac973269b6e955c65b37f15205ebe0db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,6 +135,18 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Send zero-torque commands to Finger robot and print joint positions.</pre> </div><h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a3a56592f357b5badd772b76bd822dca1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">demo_finger_print_position.config_file_path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacedemo__finger__print__position.html">    1</a></span>&#160;= os.path.join(</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    rospkg.RosPack().get_path(<span class="stringliteral">&quot;blmc_robots&quot;</span>), <span class="stringliteral">&quot;config&quot;</span>, <span class="stringliteral">&quot;finger.yml&quot;</span>)</div></div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a5c87250fb82c9b9e079d43ff3ad3483f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,8 +156,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacedemo__finger__print__position.html">    1</a></span>&#160;= <a class="code" href="real__finger__driver_8hpp.html#a693261e8993e9bd28001f71454979ec4">blmc_robots.create_real_finger_backend</a>(<span class="stringliteral">&quot;can0&quot;</span>, <span class="stringliteral">&quot;can1&quot;</span>,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                                        finger_data)</div><div class="ttc" id="real__finger__driver_8hpp_html_a693261e8993e9bd28001f71454979ec4"><div class="ttname"><a href="real__finger__driver_8hpp.html#a693261e8993e9bd28001f71454979ec4">blmc_robots::create_real_finger_backend</a></div><div class="ttdeci">robot_interfaces::FingerTypes::BackendPtr create_real_finger_backend(const std::string &amp;can_0, const std::string &amp;can_1, robot_interfaces::FingerTypes::DataPtr robot_data)</div><div class="ttdef"><b>Definition:</b> real_finger_driver.hpp:66</div></div>
-</div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacedemo__finger__print__position.html">    1</a></span>&#160;= blmc_robots.create_real_finger_backend(finger_data,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                                        config_file_path)</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

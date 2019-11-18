@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initialize',['initialize',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#a9e1dcc67c242a108b23dfd2bdd8f12a0',1,'robot_interfaces::MonitoredRobotDriver::initialize()'],['../classrobot__interfaces_1_1RobotDriver.html#a251cdab16035ce1cff9ee4d2465beb6c',1,'robot_interfaces::RobotDriver::initialize()']]]
+  ['get_5flatest_5fobservation',['get_latest_observation',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#a5fcda4be4d96bb803bf87d1b1588079e',1,'robot_interfaces::MonitoredRobotDriver::get_latest_observation()'],['../classrobot__interfaces_1_1RobotDriver.html#a0df4bf715f56b469f0d6c052c4a68a21',1,'robot_interfaces::RobotDriver::get_latest_observation()']]]
 ];

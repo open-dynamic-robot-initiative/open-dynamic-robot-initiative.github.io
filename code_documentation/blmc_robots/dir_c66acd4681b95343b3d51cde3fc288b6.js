@@ -5,13 +5,13 @@ var dir_c66acd4681b95343b3d51cde3fc288b6 =
     [ "common_header.hpp", "common__header_8hpp.html", "common__header_8hpp" ],
     [ "common_programs_header.hpp", "common__programs__header_8hpp_source.html", null ],
     [ "fake_finger_driver.hpp", "fake__finger__driver_8hpp_source.html", null ],
-    [ "n_joint_blmc_robot_driver.hpp", "n__joint__blmc__robot__driver_8hpp.html", [
-      [ "MotorParameters", "structblmc__robots_1_1MotorParameters.html", "structblmc__robots_1_1MotorParameters" ],
-      [ "CalibrationParameters", "structblmc__robots_1_1CalibrationParameters.html", "structblmc__robots_1_1CalibrationParameters" ],
-      [ "NJointBlmcRobotDriver", "classblmc__robots_1_1NJointBlmcRobotDriver.html", "classblmc__robots_1_1NJointBlmcRobotDriver" ]
+    [ "n_joint_blmc_robot_driver.hpp", "n__joint__blmc__robot__driver_8hpp.html", "n__joint__blmc__robot__driver_8hpp" ],
+    [ "one_joint_driver.hpp", "one__joint__driver_8hpp.html", [
+      [ "OneJointDriver", "classblmc__robots_1_1OneJointDriver.html", "classblmc__robots_1_1OneJointDriver" ]
     ] ],
-    [ "one_joint_driver.hpp", "one__joint__driver_8hpp.html", "one__joint__driver_8hpp" ],
-    [ "real_finger_driver.hpp", "real__finger__driver_8hpp_source.html", null ],
+    [ "real_finger_driver.hpp", "real__finger__driver_8hpp.html", [
+      [ "RealFingerDriver", "classblmc__robots_1_1RealFingerDriver.html", "classblmc__robots_1_1RealFingerDriver" ]
+    ] ],
     [ "single_leg.hpp", "single__leg_8hpp.html", [
       [ "SingleLeg", "classblmc__robots_1_1SingleLeg.html", "classblmc__robots_1_1SingleLeg" ]
     ] ],
@@ -32,5 +32,7 @@ var dir_c66acd4681b95343b3d51cde3fc288b6 =
     [ "teststand.hpp", "teststand_8hpp.html", [
       [ "Teststand", "classblmc__robots_1_1Teststand.html", "classblmc__robots_1_1Teststand" ]
     ] ],
-    [ "two_joint_driver.hpp", "two__joint__driver_8hpp.html", "two__joint__driver_8hpp" ]
+    [ "two_joint_driver.hpp", "two__joint__driver_8hpp.html", [
+      [ "TwoJointDriver", "classblmc__robots_1_1TwoJointDriver.html", "classblmc__robots_1_1TwoJointDriver" ]
+    ] ]
 ];

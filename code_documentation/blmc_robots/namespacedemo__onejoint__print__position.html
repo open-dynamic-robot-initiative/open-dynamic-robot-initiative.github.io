@@ -113,9 +113,8 @@ $(document).ready(function(){initNavTree('namespacedemo__onejoint__print__positi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:acc00f6b82b6fb1470aa737d7edbc0a67"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc00f6b82b6fb1470aa737d7edbc0a67"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>home_offset</b> = 2.241742</td></tr>
-<tr class="separator:acc00f6b82b6fb1470aa737d7edbc0a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab895e348c9bb2d80ac23053322c42118"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><b>config_file_path</b></td></tr>
+<tr class="separator:ab895e348c9bb2d80ac23053322c42118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70b61a01378fe90175aaefa7487bb735"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70b61a01378fe90175aaefa7487bb735"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>robot_data</b> = one_joint.Data()</td></tr>
 <tr class="separator:a70b61a01378fe90175aaefa7487bb735"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,6 +132,18 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>home_offset</b> = 2.
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Send zero-torque commands to Finger robot and print joint positions.</pre> </div><h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ab895e348c9bb2d80ac23053322c42118"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">demo_onejoint_print_position.config_file_path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacedemo__onejoint__print__position.html">    1</a></span>&#160;= os.path.join(</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    rospkg.RosPack().get_path(<span class="stringliteral">&quot;blmc_robots&quot;</span>), <span class="stringliteral">&quot;config&quot;</span>, <span class="stringliteral">&quot;onejoint.yml&quot;</span>)</div></div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="aa0167d85ac096bc86350586f35a40342"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,8 +153,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>home_offset</b> = 2.
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacedemo__onejoint__print__position.html">    1</a></span>&#160;= <a class="code" href="one__joint__driver_8hpp.html#abb6f3d6eede2ac35763c38ed9af5d29f">blmc_robots.create_one_joint_backend</a>(<span class="stringliteral">&quot;can6&quot;</span>,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                                     home_offset,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                     robot_data)</div><div class="ttc" id="one__joint__driver_8hpp_html_abb6f3d6eede2ac35763c38ed9af5d29f"><div class="ttname"><a href="one__joint__driver_8hpp.html#abb6f3d6eede2ac35763c38ed9af5d29f">blmc_robots::create_one_joint_backend</a></div><div class="ttdeci">robot_interfaces::NJointRobotTypes&lt; 1 &gt;::BackendPtr create_one_joint_backend(const std::string &amp;can_0, const double home_offset_rad, robot_interfaces::NJointRobotTypes&lt; 1 &gt;::DataPtr robot_data)</div><div class="ttdef"><b>Definition:</b> one_joint_driver.hpp:95</div></div>
-</div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacedemo__onejoint__print__position.html">    1</a></span>&#160;= blmc_robots.create_one_joint_backend(robot_data,</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                                     config_file_path)</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

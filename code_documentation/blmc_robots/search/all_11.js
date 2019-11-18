@@ -15,6 +15,5 @@ var searchData=
   ['torque_5fconstant_5fnmpa',['torque_constant_NmpA',['../structblmc__robots_1_1MotorParameters.html#a960e7f64dae8cd08837f8bff620eacfb',1,'blmc_robots::MotorParameters']]],
   ['torque_5fratio',['torque_ratio',['../structblmc__robots_1_1CalibrationParameters.html#a85b403cbe9a0720b3b6ed46187e31fa6',1,'blmc_robots::CalibrationParameters']]],
   ['two_5fjoint_5fdriver_2ehpp',['two_joint_driver.hpp',['../two__joint__driver_8hpp.html',1,'']]],
-  ['twojointdriver',['TwoJointDriver',['../classblmc__robots_1_1TwoJointDriver.html',1,'blmc_robots']]],
-  ['twojointdriver',['TwoJointDriver',['../classblmc__robots_1_1TwoJointDriver.html#a8c39490ceb61208a74ad1c9dfefdd75e',1,'blmc_robots::TwoJointDriver']]]
+  ['twojointdriver',['TwoJointDriver',['../classblmc__robots_1_1TwoJointDriver.html',1,'blmc_robots']]]
 ];
