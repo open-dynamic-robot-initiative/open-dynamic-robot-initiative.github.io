@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emonitoredrobotdriver',['~MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#a9177c4ab06a13a59240a9e6b10080fcf',1,'robot_interfaces::MonitoredRobotDriver']]]
+  ['write',['write',['../classrobot__interfaces_1_1RobotLogger.html#a6d7b8661d5af8653f3f7769f13046d04',1,'robot_interfaces::RobotLogger']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['torque',['torque',['../structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#ad19a93b677bdc60e655071743acf160e',1,'robot_interfaces::NJointRobotTypes::Action::torque()'],['../structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#ae5aae444c808728af59a8a5b27035293',1,'robot_interfaces::NJointRobotTypes::Action::Torque(Vector torque)']]],
-  ['torqueandposition',['TorqueAndPosition',['../structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#aca6f329803476479e618e3d678b4148a',1,'robot_interfaces::NJointRobotTypes::Action']]]
+  ['shutdown',['shutdown',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#a37ae171d7ad8c3ccb3c4dbcbd6048823',1,'robot_interfaces::MonitoredRobotDriver::shutdown()'],['../classrobot__interfaces_1_1RobotDriver.html#a48920e112a572f401194e9d15ed170f6',1,'robot_interfaces::RobotDriver::shutdown()']]],
+  ['start',['start',['../classrobot__interfaces_1_1RobotLogger.html#a7a11c6e434084273dc5fb08f2fd99040',1,'robot_interfaces::RobotLogger']]],
+  ['status',['Status',['../structrobot__interfaces_1_1RobotBackend_1_1Status.html',1,'robot_interfaces::RobotBackend']]],
+  ['stop',['stop',['../classrobot__interfaces_1_1RobotLogger.html#a879cfb4dfa8791b30c6b36a62d47455b',1,'robot_interfaces::RobotLogger']]]
 ];
