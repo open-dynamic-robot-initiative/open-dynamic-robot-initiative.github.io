@@ -1,6 +1,6 @@
 var classpy__robot__properties__teststand_1_1config_1_1TeststandConfig =
 [
-    [ "buildRobotWrapper", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#a1a0eed45bcccd13d68ba57546d405f6b", null ],
+    [ "buildRobotWrapper", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#ad0bd7dd74ddf8ca9f8a4c8523f560e6e", null ],
     [ "a0", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#a8215d067b482f1e37bd6a957c2e3b9e4", null ],
     [ "control_period", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#acb8248d2c6d0bdbbd64d7757b2ef79f8", null ],
     [ "ctrl_manager_current_to_control_gain", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#a1e1844188aa9fafaca58e8cc155456f8", null ],
@@ -16,6 +16,7 @@ var classpy__robot__properties__teststand_1_1config_1_1TeststandConfig =
     [ "max_current", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#a0254df8be16673a474dc8601bc94b221", null ],
     [ "max_qref", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#abbe4bbf7e0a84e850eca3e68929c7bc7", null ],
     [ "max_torque", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#a54adeff97de2a750b78ca4b9e0f7463f", null ],
+    [ "meshes_path", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#a97ed7263634428ba248020b279f807a1", null ],
     [ "motor_gear_ration", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#a934b88c4ed3899692dafb89134bfe3da", null ],
     [ "motor_inertia", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#a0d2f901b065d005500004294a0999ed7", null ],
     [ "motor_torque_constant", "classpy__robot__properties__teststand_1_1config_1_1TeststandConfig.html#afac43884ea08cc21acbb61d4a0306313", null ],
