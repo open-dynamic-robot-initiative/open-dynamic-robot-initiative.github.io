@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "robot_properties_solo", "index.html", [
+    [ "Robot Properties Solo", "md__workspace_software_workspace_src_catkin_robots_robot_properties_robot_properties_solo_readme.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [

@@ -4,6 +4,7 @@ var classrobot__properties__solo_1_1config_1_1Solo12Config =
     [ "base_name", "classrobot__properties__solo_1_1config_1_1Solo12Config.html#a08164d8a2fad7463dc5f910d25500c7d", null ],
     [ "initial_configuration", "classrobot__properties__solo_1_1config_1_1Solo12Config.html#ac11265cf8ff3ae1b96c883143fc64516", null ],
     [ "initial_velocity", "classrobot__properties__solo_1_1config_1_1Solo12Config.html#a5638c3bba9a6835894ecab05d9343588", null ],
+    [ "joint_names", "classrobot__properties__solo_1_1config_1_1Solo12Config.html#a81d9c86f1ce4c8c0b8f936cb05eb00a8", null ],
     [ "map_joint_limits", "classrobot__properties__solo_1_1config_1_1Solo12Config.html#ab3a7f64fca555f8ee73c06f71d99af90", null ],
     [ "map_joint_name_to_id", "classrobot__properties__solo_1_1config_1_1Solo12Config.html#a8148415891b823708671022d90ac8f6b", null ],
     [ "meshes_path", "classrobot__properties__solo_1_1config_1_1Solo12Config.html#ac02a04cc8bec8b94c4c503b8176996c5", null ],

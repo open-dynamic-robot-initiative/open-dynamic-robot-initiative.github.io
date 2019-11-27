@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "blmc_robots", "index.html", [
+    [ "BLMC-Robots", "md__workspace_software_workspace_src_catkin_robots_blmc_robots_readme.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],

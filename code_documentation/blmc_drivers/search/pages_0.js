@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['this_20is_20the_20documentation_20of_20the_20blmc_5fdrivers_20package_2e',['This is the documentation of the blmc_drivers package.',['../index.html',1,'']]],
-  ['todo_20list',['Todo List',['../todo.html',1,'']]]
+  ['brushless_20motor_20control_20real_2dtime_20can_20api',['Brushless Motor Control Real-Time CAN API',['../md__workspace_software_workspace_src_catkin_hardware_blmc_drivers_README.html',1,'']]]
 ];
