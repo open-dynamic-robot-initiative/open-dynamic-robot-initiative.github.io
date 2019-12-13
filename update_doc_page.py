@@ -46,7 +46,7 @@ def find_ros_packages(share_path):
     """
     Find the ros packages cloned from the open-dynamic-robot-initiative github organisation
     """
-    treep_projects = treep.files.read_configuration_files(share_path)
+    treep_projects = treep.files.read_configuration_files(False, share_path)
     repos_names = treep_projects.get_repos_names()
 
     packages_list = []
@@ -120,13 +120,17 @@ if __name__ == "__main__":
 
     # We get all the package names form which the documentation is available
     exported_doc_list = []
-    (_, exported_doc_list, _) = walk("code_documentation").next()
+    for (dirpath, dirnames, filenames) in walk("code_documentation"):
+        exported_doc_list.extend(dirnames)
+        break
     print("The list of all the available documentation yet")
     print (exported_doc_list)
 
     # We get all the code coverage computed from the bamboo agents
     exported_code_cov_list = []
-    (_, exported_code_cov_list, _) = walk("code_coverage").next()
+    for (dirpath, dirnames, filenames) in walk("code_coverage"):
+        exported_code_cov_list.extend(dirnames)
+        break
     print("The list of all the available code coverage yet")
     print (exported_code_cov_list)
 
