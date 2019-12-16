@@ -9,6 +9,11 @@ var annotated_dup =
       [ "RobotData", "classrobot__interfaces_1_1RobotData.html", "classrobot__interfaces_1_1RobotData" ],
       [ "RobotDriver", "classrobot__interfaces_1_1RobotDriver.html", "classrobot__interfaces_1_1RobotDriver" ],
       [ "RobotFrontend", "classrobot__interfaces_1_1RobotFrontend.html", "classrobot__interfaces_1_1RobotFrontend" ],
-      [ "RobotLogger", "classrobot__interfaces_1_1RobotLogger.html", "classrobot__interfaces_1_1RobotLogger" ]
-    ] ]
+      [ "RobotLogger", "classrobot__interfaces_1_1RobotLogger.html", "classrobot__interfaces_1_1RobotLogger" ],
+      [ "Status", "structrobot__interfaces_1_1Status.html", "structrobot__interfaces_1_1Status" ],
+      [ "TriFingerTypes", "structrobot__interfaces_1_1TriFingerTypes.html", null ]
+    ] ],
+    [ "Action", "classAction.html", "classAction" ],
+    [ "Driver", "classDriver.html", "classDriver" ],
+    [ "Observation", "classObservation.html", "classObservation" ]
 ];

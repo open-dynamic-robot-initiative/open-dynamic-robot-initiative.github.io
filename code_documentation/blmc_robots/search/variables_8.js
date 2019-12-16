@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['position_5fcontrol_5fgains',['position_control_gains',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#ac144da904c93cb43e0b8d97c55a2cbb2',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
-  ['position_5ftolerance_5frad',['position_tolerance_rad',['../structblmc__robots_1_1CalibrationParameters.html#a84662e07c2b77e035e28092584ea0ab3',1,'blmc_robots::CalibrationParameters']]],
-  ['profile_5fstep_5fsize_5frad',['profile_step_size_rad',['../structblmc__robots_1_1HomingState.html#a06b1c01870f9531cbe766728603f468b',1,'blmc_robots::HomingState']]]
+  ['max_5fcurrent_5fa',['max_current_A',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#ab7f483ae02a0c026981c223c97c462c5',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
+  ['max_5ftorque_5fnm_5f',['max_torque_Nm_',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a4c4b68c6ce49317b2bc15e20c136c2d5',1,'blmc_robots::NJointBlmcRobotDriver']]],
+  ['motor_5fparameters_5f',['motor_parameters_',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a035472dd47cf790d38b49d50fe51ba61',1,'blmc_robots::NJointBlmcRobotDriver']]],
+  ['move_5ftimeout',['move_timeout',['../structblmc__robots_1_1CalibrationParameters.html#a1075d6b60013e060c22748a672bf08cb',1,'blmc_robots::CalibrationParameters']]]
 ];

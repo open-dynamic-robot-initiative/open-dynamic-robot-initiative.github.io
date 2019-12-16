@@ -1,7 +1,6 @@
 var annotated_dup =
 [
     [ "blmc_robots", null, [
-      [ "logger", "namespaceblmc__robots_1_1logger.html", "namespaceblmc__robots_1_1logger" ],
       [ "BlmcJointModule", "classblmc__robots_1_1BlmcJointModule.html", "classblmc__robots_1_1BlmcJointModule" ],
       [ "BlmcJointModules", "classblmc__robots_1_1BlmcJointModules.html", "classblmc__robots_1_1BlmcJointModules" ],
       [ "CalibrationParameters", "structblmc__robots_1_1CalibrationParameters.html", "structblmc__robots_1_1CalibrationParameters" ],
@@ -22,6 +21,7 @@ var annotated_dup =
       [ "Teststand", "classblmc__robots_1_1Teststand.html", "classblmc__robots_1_1Teststand" ],
       [ "ThreadCalibrationData", "structblmc__robots_1_1ThreadCalibrationData.html", "structblmc__robots_1_1ThreadCalibrationData" ],
       [ "TimePolynome", "classblmc__robots_1_1TimePolynome.html", "classblmc__robots_1_1TimePolynome" ],
+      [ "TriFingerDriver", "classblmc__robots_1_1TriFingerDriver.html", "classblmc__robots_1_1TriFingerDriver" ],
       [ "TwoJointDriver", "classblmc__robots_1_1TwoJointDriver.html", "classblmc__robots_1_1TwoJointDriver" ]
     ] ],
     [ "Hardware", "structHardware.html", "structHardware" ],

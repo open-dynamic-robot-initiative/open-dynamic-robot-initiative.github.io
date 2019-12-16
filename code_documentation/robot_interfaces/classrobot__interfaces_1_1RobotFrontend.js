@@ -1,6 +1,5 @@
 var classrobot__interfaces_1_1RobotFrontend =
 [
-    [ "Status", "classrobot__interfaces_1_1RobotFrontend.html#af5461c0645357018a0c7718cdfbacd01", null ],
     [ "TimeStamp", "classrobot__interfaces_1_1RobotFrontend.html#af6a72462c774a657fa0fb8c2d2200223", null ],
     [ "RobotFrontend", "classrobot__interfaces_1_1RobotFrontend.html#a4fcef139e079fb707c1ad76fcf4c6c62", null ],
     [ "append_desired_action", "classrobot__interfaces_1_1RobotFrontend.html#a26c137f65b908d6eddffff75df38361a", null ],

@@ -8,13 +8,14 @@ var classblmc__robots_1_1NJointBlmcRobotDriver =
     [ "Types", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a9564734eaa1fe694c12a1ef4a2fdd111", null ],
     [ "Vector", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a44c2dfe4150dfbce81e50bcfb7e609b1", null ],
     [ "NJointBlmcRobotDriver", "classblmc__robots_1_1NJointBlmcRobotDriver.html#afecb1d950d3a2e89d51b35d14fa2c703", null ],
+    [ "_initialize", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a23e443e175d91b66cb4e50fa87bbf0fa", null ],
     [ "apply_action", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a4fbd75b68c4dfa8e9320befd546f406a", null ],
     [ "apply_action_uninitialized", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a51acd154a4769b2fbc35536fc32ca354", null ],
     [ "create_motor_boards", "classblmc__robots_1_1NJointBlmcRobotDriver.html#ae8d7e4d37b3a0ba6966311c9813caec0", null ],
     [ "get_latest_observation", "classblmc__robots_1_1NJointBlmcRobotDriver.html#acfe921e947e9dbe5eb74a7c9fb777dfd", null ],
     [ "get_max_torques", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a923c06860fa6aaddd49541b3a836d177", null ],
     [ "get_measured_index_angles", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a5c07ab80770b80db37e8471ec3b77685", null ],
-    [ "home_on_index_after_negative_end_stop", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a56f4a67a3ae5ff481eebd969d1e6374c", null ],
+    [ "home_on_index_after_negative_end_stop", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a9f48e6881584404fb24d7d770dfe6062", null ],
     [ "initialize", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a41b2ff96e0a687b0e1ae06ce1502d4db", null ],
     [ "move_to_position", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a1defedb3825ccac7cd8511d209bcae61", null ],
     [ "pause_motors", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a581bdda9cafb5966425988bc6ca5821f", null ],
@@ -24,5 +25,6 @@ var classblmc__robots_1_1NJointBlmcRobotDriver =
     [ "is_initialized_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#abda748741eda4ad890d6e55b09b173d4", null ],
     [ "joint_modules_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a350c204742b25ae2808670b1b56099b8", null ],
     [ "max_torque_Nm_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a4c4b68c6ce49317b2bc15e20c136c2d5", null ],
-    [ "motor_boards_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a68e9cafdfc02da872dbc86c2fd162408", null ]
+    [ "motor_boards_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a68e9cafdfc02da872dbc86c2fd162408", null ],
+    [ "motor_parameters_", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a035472dd47cf790d38b49d50fe51ba61", null ]
 ];

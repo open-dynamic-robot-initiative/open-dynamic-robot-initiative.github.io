@@ -9,6 +9,5 @@ var structrobot__interfaces_1_1NJointRobotTypes =
     [ "Frontend", "structrobot__interfaces_1_1NJointRobotTypes.html#acfa2fab5ec37d832d80c9147e28903ec", null ],
     [ "FrontendPtr", "structrobot__interfaces_1_1NJointRobotTypes.html#ab97eb0bbf6e63868dd1c215249742b04", null ],
     [ "Logger", "structrobot__interfaces_1_1NJointRobotTypes.html#a6a386173868bff7af749a97967f89044", null ],
-    [ "Status", "structrobot__interfaces_1_1NJointRobotTypes.html#a1c8c77cdee8351da515f8c487fb538ff", null ],
     [ "Vector", "structrobot__interfaces_1_1NJointRobotTypes.html#a2c8ab754133625e175456e0f81753eb3", null ]
 ];

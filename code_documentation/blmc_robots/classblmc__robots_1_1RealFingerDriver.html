@@ -47,7 +47,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -126,10 +125,11 @@ Collaboration diagram for blmc_robots::RealFingerDriver:</div>
 <div class="dyncontent">
 <div class="center"><img src="classblmc__robots_1_1RealFingerDriver__coll__graph.png" border="0" usemap="#blmc__robots_1_1RealFingerDriver_coll__map" alt="Collaboration graph"/></div>
 <map name="blmc__robots_1_1RealFingerDriver_coll__map" id="blmc__robots_1_1RealFingerDriver_coll__map">
-<area shape="rect" id="node2" href="classblmc__robots_1_1NJointBlmcRobotDriver.html" title="blmc_robots::NJointBlmcRobot\lDriver\&lt; 3, 2 \&gt;" alt="" coords="739,100,943,141"/>
+<area shape="rect" id="node2" href="classblmc__robots_1_1NJointBlmcRobotDriver.html" title="blmc_robots::NJointBlmcRobot\lDriver\&lt; 3, 2 \&gt;" alt="" coords="764,129,968,171"/>
 <area shape="rect" id="node4" href="classblmc__robots_1_1BlmcJointModules.html" title="blmc_robots::BlmcJointModules\l\&lt; N_JOINTS \&gt;" alt="" coords="335,100,543,141"/>
 <area shape="rect" id="node5" href="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html" title="Configuration of the robot that can be changed by the user. " alt="" coords="335,165,543,221"/>
 <area shape="rect" id="node6" href="structblmc__robots_1_1CalibrationParameters.html" title="Parameters for the joint calibration (homing and go to initial pose). " alt="" coords="5,172,168,213"/>
+<area shape="rect" id="node7" href="structblmc__robots_1_1MotorParameters.html" title="Parameters related to the motor. " alt="" coords="339,245,540,271"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -193,15 +193,18 @@ Action&#160;</td><td class="memItemRight" valign="bottom"><b>apply_action_uninit
 <tr class="memitem:a1dc679a59e08fdd97d4bb92f41178445 inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dc679a59e08fdd97d4bb92f41178445"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>shutdown</b> () override</td></tr>
 <tr class="separator:a1dc679a59e08fdd97d4bb92f41178445 inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56f4a67a3ae5ff481eebd969d1e6374c inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a56f4a67a3ae5ff481eebd969d1e6374c">home_on_index_after_negative_end_stop</a> (double torque_ratio, Vector home_offset_rad=Vector::Zero())</td></tr>
-<tr class="memdesc:a56f4a67a3ae5ff481eebd969d1e6374c inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Homing on negative end stop and encoder index.  <a href="#a56f4a67a3ae5ff481eebd969d1e6374c">More...</a><br /></td></tr>
-<tr class="separator:a56f4a67a3ae5ff481eebd969d1e6374c inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f48e6881584404fb24d7d770dfe6062 inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a9f48e6881584404fb24d7d770dfe6062">home_on_index_after_negative_end_stop</a> (double endstop_search_torque_Nm, Vector home_offset_rad=Vector::Zero())</td></tr>
+<tr class="memdesc:a9f48e6881584404fb24d7d770dfe6062 inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Homing on negative end stop and encoder index.  <a href="#a9f48e6881584404fb24d7d770dfe6062">More...</a><br /></td></tr>
+<tr class="separator:a9f48e6881584404fb24d7d770dfe6062 inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1defedb3825ccac7cd8511d209bcae61 inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a1defedb3825ccac7cd8511d209bcae61">move_to_position</a> (const Vector &amp;goal_pos, const double tolerance, const uint32_t timeout_cycles)</td></tr>
 <tr class="memdesc:a1defedb3825ccac7cd8511d209bcae61 inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move to given goal position using PD control.  <a href="#a1defedb3825ccac7cd8511d209bcae61">More...</a><br /></td></tr>
 <tr class="separator:a1defedb3825ccac7cd8511d209bcae61 inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41b2ff96e0a687b0e1ae06ce1502d4db inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a41b2ff96e0a687b0e1ae06ce1502d4db">initialize</a> () override</td></tr>
 <tr class="memdesc:a41b2ff96e0a687b0e1ae06ce1502d4db inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find home position of all joints and move to start position.  <a href="#a41b2ff96e0a687b0e1ae06ce1502d4db">More...</a><br /></td></tr>
 <tr class="separator:a41b2ff96e0a687b0e1ae06ce1502d4db inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e443e175d91b66cb4e50fa87bbf0fa inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a23e443e175d91b66cb4e50fa87bbf0fa">_initialize</a> ()</td></tr>
+<tr class="memdesc:a23e443e175d91b66cb4e50fa87bbf0fa inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual initialization that is called in a real-time thread in <a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a41b2ff96e0a687b0e1ae06ce1502d4db" title="Find home position of all joints and move to start position. ">initialize()</a>.  <a href="#a23e443e175d91b66cb4e50fa87bbf0fa">More...</a><br /></td></tr>
+<tr class="separator:a23e443e175d91b66cb4e50fa87bbf0fa inherit pro_methods_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html">blmc_robots::NJointBlmcRobotDriver&lt; 3, 2 &gt;</a></td></tr>
 <tr class="memitem:a350c204742b25ae2808670b1b56099b8 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a350c204742b25ae2808670b1b56099b8"></a>
 <a class="el" href="classblmc__robots_1_1BlmcJointModules.html">BlmcJointModules</a>&lt; N_JOINTS &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>joint_modules_</b></td></tr>
@@ -209,8 +212,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>shutdown</b> () overr
 <tr class="memitem:a68e9cafdfc02da872dbc86c2fd162408 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68e9cafdfc02da872dbc86c2fd162408"></a>
 MotorBoards&#160;</td><td class="memItemRight" valign="bottom"><b>motor_boards_</b></td></tr>
 <tr class="separator:a68e9cafdfc02da872dbc86c2fd162408 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035472dd47cf790d38b49d50fe51ba61 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a035472dd47cf790d38b49d50fe51ba61"></a>
+<a class="el" href="structblmc__robots_1_1MotorParameters.html">MotorParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a035472dd47cf790d38b49d50fe51ba61">motor_parameters_</a></td></tr>
+<tr class="memdesc:a035472dd47cf790d38b49d50fe51ba61 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed motor parameters (assuming all joints use same setup). <br /></td></tr>
+<tr class="separator:a035472dd47cf790d38b49d50fe51ba61 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c4b68c6ce49317b2bc15e20c136c2d5 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c4b68c6ce49317b2bc15e20c136c2d5"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>max_torque_Nm_</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a4c4b68c6ce49317b2bc15e20c136c2d5">max_torque_Nm_</a></td></tr>
+<tr class="memdesc:a4c4b68c6ce49317b2bc15e20c136c2d5 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum torque allowed on each joint. <br /></td></tr>
 <tr class="separator:a4c4b68c6ce49317b2bc15e20c136c2d5 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a704ad05a652572289b74525e18680c11 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memItemLeft" align="right" valign="top">Config&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a704ad05a652572289b74525e18680c11">config_</a></td></tr>
 <tr class="memdesc:a704ad05a652572289b74525e18680c11 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined configuration of the driver.  <a href="#a704ad05a652572289b74525e18680c11">More...</a><br /></td></tr>
@@ -220,7 +228,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_initialized_</b></
 <tr class="separator:abda748741eda4ad890d6e55b09b173d4 inherit pro_attribs_classblmc__robots_1_1NJointBlmcRobotDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/workspace/software/workspace/src/catkin/robots/blmc_robots/include/blmc_robots/<a class="el" href="real__finger__driver_8hpp_source.html">real_finger_driver.hpp</a></li>
+<li>include/blmc_robots/<a class="el" href="real__finger__driver_8hpp_source.html">real_finger_driver.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

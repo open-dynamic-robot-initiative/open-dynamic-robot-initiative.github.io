@@ -1,17 +1,23 @@
 var hierarchy =
 [
+    [ "Action", "classAction.html", null ],
     [ "robot_interfaces::Loggable", "classrobot__interfaces_1_1Loggable.html", [
       [ "robot_interfaces::NJointRobotTypes< N >::Action", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html", null ],
       [ "robot_interfaces::NJointRobotTypes< N >::Observation", "structrobot__interfaces_1_1NJointRobotTypes_1_1Observation.html", null ],
-      [ "robot_interfaces::RobotBackend< Action, Observation >::Status", "structrobot__interfaces_1_1RobotBackend_1_1Status.html", null ]
+      [ "robot_interfaces::Status", "structrobot__interfaces_1_1Status.html", null ]
     ] ],
     [ "robot_interfaces::NJointRobotTypes< N >", "structrobot__interfaces_1_1NJointRobotTypes.html", null ],
     [ "robot_interfaces::NJointRobotTypes< 3 >", "structrobot__interfaces_1_1NJointRobotTypes.html", [
       [ "robot_interfaces::FingerTypes", "structrobot__interfaces_1_1FingerTypes.html", null ]
     ] ],
+    [ "robot_interfaces::NJointRobotTypes< 9 >", "structrobot__interfaces_1_1NJointRobotTypes.html", [
+      [ "robot_interfaces::TriFingerTypes", "structrobot__interfaces_1_1TriFingerTypes.html", null ]
+    ] ],
+    [ "Observation", "classObservation.html", null ],
     [ "robot_interfaces::RobotBackend< Action, Observation >", "classrobot__interfaces_1_1RobotBackend.html", null ],
     [ "robot_interfaces::RobotData< Action, Observation, Status >", "classrobot__interfaces_1_1RobotData.html", null ],
     [ "robot_interfaces::RobotDriver< Action, Observation >", "classrobot__interfaces_1_1RobotDriver.html", [
+      [ "Driver", "classDriver.html", null ],
       [ "robot_interfaces::MonitoredRobotDriver< Action, Observation >", "classrobot__interfaces_1_1MonitoredRobotDriver.html", null ]
     ] ],
     [ "robot_interfaces::RobotFrontend< Action, Observation >", "classrobot__interfaces_1_1RobotFrontend.html", null ],

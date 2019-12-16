@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['init_5facc_5f',['init_acc_',['../classblmc__robots_1_1TimePolynome.html#a9ecbcd9581dde19d9a86cd833d64349c',1,'blmc_robots::TimePolynome']]],
-  ['init_5fhoming',['init_homing',['../classblmc__robots_1_1BlmcJointModule.html#aa534604b5ead6a3eee5c47a9454f6834',1,'blmc_robots::BlmcJointModule']]],
-  ['init_5fpose_5f',['init_pose_',['../classblmc__robots_1_1TimePolynome.html#aaf83437483314782e67b4e6e23d8a222',1,'blmc_robots::TimePolynome']]],
-  ['init_5fspeed_5f',['init_speed_',['../classblmc__robots_1_1TimePolynome.html#a8a1387a89013f8d959e2eaaf4fb7048e',1,'blmc_robots::TimePolynome']]],
-  ['initial_5fposition_5frad',['initial_position_rad',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a797ec8a753d4daf0f2df89ebaa313a13',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
-  ['initialize',['initialize',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a41b2ff96e0a687b0e1ae06ce1502d4db',1,'blmc_robots::NJointBlmcRobotDriver::initialize()'],['../classblmc__robots_1_1SingleLeg.html#a28891a4273cdcabc67bfd04dae75e8db',1,'blmc_robots::SingleLeg::initialize()'],['../classblmc__robots_1_1SingleMotor.html#a2c547957aec36d6cbd02ead4882558d4',1,'blmc_robots::SingleMotor::initialize()'],['../classblmc__robots_1_1Solo.html#a2b8028f2fc2f1bb28f889d121970fbec',1,'blmc_robots::Solo::initialize()'],['../classblmc__robots_1_1Stuggihop.html#a2a272c1cb428a2a7250b23d7ca40c894',1,'blmc_robots::Stuggihop::initialize()'],['../classblmc__robots_1_1TestBench8Motors.html#aa8981496d1193752de3017a3eebb87dc',1,'blmc_robots::TestBench8Motors::initialize()'],['../classblmc__robots_1_1Teststand.html#aa41ad951a8259fd15e6309e850a6084a',1,'blmc_robots::Teststand::initialize()']]]
+  ['hardware',['Hardware',['../structHardware.html',1,'']]],
+  ['has_5fendstop',['has_endstop',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a8cbf3c740b0cae7afb7170d51e04b60d',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
+  ['has_5fendstop_5f',['has_endstop_',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a4da9d51841e9b2995e597ae52c460586',1,'blmc_robots::NJointBlmcRobotDriver']]],
+  ['heightsensor_5fptr',['HeightSensor_ptr',['../common__header_8hpp.html#a921d3f5a8878524375bf7e740f2fb788',1,'blmc_robots']]],
+  ['home_5foffset_5frad',['home_offset_rad',['../structblmc__robots_1_1HomingState.html#ad8ffa51d7885e6e83dd4b32354184175',1,'blmc_robots::HomingState::home_offset_rad()'],['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a67b22638d86285d94021e9d1c0c1b6d7',1,'blmc_robots::NJointBlmcRobotDriver::Config::home_offset_rad()']]],
+  ['home_5fon_5findex_5fafter_5fnegative_5fend_5fstop',['home_on_index_after_negative_end_stop',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a9f48e6881584404fb24d7d770dfe6062',1,'blmc_robots::NJointBlmcRobotDriver']]],
+  ['homingreturncode',['HomingReturnCode',['../blmc__joint__module_8hpp.html#aa1075809042ff261e4b0a20d161448b6',1,'blmc_robots']]],
+  ['homingstate',['HomingState',['../structblmc__robots_1_1HomingState.html',1,'blmc_robots']]]
 ];

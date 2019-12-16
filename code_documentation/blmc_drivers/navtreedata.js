@@ -2,7 +2,7 @@ var NAVTREE =
 [
   [ "blmc_drivers", "index.html", [
     [ "This is the documentation of the blmc_drivers package.", "index.html", null ],
-    [ "Brushless Motor Control Real-Time CAN API", "md__workspace_software_workspace_src_catkin_hardware_blmc_drivers_README.html", null ],
+    [ "Brushless Motor Control Real-Time CAN API", "md_README.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
@@ -40,7 +40,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "analog__sensor_8hpp.html",
-"functions_eval.html"
+"globals.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

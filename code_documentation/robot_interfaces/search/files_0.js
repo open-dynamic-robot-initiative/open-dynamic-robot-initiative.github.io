@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['py_5ffinger_5ftypes_2ecpp',['py_finger_types.cpp',['../py__finger__types_8cpp.html',1,'']]],
-  ['py_5fone_5fjoint_5ftypes_2ecpp',['py_one_joint_types.cpp',['../py__one__joint__types_8cpp.html',1,'']]],
-  ['py_5ftwo_5fjoint_5ftypes_2ecpp',['py_two_joint_types.cpp',['../py__two__joint__types_8cpp.html',1,'']]],
-  ['pybind_5fhelper_2ehpp',['pybind_helper.hpp',['../pybind__helper_8hpp.html',1,'']]]
+  ['demo_2ecpp',['demo.cpp',['../demo_8cpp.html',1,'']]]
 ];

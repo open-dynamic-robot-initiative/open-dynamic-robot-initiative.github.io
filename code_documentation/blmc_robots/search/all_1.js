@@ -1,15 +1,4 @@
 var searchData=
 [
-  ['blmc_5fjoint_5fmodule_2ecpp',['blmc_joint_module.cpp',['../blmc__joint__module_8cpp.html',1,'']]],
-  ['blmc_5fjoint_5fmodule_2ehpp',['blmc_joint_module.hpp',['../blmc__joint__module_8hpp.html',1,'']]],
-  ['blmcjointmodule',['BlmcJointModule',['../classblmc__robots_1_1BlmcJointModule.html#a09a0b8815e6c447e3ee6632ade940e0b',1,'blmc_robots::BlmcJointModule']]],
-  ['blmcjointmodule',['BlmcJointModule',['../classblmc__robots_1_1BlmcJointModule.html',1,'blmc_robots']]],
-  ['blmcjointmodule_5fptr',['BlmcJointModule_ptr',['../blmc__joint__module_8hpp.html#aa5066dce11e2e3ae56b844676b132a09',1,'blmc_robots']]],
-  ['blmcjointmodules',['BlmcJointModules',['../classblmc__robots_1_1BlmcJointModules.html',1,'blmc_robots']]],
-  ['blmcjointmodules',['BlmcJointModules',['../classblmc__robots_1_1BlmcJointModules.html#a74910d81a89f9b1713ce8fecc69191fe',1,'blmc_robots::BlmcJointModules::BlmcJointModules(const std::array&lt; std::shared_ptr&lt; blmc_drivers::MotorInterface &gt;, COUNT &gt; &amp;motors, const Vector &amp;motor_constants, const Vector &amp;gear_ratios, const Vector &amp;zero_angles, const Vector &amp;max_currents)'],['../classblmc__robots_1_1BlmcJointModules.html#af4c700a8d346ceaebece38928b5e7ca6',1,'blmc_robots::BlmcJointModules::BlmcJointModules()']]],
-  ['blmcjointmodules_3c_202_20_3e',['BlmcJointModules&lt; 2 &gt;',['../classblmc__robots_1_1BlmcJointModules.html',1,'blmc_robots']]],
-  ['blmcjointmodules_3c_208_20_3e',['BlmcJointModules&lt; 8 &gt;',['../classblmc__robots_1_1BlmcJointModules.html',1,'blmc_robots']]],
-  ['blmcjointmodules_3c_20n_5fjoints_20_3e',['BlmcJointModules&lt; N_JOINTS &gt;',['../classblmc__robots_1_1BlmcJointModules.html',1,'blmc_robots']]],
-  ['logger',['logger',['../namespaceblmc__robots_1_1logger.html',1,'blmc_robots']]],
-  ['blmc_2drobots',['BLMC-Robots',['../md__workspace_software_workspace_src_catkin_robots_blmc_robots_readme.html',1,'']]]
+  ['acquire_5fsensors',['acquire_sensors',['../classblmc__robots_1_1SingleLeg.html#a093a696ad34f00e92adcc4eb282a37d9',1,'blmc_robots::SingleLeg::acquire_sensors()'],['../classblmc__robots_1_1SingleMotor.html#adbc3fb18b62ee085ff2d4d6bb2f107a4',1,'blmc_robots::SingleMotor::acquire_sensors()'],['../classblmc__robots_1_1Solo.html#a70203f77df706784f80988076748e686',1,'blmc_robots::Solo::acquire_sensors()'],['../classblmc__robots_1_1Stuggihop.html#a594cb654f63c3ff8fb7718ce7d393d81',1,'blmc_robots::Stuggihop::acquire_sensors()'],['../classblmc__robots_1_1TestBench8Motors.html#a2792f7d4866c396ddfb88730a1644988',1,'blmc_robots::TestBench8Motors::acquire_sensors()'],['../classblmc__robots_1_1Teststand.html#a4203e25148ab5b4ddfef3b46647213c6',1,'blmc_robots::Teststand::acquire_sensors()']]]
 ];

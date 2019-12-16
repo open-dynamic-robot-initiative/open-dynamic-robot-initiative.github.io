@@ -49,6 +49,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -113,7 +114,7 @@ $(document).ready(function(){initNavTree('classrobot__interfaces_1_1RobotDriver.
 </div><!--header-->
 <div class="contents">
 
-<p>Driver for interfacing the actual robot hardware or simulation.  
+<p><a class="el" href="classDriver.html">Driver</a> for interfacing the actual robot hardware or simulation.  
  <a href="classrobot__interfaces_1_1RobotDriver.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="robot__driver_8hpp_source.html">robot_driver.hpp</a>&gt;</code></p>
@@ -122,7 +123,8 @@ Inheritance diagram for robot_interfaces::RobotDriver&lt; Action, Observation &g
 <div class="dyncontent">
 <div class="center"><img src="classrobot__interfaces_1_1RobotDriver__inherit__graph.png" border="0" usemap="#robot__interfaces_1_1RobotDriver_3_01Action_00_01Observation_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="robot__interfaces_1_1RobotDriver_3_01Action_00_01Observation_01_4_inherit__map" id="robot__interfaces_1_1RobotDriver_3_01Action_00_01Observation_01_4_inherit__map">
-<area shape="rect" id="node2" href="classrobot__interfaces_1_1MonitoredRobotDriver.html" title="Wrapper for RobotDriver that monitors timing. " alt="" coords="5,95,236,136"/>
+<area shape="rect" id="node2" href="classDriver.html" title="Driver\&lt; Action, Observation \&gt;" alt="" coords="264,5,460,32"/>
+<area shape="rect" id="node3" href="classrobot__interfaces_1_1MonitoredRobotDriver.html" title="Wrapper for RobotDriver that monitors timing. " alt="" coords="247,57,477,98"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -131,10 +133,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a251cdab16035ce1cff9ee4d2465beb6c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a251cdab16035ce1cff9ee4d2465beb6c">initialize</a> ()=0</td></tr>
 <tr class="memdesc:a251cdab16035ce1cff9ee4d2465beb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the robot.  <a href="#a251cdab16035ce1cff9ee4d2465beb6c">More...</a><br /></td></tr>
 <tr class="separator:a251cdab16035ce1cff9ee4d2465beb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21e8e2ef50bcf6174c8e76c48975a232"><td class="memItemLeft" align="right" valign="top">virtual Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a21e8e2ef50bcf6174c8e76c48975a232">apply_action</a> (const Action &amp;desired_action)=0</td></tr>
+<tr class="memitem:a21e8e2ef50bcf6174c8e76c48975a232"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classAction.html">Action</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a21e8e2ef50bcf6174c8e76c48975a232">apply_action</a> (const <a class="el" href="classAction.html">Action</a> &amp;desired_action)=0</td></tr>
 <tr class="memdesc:a21e8e2ef50bcf6174c8e76c48975a232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply action immediately and block until it is executed.  <a href="#a21e8e2ef50bcf6174c8e76c48975a232">More...</a><br /></td></tr>
 <tr class="separator:a21e8e2ef50bcf6174c8e76c48975a232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df4bf715f56b469f0d6c052c4a68a21"><td class="memItemLeft" align="right" valign="top">virtual Observation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a0df4bf715f56b469f0d6c052c4a68a21">get_latest_observation</a> ()=0</td></tr>
+<tr class="memitem:a0df4bf715f56b469f0d6c052c4a68a21"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classObservation.html">Observation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a0df4bf715f56b469f0d6c052c4a68a21">get_latest_observation</a> ()=0</td></tr>
 <tr class="memdesc:a0df4bf715f56b469f0d6c052c4a68a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the latest observation immediately.  <a href="#a0df4bf715f56b469f0d6c052c4a68a21">More...</a><br /></td></tr>
 <tr class="separator:a0df4bf715f56b469f0d6c052c4a68a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48920e112a572f401194e9d15ed170f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48920e112a572f401194e9d15ed170f6"></a>
@@ -146,16 +148,17 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div class="textblock"><h3>template&lt;typename Action, typename Observation&gt;<br />
 class robot_interfaces::RobotDriver&lt; Action, Observation &gt;</h3>
 
-<p>Driver for interfacing the actual robot hardware or simulation. </p>
+<p><a class="el" href="classDriver.html">Driver</a> for interfacing the actual robot hardware or simulation. </p>
 <p>Interface to the robot used by the subsequent classes. Any robot (be it real or simulation) has to derive from this class and implement the functions <a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a21e8e2ef50bcf6174c8e76c48975a232" title="Apply action immediately and block until it is executed. ">apply_action()</a>, <a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a0df4bf715f56b469f0d6c052c4a68a21" title="Return the latest observation immediately. ">get_latest_observation()</a> and <a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a48920e112a572f401194e9d15ed170f6" title="Shut down the robot safely. ">shutdown()</a>. This Base class provides some timing logic around those three functions. It makes sure that after the first call of <a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a21e8e2ef50bcf6174c8e76c48975a232" title="Apply action immediately and block until it is executed. ">apply_action()</a>, it is always called again after some specified time, otherwise the <a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a48920e112a572f401194e9d15ed170f6" title="Shut down the robot safely. ">shutdown()</a> method will be called. This Base class also makes sure that the <a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a21e8e2ef50bcf6174c8e76c48975a232" title="Apply action immediately and block until it is executed. ">apply_action()</a> function itself does not take more time than expected.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Action</td><td></td></tr>
-    <tr><td class="paramname">Observation</td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="classAction.html">Action</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="classObservation.html">Observation</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="demo_8cpp-example.html#_a3">demo.cpp</a>.</dd>
+</dl></div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a21e8e2ef50bcf6174c8e76c48975a232"></a>
 <div class="memitem">
 <div class="memproto">
@@ -166,9 +169,9 @@ template&lt;typename Action , typename Observation &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Action <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">robot_interfaces::RobotDriver</a>&lt; Action, Observation &gt;::apply_action </td>
+          <td class="memname">virtual <a class="el" href="classAction.html">Action</a> <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">robot_interfaces::RobotDriver</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;::apply_action </td>
           <td>(</td>
-          <td class="paramtype">const Action &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classAction.html">Action</a> &amp;&#160;</td>
           <td class="paramname"><em>desired_action</em></td><td>)</td>
           <td></td>
         </tr>
@@ -190,7 +193,7 @@ template&lt;typename Action , typename Observation &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The action that was actually applied (since due to safety reasons it might not be possible to apply the desired action). </dd></dl>
 
-<p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#a745e701e6fd91be74be5022752ba3ef9">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#a745e701e6fd91be74be5022752ba3ef9">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>, and <a class="el" href="classDriver.html#a0f8d51bef151ccc38a0cb7b226048e28">Driver</a>.</p>
 
 </div>
 </div>
@@ -204,7 +207,7 @@ template&lt;typename Action , typename Observation &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Observation <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">robot_interfaces::RobotDriver</a>&lt; Action, Observation &gt;::get_latest_observation </td>
+          <td class="memname">virtual <a class="el" href="classObservation.html">Observation</a> <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">robot_interfaces::RobotDriver</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;::get_latest_observation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -218,9 +221,9 @@ template&lt;typename Action , typename Observation &gt; </div>
 </div><div class="memdoc">
 
 <p>Return the latest observation immediately. </p>
-<dl class="section return"><dt>Returns</dt><dd>Observation </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classObservation.html">Observation</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#a5fcda4be4d96bb803bf87d1b1588079e">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#a5fcda4be4d96bb803bf87d1b1588079e">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>, and <a class="el" href="classDriver.html#afb09663997bffc5c694fb5aa8aca243a">Driver</a>.</p>
 
 </div>
 </div>
@@ -234,7 +237,7 @@ template&lt;typename Action , typename Observation &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">robot_interfaces::RobotDriver</a>&lt; Action, Observation &gt;::initialize </td>
+          <td class="memname">virtual void <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">robot_interfaces::RobotDriver</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;::initialize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -250,12 +253,12 @@ template&lt;typename Action , typename Observation &gt; </div>
 <p>Initialize the robot. </p>
 <p>Any initialization procedures that need to be done before sending actions to the robot should be done in this method (e.g. homing to find the absolute position). </p>
 
-<p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#a9e1dcc67c242a108b23dfd2bdd8f12a0">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#a9e1dcc67c242a108b23dfd2bdd8f12a0">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>, and <a class="el" href="classDriver.html#a81c0beb523fad80cd40cfcc6a6e3de2d">Driver</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/workspace/software/workspace/src/catkin/robots/robot_interfaces/include/robot_interfaces/<a class="el" href="robot__driver_8hpp_source.html">robot_driver.hpp</a></li>
+<li>include/robot_interfaces/<a class="el" href="robot__driver_8hpp_source.html">robot_driver.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

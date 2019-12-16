@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['fakefingerdriver',['FakeFingerDriver',['../classblmc__robots_1_1FakeFingerDriver.html',1,'blmc_robots']]],
-  ['final_5facc_5f',['final_acc_',['../classblmc__robots_1_1TimePolynome.html#acdd91502f4a2e71f70539d1087347067',1,'blmc_robots::TimePolynome']]],
-  ['final_5fpose_5f',['final_pose_',['../classblmc__robots_1_1TimePolynome.html#a427d2e970b5944d0f4cd6170aca99cc5',1,'blmc_robots::TimePolynome']]],
-  ['final_5fspeed_5f',['final_speed_',['../classblmc__robots_1_1TimePolynome.html#ac20c24571ce32d08834bc4d0530ed5e3',1,'blmc_robots::TimePolynome']]],
-  ['final_5ftime_5f',['final_time_',['../classblmc__robots_1_1TimePolynome.html#a08a973ac1a92ce4ae8b6053bea0b450e',1,'blmc_robots::TimePolynome']]]
+  ['endstop_5fsearch_5ftorque_5fnm',['endstop_search_torque_Nm',['../structblmc__robots_1_1CalibrationParameters.html#ab1858220b9d3b2c9b48a34ae08b1342a',1,'blmc_robots::CalibrationParameters']]],
+  ['execute_5fhoming',['execute_homing',['../classblmc__robots_1_1BlmcJointModules.html#ab6a642e6939b8587189502e4b179fdcf',1,'blmc_robots::BlmcJointModules']]],
+  ['execute_5fposition_5fcontroller',['execute_position_controller',['../classblmc__robots_1_1BlmcJointModule.html#a3ee1d234e2e86d81d3acc687c4c2430e',1,'blmc_robots::BlmcJointModule']]]
 ];

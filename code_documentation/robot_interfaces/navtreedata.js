@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "robot_interfaces", "index.html", [
-    [ "Robot interfaces", "md__workspace_software_workspace_src_catkin_robots_robot_interfaces_readme.html", null ],
+    [ "Robot interfaces", "md_readme.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -14,7 +14,8 @@ var NAVTREE =
     ] ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ]
-    ] ]
+    ] ],
+    [ "Examples", "examples.html", "examples" ]
   ] ]
 ];
 

@@ -9,7 +9,6 @@ var hierarchy =
     [ "blmc_robots::NJointBlmcRobotDriver< N_JOINTS, N_MOTOR_BOARDS >::Config", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html", null ],
     [ "Hardware", "structHardware.html", null ],
     [ "blmc_robots::HomingState", "structblmc__robots_1_1HomingState.html", null ],
-    [ "blmc_robots.logger.Logger", "classblmc__robots_1_1logger_1_1Logger.html", null ],
     [ "blmc_robots::MotorParameters", "structblmc__robots_1_1MotorParameters.html", null ],
     [ "blmc_robots::Polynome< ORDER >", "classblmc__robots_1_1Polynome.html", [
       [ "blmc_robots::TimePolynome< ORDER >", "classblmc__robots_1_1TimePolynome.html", null ]
@@ -26,6 +25,9 @@ var hierarchy =
       ] ],
       [ "blmc_robots::NJointBlmcRobotDriver< 3, 2 >", "classblmc__robots_1_1NJointBlmcRobotDriver.html", [
         [ "blmc_robots::RealFingerDriver", "classblmc__robots_1_1RealFingerDriver.html", null ]
+      ] ],
+      [ "blmc_robots::NJointBlmcRobotDriver< 9, 6 >", "classblmc__robots_1_1NJointBlmcRobotDriver.html", [
+        [ "blmc_robots::TriFingerDriver", "classblmc__robots_1_1TriFingerDriver.html", null ]
       ] ]
     ] ],
     [ "blmc_robots::SingleLeg", "classblmc__robots_1_1SingleLeg.html", null ],

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['demo_5fposition_5fcommands',['demo_position_commands',['../namespacedemo__real__finger.html#a7c97bd5dce65457404bf8dd9bde54990',1,'demo_real_finger']]],
-  ['demo_5ftorque_5fcommands',['demo_torque_commands',['../namespacedemo__real__finger.html#a95898142b48cc7a4d5ba77c40d75e44d',1,'demo_real_finger']]],
-  ['disable_5fcan_5frecv_5ftimeout',['disable_can_recv_timeout',['../classblmc__robots_1_1SingleLeg.html#a39c69c6578b42df3d556e8a23c3e1861',1,'blmc_robots::SingleLeg']]]
+  ['calibrate',['calibrate',['../classblmc__robots_1_1BlmcJointModule.html#a17a1da041dae31e9a16f955722c36d6c',1,'blmc_robots::BlmcJointModule::calibrate()'],['../classblmc__robots_1_1Solo.html#a3b473fe28a1802aef17eab07d3198216',1,'blmc_robots::Solo::calibrate()'],['../classblmc__robots_1_1Teststand.html#ad4660570e3e1b77717004b3ce8056faf',1,'blmc_robots::Teststand::calibrate()']]],
+  ['compute',['compute',['../classblmc__robots_1_1Polynome.html#ae102191e0f730744e822c8e7599008d6',1,'blmc_robots::Polynome::compute()'],['../classblmc__robots_1_1TimePolynome.html#a644871336a78055c4e27e9b52e75ad8c',1,'blmc_robots::TimePolynome::compute()']]],
+  ['compute_5fderivative',['compute_derivative',['../classblmc__robots_1_1Polynome.html#a62183ec0d1bc22c224c14a58dd10e3e9',1,'blmc_robots::Polynome::compute_derivative()'],['../classblmc__robots_1_1TimePolynome.html#a089cd5e46da974828cfb1b042119c163',1,'blmc_robots::TimePolynome::compute_derivative()']]],
+  ['compute_5fsec_5fderivative',['compute_sec_derivative',['../classblmc__robots_1_1Polynome.html#a6a20495bd6c6105b5109244b29b5d069',1,'blmc_robots::Polynome::compute_sec_derivative()'],['../classblmc__robots_1_1TimePolynome.html#a3402f5a2e56b7ef46d93342f8c208bd1',1,'blmc_robots::TimePolynome::compute_sec_derivative()']]],
+  ['create_5fmotor_5fboards',['create_motor_boards',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#ae8d7e4d37b3a0ba6966311c9813caec0',1,'blmc_robots::NJointBlmcRobotDriver']]]
 ];

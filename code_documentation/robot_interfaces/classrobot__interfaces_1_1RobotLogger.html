@@ -49,6 +49,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -123,7 +124,7 @@ $(document).ready(function(){initNavTree('classrobot__interfaces_1_1RobotLogger.
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5bb2924ccc3fd6baa36e910c56fb94a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bb2924ccc3fd6baa36e910c56fb94a3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RobotLogger</b> (std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotData.html">robot_interfaces::RobotData</a>&lt; Action, Observation, Status &gt;&gt; robot_data, int block_size)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RobotLogger</b> (std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotData.html">robot_interfaces::RobotData</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> &gt;&gt; robot_data, int block_size)</td></tr>
 <tr class="separator:a5bb2924ccc3fd6baa36e910c56fb94a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f6b1298717a09e84a7bdbbb434cfcf9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a3f6b1298717a09e84a7bdbbb434cfcf9">get_header</a> ()</td></tr>
 <tr class="memdesc:a3f6b1298717a09e84a7bdbbb434cfcf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the title of the log file, describing all the information that will be logged in it.  <a href="#a3f6b1298717a09e84a7bdbbb434cfcf9">More...</a><br /></td></tr>
@@ -161,7 +162,7 @@ static void *&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (v
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af25629879ba199d87f6885b245ad84ef"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotData.html">robot_interfaces::RobotData</a>&lt; Action, Observation, Status &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#af25629879ba199d87f6885b245ad84ef">logger_data_</a></td></tr>
+<tr class="memitem:af25629879ba199d87f6885b245ad84ef"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotData.html">robot_interfaces::RobotData</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#af25629879ba199d87f6885b245ad84ef">logger_data_</a></td></tr>
 <tr class="memdesc:af25629879ba199d87f6885b245ad84ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is to verify that the template types of the <a class="el" href="classrobot__interfaces_1_1RobotLogger.html" title="To log data from any robot (real, simulated, fake). ">RobotLogger</a> are based on <a class="el" href="classrobot__interfaces_1_1Loggable.html">Loggable</a>.  <a href="#af25629879ba199d87f6885b245ad84ef">More...</a><br /></td></tr>
 <tr class="separator:af25629879ba199d87f6885b245ad84ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26ed2b1c563efcfb5fd993ba919e4e52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26ed2b1c563efcfb5fd993ba919e4e52"></a>
@@ -185,12 +186,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>output_file_na
 class robot_interfaces::RobotLogger&lt; Action, Observation, Status &gt;</h3>
 
 <p>To log data from <em>any</em> robot (real, simulated, fake). </p>
-<p>The <a class="el" href="classrobot__interfaces_1_1RobotLogger.html" title="To log data from any robot (real, simulated, fake). ">RobotLogger</a> logs the timestamp, the time index, and the values of every Observation, Action, and Status variable. Observation, Action, and Status <em>must</em> derive from <a class="el" href="classrobot__interfaces_1_1Loggable.html">Loggable</a>. Any further data structure can be logged similarly, which derives from <a class="el" href="classrobot__interfaces_1_1Loggable.html">Loggable</a>.</p>
+<p>The <a class="el" href="classrobot__interfaces_1_1RobotLogger.html" title="To log data from any robot (real, simulated, fake). ">RobotLogger</a> logs the timestamp, the time index, and the values of every <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="classAction.html">Action</a>, and <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> variable. <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="classAction.html">Action</a>, and <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> <em>must</em> derive from <a class="el" href="classrobot__interfaces_1_1Loggable.html">Loggable</a>. Any further data structure can be logged similarly, which derives from <a class="el" href="classrobot__interfaces_1_1Loggable.html">Loggable</a>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Action</td><td></td></tr>
-    <tr><td class="paramname">Observation</td><td></td></tr>
-    <tr><td class="paramname">Status</td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="classAction.html">Action</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="classObservation.html">Observation</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="structrobot__interfaces_1_1Status.html">Status</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -205,7 +206,7 @@ template&lt;typename Action , typename Observation , typename Status &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; Action, Observation, Status &gt;::append_field_data_to_file </td>
+          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> &gt;::append_field_data_to_file </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
           <td class="paramname"><em>field_data</em></td><td>)</td>
@@ -239,7 +240,7 @@ template&lt;typename Action , typename Observation , typename Status &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; Action, Observation, Status &gt;::append_name_to_header </td>
+          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> &gt;::append_name_to_header </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>identifier</em>, </td>
@@ -298,7 +299,7 @@ template&lt;typename Action , typename Observation , typename Status &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; Action, Observation, Status &gt;::get_header </td>
+          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> &gt;::get_header </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -326,7 +327,7 @@ template&lt;typename Action , typename Observation , typename Status &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; Action, Observation, Status &gt;::start </td>
+          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> &gt;::start </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -341,6 +342,7 @@ template&lt;typename Action , typename Observation , typename Status &gt; </div>
 </div><div class="memdoc">
 
 <p>Call <a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a7a11c6e434084273dc5fb08f2fd99040" title="Call start() to create the thread for the RobotLogger and start logging! ">start()</a> to create the thread for the <a class="el" href="classrobot__interfaces_1_1RobotLogger.html" title="To log data from any robot (real, simulated, fake). ">RobotLogger</a> and start logging! </p>
+<dl class="section note"><dt>Note</dt><dd>Every time you start the logger with the same file name, it will obviously append newer data to the same file. This shouldn't be a problem. But for different log files, specify different file names while starting the logger.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>The name of the log file. </td></tr>
@@ -360,7 +362,7 @@ template&lt;typename Action , typename Observation , typename Status &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; Action, Observation, Status &gt;::write </td>
+          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> &gt;::write </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -386,18 +388,18 @@ template&lt;typename Action , typename Observation , typename Status &gt; </div>
 template&lt;typename Action , typename Observation , typename Status &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classrobot__interfaces_1_1RobotData.html">robot_interfaces::RobotData</a>&lt;Action, Observation, Status&gt; &gt; <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; Action, Observation, Status &gt;::logger_data_</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classrobot__interfaces_1_1RobotData.html">robot_interfaces::RobotData</a>&lt;<a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a>&gt; &gt; <a class="el" href="classrobot__interfaces_1_1RobotLogger.html">robot_interfaces::RobotLogger</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a>, <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a> &gt;::logger_data_</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>This is to verify that the template types of the <a class="el" href="classrobot__interfaces_1_1RobotLogger.html" title="To log data from any robot (real, simulated, fake). ">RobotLogger</a> are based on <a class="el" href="classrobot__interfaces_1_1Loggable.html">Loggable</a>. </p>
-<p>Currently, the level of generalisability of the logger is that we <em>know</em> the following four timeseries structures exist for <em>any</em> robot whose data is to be logged- applied_action and desired_action (of type Action), observation (of type Observation), and status (of type Status). </p>
+<p>Currently, the level of generalisability of the logger is that we <em>know</em> the following four timeseries structures exist for <em>any</em> robot whose data is to be logged- applied_action and desired_action (of type <a class="el" href="classAction.html">Action</a>), observation (of type <a class="el" href="classObservation.html">Observation</a>), and status (of type <a class="el" href="structrobot__interfaces_1_1Status.html">Status</a>). </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/workspace/software/workspace/src/catkin/robots/robot_interfaces/include/robot_interfaces/<a class="el" href="robot__logger_8hpp_source.html">robot_logger.hpp</a></li>
+<li>include/robot_interfaces/<a class="el" href="robot__logger_8hpp_source.html">robot_logger.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
