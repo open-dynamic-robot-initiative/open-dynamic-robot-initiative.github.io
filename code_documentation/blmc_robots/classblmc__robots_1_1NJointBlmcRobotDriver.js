@@ -12,6 +12,7 @@ var classblmc__robots_1_1NJointBlmcRobotDriver =
     [ "apply_action", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a4fbd75b68c4dfa8e9320befd546f406a", null ],
     [ "apply_action_uninitialized", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a51acd154a4769b2fbc35536fc32ca354", null ],
     [ "create_motor_boards", "classblmc__robots_1_1NJointBlmcRobotDriver.html#ae8d7e4d37b3a0ba6966311c9813caec0", null ],
+    [ "get_error", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a6914754d6bd5bf9e0d2d4cdaa2f140d4", null ],
     [ "get_latest_observation", "classblmc__robots_1_1NJointBlmcRobotDriver.html#acfe921e947e9dbe5eb74a7c9fb777dfd", null ],
     [ "get_max_torques", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a923c06860fa6aaddd49541b3a836d177", null ],
     [ "get_measured_index_angles", "classblmc__robots_1_1NJointBlmcRobotDriver.html#a5c07ab80770b80db37e8471ec3b77685", null ],

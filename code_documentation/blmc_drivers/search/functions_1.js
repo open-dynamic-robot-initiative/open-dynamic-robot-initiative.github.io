@@ -4,5 +4,6 @@ var searchData=
   ['canbusmotorboard',['CanBusMotorBoard',['../classblmc__drivers_1_1CanBusMotorBoard.html#a43674811685fce4dbc3a9996e08454c9',1,'blmc_drivers::CanBusMotorBoard']]],
   ['close_5fcan_5fdevice',['close_can_device',['../namespaceosi.html#a92dc20de3b4933a10f24c98cecf2568b',1,'osi']]],
   ['consttorquecontrol',['ConstTorqueControl',['../classblmc__drivers_1_1ConstTorqueControl.html#a2253fc0273462fa35c21f1424dcc919c',1,'blmc_drivers::ConstTorqueControl']]],
-  ['controller',['Controller',['../classController.html#aceedb7c8fbd0fab8080fd7273d9dc65d',1,'Controller']]]
+  ['controller',['Controller',['../classController.html#aceedb7c8fbd0fab8080fd7273d9dc65d',1,'Controller']]],
+  ['create_5fvector_5fof_5fpointers',['create_vector_of_pointers',['../namespaceblmc__drivers.html#add73ea2a43509013ad00665753f175e1',1,'blmc_drivers']]]
 ];

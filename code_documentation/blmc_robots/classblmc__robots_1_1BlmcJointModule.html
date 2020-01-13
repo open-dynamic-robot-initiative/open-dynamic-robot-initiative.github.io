@@ -627,7 +627,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Perform one step of homing on encoder index. </p>
 <p>Searches for the next encoder index in positive direction and, when found, sets it as home position.</p>
-<p>Only performs one step, so this method needs to be called in a loop.</p>
+<p>Only performs one step, so this method needs to be called in a loop. This method only set the control, one <em>MUST</em> send the control for the motor after calling this method.</p>
 <p>The motor is moved with a position profile until either the encoder index is reached or the search distance limit is exceeded. The position is controlled with a simple PD controller.</p>
 <p>If the encoder index is found, its position is used as home position. The zero position is offset from the home position by adding the "home
 offset" to it (i.e. zero = home pos. + home offset). If the search distance limit is reached before the encoder index occurs, the homing fails.</p>

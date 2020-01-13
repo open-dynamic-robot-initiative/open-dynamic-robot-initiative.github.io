@@ -4,6 +4,7 @@ var annotated_dup =
       [ "FingerTypes", "structrobot__interfaces_1_1FingerTypes.html", null ],
       [ "Loggable", "classrobot__interfaces_1_1Loggable.html", "classrobot__interfaces_1_1Loggable" ],
       [ "MonitoredRobotDriver", "classrobot__interfaces_1_1MonitoredRobotDriver.html", "classrobot__interfaces_1_1MonitoredRobotDriver" ],
+      [ "NJointRobotFunctions", "structrobot__interfaces_1_1NJointRobotFunctions.html", "structrobot__interfaces_1_1NJointRobotFunctions" ],
       [ "NJointRobotTypes", "structrobot__interfaces_1_1NJointRobotTypes.html", "structrobot__interfaces_1_1NJointRobotTypes" ],
       [ "RobotBackend", "classrobot__interfaces_1_1RobotBackend.html", "classrobot__interfaces_1_1RobotBackend" ],
       [ "RobotData", "classrobot__interfaces_1_1RobotData.html", "classrobot__interfaces_1_1RobotData" ],

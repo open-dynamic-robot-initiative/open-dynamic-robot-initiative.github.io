@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "blmc_robots::BlmcJointModule", "classblmc__robots_1_1BlmcJointModule.html", null ],
     [ "blmc_robots::BlmcJointModules< COUNT >", "classblmc__robots_1_1BlmcJointModules.html", null ],
+    [ "blmc_robots::BlmcJointModules< 12 >", "classblmc__robots_1_1BlmcJointModules.html", null ],
     [ "blmc_robots::BlmcJointModules< 2 >", "classblmc__robots_1_1BlmcJointModules.html", null ],
     [ "blmc_robots::BlmcJointModules< 8 >", "classblmc__robots_1_1BlmcJointModules.html", null ],
     [ "blmc_robots::BlmcJointModules< N_JOINTS >", "classblmc__robots_1_1BlmcJointModules.html", null ],
@@ -34,7 +35,8 @@ var hierarchy =
     [ "blmc_robots::SingleMotor", "classblmc__robots_1_1SingleMotor.html", null ],
     [ "blmc_robots::Slider", "classblmc__robots_1_1Slider.html", null ],
     [ "blmc_robots::Sliders< COUNT >", "classblmc__robots_1_1Sliders.html", null ],
-    [ "blmc_robots::Solo", "classblmc__robots_1_1Solo.html", null ],
+    [ "blmc_robots::Solo12", "classblmc__robots_1_1Solo12.html", null ],
+    [ "blmc_robots::Solo8", "classblmc__robots_1_1Solo8.html", null ],
     [ "blmc_robots::Stuggihop", "classblmc__robots_1_1Stuggihop.html", null ],
     [ "blmc_robots::TestBench8Motors", "classblmc__robots_1_1TestBench8Motors.html", null ],
     [ "blmc_robots::Teststand", "classblmc__robots_1_1Teststand.html", null ],

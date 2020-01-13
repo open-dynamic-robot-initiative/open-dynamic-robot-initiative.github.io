@@ -6,6 +6,7 @@ var hierarchy =
       [ "robot_interfaces::NJointRobotTypes< N >::Observation", "structrobot__interfaces_1_1NJointRobotTypes_1_1Observation.html", null ],
       [ "robot_interfaces::Status", "structrobot__interfaces_1_1Status.html", null ]
     ] ],
+    [ "robot_interfaces::NJointRobotFunctions< N_JOINTS >", "structrobot__interfaces_1_1NJointRobotFunctions.html", null ],
     [ "robot_interfaces::NJointRobotTypes< N >", "structrobot__interfaces_1_1NJointRobotTypes.html", null ],
     [ "robot_interfaces::NJointRobotTypes< 3 >", "structrobot__interfaces_1_1NJointRobotTypes.html", [
       [ "robot_interfaces::FingerTypes", "structrobot__interfaces_1_1FingerTypes.html", null ]

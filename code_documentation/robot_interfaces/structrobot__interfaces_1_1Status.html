@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('structrobot__interfaces_1_1Status.html
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structrobot__interfaces_1_1Status-members.html">List of all members</a>  </div>
@@ -114,6 +115,11 @@ $(document).ready(function(){initNavTree('structrobot__interfaces_1_1Status.html
 <div class="title">robot_interfaces::Status Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="structrobot__interfaces_1_1Status.html" title="Status information from the backend. ">Status</a> information from the backend.  
+ <a href="structrobot__interfaces_1_1Status.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="status_8hpp_source.html">status.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for robot_interfaces::Status:</div>
 <div class="dyncontent">
@@ -131,6 +137,14 @@ Collaboration diagram for robot_interfaces::Status:</div>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a88f1cb8387648815ca75754985bdb3b6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88f1cb8387648815ca75754985bdb3b6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>ErrorStatus</b> { <b>NO_ERROR</b> = 0, 
+<b>DRIVER_ERROR</b>, 
+<b>BACKEND_ERROR</b>
+ }</td></tr>
+<tr class="separator:a88f1cb8387648815ca75754985bdb3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2cd6543deb86d878ba43153c18d2fadb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cd6543deb86d878ba43153c18d2fadb"></a>
@@ -143,12 +157,38 @@ std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRig
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a8ccb682cd2ba81059991f3b0b9ff0c00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ccb682cd2ba81059991f3b0b9ff0c00"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>action_repetitions</b> = 0</td></tr>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrobot__interfaces_1_1Status.html#a8ccb682cd2ba81059991f3b0b9ff0c00">action_repetitions</a> = 0</td></tr>
+<tr class="memdesc:a8ccb682cd2ba81059991f3b0b9ff0c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of times the current action has been repeated because no new action has been provided. <br /></td></tr>
 <tr class="separator:a8ccb682cd2ba81059991f3b0b9ff0c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80ffe66121d425d48386b39984cd4c7b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80ffe66121d425d48386b39984cd4c7b"></a>
+ErrorStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrobot__interfaces_1_1Status.html#a80ffe66121d425d48386b39984cd4c7b">error_status</a> = ErrorStatus::NO_ERROR</td></tr>
+<tr class="memdesc:a80ffe66121d425d48386b39984cd4c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if there is an error and, if yes, in which component. <br /></td></tr>
+<tr class="separator:a80ffe66121d425d48386b39984cd4c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da10fb73cd19f2840c438d321eac744"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrobot__interfaces_1_1Status.html#a7da10fb73cd19f2840c438d321eac744">error_message</a></td></tr>
+<tr class="memdesc:a7da10fb73cd19f2840c438d321eac744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message describing the error.  <a href="#a7da10fb73cd19f2840c438d321eac744">More...</a><br /></td></tr>
+<tr class="separator:a7da10fb73cd19f2840c438d321eac744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl><dt><b>Examples: </b></dt><dd><a class="el" href="demo_8cpp-example.html#_a8">demo.cpp</a>.</dd>
-</dl></div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p><a class="el" href="structrobot__interfaces_1_1Status.html" title="Status information from the backend. ">Status</a> information from the backend. </p>
+<p>This struct is used to report status information that is not directly robot-related from the backend to the frontend. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="demo_8cpp-example.html#_a8">demo.cpp</a>.</dd>
+</dl></div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a7da10fb73cd19f2840c438d321eac744"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string robot_interfaces::Status::error_message</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Message describing the error. </p>
+<p>Value is undefined if <code>error_status == NO_ERROR</code>. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/robot_interfaces/<a class="el" href="status_8hpp_source.html">status.hpp</a></li>
 </ul>
 </div><!-- contents -->

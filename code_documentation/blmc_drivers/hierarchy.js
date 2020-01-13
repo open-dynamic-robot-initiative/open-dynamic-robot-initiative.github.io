@@ -15,13 +15,15 @@ var hierarchy =
         [ "blmc_drivers::Leg", "classblmc__drivers_1_1Leg.html", null ]
       ] ],
       [ "blmc_drivers::MotorBoardInterface", "classblmc__drivers_1_1MotorBoardInterface.html", [
-        [ "blmc_drivers::CanBusMotorBoard", "classblmc__drivers_1_1CanBusMotorBoard.html", null ]
+        [ "blmc_drivers::CanBusMotorBoard", "classblmc__drivers_1_1CanBusMotorBoard.html", null ],
+        [ "blmc_drivers::SpiMotorBoard", "classblmc__drivers_1_1SpiMotorBoard.html", null ]
       ] ],
       [ "blmc_drivers::MotorInterface", "classblmc__drivers_1_1MotorInterface.html", [
         [ "blmc_drivers::Motor", "classblmc__drivers_1_1Motor.html", [
           [ "blmc_drivers::SafeMotor", "classblmc__drivers_1_1SafeMotor.html", null ]
         ] ]
-      ] ]
+      ] ],
+      [ "blmc_drivers::SpiBus", "classblmc__drivers_1_1SpiBus.html", null ]
     ] ],
     [ "Hardware", "structHardware.html", null ],
     [ "LegController", "classLegController.html", null ],

@@ -3,6 +3,7 @@ var NAVTREE =
   [ "mpi_cpp_tools", "index.html", [
     [ "mpi_cpp_tools", "md_readme.html", null ],
     [ "Todo List", "todo.html", null ],
+    [ "License", "license.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

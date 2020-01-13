@@ -126,8 +126,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae354dfd960d4fd0d2f9242dcfb4a701f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae354dfd960d4fd0d2f9242dcfb4a701f"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_max_action_repetitions</b> ()</td></tr>
 <tr class="separator:ae354dfd960d4fd0d2f9242dcfb4a701f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad761d1e0ab7296a9632b9c4cc9c91db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad761d1e0ab7296a9632b9c4cc9c91db"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_max_action_repetitions</b> (const uint32_t &amp;max_action_repetitions)</td></tr>
+<tr class="memitem:aad761d1e0ab7296a9632b9c4cc9c91db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#aad761d1e0ab7296a9632b9c4cc9c91db">set_max_action_repetitions</a> (const uint32_t &amp;max_action_repetitions)</td></tr>
+<tr class="memdesc:aad761d1e0ab7296a9632b9c4cc9c91db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set how often an action is repeated if no new one is provided.  <a href="#aad761d1e0ab7296a9632b9c4cc9c91db">More...</a><br /></td></tr>
 <tr class="separator:aad761d1e0ab7296a9632b9c4cc9c91db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e4eb9f5362b79c0c21b824e3b639ae6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e4eb9f5362b79c0c21b824e3b639ae6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td></tr>
@@ -199,6 +199,43 @@ template&lt;typename Action , typename Observation &gt; </div>
     <tr><td class="paramname">robot_data</td><td>Data is send to/retrieved from here. </td></tr>
     <tr><td class="paramname">max_action_duration_s</td><td>See <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html" title="Wrapper for RobotDriver that monitors timing. ">MonitoredRobotDriver</a>. </td></tr>
     <tr><td class="paramname">max_inter_action_duration_s</td><td>See <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html" title="Wrapper for RobotDriver that monitors timing. ">MonitoredRobotDriver</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aad761d1e0ab7296a9632b9c4cc9c91db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Action , typename Observation &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrobot__interfaces_1_1RobotBackend.html">robot_interfaces::RobotBackend</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;::set_max_action_repetitions </td>
+          <td>(</td>
+          <td class="paramtype">const uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>max_action_repetitions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set how often an action is repeated if no new one is provided. </p>
+<p>If the next action is due to be executed but the user did not provide one yet (i.e. there is no new action in the robot data time series), the last action will be repeated by automatically adding it to the time series again.</p>
+<p>Use this this method to specify how often the action shall be repeated (default is 0, i.e. no repetition at all). If this limit is exceeded, the robot will be shut down and the <a class="el" href="classrobot__interfaces_1_1RobotBackend.html" title="Communication link between RobotDriver and RobotData. ">RobotBackend</a> stops.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_action_repetitions</td><td></td></tr>
   </table>
   </dd>
 </dl>

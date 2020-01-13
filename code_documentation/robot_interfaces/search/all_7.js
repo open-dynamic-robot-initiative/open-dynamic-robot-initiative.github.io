@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['monitoredrobotdriver',['MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html',1,'robot_interfaces']]],
-  ['monitoredrobotdriver',['MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#ade65bb7eae65caa082ec76374822a927',1,'robot_interfaces::MonitoredRobotDriver']]]
+  ['loggable',['Loggable',['../classrobot__interfaces_1_1Loggable.html',1,'robot_interfaces']]],
+  ['logger_5fdata_5f',['logger_data_',['../classrobot__interfaces_1_1RobotLogger.html#af25629879ba199d87f6885b245ad84ef',1,'robot_interfaces::RobotLogger']]]
 ];

@@ -16,11 +16,14 @@ var searchData=
   ['close_5fcan_5fdevice',['close_can_device',['../namespaceosi.html#a92dc20de3b4933a10f24c98cecf2568b',1,'osi']]],
   ['commandtimeseries',['CommandTimeseries',['../classblmc__drivers_1_1MotorBoardInterface.html#ae2afe94a023d9f08a4c689e9b7660f15',1,'blmc_drivers::MotorBoardInterface']]],
   ['conditionvariable',['ConditionVariable',['../namespaceosi.html#a31b1ce104b168554e4832b5d3b684073',1,'osi']]],
+  ['const_5ftorque_5fcontrol_2ecpp',['const_torque_control.cpp',['../const__torque__control_8cpp.html',1,'']]],
+  ['const_5ftorque_5fcontrol_2ehpp',['const_torque_control.hpp',['../const__torque__control_8hpp.html',1,'']]],
   ['consttorquecontrol',['ConstTorqueControl',['../classblmc__drivers_1_1ConstTorqueControl.html#a2253fc0273462fa35c21f1424dcc919c',1,'blmc_drivers::ConstTorqueControl']]],
   ['consttorquecontrol',['ConstTorqueControl',['../classblmc__drivers_1_1ConstTorqueControl.html',1,'blmc_drivers']]],
   ['content_5f',['content_',['../classblmc__drivers_1_1MotorBoardCommand.html#ac417b63a8cc8801a6757f4dce3b0810c',1,'blmc_drivers::MotorBoardCommand']]],
   ['contents',['Contents',['../classblmc__drivers_1_1MotorBoardCommand.html#ad61acf8dcb8f6fcb382fc5cbc1e44615',1,'blmc_drivers::MotorBoardCommand']]],
   ['controlindex',['ControlIndex',['../classblmc__drivers_1_1MotorBoardInterface.html#a82ed4d0fa527521707281396095a88ca',1,'blmc_drivers::MotorBoardInterface']]],
   ['controller',['Controller',['../classController.html',1,'Controller'],['../classController.html#aceedb7c8fbd0fab8080fd7273d9dc65d',1,'Controller::Controller()']]],
+  ['create_5fvector_5fof_5fpointers',['create_vector_of_pointers',['../namespaceblmc__drivers.html#add73ea2a43509013ad00665753f175e1',1,'blmc_drivers']]],
   ['crit_5ftemp',['CRIT_TEMP',['../classblmc__drivers_1_1MotorBoardStatus.html#a9fd931e24550f5e5877d7a6cf499f6cfa43b0778d39a1aa2c193e2b511f2fe511',1,'blmc_drivers::MotorBoardStatus']]]
 ];

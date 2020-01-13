@@ -139,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0df4bf715f56b469f0d6c052c4a68a21"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classObservation.html">Observation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a0df4bf715f56b469f0d6c052c4a68a21">get_latest_observation</a> ()=0</td></tr>
 <tr class="memdesc:a0df4bf715f56b469f0d6c052c4a68a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the latest observation immediately.  <a href="#a0df4bf715f56b469f0d6c052c4a68a21">More...</a><br /></td></tr>
 <tr class="separator:a0df4bf715f56b469f0d6c052c4a68a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c7649d1346c6ebc014e761409e501a"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#ac7c7649d1346c6ebc014e761409e501a">get_error</a> ()=0</td></tr>
+<tr class="memdesc:ac7c7649d1346c6ebc014e761409e501a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error message if there is any error.  <a href="#ac7c7649d1346c6ebc014e761409e501a">More...</a><br /></td></tr>
+<tr class="separator:ac7c7649d1346c6ebc014e761409e501a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48920e112a572f401194e9d15ed170f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48920e112a572f401194e9d15ed170f6"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotDriver.html#a48920e112a572f401194e9d15ed170f6">shutdown</a> ()=0</td></tr>
 <tr class="memdesc:a48920e112a572f401194e9d15ed170f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shut down the robot safely. <br /></td></tr>
@@ -194,6 +197,36 @@ template&lt;typename Action , typename Observation &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The action that was actually applied (since due to safety reasons it might not be possible to apply the desired action). </dd></dl>
 
 <p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#a745e701e6fd91be74be5022752ba3ef9">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>, and <a class="el" href="classDriver.html#a0f8d51bef151ccc38a0cb7b226048e28">Driver</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7c7649d1346c6ebc014e761409e501a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Action , typename Observation &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">robot_interfaces::RobotDriver</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;::get_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get error message if there is any error. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns an error message or an empty string if there is no error. </dd></dl>
+
+<p>Implemented in <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html#afca72ae51ef9a3ab28a4e35ed5041b80">robot_interfaces::MonitoredRobotDriver&lt; Action, Observation &gt;</a>, and <a class="el" href="classDriver.html#a6fb739b87c892c4102e838508855c0be">Driver</a>.</p>
 
 </div>
 </div>

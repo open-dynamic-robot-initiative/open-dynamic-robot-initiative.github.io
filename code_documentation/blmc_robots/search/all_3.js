@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['calibrate',['calibrate',['../classblmc__robots_1_1BlmcJointModule.html#a17a1da041dae31e9a16f955722c36d6c',1,'blmc_robots::BlmcJointModule::calibrate()'],['../classblmc__robots_1_1Solo.html#a3b473fe28a1802aef17eab07d3198216',1,'blmc_robots::Solo::calibrate()'],['../classblmc__robots_1_1Teststand.html#ad4660570e3e1b77717004b3ce8056faf',1,'blmc_robots::Teststand::calibrate()']]],
+  ['calibrate',['calibrate',['../classblmc__robots_1_1BlmcJointModule.html#a17a1da041dae31e9a16f955722c36d6c',1,'blmc_robots::BlmcJointModule::calibrate()'],['../classblmc__robots_1_1Solo12.html#a8b9bfe0950a5d54ea5528aa98204f651',1,'blmc_robots::Solo12::calibrate()'],['../classblmc__robots_1_1Solo8.html#adb4de0ff0c5cc2159a1e3b2f32955198',1,'blmc_robots::Solo8::calibrate()'],['../classblmc__robots_1_1Teststand.html#ad4660570e3e1b77717004b3ce8056faf',1,'blmc_robots::Teststand::calibrate()']]],
   ['calibration',['calibration',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a86d1b140f62682548b95e2572648b9dd',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
   ['calibrationparameters',['CalibrationParameters',['../structblmc__robots_1_1CalibrationParameters.html',1,'blmc_robots']]],
   ['can_5fports',['can_ports',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a849381580e6d6d0768e6a4e04a394cfd',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],

@@ -5,6 +5,7 @@ var classblmc__drivers_1_1Motor =
     [ "get_current_target", "classblmc__drivers_1_1Motor.html#ac1c0c4f1faa125bc0b245fdbe2590575", null ],
     [ "get_measurement", "classblmc__drivers_1_1Motor.html#a919cb2f48cfc8550fabd5d3c5d7d0cf0", null ],
     [ "get_sent_current_target", "classblmc__drivers_1_1Motor.html#aa629114982c99453b4563a0ec06b9eea", null ],
+    [ "print", "classblmc__drivers_1_1Motor.html#a26d75604f92c85ba127d690d0b7fdd59", null ],
     [ "send_if_input_changed", "classblmc__drivers_1_1Motor.html#acf7389e09918c1955986a641efd4f032", null ],
     [ "set_command", "classblmc__drivers_1_1Motor.html#a4af56df5466d011fc2a567dd815a6c1b", null ],
     [ "set_current_target", "classblmc__drivers_1_1Motor.html#a48801c9858a7b1784b0a0ac4272fdaf5", null ],

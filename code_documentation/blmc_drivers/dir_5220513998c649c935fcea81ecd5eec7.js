@@ -22,10 +22,11 @@ var dir_5220513998c649c935fcea81ecd5eec7 =
       [ "Motor", "classblmc__drivers_1_1Motor.html", "classblmc__drivers_1_1Motor" ],
       [ "SafeMotor", "classblmc__drivers_1_1SafeMotor.html", "classblmc__drivers_1_1SafeMotor" ]
     ] ],
-    [ "motor_board.hpp", "motor__board_8hpp.html", [
-      [ "MotorBoardCommand", "classblmc__drivers_1_1MotorBoardCommand.html", "classblmc__drivers_1_1MotorBoardCommand" ],
-      [ "MotorBoardStatus", "classblmc__drivers_1_1MotorBoardStatus.html", "classblmc__drivers_1_1MotorBoardStatus" ],
-      [ "MotorBoardInterface", "classblmc__drivers_1_1MotorBoardInterface.html", "classblmc__drivers_1_1MotorBoardInterface" ],
-      [ "CanBusMotorBoard", "classblmc__drivers_1_1CanBusMotorBoard.html", "classblmc__drivers_1_1CanBusMotorBoard" ]
+    [ "motor_board.hpp", "motor__board_8hpp.html", "motor__board_8hpp" ],
+    [ "spi_bus.hpp", "spi__bus_8hpp.html", [
+      [ "SpiBus", "classblmc__drivers_1_1SpiBus.html", "classblmc__drivers_1_1SpiBus" ]
+    ] ],
+    [ "spi_motor_board.hpp", "spi__motor__board_8hpp.html", [
+      [ "SpiMotorBoard", "classblmc__drivers_1_1SpiMotorBoard.html", "classblmc__drivers_1_1SpiMotorBoard" ]
     ] ]
 ];

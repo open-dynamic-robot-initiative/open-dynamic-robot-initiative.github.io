@@ -2,6 +2,7 @@ var searchData=
 [
   ['action',['Action',['../classAction.html',1,'Action'],['../structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#aeb7fbd93adcc0140b5db42298211fe9d',1,'robot_interfaces::NJointRobotTypes::Action::Action()']]],
   ['action',['Action',['../structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html',1,'robot_interfaces::NJointRobotTypes']]],
+  ['action_5frepetitions',['action_repetitions',['../structrobot__interfaces_1_1Status.html#a8ccb682cd2ba81059991f3b0b9ff0c00',1,'robot_interfaces::Status']]],
   ['append_5ffield_5fdata_5fto_5ffile',['append_field_data_to_file',['../classrobot__interfaces_1_1RobotLogger.html#a8c64300966cf57716b07414696907ae9',1,'robot_interfaces::RobotLogger']]],
   ['append_5fheader_5fto_5ffile',['append_header_to_file',['../classrobot__interfaces_1_1RobotLogger.html#a9a52b53a7bad975ff0f24ba99804eddd',1,'robot_interfaces::RobotLogger']]],
   ['append_5fname_5fto_5fheader',['append_name_to_header',['../classrobot__interfaces_1_1RobotLogger.html#ac235513e7973aef1f1abf97cd22354d6',1,'robot_interfaces::RobotLogger']]],

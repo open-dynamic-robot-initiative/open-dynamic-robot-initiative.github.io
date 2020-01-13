@@ -22,7 +22,10 @@ var dir_e75c9b227ca21f29e86f20993703f373 =
       [ "Slider", "classblmc__robots_1_1Slider.html", "classblmc__robots_1_1Slider" ],
       [ "Sliders", "classblmc__robots_1_1Sliders.html", "classblmc__robots_1_1Sliders" ]
     ] ],
-    [ "solo.hpp", "solo_8hpp_source.html", null ],
+    [ "solo12.hpp", "solo12_8hpp.html", [
+      [ "Solo12", "classblmc__robots_1_1Solo12.html", "classblmc__robots_1_1Solo12" ]
+    ] ],
+    [ "solo8.hpp", "solo8_8hpp_source.html", null ],
     [ "stuggihop.hpp", "stuggihop_8hpp.html", [
       [ "Stuggihop", "classblmc__robots_1_1Stuggihop.html", "classblmc__robots_1_1Stuggihop" ]
     ] ],

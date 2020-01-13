@@ -13,5 +13,7 @@ var searchData=
   ['_7emotorinterface',['~MotorInterface',['../classblmc__drivers_1_1MotorInterface.html#a1f535a7de62ae8246f44541216254da5',1,'blmc_drivers::MotorInterface']]],
   ['_7epdcontroller',['~PDController',['../classblmc__drivers_1_1PDController.html#aed8ffc7914eb5976f95936315bcd9c47',1,'blmc_drivers::PDController']]],
   ['_7esinepositioncontrol',['~SinePositionControl',['../classblmc__drivers_1_1SinePositionControl.html#a35004249215059c73863e71680b977a8',1,'blmc_drivers::SinePositionControl']]],
-  ['_7esinetorquecontrol',['~SineTorqueControl',['../classblmc__drivers_1_1SineTorqueControl.html#ae66565e4a8be3eb93d84f6dc0c825ce6',1,'blmc_drivers::SineTorqueControl']]]
+  ['_7esinetorquecontrol',['~SineTorqueControl',['../classblmc__drivers_1_1SineTorqueControl.html#ae66565e4a8be3eb93d84f6dc0c825ce6',1,'blmc_drivers::SineTorqueControl']]],
+  ['_7espibus',['~SpiBus',['../classblmc__drivers_1_1SpiBus.html#a0c711c24c403c532c5d5bccfa5c1dc68',1,'blmc_drivers::SpiBus']]],
+  ['_7espimotorboard',['~SpiMotorBoard',['../classblmc__drivers_1_1SpiMotorBoard.html#a3bc0c19b79504a96426646090c7fbc54',1,'blmc_drivers::SpiMotorBoard']]]
 ];

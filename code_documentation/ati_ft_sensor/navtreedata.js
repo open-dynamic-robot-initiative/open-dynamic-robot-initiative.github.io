@@ -2,6 +2,7 @@ var NAVTREE =
 [
   [ "ati_ft_sensor", "index.html", [
     [ "ati_ft_sensor", "md_readme.html", null ],
+    [ "License", "license.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ]

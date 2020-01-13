@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "lns",
   2: "bdm",
   3: "fw",
-  4: "mt"
+  4: "lmt"
 };
 
 var indexSectionNames =

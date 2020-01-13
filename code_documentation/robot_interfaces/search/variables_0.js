@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_5fdata_5f',['logger_data_',['../classrobot__interfaces_1_1RobotLogger.html#af25629879ba199d87f6885b245ad84ef',1,'robot_interfaces::RobotLogger']]]
+  ['action_5frepetitions',['action_repetitions',['../structrobot__interfaces_1_1Status.html#a8ccb682cd2ba81059991f3b0b9ff0c00',1,'robot_interfaces::Status']]]
 ];

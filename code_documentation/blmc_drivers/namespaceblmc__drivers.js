@@ -19,5 +19,7 @@ var namespaceblmc__drivers =
     [ "PDController", "classblmc__drivers_1_1PDController.html", "classblmc__drivers_1_1PDController" ],
     [ "SafeMotor", "classblmc__drivers_1_1SafeMotor.html", "classblmc__drivers_1_1SafeMotor" ],
     [ "SinePositionControl", "classblmc__drivers_1_1SinePositionControl.html", "classblmc__drivers_1_1SinePositionControl" ],
-    [ "SineTorqueControl", "classblmc__drivers_1_1SineTorqueControl.html", "classblmc__drivers_1_1SineTorqueControl" ]
+    [ "SineTorqueControl", "classblmc__drivers_1_1SineTorqueControl.html", "classblmc__drivers_1_1SineTorqueControl" ],
+    [ "SpiBus", "classblmc__drivers_1_1SpiBus.html", "classblmc__drivers_1_1SpiBus" ],
+    [ "SpiMotorBoard", "classblmc__drivers_1_1SpiMotorBoard.html", "classblmc__drivers_1_1SpiMotorBoard" ]
 ];
