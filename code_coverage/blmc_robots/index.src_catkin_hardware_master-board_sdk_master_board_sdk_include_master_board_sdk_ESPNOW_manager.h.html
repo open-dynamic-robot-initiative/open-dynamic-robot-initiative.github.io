@@ -1,0 +1,643 @@
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Head</title>
+  <style media="screen" type="text/css">
+
+    body
+    {
+      color: #000000;
+      background-color: #FFFFFF;
+    }
+
+    /* Link formats: use maroon w/underlines */
+    a:link
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+    a:visited
+    {
+      color: maroon;
+      text-decoration: underline;
+    }
+    a:active
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+
+    /*** TD formats ***/
+    td
+    {
+      font-family: sans-serif;
+    }
+    td.title
+    {
+      text-align: center;
+      padding-bottom: 10px;
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+    /* TD Header Information */
+    td.headerName
+    {
+      text-align: right;
+      color: black;
+      padding-right: 6px;
+      font-weight: bold;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    td.headerValue
+    {
+      text-align: left;
+      color: blue;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    td.headerTableEntry
+    {
+      text-align: right;
+      color: black;
+      font-weight: bold;
+      white-space: nowrap;
+      padding-left: 12px;
+      padding-right: 4px;
+      background-color: LightBlue;
+    }
+    td.headerValueLeg
+    {
+      text-align: left;
+      color: black;
+      font-size: 80%;
+      white-space: nowrap;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 2px;
+    }
+
+    /* Color of horizontal ruler */
+    td.hr
+    {
+      background-color: navy;
+      height:3px;
+    }
+    /* Footer format */
+    td.footer
+    {
+      text-align: center;
+      padding-top: 3px;
+      font-family: sans-serif;
+    }
+
+    /* Coverage Table */
+
+    td.coverTableHead
+    {
+      text-align: center;
+      color: white;
+      background-color: SteelBlue;
+      font-family: sans-serif;
+      font-size: 120%;
+      white-space: nowrap;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    td.coverFile
+    {
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 20px;
+      color: black;
+      background-color: LightBlue;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 110%;
+    }
+    td.coverBar
+    {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: LightBlue;
+    }
+    td.coverBarOutline
+    {
+      background-color: white;
+    }
+    td.coverValue
+    {
+      padding-top: 2px;
+      text-align: right;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: sans-serif;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    /* Link Details */
+    a.detail:link
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:visited
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:active
+    {
+      color: #FFFFFF;
+      font-size:80%;
+    }
+
+    .graphcont{
+        color:#000;
+        font-weight:700;
+        float:left
+    }
+
+    .graph{
+        float:left;
+        background-color: white;
+        position:relative;
+        width:280px;
+        padding:0
+    }
+
+    .graph .bar{
+        display:block;
+        position:relative;
+        border:black 1px solid;
+        text-align:center;
+        color:#fff;
+        height:10px;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:12px;
+        line-height:1.9em
+    }
+
+    .graph .bar span{
+        position:absolute;
+        left:1em
+    }
+
+    td.coveredLine,
+    span.coveredLine
+    {
+        background-color: LightGreen!important;
+    }
+
+    td.uncoveredLine,
+    span.uncoveredLine
+    {
+        background-color: LightPink!important;
+    }
+
+    .linebranch, .linecount
+    {
+        border-right: 1px gray solid;
+        background-color: lightgray;
+    }
+
+    span.takenBranch
+    {
+        color: Green!important;
+        cursor: help;
+    }
+
+    span.notTakenBranch
+    {
+        color: Red!important;
+        cursor: help;
+    }
+
+    .src
+    {
+        padding-left: 12px;
+    }
+
+    .srcHeader,
+    span.takenBranch,
+    span.notTakenBranch
+    {
+        font-family: monospace;
+        font-weight: bold;
+    }
+
+    pre
+    {
+        height : 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .lineno
+    {
+        background-color: #EFE383;
+        border-right: 1px solid #BBB15F;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="title">GCC Code Coverage Report</td></tr>
+    <tr><td class="hr"></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding="1" border="0" width="100%">
+          <tr>
+            <td width="10%" class="headerName">Directory:</td>
+            <td width="35%" class="headerValue">./</td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
+            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
+            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerName">File:</td>
+            <td class="headerValue">src/catkin/hardware/master-board/sdk/master_board_sdk/include/master_board_sdk/ESPNOW_manager.h</td>
+            <td></td>
+            <td class="headerName">Lines:</td>
+            <td class="headerTableEntry">0</td>
+            <td class="headerTableEntry">11</td>
+            <td class="headerTableEntry" style="background-color:LightPink">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerName">Date:</td>
+            <td class="headerValue">2020-01-13 15:27:15</td>
+            <td></td>
+            <td class="headerName">Branches:</td>
+            <td class="headerTableEntry">0</td>
+            <td class="headerTableEntry">14</td>
+            <td class="headerTableEntry" style="background-color:LightPink">0.0 %</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="hr"></td></tr>
+  </table>
+
+  <br>
+  <table cellspacing="0" cellpadding="1">
+    <tr>
+      <td width="5%" align="right" class="srcHeader">Line</td>
+      <td width="5%" align="right" class="srcHeader">Branch</td>
+      <td width="5%" align="right" class="srcHeader">Exec</td>
+      <td width="75%" align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr>
+    <td align="right" class="lineno"><pre>1</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifndef ESPNOW_manager_H</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>2</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define ESPNOW_manager_H</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>3</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>4</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;linux/filter.h></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>5</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>6</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "master_board_sdk/Link_manager.h"</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>7</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "master_board_sdk/ESPNOW_types.h"</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>8</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>9</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>10</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>class ESPNOW_manager : public LINK_manager {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>11</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	public:</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>12</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		ESPNOW_manager() : LINK_manager(&amp;myWiFipacket) {}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>13</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>14</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		ESPNOW_manager(const std::string&amp; interface) : LINK_manager(&amp;myWiFipacket, interface) {}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>15</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>16</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>		ESPNOW_manager(const std::string&amp; interface, uint8_t datarate, uint16_t channel_freq, uint8_t src_mac[6], uint8_t dst_mac[6], bool filterOn)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>17</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>		: LINK_manager(&amp;myWiFipacket, interface) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>18</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>			set_channel(channel_freq);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>19</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>			set_datarate(datarate);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>20</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>			set_src_mac(src_mac);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>21</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>			set_dst_mac(dst_mac);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>22</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>23</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>			if(filterOn) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>24</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>				set_filter(dst_mac, src_mac);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>			} else {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>				set_filter(NULL, NULL);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>			}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		void set_filter(uint8_t *src_mac, uint8_t *dst_mac);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		void unset_filter();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		void bind_filter();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>		void set_channel(uint16_t channel_freq) { myWiFipacket.set_channel(channel_freq); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>		void set_datarate(uint8_t datarate) { myWiFipacket.set_datarate(datarate); }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	private:</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		struct sock_fprog bpf;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		ESPNOW_packet myWiFipacket;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>};</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>46</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>47</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+  </table>
+  <br>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="hr"><td></tr>
+    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a></td></tr>
+  </table>
+  <br>
+
+</body>
+
+</html>
+

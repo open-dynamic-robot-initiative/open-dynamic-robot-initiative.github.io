@@ -269,18 +269,18 @@
             <td class="headerValue">src/catkin/tools/mpi_cpp_tools/include/mpi_cpp_tools/math.hpp</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">11</td>
-            <td class="headerTableEntry">15</td>
-            <td class="headerTableEntry" style="background-color:LightPink">73.3 %</td>
+            <td class="headerTableEntry">19</td>
+            <td class="headerTableEntry">20</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">95.0 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2019-12-17 10:55:43</td>
+            <td class="headerValue">2020-01-13 15:27:15</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">4</td>
-            <td class="headerTableEntry">6</td>
-            <td class="headerTableEntry" style="background-color:LightPink">66.7 %</td>
+            <td class="headerTableEntry">7</td>
+            <td class="headerTableEntry">8</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">87.5 %</td>
           </tr>
         </table>
       </td>
@@ -414,8 +414,8 @@
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>double clamp(const double &amp;value, const double &amp;limit_a, const double &amp;limit_b)</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
+    <td align="left" class="src coveredLine"><pre>double clamp(const double &amp;value, const double &amp;limit_a, const double &amp;limit_b)</pre></td>
     </tr>
 
     <tr>
@@ -427,16 +427,16 @@
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    if (limit_b > limit_a)</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 44 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (limit_b > limit_a)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        return std::max(limit_a, std::min(value, limit_b));</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
+    <td align="left" class="src coveredLine"><pre>        return std::max(limit_a, std::min(value, limit_b));</pre></td>
     </tr>
 
     <tr>
@@ -477,8 +477,8 @@
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>Vector clamp(const Vector &amp;vector,</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>Vector clamp(const Vector &amp;vector,</pre></td>
     </tr>
 
     <tr>
@@ -498,8 +498,8 @@
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    Vector clamped_vector = vector;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>    Vector clamped_vector = vector;</pre></td>
     </tr>
 
     <tr>
@@ -511,9 +511,9 @@
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    for(size_t i = 0; i &lt; clamped_vector.size(); i++)</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 44 times">&check;</span><span class="takenBranch" title="Branch 2 taken 22 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>66</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for(size_t i = 0; i &lt; size_t(clamped_vector.size()); i++)</pre></td>
     </tr>
 
     <tr>
@@ -526,8 +526,8 @@
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        clamped_vector[i] = clamp(clamped_vector[i], limit_a, limit_b);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>44</pre></td>
+    <td align="left" class="src coveredLine"><pre>        clamped_vector[i] = clamp(clamped_vector[i], limit_a, limit_b);</pre></td>
     </tr>
 
     <tr>
@@ -540,8 +540,8 @@
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    return clamped_vector;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return clamped_vector;</pre></td>
     </tr>
 
     <tr>
@@ -751,7 +751,7 @@
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 10545 times">&check;</span><span class="takenBranch" title="Branch 2 taken 51372 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>61917</pre></td>
-    <td align="left" class="src coveredLine"><pre>    for (size_t i = 0; i &lt; v.size(); i++)</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (size_t i = 0; i &lt; size_t(v.size()); i++)</pre></td>
     </tr>
 
     <tr>

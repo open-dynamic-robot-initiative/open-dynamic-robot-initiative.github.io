@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2019-12-17 10:55:43</td>
+            <td class="headerValue">2020-01-13 15:27:15</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">2</td>
@@ -2501,7 +2501,7 @@
     <td align="right" class="lineno"><pre>315</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    printString("ERROR >> Failed to close port.\n");</pre></td>
+    <td align="left" class="src "><pre>    rt_printf("ERROR >> Failed to close port.\n");</pre></td>
     </tr>
 
     <tr>
@@ -3642,587 +3642,601 @@
     <td align="right" class="lineno"><pre>478</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef __XENO__</pre></td>
+    <td align="left" class="src "><pre>#ifdef XENOMAI</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>479</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // Set read timeout</pre></td>
+    <td align="left" class="src "><pre>  /*</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>480</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  rt_config_.config_mask = RTSER_SET_TIMEOUT_RX | RTSER_SET_BAUD;</pre></td>
+    <td align="left" class="src "><pre>  // Set read timeout</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>481</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  rt_config_.rx_timeout = (nanosecs_rel_t)(timeout * 1000000000); // rx_timeout in ns</pre></td>
+    <td align="left" class="src "><pre>  rt_config_.config_mask = RTSER_SET_TIMEOUT_RX | RTSER_SET_BAUD;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>482</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  rt_config_.baud_rate = 921600;</pre></td>
+    <td align="left" class="src "><pre>  rt_config_.rx_timeout = (nanosecs_rel_t)(timeout * 1000000000); // rx_timeout in ns</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>483</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  res_ = rt_dev_ioctl(fd_, RTSER_RTIOC_SET_CONFIG, &amp;rt_config_);</pre></td>
+    <td align="left" class="src "><pre>  rt_config_.baud_rate = 921600;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>484</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  if (res_ != 0)</pre></td>
+    <td align="left" class="src "><pre>  res_ = rt_dev_ioctl(fd_, RTSER_RTIOC_SET_CONFIG, &amp;rt_config_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>485</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="left" class="src "><pre>  if (res_ != 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>486</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    rt_printf("ERROR >> Failed to set read timeout.\n");</pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>487</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    return false;</pre></td>
+    <td align="left" class="src "><pre>    rt_printf("ERROR >> Failed to set read timeout.\n");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>488</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="left" class="src "><pre>    return false;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>489</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#else</pre></td>
+    <td align="left" class="src "><pre>    }*/</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>490</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  FD_ZERO(&amp;file_id_set_);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  throw std::runtime_error("set_poll_mode_timeout not implemented for Xenomai");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>491</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  FD_SET(file_id_, &amp;file_id_set_);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#else</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>492</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  long int tv_sec = timeout_in_second;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  FD_ZERO(&amp;file_id_set_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>493</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  long int tv_nsec = (timeout_in_second - tv_sec) * 1000000000 /* 1e9 */ ;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  FD_SET(file_id_, &amp;file_id_set_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>494</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  timeout_posix_.tv_sec = tv_sec;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  long int tv_sec = timeout_in_second;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>495</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  timeout_posix_.tv_nsec = tv_nsec;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  long int tv_nsec = (timeout_in_second - tv_sec) * 1000000000 /* 1e9 */ ;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>496</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  timeout_posix_.tv_sec = tv_sec;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>497</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  timeout_ = timeout_in_second;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  timeout_posix_.tv_nsec = tv_nsec;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>498</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  timeout_set_ = true;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>499</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return true;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>500</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>501</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>502</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>std::string UsbStream::msg_debug_string(const std::vector&lt;uint8_t>&amp; msg,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>503</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>                                        long int until)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>504</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>505</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  long int msg_size = static_cast&lt;long int>(msg.size());</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>506</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(until &lt; 0){until = msg_size;}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>507</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  std::ostringstream cmd_debug_string;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>508</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  cmd_debug_string &lt;&lt; "[ ";</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>509</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for (long int i = 0 ; i &lt; std::min(msg_size, until) ; ++i)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>510</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>511</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    cmd_debug_string &lt;&lt; std::hex &lt;&lt; std::setfill('0') &lt;&lt; std::setw(2)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>512</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>                    &lt;&lt; std::uppercase &lt;&lt; (msg[i] &amp; 0xFF) &lt;&lt; " ";</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>513</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>514</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  cmd_debug_string &lt;&lt; "]";</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>515</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return cmd_debug_string.str();</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>516</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>517</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>518</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>bool UsbStream::test_msg_equal(const std::vector&lt;uint8_t>&amp; msg1,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>519</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>                               const std::vector&lt;uint8_t>&amp; msg2)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>520</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>521</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(msg1.size() != msg2.size())</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>522</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>523</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return false;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>524</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>525</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  bool test = true;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>526</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for(unsigned i = 0 ; i &lt; msg1.size() ; ++i)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>527</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>528</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    test = test &amp;&amp; (msg1[i] == msg2[i]);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>529</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>530</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return test;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>531</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>532</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>533</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>bool UsbStream::flush(int)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>534</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>535</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef __XENO__</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>536</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#else</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>537</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // fcntl(file_id_, F_SETFL, 0);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>538</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // return_value_ = fcntl(file_id_, F_SETFL, (O_RDWR | O_NONBLOCK));</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>539</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>540</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // int i = duration_ms;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>541</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // while (--i > 0) {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>542</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	//   real_time_tools::Timer::sleep_ms(1.0);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>543</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	//   while ((return_value_ = read(file_id_, buffer_.data(), buffer_.size())) > 0)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>544</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  //   { // flush buffer and make sure it's cleared for while.</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>545</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	//     i = 100;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>546</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  //   }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>547</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>548</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // fcntl(file_id_, F_SETFL, 0);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>549</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // return_value_ = fcntl(file_id_, F_SETFL, O_RDWR);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>550</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // real_time_tools::Timer::sleep_ms(500);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>551</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>552</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if(tcflush(file_id_, TCIOFLUSH) == -1)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>553</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>554</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    printf("flush failed\n");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>555</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return false;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>556</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>557</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  return true;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>558</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>559</pre></td>
+    <td align="right" class="lineno"><pre>499</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  timeout_ = timeout_in_second;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>500</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  timeout_set_ = true;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>501</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return true;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>502</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>560</pre></td>
+    <td align="right" class="lineno"><pre>503</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>504</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>std::string UsbStream::msg_debug_string(const std::vector&lt;uint8_t>&amp; msg,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>505</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>                                        long int until)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>506</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>507</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  long int msg_size = static_cast&lt;long int>(msg.size());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>508</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(until &lt; 0){until = msg_size;}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>509</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  std::ostringstream cmd_debug_string;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>510</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  cmd_debug_string &lt;&lt; "[ ";</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>511</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for (long int i = 0 ; i &lt; std::min(msg_size, until) ; ++i)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>512</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>513</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    cmd_debug_string &lt;&lt; std::hex &lt;&lt; std::setfill('0') &lt;&lt; std::setw(2)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>514</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>                    &lt;&lt; std::uppercase &lt;&lt; (msg[i] &amp; 0xFF) &lt;&lt; " ";</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>515</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>516</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  cmd_debug_string &lt;&lt; "]";</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>517</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return cmd_debug_string.str();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>518</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>519</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>520</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>bool UsbStream::test_msg_equal(const std::vector&lt;uint8_t>&amp; msg1,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>521</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>                               const std::vector&lt;uint8_t>&amp; msg2)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>522</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>523</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(msg1.size() != msg2.size())</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>524</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>525</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return false;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>526</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>527</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  bool test = true;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>528</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for(unsigned i = 0 ; i &lt; msg1.size() ; ++i)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>529</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>530</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    test = test &amp;&amp; (msg1[i] == msg2[i]);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>531</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>532</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return test;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>533</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>534</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>535</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>bool UsbStream::flush(int)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>536</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>537</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef XENOMAI</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>538</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#else</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>539</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // fcntl(file_id_, F_SETFL, 0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>540</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // return_value_ = fcntl(file_id_, F_SETFL, (O_RDWR | O_NONBLOCK));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>541</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>542</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // int i = duration_ms;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>543</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // while (--i > 0) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>544</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	//   real_time_tools::Timer::sleep_ms(1.0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>545</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	//   while ((return_value_ = read(file_id_, buffer_.data(), buffer_.size())) > 0)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>546</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  //   { // flush buffer and make sure it's cleared for while.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>547</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	//     i = 100;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>548</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  //   }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>549</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>550</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // fcntl(file_id_, F_SETFL, 0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>551</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // return_value_ = fcntl(file_id_, F_SETFL, O_RDWR);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>552</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // real_time_tools::Timer::sleep_ms(500);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>553</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>554</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if(tcflush(file_id_, TCIOFLUSH) == -1)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>555</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>556</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    printf("flush failed\n");</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>557</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return false;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>558</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>559</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return true;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>560</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>561</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>24</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>562</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>563</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>27</pre></td>
     <td align="left" class="src coveredLine"><pre>} // namespace</pre></td>
     </tr>
 

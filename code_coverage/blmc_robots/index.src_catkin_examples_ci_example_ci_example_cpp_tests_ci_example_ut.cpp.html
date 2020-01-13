@@ -1,0 +1,1763 @@
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Head</title>
+  <style media="screen" type="text/css">
+
+    body
+    {
+      color: #000000;
+      background-color: #FFFFFF;
+    }
+
+    /* Link formats: use maroon w/underlines */
+    a:link
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+    a:visited
+    {
+      color: maroon;
+      text-decoration: underline;
+    }
+    a:active
+    {
+      color: navy;
+      text-decoration: underline;
+    }
+
+    /*** TD formats ***/
+    td
+    {
+      font-family: sans-serif;
+    }
+    td.title
+    {
+      text-align: center;
+      padding-bottom: 10px;
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+    /* TD Header Information */
+    td.headerName
+    {
+      text-align: right;
+      color: black;
+      padding-right: 6px;
+      font-weight: bold;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    td.headerValue
+    {
+      text-align: left;
+      color: blue;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    td.headerTableEntry
+    {
+      text-align: right;
+      color: black;
+      font-weight: bold;
+      white-space: nowrap;
+      padding-left: 12px;
+      padding-right: 4px;
+      background-color: LightBlue;
+    }
+    td.headerValueLeg
+    {
+      text-align: left;
+      color: black;
+      font-size: 80%;
+      white-space: nowrap;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 2px;
+    }
+
+    /* Color of horizontal ruler */
+    td.hr
+    {
+      background-color: navy;
+      height:3px;
+    }
+    /* Footer format */
+    td.footer
+    {
+      text-align: center;
+      padding-top: 3px;
+      font-family: sans-serif;
+    }
+
+    /* Coverage Table */
+
+    td.coverTableHead
+    {
+      text-align: center;
+      color: white;
+      background-color: SteelBlue;
+      font-family: sans-serif;
+      font-size: 120%;
+      white-space: nowrap;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    td.coverFile
+    {
+      text-align: left;
+      padding-left: 10px;
+      padding-right: 20px;
+      color: black;
+      background-color: LightBlue;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 110%;
+    }
+    td.coverBar
+    {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: LightBlue;
+    }
+    td.coverBarOutline
+    {
+      background-color: white;
+    }
+    td.coverValue
+    {
+      padding-top: 2px;
+      text-align: right;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: sans-serif;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    /* Link Details */
+    a.detail:link
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:visited
+    {
+      color: #B8D0FF;
+      font-size:80%;
+    }
+    a.detail:active
+    {
+      color: #FFFFFF;
+      font-size:80%;
+    }
+
+    .graphcont{
+        color:#000;
+        font-weight:700;
+        float:left
+    }
+
+    .graph{
+        float:left;
+        background-color: white;
+        position:relative;
+        width:280px;
+        padding:0
+    }
+
+    .graph .bar{
+        display:block;
+        position:relative;
+        border:black 1px solid;
+        text-align:center;
+        color:#fff;
+        height:10px;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:12px;
+        line-height:1.9em
+    }
+
+    .graph .bar span{
+        position:absolute;
+        left:1em
+    }
+
+    td.coveredLine,
+    span.coveredLine
+    {
+        background-color: LightGreen!important;
+    }
+
+    td.uncoveredLine,
+    span.uncoveredLine
+    {
+        background-color: LightPink!important;
+    }
+
+    .linebranch, .linecount
+    {
+        border-right: 1px gray solid;
+        background-color: lightgray;
+    }
+
+    span.takenBranch
+    {
+        color: Green!important;
+        cursor: help;
+    }
+
+    span.notTakenBranch
+    {
+        color: Red!important;
+        cursor: help;
+    }
+
+    .src
+    {
+        padding-left: 12px;
+    }
+
+    .srcHeader,
+    span.takenBranch,
+    span.notTakenBranch
+    {
+        font-family: monospace;
+        font-weight: bold;
+    }
+
+    pre
+    {
+        height : 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .lineno
+    {
+        background-color: #EFE383;
+        border-right: 1px solid #BBB15F;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="title">GCC Code Coverage Report</td></tr>
+    <tr><td class="hr"></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding="1" border="0" width="100%">
+          <tr>
+            <td width="10%" class="headerName">Directory:</td>
+            <td width="35%" class="headerValue">./</td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerValue" style="text-align:right;">Exec</td>
+            <td width="10%" class="headerValue" style="text-align:right;">Total</td>
+            <td width="15%" class="headerValue" style="text-align:right;">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerName">File:</td>
+            <td class="headerValue">src/catkin/examples/ci_example/ci_example_cpp/tests/ci_example_ut.cpp</td>
+            <td></td>
+            <td class="headerName">Lines:</td>
+            <td class="headerTableEntry">90</td>
+            <td class="headerTableEntry">90</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerName">Date:</td>
+            <td class="headerValue">2020-01-13 15:27:15</td>
+            <td></td>
+            <td class="headerName">Branches:</td>
+            <td class="headerTableEntry">117</td>
+            <td class="headerTableEntry">370</td>
+            <td class="headerTableEntry" style="background-color:LightPink">31.6 %</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="hr"></td></tr>
+  </table>
+
+  <br>
+  <table cellspacing="0" cellpadding="1">
+    <tr>
+      <td width="5%" align="right" class="srcHeader">Line</td>
+      <td width="5%" align="right" class="srcHeader">Branch</td>
+      <td width="5%" align="right" class="srcHeader">Exec</td>
+      <td width="75%" align="left" class="srcHeader src">Source</td>
+    </tr>
+
+
+    <tr>
+    <td align="right" class="lineno"><pre>1</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/**</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>2</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @file ci_example_ut.cpp</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>3</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @author Vincent Berenz</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>4</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * license License BSD-3-Clause</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>5</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @copyright Copyright (c) 2019, New York University and Max Planck Gesellshaft.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>6</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @date 2019-05-22</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>7</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> *</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>8</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @brief example of unit tests</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>9</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @see https://git-amd.tuebingen.mpg.de/amd-clmc/ci_example/wikis/catkin:-how-to-implement-unit-tests</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>10</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>11</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>12</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>13</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "ci_example_cpp/pid.hpp"</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>14</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "ci_example_cpp/file_configuration.hpp"</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>15</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;iostream></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>16</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;fstream></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>17</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#include "gtest/gtest.h"</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>18</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>19</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>20</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// more info: http://www.ibm.com/developerworks/aix/library/au-googletestingframework.html</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>21</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>22</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// quick reference: http://www.cheezyworld.com/wp-content/uploads/2010/12/PlainGoogleQuickTestReferenceGuide1.pdf</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>23</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>24</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#define YAML_CONFIG_FILE "ci_example_unit_test.yaml"</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* setup of test ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>30</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// in setup for test, we write the yaml file that will be used</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>31</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// to test File_configuration. In TearDown, we delete the file.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>32</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="left" class="src coveredLine"><pre>class PID_tests : public ::testing::Test {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>33</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>protected:</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>34</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void SetUp() {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>35</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="left" class="src coveredLine"><pre>    YAML::Node node;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>    node["kp"] = DEFAULT_KP;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>    node["kd"] = DEFAULT_KD;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>    node["ki"] = DEFAULT_KI;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>39</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>18</pre></td>
+    <td align="left" class="src coveredLine"><pre>    std::ofstream fout(YAML_CONFIG_FILE);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>40</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 9 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>    fout&lt;&lt;node;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>41</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>42</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>  void TearDown() {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>43</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>    std::remove(YAML_CONFIG_FILE);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>44</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>9</pre></td>
+    <td align="left" class="src coveredLine"><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>45</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>};</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>46</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>47</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>48</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* testing DefaultConfiguration ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>49</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>50</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, default_configuration_test){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>51</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::DefaultConfiguration config;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>52</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.get_kp(),DEFAULT_KP);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>53</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.get_kd(),DEFAULT_KD);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>54</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.get_ki(),DEFAULT_KI);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>55</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 27 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 28 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.has_error(),false);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>56</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>57</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>58</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* testing File_configuration ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>59</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, file_configuration_ok_test){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::File_configuration config(TEST_PID_GAINS_YAML_FILE_PATH); // see CMakeLists.txt to see how this change to valid path</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.get_kp(),DEFAULT_KP);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>63</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.get_kd(),DEFAULT_KD);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>64</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 27 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 28 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.get_ki(),DEFAULT_KI);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>65</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>66</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>67</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, file_configuration_fail_test){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>68</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::File_configuration config("None existing file");</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>69</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 27 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 28 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.has_error(),true);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>70</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>71</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>72</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>73</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* testing File_configuration ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* with default configuration file ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, read_config_file_test){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::File_configuration config(YAML_CONFIG_FILE);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>78</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><span class="notTakenBranch" title="Branch 20 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 27 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 28 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(config.has_error(),false);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* sanity check: using default or file configuration ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* should have same result  ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, configurations_same_results_test){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>86</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>87</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // random data for testing</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>88</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position = 1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>89</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double velocity = 1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>90</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position_target=2;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>91</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double delta_time=0.01;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>92</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>93</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::DefaultConfiguration default_config;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>94</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::PID controller_default(default_config);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>95</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double force_default = controller_default.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>96</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>97</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 10 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::File_configuration file_config(YAML_CONFIG_FILE);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>98</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::PID controller_file(file_config);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>99</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double force_file = controller_file.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>100</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>101</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 21 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span><span class="takenBranch" title="Branch 24 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 25 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(force_default,force_file);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>102</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>103</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>104</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>105</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* testing of PID controller ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>106</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>107</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// arguably, these tests are way insufficient. E.g. stability of the controller</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>108</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// is not tested. Ideally, some simulation should be used for better testing.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>109</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// Use your best judgement to evaluate to which extend investing time and effort is worth the gain.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>110</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// But these considerations should never stop you to implement the simpler and basic tests</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>111</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// such as the one presented here.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>112</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// *** Such tests take 5 min to implement **,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>113</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// yet they can be very useful by catching at least some of the main error that may occure</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>114</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>115</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// does integral integrates ?</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>116</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, integral){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>117</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>118</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // random data for testing</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>119</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position = 1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>120</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double velocity = 1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>121</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position_target=2;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>122</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double delta_time=0.01;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>123</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>124</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::PID&amp; controller = ci_example_cpp::get_default_pid();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>125</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double force_1 = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>126</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double force_2 = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>127</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>128</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 21 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_NE(force_1,force_2);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>130</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// does reset of integral work ?</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, reset_integral){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>134</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>135</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // random data for testing</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>136</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position = 1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>137</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double velocity = 1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>138</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position_target=2;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>139</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double delta_time=0.01;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>140</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>141</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // running pid and integrating</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>142</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::PID&amp; controller = ci_example_cpp::get_default_pid();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double force_1 = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>145</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // reset integral</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  controller.reset_integral();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // run controller again</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double force_reset = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>151</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 21 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(force_1,force_reset);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>152</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// generated force is zero if already at target ?</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>156</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, zero_force_at_target){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // random data for testing</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position = 1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double velocity = 0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position_target=position;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double delta_time=0.01;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::PID&amp; controller = ci_example_cpp::get_default_pid();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double force = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 21 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_EQ(force,0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// does the controller push to the right direction ?</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>5</pre></td>
+    <td align="left" class="src coveredLine"><pre>TEST_F(PID_tests, right_direction){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>174</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // random data for testing</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>175</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position = 0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>176</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double velocity = 0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>177</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double position_target=1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>178</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double delta_time=0.01;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>179</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ci_example_cpp::PID&amp; controller = ci_example_cpp::get_default_pid();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  double force = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 21 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_GT(force,0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>183</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>184</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  controller.reset_integral();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>185</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  position_target=-1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>186</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  force = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>187</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 21 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_LT(force,0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>188</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>189</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  controller.reset_integral();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>190</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  position_target=position;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>191</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  velocity=-1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  force = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>193</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 21 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_GT(force,0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>194</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>195</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  controller.reset_integral();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>196</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  velocity=1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>197</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  force = controller.compute(position,velocity,position_target,delta_time);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>198</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><br/><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 17 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 21 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>  ASSERT_LT(force,0);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>199</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>200</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>201</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>202</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>203</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>204</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>205</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/* ******************************* testing RosParameters_configuration ? ******************************* */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>206</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>207</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>// because it uses rostest, RosParameters_configuration is tested in a separated file</pre></td>
+    </tr>
+
+  </table>
+  <br>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="hr"><td></tr>
+    <tr><td class="footer">Generated by: <a href="http://gcovr.com">GCOVR (Version 4.2)</a></td></tr>
+  </table>
+  <br>
+
+</body>
+
+</html>
+

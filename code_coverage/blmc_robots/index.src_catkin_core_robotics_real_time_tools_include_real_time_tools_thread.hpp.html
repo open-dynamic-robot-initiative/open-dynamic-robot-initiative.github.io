@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2019-12-17 10:55:43</td>
+            <td class="headerValue">2020-01-13 15:27:15</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">1</td>
@@ -401,574 +401,574 @@
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#include &lt;functional></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef  XENOMAI</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // you MAY need to happend "static" upon declaration</pre></td>
+    <td align="left" class="src "><pre>#ifdef XENOMAI</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_TYPE void</pre></td>
+    <td align="left" class="src "><pre>  // you MAY need to happend "static" upon declaration</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_VALUE</pre></td>
+    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_TYPE void</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // include xenomai stuff here</pre></td>
+    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_VALUE</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#elif defined NON_REAL_TIME</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;native/task.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;thread></pre></td>
+    <td align="left" class="src "><pre>  #include &lt;native/timer.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;iostream></pre></td>
+    <td align="left" class="src "><pre>  #include &lt;native/sem.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // you need to happend "static" upon declaration</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;native/cond.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_TYPE void*</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;native/pipe.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_VALUE nullptr</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;native/mutex.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#elif defined RT_PREEMPT</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;sys/mman.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;pthread.h></pre></td>
+    <td align="left" class="src "><pre>  #include &lt;rtdk.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;limits.h></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;sched.h></pre></td>
+    <td align="left" class="src "><pre>#elif defined NON_REAL_TIME</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;stdio.h></pre></td>
+    <td align="left" class="src "><pre>  #include &lt;thread></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;stdlib.h></pre></td>
+    <td align="left" class="src "><pre>  #include &lt;iostream></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;sys/mman.h></pre></td>
+    <td align="left" class="src "><pre>  // you need to happend "static" upon declaration</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #include &lt;unistd.h></pre></td>
+    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_TYPE void*</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // you need to happend "static" upon declaration</pre></td>
+    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_VALUE nullptr</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_TYPE void*</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_VALUE nullptr</pre></td>
+    <td align="left" class="src "><pre>  #define rt_printf printf</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>#elif defined RT_PREEMPT</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>namespace real_time_tools {</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;pthread.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>  #include &lt;limits.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  /**</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;sched.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * @brief This class is a data structure allowing the user to share</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;stdio.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * configurations among threads. These parameter allows you to generate</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;stdlib.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * real threads in xenomai and rt_preempt. The same code is compatible with</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;sys/mman.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * Mac and ubuntu but will run non-real time threads.</pre></td>
+    <td align="left" class="src "><pre>  #include &lt;unistd.h></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   *</pre></td>
+    <td align="left" class="src "><pre>  // you need to happend "static" upon declaration</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * warning : initial version, copy pasted from :</pre></td>
+    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_TYPE void*</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>49</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/application_base</pre></td>
+    <td align="left" class="src "><pre>  #define THREAD_FUNCTION_RETURN_VALUE nullptr</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * I did not study things now, so this likely needs improvement (alternative:</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * https://rt.wiki.kernel.org/index.php/Threaded_RT-application_with_memory_locking_and_stack_handling_example)</pre></td>
+    <td align="left" class="src "><pre>  #define rt_printf printf</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * note: if failed as mlockall, run executable with sudo or be part of the</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * real_time group or xenomai group.</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   */</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  class RealTimeThreadParameters</pre></td>
+    <td align="left" class="src "><pre>namespace real_time_tools {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  public:</pre></td>
+    <td align="left" class="src "><pre>  /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre>   * @brief This class is a data structure allowing the user to share</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Construct a new RealTimeThreadParameters object</pre></td>
+    <td align="left" class="src "><pre>   * configurations among threads. These parameter allows you to generate</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>   * real threads in xenomai and rt_preempt. The same code is compatible with</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>    RealTimeThreadParameters(){</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>   * Mac and ubuntu but will run non-real time threads.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 26 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>      keyword_ = "real_time_thread";</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>   *</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>      priority_ = 80;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>   * warning : initial version, copy pasted from :</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#ifdef  XENOMAI</pre></td>
+    <td align="left" class="src "><pre>   * https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/application_base</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      throw std::runtime_error("xenomai not implemented")</pre></td>
+    <td align="left" class="src "><pre>   * I did not study things now, so this likely needs improvement (alternative:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#elif defined NON_REAL_TIME</pre></td>
+    <td align="left" class="src "><pre>   * https://rt.wiki.kernel.org/index.php/Threaded_RT-application_with_memory_locking_and_stack_handling_example)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>      stack_size_ = -1;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>   * note: if failed as mlockall, run executable with sudo or be part of the</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#elif defined RT_PREEMPT</pre></td>
+    <td align="left" class="src "><pre>   * real_time group or xenomai group.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      stack_size_ = 50*PTHREAD_STACK_MIN;</pre></td>
+    <td align="left" class="src "><pre>   */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>  class RealTimeThreadParameters</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>      cpu_id_.clear();</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>      delay_ns_ = 0;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>73</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>      block_memory_ = true;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>74</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>      cpu_dma_latency_ = 0;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>75</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>    }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>76</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>77</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Destroy the RealTimeThreadParameters object</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>78</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>79</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
-    <td align="left" class="src coveredLine"><pre>    ~RealTimeThreadParameters(){}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>80</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  public:</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    /**</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>74</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     * @brief Construct a new RealTimeThreadParameters object</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>    RealTimeThreadParameters(){</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 26 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>      keyword_ = "real_time_thread";</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>78</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>      priority_ = 80;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#ifdef  XENOMAI</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      // see:</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      //https://xenomai.org/documentation/xenomai-2.6/html/api/group__task.html#ga520e6fad1decc5beff58b394ff443265</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      stack_size_ = 2000000;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Used in xenomai to define the thread id</pre></td>
+    <td align="left" class="src "><pre>      dedicated_cpu_id_=-1;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>      priority_=75; // not too high to avoid competition with SL</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    std::string keyword_;</pre></td>
+    <td align="left" class="src "><pre>#elif defined NON_REAL_TIME</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>86</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>      stack_size_ = -1;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Defines the thread priority from 0 to 100</pre></td>
+    <td align="left" class="src "><pre>#elif defined RT_PREEMPT</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>      stack_size_ = 50*PTHREAD_STACK_MIN;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>89</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int priority_;</pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>      cpu_id_.clear();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Define the stack size</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>      delay_ns_ = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>      block_memory_ = true;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int stack_size_;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>      cpu_dma_latency_ = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Define the cpu affinity. Which means on which cpu(s) the thread</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * is going to run</pre></td>
+    <td align="left" class="src "><pre>     * @brief Destroy the RealTimeThreadParameters object</pre></td>
     </tr>
 
     <tr>
@@ -981,64 +981,64 @@
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    std::vector&lt;int> cpu_id_;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>26</pre></td>
+    <td align="left" class="src coveredLine"><pre>    ~RealTimeThreadParameters(){}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief @todo Unknow Xenomai parameter</pre></td>
+    <td align="left" class="src "><pre>  public:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>101</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int delay_ns_;</pre></td>
+    <td align="left" class="src "><pre>     * @brief Used in xenomai to define the thread id</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Defines if the thread should block the memory in a "page" or if</pre></td>
+    <td align="left" class="src "><pre>    std::string keyword_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * several pages can be use. Switching memory page is time consumming and</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * a non real time operation.</pre></td>
+    <td align="left" class="src "><pre>     * @brief Defines the thread priority from 0 to 100</pre></td>
     </tr>
 
     <tr>
@@ -1052,231 +1052,231 @@
     <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    bool block_memory_;</pre></td>
+    <td align="left" class="src "><pre>    int priority_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre>     * @brief Define the stack size</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Maximum desired latency of the CPU in microseconds. Set to 0 to get best real-time</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * performance. Set to any negative value if you do not want the thread to change the</pre></td>
+    <td align="left" class="src "><pre>    int stack_size_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>113</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * CPU latency.</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     *</pre></td>
+    <td align="left" class="src "><pre>     * @brief Define the cpu affinity. Which means on which cpu(s) the thread</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>115</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>     * is going to run</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>116</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int cpu_dma_latency_;</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>117</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  };</pre></td>
+    <td align="left" class="src "><pre>    std::vector&lt;int> cpu_id_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>119</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>     * @brief indicate on which cpu the thread will run (xenomai only)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  /**</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>121</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * @brief This class allows you to spawn thread. Its parameter are defined</pre></td>
+    <td align="left" class="src "><pre>    int dedicated_cpu_id_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   * above.</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>   */</pre></td>
+    <td align="left" class="src "><pre>     * @brief @todo Unknow Xenomai parameter</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  class RealTimeThread</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>125</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="left" class="src "><pre>    int delay_ns_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  public:</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>127</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre>     * @brief Defines if the thread should block the memory in a "page" or if</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>128</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Construct a new ThreadInfo object</pre></td>
+    <td align="left" class="src "><pre>     * several pages can be use. Switching memory page is time consumming and</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>129</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>     * a non real time operation.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>130</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    RealTimeThread();</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>131</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    bool block_memory_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>132</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>133</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief We do not allow copies of this object</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>134</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>     * @brief Maximum desired latency of the CPU in microseconds. Set to 0 to get best real-time</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>135</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    RealTimeThread(const real_time_tools::RealTimeThread&amp; other) = delete;</pre></td>
+    <td align="left" class="src "><pre>     * performance. Set to any negative value if you do not want the thread to change the</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>136</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>     * CPU latency.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>137</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre>     *</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>138</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Destroy the RealTimeThread object.</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>139</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>    int cpu_dma_latency_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>140</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    ~RealTimeThread();</pre></td>
+    <td align="left" class="src "><pre>  };</pre></td>
     </tr>
 
     <tr>
@@ -1290,140 +1290,140 @@
     <td align="right" class="lineno"><pre>142</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>143</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief create_realtime_thread spawns a real time thread if the OS allows</pre></td>
+    <td align="left" class="src "><pre>  /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>144</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * it.</pre></td>
+    <td align="left" class="src "><pre>   * @brief This class allows you to spawn thread. Its parameter are defined</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>145</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @param[in] thread_function: the executing function for the thread.</pre></td>
+    <td align="left" class="src "><pre>   * above.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>146</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @param[in] args: arguments to be passed to the thread.</pre></td>
+    <td align="left" class="src "><pre>   */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>147</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @return the error code.</pre></td>
+    <td align="left" class="src "><pre>  class RealTimeThread</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>148</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>149</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int create_realtime_thread(void*(*thread_function)(void*),</pre></td>
+    <td align="left" class="src "><pre>  public:</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>150</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>                               void* args = nullptr);</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>151</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>     * @brief Construct a new ThreadInfo object</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>152</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>153</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief join join the real time thread</pre></td>
+    <td align="left" class="src "><pre>    RealTimeThread();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>154</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @return the error code.</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>155</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>156</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    int join();</pre></td>
+    <td align="left" class="src "><pre>     * @brief We do not allow copies of this object</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>157</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>158</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    /**</pre></td>
+    <td align="left" class="src "><pre>    RealTimeThread(const real_time_tools::RealTimeThread&amp; other) = delete;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>159</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief block_memory block the current and futur memory pages.</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>160</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * see https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/memory#memory-locking</pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>161</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * for further explanation.</pre></td>
+    <td align="left" class="src "><pre>     * @brief Destroy the RealTimeThread object.</pre></td>
     </tr>
 
     <tr>
@@ -1437,7 +1437,7 @@
     <td align="right" class="lineno"><pre>163</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    void block_memory();</pre></td>
+    <td align="left" class="src "><pre>    ~RealTimeThread();</pre></td>
     </tr>
 
     <tr>
@@ -1458,109 +1458,305 @@
     <td align="right" class="lineno"><pre>166</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     * @brief Paramter of the real time thread</pre></td>
+    <td align="left" class="src "><pre>     * @brief create_realtime_thread spawns a real time thread if the OS allows</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>167</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>     */</pre></td>
+    <td align="left" class="src "><pre>     * it.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>168</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    RealTimeThreadParameters parameters_;</pre></td>
+    <td align="left" class="src "><pre>     * @param[in] thread_function: the executing function for the thread.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>169</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>     * @param[in] args: arguments to be passed to the thread.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>170</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  private:</pre></td>
+    <td align="left" class="src "><pre>     * @return the error code.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>171</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#if defined(XENOMAI)</pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>172</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    throw std::runtime_error("xenomai not implemented")</pre></td>
+    <td align="left" class="src "><pre>    #ifdef XENOMAI</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>173</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#elif defined(NON_REAL_TIME)</pre></td>
+    <td align="left" class="src "><pre>    int create_realtime_thread(void(*thread_function)(void*),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>174</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    std::unique_ptr&lt;std::thread> thread_;</pre></td>
+    <td align="left" class="src "><pre>                               void* args = nullptr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>175</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#elif defined(RT_PREEMPT)</pre></td>
+    <td align="left" class="src "><pre>    #else</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    std::unique_ptr&lt;pthread_t> thread_;</pre></td>
+    <td align="left" class="src "><pre>    int create_realtime_thread(void*(*thread_function)(void*),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>177</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#endif</pre></td>
+    <td align="left" class="src "><pre>                               void* args = nullptr);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  };</pre></td>
+    <td align="left" class="src "><pre>    #endif</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>179</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>} // namespace real_time_tools</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>180</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     * @brief join join the real time thread</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>182</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     * @return the error code.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>183</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>184</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    int join();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>185</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>186</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>187</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     * @brief block_memory block the current and futur memory pages.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>188</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     * see https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/memory#memory-locking</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>189</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     * for further explanation.</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>190</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>191</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    void block_memory();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>192</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>193</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    /**</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>194</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     * @brief Paramter of the real time thread</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>195</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>     */</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>196</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    RealTimeThreadParameters parameters_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>197</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>198</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  private:</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>199</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#if defined(XENOMAI)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>200</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    RT_TASK thread_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>201</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#elif defined(NON_REAL_TIME)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>202</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    std::unique_ptr&lt;std::thread> thread_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>203</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#elif defined(RT_PREEMPT)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>204</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    std::unique_ptr&lt;pthread_t> thread_;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>205</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>#endif</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>206</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  };</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>207</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>} // namespace real_time_tools</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>208</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>209</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>#endif // REALTIME_THREAD_CREATION_HPP</pre></td>

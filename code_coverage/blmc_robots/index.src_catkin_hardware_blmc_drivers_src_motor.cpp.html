@@ -270,17 +270,17 @@
             <td></td>
             <td class="headerName">Lines:</td>
             <td class="headerTableEntry">1</td>
-            <td class="headerTableEntry">45</td>
-            <td class="headerTableEntry" style="background-color:LightPink">2.2 %</td>
+            <td class="headerTableEntry">79</td>
+            <td class="headerTableEntry" style="background-color:LightPink">1.3 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2019-12-17 10:55:43</td>
+            <td class="headerValue">2020-01-13 15:27:15</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">2</td>
-            <td class="headerTableEntry">92</td>
-            <td class="headerTableEntry" style="background-color:LightPink">2.2 %</td>
+            <td class="headerTableEntry">184</td>
+            <td class="headerTableEntry" style="background-color:LightPink">1.1 %</td>
           </tr>
         </table>
       </td>
@@ -1010,214 +1010,564 @@
     <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>SafeMotor::SafeMotor(</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void Motor::print() const</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  Motor::Ptr&lt;MotorBoardInterface> board,</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  bool motor_id,</pre></td>
+    <td align="left" class="src "><pre>    MotorBoardStatus motor_board_status;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const double&amp; max_current_target,</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    double motor_current = std::nan("");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const size_t&amp; history_length,</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    double motor_position = std::nan("");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  const double&amp; max_velocity):</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    double motor_velocity = std::nan("");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      Motor(board, motor_id),</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    double motor_encoder_index = std::nan("");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>      max_current_target_(max_current_target),</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    double motor_sent_current_target = std::nan("");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      max_velocity_(max_velocity)</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(board_->get_status()->length() != 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    current_target_ = std::make_shared&lt;ScalarTimeseries>(history_length);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        {motor_board_status = board_->get_status()->newest_element();}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>113</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(get_measurement(current)->length() != 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>115</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void SafeMotor::set_current_target(const double&amp; current_target)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        {motor_current = get_measurement(current)->newest_element();}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>116</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>117</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    current_target_->append(current_target);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(get_measurement(position)->length() != 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        {motor_position = get_measurement(position)->newest_element();}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>119</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // limit current to avoid overheating ----------------------------------</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    double safe_current_target = std::min(current_target,</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(get_measurement(velocity)->length() != 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>121</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>                                          max_current_target_);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        {motor_velocity = get_measurement(velocity)->newest_element();}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    safe_current_target = std::max(safe_current_target,</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>                                    -max_current_target_);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(get_measurement(encoder_index)->length() != 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        {motor_encoder_index = get_measurement(encoder_index)->newest_element();}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>125</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // limit velocity to avoid breaking the robot --------------------------</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    if(!std::isnan(max_velocity_) &amp;&amp; get_measurement(velocity)->length() > 0 &amp;&amp;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(get_sent_current_target()->length() != 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>127</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            std::fabs(get_measurement(velocity)->newest_element()) > max_velocity_)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        {motor_sent_current_target = get_sent_current_target()->newest_element();}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>128</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>        safe_current_target = 0;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>129</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    Motor::set_current_target(safe_current_target);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>130</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>131</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>129</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("motor board status: ");</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>130</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("enabled: %d ", motor_board_status.system_enabled);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>131</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("error_code: %d ", motor_board_status.error_code);</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>132</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("motor status: ");</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>133</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(motor_id_ == 0)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>134</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>135</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        rt_printf("enabled: %d ", motor_board_status.motor1_enabled);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>136</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        rt_printf("ready: %d ", motor_board_status.motor1_ready);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>137</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>138</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    else</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>139</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>140</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        rt_printf("enabled: %d ", motor_board_status.motor2_enabled);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>141</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        rt_printf("ready: %d ", motor_board_status.motor2_ready);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>142</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>143</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("motor measurements: ");</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>144</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("current: %8f ", motor_current);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>145</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("position: %8f ", motor_position);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("velocity: %8f ", motor_velocity);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("encoder index: %8f ", motor_encoder_index);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("target current: %8f ", motor_sent_current_target);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    rt_printf("\n");</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>151</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>152</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>SafeMotor::SafeMotor(</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>153</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  Motor::Ptr&lt;MotorBoardInterface> board,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>154</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  bool motor_id,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>155</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  const double&amp; max_current_target,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>156</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  const size_t&amp; history_length,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  const double&amp; max_velocity):</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      Motor(board, motor_id),</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      max_current_target_(max_current_target),</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      max_velocity_(max_velocity)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    current_target_ = std::make_shared&lt;ScalarTimeseries>(history_length);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void SafeMotor::set_current_target(const double&amp; current_target)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    current_target_->append(current_target);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // limit current to avoid overheating ----------------------------------</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    double safe_current_target = std::min(current_target,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>                                          max_current_target_);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    safe_current_target = std::max(safe_current_target,</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>                                    -max_current_target_);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>174</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>175</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // limit velocity to avoid breaking the robot --------------------------</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>176</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if(!std::isnan(max_velocity_) &amp;&amp; get_measurement(velocity)->length() > 0 &amp;&amp;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>177</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            std::fabs(get_measurement(velocity)->newest_element()) > max_velocity_)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>178</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        safe_current_target = 0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>179</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    Motor::set_current_target(safe_current_target);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>180</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>181</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>3</pre></td>
     <td align="left" class="src coveredLine"><pre>} // namespace blmc_drivers</pre></td>
