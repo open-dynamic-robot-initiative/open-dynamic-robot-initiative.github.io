@@ -11,5 +11,7 @@ var classblmc__drivers_1_1SpiMotorBoard =
     [ "is_ready", "classblmc__drivers_1_1SpiMotorBoard.html#aebd1424f4bee236b2e2ca3bbb1dd8f93", null ],
     [ "send_if_input_changed", "classblmc__drivers_1_1SpiMotorBoard.html#a39e986b4df42867f8d5896c35c7c4464", null ],
     [ "set_command", "classblmc__drivers_1_1SpiMotorBoard.html#a6b626225af993444bdee397952281772", null ],
-    [ "set_control", "classblmc__drivers_1_1SpiMotorBoard.html#ae11c5382665adfa718bcc43ec1e84b6e", null ]
+    [ "set_control", "classblmc__drivers_1_1SpiMotorBoard.html#ae11c5382665adfa718bcc43ec1e84b6e", null ],
+    [ "spi_bus_", "classblmc__drivers_1_1SpiMotorBoard.html#a767abb6f687ed8bf7fef873ab892eaf7", null ],
+    [ "udriver_id_", "classblmc__drivers_1_1SpiMotorBoard.html#a4b865479722dbecec8ebb66d6b93ecae", null ]
 ];

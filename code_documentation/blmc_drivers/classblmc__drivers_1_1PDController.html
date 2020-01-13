@@ -108,6 +108,9 @@ $(document).ready(function(){initNavTree('classblmc__drivers_1_1PDController.htm
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classblmc__drivers_1_1PDController-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">blmc_drivers::PDController Class Reference</div>  </div>
@@ -132,6 +135,34 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1PDController.html#a9c9258e9f1af0f4ca00d2ede682ad511">start_loop</a> ()</td></tr>
 <tr class="memdesc:a9c9258e9f1af0f4ca00d2ede682ad511"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is a helper to start the thread loop. <br /></td></tr>
 <tr class="separator:a9c9258e9f1af0f4ca00d2ede682ad511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae00d08095b9ff6b6dfd550c59ba2857a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1PDController.html#ae00d08095b9ff6b6dfd550c59ba2857a">loop</a> ()</td></tr>
+<tr class="memdesc:ae00d08095b9ff6b6dfd550c59ba2857a"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a simple control loop which runs at a kilohertz.  <a href="#ae00d08095b9ff6b6dfd550c59ba2857a">More...</a><br /></td></tr>
+<tr class="separator:ae00d08095b9ff6b6dfd550c59ba2857a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:aaae22ea8cb0324570926c16b43885948"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaae22ea8cb0324570926c16b43885948"></a>
+static THREAD_FUNCTION_RETURN_TYPE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1PDController.html#aaae22ea8cb0324570926c16b43885948">loop</a> (void *instance_pointer)</td></tr>
+<tr class="memdesc:aaae22ea8cb0324570926c16b43885948"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. <br /></td></tr>
+<tr class="separator:aaae22ea8cb0324570926c16b43885948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a11b0e1df638bc792b752349f39187a67"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11b0e1df638bc792b752349f39187a67"></a>
+std::vector&lt; <a class="el" href="namespaceblmc__drivers.html#a134270c90d29a9a28b64ab0e5f7158f7">PairMotorSlider</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1PDController.html#a11b0e1df638bc792b752349f39187a67">motor_slider_pairs_</a></td></tr>
+<tr class="memdesc:a11b0e1df638bc792b752349f39187a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a pair of motor and sliders so that we associate one with the other. <br /></td></tr>
+<tr class="separator:a11b0e1df638bc792b752349f39187a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425d7f9c093a0c586ef608d4c11c8889"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a425d7f9c093a0c586ef608d4c11c8889"></a>
+real_time_tools::RealTimeThread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1PDController.html#a425d7f9c093a0c586ef608d4c11c8889">rt_thread_</a></td></tr>
+<tr class="memdesc:a425d7f9c093a0c586ef608d4c11c8889"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the real time thread object. <br /></td></tr>
+<tr class="separator:a425d7f9c093a0c586ef608d4c11c8889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3520dd968bde954399bf3ef4508c3d54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3520dd968bde954399bf3ef4508c3d54"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1PDController.html#a3520dd968bde954399bf3ef4508c3d54">stop_loop</a></td></tr>
+<tr class="memdesc:a3520dd968bde954399bf3ef4508c3d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">managing the stopping of the loop <br /></td></tr>
+<tr class="separator:a3520dd968bde954399bf3ef4508c3d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is a basic PD controller to be used in the demos of this package. </p>
@@ -165,6 +196,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae00d08095b9ff6b6dfd550c59ba2857a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void blmc_drivers::PDController::loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>this is a simple control loop which runs at a kilohertz. </p>
+<p>it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. </p>
 
 </div>
 </div>

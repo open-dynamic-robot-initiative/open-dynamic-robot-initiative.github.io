@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['canbus',['CanBus',['../classblmc__drivers_1_1CanBus.html#a7d376f1ebd6dd8bc3299f6fc9f3d42c6',1,'blmc_drivers::CanBus']]],
-  ['canbusmotorboard',['CanBusMotorBoard',['../classblmc__drivers_1_1CanBusMotorBoard.html#a43674811685fce4dbc3a9996e08454c9',1,'blmc_drivers::CanBusMotorBoard']]],
-  ['close_5fcan_5fdevice',['close_can_device',['../namespaceosi.html#a92dc20de3b4933a10f24c98cecf2568b',1,'osi']]],
-  ['consttorquecontrol',['ConstTorqueControl',['../classblmc__drivers_1_1ConstTorqueControl.html#a2253fc0273462fa35c21f1424dcc919c',1,'blmc_drivers::ConstTorqueControl']]],
-  ['controller',['Controller',['../classController.html#aceedb7c8fbd0fab8080fd7273d9dc65d',1,'Controller']]],
-  ['create_5fvector_5fof_5fpointers',['create_vector_of_pointers',['../namespaceblmc__drivers.html#add73ea2a43509013ad00665753f175e1',1,'blmc_drivers']]]
+  ['bytes_5fto_5fint32',['bytes_to_int32',['../classblmc__drivers_1_1CanBusMotorBoard.html#ae320518f2cf2c8af0e50220f11556b85',1,'blmc_drivers::CanBusMotorBoard']]]
 ];

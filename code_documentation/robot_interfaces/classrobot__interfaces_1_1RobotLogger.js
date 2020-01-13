@@ -16,5 +16,6 @@ var classrobot__interfaces_1_1RobotLogger =
     [ "logger_data_", "classrobot__interfaces_1_1RobotLogger.html#af25629879ba199d87f6885b245ad84ef", null ],
     [ "output_file_", "classrobot__interfaces_1_1RobotLogger.html#a562f4334752330e35359879bcbd77888", null ],
     [ "output_file_name_", "classrobot__interfaces_1_1RobotLogger.html#a9a4b7599bbee1fd94dbdd5de1ff5ff67", null ],
-    [ "stop_was_called_", "classrobot__interfaces_1_1RobotLogger.html#ae6fc2cb4b409567ddf516e57d71b9e66", null ]
+    [ "stop_was_called_", "classrobot__interfaces_1_1RobotLogger.html#ae6fc2cb4b409567ddf516e57d71b9e66", null ],
+    [ "thread_", "classrobot__interfaces_1_1RobotLogger.html#a466c761dc2d2d3fe5ff4d446ed73507b", null ]
 ];

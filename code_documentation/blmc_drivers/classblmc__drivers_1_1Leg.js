@@ -6,5 +6,6 @@ var classblmc__drivers_1_1Leg =
     [ "get_motor_measurement", "classblmc__drivers_1_1Leg.html#a585436aebc39562a5d1a486810b8b9ce", null ],
     [ "get_sent_current_target", "classblmc__drivers_1_1Leg.html#a353253074a39f566055121c2cb4adc6a", null ],
     [ "send_if_input_changed", "classblmc__drivers_1_1Leg.html#a82bb681e4c5047babf699cff559e9488", null ],
-    [ "set_current_target", "classblmc__drivers_1_1Leg.html#a05415969ef111f86837b34bdaecb7320", null ]
+    [ "set_current_target", "classblmc__drivers_1_1Leg.html#a05415969ef111f86837b34bdaecb7320", null ],
+    [ "motors_", "classblmc__drivers_1_1Leg.html#a78289d4c19fc35dbc3e7dd849e57479e", null ]
 ];

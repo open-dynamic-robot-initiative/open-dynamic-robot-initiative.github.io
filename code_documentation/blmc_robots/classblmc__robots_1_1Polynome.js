@@ -1,5 +1,6 @@
 var classblmc__robots_1_1Polynome =
 [
+    [ "Coefficients", "classblmc__robots_1_1Polynome.html#a31e086184f3934b269e8318cce2859eb", null ],
     [ "Polynome", "classblmc__robots_1_1Polynome.html#a8ece7a7021cc62167c023d51a5bb3879", null ],
     [ "~Polynome", "classblmc__robots_1_1Polynome.html#a4541e4b629061dfdbca73559a42a6e93", null ],
     [ "compute", "classblmc__robots_1_1Polynome.html#ae102191e0f730744e822c8e7599008d6", null ],

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['error_5fcode',['error_code',['../classblmc__drivers_1_1MotorBoardStatus.html#ad1a5cb78d86e76a60750c0e3e6b34b7e',1,'blmc_drivers::MotorBoardStatus']]]
+  ['data',['data',['../classblmc__drivers_1_1CanBusFrame.html#a1a4cd54d31de4361b003e39dfdfa4cfe',1,'blmc_drivers::CanBusFrame']]],
+  ['dlc',['dlc',['../classblmc__drivers_1_1CanBusFrame.html#ab5c88f0e6fa037ace23a059a3e75b30b',1,'blmc_drivers::CanBusFrame']]]
 ];

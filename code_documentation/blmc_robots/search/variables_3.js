@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gear_5fratio',['gear_ratio',['../structblmc__robots_1_1MotorParameters.html#a6a8158b9ac1633bab6181043d04ab655',1,'blmc_robots::MotorParameters']]]
+  ['endstop_5fsearch_5ftorque_5fnm',['endstop_search_torque_Nm',['../structblmc__robots_1_1CalibrationParameters.html#ab1858220b9d3b2c9b48a34ae08b1342a',1,'blmc_robots::CalibrationParameters']]]
 ];

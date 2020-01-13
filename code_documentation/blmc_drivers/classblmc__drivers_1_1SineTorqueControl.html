@@ -108,6 +108,9 @@ $(document).ready(function(){initNavTree('classblmc__drivers_1_1SineTorqueContro
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classblmc__drivers_1_1SineTorqueControl-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">blmc_drivers::SineTorqueControl Class Reference</div>  </div>
@@ -136,6 +139,54 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a1ecff8c52b3a8b0f6ece6818c42ec94a">stop_loop</a> ()</td></tr>
 <tr class="memdesc:a1ecff8c52b3a8b0f6ece6818c42ec94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the control and dump the data. <br /></td></tr>
 <tr class="separator:a1ecff8c52b3a8b0f6ece6818c42ec94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9f5f27389db0a303e2bae2f9c5135417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a9f5f27389db0a303e2bae2f9c5135417">loop</a> ()</td></tr>
+<tr class="memdesc:a9f5f27389db0a303e2bae2f9c5135417"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a simple control loop which runs at a kilohertz.  <a href="#a9f5f27389db0a303e2bae2f9c5135417">More...</a><br /></td></tr>
+<tr class="separator:a9f5f27389db0a303e2bae2f9c5135417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a6882e509d6e81f09a70aa4214aeadf16"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6882e509d6e81f09a70aa4214aeadf16"></a>
+static THREAD_FUNCTION_RETURN_TYPE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a6882e509d6e81f09a70aa4214aeadf16">loop</a> (void *instance_pointer)</td></tr>
+<tr class="memdesc:a6882e509d6e81f09a70aa4214aeadf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. <br /></td></tr>
+<tr class="separator:a6882e509d6e81f09a70aa4214aeadf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9c0d1d276c8c1e6e483ca257ccd12c73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c0d1d276c8c1e6e483ca257ccd12c73"></a>
+std::vector&lt; <a class="el" href="namespaceblmc__drivers.html#ab975c3be3c53a93a10c491f07a132e2b">SafeMotor_ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a9c0d1d276c8c1e6e483ca257ccd12c73">motor_list_</a></td></tr>
+<tr class="memdesc:a9c0d1d276c8c1e6e483ca257ccd12c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is list of motors. <br /></td></tr>
+<tr class="separator:a9c0d1d276c8c1e6e483ca257ccd12c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526b5a28129d498481c948edec6f4639"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a526b5a28129d498481c948edec6f4639"></a>
+real_time_tools::RealTimeThread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a526b5a28129d498481c948edec6f4639">rt_thread_</a></td></tr>
+<tr class="memdesc:a526b5a28129d498481c948edec6f4639"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the real time thread object. <br /></td></tr>
+<tr class="separator:a526b5a28129d498481c948edec6f4639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ab17f38eb5dba5792f1dfd0f5fac35"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96ab17f38eb5dba5792f1dfd0f5fac35"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a96ab17f38eb5dba5792f1dfd0f5fac35">stop_loop_</a></td></tr>
+<tr class="memdesc:a96ab17f38eb5dba5792f1dfd0f5fac35"><td class="mdescLeft">&#160;</td><td class="mdescRight">managing the stopping of the loop <br /></td></tr>
+<tr class="separator:a96ab17f38eb5dba5792f1dfd0f5fac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dcbc9b83ae5e2956e7172a9197c7964"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dcbc9b83ae5e2956e7172a9197c7964"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a3dcbc9b83ae5e2956e7172a9197c7964">memory_buffer_size_</a></td></tr>
+<tr class="memdesc:a3dcbc9b83ae5e2956e7172a9197c7964"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory_buffer_size_ is the max size of the memory buffer. <br /></td></tr>
+<tr class="separator:a3dcbc9b83ae5e2956e7172a9197c7964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a501ea19e046c51d747b638f13fafae96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a501ea19e046c51d747b638f13fafae96"></a>
+std::vector&lt; std::deque&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a501ea19e046c51d747b638f13fafae96">encoders_</a></td></tr>
+<tr class="memdesc:a501ea19e046c51d747b638f13fafae96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encoder data. <br /></td></tr>
+<tr class="separator:a501ea19e046c51d747b638f13fafae96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93eed363c979a64cfe93fb19916c3a75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93eed363c979a64cfe93fb19916c3a75"></a>
+std::vector&lt; std::deque&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a93eed363c979a64cfe93fb19916c3a75">velocities_</a></td></tr>
+<tr class="memdesc:a93eed363c979a64cfe93fb19916c3a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocity data. <br /></td></tr>
+<tr class="separator:a93eed363c979a64cfe93fb19916c3a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1519f05faec9972e15f48b3084debbc2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1519f05faec9972e15f48b3084debbc2"></a>
+std::vector&lt; std::deque&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a1519f05faec9972e15f48b3084debbc2">currents_</a></td></tr>
+<tr class="memdesc:a1519f05faec9972e15f48b3084debbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">current data <br /></td></tr>
+<tr class="separator:a1519f05faec9972e15f48b3084debbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41969250f8847160f590a688bdf1e026"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41969250f8847160f590a688bdf1e026"></a>
+std::vector&lt; std::deque&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SineTorqueControl.html#a41969250f8847160f590a688bdf1e026">control_buffer_</a></td></tr>
+<tr class="memdesc:a41969250f8847160f590a688bdf1e026"><td class="mdescLeft">&#160;</td><td class="mdescRight">control_buffer_ <br /></td></tr>
+<tr class="separator:a41969250f8847160f590a688bdf1e026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is a basic PD controller to be used in the demos of this package. </p>
@@ -169,6 +220,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9f5f27389db0a303e2bae2f9c5135417"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void blmc_drivers::SineTorqueControl::loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>this is a simple control loop which runs at a kilohertz. </p>
+<p>it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. </p>
 
 </div>
 </div>

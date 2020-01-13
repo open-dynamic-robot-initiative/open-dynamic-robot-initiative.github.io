@@ -14,5 +14,7 @@ var classmct_1_1LinearDynamicsWithAccelerationConstraint =
     [ "will_deceed_jointly", "classmct_1_1LinearDynamicsWithAccelerationConstraint.html#a9c94e5e278cb7519215a5495f326b11c", null ],
     [ "will_deceed_jointly", "classmct_1_1LinearDynamicsWithAccelerationConstraint.html#ae3c5bef385c2bcb64b5a7cd9dae42654", null ],
     [ "will_exceed_jointly", "classmct_1_1LinearDynamicsWithAccelerationConstraint.html#a941585f2acda77a22a3a269ba6873afb", null ],
-    [ "will_exceed_jointly", "classmct_1_1LinearDynamicsWithAccelerationConstraint.html#a568991a3b2459be274a86298caf8356c", null ]
+    [ "will_exceed_jointly", "classmct_1_1LinearDynamicsWithAccelerationConstraint.html#a568991a3b2459be274a86298caf8356c", null ],
+    [ "acceleration_limit_", "classmct_1_1LinearDynamicsWithAccelerationConstraint.html#a8030e84817471fde3716a5d4ea4f2927", null ],
+    [ "jerk_duration_", "classmct_1_1LinearDynamicsWithAccelerationConstraint.html#ad5f33b779d2503eca2a7bb1f53ccc0da", null ]
 ];

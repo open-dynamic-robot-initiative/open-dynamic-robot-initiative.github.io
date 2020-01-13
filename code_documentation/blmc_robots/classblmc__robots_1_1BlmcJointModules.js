@@ -18,5 +18,6 @@ var classblmc__robots_1_1BlmcJointModules =
     [ "set_position_control_gains", "classblmc__robots_1_1BlmcJointModules.html#ada76994634fd0f15fb5df311a61e97d7", null ],
     [ "set_position_control_gains", "classblmc__robots_1_1BlmcJointModules.html#a524fd41f808027190d59460a4787aea6", null ],
     [ "set_torques", "classblmc__robots_1_1BlmcJointModules.html#ac7dba81727847238fc4c42b7dca6a0ea", null ],
-    [ "set_zero_angles", "classblmc__robots_1_1BlmcJointModules.html#abc94960666d33b6a5071d4cf25f7794d", null ]
+    [ "set_zero_angles", "classblmc__robots_1_1BlmcJointModules.html#abc94960666d33b6a5071d4cf25f7794d", null ],
+    [ "modules_", "classblmc__robots_1_1BlmcJointModules.html#a40ab7b84d3b54d298209098cdf81a14d", null ]
 ];

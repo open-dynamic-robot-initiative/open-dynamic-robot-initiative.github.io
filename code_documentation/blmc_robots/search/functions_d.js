@@ -1,6 +1,28 @@
 var searchData=
 [
-  ['testbench8motors',['TestBench8Motors',['../classblmc__robots_1_1TestBench8Motors.html#a99006d989ac690956a2e1ab9b710de0f',1,'blmc_robots::TestBench8Motors']]],
-  ['teststand',['Teststand',['../classblmc__robots_1_1Teststand.html#a4747b0754cd3dd669c02f27662baef7e',1,'blmc_robots::Teststand']]],
-  ['timepolynome',['TimePolynome',['../classblmc__robots_1_1TimePolynome.html#a0855aaf796c9d67302a5f2225355d745',1,'blmc_robots::TimePolynome']]]
+  ['send_5ftarget_5fcurrent',['send_target_current',['../classblmc__robots_1_1TestBench8Motors.html#a5194da9e85b4391e9ff6c5bf5a07faf2',1,'blmc_robots::TestBench8Motors']]],
+  ['send_5ftarget_5fjoint_5ftorque',['send_target_joint_torque',['../classblmc__robots_1_1SingleLeg.html#a0525a29e9b76527936525ca0e47cafe0',1,'blmc_robots::SingleLeg::send_target_joint_torque()'],['../classblmc__robots_1_1SingleMotor.html#a09a829c726847cf4e8fd34175ce1a139',1,'blmc_robots::SingleMotor::send_target_joint_torque()'],['../classblmc__robots_1_1Solo12.html#a7f9bbd57bf8f0a9d54542c249c03fb47',1,'blmc_robots::Solo12::send_target_joint_torque()'],['../classblmc__robots_1_1Solo8.html#aa743eac2996bd33c86e23bd2029c3a01',1,'blmc_robots::Solo8::send_target_joint_torque()'],['../classblmc__robots_1_1Stuggihop.html#ac8bae7764c409c8312408ea8adb1165f',1,'blmc_robots::Stuggihop::send_target_joint_torque()'],['../classblmc__robots_1_1Teststand.html#aabb484d65bca5a341dd24abd91c47b9b',1,'blmc_robots::Teststand::send_target_joint_torque()']]],
+  ['send_5ftarget_5fmotor_5fcurrent',['send_target_motor_current',['../classblmc__robots_1_1SingleLeg.html#ac68163f459be877af9fb78f348729f9b',1,'blmc_robots::SingleLeg::send_target_motor_current()'],['../classblmc__robots_1_1SingleMotor.html#a2fa43cd18da7598b8a41da66ef9251ff',1,'blmc_robots::SingleMotor::send_target_motor_current()'],['../classblmc__robots_1_1Stuggihop.html#ab3c118885810575b36c49432a2a5eca5',1,'blmc_robots::Stuggihop::send_target_motor_current()']]],
+  ['send_5ftorque',['send_torque',['../classblmc__robots_1_1BlmcJointModule.html#af0484dd9efc47843706fc71d4351bdbd',1,'blmc_robots::BlmcJointModule']]],
+  ['send_5ftorques',['send_torques',['../classblmc__robots_1_1BlmcJointModules.html#a26d4d675142bc783c1f983d135a41a09',1,'blmc_robots::BlmcJointModules']]],
+  ['set_5fcoefficients',['set_coefficients',['../classblmc__robots_1_1Polynome.html#ad8daa2f5ffa1891aac2663519950afae',1,'blmc_robots::Polynome']]],
+  ['set_5fconfig_5fvalue',['set_config_value',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a0d5d8b4ad8693498e56a95e5cbbad9f6',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
+  ['set_5fhardstop2zero_5foffsets',['set_hardstop2zero_offsets',['../classblmc__robots_1_1Stuggihop.html#a5f0707d8965fc98b36ca3fa42b57db5f',1,'blmc_robots::Stuggihop']]],
+  ['set_5fjoint_5fpolarities',['set_joint_polarities',['../classblmc__robots_1_1BlmcJointModules.html#a97f538c52a1c00846497417333f93230',1,'blmc_robots::BlmcJointModules']]],
+  ['set_5fjoint_5fpolarity',['set_joint_polarity',['../classblmc__robots_1_1BlmcJointModule.html#a137da65771a8628db4692e3bfc924f07',1,'blmc_robots::BlmcJointModule']]],
+  ['set_5fmax_5fcurrent',['set_max_current',['../classblmc__robots_1_1SingleLeg.html#a54007e95c258ec05b63169f202d3a3a0',1,'blmc_robots::SingleLeg::set_max_current()'],['../classblmc__robots_1_1SingleMotor.html#af2add59e3d08949c658568b6d161b5ba',1,'blmc_robots::SingleMotor::set_max_current()'],['../classblmc__robots_1_1Stuggihop.html#a8be641fdc498b04a52bb721f14c449c3',1,'blmc_robots::Stuggihop::set_max_current()']]],
+  ['set_5fmax_5fjoint_5ftorques',['set_max_joint_torques',['../classblmc__robots_1_1Solo12.html#a9f0d4a95fd4f82681f78dda1d519e5f9',1,'blmc_robots::Solo12']]],
+  ['set_5fmotor_5farray',['set_motor_array',['../classblmc__robots_1_1BlmcJointModules.html#a905addfe3271be5bc88bd785c5cbb032',1,'blmc_robots::BlmcJointModules']]],
+  ['set_5fparameters',['set_parameters',['../classblmc__robots_1_1TimePolynome.html#ac7576e3ab26e11a183268dcc4721e6e5',1,'blmc_robots::TimePolynome']]],
+  ['set_5fposition_5fcontrol_5fgains',['set_position_control_gains',['../classblmc__robots_1_1BlmcJointModule.html#a464ab2a846630eba6582d09895df2852',1,'blmc_robots::BlmcJointModule::set_position_control_gains()'],['../classblmc__robots_1_1BlmcJointModules.html#ada76994634fd0f15fb5df311a61e97d7',1,'blmc_robots::BlmcJointModules::set_position_control_gains(size_t joint_id, double kp, double kd)'],['../classblmc__robots_1_1BlmcJointModules.html#a524fd41f808027190d59460a4787aea6',1,'blmc_robots::BlmcJointModules::set_position_control_gains(Vector kp, Vector kd)']]],
+  ['set_5fstart2hardstop_5foffsets',['set_start2hardstop_offsets',['../classblmc__robots_1_1Stuggihop.html#afb35c29fd6e5eb97337857fd34532a6d',1,'blmc_robots::Stuggihop']]],
+  ['set_5ftorque',['set_torque',['../classblmc__robots_1_1BlmcJointModule.html#adeb28005a7160ead68603aed4262508f',1,'blmc_robots::BlmcJointModule']]],
+  ['set_5ftorques',['set_torques',['../classblmc__robots_1_1BlmcJointModules.html#ac7dba81727847238fc4c42b7dca6a0ea',1,'blmc_robots::BlmcJointModules']]],
+  ['set_5fzero_5fangle',['set_zero_angle',['../classblmc__robots_1_1BlmcJointModule.html#ae59680a947539306e391a12ad2d071bb',1,'blmc_robots::BlmcJointModule']]],
+  ['set_5fzero_5fangles',['set_zero_angles',['../classblmc__robots_1_1BlmcJointModules.html#abc94960666d33b6a5071d4cf25f7794d',1,'blmc_robots::BlmcJointModules']]],
+  ['singleleg',['SingleLeg',['../classblmc__robots_1_1SingleLeg.html#a1b1ef6964010aa2042b042ff3d5d864f',1,'blmc_robots::SingleLeg']]],
+  ['singlemotor',['SingleMotor',['../classblmc__robots_1_1SingleMotor.html#a074ba2d9a982316a4aecac65b7c1b581',1,'blmc_robots::SingleMotor']]],
+  ['solo12',['Solo12',['../classblmc__robots_1_1Solo12.html#a9be95c29e80dca13a2dafa8a0f82eec5',1,'blmc_robots::Solo12']]],
+  ['solo8',['Solo8',['../classblmc__robots_1_1Solo8.html#ab37c2e406f12685fcb4e09086ee7c0c0',1,'blmc_robots::Solo8']]],
+  ['stuggihop',['Stuggihop',['../classblmc__robots_1_1Stuggihop.html#aea7781a2eb5a410ca8ab2bbfe425cb6a',1,'blmc_robots::Stuggihop']]]
 ];

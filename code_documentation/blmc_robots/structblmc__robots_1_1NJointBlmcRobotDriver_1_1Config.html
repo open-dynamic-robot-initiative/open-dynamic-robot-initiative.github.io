@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('structblmc__robots_1_1NJointBlmcRobotD
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">blmc_robots::NJointBlmcRobotDriver&lt; N_JOINTS, N_MOTOR_BOARDS &gt;::Config Struct Reference</div>  </div>
@@ -186,6 +187,13 @@ Vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 Vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a797ec8a753d4daf0f2df89ebaa313a13">initial_position_rad</a> = Vector::Zero()</td></tr>
 <tr class="memdesc:a797ec8a753d4daf0f2df89ebaa313a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial position to which the robot moves after initialization. <br /></td></tr>
 <tr class="separator:a797ec8a753d4daf0f2df89ebaa313a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a0d5d8b4ad8693498e56a95e5cbbad9f6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0d5d8b4ad8693498e56a95e5cbbad9f6"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a0d5d8b4ad8693498e56a95e5cbbad9f6">set_config_value</a> (const YAML::Node &amp;user_config, const std::string &amp;name, T *var)</td></tr>
+<tr class="memdesc:a0d5d8b4ad8693498e56a95e5cbbad9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set value from user configuration to var if specified.  <a href="#a0d5d8b4ad8693498e56a95e5cbbad9f6">More...</a><br /></td></tr>
+<tr class="separator:a0d5d8b4ad8693498e56a95e5cbbad9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;size_t N_JOINTS, size_t N_MOTOR_BOARDS&gt;<br />
@@ -226,6 +234,61 @@ template&lt;size_t N_JOINTS, size_t N_MOTOR_BOARDS&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Configuration </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d5d8b4ad8693498e56a95e5cbbad9f6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N_JOINTS, size_t N_MOTOR_BOARDS&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html">blmc_robots::NJointBlmcRobotDriver</a>&lt; N_JOINTS, N_MOTOR_BOARDS &gt;::Config::set_config_value </td>
+          <td>(</td>
+          <td class="paramtype">const YAML::Node &amp;&#160;</td>
+          <td class="paramname"><em>user_config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>var</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set value from user configuration to var if specified. </p>
+<p>Checks if a field <code>name</code> exists in <code>user_config</code>. If yes, its value is written to <code>var</code>, otherwise <code>var</code> is unchanged.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_config</td><td>YAML node containing the user configuration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of the configuration entry. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">var</td><td>Variable to which configuration is written. Value is unchanged if the specified field name does not exist in user_config, i.e. it can be initialized with a default value. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

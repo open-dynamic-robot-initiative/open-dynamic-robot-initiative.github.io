@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['board_5f',['board_',['../classblmc__drivers_1_1Motor.html#a779365c022edb7d4beb4060dcdb7dd72',1,'blmc_drivers::Motor']]]
+  ['analog_5fsensor_5f',['analog_sensor_',['../classController.html#a33ba57988a9da049562e61572ae53a05',1,'Controller::analog_sensor_()'],['../classLegController.html#a1a05529b6f3f40c7d3da6e6a9fa94cea',1,'LegController::analog_sensor_()']]]
 ];

@@ -109,6 +109,8 @@ $(document).ready(function(){initNavTree('classLegController.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classLegController-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">LegController Class Reference</div>  </div>
@@ -138,6 +140,31 @@ Static Public Member Functions</h2></td></tr>
 static THREAD_FUNCTION_RETURN_TYPE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLegController.html#a87bba6942e6f8ba649f595e871d0d379">loop</a> (void *instance_pointer)</td></tr>
 <tr class="memdesc:a87bba6942e6f8ba649f595e871d0d379"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. <br /></td></tr>
 <tr class="separator:a87bba6942e6f8ba649f595e871d0d379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a00000dd7bbaa4f1e05a9ea16f05e73e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLegController.html#a00000dd7bbaa4f1e05a9ea16f05e73e8">loop</a> ()</td></tr>
+<tr class="memdesc:a00000dd7bbaa4f1e05a9ea16f05e73e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a simple control loop which runs at a kilohertz.  <a href="#a00000dd7bbaa4f1e05a9ea16f05e73e8">More...</a><br /></td></tr>
+<tr class="separator:a00000dd7bbaa4f1e05a9ea16f05e73e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af2abd6d8c18c9653813bb231a0688a54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2abd6d8c18c9653813bb231a0688a54"></a>
+std::shared_ptr&lt; <a class="el" href="classblmc__drivers_1_1Leg.html">blmc_drivers::Leg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLegController.html#af2abd6d8c18c9653813bb231a0688a54">leg_</a></td></tr>
+<tr class="memdesc:af2abd6d8c18c9653813bb231a0688a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">is the leg to control <br /></td></tr>
+<tr class="separator:af2abd6d8c18c9653813bb231a0688a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a05529b6f3f40c7d3da6e6a9fa94cea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a05529b6f3f40c7d3da6e6a9fa94cea"></a>
+std::shared_ptr&lt; <a class="el" href="classblmc__drivers_1_1AnalogSensor.html">blmc_drivers::AnalogSensor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLegController.html#a1a05529b6f3f40c7d3da6e6a9fa94cea">analog_sensor_</a></td></tr>
+<tr class="memdesc:a1a05529b6f3f40c7d3da6e6a9fa94cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">is the list of sliders <br /></td></tr>
+<tr class="separator:a1a05529b6f3f40c7d3da6e6a9fa94cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34aac27ee8efb204f98203b553094588"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34aac27ee8efb204f98203b553094588"></a>
+real_time_tools::RealTimeThread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLegController.html#a34aac27ee8efb204f98203b553094588">rt_thread_</a></td></tr>
+<tr class="memdesc:a34aac27ee8efb204f98203b553094588"><td class="mdescLeft">&#160;</td><td class="mdescRight">is the real time thread object. <br /></td></tr>
+<tr class="separator:a34aac27ee8efb204f98203b553094588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991995e57f3581074b9c0eec32966e35"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a991995e57f3581074b9c0eec32966e35"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLegController.html#a991995e57f3581074b9c0eec32966e35">stop_loop_</a></td></tr>
+<tr class="memdesc:a991995e57f3581074b9c0eec32966e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">manages the shutdown of the controller <br /></td></tr>
+<tr class="separator:a991995e57f3581074b9c0eec32966e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple PD control on the leg. </p>
@@ -182,6 +209,33 @@ static THREAD_FUNCTION_RETURN_TYPE&#160;</td><td class="memItemRight" valign="bo
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a00000dd7bbaa4f1e05a9ea16f05e73e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LegController::loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>this is a simple control loop which runs at a kilohertz. </p>
+<p>it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. </p>
 
 </div>
 </div>

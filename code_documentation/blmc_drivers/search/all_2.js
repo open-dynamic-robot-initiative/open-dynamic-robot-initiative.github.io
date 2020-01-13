@@ -2,6 +2,8 @@ var searchData=
 [
   ['can_5fbus_2ecpp',['can_bus.cpp',['../can__bus_8cpp.html',1,'']]],
   ['can_5fbus_2ehpp',['can_bus.hpp',['../can__bus_8hpp.html',1,'']]],
+  ['can_5fbus_5f',['can_bus_',['../classblmc__drivers_1_1CanBusMotorBoard.html#ab58dc93d9117503950fbe4d7a7c70914',1,'blmc_drivers::CanBusMotorBoard']]],
+  ['can_5fconnection_5f',['can_connection_',['../classblmc__drivers_1_1CanBus.html#a996c9b1bc46071b2d002de38d6e9f781',1,'blmc_drivers::CanBus']]],
   ['can_5fframe_5ft',['can_frame_t',['../os__interface_8hpp.html#a8bc67ce447b2fa424a45f3e01162035f',1,'os_interface.hpp']]],
   ['can_5fid_5ft',['can_id_t',['../os__interface_8hpp.html#ab9491ad99890aa9ecf1785d1edd23d64',1,'os_interface.hpp']]],
   ['can_5frecv_5ftimeout',['CAN_RECV_TIMEOUT',['../classblmc__drivers_1_1MotorBoardStatus.html#a9fd931e24550f5e5877d7a6cf499f6cfa25dd0ce676d69449a6fe0a02fa6e6a5d',1,'blmc_drivers::MotorBoardStatus']]],
@@ -10,10 +12,12 @@ var searchData=
   ['canbusconnection',['CanBusConnection',['../classblmc__drivers_1_1CanBusConnection.html',1,'blmc_drivers']]],
   ['canbusframe',['CanBusFrame',['../classblmc__drivers_1_1CanBusFrame.html',1,'blmc_drivers']]],
   ['canbusinterface',['CanBusInterface',['../classblmc__drivers_1_1CanBusInterface.html',1,'blmc_drivers']]],
-  ['canbusmotorboard',['CanBusMotorBoard',['../classblmc__drivers_1_1CanBusMotorBoard.html',1,'blmc_drivers']]],
   ['canbusmotorboard',['CanBusMotorBoard',['../classblmc__drivers_1_1CanBusMotorBoard.html#a43674811685fce4dbc3a9996e08454c9',1,'blmc_drivers::CanBusMotorBoard']]],
+  ['canbusmotorboard',['CanBusMotorBoard',['../classblmc__drivers_1_1CanBusMotorBoard.html',1,'blmc_drivers']]],
+  ['canframeids',['CanframeIDs',['../classblmc__drivers_1_1CanBusMotorBoard.html#addbf32fe0b6fa57134546c1f6ec5eb80',1,'blmc_drivers::CanBusMotorBoard']]],
   ['canframetimeseries',['CanframeTimeseries',['../classblmc__drivers_1_1CanBusInterface.html#a2da2627c961927f48359ae7d7e1aa4da',1,'blmc_drivers::CanBusInterface']]],
   ['close_5fcan_5fdevice',['close_can_device',['../namespaceosi.html#a92dc20de3b4933a10f24c98cecf2568b',1,'osi']]],
+  ['command_5f',['command_',['../classblmc__drivers_1_1CanBusMotorBoard.html#a720c6300bf07245a739713a209799c02',1,'blmc_drivers::CanBusMotorBoard::command_()'],['../classblmc__drivers_1_1SpiBus.html#a0dadae58644afb41beba8df8f9f09727',1,'blmc_drivers::SpiBus::command_()']]],
   ['commandtimeseries',['CommandTimeseries',['../classblmc__drivers_1_1MotorBoardInterface.html#ae2afe94a023d9f08a4c689e9b7660f15',1,'blmc_drivers::MotorBoardInterface']]],
   ['conditionvariable',['ConditionVariable',['../namespaceosi.html#a31b1ce104b168554e4832b5d3b684073',1,'osi']]],
   ['const_5ftorque_5fcontrol_2ecpp',['const_torque_control.cpp',['../const__torque__control_8cpp.html',1,'']]],
@@ -22,8 +26,13 @@ var searchData=
   ['consttorquecontrol',['ConstTorqueControl',['../classblmc__drivers_1_1ConstTorqueControl.html',1,'blmc_drivers']]],
   ['content_5f',['content_',['../classblmc__drivers_1_1MotorBoardCommand.html#ac417b63a8cc8801a6757f4dce3b0810c',1,'blmc_drivers::MotorBoardCommand']]],
   ['contents',['Contents',['../classblmc__drivers_1_1MotorBoardCommand.html#ad61acf8dcb8f6fcb382fc5cbc1e44615',1,'blmc_drivers::MotorBoardCommand']]],
+  ['control_5f',['control_',['../classblmc__drivers_1_1CanBusMotorBoard.html#a65cfba005239247df1ea26795ff14a3f',1,'blmc_drivers::CanBusMotorBoard::control_()'],['../classblmc__drivers_1_1SpiBus.html#a39d0629b2cb78b7aeae9a4022ca487ed',1,'blmc_drivers::SpiBus::control_()']]],
+  ['control_5fbuffer_5f',['control_buffer_',['../classblmc__drivers_1_1ConstTorqueControl.html#a90f61569eda4245f7ed01569a42d0ef1',1,'blmc_drivers::ConstTorqueControl::control_buffer_()'],['../classblmc__drivers_1_1SinePositionControl.html#a29bd0da456de8a71467de12a3ab42265',1,'blmc_drivers::SinePositionControl::control_buffer_()'],['../classblmc__drivers_1_1SineTorqueControl.html#a41969250f8847160f590a688bdf1e026',1,'blmc_drivers::SineTorqueControl::control_buffer_()']]],
+  ['control_5ftimeout_5fms_5f',['control_timeout_ms_',['../classblmc__drivers_1_1CanBusMotorBoard.html#a4f9605b0a147ecd1dde41a0fb7b45d47',1,'blmc_drivers::CanBusMotorBoard::control_timeout_ms_()'],['../classblmc__drivers_1_1SpiBus.html#ab861c026ce0d206b802ab521055885fd',1,'blmc_drivers::SpiBus::control_timeout_ms_()']]],
   ['controlindex',['ControlIndex',['../classblmc__drivers_1_1MotorBoardInterface.html#a82ed4d0fa527521707281396095a88ca',1,'blmc_drivers::MotorBoardInterface']]],
   ['controller',['Controller',['../classController.html',1,'Controller'],['../classController.html#aceedb7c8fbd0fab8080fd7273d9dc65d',1,'Controller::Controller()']]],
   ['create_5fvector_5fof_5fpointers',['create_vector_of_pointers',['../namespaceblmc__drivers.html#add73ea2a43509013ad00665753f175e1',1,'blmc_drivers']]],
-  ['crit_5ftemp',['CRIT_TEMP',['../classblmc__drivers_1_1MotorBoardStatus.html#a9fd931e24550f5e5877d7a6cf499f6cfa43b0778d39a1aa2c193e2b511f2fe511',1,'blmc_drivers::MotorBoardStatus']]]
+  ['crit_5ftemp',['CRIT_TEMP',['../classblmc__drivers_1_1MotorBoardStatus.html#a9fd931e24550f5e5877d7a6cf499f6cfa43b0778d39a1aa2c193e2b511f2fe511',1,'blmc_drivers::MotorBoardStatus']]],
+  ['current_5ftarget_5f',['current_target_',['../classblmc__drivers_1_1SafeMotor.html#af79e6910868177f18a498ea83b350e3f',1,'blmc_drivers::SafeMotor']]],
+  ['currents_5f',['currents_',['../classblmc__drivers_1_1ConstTorqueControl.html#aec86c0a1864866b3169af7d9938cd518',1,'blmc_drivers::ConstTorqueControl::currents_()'],['../classblmc__drivers_1_1SinePositionControl.html#ab7903dd177f6dcaa7efa00591ad656d9',1,'blmc_drivers::SinePositionControl::currents_()'],['../classblmc__drivers_1_1SineTorqueControl.html#a1519f05faec9972e15f48b3084debbc2',1,'blmc_drivers::SineTorqueControl::currents_()']]]
 ];

@@ -5,5 +5,7 @@ var classblmc__robots_1_1Sliders =
     [ "Vector", "classblmc__robots_1_1Sliders.html#a40f558e5970d0a1f5817dbd18d162733", null ],
     [ "Sliders", "classblmc__robots_1_1Sliders.html#ae957034a00de8edc19320a608e4cf997", null ],
     [ "Sliders", "classblmc__robots_1_1Sliders.html#aeb72e8d249a9d1b419e47a1327602672", null ],
-    [ "get_positions", "classblmc__robots_1_1Sliders.html#ab4b389a2026c9ea94c32f7a2a35ddbc6", null ]
+    [ "create_analog_sensors", "classblmc__robots_1_1Sliders.html#a852a682674219e1c95b6005b387ce5d5", null ],
+    [ "get_positions", "classblmc__robots_1_1Sliders.html#ab4b389a2026c9ea94c32f7a2a35ddbc6", null ],
+    [ "sliders_", "classblmc__robots_1_1Sliders.html#a1ecba536dcd14696e27379a0baed0471", null ]
 ];

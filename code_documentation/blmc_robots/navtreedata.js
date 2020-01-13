@@ -13,7 +13,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ]
       ] ]
     ] ],
@@ -26,8 +26,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classblmc__robots_1_1TestBench8Motors.html",
-"two__joint__driver_8hpp.html"
+"classblmc__robots_1_1Solo12.html#a079e0ab1f33cb8e6cae03a85f58e8c4f",
+"classblmc__robots_1_1Teststand.html#ae530206f8c54cbc04d7cf69a16d1e99a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

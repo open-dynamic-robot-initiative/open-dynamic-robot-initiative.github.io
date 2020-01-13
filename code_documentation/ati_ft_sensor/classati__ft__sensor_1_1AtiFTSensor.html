@@ -107,12 +107,23 @@ $(document).ready(function(){initNavTree('classati__ft__sensor_1_1AtiFTSensor.ht
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classati__ft__sensor_1_1AtiFTSensor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ati_ft_sensor::AtiFTSensor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structati__ft__sensor_1_1AtiFTSensor_1_1received__msg.html">received_msg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structati__ft__sensor_1_1AtiFTSensor_1_1send__msg.html">send_msg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8c6b79e86229c5a3040aa584b41315c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8c6b79e86229c5a3040aa584b41315c"></a>
@@ -157,6 +168,60 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ft_sequence_</b><
 <tr class="memitem:a75557dcf54e92df5e6b491cca26c57ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75557dcf54e92df5e6b491cca26c57ee"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>status_</b></td></tr>
 <tr class="separator:a75557dcf54e92df5e6b491cca26c57ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae52996f61d96739b05c01815c386c3cc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae52996f61d96739b05c01815c386c3cc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>read_ft</b> ()</td></tr>
+<tr class="separator:ae52996f61d96739b05c01815c386c3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a96564d744e3a5daeb8f56395ba7e832f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96564d744e3a5daeb8f56395ba7e832f"></a>
+static THREAD_FUNCTION_RETURN_TYPE&#160;</td><td class="memItemRight" valign="bottom"><b>read_ft</b> (void *instance_pointer)</td></tr>
+<tr class="separator:a96564d744e3a5daeb8f56395ba7e832f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:adf13f1b427343f60330498ca0e98b9ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf13f1b427343f60330498ca0e98b9ea"></a>
+sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><b>local_address_</b></td></tr>
+<tr class="separator:adf13f1b427343f60330498ca0e98b9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fc5b75e8a26437b6697862400c90690"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fc5b75e8a26437b6697862400c90690"></a>
+sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><b>remote_address_</b></td></tr>
+<tr class="separator:a6fc5b75e8a26437b6697862400c90690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affe56e51dc6cae8a4b456abb4db7fa35"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affe56e51dc6cae8a4b456abb4db7fa35"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>socket_</b></td></tr>
+<tr class="separator:affe56e51dc6cae8a4b456abb4db7fa35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0dde98310e810e75a5d1e03344ac3c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0dde98310e810e75a5d1e03344ac3c5"></a>
+real_time_tools::RealTimeThread&#160;</td><td class="memItemRight" valign="bottom"><b>reading_thread_</b></td></tr>
+<tr class="separator:ad0dde98310e810e75a5d1e03344ac3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36113d47f1a7c97f58c18d03c99da63c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36113d47f1a7c97f58c18d03c99da63c"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>F_bias_</b> [3]</td></tr>
+<tr class="separator:a36113d47f1a7c97f58c18d03c99da63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02280dd5595224c64b3031f79219a209"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02280dd5595224c64b3031f79219a209"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>T_bias_</b> [3]</td></tr>
+<tr class="separator:a02280dd5595224c64b3031f79219a209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8513adb153671c83f8924c940a23791a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8513adb153671c83f8924c940a23791a"></a>
+std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>mutex_</b></td></tr>
+<tr class="separator:a8513adb153671c83f8924c940a23791a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada2c116afa79f3fff2885887cf3155f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada2c116afa79f3fff2885887cf3155f3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>initialized_</b></td></tr>
+<tr class="separator:ada2c116afa79f3fff2885887cf3155f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b38378ea71b88a534959b165195778b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b38378ea71b88a534959b165195778b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>going_</b></td></tr>
+<tr class="separator:a5b38378ea71b88a534959b165195778b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c97328a137772d0a1dac5d55793199"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82c97328a137772d0a1dac5d55793199"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>streaming_</b></td></tr>
+<tr class="separator:a82c97328a137772d0a1dac5d55793199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ad6a9362c8a68676e9c70857f1d0731ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6a9362c8a68676e9c70857f1d0731ec"></a>
+static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>count_per_force_</b> = 1000000.0</td></tr>
+<tr class="separator:ad6a9362c8a68676e9c70857f1d0731ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe77e60a64a50e9e39c1099bfc33d908"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe77e60a64a50e9e39c1099bfc33d908"></a>
+static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>count_per_torque_</b> = 1000000.0</td></tr>
+<tr class="separator:afe77e60a64a50e9e39c1099bfc33d908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="AtiFTSensor_8h_source.html">AtiFTSensor.h</a></li>

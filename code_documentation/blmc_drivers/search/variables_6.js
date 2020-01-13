@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['send_5faddr',['send_addr',['../classblmc__drivers_1_1CanBusConnection.html#a9f9e0f2d59955798cfd66ed295b76797',1,'blmc_drivers::CanBusConnection']]],
-  ['socket',['socket',['../classblmc__drivers_1_1CanBusConnection.html#a864cc55d83145a1a54310ef5271f67ea',1,'blmc_drivers::CanBusConnection']]],
-  ['system_5fenabled',['system_enabled',['../classblmc__drivers_1_1MotorBoardStatus.html#a9984f10f289f1a853dd4e34544be2c9d',1,'blmc_drivers::MotorBoardStatus']]]
+  ['id',['id',['../classblmc__drivers_1_1CanBusFrame.html#a5d204dce9fded6502c7d51f3aabbad61',1,'blmc_drivers::CanBusFrame']]],
+  ['id_5f',['id_',['../classblmc__drivers_1_1MotorBoardCommand.html#a31bfcc3cb1b2c35cbd5349123d884af4',1,'blmc_drivers::MotorBoardCommand']]],
+  ['input_5f',['input_',['../classblmc__drivers_1_1CanBus.html#ab09707f2c5f6cb7eb98f82e8e190d3c4',1,'blmc_drivers::CanBus']]],
+  ['is_5floop_5factive_5f',['is_loop_active_',['../classblmc__drivers_1_1CanBus.html#a85c9d5d9c6413c6871d48a247660ac20',1,'blmc_drivers::CanBus::is_loop_active_()'],['../classblmc__drivers_1_1CanBusMotorBoard.html#ae25808cc09839c2574d134a36b5b4d5d',1,'blmc_drivers::CanBusMotorBoard::is_loop_active_()'],['../classblmc__drivers_1_1SpiBus.html#acf6f61ce04098f05fd04971b477da07c',1,'blmc_drivers::SpiBus::is_loop_active_()']]]
 ];

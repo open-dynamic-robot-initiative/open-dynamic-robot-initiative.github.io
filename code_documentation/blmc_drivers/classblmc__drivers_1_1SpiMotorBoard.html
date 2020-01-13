@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('classblmc__drivers_1_1SpiMotorBoard.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classblmc__drivers_1_1SpiMotorBoard-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">blmc_drivers::SpiMotorBoard Class Reference</div>  </div>
@@ -176,6 +177,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1MotorBoardInterface.html#aecd23682c4a8c0df8e57b4c752e1d9ee">~MotorBoardInterface</a> ()</td></tr>
 <tr class="memdesc:aecd23682c4a8c0df8e57b4c752e1d9ee inherit pub_methods_classblmc__drivers_1_1MotorBoardInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classblmc__drivers_1_1MotorBoardInterface.html" title="MotorBoardInterface declares an API to inacte with a MotorBoard. ">MotorBoardInterface</a> object. <br /></td></tr>
 <tr class="separator:aecd23682c4a8c0df8e57b4c752e1d9ee inherit pub_methods_classblmc__drivers_1_1MotorBoardInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a767abb6f687ed8bf7fef873ab892eaf7"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classblmc__drivers_1_1SpiBus.html">SpiBus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SpiMotorBoard.html#a767abb6f687ed8bf7fef873ab892eaf7">spi_bus_</a></td></tr>
+<tr class="memdesc:a767abb6f687ed8bf7fef873ab892eaf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Communication related attributes.  <a href="#a767abb6f687ed8bf7fef873ab892eaf7">More...</a><br /></td></tr>
+<tr class="separator:a767abb6f687ed8bf7fef873ab892eaf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b865479722dbecec8ebb66d6b93ecae"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__drivers_1_1SpiMotorBoard.html#a4b865479722dbecec8ebb66d6b93ecae">udriver_id_</a></td></tr>
+<tr class="memdesc:a4b865479722dbecec8ebb66d6b93ecae"><td class="mdescLeft">&#160;</td><td class="mdescRight">udriver_id_ is the index of the udriver controlled by the master board.  <a href="#a4b865479722dbecec8ebb66d6b93ecae">More...</a><br /></td></tr>
+<tr class="separator:a4b865479722dbecec8ebb66d6b93ecae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -588,6 +598,53 @@ template&lt;typename Type &gt; </td></tr>
 </dl>
 
 <p>Implements <a class="el" href="classblmc__drivers_1_1MotorBoardInterface.html#a3ace57ba3e09b9b3120d09303ff39a61">blmc_drivers::MotorBoardInterface</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a767abb6f687ed8bf7fef873ab892eaf7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classblmc__drivers_1_1SpiBus.html">SpiBus</a>&gt; blmc_drivers::SpiMotorBoard::spi_bus_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Communication related attributes. </p>
+<p>Master board interface sdk: <a href="https://github.com/open-dynamic-robot-initiative/master-board">https://github.com/open-dynamic-robot-initiative/master-board</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a4b865479722dbecec8ebb66d6b93ecae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t blmc_drivers::SpiMotorBoard::udriver_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>udriver_id_ is the index of the udriver controlled by the master board. </p>
+<p>The index is the one used in MasterBoardInterface. The index should correspond to the hardware SPI index onboard the card. </p>
 
 </div>
 </div>

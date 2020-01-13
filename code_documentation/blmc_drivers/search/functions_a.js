@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wait_5funtil_5fready',['wait_until_ready',['../classblmc__drivers_1_1CanBusMotorBoard.html#a3c496f045d3ef68c02fe6dd5abbdc4eb',1,'blmc_drivers::CanBusMotorBoard::wait_until_ready()'],['../classblmc__drivers_1_1SpiBus.html#a1ff5ba883178951fdd4cc2c5d41d2342',1,'blmc_drivers::SpiBus::wait_until_ready()']]]
+  ['q24_5fto_5ffloat',['q24_to_float',['../classblmc__drivers_1_1CanBusMotorBoard.html#a05db7868ff7034289358cdb774b59720',1,'blmc_drivers::CanBusMotorBoard']]],
+  ['qbytes_5fto_5ffloat',['qbytes_to_float',['../classblmc__drivers_1_1CanBusMotorBoard.html#ad2cee731d455d64d71014c9821219410',1,'blmc_drivers::CanBusMotorBoard']]]
 ];

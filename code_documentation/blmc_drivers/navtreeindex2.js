@@ -1,0 +1,23 @@
+var NAVTREEINDEX2 =
+{
+"pd__control_8hpp.html#a1eb492ab42b913d5bcc21d53ba7185ba":[6,0,0,14,2],
+"pd__control_8hpp_source.html":[6,0,0,14],
+"sine__position__control_8cpp.html":[6,0,0,15],
+"sine__position__control_8hpp.html":[6,0,0,16],
+"sine__position__control_8hpp_source.html":[6,0,0,16],
+"sine__torque__control_8cpp.html":[6,0,0,17],
+"sine__torque__control_8hpp.html":[6,0,0,18],
+"sine__torque__control_8hpp_source.html":[6,0,0,18],
+"spi__bus_8cpp.html":[6,0,2,4],
+"spi__bus_8hpp.html":[6,0,1,0,0,6],
+"spi__bus_8hpp_source.html":[6,0,1,0,0,6],
+"spi__motor__board_8cpp.html":[6,0,2,5],
+"spi__motor__board_8hpp.html":[6,0,1,0,0,7],
+"spi__motor__board_8hpp_source.html":[6,0,1,0,0,7],
+"structHardware.html":[5,0,2],
+"structHardware.html#a6882a74056ffaa2a946b0f9b98d00b02":[5,0,2,2],
+"structHardware.html#a78675cea76da541862144708a3996dcc":[5,0,2,1],
+"structHardware.html#ac10da22a00e796b078624795da7e835d":[5,0,2,3],
+"structHardware.html#af6014d03d5d50bacf8c96e841cf8184d":[5,0,2,0],
+"todo.html":[2]
+};

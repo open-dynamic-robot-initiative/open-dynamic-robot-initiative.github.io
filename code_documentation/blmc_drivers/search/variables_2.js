@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['data',['data',['../classblmc__drivers_1_1CanBusFrame.html#a1a4cd54d31de4361b003e39dfdfa4cfe',1,'blmc_drivers::CanBusFrame']]],
-  ['dlc',['dlc',['../classblmc__drivers_1_1CanBusFrame.html#ab5c88f0e6fa037ace23a059a3e75b30b',1,'blmc_drivers::CanBusFrame']]]
+  ['can_5fbus_5f',['can_bus_',['../classblmc__drivers_1_1CanBusMotorBoard.html#ab58dc93d9117503950fbe4d7a7c70914',1,'blmc_drivers::CanBusMotorBoard']]],
+  ['can_5fconnection_5f',['can_connection_',['../classblmc__drivers_1_1CanBus.html#a996c9b1bc46071b2d002de38d6e9f781',1,'blmc_drivers::CanBus']]],
+  ['command_5f',['command_',['../classblmc__drivers_1_1CanBusMotorBoard.html#a720c6300bf07245a739713a209799c02',1,'blmc_drivers::CanBusMotorBoard::command_()'],['../classblmc__drivers_1_1SpiBus.html#a0dadae58644afb41beba8df8f9f09727',1,'blmc_drivers::SpiBus::command_()']]],
+  ['content_5f',['content_',['../classblmc__drivers_1_1MotorBoardCommand.html#ac417b63a8cc8801a6757f4dce3b0810c',1,'blmc_drivers::MotorBoardCommand']]],
+  ['control_5f',['control_',['../classblmc__drivers_1_1CanBusMotorBoard.html#a65cfba005239247df1ea26795ff14a3f',1,'blmc_drivers::CanBusMotorBoard::control_()'],['../classblmc__drivers_1_1SpiBus.html#a39d0629b2cb78b7aeae9a4022ca487ed',1,'blmc_drivers::SpiBus::control_()']]],
+  ['control_5fbuffer_5f',['control_buffer_',['../classblmc__drivers_1_1ConstTorqueControl.html#a90f61569eda4245f7ed01569a42d0ef1',1,'blmc_drivers::ConstTorqueControl::control_buffer_()'],['../classblmc__drivers_1_1SinePositionControl.html#a29bd0da456de8a71467de12a3ab42265',1,'blmc_drivers::SinePositionControl::control_buffer_()'],['../classblmc__drivers_1_1SineTorqueControl.html#a41969250f8847160f590a688bdf1e026',1,'blmc_drivers::SineTorqueControl::control_buffer_()']]],
+  ['control_5ftimeout_5fms_5f',['control_timeout_ms_',['../classblmc__drivers_1_1CanBusMotorBoard.html#a4f9605b0a147ecd1dde41a0fb7b45d47',1,'blmc_drivers::CanBusMotorBoard::control_timeout_ms_()'],['../classblmc__drivers_1_1SpiBus.html#ab861c026ce0d206b802ab521055885fd',1,'blmc_drivers::SpiBus::control_timeout_ms_()']]],
+  ['current_5ftarget_5f',['current_target_',['../classblmc__drivers_1_1SafeMotor.html#af79e6910868177f18a498ea83b350e3f',1,'blmc_drivers::SafeMotor']]],
+  ['currents_5f',['currents_',['../classblmc__drivers_1_1ConstTorqueControl.html#aec86c0a1864866b3169af7d9938cd518',1,'blmc_drivers::ConstTorqueControl::currents_()'],['../classblmc__drivers_1_1SinePositionControl.html#ab7903dd177f6dcaa7efa00591ad656d9',1,'blmc_drivers::SinePositionControl::currents_()'],['../classblmc__drivers_1_1SineTorqueControl.html#a1519f05faec9972e15f48b3084debbc2',1,'blmc_drivers::SineTorqueControl::currents_()']]]
 ];

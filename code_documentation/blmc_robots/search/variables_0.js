@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['calibration',['calibration',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a86d1b140f62682548b95e2572648b9dd',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
-  ['can_5fports',['can_ports',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a849381580e6d6d0768e6a4e04a394cfd',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
-  ['coefficients_5f',['coefficients_',['../classblmc__robots_1_1Polynome.html#a0aa7d57743e14ed7f29f9b09509ce2e6',1,'blmc_robots::Polynome']]],
-  ['config_5f',['config_',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a704ad05a652572289b74525e18680c11',1,'blmc_robots::NJointBlmcRobotDriver']]]
+  ['ati_5fforce_5f',['ati_force_',['../classblmc__robots_1_1Teststand.html#abbde43d983602e1ead15b1b525cc524f',1,'blmc_robots::Teststand']]],
+  ['ati_5fsensor_5f',['ati_sensor_',['../classblmc__robots_1_1Teststand.html#ac733828512ab4ba2ad43625915a4a9fd',1,'blmc_robots::Teststand']]],
+  ['ati_5ftorque_5f',['ati_torque_',['../classblmc__robots_1_1Teststand.html#a8c4e095818a0c80739a63a91bb0670c6',1,'blmc_robots::Teststand']]]
 ];

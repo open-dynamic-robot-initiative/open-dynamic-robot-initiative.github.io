@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['load_5fconfig',['load_config',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a1499dfca020da9c45bfe5cbdcf9872f9',1,'blmc_robots::NJointBlmcRobotDriver::Config']]]
+  ['joint_5ftorque_5fto_5fmotor_5fcurrent',['joint_torque_to_motor_current',['../classblmc__robots_1_1BlmcJointModule.html#aff3adcd9f9464cf5ac99ea9a7b9cc4f7',1,'blmc_robots::BlmcJointModule']]]
 ];
