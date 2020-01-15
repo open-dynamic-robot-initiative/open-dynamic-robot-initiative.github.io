@@ -270,16 +270,16 @@
             <td></td>
             <td class="headerName">Lines:</td>
             <td class="headerTableEntry">0</td>
-            <td class="headerTableEntry">131</td>
+            <td class="headerTableEntry">148</td>
             <td class="headerTableEntry" style="background-color:LightPink">0.0 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-01-14 09:53:59</td>
+            <td class="headerValue">2020-01-15 10:26:39</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
-            <td class="headerTableEntry">56</td>
+            <td class="headerTableEntry">64</td>
             <td class="headerTableEntry" style="background-color:LightPink">0.0 %</td>
           </tr>
         </table>
@@ -555,7 +555,7 @@
     <td align="right" class="lineno"><pre>37</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    printf("Using Ethernet (%s)", if_name_.c_str());</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    printf("Using Ethernet (%s)\n", if_name_.c_str());</pre></td>
     </tr>
 
     <tr>
@@ -611,7 +611,7 @@
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    printf("Using WiFi (%s)", if_name_.c_str());</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    printf("Using WiFi (%s)\n", if_name_.c_str());</pre></td>
     </tr>
 
     <tr>
@@ -758,7 +758,7 @@
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::SendCommand()</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>int MasterBoardInterface::SendCommand()</pre></td>
     </tr>
 
     <tr>
@@ -772,833 +772,833 @@
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  //construct the command packet</pre></td>
+    <td align="left" class="src "><pre>  // If the MasterBoardInterface has been shutdown due to a timeout we don't want to</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // send another command before the user manually reset the timeout state</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if (timeout)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    uint16_t mode = 0;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].enable)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return -1; // Return -1 since the command has not been sent.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_ES;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="left" class="src "><pre>  //construct the command packet</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].motor1->enable)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>77</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>78</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_EM1;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    uint16_t mode = 0;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].enable)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_ES;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].motor1->enable)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_EM1;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>86</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].motor2->enable)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="lineno"><pre>89</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_EM2;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].enable_position_rollover_error)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>85</pre></td>
+    <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>86</pre></td>
+    <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_EPRE;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>87</pre></td>
+    <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>88</pre></td>
+    <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].motor1->enable_index_offset_compensation)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>89</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>90</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_EI1OC;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>91</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>92</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].motor2->enable_index_offset_compensation)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>93</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>94</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_EI2OC;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>95</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
-    </tr>
-
-    <tr>
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    mode |= UD_COMMAND_MODE_TIMEOUT &amp; motor_drivers[i].timeout;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>97</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].mode = mode;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_EI1OC;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>98</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].position_ref[0] = FLOAT_TO_D16QN(motor_drivers[i].motor1->position_ref / (2. * M_PI), UD_QN_POS);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].position_ref[1] = FLOAT_TO_D16QN(motor_drivers[i].motor2->position_ref / (2. * M_PI), UD_QN_POS);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    if (motor_drivers[i].motor2->enable_index_offset_compensation)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].velocity_ref[0] = FLOAT_TO_D16QN(motor_drivers[i].motor1->velocity_ref * 60. / 1000., UD_QN_VEL);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>101</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].velocity_ref[1] = FLOAT_TO_D16QN(motor_drivers[i].motor2->velocity_ref * 60. / 1000., UD_QN_VEL);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>      mode |= UD_COMMAND_MODE_EI2OC;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].current_ref[0] = FLOAT_TO_D16QN(motor_drivers[i].motor1->current_ref, UD_QN_IQ);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].current_ref[1] = FLOAT_TO_D16QN(motor_drivers[i].motor2->current_ref, UD_QN_IQ);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    mode |= UD_COMMAND_MODE_TIMEOUT &amp; motor_drivers[i].timeout;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>104</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kp[0] = FLOAT_TO_D16QN(2. * M_PI * motor_drivers[i].motor1->kp, UD_QN_ISAT);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].mode = mode;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kp[1] = FLOAT_TO_D16QN(2. * M_PI *motor_drivers[i].motor2->kp, UD_QN_ISAT);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].position_ref[0] = FLOAT_TO_D16QN(motor_drivers[i].motor1->position_ref / (2. * M_PI), UD_QN_POS);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kd[0] = FLOAT_TO_D16QN(1000. / 60. * motor_drivers[i].motor1->kd, UD_QN_ISAT);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].position_ref[1] = FLOAT_TO_D16QN(motor_drivers[i].motor2->position_ref / (2. * M_PI), UD_QN_POS);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kd[1] = FLOAT_TO_D16QN(1000. / 60. * motor_drivers[i].motor2->kd, UD_QN_ISAT);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].velocity_ref[0] = FLOAT_TO_D16QN(motor_drivers[i].motor1->velocity_ref * 60. / 1000., UD_QN_VEL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].velocity_ref[1] = FLOAT_TO_D16QN(motor_drivers[i].motor2->velocity_ref * 60. / 1000., UD_QN_VEL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  link_handler_->send((uint8_t *)&amp;command_packet, sizeof(command_packet_t));</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].current_ref[0] = FLOAT_TO_D16QN(motor_drivers[i].motor1->current_ref, UD_QN_IQ);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].current_ref[1] = FLOAT_TO_D16QN(motor_drivers[i].motor2->current_ref, UD_QN_IQ);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kp[0] = FLOAT_TO_D16QN(2. * M_PI * motor_drivers[i].motor1->kp, UD_QN_ISAT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::callback(uint8_t src_mac[6], uint8_t *data, int len)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kp[1] = FLOAT_TO_D16QN(2. * M_PI *motor_drivers[i].motor2->kp, UD_QN_ISAT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>113</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kd[0] = FLOAT_TO_D16QN(1000. / 60. * motor_drivers[i].motor1->kd, UD_QN_ISAT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  if (len != sizeof(sensor_packet_t))</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kd[1] = FLOAT_TO_D16QN(1000. / 60. * motor_drivers[i].motor2->kd, UD_QN_ISAT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>115</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>116</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // Commented printf because it can be problematic for realtime thread</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>117</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    // printf("received a %d long packet\n", len);</pre></td>
+    <td align="left" class="src "><pre>  // Current time point</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	std::chrono::high_resolution_clock::time_point t_send_packet = std::chrono::high_resolution_clock::now();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>119</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>120</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	// Assess time duration since the last packet has been received</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>121</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  nb_recv++;</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	std::chrono::duration&lt;double, std::milli> time_span = t_send_packet - t_last_packet;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>122</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  sensor_packet_mutex.lock();</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>123</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  memcpy(&amp;sensor_packet, data, sizeof(sensor_packet_t));</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	// If this duration is greater than the timeout limit duration</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  sensor_packet_mutex.unlock();</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	// then the packet is not sent and the connexion with the master board is closed</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>125</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	if (time_span > t_before_shutdown)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>126</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>127</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::ParseSensorData()</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    timeout = true;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>128</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    Stop();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>129</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  sensor_packet_mutex.lock();</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>		return -1; // Return -1 since the command has not been sent.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>130</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>131</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  /*Read IMU data*/</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>132</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; 3; i++)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  link_handler_->send((uint8_t *)&amp;command_packet, sizeof(command_packet_t));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>133</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>134</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    imu_data.accelerometer[i] = D16QN_TO_FLOAT(sensor_packet.imu.accelerometer[i], IMU_QN_ACC);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return 0; // Return 0 since the command has been sent.</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>135</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    imu_data.gyroscope[i] = D16QN_TO_FLOAT(sensor_packet.imu.gyroscope[i], IMU_QN_GYR);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>136</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    imu_data.attitude[i] = D16QN_TO_FLOAT(sensor_packet.imu.attitude[i], IMU_QN_EF);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>137</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::callback(uint8_t src_mac[6], uint8_t *data, int len)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>138</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>139</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  if (len != sizeof(sensor_packet_t))</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>140</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  //Read Motor Driver Data</pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>141</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // Commented printf because it can be problematic for realtime thread</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>142</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="left" class="src "><pre>    // printf("received a %d long packet\n", len);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>143</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    //dual motor driver</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    return;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>144</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].is_enabled = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_SE;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>145</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].error_code = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_ERROR;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>146</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>147</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    //acd</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>148</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].adc[0] = D16QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].adc[0], UD_QN_ADC);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>149</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].adc[1] = D16QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].adc[1], UD_QN_ADC);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>150</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>151</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    //motor 1</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>152</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->position = 2. * M_PI * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].position[0], UD_QN_POS);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>153</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->velocity = 1000. / 60. * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].velocity[0], UD_QN_VEL);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>154</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->current = D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].current[0], UD_QN_IQ);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>155</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->is_enabled = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_M1E;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>156</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->is_ready = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_M1R;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>157</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->has_index_been_detected = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_IDX1D;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>158</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->index_toggle_bit = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_IDX1T;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>159</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>160</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    //motor 2</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>161</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->position = 2. * M_PI * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].position[1], UD_QN_POS);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>162</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->velocity = 1000. / 60. * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].velocity[1], UD_QN_VEL);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>163</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->current = D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].current[1], UD_QN_IQ);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>164</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->is_enabled = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_M2E;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>165</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->is_ready = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_M2R;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>166</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->has_index_been_detected = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_IDX2D;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>167</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->index_toggle_bit = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_IDX2T;</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>168</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>169</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  /*Stat on Packet loss*/</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="lineno"><pre>145</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="lineno"><pre>146</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // Update time point of the latest received packet</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>147</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	t_last_packet = std::chrono::high_resolution_clock::now();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>148</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>149</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  nb_recv++;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>150</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  sensor_packet_mutex.lock();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>151</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  memcpy(&amp;sensor_packet, data, sizeof(sensor_packet_t));</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>152</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  sensor_packet_mutex.unlock();</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="lineno"><pre>153</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="lineno"><pre>154</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>174</pre></td>
+    <td align="right" class="lineno"><pre>155</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::PrintIMU()</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::ParseSensorData()</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>175</pre></td>
+    <td align="right" class="lineno"><pre>156</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>157</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  sensor_packet_mutex.lock();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>158</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>159</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  /*Read IMU data*/</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>160</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; 3; i++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>161</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>162</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    imu_data.accelerometer[i] = D16QN_TO_FLOAT(sensor_packet.imu.accelerometer[i], IMU_QN_ACC);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>163</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    imu_data.gyroscope[i] = D16QN_TO_FLOAT(sensor_packet.imu.gyroscope[i], IMU_QN_GYR);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>164</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    imu_data.attitude[i] = D16QN_TO_FLOAT(sensor_packet.imu.attitude[i], IMU_QN_EF);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>165</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>166</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>167</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>168</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  //Read Motor Driver Data</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>169</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>170</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>171</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    //dual motor driver</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>172</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].is_enabled = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_SE;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>173</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].error_code = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_ERROR;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>174</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>175</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    //acd</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>176</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  printf("IMU:% 6.3f % 6.3f % 6.3f % 6.3f % 6.3f % 6.3f % 6.3f % 6.3f % 6.3f\n",</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].adc[0] = D16QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].adc[0], UD_QN_ADC);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>177</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.accelerometer[0],</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].adc[1] = D16QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].adc[1], UD_QN_ADC);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>178</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.accelerometer[1],</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>179</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.accelerometer[2],</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    //motor 1</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>180</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.gyroscope[0],</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->position = 2. * M_PI * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].position[0], UD_QN_POS);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>181</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.gyroscope[1],</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->velocity = 1000. / 60. * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].velocity[0], UD_QN_VEL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>182</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.gyroscope[2],</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->current = D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].current[0], UD_QN_IQ);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>183</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.attitude[0],</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->is_enabled = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_M1E;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>184</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.attitude[1],</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->is_ready = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_M1R;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>185</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>         imu_data.attitude[2]);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->has_index_been_detected = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_IDX1D;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>186</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->index_toggle_bit = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_IDX1T;</pre></td>
     </tr>
 
     <tr>
@@ -1611,306 +1611,600 @@
     <tr>
     <td align="right" class="lineno"><pre>188</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::PrintADC()</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    //motor 2</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>189</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->position = 2. * M_PI * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].position[1], UD_QN_POS);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>190</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->velocity = 1000. / 60. * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].velocity[1], UD_QN_VEL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>191</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->current = D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].current[1], UD_QN_IQ);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>192</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    printf("ADC %2.2d -> %6.3f % 6.3f\n",</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->is_enabled = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_M2E;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>193</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>          i, motor_drivers[i].adc[0], motor_drivers[i].adc[1]);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->is_ready = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_M2R;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>194</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->has_index_been_detected = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_IDX2D;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>195</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->index_toggle_bit = sensor_packet.dual_motor_driver_sensor_packets[i].status &amp; UD_SENSOR_STATUS_IDX2T;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>196</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>197</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::PrintMotors()</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  /*Stat on Packet loss*/</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>198</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>199</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; (2 * N_SLAVES); i++)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  sensor_packet_mutex.unlock();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>200</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>201</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    printf("Motor % 2.2d -> ", i);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>202</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motors[i].Print();</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::PrintIMU()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>203</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>204</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  printf("IMU:% 6.3f % 6.3f % 6.3f % 6.3f % 6.3f % 6.3f % 6.3f % 6.3f % 6.3f\n",</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>205</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.accelerometer[0],</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>206</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::PrintMotorDrivers()</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.accelerometer[1],</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>207</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.accelerometer[2],</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>208</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.gyroscope[0],</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>209</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.gyroscope[1],</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>210</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    printf("Motor Driver % 2.2d -> ", i);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.gyroscope[2],</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>211</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].Print();</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.attitude[0],</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>212</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.attitude[1],</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>213</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>         imu_data.attitude[2]);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>214</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>215</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::set_motors(Motor input_motors [])</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>216</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>217</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; (2 * N_SLAVES); i++)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>218</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>219</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    printf("Motor % 2.2d -> ", i);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>220</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    (this->motors)[i] = input_motors[i];</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>221</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>222</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>223</pre></td>
-    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>224</pre></td>
+    <td align="right" class="lineno"><pre>216</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::set_motor_drivers(MotorDriver input_motor_drivers [])</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::PrintADC()</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>225</pre></td>
+    <td align="right" class="lineno"><pre>217</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>226</pre></td>
+    <td align="right" class="lineno"><pre>218</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>227</pre></td>
+    <td align="right" class="lineno"><pre>219</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>228</pre></td>
+    <td align="right" class="lineno"><pre>220</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    printf("Motor Driver % 2.2d -> ", i);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    printf("ADC %2.2d -> %6.3f % 6.3f\n",</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>229</pre></td>
+    <td align="right" class="lineno"><pre>221</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    (this->motor_drivers)[i] = input_motor_drivers[i];</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>          i, motor_drivers[i].adc[0], motor_drivers[i].adc[1]);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>230</pre></td>
+    <td align="right" class="lineno"><pre>222</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>  }</pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>223</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>224</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>225</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::PrintMotors()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>226</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>227</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; (2 * N_SLAVES); i++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>228</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>229</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    printf("Motor % 2.2d -> ", i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>230</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motors[i].Print();</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>231</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>232</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>233</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>234</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::PrintMotorDrivers()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>235</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>236</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>237</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>238</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    printf("Motor Driver % 2.2d -> ", i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>239</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].Print();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>240</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>241</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>242</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>243</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::ResetTimeout()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>244</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>245</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  printf("Resetting f_name: %s\n", if_name_.c_str());</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>246</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  timeout = false; // Resetting timeout variable to be able to send packets again</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>247</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  t_last_packet = std::chrono::high_resolution_clock::now(); // Resetting time of last packet</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>248</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  Init();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>249</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>250</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>251</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>bool MasterBoardInterface::IsTimeout()</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>252</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>253</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  // Return true if the MasterBoardInterface has been shut down due to timeout</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>254</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  return timeout;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>255</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>256</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>257</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::set_motors(Motor input_motors [])</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>258</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>259</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; (2 * N_SLAVES); i++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>260</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>261</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    printf("Motor % 2.2d -> ", i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>262</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    (this->motors)[i] = input_motors[i];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>263</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>264</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>265</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>266</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void MasterBoardInterface::set_motor_drivers(MotorDriver input_motor_drivers [])</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>267</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>268</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  for (int i = 0; i &lt; N_SLAVES; i++)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>269</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>270</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    printf("Motor Driver % 2.2d -> ", i);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>271</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    (this->motor_drivers)[i] = input_motor_drivers[i];</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>272</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>  }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>273</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
