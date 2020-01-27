@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-01-16 15:00:37</td>
+            <td class="headerValue">2020-01-27 11:18:18</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -716,7 +716,7 @@
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  printf("Shutting down connexion (%s)\n", if_name_.c_str());</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>  printf("Shutting down connection (%s)\n", if_name_.c_str());</pre></td>
     </tr>
 
     <tr>
@@ -1045,14 +1045,14 @@
     <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].velocity_ref[0] = FLOAT_TO_D16QN(motor_drivers[i].motor1->velocity_ref * 60. / 1000., UD_QN_VEL);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].velocity_ref[0] = FLOAT_TO_D16QN(motor_drivers[i].motor1->velocity_ref * 60. / (2. * M_PI * 1000.), UD_QN_VEL);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].velocity_ref[1] = FLOAT_TO_D16QN(motor_drivers[i].motor2->velocity_ref * 60. / 1000., UD_QN_VEL);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].velocity_ref[1] = FLOAT_TO_D16QN(motor_drivers[i].motor2->velocity_ref * 60. / (2. * M_PI * 1000.), UD_QN_VEL);</pre></td>
     </tr>
 
     <tr>
@@ -1080,21 +1080,21 @@
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kp[1] = FLOAT_TO_D16QN(2. * M_PI *motor_drivers[i].motor2->kp, UD_QN_ISAT);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kp[1] = FLOAT_TO_D16QN(2. * M_PI * motor_drivers[i].motor2->kp, UD_QN_ISAT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>113</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kd[0] = FLOAT_TO_D16QN(1000. / 60. * motor_drivers[i].motor1->kd, UD_QN_ISAT);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kd[0] = FLOAT_TO_D16QN(2. * M_PI * 1000. / 60. * motor_drivers[i].motor1->kd, UD_QN_ISAT);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>114</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kd[1] = FLOAT_TO_D16QN(1000. / 60. * motor_drivers[i].motor2->kd, UD_QN_ISAT);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    command_packet.dual_motor_driver_command_packets[i].kd[1] = FLOAT_TO_D16QN(2. * M_PI * 1000. / 60. * motor_drivers[i].motor2->kd, UD_QN_ISAT);</pre></td>
     </tr>
 
     <tr>
@@ -1164,7 +1164,7 @@
     <td align="right" class="lineno"><pre>124</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	// then the packet is not sent and the connexion with the master board is closed</pre></td>
+    <td align="left" class="src "><pre>	// then the packet is not sent and the connection with the master board is closed</pre></td>
     </tr>
 
     <tr>
@@ -1563,7 +1563,7 @@
     <td align="right" class="lineno"><pre>181</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->velocity = 1000. / 60. * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].velocity[0], UD_QN_VEL);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor1->velocity = 2. * M_PI * 1000. / 60. * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].velocity[0], UD_QN_VEL);</pre></td>
     </tr>
 
     <tr>
@@ -1626,7 +1626,7 @@
     <td align="right" class="lineno"><pre>190</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->velocity = 1000. / 60. * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].velocity[1], UD_QN_VEL);</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    motor_drivers[i].motor2->velocity = 2. * M_PI * 1000. / 60. * D32QN_TO_FLOAT(sensor_packet.dual_motor_driver_sensor_packets[i].velocity[1], UD_QN_VEL);</pre></td>
     </tr>
 
     <tr>
