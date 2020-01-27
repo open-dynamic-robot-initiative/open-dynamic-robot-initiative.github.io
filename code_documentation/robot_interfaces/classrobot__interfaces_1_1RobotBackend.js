@@ -12,5 +12,5 @@ var classrobot__interfaces_1_1RobotBackend =
     [ "robot_data_", "classrobot__interfaces_1_1RobotBackend.html#a56c989207ab613f7627cf6af7307ba86", null ],
     [ "robot_driver_", "classrobot__interfaces_1_1RobotBackend.html#a9db336bbe895a5d7bb3ea244ffcfd440", null ],
     [ "thread_", "classrobot__interfaces_1_1RobotBackend.html#afcf4f2443b7f3000cece9b0851284717", null ],
-    [ "timers_", "classrobot__interfaces_1_1RobotBackend.html#aeefb9a15dce401ec9b93d30e9e221bd2", null ]
+    [ "timer_", "classrobot__interfaces_1_1RobotBackend.html#a69c9b7f07651484d1677121f72832482", null ]
 ];
