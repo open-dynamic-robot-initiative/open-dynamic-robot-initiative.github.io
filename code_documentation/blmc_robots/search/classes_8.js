@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['realfingerdriver',['RealFingerDriver',['../classblmc__robots_1_1RealFingerDriver.html',1,'blmc_robots']]],
-  ['robot',['Robot',['../structRobot.html',1,'']]]
+  ['onejointdriver',['OneJointDriver',['../classblmc__robots_1_1OneJointDriver.html',1,'blmc_robots']]]
 ];
