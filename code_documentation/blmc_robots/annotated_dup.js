@@ -1,6 +1,12 @@
 var annotated_dup =
 [
     [ "blmc_robots", null, [
+      [ "logger", null, [
+        [ "Logger", "classblmc__robots_1_1logger_1_1Logger.html", "classblmc__robots_1_1logger_1_1Logger" ]
+      ] ],
+      [ "robot", null, [
+        [ "Robot", "classblmc__robots_1_1robot_1_1Robot.html", "classblmc__robots_1_1robot_1_1Robot" ]
+      ] ],
       [ "BlmcJointModule", "classblmc__robots_1_1BlmcJointModule.html", "classblmc__robots_1_1BlmcJointModule" ],
       [ "BlmcJointModules", "classblmc__robots_1_1BlmcJointModules.html", "classblmc__robots_1_1BlmcJointModules" ],
       [ "CalibrationParameters", "structblmc__robots_1_1CalibrationParameters.html", "structblmc__robots_1_1CalibrationParameters" ],
@@ -24,6 +30,9 @@ var annotated_dup =
       [ "TimePolynome", "classblmc__robots_1_1TimePolynome.html", "classblmc__robots_1_1TimePolynome" ],
       [ "TriFingerDriver", "classblmc__robots_1_1TriFingerDriver.html", "classblmc__robots_1_1TriFingerDriver" ],
       [ "TwoJointDriver", "classblmc__robots_1_1TwoJointDriver.html", "classblmc__robots_1_1TwoJointDriver" ]
+    ] ],
+    [ "two_joint_friction_calibration", null, [
+      [ "AverageBuffer", "classtwo__joint__friction__calibration_1_1AverageBuffer.html", "classtwo__joint__friction__calibration_1_1AverageBuffer" ]
     ] ],
     [ "Hardware", "structHardware.html", "structHardware" ],
     [ "Robot", "structRobot.html", "structRobot" ]
