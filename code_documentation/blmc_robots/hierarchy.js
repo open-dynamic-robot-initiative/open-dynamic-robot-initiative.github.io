@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "two_joint_friction_calibration.AverageBuffer", "classtwo__joint__friction__calibration_1_1AverageBuffer.html", null ],
     [ "blmc_robots::BlmcJointModule", "classblmc__robots_1_1BlmcJointModule.html", null ],
     [ "blmc_robots::BlmcJointModules< COUNT >", "classblmc__robots_1_1BlmcJointModules.html", null ],
     [ "blmc_robots::BlmcJointModules< 12 >", "classblmc__robots_1_1BlmcJointModules.html", null ],
@@ -10,11 +11,13 @@ var hierarchy =
     [ "blmc_robots::NJointBlmcRobotDriver< N_JOINTS, N_MOTOR_BOARDS >::Config", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html", null ],
     [ "Hardware", "structHardware.html", null ],
     [ "blmc_robots::HomingState", "structblmc__robots_1_1HomingState.html", null ],
+    [ "blmc_robots.logger.Logger", "classblmc__robots_1_1logger_1_1Logger.html", null ],
     [ "blmc_robots::MotorParameters", "structblmc__robots_1_1MotorParameters.html", null ],
     [ "blmc_robots::Polynome< ORDER >", "classblmc__robots_1_1Polynome.html", [
       [ "blmc_robots::TimePolynome< ORDER >", "classblmc__robots_1_1TimePolynome.html", null ]
     ] ],
     [ "Robot", "structRobot.html", null ],
+    [ "blmc_robots.robot.Robot", "classblmc__robots_1_1robot_1_1Robot.html", null ],
     [ "RobotDriver", null, [
       [ "blmc_robots::FakeFingerDriver", "classblmc__robots_1_1FakeFingerDriver.html", null ],
       [ "blmc_robots::NJointBlmcRobotDriver< N_JOINTS, N_MOTOR_BOARDS >", "classblmc__robots_1_1NJointBlmcRobotDriver.html", null ],
