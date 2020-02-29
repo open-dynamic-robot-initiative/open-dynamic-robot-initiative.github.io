@@ -42,7 +42,7 @@ var NAVTREEINDEX =
 [
 "analog__sensor_8hpp.html",
 "classblmc__drivers_1_1MotorInterface.html#a35c1217dd295078c67bacc2cba08ab33a781e5fac9a7a2eafeea329774b61f9ce",
-"pd__control_8hpp.html#a1eb492ab42b913d5bcc21d53ba7185ba"
+"os__interface_8hpp.html#a81e55d2bdf351cd53218a3085ba56955"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

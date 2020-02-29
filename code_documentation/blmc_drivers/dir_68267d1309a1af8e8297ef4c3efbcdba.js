@@ -4,6 +4,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "can_bus.cpp", "can__bus_8cpp.html", null ],
     [ "motor.cpp", "motor_8cpp.html", null ],
     [ "motor_board.cpp", "motor__board_8cpp.html", null ],
+    [ "serial_reader.cpp", "serial__reader_8cpp.html", null ],
     [ "spi_bus.cpp", "spi__bus_8cpp.html", null ],
     [ "spi_motor_board.cpp", "spi__motor__board_8cpp.html", null ]
 ];

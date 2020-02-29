@@ -30,6 +30,7 @@ var hierarchy =
     [ "blmc_drivers::MotorBoardCommand", "classblmc__drivers_1_1MotorBoardCommand.html", null ],
     [ "blmc_drivers::MotorBoardStatus", "classblmc__drivers_1_1MotorBoardStatus.html", null ],
     [ "blmc_drivers::PDController", "classblmc__drivers_1_1PDController.html", null ],
+    [ "blmc_drivers::SerialReader", "classblmc__drivers_1_1SerialReader.html", null ],
     [ "blmc_drivers::SinePositionControl", "classblmc__drivers_1_1SinePositionControl.html", null ],
     [ "blmc_drivers::SineTorqueControl", "classblmc__drivers_1_1SineTorqueControl.html", null ]
 ];
