@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['hardware',['Hardware',['../structHardware.html',1,'']]],
   ['has_5fendstop',['has_endstop',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a8cbf3c740b0cae7afb7170d51e04b60d',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
   ['has_5fendstop_5f',['has_endstop_',['../classblmc__robots_1_1NJointBlmcRobotDriver.html#a4da9d51841e9b2995e597ae52c460586',1,'blmc_robots::NJointBlmcRobotDriver']]],
   ['has_5ferror',['has_error',['../classblmc__robots_1_1Solo12.html#a40cd1c76205f1a8a16c1cf1032697479',1,'blmc_robots::Solo12']]],

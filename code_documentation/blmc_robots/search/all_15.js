@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['zero_5fangle_5f',['zero_angle_',['../classblmc__robots_1_1BlmcJointModule.html#abdf774193a8ae31486e937eb432dc702',1,'blmc_robots::BlmcJointModule']]],
-  ['zero_5fjoint_5fpositions',['zero_joint_positions',['../classblmc__robots_1_1SingleLeg.html#a2d95b70a9aca9f7faf503fd5c62f067f',1,'blmc_robots::SingleLeg']]]
+  ['_7epolynome',['~Polynome',['../classblmc__robots_1_1Polynome.html#a4541e4b629061dfdbca73559a42a6e93',1,'blmc_robots::Polynome']]],
+  ['_7etimepolynome',['~TimePolynome',['../classblmc__robots_1_1TimePolynome.html#add49c99d57206a93c9217f374f51700a',1,'blmc_robots::TimePolynome']]]
 ];

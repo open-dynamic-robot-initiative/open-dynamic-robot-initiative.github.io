@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fakefingerdriver',['FakeFingerDriver',['../classblmc__robots_1_1FakeFingerDriver.html',1,'blmc_robots']]]
+  ['motorparameters',['MotorParameters',['../structblmc__robots_1_1MotorParameters.html',1,'blmc_robots']]]
 ];
