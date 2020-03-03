@@ -14,6 +14,8 @@ var annotated_dup =
       [ "Sliders", "classblmc__robots_1_1Sliders.html", "classblmc__robots_1_1Sliders" ],
       [ "Solo12", "classblmc__robots_1_1Solo12.html", "classblmc__robots_1_1Solo12" ],
       [ "Solo8", "classblmc__robots_1_1Solo8.html", "classblmc__robots_1_1Solo8" ],
+      [ "Solo8TI", "classblmc__robots_1_1Solo8TI.html", "classblmc__robots_1_1Solo8TI" ],
+      [ "SpiJointModules", "classblmc__robots_1_1SpiJointModules.html", "classblmc__robots_1_1SpiJointModules" ],
       [ "Stuggihop", "classblmc__robots_1_1Stuggihop.html", "classblmc__robots_1_1Stuggihop" ],
       [ "TestBench8Motors", "classblmc__robots_1_1TestBench8Motors.html", "classblmc__robots_1_1TestBench8Motors" ],
       [ "Teststand", "classblmc__robots_1_1Teststand.html", "classblmc__robots_1_1Teststand" ],

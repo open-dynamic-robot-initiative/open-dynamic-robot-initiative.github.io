@@ -23,6 +23,8 @@ var hierarchy =
     [ "blmc_robots::Sliders< COUNT >", "classblmc__robots_1_1Sliders.html", null ],
     [ "blmc_robots::Solo12", "classblmc__robots_1_1Solo12.html", null ],
     [ "blmc_robots::Solo8", "classblmc__robots_1_1Solo8.html", null ],
+    [ "blmc_robots::Solo8TI", "classblmc__robots_1_1Solo8TI.html", null ],
+    [ "blmc_robots::SpiJointModules< COUNT >", "classblmc__robots_1_1SpiJointModules.html", null ],
     [ "blmc_robots::Stuggihop", "classblmc__robots_1_1Stuggihop.html", null ],
     [ "blmc_robots::TestBench8Motors", "classblmc__robots_1_1TestBench8Motors.html", null ],
     [ "blmc_robots::Teststand", "classblmc__robots_1_1Teststand.html", null ],
