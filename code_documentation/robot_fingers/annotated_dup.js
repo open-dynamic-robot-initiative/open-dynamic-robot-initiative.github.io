@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "joint_friction_calibration", null, [
+      [ "AverageBuffer", "classjoint__friction__calibration_1_1AverageBuffer.html", "classjoint__friction__calibration_1_1AverageBuffer" ]
+    ] ],
     [ "robot_fingers", null, [
       [ "robot", null, [
         [ "Robot", "classrobot__fingers_1_1robot_1_1Robot.html", "classrobot__fingers_1_1robot_1_1Robot" ]
@@ -9,8 +12,5 @@ var annotated_dup =
       [ "RealFingerDriver", "classrobot__fingers_1_1RealFingerDriver.html", "classrobot__fingers_1_1RealFingerDriver" ],
       [ "TriFingerDriver", "classrobot__fingers_1_1TriFingerDriver.html", "classrobot__fingers_1_1TriFingerDriver" ],
       [ "TwoJointDriver", "classrobot__fingers_1_1TwoJointDriver.html", "classrobot__fingers_1_1TwoJointDriver" ]
-    ] ],
-    [ "two_joint_friction_calibration", null, [
-      [ "AverageBuffer", "classtwo__joint__friction__calibration_1_1AverageBuffer.html", "classtwo__joint__friction__calibration_1_1AverageBuffer" ]
     ] ]
 ];
