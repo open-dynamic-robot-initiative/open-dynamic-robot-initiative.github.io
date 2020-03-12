@@ -5,6 +5,7 @@ var structrobot__interfaces_1_1NJointRobotTypes_1_1Action =
     [ "get_name", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#a4d4b702fdf41cc9713c46edbbb26db51", null ],
     [ "None", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#ab963d5faa78618bdaae53dc70ca936ae", null ],
     [ "Position", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#ad60ea89acc73e544634b47a74797afd1", null ],
+    [ "serialize", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#a7f645ab9be5cee75974d9cf1d4300c67", null ],
     [ "Torque", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#ae5aae444c808728af59a8a5b27035293", null ],
     [ "TorqueAndPosition", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#a076108da9106e45e9e8ab0b89e4c66e6", null ],
     [ "Zero", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#ad6fa1cd952afc4f02fcabc4221802b47", null ],

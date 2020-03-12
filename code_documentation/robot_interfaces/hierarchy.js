@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "Action", "classAction.html", null ],
+    [ "robot_interfaces::demo::Action", "classrobot__interfaces_1_1demo_1_1Action.html", null ],
     [ "robot_interfaces::Loggable", "classrobot__interfaces_1_1Loggable.html", [
       [ "robot_interfaces::NJointRobotTypes< N >::Action", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html", null ],
       [ "robot_interfaces::NJointRobotTypes< N >::Observation", "structrobot__interfaces_1_1NJointRobotTypes_1_1Observation.html", null ],
@@ -15,12 +16,17 @@ var hierarchy =
       [ "robot_interfaces::TriFingerTypes", "structrobot__interfaces_1_1TriFingerTypes.html", null ]
     ] ],
     [ "Observation", "classObservation.html", null ],
+    [ "robot_interfaces::demo::Observation", "classrobot__interfaces_1_1demo_1_1Observation.html", null ],
     [ "robot_interfaces::RobotBackend< Action, Observation >", "classrobot__interfaces_1_1RobotBackend.html", null ],
-    [ "robot_interfaces::RobotData< Action, Observation, Status >", "classrobot__interfaces_1_1RobotData.html", null ],
+    [ "robot_interfaces::RobotData< Action, Observation >", "classrobot__interfaces_1_1RobotData.html", [
+      [ "robot_interfaces::MultiProcessRobotData< Action, Observation >", "classrobot__interfaces_1_1MultiProcessRobotData.html", null ],
+      [ "robot_interfaces::SingleProcessRobotData< Action, Observation >", "classrobot__interfaces_1_1SingleProcessRobotData.html", null ]
+    ] ],
     [ "robot_interfaces::RobotDriver< Action, Observation >", "classrobot__interfaces_1_1RobotDriver.html", [
+      [ "Driver", "classDriver.html", null ],
       [ "Driver", "classDriver.html", null ],
       [ "robot_interfaces::MonitoredRobotDriver< Action, Observation >", "classrobot__interfaces_1_1MonitoredRobotDriver.html", null ]
     ] ],
     [ "robot_interfaces::RobotFrontend< Action, Observation >", "classrobot__interfaces_1_1RobotFrontend.html", null ],
-    [ "robot_interfaces::RobotLogger< Action, Observation, Status >", "classrobot__interfaces_1_1RobotLogger.html", null ]
+    [ "robot_interfaces::RobotLogger< Action, Observation >", "classrobot__interfaces_1_1RobotLogger.html", null ]
 ];

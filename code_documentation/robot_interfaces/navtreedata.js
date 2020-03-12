@@ -2,6 +2,8 @@ var NAVTREE =
 [
   [ "robot_interfaces", "index.html", [
     [ "Robot interfaces", "md_readme.html", null ],
+    [ "Todo List", "todo.html", null ],
+    [ "License", "license.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

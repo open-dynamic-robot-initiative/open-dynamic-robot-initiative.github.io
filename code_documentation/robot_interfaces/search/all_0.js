@@ -1,11 +1,13 @@
 var searchData=
 [
   ['action',['Action',['../classAction.html',1,'Action'],['../structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#aeb7fbd93adcc0140b5db42298211fe9d',1,'robot_interfaces::NJointRobotTypes::Action::Action()']]],
+  ['action',['Action',['../classrobot__interfaces_1_1demo_1_1Action.html',1,'robot_interfaces::demo']]],
   ['action',['Action',['../structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html',1,'robot_interfaces::NJointRobotTypes']]],
   ['action_5frepetitions',['action_repetitions',['../structrobot__interfaces_1_1Status.html#a8ccb682cd2ba81059991f3b0b9ff0c00',1,'robot_interfaces::Status']]],
-  ['append_5ffield_5fdata_5fto_5ffile',['append_field_data_to_file',['../classrobot__interfaces_1_1RobotLogger.html#a8c64300966cf57716b07414696907ae9',1,'robot_interfaces::RobotLogger']]],
-  ['append_5fheader_5fto_5ffile',['append_header_to_file',['../classrobot__interfaces_1_1RobotLogger.html#a9a52b53a7bad975ff0f24ba99804eddd',1,'robot_interfaces::RobotLogger']]],
-  ['append_5fname_5fto_5fheader',['append_name_to_header',['../classrobot__interfaces_1_1RobotLogger.html#ac235513e7973aef1f1abf97cd22354d6',1,'robot_interfaces::RobotLogger']]],
-  ['append_5frobot_5fdata_5fto_5ffile',['append_robot_data_to_file',['../classrobot__interfaces_1_1RobotLogger.html#a9806ca6df50fb57bc62c1f292c504291',1,'robot_interfaces::RobotLogger']]],
+  ['append_5ffield_5fdata_5fto_5ffile',['append_field_data_to_file',['../classrobot__interfaces_1_1RobotLogger.html#a70c988142c9ccbdc0c81b0bcc689031e',1,'robot_interfaces::RobotLogger']]],
+  ['append_5fheader_5fto_5ffile',['append_header_to_file',['../classrobot__interfaces_1_1RobotLogger.html#a8c7c9b7bff6e49b340c90b36bee9331e',1,'robot_interfaces::RobotLogger']]],
+  ['append_5fname_5fto_5fheader',['append_name_to_header',['../classrobot__interfaces_1_1RobotLogger.html#a7c94db4517002755f3325c13aa430733',1,'robot_interfaces::RobotLogger']]],
+  ['append_5frobot_5fdata_5fto_5ffile',['append_robot_data_to_file',['../classrobot__interfaces_1_1RobotLogger.html#ac568cd79a651c2c20fa9e1f136155ced',1,'robot_interfaces::RobotLogger']]],
+  ['applied_5faction',['applied_action',['../classrobot__interfaces_1_1RobotData.html#a05fea4d2f75f7fc34daf2bfc71fbfc4b',1,'robot_interfaces::RobotData']]],
   ['apply_5faction',['apply_action',['../classDriver.html#a0f8d51bef151ccc38a0cb7b226048e28',1,'Driver::apply_action()'],['../classrobot__interfaces_1_1MonitoredRobotDriver.html#a745e701e6fd91be74be5022752ba3ef9',1,'robot_interfaces::MonitoredRobotDriver::apply_action()'],['../classrobot__interfaces_1_1RobotDriver.html#a21e8e2ef50bcf6174c8e76c48975a232',1,'robot_interfaces::RobotDriver::apply_action()']]]
 ];
