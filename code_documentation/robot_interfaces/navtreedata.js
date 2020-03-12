@@ -23,7 +23,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-".html"
+".html",
+"structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#ab963d5faa78618bdaae53dc70ca936ae"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
