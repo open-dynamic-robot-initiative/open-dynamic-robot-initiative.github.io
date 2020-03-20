@@ -110,7 +110,30 @@ $(document).ready(function(){initNavTree('md_readme.html','');});
 <h2>Copyrights</h2>
 <p>Copyright(c) 2018-2019 Max Planck Gesellschaft</p>
 <h2>License</h2>
-<p>BSD 3-Clause License </p>
+<p>BSD 3-Clause License</p>
+<h2>Installing Dependencies</h2>
+<h3>Steps to set up the pylon interface</h3>
+<ol type="1">
+<li>Get the pylon Camera Software Suite (5.0.12) from <a href="https://www.baslerweb.com/en/sales-support/downloads/software-downloads/pylon-5-0-12-linux-x86-64-bit/">here</a>. Then follow the instructions in the INSTALL file of the pylon suite. Pasted below for reference (2, 3, 4):-</li>
+<li>Change to the directory which contains this INSTALL file, e.g.: cd ~/pylon-5.0.0.1234-x86</li>
+<li>Extract the corresponding SDK into /opt sudo tar -C /opt -xzf pylonSDK*.tar.gz</li>
+<li>Install udev-rules to set up permissions for basler USB cameras ./setup-usb.sh</li>
+</ol>
+<h3>Steps to access pylon from inside the container</h3>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;singularity shell -B /opt/pylon5 containers/blmc_ei.sif</div></div><!-- fragment --><p>-B binds the directory /opt/pylon5 to the container so that the directories and the files inside it are accessible from within the container</p>
+<h3>Demo instructions for the camera</h3>
+<p>run as follows to use a camera that requires the pylon interface.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;python3 demo_camera.py --pylon</div></div><!-- fragment --><p>Not passing <code>--pylon</code> will create a camera object from the system's webcam, or any other camera connected (if there is one) that can be accessed via just OpenCV itself.</p>
+<h3>Exceptions and how to deal with them</h3>
+<ol type="1">
+<li>In case of a runtime exception, use a smaller USB 3.0 cable.</li>
+<li>In case you get the runtime_error:</li>
+</ol>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;Failed to access images from the camera.</div></div><!-- fragment --><p>try to disconnect and reconnect the camera first and see if that resolves the error. If it does not, then reduce the image width and height from the PylonViewerApp in <code>/opt/pylon5/bin</code>.</p>
+<ol type="1">
+<li>In case you get a numpy memory error while trying to access the stored images, or the error</li>
+</ol>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cv2.error: OpenCV(4.2.0) /io/opencv/modules/highgui/src/window.cpp:376:</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;error: (-215:Assertion failed) size.width&gt;0 &amp;&amp; size.height&gt;0 in function &#39;imshow&#39;</div></div><!-- fragment --><p>while trying to view the image stream, reduce the image width and height from the PylonViewerApp. You can also try reducing the bandwidth in the Tools menu in the same app. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

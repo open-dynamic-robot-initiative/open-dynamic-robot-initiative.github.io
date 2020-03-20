@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>robot_interfaces: include/robot_interfaces/sensors/sensor_driver.hpp File Reference</title>
+<title>robot_interfaces: include/robot_interfaces/sensors/pylon_driver.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('sensor__driver_8hpp.html','');});
+$(document).ready(function(){initNavTree('pylon__driver_8hpp.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,51 +106,47 @@ $(document).ready(function(){initNavTree('sensor__driver_8hpp.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">sensor_driver.hpp File Reference</div>  </div>
+<div class="title">pylon_driver.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Base driver for the sensors.  
+<p><a class="el" href="classDriver.html">Driver</a> to interface with the camera using Pylon and OpenCV.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<div class="textblock"><code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;real_time_tools/timer.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="camera__observation_8hpp_source.html">robot_interfaces/sensors/camera_observation.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sensor__driver_8hpp_source.html">robot_interfaces/sensors/sensor_driver.hpp</a>&gt;</code><br />
+<code>#include &lt;pylon/PylonIncludes.h&gt;</code><br />
+<code>#include &lt;opencv2/opencv.hpp&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for sensor_driver.hpp:</div>
+Include dependency graph for pylon_driver.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="sensor__driver_8hpp__incl.png" border="0" usemap="#include_2robot__interfaces_2sensors_2sensor__driver_8hpp" alt=""/></div>
-<map name="include_2robot__interfaces_2sensors_2sensor__driver_8hpp" id="include_2robot__interfaces_2sensors_2sensor__driver_8hpp">
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="sensor__driver_8hpp__dep__incl.png" border="0" usemap="#include_2robot__interfaces_2sensors_2sensor__driver_8hppdep" alt=""/></div>
-<map name="include_2robot__interfaces_2sensors_2sensor__driver_8hppdep" id="include_2robot__interfaces_2sensors_2sensor__driver_8hppdep">
-<area shape="rect" id="node2" href="opencv__driver_8hpp.html" title="Driver to interface with the camera using OpenCV. " alt="" coords="5,95,188,136"/>
-<area shape="rect" id="node3" href="sensor__backend_8hpp.html" title="Connects the driver with sensor data. " alt="" coords="43,184,239,225"/>
-<area shape="rect" id="node4" href="pybind__sensors_8hpp.html" title="Binds methods and objects to enable access from python. " alt="" coords="71,273,263,315"/>
-<area shape="rect" id="node5" href="py__camera__types_8cpp.html" title="Create bindings for camera sensors. " alt="" coords="74,363,261,389"/>
-<area shape="rect" id="node6" href="pylon__driver_8hpp.html" title="Driver to interface with the camera using Pylon and OpenCV. " alt="" coords="365,95,535,136"/>
+<div class="center"><img src="pylon__driver_8hpp__incl.png" border="0" usemap="#include_2robot__interfaces_2sensors_2pylon__driver_8hpp" alt=""/></div>
+<map name="include_2robot__interfaces_2sensors_2pylon__driver_8hpp" id="include_2robot__interfaces_2sensors_2pylon__driver_8hpp">
+<area shape="rect" id="node5" href="camera__observation_8hpp.html" title="Defines the observation structure to be used by any camera. " alt="" coords="488,95,656,136"/>
+<area shape="rect" id="node10" href="sensor__driver_8hpp.html" title="Base driver for the sensors. " alt="" coords="5,95,171,136"/>
 </map>
 </div>
 </div>
-<p><a href="sensor__driver_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="pylon__driver_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1SensorDriver.html">robot_interfaces::SensorDriver&lt; ObservationType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base driver class from which all specific sensor drivers should derive.  <a href="classrobot__interfaces_1_1SensorDriver.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1PylonDriver.html">robot_interfaces::PylonDriver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classDriver.html">Driver</a> for interacting with a camera via Pylon and storing images using OpenCV.  <a href="classrobot__interfaces_1_1PylonDriver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base driver for the sensors. </p>
+<div class="textblock"><p><a class="el" href="classDriver.html">Driver</a> to interface with the camera using Pylon and OpenCV. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>2020, New York University, Max Planck Gesellschaft. All rights reserved. </dd></dl>
-<dl class="license"><dt><b><a class="el" href="license.html#_license000009">License:</a></b></dt><dd>BSD 3-clause </dd></dl>
+<dl class="license"><dt><b><a class="el" href="license.html#_license000006">License:</a></b></dt><dd>BSD 3-clause References- <a href="https://www.baslerweb.com/en/sales-support/downloads/document-downloads/pylon-sdk-samples-manual/">https://www.baslerweb.com/en/sales-support/downloads/document-downloads/pylon-sdk-samples-manual/</a> <a href="https://github.com/basler/pylon-ros-camera/blob/9f3832127fc39a2c181cbeb5257054352e2ef7fe/pylon_camera/src/pylon_camera/pylon_camera.cpp#L132">https://github.com/basler/pylon-ros-camera/blob/9f3832127fc39a2c181cbeb5257054352e2ef7fe/pylon_camera/src/pylon_camera/pylon_camera.cpp#L132</a></dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2755bdee0bb1261a43cdd2fac482e948.html">robot_interfaces</a></li><li class="navelem"><a class="el" href="dir_6c9bfd35819a2941a42250238e8ecca1.html">sensors</a></li><li class="navelem"><a class="el" href="sensor__driver_8hpp.html">sensor_driver.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2755bdee0bb1261a43cdd2fac482e948.html">robot_interfaces</a></li><li class="navelem"><a class="el" href="dir_6c9bfd35819a2941a42250238e8ecca1.html">sensors</a></li><li class="navelem"><a class="el" href="pylon__driver_8hpp.html">pylon_driver.hpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

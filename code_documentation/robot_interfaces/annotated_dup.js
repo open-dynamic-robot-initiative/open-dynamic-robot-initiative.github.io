@@ -13,6 +13,7 @@ var annotated_dup =
       [ "NJointRobotFunctions", "structrobot__interfaces_1_1NJointRobotFunctions.html", "structrobot__interfaces_1_1NJointRobotFunctions" ],
       [ "NJointRobotTypes", "structrobot__interfaces_1_1NJointRobotTypes.html", "structrobot__interfaces_1_1NJointRobotTypes" ],
       [ "OpenCVDriver", "classrobot__interfaces_1_1OpenCVDriver.html", "classrobot__interfaces_1_1OpenCVDriver" ],
+      [ "PylonDriver", "classrobot__interfaces_1_1PylonDriver.html", "classrobot__interfaces_1_1PylonDriver" ],
       [ "RobotBackend", "classrobot__interfaces_1_1RobotBackend.html", "classrobot__interfaces_1_1RobotBackend" ],
       [ "RobotData", "classrobot__interfaces_1_1RobotData.html", "classrobot__interfaces_1_1RobotData" ],
       [ "RobotDriver", "classrobot__interfaces_1_1RobotDriver.html", "classrobot__interfaces_1_1RobotDriver" ],
