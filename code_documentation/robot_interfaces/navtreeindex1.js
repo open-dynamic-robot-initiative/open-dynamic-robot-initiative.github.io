@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"structrobot__interfaces_1_1NJointRobotTypes.html#af7a865b80531a7b8e36368ad8bd8ce7e":[3,0,0,7,3],
 "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html":[3,0,0,7,0],
 "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#a076108da9106e45e9e8ab0b89e4c66e6":[3,0,0,7,0,7],
 "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#a16eb24df6bdbc10c8ce08c0621723b92":[3,0,0,7,0,11],
