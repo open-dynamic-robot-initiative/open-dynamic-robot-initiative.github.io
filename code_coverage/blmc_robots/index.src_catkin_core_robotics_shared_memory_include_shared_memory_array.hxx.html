@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-03-25 16:32:41</td>
+            <td class="headerValue">2020-03-26 14:03:01</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">45</td>
@@ -324,552 +324,552 @@
     <td align="right" class="lineno"><pre>4</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>// to make sure size of segments are multiple</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>5</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>// to make sure size of segments are multiple</pre></td>
+    <td align="left" class="src "><pre>// of 1025</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>6</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>// of 1025</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>80</pre></td>
+    <td align="left" class="src coveredLine"><pre>static uint get_segment_size(size_t size_array, size_t size_item)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>7</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>80</pre></td>
-    <td align="left" class="src coveredLine"><pre>static uint get_segment_size(size_t size_array,</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>8</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>			     size_t size_item)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>9</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>10</pre></td>
+    <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>80</pre></td>
-    <td align="left" class="src coveredLine"><pre>  size_t total_desired_size = size_array*size_item;</pre></td>
+    <td align="left" class="src coveredLine"><pre>    size_t total_desired_size = size_array * size_item;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>9</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>80</pre></td>
+    <td align="left" class="src coveredLine"><pre>    double multiplier_d = static_cast&lt;double>(total_desired_size) / 1025.0;</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>10</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // + 1 because int rounds to lower bound</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>80</pre></td>
-    <td align="left" class="src coveredLine"><pre>  double multiplier_d = static_cast&lt;double>(total_desired_size)/1025.0;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    // + 2 for memory padding</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>12</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // + 1 because int rounds to lower bound</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>80</pre></td>
+    <td align="left" class="src coveredLine"><pre>    uint multiplier = static_cast&lt;uint>(multiplier_d) + 2;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>13</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  // + 2 for memory padding</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>80</pre></td>
+    <td align="left" class="src coveredLine"><pre>    uint value = multiplier * 1025 * 2;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>80</pre></td>
-    <td align="left" class="src coveredLine"><pre>  uint multiplier = static_cast&lt;uint>(multiplier_d)+2;</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return value;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>80</pre></td>
-    <td align="left" class="src coveredLine"><pre>  uint value = multiplier*1025*2;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>80</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return value;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>array&lt;T, SIZE>::array(std::string segment_id,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>                      std::size_t size,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>                      bool clear_on_destruction,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
-    <td align="left" class="src coveredLine"><pre>array&lt;T,SIZE>::array( std::string segment_id,</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>                      bool multiprocess_safe)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		      std::size_t size,</pre></td>
+    <td align="left" class="src "><pre>    : segment_id_(segment_id),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		      bool clear_on_destruction,</pre></td>
+    <td align="left" class="src "><pre>      size_(size),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		      bool multiprocess_safe)</pre></td>
+    <td align="left" class="src "><pre>      clear_on_destruction_(clear_on_destruction),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  : segment_id_(segment_id),</pre></td>
+    <td align="left" class="src "><pre>      multiprocess_safe_(multiprocess_safe),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    size_(size),</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 19 times">&check;</span><br/><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="takenBranch" title="Branch 9 taken 19 times">&check;</span><br/><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="takenBranch" title="Branch 15 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 26 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 27 not taken">&cross;</span><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="takenBranch" title="Branch 30 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 31 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><span class="takenBranch" title="Branch 34 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 37 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 38 not taken">&cross;</span><span class="notTakenBranch" title="Branch 39 not taken">&cross;</span><span class="takenBranch" title="Branch 40 taken 25 times">&check;</span><br/><span class="notTakenBranch" title="Branch 41 not taken">&cross;</span><span class="takenBranch" title="Branch 54 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 55 not taken">&cross;</span><span class="takenBranch" title="Branch 58 taken 8 times">&check;</span><br/><span class="notTakenBranch" title="Branch 59 not taken">&cross;</span><span class="takenBranch" title="Branch 61 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 62 not taken">&cross;</span><span class="takenBranch" title="Branch 64 taken 8 times">&check;</span><br/><span class="notTakenBranch" title="Branch 65 not taken">&cross;</span><span class="takenBranch" title="Branch 78 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 79 not taken">&cross;</span><span class="takenBranch" title="Branch 82 taken 24 times">&check;</span><br/><span class="notTakenBranch" title="Branch 83 not taken">&cross;</span><span class="takenBranch" title="Branch 85 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 86 not taken">&cross;</span><span class="takenBranch" title="Branch 88 taken 24 times">&check;</span><br/><span class="notTakenBranch" title="Branch 89 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>      mutex_(segment_id + std::string("_mutex"), clear_on_destruction)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    clear_on_destruction_(clear_on_destruction),</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    multiprocess_safe_(multiprocess_safe),</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="takenBranch" title="Branch 10 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
+    <td align="left" class="src coveredLine"><pre>    init(this->type_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 19 times">&check;</span><br/><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="takenBranch" title="Branch 9 taken 19 times">&check;</span><br/><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 14 not taken">&cross;</span><span class="takenBranch" title="Branch 15 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="notTakenBranch" title="Branch 26 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 27 not taken">&cross;</span><span class="notTakenBranch" title="Branch 29 not taken">&cross;</span><span class="takenBranch" title="Branch 30 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 31 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 33 not taken">&cross;</span><span class="takenBranch" title="Branch 34 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="notTakenBranch" title="Branch 36 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 37 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 38 not taken">&cross;</span><span class="notTakenBranch" title="Branch 39 not taken">&cross;</span><span class="takenBranch" title="Branch 40 taken 25 times">&check;</span><br/><span class="notTakenBranch" title="Branch 41 not taken">&cross;</span><span class="takenBranch" title="Branch 54 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 55 not taken">&cross;</span><span class="takenBranch" title="Branch 58 taken 8 times">&check;</span><br/><span class="notTakenBranch" title="Branch 59 not taken">&cross;</span><span class="takenBranch" title="Branch 61 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 62 not taken">&cross;</span><span class="takenBranch" title="Branch 64 taken 8 times">&check;</span><br/><span class="notTakenBranch" title="Branch 65 not taken">&cross;</span><span class="takenBranch" title="Branch 78 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 79 not taken">&cross;</span><span class="takenBranch" title="Branch 82 taken 24 times">&check;</span><br/><span class="notTakenBranch" title="Branch 83 not taken">&cross;</span><span class="takenBranch" title="Branch 85 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 86 not taken">&cross;</span><span class="takenBranch" title="Branch 88 taken 24 times">&check;</span><br/><span class="notTakenBranch" title="Branch 89 not taken">&cross;</span></td>
+    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>76</pre></td>
-    <td align="left" class="src coveredLine"><pre>    mutex_(segment_id+std::string("_mutex"),clear_on_destruction)</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 19 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 25 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 8 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="takenBranch" title="Branch 10 taken 24 times">&check;</span><span class="notTakenBranch" title="Branch 11 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
-    <td align="left" class="src coveredLine"><pre>  init(this->type_);</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>32</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>76</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>array&lt;T, SIZE>::array(const array&lt;T, SIZE>&amp; other)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    : segment_id_(other.segment_id_),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>      size_(other.size_),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>      clear_on_destruction_(other.clear_on_destruction_),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>array&lt;T,SIZE>::array(const array&lt;T,SIZE>&amp; other)</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>      multiprocess_safe_(other.multiprocess_safe_),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>37</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  : segment_id_(other.segment_id_),</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 15 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="takenBranch" title="Branch 30 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 31 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 34 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="takenBranch" title="Branch 37 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 38 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 40 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 41 not taken">&cross;</span><span class="takenBranch" title="Branch 54 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 55 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 58 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 59 not taken">&cross;</span><span class="takenBranch" title="Branch 61 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 62 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 64 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 65 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>      mutex_(segment_id_ + std::string("_mutex"), clear_on_destruction_)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>38</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    size_(other.size_),</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    clear_on_destruction_(other.clear_on_destruction_),</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>    init(this->type_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    multiprocess_safe_(other.multiprocess_safe_),</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 10 not taken">&cross;</span><span class="takenBranch" title="Branch 12 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 13 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 15 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 16 not taken">&cross;</span><span class="takenBranch" title="Branch 30 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 31 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 34 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 35 not taken">&cross;</span><span class="takenBranch" title="Branch 37 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 38 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 40 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 41 not taken">&cross;</span><span class="takenBranch" title="Branch 54 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 55 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 58 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 59 not taken">&cross;</span><span class="takenBranch" title="Branch 61 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 62 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 64 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 65 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>    mutex_(segment_id_+std::string("_mutex"),clear_on_destruction_)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 4 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>  init(this->type_);</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>array&lt;T, SIZE>::array(array&lt;T, SIZE>&amp;&amp; other) noexcept</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>3</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    : segment_id_(other.segment_id_),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>      size_(other.size_),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>      clear_on_destruction_(other.clear_on_destruction_),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>      multiprocess_safe_(other.multiprocess_safe_),</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>array&lt;T,SIZE>::array(array&lt;T,SIZE>&amp;&amp; other) noexcept</pre></td>
+    <td align="left" class="src coveredLine"><pre>      mutex_(segment_id_ + std::string("_mutex"), clear_on_destruction_)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>49</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  : segment_id_(other.segment_id_),</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    size_(other.size_),</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>    init(this->type_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    clear_on_destruction_(other.clear_on_destruction_),</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>    other.shared_ = nullptr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    multiprocess_safe_(other.multiprocess_safe_),</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>    other.clear_on_destruction_ = false;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    mutex_(segment_id_+std::string("_mutex"),clear_on_destruction_)</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  init(this->type_);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  other.shared_=nullptr;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>array&lt;T, SIZE>&amp; array&lt;T, SIZE>::operator=(array&lt;T, SIZE>&amp;&amp; other) noexcept</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  other.clear_on_destruction_=false;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    segment_id_ = other.segment_id_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    size_ = other.size_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    clear_on_destruction_ = other.clear_on_destruction_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>    other.clear_on_destruction_ = false;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>62</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>array&lt;T,SIZE>&amp; array&lt;T,SIZE>::operator=(array&lt;T,SIZE>&amp;&amp; other) noexcept</pre></td>
+    <td align="left" class="src "><pre>    multiprocess_safe_ = other.multiprocess_safe_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre>    init(this->type);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  segment_id_ = other.segment_id_;</pre></td>
+    <td align="left" class="src "><pre>    std::swap(mutex_, other.mutex_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  size_ = other.size_;</pre></td>
+    <td align="left" class="src "><pre>    other.shared_ = nullptr;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  clear_on_destruction_ = other.clear_on_destruction_;</pre></td>
+    <td align="left" class="src "><pre>    return *this;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  other.clear_on_destruction_=false;</pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  multiprocess_safe_ = other.multiprocess_safe_;</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  init(this->type);</pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  std::swap(mutex_,other.mutex_);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
+    <td align="left" class="src coveredLine"><pre>array&lt;T, SIZE>::~array()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  other.shared_=nullptr;</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  return *this;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 2 taken 7 times">&check;</span><span class="takenBranch" title="Branch 3 taken 5 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="takenBranch" title="Branch 5 taken 4 times">&check;</span><span class="takenBranch" title="Branch 6 taken 5 times">&check;</span><span class="takenBranch" title="Branch 7 taken 5 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (clear_on_destruction_)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
+    <td align="left" class="src coveredLine"><pre>        clear_array(segment_id_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>76</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>38</pre></td>
-    <td align="left" class="src coveredLine"><pre>array&lt;T,SIZE>::~array()</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>77</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>78</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 2 taken 7 times">&check;</span><span class="takenBranch" title="Branch 3 taken 5 times">&check;</span><br/><span class="takenBranch" title="Branch 4 taken 6 times">&check;</span><span class="takenBranch" title="Branch 5 taken 4 times">&check;</span><span class="takenBranch" title="Branch 6 taken 5 times">&check;</span><span class="takenBranch" title="Branch 7 taken 5 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(clear_on_destruction_)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>79</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8146</pre></td>
+    <td align="left" class="src coveredLine"><pre>void array&lt;T, SIZE>::set(uint index, const T&amp; t)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>22</pre></td>
-    <td align="left" class="src coveredLine"><pre>      clear_array(segment_id_);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>81</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8146</pre></td>
+    <td align="left" class="src coveredLine"><pre>    set(index, t, this->type_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>82</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>38</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8146</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
@@ -884,14 +884,14 @@
     <td align="right" class="lineno"><pre>84</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8146</pre></td>
-    <td align="left" class="src coveredLine"><pre>void array&lt;T,SIZE>::set(uint index, const T&amp; t)</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>void array&lt;T, SIZE>::set(uint index, const T* t)</pre></td>
     </tr>
 
     <tr>
@@ -904,15 +904,15 @@
     <tr>
     <td align="right" class="lineno"><pre>87</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8146</pre></td>
-    <td align="left" class="src coveredLine"><pre>  set(index,t,this->type_);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    set(index, *t, this->type_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8146</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -926,14 +926,14 @@
     <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>91</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>void array&lt;T,SIZE>::set(uint index, const T* t)</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>52977</pre></td>
+    <td align="left" class="src coveredLine"><pre>void array&lt;T, SIZE>::get(uint index, T&amp; t)</pre></td>
     </tr>
 
     <tr>
@@ -946,15 +946,15 @@
     <tr>
     <td align="right" class="lineno"><pre>93</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  set(index,*t,this->type_);</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>52977</pre></td>
+    <td align="left" class="src coveredLine"><pre>    get(index, t, this->type_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>94</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>52977</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -968,14 +968,14 @@
     <td align="right" class="lineno"><pre>96</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>97</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>49437</pre></td>
-    <td align="left" class="src coveredLine"><pre>void array&lt;T,SIZE>::get(uint index, T&amp; t)</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>void array&lt;T, SIZE>::get(uint index, T* t)</pre></td>
     </tr>
 
     <tr>
@@ -988,15 +988,15 @@
     <tr>
     <td align="right" class="lineno"><pre>99</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>49437</pre></td>
-    <td align="left" class="src coveredLine"><pre>  get(index,t,this->type_);</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    get(index, *t, this->type_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>49437</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
@@ -1010,14 +1010,14 @@
     <td align="right" class="lineno"><pre>102</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>103</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>void array&lt;T,SIZE>::get(uint index, T* t)</pre></td>
+    <td align="left" class="src "><pre>void array&lt;T, SIZE>::print()</pre></td>
     </tr>
 
     <tr>
@@ -1031,56 +1031,56 @@
     <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  get(index,*t,this->type_);</pre></td>
+    <td align="left" class="src "><pre>    SegmentInfo si(segment_manager_);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>106</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="left" class="src "><pre>    si.print();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>108</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>109</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>void array&lt;T,SIZE>::print()</pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>110</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8645</pre></td>
+    <td align="left" class="src coveredLine"><pre>std::size_t array&lt;T, SIZE>::size() const</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>111</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  SegmentInfo si(segment_manager_);</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>112</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  si.print();</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>8645</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return size_;</pre></td>
     </tr>
 
     <tr>
@@ -1101,14 +1101,14 @@
     <td align="right" class="lineno"><pre>115</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>116</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8645</pre></td>
-    <td align="left" class="src coveredLine"><pre>std::size_t array&lt;T,SIZE>::size() const</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>void* array&lt;T, SIZE>::get_raw()</pre></td>
     </tr>
 
     <tr>
@@ -1121,8 +1121,8 @@
     <tr>
     <td align="right" class="lineno"><pre>118</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>8645</pre></td>
-    <td align="left" class="src coveredLine"><pre>  return size_;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    return (void*)(this->shared_);</pre></td>
     </tr>
 
     <tr>
@@ -1130,69 +1130,6 @@
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>120</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>121</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>122</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>void* array&lt;T,SIZE>::get_raw()</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>123</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>124</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  return (void*)(this->shared_);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>125</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>126</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>127</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>128</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
     </tr>
 
   </table>

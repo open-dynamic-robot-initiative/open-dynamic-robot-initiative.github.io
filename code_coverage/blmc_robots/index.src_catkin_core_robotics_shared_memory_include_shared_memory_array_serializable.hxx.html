@@ -269,13 +269,13 @@
             <td class="headerValue">src/catkin/core_robotics/shared_memory/include/shared_memory/array_serializable.hxx</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">28</td>
-            <td class="headerTableEntry">30</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">93.3 %</td>
+            <td class="headerTableEntry">29</td>
+            <td class="headerTableEntry">31</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">93.5 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-03-25 16:32:41</td>
+            <td class="headerValue">2020-03-26 14:03:01</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">14</td>
@@ -324,182 +324,182 @@
     <td align="right" class="lineno"><pre>4</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>5</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
+    <td align="left" class="src coveredLine"><pre>void array&lt;T, SIZE>::init(SERIALIZABLE)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>6</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>void array&lt;T,SIZE>::init( SERIALIZABLE )</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->item_size_ = Serializer&lt;T>::serializable_size();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>  this->item_size_ = Serializer&lt;T>::serializable_size();</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->total_size_ = this->item_size_ * this->size_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>9</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>  this->total_size_ = this->item_size_*this->size_;</pre></td>
+    <td align="left" class="src coveredLine"><pre>    uint segment_size = get_segment_size(this->total_size_, sizeof(char));</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>10</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/></td>
     <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>  uint segment_size = get_segment_size(this->total_size_,sizeof(char));</pre></td>
+    <td align="left" class="src coveredLine"><pre>    segment_manager_ = boost::interprocess::managed_shared_memory(</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 6 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 7 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>  segment_manager_ =</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>        boost::interprocess::open_or_create, segment_id_.c_str(), segment_size);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>12</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    boost::interprocess::managed_shared_memory(boost::interprocess::open_or_create,</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>60</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->shared_ = segment_manager_.find_or_construct&lt;char>(</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>13</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>					       segment_id_.c_str(),</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>60</pre></td>
+    <td align="left" class="src coveredLine"><pre>        segment_id_.c_str())[this->total_size_]();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>					       segment_size);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>15</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>20</pre></td>
-    <td align="left" class="src coveredLine"><pre>  this->shared_ =</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>16</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 3 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><span class="takenBranch" title="Branch 7 taken 20 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>40</pre></td>
-    <td align="left" class="src coveredLine"><pre>    segment_manager_.find_or_construct&lt;char>(segment_id_.c_str())[this->total_size_]();</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>17</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>20</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>19</pre></td>
+    <td align="right" class="lineno"><pre>15</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>20</pre></td>
+    <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>21</pre></td>
+    <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>void array&lt;T,SIZE>::set(uint index,const T&amp; t, SERIALIZABLE)</pre></td>
+    <td align="left" class="src coveredLine"><pre>void array&lt;T, SIZE>::set(uint index, const T&amp; t, SERIALIZABLE)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>22</pre></td>
+    <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>23</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>24</pre></td>
+    <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>  uint abs_index = index*this->item_size_;</pre></td>
+    <td align="left" class="src coveredLine"><pre>    uint abs_index = index * this->item_size_;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 1402 times">&check;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(abs_index&lt;0 || index>=this->total_size_)</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (abs_index &lt; 0 || index >= this->total_size_)</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="lineno"><pre>21</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      throw std::runtime_error("invalid index");</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        throw std::runtime_error("invalid index");</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1402 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(multiprocess_safe_)</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (multiprocess_safe_)</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>25</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>26</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
+    <td align="left" class="src coveredLine"><pre>        mutex_.lock();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>27</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>28</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
+    <td align="left" class="src coveredLine"><pre>    const std::string&amp; serialized = this->serializer_.serialize(t);</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>29</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4170800 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1402 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4172202</pre></td>
+    <td align="left" class="src coveredLine"><pre>    for (uint index = 0; index &lt; this->item_size_; index++)</pre></td>
     </tr>
 
     <tr>
@@ -512,8 +512,8 @@
     <tr>
     <td align="right" class="lineno"><pre>31</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>      mutex_.lock();</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4170800</pre></td>
+    <td align="left" class="src coveredLine"><pre>        this->shared_[abs_index + index] = serialized[index];</pre></td>
     </tr>
 
     <tr>
@@ -525,219 +525,177 @@
 
     <tr>
     <td align="right" class="lineno"><pre>33</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1402 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>  const std::string&amp; serialized = this->serializer_.serialize(t);</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (multiprocess_safe_)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 4170800 times">&check;</span><span class="takenBranch" title="Branch 1 taken 1402 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>4172202</pre></td>
-    <td align="left" class="src coveredLine"><pre>  for(uint index=0;index&lt;this->item_size_;index++)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>36</pre></td>
+    <td align="right" class="lineno"><pre>35</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4170800</pre></td>
-    <td align="left" class="src coveredLine"><pre>      this->shared_[abs_index+index]=serialized[index];</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
+    <td align="left" class="src coveredLine"><pre>        mutex_.unlock();</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="lineno"><pre>36</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>38</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1402 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="lineno"><pre>37</pre></td>
+    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(multiprocess_safe_)</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>38</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>39</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="left" class="src "><pre>template &lt;typename T, int SIZE></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>40</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>      mutex_.unlock();</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
+    <td align="left" class="src coveredLine"><pre>void array&lt;T, SIZE>::get(uint index, T&amp; t, SERIALIZABLE)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>41</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>42</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1402</pre></td>
-    <td align="left" class="src coveredLine"><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
+    <td align="left" class="src coveredLine"><pre>    uint abs_index = index * this->item_size_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>43</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 6203 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (abs_index &lt; 0 || abs_index >= this->total_size_)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>44</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename T, int SIZE></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>45</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
-    <td align="left" class="src coveredLine"><pre>void array&lt;T,SIZE>::get(uint index, T&amp; t, SERIALIZABLE)</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>        throw std::runtime_error("invalid index");</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>46</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>{</pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>47</pre></td>
-    <td align="right" class="linebranch"></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6203 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
     <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
-    <td align="left" class="src coveredLine"><pre>  uint abs_index = index*this->item_size_;</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (multiprocess_safe_)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>48</pre></td>
-    <td align="right" class="linebranch"><span class="notTakenBranch" title="Branch 0 not taken">&cross;</span><span class="takenBranch" title="Branch 1 taken 6203 times">&check;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(abs_index&lt;0 || abs_index>=this->total_size_)</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>49</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
+    <td align="left" class="src coveredLine"><pre>        mutex_.lock();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>      throw std::runtime_error("invalid index");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>51</pre></td>
-    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
+    <td align="right" class="lineno"><pre>51</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6203 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 6203 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>12406</pre></td>
+    <td align="left" class="src coveredLine"><pre>    this->serializer_.deserialize(</pre></td>
+    </tr>
+
+    <tr>
     <td align="right" class="lineno"><pre>52</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6203 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(multiprocess_safe_)</pre></td>
+    <td align="left" class="src coveredLine"><pre>        std::string(&amp;this->shared_[abs_index], this->item_size_), t);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    {</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6203 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (multiprocess_safe_)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
-    <td align="left" class="src coveredLine"><pre>      mutex_.lock();</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>55</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>    }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>56</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 6203 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 6203 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
-    <td align="left" class="src coveredLine"><pre>  this->serializer_.deserialize(std::string(&amp;this->shared_[abs_index],</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>57</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>					    this->item_size_),t);</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>58</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 6203 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
-    <td align="left" class="src coveredLine"><pre>  if(multiprocess_safe_)</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>59</pre></td>
-    <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>60</pre></td>
+    <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
-    <td align="left" class="src coveredLine"><pre>      mutex_.unlock();</pre></td>
+    <td align="left" class="src coveredLine"><pre>        mutex_.unlock();</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>61</pre></td>
+    <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>62</pre></td>
+    <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount coveredLine"><pre>6203</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>63</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
     </tr>
 
   </table>
