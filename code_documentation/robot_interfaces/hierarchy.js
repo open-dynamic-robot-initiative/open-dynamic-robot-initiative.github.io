@@ -3,6 +3,7 @@ var hierarchy =
     [ "Action", "classAction.html", null ],
     [ "robot_interfaces::demo::Action", "classrobot__interfaces_1_1demo_1_1Action.html", null ],
     [ "robot_interfaces::CameraObservation", "structrobot__interfaces_1_1CameraObservation.html", null ],
+    [ "robot_interfaces::GlobalSignalHandler", "classrobot__interfaces_1_1GlobalSignalHandler.html", null ],
     [ "robot_interfaces::Loggable", "classrobot__interfaces_1_1Loggable.html", [
       [ "robot_interfaces::NJointRobotTypes< N >::Action", "structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html", null ],
       [ "robot_interfaces::NJointRobotTypes< N >::Observation", "structrobot__interfaces_1_1NJointRobotTypes_1_1Observation.html", null ],

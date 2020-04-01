@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['observation',['Observation',['../classObservation.html',1,'']]],
-  ['observation',['Observation',['../classrobot__interfaces_1_1demo_1_1Observation.html',1,'robot_interfaces::demo']]],
-  ['observation',['Observation',['../structrobot__interfaces_1_1NJointRobotTypes_1_1Observation.html',1,'robot_interfaces::NJointRobotTypes']]],
-  ['opencvdriver',['OpenCVDriver',['../classrobot__interfaces_1_1OpenCVDriver.html',1,'robot_interfaces']]]
+  ['njointrobotfunctions',['NJointRobotFunctions',['../structrobot__interfaces_1_1NJointRobotFunctions.html',1,'robot_interfaces']]],
+  ['njointrobottypes',['NJointRobotTypes',['../structrobot__interfaces_1_1NJointRobotTypes.html',1,'robot_interfaces']]],
+  ['njointrobottypes_3c_203_20_3e',['NJointRobotTypes&lt; 3 &gt;',['../structrobot__interfaces_1_1NJointRobotTypes.html',1,'robot_interfaces']]],
+  ['njointrobottypes_3c_209_20_3e',['NJointRobotTypes&lt; 9 &gt;',['../structrobot__interfaces_1_1NJointRobotTypes.html',1,'robot_interfaces']]]
 ];

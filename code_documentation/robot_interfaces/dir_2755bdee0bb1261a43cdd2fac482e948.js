@@ -3,6 +3,9 @@ var dir_2755bdee0bb1261a43cdd2fac482e948 =
     [ "sensors", "dir_6c9bfd35819a2941a42250238e8ecca1.html", "dir_6c9bfd35819a2941a42250238e8ecca1" ],
     [ "cereal_eigen.hpp", "cereal__eigen_8hpp.html", "cereal__eigen_8hpp" ],
     [ "finger_types.hpp", "finger__types_8hpp_source.html", null ],
+    [ "global_signal_handler.hpp", "global__signal__handler_8hpp.html", [
+      [ "GlobalSignalHandler", "classrobot__interfaces_1_1GlobalSignalHandler.html", "classrobot__interfaces_1_1GlobalSignalHandler" ]
+    ] ],
     [ "loggable.hpp", "loggable_8hpp_source.html", null ],
     [ "monitored_robot_driver.hpp", "monitored__robot__driver_8hpp_source.html", null ],
     [ "n_joint_robot_functions.hpp", "n__joint__robot__functions_8hpp_source.html", null ],

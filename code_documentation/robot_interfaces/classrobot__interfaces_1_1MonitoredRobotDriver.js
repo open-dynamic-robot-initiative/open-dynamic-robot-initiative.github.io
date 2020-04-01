@@ -6,7 +6,6 @@ var classrobot__interfaces_1_1MonitoredRobotDriver =
     [ "apply_action", "classrobot__interfaces_1_1MonitoredRobotDriver.html#a745e701e6fd91be74be5022752ba3ef9", null ],
     [ "get_error", "classrobot__interfaces_1_1MonitoredRobotDriver.html#afca72ae51ef9a3ab28a4e35ed5041b80", null ],
     [ "get_latest_observation", "classrobot__interfaces_1_1MonitoredRobotDriver.html#a5fcda4be4d96bb803bf87d1b1588079e", null ],
-    [ "get_max_inter_action_duration_s", "classrobot__interfaces_1_1MonitoredRobotDriver.html#a86c17f1ac445de3d5fa05c3d57be0a62", null ],
     [ "initialize", "classrobot__interfaces_1_1MonitoredRobotDriver.html#a9e1dcc67c242a108b23dfd2bdd8f12a0", null ],
     [ "loop", "classrobot__interfaces_1_1MonitoredRobotDriver.html#a4ddfda6593ed740fc7d1e86afa8e66b6", null ],
     [ "loop", "classrobot__interfaces_1_1MonitoredRobotDriver.html#ab2a14067bafa922714f5150b9b0c1a61", null ],

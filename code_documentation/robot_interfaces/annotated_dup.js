@@ -7,6 +7,7 @@ var annotated_dup =
       ] ],
       [ "CameraObservation", "structrobot__interfaces_1_1CameraObservation.html", "structrobot__interfaces_1_1CameraObservation" ],
       [ "FingerTypes", "structrobot__interfaces_1_1FingerTypes.html", null ],
+      [ "GlobalSignalHandler", "classrobot__interfaces_1_1GlobalSignalHandler.html", "classrobot__interfaces_1_1GlobalSignalHandler" ],
       [ "Loggable", "classrobot__interfaces_1_1Loggable.html", "classrobot__interfaces_1_1Loggable" ],
       [ "MonitoredRobotDriver", "classrobot__interfaces_1_1MonitoredRobotDriver.html", "classrobot__interfaces_1_1MonitoredRobotDriver" ],
       [ "MultiProcessRobotData", "classrobot__interfaces_1_1MultiProcessRobotData.html", "classrobot__interfaces_1_1MultiProcessRobotData" ],

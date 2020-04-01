@@ -24,7 +24,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html"
+"structrobot__interfaces_1_1NJointRobotTypes.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

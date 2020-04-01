@@ -124,8 +124,8 @@ $(document).ready(function(){initNavTree('classrobot__interfaces_1_1RobotBackend
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a16a3e3ebe5b7761306ed11cee5be63f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a16a3e3ebe5b7761306ed11cee5be63f1">RobotBackend</a> (std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">RobotDriver</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;&gt; robot_driver, std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotData.html">RobotData</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;&gt; robot_data, const double max_action_duration_s, const double max_inter_action_duration_s)</td></tr>
-<tr class="separator:a16a3e3ebe5b7761306ed11cee5be63f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2b4cf6e8d978591a7bb424bfb915fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a1a2b4cf6e8d978591a7bb424bfb915fe">RobotBackend</a> (std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">RobotDriver</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;&gt; robot_driver, std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotData.html">RobotData</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;&gt; robot_data, const double max_action_duration_s, const double max_inter_action_duration_s, const bool real_time_mode=true)</td></tr>
+<tr class="separator:a1a2b4cf6e8d978591a7bb424bfb915fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae354dfd960d4fd0d2f9242dcfb4a701f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae354dfd960d4fd0d2f9242dcfb4a701f"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_max_action_repetitions</b> ()</td></tr>
 <tr class="separator:ae354dfd960d4fd0d2f9242dcfb4a701f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,9 +135,16 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_max_action_re
 <tr class="memitem:a7e4eb9f5362b79c0c21b824e3b639ae6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e4eb9f5362b79c0c21b824e3b639ae6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td></tr>
 <tr class="separator:a7e4eb9f5362b79c0c21b824e3b639ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc6fd15379502943f99b58bad9b0acf7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc6fd15379502943f99b58bad9b0acf7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#acc6fd15379502943f99b58bad9b0acf7">wait_until_terminated</a> () const </td></tr>
+<tr class="memdesc:acc6fd15379502943f99b58bad9b0acf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until the backend loop terminates. <br /></td></tr>
+<tr class="separator:acc6fd15379502943f99b58bad9b0acf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:afb4058468e7cc59dae5801eb5e369613"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb4058468e7cc59dae5801eb5e369613"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_shutdown_request</b> () const </td></tr>
+<tr class="separator:afb4058468e7cc59dae5801eb5e369613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cc66183743f277c41614a44fcc47b1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7cc66183743f277c41614a44fcc47b1a">loop</a> ()</td></tr>
 <tr class="memdesc:a7cc66183743f277c41614a44fcc47b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main loop.  <a href="#a7cc66183743f277c41614a44fcc47b1a">More...</a><br /></td></tr>
 <tr class="separator:a7cc66183743f277c41614a44fcc47b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,9 +163,16 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a4bb04e584d971d4d99a32ea8c5b0cd68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4bb04e584d971d4d99a32ea8c5b0cd68"></a>
 std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotData.html">RobotData</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>robot_data_</b></td></tr>
 <tr class="separator:a4bb04e584d971d4d99a32ea8c5b0cd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a228bc273f9511fcf5f712083a7921332"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a228bc273f9511fcf5f712083a7921332"></a>
-std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>destructor_was_called_</b></td></tr>
+<tr class="memitem:a81610183c52c9fe2088304bbd3b6f83f"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a81610183c52c9fe2088304bbd3b6f83f">real_time_mode_</a></td></tr>
+<tr class="memdesc:a81610183c52c9fe2088304bbd3b6f83f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable real time mode.  <a href="#a81610183c52c9fe2088304bbd3b6f83f">More...</a><br /></td></tr>
+<tr class="separator:a81610183c52c9fe2088304bbd3b6f83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228bc273f9511fcf5f712083a7921332"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a228bc273f9511fcf5f712083a7921332">destructor_was_called_</a></td></tr>
+<tr class="memdesc:a228bc273f9511fcf5f712083a7921332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to true when the destructor is called.  <a href="#a228bc273f9511fcf5f712083a7921332">More...</a><br /></td></tr>
 <tr class="separator:a228bc273f9511fcf5f712083a7921332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e91800b352b7b52f22820775b1d5e99"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e91800b352b7b52f22820775b1d5e99"></a>
+std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a0e91800b352b7b52f22820775b1d5e99">loop_is_running_</a></td></tr>
+<tr class="memdesc:a0e91800b352b7b52f22820775b1d5e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the background loop is still running. <br /></td></tr>
+<tr class="separator:a0e91800b352b7b52f22820775b1d5e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40ecdc44212f79f96d63a84f7b8a6e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae40ecdc44212f79f96d63a84f7b8a6e8"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#ae40ecdc44212f79f96d63a84f7b8a6e8">max_action_repetitions_</a></td></tr>
 <tr class="memdesc:ae40ecdc44212f79f96d63a84f7b8a6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of times the previous action is repeated if no new one is provided. <br /></td></tr>
@@ -185,7 +199,7 @@ class robot_interfaces::RobotBackend&lt; Action, Observation &gt;</h3>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="demo_8cpp-example.html#_a6">demo.cpp</a>, and <a class="el" href="demo_multiprocess_backend_8cpp-example.html#_a7">demo_multiprocess_backend.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a16a3e3ebe5b7761306ed11cee5be63f1"></a>
+<a class="anchor" id="a1a2b4cf6e8d978591a7bb424bfb915fe"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -216,7 +230,13 @@ template&lt;typename Action , typename Observation &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>max_inter_action_duration_s</em>&#160;</td>
+          <td class="paramname"><em>max_inter_action_duration_s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>real_time_mode</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -236,6 +256,7 @@ template&lt;typename Action , typename Observation &gt; </div>
     <tr><td class="paramname">robot_data</td><td>Data is send to/retrieved from here. </td></tr>
     <tr><td class="paramname">max_action_duration_s</td><td>See <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html" title="Wrapper for RobotDriver that monitors timing. ">MonitoredRobotDriver</a>. </td></tr>
     <tr><td class="paramname">max_inter_action_duration_s</td><td>See <a class="el" href="classrobot__interfaces_1_1MonitoredRobotDriver.html" title="Wrapper for RobotDriver that monitors timing. ">MonitoredRobotDriver</a>. </td></tr>
+    <tr><td class="paramname">real_time_mode</td><td>Enable/disable real-time mode. In real-time mode, the backend will repeat previous actions if the new one is not provided in time or fail with an error if the allowed number of repetitions is exceeded. In non-real-time mode, it will simply block and wait until the action is provided. </td></tr>
   </table>
   </dd>
 </dl>
@@ -298,12 +319,66 @@ template&lt;typename Action , typename Observation &gt; </div>
 <p>Set how often an action is repeated if no new one is provided. </p>
 <p>If the next action is due to be executed but the user did not provide one yet (i.e. there is no new action in the robot data time series), the last action will be repeated by automatically adding it to the time series again.</p>
 <p>Use this this method to specify how often the action shall be repeated (default is 0, i.e. no repetition at all). If this limit is exceeded, the robot will be shut down and the <a class="el" href="classrobot__interfaces_1_1RobotBackend.html" title="Communication link between RobotDriver and RobotData. ">RobotBackend</a> stops.</p>
+<p><b>Note:</b> This is ignored in non-real-time mode.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">max_action_repetitions</td><td></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a228bc273f9511fcf5f712083a7921332"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Action , typename Observation &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;bool&gt; <a class="el" href="classrobot__interfaces_1_1RobotBackend.html">robot_interfaces::RobotBackend</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;::destructor_was_called_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set to true when the destructor is called. </p>
+<p>This is used to notify the background loop about the destruction, so it terminates itself. </p>
+
+</div>
+</div>
+<a class="anchor" id="a81610183c52c9fe2088304bbd3b6f83f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Action , typename Observation &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classrobot__interfaces_1_1RobotBackend.html">robot_interfaces::RobotBackend</a>&lt; <a class="el" href="classAction.html">Action</a>, <a class="el" href="classObservation.html">Observation</a> &gt;::real_time_mode_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable/disable real time mode. </p>
+<p>If real time mode is enabled (true), the back end expects new actions to be provided in time by the user. If this does not happen, the last received action is repeated until the configured number of repetitions is exceeded in which case it stops with an error.</p>
+<p>If real time mode is disabled (false), the back-end loop blocks and waits for the next action if it is not provided in time.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#ae40ecdc44212f79f96d63a84f7b8a6e8" title="Number of times the previous action is repeated if no new one is provided. ">max_action_repetitions_</a> </dd></dl>
 
 </div>
 </div>
