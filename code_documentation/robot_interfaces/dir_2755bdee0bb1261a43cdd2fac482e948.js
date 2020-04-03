@@ -11,6 +11,7 @@ var dir_2755bdee0bb1261a43cdd2fac482e948 =
     [ "n_joint_robot_functions.hpp", "n__joint__robot__functions_8hpp_source.html", null ],
     [ "n_joint_robot_types.hpp", "n__joint__robot__types_8hpp_source.html", null ],
     [ "pybind_helper.hpp", "pybind__helper_8hpp.html", "pybind__helper_8hpp" ],
+    [ "robot.hpp", "robot_8hpp_source.html", null ],
     [ "robot_backend.hpp", "robot__backend_8hpp_source.html", null ],
     [ "robot_data.hpp", "robot__data_8hpp.html", [
       [ "RobotData", "classrobot__interfaces_1_1RobotData.html", "classrobot__interfaces_1_1RobotData" ],

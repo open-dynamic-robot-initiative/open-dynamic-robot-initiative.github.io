@@ -1,6 +1,6 @@
 var classDriver =
 [
-    [ "Driver", "classDriver.html#af0658d103e3e810a8e9ef0a53bb2e261", null ],
+    [ "Driver", "classDriver.html#a440406bbabc606d80051e93b44b1bd2e", null ],
     [ "Driver", "classDriver.html#af0658d103e3e810a8e9ef0a53bb2e261", null ],
     [ "apply_action", "classDriver.html#a0f8d51bef151ccc38a0cb7b226048e28", null ],
     [ "apply_action", "classDriver.html#a0f8d51bef151ccc38a0cb7b226048e28", null ],
@@ -12,7 +12,9 @@ var classDriver =
     [ "initialize", "classDriver.html#a81c0beb523fad80cd40cfcc6a6e3de2d", null ],
     [ "shutdown", "classDriver.html#a630fc9183eb419beb09b5828b4547b6d", null ],
     [ "shutdown", "classDriver.html#a630fc9183eb419beb09b5828b4547b6d", null ],
-    [ "MAX", "classDriver.html#ac16069fedfaef8b360413b44c3af0f00", null ],
-    [ "MIN", "classDriver.html#ae2c88aeecaa7cf84c72af2b234418f35", null ],
+    [ "MAX", "classDriver.html#a2f75d16f4af650ca9cf1cdd8b653cc18", null ],
+    [ "max_", "classDriver.html#a9292f94b9df62ede6d983824ff79480c", null ],
+    [ "MIN", "classDriver.html#a09b06e92e4ea9df756e3b6e038fa25f6", null ],
+    [ "min_", "classDriver.html#ae1f5333762d8c70fd5e8afc0314d3568", null ],
     [ "state_", "classDriver.html#ac342821e039cd6e64c8227e5fd2f10c7", null ]
 ];

@@ -17,8 +17,8 @@ var hierarchy =
     [ "robot_interfaces::NJointRobotTypes< 9 >", "structrobot__interfaces_1_1NJointRobotTypes.html", [
       [ "robot_interfaces::TriFingerTypes", "structrobot__interfaces_1_1TriFingerTypes.html", null ]
     ] ],
-    [ "Observation", "classObservation.html", null ],
     [ "robot_interfaces::demo::Observation", "classrobot__interfaces_1_1demo_1_1Observation.html", null ],
+    [ "Observation", "classObservation.html", null ],
     [ "robot_interfaces::RobotBackend< Action, Observation >", "classrobot__interfaces_1_1RobotBackend.html", null ],
     [ "robot_interfaces::RobotData< Action, Observation >", "classrobot__interfaces_1_1RobotData.html", [
       [ "robot_interfaces::MultiProcessRobotData< Action, Observation >", "classrobot__interfaces_1_1MultiProcessRobotData.html", null ],
@@ -29,7 +29,9 @@ var hierarchy =
       [ "Driver", "classDriver.html", null ],
       [ "robot_interfaces::MonitoredRobotDriver< Action, Observation >", "classrobot__interfaces_1_1MonitoredRobotDriver.html", null ]
     ] ],
-    [ "robot_interfaces::RobotFrontend< Action, Observation >", "classrobot__interfaces_1_1RobotFrontend.html", null ],
+    [ "robot_interfaces::RobotFrontend< Action, Observation >", "classrobot__interfaces_1_1RobotFrontend.html", [
+      [ "robot_interfaces::Robot< Action, Observation, Driver, Data >", "classrobot__interfaces_1_1Robot.html", null ]
+    ] ],
     [ "robot_interfaces::RobotLogger< Action, Observation >", "classrobot__interfaces_1_1RobotLogger.html", null ],
     [ "robot_interfaces::SensorBackend< ObservationType >", "classrobot__interfaces_1_1SensorBackend.html", null ],
     [ "robot_interfaces::SensorData< ObservationType >", "classrobot__interfaces_1_1SensorData.html", null ],
