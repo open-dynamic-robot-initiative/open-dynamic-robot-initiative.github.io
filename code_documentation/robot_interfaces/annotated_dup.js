@@ -27,6 +27,8 @@ var annotated_dup =
       [ "SensorFrontend", "classrobot__interfaces_1_1SensorFrontend.html", "classrobot__interfaces_1_1SensorFrontend" ],
       [ "SingleProcessRobotData", "classrobot__interfaces_1_1SingleProcessRobotData.html", "classrobot__interfaces_1_1SingleProcessRobotData" ],
       [ "Status", "structrobot__interfaces_1_1Status.html", "structrobot__interfaces_1_1Status" ],
+      [ "TriCameraDriver", "classrobot__interfaces_1_1TriCameraDriver.html", "classrobot__interfaces_1_1TriCameraDriver" ],
+      [ "TriCameraObservation", "structrobot__interfaces_1_1TriCameraObservation.html", "structrobot__interfaces_1_1TriCameraObservation" ],
       [ "TriFingerTypes", "structrobot__interfaces_1_1TriFingerTypes.html", null ]
     ] ],
     [ "Action", "classAction.html", "classAction" ],

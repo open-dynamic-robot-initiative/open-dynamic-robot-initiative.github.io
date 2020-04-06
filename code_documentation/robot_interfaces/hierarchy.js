@@ -40,5 +40,9 @@ var hierarchy =
       [ "robot_interfaces::OpenCVDriver", "classrobot__interfaces_1_1OpenCVDriver.html", null ],
       [ "robot_interfaces::PylonDriver", "classrobot__interfaces_1_1PylonDriver.html", null ]
     ] ],
-    [ "robot_interfaces::SensorFrontend< ObservationType >", "classrobot__interfaces_1_1SensorFrontend.html", null ]
+    [ "robot_interfaces::SensorDriver< TriCameraObservation >", "classrobot__interfaces_1_1SensorDriver.html", [
+      [ "robot_interfaces::TriCameraDriver", "classrobot__interfaces_1_1TriCameraDriver.html", null ]
+    ] ],
+    [ "robot_interfaces::SensorFrontend< ObservationType >", "classrobot__interfaces_1_1SensorFrontend.html", null ],
+    [ "robot_interfaces::TriCameraObservation", "structrobot__interfaces_1_1TriCameraObservation.html", null ]
 ];

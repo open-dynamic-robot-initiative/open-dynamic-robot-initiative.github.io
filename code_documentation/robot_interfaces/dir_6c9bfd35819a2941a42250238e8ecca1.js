@@ -21,5 +21,11 @@ var dir_6c9bfd35819a2941a42250238e8ecca1 =
     ] ],
     [ "sensor_frontend.hpp", "sensor__frontend_8hpp.html", [
       [ "SensorFrontend", "classrobot__interfaces_1_1SensorFrontend.html", "classrobot__interfaces_1_1SensorFrontend" ]
+    ] ],
+    [ "tricamera_driver.hpp", "tricamera__driver_8hpp.html", [
+      [ "TriCameraDriver", "classrobot__interfaces_1_1TriCameraDriver.html", "classrobot__interfaces_1_1TriCameraDriver" ]
+    ] ],
+    [ "tricamera_observation.hpp", "tricamera__observation_8hpp.html", [
+      [ "TriCameraObservation", "structrobot__interfaces_1_1TriCameraObservation.html", "structrobot__interfaces_1_1TriCameraObservation" ]
     ] ]
 ];
