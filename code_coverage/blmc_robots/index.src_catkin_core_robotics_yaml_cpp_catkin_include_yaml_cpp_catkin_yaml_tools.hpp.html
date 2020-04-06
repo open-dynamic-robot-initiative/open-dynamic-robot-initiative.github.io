@@ -269,18 +269,18 @@
             <td class="headerValue">src/catkin/core_robotics/yaml_cpp_catkin/include/yaml_cpp_catkin/yaml_tools.hpp</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">8</td>
-            <td class="headerTableEntry">8</td>
-            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
+            <td class="headerTableEntry">15</td>
+            <td class="headerTableEntry">18</td>
+            <td class="headerTableEntry" style="background-color:#FFFF55">83.3 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2020-04-03 13:43:00</td>
+            <td class="headerValue">2020-04-06 10:42:55</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">19</td>
-            <td class="headerTableEntry">30</td>
-            <td class="headerTableEntry" style="background-color:LightPink">63.3 %</td>
+            <td class="headerTableEntry">25</td>
+            <td class="headerTableEntry">46</td>
+            <td class="headerTableEntry" style="background-color:LightPink">54.3 %</td>
           </tr>
         </table>
       </td>
@@ -463,8 +463,8 @@
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>static YamlType ReadParameter(const YAML::Node&amp; node, const std::string&amp; name) {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>static YamlType ReadParameter(const YAML::Node&amp; node, const std::string&amp; name) {</pre></td>
     </tr>
 
     <tr>
@@ -476,30 +476,30 @@
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		return node[name.c_str()].as&lt;YamlType>();</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>		return node[name.c_str()].as&lt;YamlType>();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	} catch (...) {</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>	} catch (...) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		throw std::runtime_error(</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>		throw std::runtime_error(</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>				"Error reading the yaml parameter [" + name + "]");</pre></td>
+    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
+    <td align="left" class="src uncoveredLine"><pre>				"Error reading the yaml parameter [" + name + "]");</pre></td>
     </tr>
 
     <tr>
@@ -646,179 +646,249 @@
     <td align="right" class="lineno"><pre>50</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/**</pre></td>
+    <td align="left" class="src "><pre>template&lt;typename YamlType></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>51</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @brief helper function to safely read a yaml parameter</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>static void ReadParameterDefault(const YAML::Node&amp; node, const std::string&amp; name,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>52</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> *</pre></td>
+    <td align="left" class="src "><pre>		YamlType&amp; parameter, YamlType default_value) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>53</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @param node</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>	if (!node[name.c_str()]) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>54</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @param name</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>		parameter = default_value;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>55</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @tparam YamlType</pre></td>
+    <td align="left" class="src "><pre>	} else {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>56</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @param optional</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>        parameter = ReadParameter&lt;YamlType>(node, name);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>57</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @return YamlType</pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>58</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> */</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>59</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>template&lt;typename YamlType></pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>60</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>void readParameter(const YAML::Node&amp; node, const std::string&amp; name,</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>/**</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>61</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		YamlType&amp; parameter, bool optional = false) {</pre></td>
+    <td align="left" class="src "><pre> * @brief helper function to safely read a yaml parameter</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>62</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="takenBranch" title="Branch 10 taken 1 times">&check;</span><br/><span class="takenBranch" title="Branch 11 taken 2 times">&check;</span><span class="takenBranch" title="Branch 12 taken 2 times">&check;</span><span class="takenBranch" title="Branch 14 taken 2 times">&check;</span><span class="takenBranch" title="Branch 15 taken 2 times">&check;</span><br/><span class="takenBranch" title="Branch 16 taken 1 times">&check;</span><span class="takenBranch" title="Branch 17 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 18 not taken">&cross;</span><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>	if (optional &amp;&amp; !node[name.c_str()]) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> *</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>63</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>		return;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @param node</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	}</pre></td>
+    <td align="left" class="src "><pre> * @param name</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>65</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	try {</pre></td>
+    <td align="left" class="src "><pre> * @tparam YamlType</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>66</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 2 times">&check;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
-    <td align="left" class="src coveredLine"><pre>		parameter = node[name.c_str()].as&lt;YamlType>();</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @param optional</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>67</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
-    <td align="left" class="src coveredLine"><pre>	} catch (...) {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> * @return YamlType</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>68</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>		if (!optional) {</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre> */</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>69</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>			throw std::runtime_error(</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>template&lt;typename YamlType></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>70</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>					"Error reading the yaml parameter [" + name + "]");</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>void readParameter(const YAML::Node&amp; node, const std::string&amp; name,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>71</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>		}</pre></td>
+    <td align="left" class="src "><pre>		YamlType&amp; parameter, bool optional = false) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>72</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>	}</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 2 times">&check;</span><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="takenBranch" title="Branch 4 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 5 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 7 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 8 not taken">&cross;</span><span class="takenBranch" title="Branch 9 taken 1 times">&check;</span><span class="takenBranch" title="Branch 10 taken 1 times">&check;</span><br/><span class="takenBranch" title="Branch 11 taken 2 times">&check;</span><span class="takenBranch" title="Branch 12 taken 2 times">&check;</span><span class="takenBranch" title="Branch 14 taken 2 times">&check;</span><span class="takenBranch" title="Branch 15 taken 2 times">&check;</span><br/><span class="takenBranch" title="Branch 16 taken 1 times">&check;</span><span class="takenBranch" title="Branch 17 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 18 not taken">&cross;</span><span class="notTakenBranch" title="Branch 19 not taken">&cross;</span><br/><span class="notTakenBranch" title="Branch 21 not taken">&cross;</span><span class="notTakenBranch" title="Branch 22 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>	if (optional &amp;&amp; !node[name.c_str()]) {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>73</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>}</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>		return;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>74</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>75</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	try {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>76</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 3 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 2 times">&check;</span><span class="takenBranch" title="Branch 6 taken 1 times">&check;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>4</pre></td>
+    <td align="left" class="src coveredLine"><pre>		parameter = node[name.c_str()].as&lt;YamlType>();</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>77</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>2</pre></td>
+    <td align="left" class="src coveredLine"><pre>	} catch (...) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>78</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 1 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>		if (!optional) {</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>79</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 2 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 3 not taken">&cross;</span><span class="takenBranch" title="Branch 5 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 6 not taken">&cross;</span><br/><span class="takenBranch" title="Branch 8 taken 1 times">&check;</span><span class="notTakenBranch" title="Branch 9 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>			throw std::runtime_error(</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>80</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>					"Error reading the yaml parameter [" + name + "]");</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>81</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>		}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>82</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>	}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>83</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>84</pre></td>
+    <td align="right" class="linebranch"></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre></pre></td>
+    </tr>
+
+    <tr>
+    <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
