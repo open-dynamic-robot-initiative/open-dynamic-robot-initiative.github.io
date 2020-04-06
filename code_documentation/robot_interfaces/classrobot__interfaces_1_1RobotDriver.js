@@ -1,8 +1,10 @@
 var classrobot__interfaces_1_1RobotDriver =
 [
-    [ "apply_action", "classrobot__interfaces_1_1RobotDriver.html#a21e8e2ef50bcf6174c8e76c48975a232", null ],
-    [ "get_error", "classrobot__interfaces_1_1RobotDriver.html#ac7c7649d1346c6ebc014e761409e501a", null ],
-    [ "get_latest_observation", "classrobot__interfaces_1_1RobotDriver.html#a0df4bf715f56b469f0d6c052c4a68a21", null ],
-    [ "initialize", "classrobot__interfaces_1_1RobotDriver.html#a251cdab16035ce1cff9ee4d2465beb6c", null ],
-    [ "shutdown", "classrobot__interfaces_1_1RobotDriver.html#a48920e112a572f401194e9d15ed170f6", null ]
+    [ "Action", "classrobot__interfaces_1_1RobotDriver.html#acbba637e7857bef5c7a1e64c9846ead7", null ],
+    [ "Observation", "classrobot__interfaces_1_1RobotDriver.html#abcb094711d0ae09fd8e2fc9a6aa771f2", null ],
+    [ "apply_action", "classrobot__interfaces_1_1RobotDriver.html#a4294e522fcd12b38d69f7d53fae5d74a", null ],
+    [ "get_error", "classrobot__interfaces_1_1RobotDriver.html#acdf4c5d6993b836a180e6b6fc12b3445", null ],
+    [ "get_latest_observation", "classrobot__interfaces_1_1RobotDriver.html#ad13d4f4fdfe78bdde4fc964f07fa45e2", null ],
+    [ "initialize", "classrobot__interfaces_1_1RobotDriver.html#af3cbef570a455e1f8085d701282264ff", null ],
+    [ "shutdown", "classrobot__interfaces_1_1RobotDriver.html#a3451fb8b15d2840b559f3ee858de01f8", null ]
 ];

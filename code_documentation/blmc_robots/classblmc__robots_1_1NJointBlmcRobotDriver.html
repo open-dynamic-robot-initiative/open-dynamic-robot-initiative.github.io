@@ -186,6 +186,15 @@ Observation&#160;</td><td class="memItemRight" valign="bottom"><b>get_latest_obs
 <tr class="memitem:a6914754d6bd5bf9e0d2d4cdaa2f140d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6914754d6bd5bf9e0d2d4cdaa2f140d4"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_error</b> () override</td></tr>
 <tr class="separator:a6914754d6bd5bf9e0d2d4cdaa2f140d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b2ff96e0a687b0e1ae06ce1502d4db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a41b2ff96e0a687b0e1ae06ce1502d4db">initialize</a> () override</td></tr>
+<tr class="memdesc:a41b2ff96e0a687b0e1ae06ce1502d4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find home position of all joints and move to start position.  <a href="#a41b2ff96e0a687b0e1ae06ce1502d4db">More...</a><br /></td></tr>
+<tr class="separator:a41b2ff96e0a687b0e1ae06ce1502d4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc679a59e08fdd97d4bb92f41178445"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dc679a59e08fdd97d4bb92f41178445"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>shutdown</b> () override</td></tr>
+<tr class="separator:a1dc679a59e08fdd97d4bb92f41178445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fbd75b68c4dfa8e9320befd546f406a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fbd75b68c4dfa8e9320befd546f406a"></a>
+Action&#160;</td><td class="memItemRight" valign="bottom"><b>apply_action</b> (const Action &amp;desired_action) override</td></tr>
+<tr class="separator:a4fbd75b68c4dfa8e9320befd546f406a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a923c06860fa6aaddd49541b3a836d177"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a923c06860fa6aaddd49541b3a836d177"></a>
 Vector&#160;</td><td class="memItemRight" valign="bottom"><b>get_max_torques</b> () const </td></tr>
 <tr class="separator:a923c06860fa6aaddd49541b3a836d177"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,24 +212,15 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a4fbd75b68c4dfa8e9320befd546f406a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fbd75b68c4dfa8e9320befd546f406a"></a>
-Action&#160;</td><td class="memItemRight" valign="bottom"><b>apply_action</b> (const Action &amp;desired_action) override</td></tr>
-<tr class="separator:a4fbd75b68c4dfa8e9320befd546f406a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51acd154a4769b2fbc35536fc32ca354"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51acd154a4769b2fbc35536fc32ca354"></a>
 Action&#160;</td><td class="memItemRight" valign="bottom"><b>apply_action_uninitialized</b> (const Action &amp;desired_action)</td></tr>
 <tr class="separator:a51acd154a4769b2fbc35536fc32ca354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dc679a59e08fdd97d4bb92f41178445"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dc679a59e08fdd97d4bb92f41178445"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>shutdown</b> () override</td></tr>
-<tr class="separator:a1dc679a59e08fdd97d4bb92f41178445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f48e6881584404fb24d7d770dfe6062"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a9f48e6881584404fb24d7d770dfe6062">home_on_index_after_negative_end_stop</a> (double endstop_search_torque_Nm, Vector home_offset_rad=Vector::Zero())</td></tr>
 <tr class="memdesc:a9f48e6881584404fb24d7d770dfe6062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Homing on negative end stop and encoder index.  <a href="#a9f48e6881584404fb24d7d770dfe6062">More...</a><br /></td></tr>
 <tr class="separator:a9f48e6881584404fb24d7d770dfe6062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1defedb3825ccac7cd8511d209bcae61"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a1defedb3825ccac7cd8511d209bcae61">move_to_position</a> (const Vector &amp;goal_pos, const double tolerance, const uint32_t timeout_cycles)</td></tr>
 <tr class="memdesc:a1defedb3825ccac7cd8511d209bcae61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move to given goal position using PD control.  <a href="#a1defedb3825ccac7cd8511d209bcae61">More...</a><br /></td></tr>
 <tr class="separator:a1defedb3825ccac7cd8511d209bcae61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b2ff96e0a687b0e1ae06ce1502d4db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a41b2ff96e0a687b0e1ae06ce1502d4db">initialize</a> () override</td></tr>
-<tr class="memdesc:a41b2ff96e0a687b0e1ae06ce1502d4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find home position of all joints and move to start position.  <a href="#a41b2ff96e0a687b0e1ae06ce1502d4db">More...</a><br /></td></tr>
-<tr class="separator:a41b2ff96e0a687b0e1ae06ce1502d4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23e443e175d91b66cb4e50fa87bbf0fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a23e443e175d91b66cb4e50fa87bbf0fa">_initialize</a> ()</td></tr>
 <tr class="memdesc:a23e443e175d91b66cb4e50fa87bbf0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual initialization that is called in a real-time thread in <a class="el" href="classblmc__robots_1_1NJointBlmcRobotDriver.html#a41b2ff96e0a687b0e1ae06ce1502d4db" title="Find home position of all joints and move to start position. ">initialize()</a>.  <a href="#a23e443e175d91b66cb4e50fa87bbf0fa">More...</a><br /></td></tr>
 <tr class="separator:a23e443e175d91b66cb4e50fa87bbf0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -386,7 +386,7 @@ template&lt;size_t N_JOINTS, size_t N_MOTOR_BOARDS&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

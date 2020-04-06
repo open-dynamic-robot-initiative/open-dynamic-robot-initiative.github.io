@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"robot__frontend_8hpp_source.html":[4,0,1,0,13],
+"robot__logger_8hpp_source.html":[4,0,1,0,14],
 "sensor__backend_8hpp.html":[4,0,1,0,0,4],
 "sensor__backend_8hpp_source.html":[4,0,1,0,0,4],
 "sensor__data_8hpp.html":[4,0,1,0,0,5],
