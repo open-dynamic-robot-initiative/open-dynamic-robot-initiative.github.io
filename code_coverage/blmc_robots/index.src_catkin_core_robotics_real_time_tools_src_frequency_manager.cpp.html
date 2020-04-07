@@ -266,21 +266,21 @@
           </tr>
           <tr>
             <td class="headerName">File:</td>
-            <td class="headerValue">src/catkin/examples/ci_example/ci_example_cpp/src/default_configuration.cpp</td>
+            <td class="headerValue">src/catkin/core_robotics/real_time_tools/src/frequency_manager.cpp</td>
             <td></td>
             <td class="headerName">Lines:</td>
-            <td class="headerTableEntry">9</td>
-            <td class="headerTableEntry">11</td>
-            <td class="headerTableEntry" style="background-color:#FFFF55">81.8 %</td>
+            <td class="headerTableEntry">16</td>
+            <td class="headerTableEntry">16</td>
+            <td class="headerTableEntry" style="background-color:LightGreen">100.0 %</td>
           </tr>
           <tr>
             <td class="headerName">Date:</td>
             <td class="headerValue">2020-04-07 19:49:12</td>
             <td></td>
             <td class="headerName">Branches:</td>
-            <td class="headerTableEntry">2</td>
-            <td class="headerTableEntry">6</td>
-            <td class="headerTableEntry" style="background-color:LightPink">33.3 %</td>
+            <td class="headerTableEntry">7</td>
+            <td class="headerTableEntry">10</td>
+            <td class="headerTableEntry" style="background-color:LightPink">70.0 %</td>
           </tr>
         </table>
       </td>
@@ -303,237 +303,209 @@
     <td align="right" class="lineno"><pre>1</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>/**</pre></td>
+    <td align="left" class="src "><pre>#include "real_time_tools/frequency_manager.hpp"</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>2</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @file default_configuration.cpp</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>3</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @author Vincent Berenz</pre></td>
+    <td align="left" class="src "><pre>#include &lt;iostream></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>4</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @copyright Copyright (c) 2019, New York University and Max Planck Gesellschaft, License BSD-3-Clause</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>5</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> * @date 2019-12-09</pre></td>
+    <td align="left" class="src "><pre>namespace real_time_tools</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>6</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre> */</pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>7</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>FrequencyManager::FrequencyManager(double frequency)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>#include "ci_example_cpp/default_configuration.hpp"</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>    : period_ms_((1.0 / frequency) * 1000.0), previous_time_ms_(-1)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>9</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>10</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>11</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>namespace ci_example_cpp {</pre></td>
+    <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>12</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>800</pre></td>
+    <td align="left" class="src coveredLine"><pre>bool FrequencyManager::wait()</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>13</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>{</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>14</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>  double DefaultConfiguration::get_kp() const {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>800</pre></td>
+    <td align="left" class="src coveredLine"><pre>    double t = Timer::get_current_time_ms();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>15</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return DEFAULT_KP;</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 1 times">&check;</span><span class="takenBranch" title="Branch 1 taken 799 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>800</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (previous_time_ms_ &lt; 0)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>16</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>17</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>        previous_time_ms_ = t;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>18</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>  double DefaultConfiguration::get_kd() const {</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
+    <td align="left" class="src coveredLine"><pre>        return true;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>19</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return DEFAULT_KD;</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>20</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>799</pre></td>
+    <td align="left" class="src coveredLine"><pre>    double delta = t - previous_time_ms_;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>21</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 0 taken 400 times">&check;</span><span class="takenBranch" title="Branch 1 taken 399 times">&check;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>799</pre></td>
+    <td align="left" class="src coveredLine"><pre>    if (delta > period_ms_)</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>22</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>  double DefaultConfiguration::get_ki() const {</pre></td>
+    <td align="right" class="linecount "><pre></pre></td>
+    <td align="left" class="src "><pre>    {</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>23</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>11</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return DEFAULT_KI;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>400</pre></td>
+    <td align="left" class="src coveredLine"><pre>        previous_time_ms_ = t;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>24</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>400</pre></td>
+    <td align="left" class="src coveredLine"><pre>        return false;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>25</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>26</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>  bool DefaultConfiguration::has_error() const {</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 399 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span></td>
+    <td align="right" class="linecount coveredLine"><pre>399</pre></td>
+    <td align="left" class="src coveredLine"><pre>    Timer::sleep_ms(period_ms_ - delta);</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>27</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount coveredLine"><pre>1</pre></td>
-    <td align="left" class="src coveredLine"><pre>    return false;</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>399</pre></td>
+    <td align="left" class="src coveredLine"><pre>    previous_time_ms_ = Timer::get_current_time_ms();</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>28</pre></td>
     <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
+    <td align="right" class="linecount coveredLine"><pre>399</pre></td>
+    <td align="left" class="src coveredLine"><pre>    return true;</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>29</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
+    <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>30</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>  std::string DefaultConfiguration::get_error() const {</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>31</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    return std::string("no error");</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>32</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>  }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>33</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre></pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>34</pre></td>
-    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 2 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
-    <td align="right" class="linecount coveredLine"><pre>6</pre></td>
+    <td align="right" class="linebranch"><span class="takenBranch" title="Branch 1 taken 10 times">&check;</span><span class="notTakenBranch" title="Branch 2 not taken">&cross;</span><span class="takenBranch" title="Branch 3 taken 10 times">&check;</span><span class="notTakenBranch" title="Branch 4 not taken">&cross;</span><br/></td>
+    <td align="right" class="linecount coveredLine"><pre>30</pre></td>
     <td align="left" class="src coveredLine"><pre>}</pre></td>
     </tr>
 
