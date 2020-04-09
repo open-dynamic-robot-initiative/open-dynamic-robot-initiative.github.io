@@ -5,6 +5,7 @@ var dir_e75c9b227ca21f29e86f20993703f373 =
     [ "common_header.hpp", "common__header_8hpp.html", "common__header_8hpp" ],
     [ "common_programs_header.hpp", "common__programs__header_8hpp_source.html", null ],
     [ "n_joint_blmc_robot_driver.hpp", "n__joint__blmc__robot__driver_8hpp.html", "n__joint__blmc__robot__driver_8hpp" ],
+    [ "n_joint_blmc_robot_driver.hxx", "n__joint__blmc__robot__driver_8hxx.html", "n__joint__blmc__robot__driver_8hxx" ],
     [ "single_leg.hpp", "single__leg_8hpp.html", [
       [ "SingleLeg", "classblmc__robots_1_1SingleLeg.html", "classblmc__robots_1_1SingleLeg" ]
     ] ],

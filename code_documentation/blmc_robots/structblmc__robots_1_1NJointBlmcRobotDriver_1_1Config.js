@@ -9,9 +9,7 @@ var structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config =
     [ "has_endstop", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a8cbf3c740b0cae7afb7170d51e04b60d", null ],
     [ "home_offset_rad", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a67b22638d86285d94021e9d1c0c1b6d7", null ],
     [ "initial_position_rad", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a797ec8a753d4daf0f2df89ebaa313a13", null ],
-    [ "kd", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a435b62355076103a8b46bf274a189107", null ],
-    [ "kp", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a6872553ec21f17994aa3d3d3bd70492e", null ],
     [ "max_current_A", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#ab7f483ae02a0c026981c223c97c462c5", null ],
-    [ "position_control_gains", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#ac144da904c93cb43e0b8d97c55a2cbb2", null ],
+    [ "position_control_gains", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a89817776a042a9fb444faa0a21cc8fe2", null ],
     [ "safety_kd", "structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a6548c1cc2f3c2789d44c01e2e3d24e11", null ]
 ];
