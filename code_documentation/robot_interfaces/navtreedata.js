@@ -24,7 +24,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"robot__frontend_8hpp_source.html"
+"robot__data_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
