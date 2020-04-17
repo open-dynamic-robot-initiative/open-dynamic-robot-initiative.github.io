@@ -204,7 +204,7 @@ var NAVTREEINDEX2 =
 "license.html":[4],
 "n__joint__blmc__robot__driver_8hpp.html":[6,0,1,0,4],
 "n__joint__blmc__robot__driver_8hpp.html#a3f6b03adc12f35015b64b4b09fbb7062":[6,0,1,0,4,5],
-"n__joint__blmc__robot__driver_8hpp.html#ac0bcfd0203043a289337e19768076d62":[6,0,1,0,4,4],
+"n__joint__blmc__robot__driver_8hpp.html#a988c07200135ba12bf9ec1bbe955bde8":[6,0,1,0,4,4],
 "n__joint__blmc__robot__driver_8hpp.html#ac3da728256c1e02cf56f80c0fbdf647a":[6,0,1,0,4,6],
 "n__joint__blmc__robot__driver_8hpp_source.html":[6,0,1,0,4],
 "n__joint__blmc__robot__driver_8hxx.html":[6,0,1,0,5],
