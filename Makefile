@@ -11,7 +11,7 @@ SPHINXOPTS      =
 SPHINX_BUILD    = sphinx-build
 SPHINX_QUIET	= #-Q
 SPHINX_BUILD_IN = .
-SPHINX_BUILD_OUT = ../documentation_portal
+SPHINX_BUILD_OUT = $(SPHINX_BUILD_IN)
 
 all:
 	make html
@@ -42,7 +42,7 @@ help:
 	@cd $(DOC_BUILD_DIR) && $(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET) && cd -
 
 	# Export the html website.
-	cp -r $(DOC_BUILD_DIR)/html/* .
+	cp -r $(DOC_BUILD_DIR)/html/* documentation_portal/
 
 # Clean the build
 clean:
