@@ -131,6 +131,7 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
         second_column[i+1] = (
             "`Doxygen " +
             "<" +
+            "../" +
             # "https://open-dynamic-robot-initiative.github.io/" +
             "code_documentation/" + item +
             "/docs/doxygen/html/index.html>`_")
@@ -142,6 +143,7 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
             "`Sphinx " +
             "<" +
             # "https://open-dynamic-robot-initiative.github.io/" +
+            "../" +
             "code_documentation/" + item +
             "/docs/sphinx/html/index.html>`_")
     third_column_width = len(max(third_column, key=len)) + 2
@@ -175,6 +177,7 @@ def update_index_rst(exported_doc_list, exported_code_cov_list):
         second_column[i+1] = (
             "`gcovr " +
             "<" +
+            "../" +
             # "https://open-dynamic-robot-initiative.github.io/" +
             "code_coverage/" + item +
             "/index.html>`_")
