@@ -46,4 +46,4 @@ help:
 
 # Clean the build
 clean:
-	rm -fr *.html *.inv *.js _sources/ _static/ _build/
+	rm -fr _build/ documentation_portal/*
