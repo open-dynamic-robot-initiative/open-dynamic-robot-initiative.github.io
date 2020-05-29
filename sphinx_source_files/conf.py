@@ -113,21 +113,28 @@ todo_include_todos = True
 # -- youtube -----------------------------------------------------------------
 
 CODE = """\
-<object type="application/x-shockwave-flash"
-        width="%(width)s"
-        height="%(height)s"
-        class="youtube-embed"
-        data="http://www.youtube.com/v/%(yid)s">
-    <param name="movie" value="http://www.youtube.com/v/%(yid)s"></param>
-    <param name="wmode" value="transparent"></param>%(extra)s
-</object>
+<iframe width="%(width)s" height="%(height)s"
+    src="https://www.youtube.com/embed/%(yid)s" 
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
 """
 
 PARAM = """\n    <param name="%s" value="%s"></param>"""
 
 def youtube(name, args, options, content, lineno,
             contentOffset, blockText, state, stateMachine):
-    """ Restructured text extension for inserting youtube embedded videos """
+    """ Restructured text extension for inserting youtube embedded videos
+    
+    example of output:
+    <iframe width="425" height="344"
+            src="https://www.youtube.com/embed/MUQfKFzIOeU" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+    """
     if len(content) == 0:
         return
     string_vars = {
@@ -146,8 +153,10 @@ def youtube(name, args, options, content, lineno,
         string_vars['height'] = extra_args.pop('height')
     if extra_args:
         params = [PARAM % (key, extra_args[key]) for key in extra_args]
-        string_vars['extra'] = "".join(params)
+        string_vars['extra'] = "".join(params)    
     return [nodes.raw('', CODE % (string_vars), format='html')]
+
+
 youtube.content = True
 directives.register_directive('youtube', youtube)
 
