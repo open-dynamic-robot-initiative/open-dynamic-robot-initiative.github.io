@@ -33,7 +33,7 @@ help:
 	cp -r sphinx_source_files/* $(DOC_BUILD_DIR)
 
 	# Setup the new index.rst from Python
-	cd $(DOC_BUILD_DIR) && python update_doc_page.py && cd -
+	cd $(DOC_BUILD_DIR) && python3 update_doc_page.py && cd -
 
 	# Copy the markdown doc files
 	cp readme.md license.txt $(DOC_BUILD_DIR)
