@@ -1,37 +1,43 @@
 var annotated_dup =
 [
     [ "robot_interfaces", null, [
+      [ "When Next Action Is Not Provided In Time", "md_docs_timeseries.html#next-action-not-in-time", null ],
       [ "demo", null, [
         [ "Action", "classrobot__interfaces_1_1demo_1_1Action.html", "classrobot__interfaces_1_1demo_1_1Action" ],
         [ "Observation", "classrobot__interfaces_1_1demo_1_1Observation.html", "classrobot__interfaces_1_1demo_1_1Observation" ]
       ] ],
-      [ "CameraObservation", "structrobot__interfaces_1_1CameraObservation.html", "structrobot__interfaces_1_1CameraObservation" ],
+      [ "example", null, [
+        [ "Action", "classrobot__interfaces_1_1example_1_1Action.html", "classrobot__interfaces_1_1example_1_1Action" ],
+        [ "Driver", "classrobot__interfaces_1_1example_1_1Driver.html", "classrobot__interfaces_1_1example_1_1Driver" ],
+        [ "Observation", "classrobot__interfaces_1_1example_1_1Observation.html", "classrobot__interfaces_1_1example_1_1Observation" ]
+      ] ],
+      [ "BindTipForceIfExists", "structrobot__interfaces_1_1BindTipForceIfExists.html", "structrobot__interfaces_1_1BindTipForceIfExists" ],
+      [ "BindTipForceIfExists< Types, decltype((void) Types::Observation::tip_force, 0)>", "structrobot__interfaces_1_1BindTipForceIfExists_3_01Types_00_01decltype_07_07void_08_01Types_1_14cbc6933c476f63b7bfd2943748e44ea.html", "structrobot__interfaces_1_1BindTipForceIfExists_3_01Types_00_01decltype_07_07void_08_01Types_1_14cbc6933c476f63b7bfd2943748e44ea" ],
       [ "FingerTypes", "structrobot__interfaces_1_1FingerTypes.html", null ],
-      [ "GlobalSignalHandler", "classrobot__interfaces_1_1GlobalSignalHandler.html", "classrobot__interfaces_1_1GlobalSignalHandler" ],
       [ "Loggable", "classrobot__interfaces_1_1Loggable.html", "classrobot__interfaces_1_1Loggable" ],
       [ "MonitoredRobotDriver", "classrobot__interfaces_1_1MonitoredRobotDriver.html", "classrobot__interfaces_1_1MonitoredRobotDriver" ],
       [ "MultiProcessRobotData", "classrobot__interfaces_1_1MultiProcessRobotData.html", "classrobot__interfaces_1_1MultiProcessRobotData" ],
-      [ "NJointRobotFunctions", "structrobot__interfaces_1_1NJointRobotFunctions.html", "structrobot__interfaces_1_1NJointRobotFunctions" ],
-      [ "NJointRobotTypes", "structrobot__interfaces_1_1NJointRobotTypes.html", "structrobot__interfaces_1_1NJointRobotTypes" ],
-      [ "OpenCVDriver", "classrobot__interfaces_1_1OpenCVDriver.html", "classrobot__interfaces_1_1OpenCVDriver" ],
-      [ "PylonDriver", "classrobot__interfaces_1_1PylonDriver.html", "classrobot__interfaces_1_1PylonDriver" ],
+      [ "MultiProcessSensorData", "classrobot__interfaces_1_1MultiProcessSensorData.html", "classrobot__interfaces_1_1MultiProcessSensorData" ],
+      [ "NFingerObservation", "structrobot__interfaces_1_1NFingerObservation.html", "structrobot__interfaces_1_1NFingerObservation" ],
+      [ "NJointAction", "structrobot__interfaces_1_1NJointAction.html", "structrobot__interfaces_1_1NJointAction" ],
+      [ "NJointObservation", "structrobot__interfaces_1_1NJointObservation.html", "structrobot__interfaces_1_1NJointObservation" ],
       [ "Robot", "classrobot__interfaces_1_1Robot.html", "classrobot__interfaces_1_1Robot" ],
       [ "RobotBackend", "classrobot__interfaces_1_1RobotBackend.html", "classrobot__interfaces_1_1RobotBackend" ],
       [ "RobotData", "classrobot__interfaces_1_1RobotData.html", "classrobot__interfaces_1_1RobotData" ],
       [ "RobotDriver", "classrobot__interfaces_1_1RobotDriver.html", "classrobot__interfaces_1_1RobotDriver" ],
       [ "RobotFrontend", "classrobot__interfaces_1_1RobotFrontend.html", "classrobot__interfaces_1_1RobotFrontend" ],
+      [ "RobotInterfaceTypes", "structrobot__interfaces_1_1RobotInterfaceTypes.html", "structrobot__interfaces_1_1RobotInterfaceTypes" ],
       [ "RobotLogger", "classrobot__interfaces_1_1RobotLogger.html", "classrobot__interfaces_1_1RobotLogger" ],
       [ "SensorBackend", "classrobot__interfaces_1_1SensorBackend.html", "classrobot__interfaces_1_1SensorBackend" ],
       [ "SensorData", "classrobot__interfaces_1_1SensorData.html", "classrobot__interfaces_1_1SensorData" ],
       [ "SensorDriver", "classrobot__interfaces_1_1SensorDriver.html", "classrobot__interfaces_1_1SensorDriver" ],
       [ "SensorFrontend", "classrobot__interfaces_1_1SensorFrontend.html", "classrobot__interfaces_1_1SensorFrontend" ],
+      [ "SensorLogger", "classrobot__interfaces_1_1SensorLogger.html", "classrobot__interfaces_1_1SensorLogger" ],
+      [ "SensorLogReader", "classrobot__interfaces_1_1SensorLogReader.html", "classrobot__interfaces_1_1SensorLogReader" ],
+      [ "SimpleNJointRobotTypes", "structrobot__interfaces_1_1SimpleNJointRobotTypes.html", null ],
       [ "SingleProcessRobotData", "classrobot__interfaces_1_1SingleProcessRobotData.html", "classrobot__interfaces_1_1SingleProcessRobotData" ],
-      [ "Status", "structrobot__interfaces_1_1Status.html", "structrobot__interfaces_1_1Status" ],
-      [ "TriCameraDriver", "classrobot__interfaces_1_1TriCameraDriver.html", "classrobot__interfaces_1_1TriCameraDriver" ],
-      [ "TriCameraObservation", "structrobot__interfaces_1_1TriCameraObservation.html", "structrobot__interfaces_1_1TriCameraObservation" ],
-      [ "TriFingerTypes", "structrobot__interfaces_1_1TriFingerTypes.html", null ]
+      [ "SingleProcessSensorData", "classrobot__interfaces_1_1SingleProcessSensorData.html", "classrobot__interfaces_1_1SingleProcessSensorData" ],
+      [ "Status", "structrobot__interfaces_1_1Status.html", "structrobot__interfaces_1_1Status" ]
     ] ],
-    [ "Action", "classAction.html", "classAction" ],
-    [ "Driver", "classDriver.html", "classDriver" ],
-    [ "Observation", "classObservation.html", "classObservation" ]
+    [ "Driver", "classDriver.html", "classDriver" ]
 ];

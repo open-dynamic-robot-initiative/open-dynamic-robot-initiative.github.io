@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['real_5ftime_5fmode_5f',['real_time_mode_',['../classrobot__interfaces_1_1RobotBackend.html#a81610183c52c9fe2088304bbd3b6f83f',1,'robot_interfaces::RobotBackend']]],
-  ['robot_5fdriver_5f',['robot_driver_',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#ae43540d38c9414d8ad734a9c88155a6e',1,'robot_interfaces::MonitoredRobotDriver']]]
+  ['position',['position',['../structrobot__interfaces_1_1NFingerObservation.html#ac830302468e0dee99c3c1e7e388267c3',1,'robot_interfaces::NFingerObservation::position()'],['../structrobot__interfaces_1_1NJointAction.html#a1ba640ac58fef08cd8a5c964b7a4096f',1,'robot_interfaces::NJointAction::position()']]],
+  ['position_5fkd',['position_kd',['../structrobot__interfaces_1_1NJointAction.html#a652131480e656840e53f8709dae9c487',1,'robot_interfaces::NJointAction']]],
+  ['position_5fkp',['position_kp',['../structrobot__interfaces_1_1NJointAction.html#a4100b04d42c8e1d9b04ba141212c3461',1,'robot_interfaces::NJointAction']]]
 ];

@@ -1,20 +1,13 @@
 var dir_6c9bfd35819a2941a42250238e8ecca1 =
 [
-    [ "camera_observation.hpp", "camera__observation_8hpp.html", [
-      [ "CameraObservation", "structrobot__interfaces_1_1CameraObservation.html", "structrobot__interfaces_1_1CameraObservation" ]
-    ] ],
-    [ "opencv_driver.hpp", "opencv__driver_8hpp.html", [
-      [ "OpenCVDriver", "classrobot__interfaces_1_1OpenCVDriver.html", "classrobot__interfaces_1_1OpenCVDriver" ]
-    ] ],
     [ "pybind_sensors.hpp", "pybind__sensors_8hpp.html", "pybind__sensors_8hpp" ],
-    [ "pylon_driver.hpp", "pylon__driver_8hpp.html", [
-      [ "PylonDriver", "classrobot__interfaces_1_1PylonDriver.html", "classrobot__interfaces_1_1PylonDriver" ]
-    ] ],
     [ "sensor_backend.hpp", "sensor__backend_8hpp.html", [
       [ "SensorBackend", "classrobot__interfaces_1_1SensorBackend.html", "classrobot__interfaces_1_1SensorBackend" ]
     ] ],
     [ "sensor_data.hpp", "sensor__data_8hpp.html", [
-      [ "SensorData", "classrobot__interfaces_1_1SensorData.html", "classrobot__interfaces_1_1SensorData" ]
+      [ "SensorData", "classrobot__interfaces_1_1SensorData.html", "classrobot__interfaces_1_1SensorData" ],
+      [ "SingleProcessSensorData", "classrobot__interfaces_1_1SingleProcessSensorData.html", "classrobot__interfaces_1_1SingleProcessSensorData" ],
+      [ "MultiProcessSensorData", "classrobot__interfaces_1_1MultiProcessSensorData.html", "classrobot__interfaces_1_1MultiProcessSensorData" ]
     ] ],
     [ "sensor_driver.hpp", "sensor__driver_8hpp.html", [
       [ "SensorDriver", "classrobot__interfaces_1_1SensorDriver.html", "classrobot__interfaces_1_1SensorDriver" ]
@@ -22,10 +15,8 @@ var dir_6c9bfd35819a2941a42250238e8ecca1 =
     [ "sensor_frontend.hpp", "sensor__frontend_8hpp.html", [
       [ "SensorFrontend", "classrobot__interfaces_1_1SensorFrontend.html", "classrobot__interfaces_1_1SensorFrontend" ]
     ] ],
-    [ "tricamera_driver.hpp", "tricamera__driver_8hpp.html", [
-      [ "TriCameraDriver", "classrobot__interfaces_1_1TriCameraDriver.html", "classrobot__interfaces_1_1TriCameraDriver" ]
+    [ "sensor_log_reader.hpp", "sensor__log__reader_8hpp.html", [
+      [ "SensorLogReader", "classrobot__interfaces_1_1SensorLogReader.html", "classrobot__interfaces_1_1SensorLogReader" ]
     ] ],
-    [ "tricamera_observation.hpp", "tricamera__observation_8hpp.html", [
-      [ "TriCameraObservation", "structrobot__interfaces_1_1TriCameraObservation.html", "structrobot__interfaces_1_1TriCameraObservation" ]
-    ] ]
+    [ "sensor_logger.hpp", "sensor__logger_8hpp_source.html", null ]
 ];

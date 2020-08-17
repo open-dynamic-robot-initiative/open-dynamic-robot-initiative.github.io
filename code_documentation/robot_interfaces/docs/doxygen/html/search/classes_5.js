@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['loggable',['Loggable',['../classrobot__interfaces_1_1Loggable.html',1,'robot_interfaces']]]
+  ['monitoredrobotdriver',['MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html',1,'robot_interfaces']]],
+  ['multiprocessrobotdata',['MultiProcessRobotData',['../classrobot__interfaces_1_1MultiProcessRobotData.html',1,'robot_interfaces']]],
+  ['multiprocesssensordata',['MultiProcessSensorData',['../classrobot__interfaces_1_1MultiProcessSensorData.html',1,'robot_interfaces']]]
 ];

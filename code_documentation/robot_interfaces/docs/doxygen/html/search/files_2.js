@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['global_5fsignal_5fhandler_2ecpp',['global_signal_handler.cpp',['../global__signal__handler_8cpp.html',1,'']]],
-  ['global_5fsignal_5fhandler_2ehpp',['global_signal_handler.hpp',['../global__signal__handler_8hpp.html',1,'']]]
+  ['n_5ffinger_5fobservation_2ehpp',['n_finger_observation.hpp',['../n__finger__observation_8hpp.html',1,'']]],
+  ['n_5fjoint_5faction_2ehpp',['n_joint_action.hpp',['../n__joint__action_8hpp.html',1,'']]],
+  ['n_5fjoint_5fobservation_2ehpp',['n_joint_observation.hpp',['../n__joint__observation_8hpp.html',1,'']]],
+  ['n_5fjoint_5frobot_5ftypes_2ehpp',['n_joint_robot_types.hpp',['../n__joint__robot__types_8hpp.html',1,'']]]
 ];
