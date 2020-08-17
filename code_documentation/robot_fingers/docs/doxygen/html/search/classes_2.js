@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['onejointdriver',['OneJointDriver',['../classrobot__fingers_1_1OneJointDriver.html',1,'robot_fingers']]]
+  ['fakefingerdriver',['FakeFingerDriver',['../classrobot__fingers_1_1FakeFingerDriver.html',1,'robot_fingers']]]
 ];
