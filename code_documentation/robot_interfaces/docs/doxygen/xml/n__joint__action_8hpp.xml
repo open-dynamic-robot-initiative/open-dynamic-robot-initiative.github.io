@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="n__joint__action_8hpp" kind="file" language="C++">
+    <compoundname>n_joint_action.hpp</compoundname>
+    <includes local="no">limits</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">Eigen/Eigen</includes>
+    <includes local="no">serialization_utils/cereal_eigen.hpp</includes>
+    <includes refid="loggable_8hpp" local="no">robot_interfaces/loggable.hpp</includes>
+    <includedby refid="n__joint__robot__types_8hpp" local="yes">include/robot_interfaces/n_joint_robot_types.hpp</includedby>
+    <incdepgraph>
+      <node id="229">
+        <label>limits</label>
+      </node>
+      <node id="233">
+        <label>serialization_utils/cereal_eigen.hpp</label>
+      </node>
+      <node id="232">
+        <label>Eigen/Eigen</label>
+      </node>
+      <node id="230">
+        <label>string</label>
+      </node>
+      <node id="228">
+        <label>include/robot_interfaces/n_joint_action.hpp</label>
+        <link refid="n__joint__action_8hpp"/>
+        <childnode refid="229" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+        <childnode refid="232" relation="include">
+        </childnode>
+        <childnode refid="233" relation="include">
+        </childnode>
+        <childnode refid="234" relation="include">
+        </childnode>
+      </node>
+      <node id="231">
+        <label>vector</label>
+      </node>
+      <node id="234">
+        <label>robot_interfaces/loggable.hpp</label>
+        <link refid="loggable_8hpp_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="237">
+        <label>include/robot_interfaces/finger_types.hpp</label>
+        <link refid="finger__types_8hpp_source"/>
+        <childnode refid="238" relation="include">
+        </childnode>
+        <childnode refid="239" relation="include">
+        </childnode>
+      </node>
+      <node id="238">
+        <label>srcpy/py_finger_types.cpp</label>
+        <link refid="py__finger__types_8cpp"/>
+      </node>
+      <node id="240">
+        <label>srcpy/py_one_joint_types.cpp</label>
+        <link refid="py__one__joint__types_8cpp"/>
+      </node>
+      <node id="235">
+        <label>include/robot_interfaces/n_joint_action.hpp</label>
+        <link refid="n__joint__action_8hpp"/>
+        <childnode refid="236" relation="include">
+        </childnode>
+      </node>
+      <node id="239">
+        <label>srcpy/py_trifinger_types.cpp</label>
+        <link refid="py__trifinger__types_8cpp"/>
+      </node>
+      <node id="241">
+        <label>srcpy/py_two_joint_types.cpp</label>
+        <link refid="py__two__joint__types_8cpp"/>
+      </node>
+      <node id="236">
+        <label>include/robot_interfaces/n_joint_robot_types.hpp</label>
+        <link refid="n__joint__robot__types_8hpp"/>
+        <childnode refid="237" relation="include">
+        </childnode>
+        <childnode refid="240" relation="include">
+        </childnode>
+        <childnode refid="241" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrobot__interfaces_1_1NJointAction" prot="public">robot_interfaces::NJointAction</innerclass>
+    <innernamespace refid="namespacerobot__interfaces">robot_interfaces</innernamespace>
+    <briefdescription>
+<para>Action of a generic n-joint robot. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2020, Max Planck Gesellschaft. All rights reserved. </para></simplesect>
+<xrefsect id="license_1_license000002"><xreftitle>License</xreftitle><xrefdescription><para>BSD 3-clause </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Eigen&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;serialization_utils/cereal_eigen.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;robot_interfaces/loggable.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerobot__interfaces" kindref="compound">robot_interfaces</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>N&gt;</highlight></codeline>
+<codeline lineno="29" refid="structrobot__interfaces_1_1NJointAction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classrobot__interfaces_1_1Loggable" kindref="compound">Loggable</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32" refid="structrobot__interfaces_1_1NJointAction_1a8d5a5328cfc71d1b892b2581e9b22723" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a8d5a5328cfc71d1b892b2581e9b22723" kindref="member">num_joints</ref><sp/>=<sp/>N;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Eigen::Matrix&lt;double,<sp/>N,<sp/>1&gt;<sp/>Vector;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structrobot__interfaces_1_1NJointAction_1aab60be78c0008092bf3f36b92a25245d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1aab60be78c0008092bf3f36b92a25245d" kindref="member">torque</ref>;</highlight></codeline>
+<codeline lineno="39" refid="structrobot__interfaces_1_1NJointAction_1a1ba640ac58fef08cd8a5c964b7a4096f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a1ba640ac58fef08cd8a5c964b7a4096f" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="41" refid="structrobot__interfaces_1_1NJointAction_1a4100b04d42c8e1d9b04ba141212c3461" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a4100b04d42c8e1d9b04ba141212c3461" kindref="member">position_kp</ref>;</highlight></codeline>
+<codeline lineno="43" refid="structrobot__interfaces_1_1NJointAction_1a652131480e656840e53f8709dae9c487" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a652131480e656840e53f8709dae9c487" kindref="member">position_kd</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Archive&gt;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>serialize(Archive&amp;<sp/>archive)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>archive(torque,<sp/>position,<sp/>position_kp,<sp/>position_kd);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>get_name()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="52"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="stringliteral">&quot;torque&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;position&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;position_kp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;position_kd&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;double&gt;&gt;<sp/>get_data()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="57"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>first<sp/>map<sp/>the<sp/>Eigen<sp/>vectors<sp/>to<sp/>std::vectors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>torque_;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>torque_.resize(torque.size());</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector::Map(&amp;torque_[0],<sp/>torque.size())<sp/>=<sp/>torque;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>position_;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position_.resize(position.size());</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector::Map(&amp;position_[0],<sp/>position.size())<sp/>=<sp/>position;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>position_kp_;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position_kp_.resize(position_kp.size());</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector::Map(&amp;position_kp_[0],<sp/>position_kp.size())<sp/>=<sp/>position_kp;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>position_kd_;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position_kd_.resize(position_kd.size());</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector::Map(&amp;position_kd_[0],<sp/>position_kd.size())<sp/>=<sp/>position_kd;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>then<sp/>return<sp/>them<sp/>in<sp/>a<sp/>fixed<sp/>size<sp/>vector<sp/>of<sp/>vectors<sp/>to<sp/>avoid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>copying<sp/>due<sp/>to<sp/>pushing<sp/>back<sp/>value<sp/>of<sp/>information!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;double&gt;&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>{torque_,<sp/>position_,<sp/>position_kp_,<sp/>position_kd_};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="structrobot__interfaces_1_1NJointAction_1a518f1d5bd4161809c176a4007f58fb0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a518f1d5bd4161809c176a4007f58fb0d" kindref="member">NJointAction</ref>(Vector<sp/>torque<sp/>=<sp/>Vector::Zero(),</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector<sp/>position<sp/>=<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>(),</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector<sp/>position_kp<sp/>=<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>(),</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector<sp/>position_kd<sp/>=<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>())</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>torque(torque),</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position(position),</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position_kp(position_kp),</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position_kd(position_kd)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="structrobot__interfaces_1_1NJointAction_1ad1e48599cf7ce7b154464db23978a3c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1ad1e48599cf7ce7b154464db23978a3c2" kindref="member">Torque</ref>(Vector<sp/>torque)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a518f1d5bd4161809c176a4007f58fb0d" kindref="member">NJointAction</ref>(torque);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="structrobot__interfaces_1_1NJointAction_1ab90dfaabbae281108bf83337f455143c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1ab90dfaabbae281108bf83337f455143c" kindref="member">Position</ref>(Vector<sp/>position,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector<sp/>kp<sp/>=<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>(),</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector<sp/>kd<sp/>=<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>())</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a518f1d5bd4161809c176a4007f58fb0d" kindref="member">NJointAction</ref>(Vector::Zero(),<sp/>position,<sp/>kp,<sp/>kd);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="structrobot__interfaces_1_1NJointAction_1a4c779f6bc160922b65d3a78d0b561f01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a4c779f6bc160922b65d3a78d0b561f01" kindref="member">TorqueAndPosition</ref>(Vector<sp/>torque,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector<sp/>position,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector<sp/>position_kp<sp/>=<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>(),</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector<sp/>position_kd<sp/>=<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>())</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a518f1d5bd4161809c176a4007f58fb0d" kindref="member">NJointAction</ref>(torque,<sp/>position,<sp/>position_kp,<sp/>position_kd);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="structrobot__interfaces_1_1NJointAction_1a7def88d6d46acd3e77db3dc49d04dd88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a7def88d6d46acd3e77db3dc49d04dd88" kindref="member">Zero</ref>()</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction_1a518f1d5bd4161809c176a4007f58fb0d" kindref="member">NJointAction</ref>();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Vector<sp/><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>()</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Vector::Constant(std::numeric_limits&lt;double&gt;::quiet_NaN());</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>robot_interfaces</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/robot_interfaces/n_joint_action.hpp"/>
+  </compounddef>
+</doxygen>

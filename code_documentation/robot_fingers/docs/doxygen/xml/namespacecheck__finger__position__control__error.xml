@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacecheck__finger__position__control__error" kind="namespace" language="Python">
+    <compoundname>check_finger_position_control_error</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1a8b09e3e97682d65f26ebb2259d169902" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>check_finger_position_control_error.urdf_pkg_path</definition>
+        <argsstring></argsstring>
+        <name>urdf_pkg_path</name>
+        <initializer>=  rospkg.RosPack().get_path(&quot;robot_properties_fingers&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="39" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1a9cf6f8e33242d9b831ab510ac1a9849e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>check_finger_position_control_error.urdf_path</definition>
+        <argsstring></argsstring>
+        <name>urdf_path</name>
+        <initializer>=  os.path.join(urdf_pkg_path, &quot;urdf&quot;, &quot;finger.urdf&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="40" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1a02b8a6291709e23cba8b2d5e581ebc48" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>check_finger_position_control_error.model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <initializer>=  pinocchio.buildModelFromUrdf(urdf_path)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="42" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1ab2b9a6d2dd0c7e332ab115f88e5254cc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>check_finger_position_control_error.data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <initializer>=  model.createData()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="43" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1a5c01015f1535274a1f1aaef85c6577be" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>check_finger_position_control_error.tip_link_id</definition>
+        <argsstring></argsstring>
+        <name>tip_link_id</name>
+        <initializer>=  model.getFrameId(&quot;finger_tip_link&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="44" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1ab7207acc2793413e706254bc40fdd857" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>check_finger_position_control_error.robot</definition>
+        <argsstring></argsstring>
+        <name>robot</name>
+        <initializer>=  <ref refid="classrobot__fingers_1_1robot_1_1Robot" kindref="compound">robot_fingers.Robot</ref>(
+        robot_interfaces.finger,
+        robot_fingers.create_real_finger_backend,
+        &quot;finger.yml&quot;,
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="46" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1a62db341bbd44ffbec6d02ea9c58d998c" prot="public" static="no" mutable="no">
+        <type>def</type>
+        <definition>def check_finger_position_control_error.desired_position</definition>
+        <argsstring></argsstring>
+        <name>desired_position</name>
+        <initializer>=  get_random_position()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="54" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1a9720b685e0f94f1db7cd4fb58b9e4c00" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>check_finger_position_control_error.action</definition>
+        <argsstring></argsstring>
+        <name>action</name>
+        <initializer>=  robot_interfaces.finger.Action(position=desired_position)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="59" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1a8315b2308f023c3cd47649c541438802" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>check_finger_position_control_error.t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <initializer>=  robot.frontend.append_desired_action(action)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="60" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1ac62050db86dd87662ffa9ed12f3d624c" prot="public" static="no" mutable="no">
+        <type>def</type>
+        <definition>def check_finger_position_control_error.desired_tip_pos</definition>
+        <argsstring></argsstring>
+        <name>desired_tip_pos</name>
+        <initializer>=  forward_kinematics(desired_position)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="63" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1a98287ec4c3dc6b8ec792c467d83544a7" prot="public" static="no" mutable="no">
+        <type>def</type>
+        <definition>def check_finger_position_control_error.actual_tip_pos</definition>
+        <argsstring></argsstring>
+        <name>actual_tip_pos</name>
+        <initializer>=  forward_kinematics(
+            robot.frontend.get_observation(t).position
+        )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="64" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="check__finger__position__control__error_8py_1ada1db442d2804291d1431077181d4802" prot="public" static="no" mutable="no">
+        <type>def</type>
+        <definition>def check_finger_position_control_error.error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <initializer>=  desired_tip_pos - actual_tip_pos</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="67" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="check__finger__position__control__error_8py_1aeeb40693923c9f046a85fbb65507add6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def check_finger_position_control_error.get_random_position</definition>
+        <argsstring>()</argsstring>
+        <name>get_random_position</name>
+        <briefdescription>
+<para>Generate a random position within a save range. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="16" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="16" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="check__finger__position__control__error_8py_1a0155acdf10ba55d58e0468b88763b711" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def check_finger_position_control_error.forward_kinematics</definition>
+        <argsstring>(joint_positions)</argsstring>
+        <name>forward_kinematics</name>
+        <param>
+          <type>joint_positions</type>
+          <defname>joint_positions</defname>
+        </param>
+        <briefdescription>
+<para>compute the forward kinematics </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/check_finger_position_control_error.py" line="26" column="1" bodyfile="scripts/check_finger_position_control_error.py" bodystart="26" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="scripts/check_finger_position_control_error.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

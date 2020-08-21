@@ -1,0 +1,51 @@
+\hypertarget{demo_multiprocess_frontend_8cpp-example}{}\section{demo\+\_\+multiprocess\+\_\+frontend.\+cpp}
+Robot frontend for a dummy \char`\"{}2dof\char`\"{} robot in a multi process setup.
+
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include <memory>}
+
+\textcolor{preprocessor}{#include "robot\_interfaces/robot\_frontend.hpp"}
+
+\textcolor{preprocessor}{#include "types.hpp"}
+
+\textcolor{keyword}{using namespace }\hyperlink{namespacerobot__interfaces_1_1demo}{robot\_interfaces::demo};
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\_interfaces::RobotFrontend<Action, Observation>}
+       Frontend;
+    \textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1MultiProcessRobotData}{robot\_interfaces::MultiProcessRobotData<Action, Observation>}
+        MultiProcessData;
+
+    \textcolor{comment}{// The shared memory is managed by the backend process, so set the}
+    \textcolor{comment}{// is\_master argument to false.}
+    \textcolor{keyword}{auto} data\_ptr =
+        std::make\_shared<MultiProcessData>(\textcolor{stringliteral}{"multiprocess\_demo"}, \textcolor{keyword}{false});
+    Frontend frontend(data\_ptr);
+
+    \hyperlink{classrobot__interfaces_1_1demo_1_1Action}{Action} action;
+    \hyperlink{classrobot__interfaces_1_1demo_1_1Observation}{Observation} observation;
+
+    \textcolor{comment}{// simulated action :}
+    \textcolor{comment}{// 1 dof going from 200 to 300}
+    \textcolor{comment}{// The other going from 300 to 200}
+
+    \textcolor{keywordflow}{for} (uint value = 200; value <= 300; value++)
+    \{
+        action.values[0] = value;
+        action.values[1] = 500 - value;
+        \textcolor{comment}{// this action will be stored at index}
+        robot\_interfaces::TimeIndex index =
+            frontend.append\_desired\_action(action);
+        \textcolor{comment}{// getting the observation corresponding to the applied}
+        \textcolor{comment}{// action, i.e. at the same index}
+        observation = frontend.get\_observation(index);
+        std::cout << \textcolor{stringliteral}{"value: "} << value << \textcolor{stringliteral}{" | "};
+        action.print(\textcolor{keyword}{false});
+        observation.print(\textcolor{keyword}{true});
+    \}
+\}
+\end{DoxyCodeInclude}
+ 

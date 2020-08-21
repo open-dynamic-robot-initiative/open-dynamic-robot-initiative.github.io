@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="installation_8md" kind="file" language="Markdown">
+    <compoundname>installation.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Build<sp/>Instructions</highlight></codeline>
+<codeline><highlight class="normal">==================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>provide<sp/>a<sp/>Singularity<sp/>image<sp/>with<sp/>all<sp/>required<sp/>dependencies<sp/>to<sp/>build<sp/>and<sp/>run</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>software.<sp/><sp/>See<sp/>[About<sp/>Singularity](@ref<sp/>md_doc_singularity).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can,<sp/>of<sp/>course,<sp/>also<sp/>use<sp/>the<sp/>package<sp/>without<sp/>Singularity.<sp/><sp/>In<sp/>this<sp/>case<sp/>you</highlight></codeline>
+<codeline><highlight class="normal">need<sp/>to<sp/>install<sp/>all<sp/>dependencies<sp/>locally,<sp/>though.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Get<sp/>the<sp/>Source</highlight></codeline>
+<codeline><highlight class="normal">--------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`robot_fingers`<sp/>depends<sp/>on<sp/>several<sp/>other<sp/>of<sp/>our<sp/>packages<sp/>which<sp/>are</highlight></codeline>
+<codeline><highlight class="normal">organized<sp/>in<sp/>separate<sp/>repositories.<sp/><sp/>We<sp/>therefore<sp/>use<sp/>a<sp/>workspace<sp/>management</highlight></codeline>
+<codeline><highlight class="normal">tool<sp/>called<sp/>[treep](https://pypi.org/project/treep/)<sp/>which<sp/>allows<sp/>easy<sp/>cloning</highlight></codeline>
+<codeline><highlight class="normal">of<sp/>multi-repository<sp/>projects.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">treep<sp/>can<sp/>be<sp/>installed<sp/>via<sp/>pip:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pip<sp/>install<sp/>treep</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Clone<sp/>the<sp/>treep<sp/>configuration<sp/>containing<sp/>the<sp/>&quot;ROBOT_FINGERS&quot;<sp/>project:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>git<sp/>clone<sp/>git@github.com:machines-in-motion/treep_machines_in_motion.git</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Note:**<sp/><sp/>treep<sp/>searches<sp/>for<sp/>a<sp/>configuration<sp/>directory<sp/>from<sp/>the<sp/>current<sp/>working</highlight></codeline>
+<codeline><highlight class="normal">directory<sp/>upwards.<sp/><sp/>So<sp/>you<sp/>can<sp/>use<sp/>treep<sp/>in<sp/>the<sp/>directory<sp/>in<sp/>which<sp/>you<sp/>invoked</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>`git<sp/>clone`<sp/>command<sp/>above<sp/>or<sp/>any<sp/>subdirectory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Now<sp/>clone<sp/>the<sp/>project:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>treep<sp/>--clone<sp/>ROBOT_FINGERS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Important:**<sp/>treep<sp/>uses<sp/>SSH<sp/>to<sp/>clone<sp/>from<sp/>github.<sp/><sp/>So<sp/>for<sp/>the<sp/>above<sp/>command<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">work,<sp/>you<sp/>need<sp/>a<sp/>github<sp/>account<sp/>with<sp/>a<sp/>registered<sp/>SSH<sp/>key.<sp/><sp/>Further<sp/>this<sp/>key</highlight></codeline>
+<codeline><highlight class="normal">needs<sp/>to<sp/>work<sp/>without<sp/>asking<sp/>for<sp/>a<sp/>password<sp/>everytime.<sp/><sp/>To<sp/>achieve<sp/>this,<sp/>run</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ssh-add</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">first.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Build</highlight></codeline>
+<codeline><highlight class="normal">-----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>With<sp/>Singularity</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Go<sp/>to<sp/>the<sp/>root<sp/>directory<sp/>of<sp/>your<sp/>workspace<sp/>(the<sp/>one<sp/>containing<sp/>the<sp/>&quot;src&quot;<sp/>folder)</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>run<sp/>the<sp/>container<sp/>in<sp/>shell<sp/>mode<sp/>(see<sp/>@ref<sp/>md_doc_singularity):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>singularity<sp/>shell<sp/>-e<sp/>--no-home<sp/>-B<sp/>$(pwd)<sp/>path/to/image.sif</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>current<sp/>working<sp/>directory<sp/>gets<sp/>automatically<sp/>mounted<sp/>into<sp/>the<sp/>container<sp/>so</highlight></codeline>
+<codeline><highlight class="normal">you<sp/>can<sp/>edit<sp/>all<sp/>the<sp/>files<sp/>from<sp/>outside<sp/>the<sp/>container<sp/>using<sp/>your<sp/>preferred</highlight></codeline>
+<codeline><highlight class="normal">editor<sp/>or<sp/>IDE<sp/>and<sp/>all<sp/>changes<sp/>will<sp/>directly<sp/>be<sp/>visible<sp/>inside<sp/>the<sp/>container.</highlight></codeline>
+<codeline><highlight class="normal">Vise<sp/>versa<sp/>modifications<sp/>done<sp/>from<sp/>inside<sp/>the<sp/>container<sp/>will<sp/>modify<sp/>the<sp/>files<sp/>on</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>host<sp/>system!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Inside<sp/>the<sp/>container<sp/>first<sp/>set<sp/>up<sp/>the<sp/>environment:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Singularity&gt;<sp/>source<sp/>/setup.bash</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>source<sp/>the<sp/>ROS<sp/>`setup.bash`<sp/>and<sp/>create<sp/>an<sp/>alias<sp/>`catbuild`<sp/>for<sp/>catkin</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>already<sp/>contains<sp/>the<sp/>argument<sp/>to<sp/>set<sp/>the<sp/>Python<sp/>executable<sp/>to<sp/>python3</highlight></codeline>
+<codeline><highlight class="normal">(needed<sp/>to<sp/>get<sp/>Python<sp/>3<sp/>bindings).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Now<sp/>you<sp/>can<sp/>build<sp/>by<sp/>using<sp/>this<sp/>alias:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Singularity&gt;<sp/>catbuild</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Without<sp/>Singularity</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build,<sp/>cd<sp/>into<sp/>the<sp/>`workspace`<sp/>directory<sp/>and<sp/>build<sp/>with</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin<sp/>build</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Python<sp/>Bindings</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">With<sp/>the<sp/>above<sp/>command<sp/>Python<sp/>bindings<sp/>will<sp/>be<sp/>build<sp/>for<sp/>the<sp/>default<sp/>python</highlight></codeline>
+<codeline><highlight class="normal">version<sp/>of<sp/>your<sp/>system<sp/>(see<sp/>`python<sp/>--version`).<sp/><sp/>If<sp/>you<sp/>want<sp/>to<sp/>use<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">different<sp/>version<sp/>(e.g.<sp/>python3),<sp/>you<sp/>can<sp/>specify<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin<sp/>build<sp/>-DPYTHON_EXECUTABLE=/usr/bin/python3</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Note<sp/>that<sp/>all<sp/>our<sp/>scripts<sp/>are<sp/>implemented<sp/>for<sp/>Python<sp/>3,<sp/>so<sp/>if<sp/>your<sp/>default</highlight></codeline>
+<codeline><highlight class="normal">version<sp/>is<sp/>not<sp/>already<sp/>3,<sp/>you<sp/>need<sp/>to<sp/>specify<sp/>this<sp/>in<sp/>order<sp/>to<sp/>use<sp/>these</highlight></codeline>
+<codeline><highlight class="normal">scripts.</highlight></codeline>
+    </programlisting>
+    <location file="doc/installation.md"/>
+  </compounddef>
+</doxygen>

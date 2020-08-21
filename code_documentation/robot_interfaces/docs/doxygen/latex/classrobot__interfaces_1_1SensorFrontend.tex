@@ -1,0 +1,67 @@
+\hypertarget{classrobot__interfaces_1_1SensorFrontend}{}\section{robot\+\_\+interfaces\+:\+:Sensor\+Frontend$<$ Observation\+Type $>$ Class Template Reference}
+\label{classrobot__interfaces_1_1SensorFrontend}\index{robot\+\_\+interfaces\+::\+Sensor\+Frontend$<$ Observation\+Type $>$@{robot\+\_\+interfaces\+::\+Sensor\+Frontend$<$ Observation\+Type $>$}}
+
+
+Communication link between \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data} and the user.  
+
+
+
+
+{\ttfamily \#include $<$sensor\+\_\+frontend.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_a92f23f72c62ac7d32ca10742ddc5019f}\label{classrobot__interfaces_1_1SensorFrontend_a92f23f72c62ac7d32ca10742ddc5019f}} 
+{\footnotesize template$<$typename Type $>$ }\\using {\bfseries Timeseries} = time\+\_\+series\+::\+Time\+Series$<$ Type $>$
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_a28f5b6f4a74b1fd3fcd45fde6df6f0f6}\label{classrobot__interfaces_1_1SensorFrontend_a28f5b6f4a74b1fd3fcd45fde6df6f0f6}} 
+typedef time\+\_\+series\+::\+Timestamp {\bfseries Time\+Stamp}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_a199456a7768dfeec4a5c4d2a59461b8d}\label{classrobot__interfaces_1_1SensorFrontend_a199456a7768dfeec4a5c4d2a59461b8d}} 
+typedef time\+\_\+series\+::\+Index {\bfseries Time\+Index}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_a87a137bd1903267ab407718ecc8375de}\label{classrobot__interfaces_1_1SensorFrontend_a87a137bd1903267ab407718ecc8375de}} 
+{\bfseries Sensor\+Frontend} (std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data}$<$ Observation\+Type $>$$>$ sensor\+\_\+data)
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_a97eecb2518956b98b10484003aaccd48}\label{classrobot__interfaces_1_1SensorFrontend_a97eecb2518956b98b10484003aaccd48}} 
+Observation\+Type {\bfseries get\+\_\+observation} (const Time\+Index t) const
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_a09051196a807afa040daff02d95bee52}\label{classrobot__interfaces_1_1SensorFrontend_a09051196a807afa040daff02d95bee52}} 
+Observation\+Type {\bfseries get\+\_\+latest\+\_\+observation} () const
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_a0c6c91f9d6fc3c548e16fbc4657b80d4}\label{classrobot__interfaces_1_1SensorFrontend_a0c6c91f9d6fc3c548e16fbc4657b80d4}} 
+Time\+Stamp {\bfseries get\+\_\+timestamp\+\_\+ms} (const Time\+Index t) const
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_ad7e09a895aa73549ca082e9db543dee1}\label{classrobot__interfaces_1_1SensorFrontend_ad7e09a895aa73549ca082e9db543dee1}} 
+Time\+Index {\bfseries get\+\_\+current\+\_\+timeindex} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorFrontend_a19b1505aed15c8e8e62c47e5de37d27f}\label{classrobot__interfaces_1_1SensorFrontend_a19b1505aed15c8e8e62c47e5de37d27f}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data}$<$ Observation\+Type $>$ $>$ {\bfseries sensor\+\_\+data\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Observation\+Type$>$\newline
+class robot\+\_\+interfaces\+::\+Sensor\+Frontend$<$ Observation\+Type $>$}
+
+Communication link between \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data} and the user. 
+
+Exposes the sensor data to the user to enable the user to get observations, timestamps, and timeindices from the timeseries.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Observation\+Type} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/sensors/\hyperlink{sensor__frontend_8hpp}{sensor\+\_\+frontend.\+hpp}\end{DoxyCompactItemize}

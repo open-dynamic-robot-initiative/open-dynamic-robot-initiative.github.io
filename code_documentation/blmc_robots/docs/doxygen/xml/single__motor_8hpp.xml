@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="single__motor_8hpp" kind="file" language="C++">
+    <compoundname>single_motor.hpp</compoundname>
+    <includes refid="blmc__joint__module_8hpp" local="no">blmc_robots/blmc_joint_module.hpp</includes>
+    <includes refid="common__header_8hpp" local="no">blmc_robots/common_header.hpp</includes>
+    <includes refid="slider_8hpp" local="no">blmc_robots/slider.hpp</includes>
+    <includedby refid="single__motor_8cpp" local="yes">src/single_motor.cpp</includedby>
+    <incdepgraph>
+      <node id="473">
+        <label>atomic</label>
+      </node>
+      <node id="477">
+        <label>real_time_tools/timer.hpp</label>
+      </node>
+      <node id="476">
+        <label>real_time_tools/thread.hpp</label>
+      </node>
+      <node id="468">
+        <label>stdexcept</label>
+      </node>
+      <node id="465">
+        <label>Eigen/Eigen</label>
+      </node>
+      <node id="463">
+        <label>blmc_robots/blmc_joint_module.hpp</label>
+        <link refid="blmc__joint__module_8hpp"/>
+        <childnode refid="464" relation="include">
+        </childnode>
+        <childnode refid="465" relation="include">
+        </childnode>
+        <childnode refid="466" relation="include">
+        </childnode>
+        <childnode refid="467" relation="include">
+        </childnode>
+        <childnode refid="468" relation="include">
+        </childnode>
+        <childnode refid="469" relation="include">
+        </childnode>
+        <childnode refid="470" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+      </node>
+      <node id="475">
+        <label>real_time_tools/spinner.hpp</label>
+      </node>
+      <node id="474">
+        <label>real_time_tools/iostream.hpp</label>
+      </node>
+      <node id="481">
+        <label>vector</label>
+      </node>
+      <node id="472">
+        <label>signal.h</label>
+      </node>
+      <node id="470">
+        <label>blmc_robots/common_header.hpp</label>
+        <link refid="common__header_8hpp"/>
+        <childnode refid="471" relation="include">
+        </childnode>
+        <childnode refid="465" relation="include">
+        </childnode>
+        <childnode refid="472" relation="include">
+        </childnode>
+        <childnode refid="473" relation="include">
+        </childnode>
+        <childnode refid="474" relation="include">
+        </childnode>
+        <childnode refid="475" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="469" relation="include">
+        </childnode>
+      </node>
+      <node id="466">
+        <label>array</label>
+      </node>
+      <node id="471">
+        <label>yaml_cpp_catkin/yaml_cpp_fwd.hpp</label>
+      </node>
+      <node id="464">
+        <label>math.h</label>
+      </node>
+      <node id="480">
+        <label>blmc_robots/mathematics/polynome.hxx</label>
+        <link refid="polynome_8hxx_source"/>
+        <childnode refid="467" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+      </node>
+      <node id="467">
+        <label>iostream</label>
+      </node>
+      <node id="479">
+        <label>blmc_robots/mathematics/polynome.hpp</label>
+        <link refid="polynome_8hpp"/>
+        <childnode refid="466" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+      </node>
+      <node id="478">
+        <label>blmc_drivers/devices/analog_sensor.hpp</label>
+      </node>
+      <node id="469">
+        <label>blmc_drivers/devices/motor.hpp</label>
+      </node>
+      <node id="482">
+        <label>blmc_robots/slider.hpp</label>
+        <link refid="slider_8hpp"/>
+        <childnode refid="466" relation="include">
+        </childnode>
+        <childnode refid="464" relation="include">
+        </childnode>
+        <childnode refid="465" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="470" relation="include">
+        </childnode>
+      </node>
+      <node id="462">
+        <label>include/blmc_robots/single_motor.hpp</label>
+        <link refid="single__motor_8hpp"/>
+        <childnode refid="463" relation="include">
+        </childnode>
+        <childnode refid="470" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classblmc__robots_1_1SingleMotor" prot="public">blmc_robots::SingleMotor</innerclass>
+    <innernamespace refid="namespaceblmc__robots">blmc_robots</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Manuel Wuthrich </para></simplesect>
+<simplesect kind="date"><para>2018 </para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019, New York University &amp; Max Planck Gesellschaft. </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#ifndef<sp/>SingleMotor_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SingleMotor_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="blmc__joint__module_8hpp" kindref="compound">blmc_robots/blmc_joint_module.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="common__header_8hpp" kindref="compound">blmc_robots/common_header.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="slider_8hpp" kindref="compound">blmc_robots/slider.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceblmc__robots" kindref="compound">blmc_robots</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17" refid="classblmc__robots_1_1SingleMotor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classblmc__robots_1_1SingleMotor" kindref="compound">SingleMotor</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Eigen::Matrix&lt;double,<sp/>1,<sp/>1&gt;<sp/>Vector1d;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Eigen::Matrix&lt;double,<sp/>1,<sp/>1&gt;<sp/>VectorSlider;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a074ba2d9a982316a4aecac65b7c1b581" kindref="member">SingleMotor</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a2c547957aec36d6cbd02ead4882558d4" kindref="member">initialize</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a2fa43cd18da7598b8a41da66ef9251ff" kindref="member">send_target_motor_current</ref>(</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/>target_motor_current);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a09a829c726847cf4e8fd34175ce1a139" kindref="member">send_target_joint_torque</ref>(</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/>target_joint_torque);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1adbc3fb18b62ee085ff2d4d6bb2f107a4" kindref="member">acquire_sensors</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classblmc__robots_1_1SingleMotor_1ac72b1daab642097f739ccdcb8388d6c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ac72b1daab642097f739ccdcb8388d6c9" kindref="member">get_motor_positions</ref>()</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a616badc749db3a0ce391ca154b602509" kindref="member">motor_positions_</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classblmc__robots_1_1SingleMotor_1a8ee1b2b7d9b5bf83cd43511836e6074a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a8ee1b2b7d9b5bf83cd43511836e6074a" kindref="member">get_motor_velocities</ref>()</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1ab61a1f183a5ccae341e371f40405a41b" kindref="member">motor_velocities_</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classblmc__robots_1_1SingleMotor_1ab3330ea642ca97c094f2af7b50a7a747" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ab3330ea642ca97c094f2af7b50a7a747" kindref="member">get_motor_currents</ref>()</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1ac11fcd7ae54f11e2b419b11ac8dac87f" kindref="member">motor_currents_</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classblmc__robots_1_1SingleMotor_1af48038f9bc14cb4971d3f1aa54573daf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1af48038f9bc14cb4971d3f1aa54573daf" kindref="member">get_motor_target_currents</ref>()</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1aa8abc257d4336ef830317f2371e3ce11" kindref="member">motor_target_currents_</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classblmc__robots_1_1SingleMotor_1a375565046712276a1f3bd941078a44fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a375565046712276a1f3bd941078a44fb" kindref="member">get_motor_torques</ref>()</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a4b37df380410959a4a0a0bf8315852dc" kindref="member">motor_torques_</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classblmc__robots_1_1SingleMotor_1a5fe1f45ebb4893b1b31e1f0f23fb48e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a5fe1f45ebb4893b1b31e1f0f23fb48e2" kindref="member">get_target_motor_torques</ref>()</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a787f1cf4697845acb7ad32f61ba2a610" kindref="member">motor_target_torques_</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classblmc__robots_1_1SingleMotor_1a7126966be33a93491dcf10d62f711768" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a7126966be33a93491dcf10d62f711768" kindref="member">get_motor_inertias</ref>()</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a55ad6b72e757fffb7424052c8381a354" kindref="member">motor_inertias_</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classblmc__robots_1_1SingleMotor_1a1a7ff027c499ed3fc164a399e5b498e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a1a7ff027c499ed3fc164a399e5b498e1" kindref="member">get_motor_encoder_indexes</ref>()</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1ab0ec410b7018e2f1c71d779c4b018622" kindref="member">motor_encoder_indexes_</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="classblmc__robots_1_1SingleMotor_1ac368bb72104b1a2e076142d4002740fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ac368bb72104b1a2e076142d4002740fb" kindref="member">get_motor_torque_constants</ref>()</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1af3c3dd00a54f188ef35a0a58f2aeea9a" kindref="member">motor_torque_constants_</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classblmc__robots_1_1SingleMotor_1a4d458d18608fbca78baf6331d27a431b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a4d458d18608fbca78baf6331d27a431b" kindref="member">get_joint_positions</ref>()</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1aabf1cdb3cef190305e336d3c9dcc57ea" kindref="member">joint_positions_</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="classblmc__robots_1_1SingleMotor_1a9a2997aaadecda0b30530d8d5afeaddf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a9a2997aaadecda0b30530d8d5afeaddf" kindref="member">get_joint_velocities</ref>()</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1aa23bcf53779b381c1456b136f2a4a49c" kindref="member">joint_velocities_</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="classblmc__robots_1_1SingleMotor_1a7ac6ae993e59e6f2ea5f83a643184a9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a7ac6ae993e59e6f2ea5f83a643184a9e" kindref="member">get_joint_torques</ref>()</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1ab986b97deafb5757a410bb345441061a" kindref="member">joint_torques_</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="classblmc__robots_1_1SingleMotor_1a261200917e713211fa7652b1157eafa1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a261200917e713211fa7652b1157eafa1" kindref="member">get_joint_target_torques</ref>()</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1abe76b9fff81ee4ef1826333cbff81c25" kindref="member">joint_target_torques_</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="classblmc__robots_1_1SingleMotor_1a8ec5c8ba70bc93ff728300e868755546" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a8ec5c8ba70bc93ff728300e868755546" kindref="member">get_joint_gear_ratios</ref>()</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a18b52ed3777aa38a36e91ab3b4dc81fe" kindref="member">joint_gear_ratios_</ref>;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="classblmc__robots_1_1SingleMotor_1ab73b8091a40e846a1b6c08ac1d8e0db8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ab73b8091a40e846a1b6c08ac1d8e0db8" kindref="member">get_joint_encoder_index</ref>()</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1ae993e954e97662c1381d72e015035ca6" kindref="member">joint_encoder_index_</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="classblmc__robots_1_1SingleMotor_1a3a753c2c1b7b82bd716caa4fc3b5f5f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a3a753c2c1b7b82bd716caa4fc3b5f5f0" kindref="member">get_zero_positions</ref>()</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1afe177b30fe7465e605165c25f9f7e10e" kindref="member">joint_zero_positions_</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="classblmc__robots_1_1SingleMotor_1a9c0f3d4686e13d2a8a668a8c26f0bd00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a9c0f3d4686e13d2a8a668a8c26f0bd00" kindref="member">get_slider_positions</ref>()</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a15774ca374fff212abe4d2b397263dc9" kindref="member">slider_positions_</ref>;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="classblmc__robots_1_1SingleMotor_1a5768cce6fef657b36648ea68fdbb3ed8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a5768cce6fef657b36648ea68fdbb3ed8" kindref="member">get_max_current</ref>()</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a581cc65baa0d38dbe0dc63ff682da4cb" kindref="member">motor_max_current_</ref>;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221" refid="classblmc__robots_1_1SingleMotor_1af83ef444bdd1eebdac1df6d8035d2b75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1af83ef444bdd1eebdac1df6d8035d2b75" kindref="member">get_max_joint_torque</ref>()</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a30e231807cc6d74d52b40388f1cc2209" kindref="member">joint_max_torque_</ref>;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="classblmc__robots_1_1SingleMotor_1af2add59e3d08949c658568b6d161b5ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classblmc__robots_1_1SingleMotor_1af2add59e3d08949c658568b6d161b5ba" kindref="member">set_max_current</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Ref&lt;Vector1d&gt;<sp/>max_current)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a581cc65baa0d38dbe0dc63ff682da4cb" kindref="member">motor_max_current_</ref><sp/>=<sp/>max_current;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a0ea5ac9826c4a4cf31a422a904d45431" kindref="member">motors_</ref>.size();<sp/>++i)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a0ea5ac9826c4a4cf31a422a904d45431" kindref="member">motors_</ref>[i]-&gt;set_max_current(<ref refid="classblmc__robots_1_1SingleMotor_1a581cc65baa0d38dbe0dc63ff682da4cb" kindref="member">motor_max_current_</ref>(i));</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a30e231807cc6d74d52b40388f1cc2209" kindref="member">joint_max_torque_</ref><sp/>=<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a581cc65baa0d38dbe0dc63ff682da4cb" kindref="member">motor_max_current_</ref>.array()<sp/>*</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classblmc__robots_1_1SingleMotor_1af3c3dd00a54f188ef35a0a58f2aeea9a" kindref="member">motor_torque_constants_</ref>.array()<sp/>*</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classblmc__robots_1_1SingleMotor_1a18b52ed3777aa38a36e91ab3b4dc81fe" kindref="member">joint_gear_ratios_</ref>.array();</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="251" refid="classblmc__robots_1_1SingleMotor_1a616badc749db3a0ce391ca154b602509" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a616badc749db3a0ce391ca154b602509" kindref="member">motor_positions_</ref>;</highlight></codeline>
+<codeline lineno="255" refid="classblmc__robots_1_1SingleMotor_1ab61a1f183a5ccae341e371f40405a41b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ab61a1f183a5ccae341e371f40405a41b" kindref="member">motor_velocities_</ref>;</highlight></codeline>
+<codeline lineno="259" refid="classblmc__robots_1_1SingleMotor_1ac11fcd7ae54f11e2b419b11ac8dac87f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ac11fcd7ae54f11e2b419b11ac8dac87f" kindref="member">motor_currents_</ref>;</highlight></codeline>
+<codeline lineno="263" refid="classblmc__robots_1_1SingleMotor_1a4b37df380410959a4a0a0bf8315852dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a4b37df380410959a4a0a0bf8315852dc" kindref="member">motor_torques_</ref>;</highlight></codeline>
+<codeline lineno="267" refid="classblmc__robots_1_1SingleMotor_1a55ad6b72e757fffb7424052c8381a354" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a55ad6b72e757fffb7424052c8381a354" kindref="member">motor_inertias_</ref>;</highlight></codeline>
+<codeline lineno="271" refid="classblmc__robots_1_1SingleMotor_1ab0ec410b7018e2f1c71d779c4b018622" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ab0ec410b7018e2f1c71d779c4b018622" kindref="member">motor_encoder_indexes_</ref>;</highlight></codeline>
+<codeline lineno="275" refid="classblmc__robots_1_1SingleMotor_1aa8abc257d4336ef830317f2371e3ce11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1aa8abc257d4336ef830317f2371e3ce11" kindref="member">motor_target_currents_</ref>;</highlight></codeline>
+<codeline lineno="279" refid="classblmc__robots_1_1SingleMotor_1a787f1cf4697845acb7ad32f61ba2a610" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a787f1cf4697845acb7ad32f61ba2a610" kindref="member">motor_target_torques_</ref>;</highlight></codeline>
+<codeline lineno="283" refid="classblmc__robots_1_1SingleMotor_1af3c3dd00a54f188ef35a0a58f2aeea9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1af3c3dd00a54f188ef35a0a58f2aeea9a" kindref="member">motor_torque_constants_</ref>;</highlight></codeline>
+<codeline lineno="288" refid="classblmc__robots_1_1SingleMotor_1a3bee7675bed7fe92763dbe5c63e5d38b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a3bee7675bed7fe92763dbe5c63e5d38b" kindref="member">target_motor_current_tmp_</ref>;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297" refid="classblmc__robots_1_1SingleMotor_1aabf1cdb3cef190305e336d3c9dcc57ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1aabf1cdb3cef190305e336d3c9dcc57ea" kindref="member">joint_positions_</ref>;</highlight></codeline>
+<codeline lineno="301" refid="classblmc__robots_1_1SingleMotor_1aa23bcf53779b381c1456b136f2a4a49c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1aa23bcf53779b381c1456b136f2a4a49c" kindref="member">joint_velocities_</ref>;</highlight></codeline>
+<codeline lineno="305" refid="classblmc__robots_1_1SingleMotor_1ab986b97deafb5757a410bb345441061a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ab986b97deafb5757a410bb345441061a" kindref="member">joint_torques_</ref>;</highlight></codeline>
+<codeline lineno="309" refid="classblmc__robots_1_1SingleMotor_1abe76b9fff81ee4ef1826333cbff81c25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1abe76b9fff81ee4ef1826333cbff81c25" kindref="member">joint_target_torques_</ref>;</highlight></codeline>
+<codeline lineno="313" refid="classblmc__robots_1_1SingleMotor_1a18b52ed3777aa38a36e91ab3b4dc81fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a18b52ed3777aa38a36e91ab3b4dc81fe" kindref="member">joint_gear_ratios_</ref>;</highlight></codeline>
+<codeline lineno="318" refid="classblmc__robots_1_1SingleMotor_1ae993e954e97662c1381d72e015035ca6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ae993e954e97662c1381d72e015035ca6" kindref="member">joint_encoder_index_</ref>;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324" refid="classblmc__robots_1_1SingleMotor_1afe177b30fe7465e605165c25f9f7e10e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1afe177b30fe7465e605165c25f9f7e10e" kindref="member">joint_zero_positions_</ref>;</highlight></codeline>
+<codeline lineno="328" refid="classblmc__robots_1_1SingleMotor_1a30e231807cc6d74d52b40388f1cc2209" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a30e231807cc6d74d52b40388f1cc2209" kindref="member">joint_max_torque_</ref>;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338" refid="classblmc__robots_1_1SingleMotor_1a15774ca374fff212abe4d2b397263dc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a15774ca374fff212abe4d2b397263dc9" kindref="member">slider_positions_</ref>;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344" refid="classblmc__robots_1_1SingleMotor_1a581cc65baa0d38dbe0dc63ff682da4cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector1d<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a581cc65baa0d38dbe0dc63ff682da4cb" kindref="member">motor_max_current_</ref>;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353" refid="classblmc__robots_1_1SingleMotor_1a6a57409cef4dc0959ed6b442e7626ba2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;CanBus_ptr,<sp/>1&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a6a57409cef4dc0959ed6b442e7626ba2" kindref="member">can_buses_</ref>;</highlight></codeline>
+<codeline lineno="357" refid="classblmc__robots_1_1SingleMotor_1a435394184e8e7325055685177fcf136d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;CanBusMotorBoard_ptr,<sp/>1&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a435394184e8e7325055685177fcf136d" kindref="member">can_motor_boards_</ref>;</highlight></codeline>
+<codeline lineno="362" refid="classblmc__robots_1_1SingleMotor_1a0ea5ac9826c4a4cf31a422a904d45431" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;SafeMotor_ptr,<sp/>1&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1a0ea5ac9826c4a4cf31a422a904d45431" kindref="member">motors_</ref>;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367" refid="classblmc__robots_1_1SingleMotor_1ae0f47f4ffeba39ecf870f1b2b9116503" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;Slider_ptr,<sp/>1&gt;<sp/><ref refid="classblmc__robots_1_1SingleMotor_1ae0f47f4ffeba39ecf870f1b2b9116503" kindref="member">sliders_</ref>;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>blmc_robots</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>SingleMotor_H</highlight></codeline>
+    </programlisting>
+    <location file="include/blmc_robots/single_motor.hpp"/>
+  </compounddef>
+</doxygen>

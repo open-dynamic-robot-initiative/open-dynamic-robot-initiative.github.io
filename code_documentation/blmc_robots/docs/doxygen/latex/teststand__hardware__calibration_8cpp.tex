@@ -1,0 +1,59 @@
+\hypertarget{teststand__hardware__calibration_8cpp}{}\section{src/programs/teststand\+\_\+hardware\+\_\+calibration.cpp File Reference}
+\label{teststand__hardware__calibration_8cpp}\index{src/programs/teststand\+\_\+hardware\+\_\+calibration.\+cpp@{src/programs/teststand\+\_\+hardware\+\_\+calibration.\+cpp}}
+
+
+Program that launch the calibration of the testand with 0 offset.  
+
+
+{\ttfamily \#include \char`\"{}blmc\+\_\+robots/common\+\_\+programs\+\_\+header.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blmc\+\_\+robots/teststand.\+hpp\char`\"{}}\newline
+Include dependency graph for teststand\+\_\+hardware\+\_\+calibration.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{teststand__hardware__calibration_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{teststand__hardware__calibration_8cpp_a39957cbbba118d0d10bbc093b6b1ff5a}\label{teststand__hardware__calibration_8cpp_a39957cbbba118d0d10bbc093b6b1ff5a}} 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE {\bfseries control\+\_\+loop} (void $\ast$robot\+\_\+void\+\_\+ptr)
+\item 
+\mbox{\Hypertarget{teststand__hardware__calibration_8cpp_a2c3f6775325c30275d11c6abee2db6a0}\label{teststand__hardware__calibration_8cpp_a2c3f6775325c30275d11c6abee2db6a0}} 
+int {\bfseries main} (int, char $\ast$$\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Program that launch the calibration of the testand with 0 offset. 
+
+\begin{DoxyAuthor}{Author}
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/11-\/08
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019
+\end{DoxyCopyright}
+This program is a helper for the measurement of the offset between the joint index (home pose) and the theoretical zero defined by the urdf.
+
+
+\begin{DoxyItemize}
+\item It start by initializing the robot.
+\item Once done it wait for the user to press enter in order to move the leg to the joint index
+\item Then the controller just sends 0 torques and report the current joint pose.
+\end{DoxyItemize}
+
+Once this small procedure is done the user can setup the joints in the zero configuration and read the offset in the screen. The offset should be reported at least in the robot\+\_\+properties\+\_\+\mbox{[}robot\+\_\+name\mbox{]}/config/dgm\+\_\+paramter.yaml under the 
+\begin{DoxyCode}
+hardware\_communication:
+  calibration:
+     index\_to\_zero\_angle: [...]
+\end{DoxyCode}
+ 

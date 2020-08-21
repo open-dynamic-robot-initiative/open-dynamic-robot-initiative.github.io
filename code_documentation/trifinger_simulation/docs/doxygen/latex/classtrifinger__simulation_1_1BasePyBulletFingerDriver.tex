@@ -1,0 +1,104 @@
+\hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver}{}\section{trifinger\+\_\+simulation\+:\+:Base\+Py\+Bullet\+Finger\+Driver$<$ Action, Observation $>$ Class Template Reference}
+\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver}\index{trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver$<$ Action, Observation $>$@{trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver$<$ Action, Observation $>$}}
+
+
+Base driver for py\+Bullet of both single Finger and Tri\+Finger.  
+
+
+
+
+{\ttfamily \#include $<$pybullet\+\_\+driver.\+hpp$>$}
+
+
+
+Inheritance diagram for trifinger\+\_\+simulation\+:\+:Base\+Py\+Bullet\+Finger\+Driver$<$ Action, Observation $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classtrifinger__simulation_1_1BasePyBulletFingerDriver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for trifinger\+\_\+simulation\+:\+:Base\+Py\+Bullet\+Finger\+Driver$<$ Action, Observation $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classtrifinger__simulation_1_1BasePyBulletFingerDriver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a4d13936a1864dc4d9d732c30a28aa18a}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a4d13936a1864dc4d9d732c30a28aa18a}} 
+typedef Observation\+::\+Joint\+Vector {\bfseries Joint\+Vector}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_ad02a0a6e1149723aa334015b94b39137}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_ad02a0a6e1149723aa334015b94b39137}} 
+{\bfseries Base\+Py\+Bullet\+Finger\+Driver} (bool real\+\_\+time\+\_\+mode, bool visualize)
+\item 
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a3d0356f581f079ef8e3913c88bb9eef0}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a3d0356f581f079ef8e3913c88bb9eef0}} 
+\hyperlink{classtrifinger__simulation_1_1observation_1_1Observation}{Observation} {\bfseries get\+\_\+latest\+\_\+observation} () override
+\item 
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a5b24dfe1f7f2d9ecc3508f8e27cbe3d5}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a5b24dfe1f7f2d9ecc3508f8e27cbe3d5}} 
+\hyperlink{classtrifinger__simulation_1_1action_1_1Action}{Action} {\bfseries apply\+\_\+action} (const \hyperlink{classtrifinger__simulation_1_1action_1_1Action}{Action} \&desired\+\_\+action) override
+\item 
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a704ff78ce106795581e8d616a863d896}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a704ff78ce106795581e8d616a863d896}} 
+std\+::string {\bfseries get\+\_\+error} () override
+\item 
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a0184d28dcb227aa508ef563e3fbe192d}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a0184d28dcb227aa508ef563e3fbe192d}} 
+void {\bfseries shutdown} () override
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_aa7f77e383b6f5cd7ea49c31d2dd10092}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_aa7f77e383b6f5cd7ea49c31d2dd10092}} 
+bool \hyperlink{classtrifinger__simulation_1_1BasePyBulletFingerDriver_aa7f77e383b6f5cd7ea49c31d2dd10092}{real\+\_\+time\+\_\+mode\+\_\+}
+\begin{DoxyCompactList}\small\item\em If true, step simulation at 1 k\+Hz, otherwise as fast as possible. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a337afe3f5bf8d1d7a16b4634004f92d4}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a337afe3f5bf8d1d7a16b4634004f92d4}} 
+bool \hyperlink{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a337afe3f5bf8d1d7a16b4634004f92d4}{visualize\+\_\+}
+\begin{DoxyCompactList}\small\item\em If true, py\+Bullet G\+UI for visualization is started. \end{DoxyCompactList}\item 
+py\+::object \hyperlink{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a9f997da6855f64ca5c483093cfb66b06}{sim\+\_\+finger\+\_\+}
+\begin{DoxyCompactList}\small\item\em Instance of the Python class Sim\+Finger that implements the py\+Bullet simulation of the finger robots. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Action, typename Observation$>$\newline
+class trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver$<$ Action, Observation $>$}
+
+Base driver for py\+Bullet of both single Finger and Tri\+Finger. 
+
+Implements all methods of Robot\+Driver except {\ttfamily initialize} which needs to be implemented by the child class as there are differences between single Finger and Tri\+Finger.
+
+All other methods are generic and only need to be templated with the proper types for actions/observations.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Action} & Action type used for the specific robot. \\
+\hline
+{\em Observation} & Observation type used for the specific robot. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a9f997da6855f64ca5c483093cfb66b06}\label{classtrifinger__simulation_1_1BasePyBulletFingerDriver_a9f997da6855f64ca5c483093cfb66b06}} 
+\index{trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver@{trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver}!sim\+\_\+finger\+\_\+@{sim\+\_\+finger\+\_\+}}
+\index{sim\+\_\+finger\+\_\+@{sim\+\_\+finger\+\_\+}!trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver@{trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver}}
+\subsubsection{\texorpdfstring{sim\+\_\+finger\+\_\+}{sim\_finger\_}}
+{\footnotesize\ttfamily template$<$typename Action, typename Observation$>$ \\
+py\+::object \hyperlink{classtrifinger__simulation_1_1BasePyBulletFingerDriver}{trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver}$<$ \hyperlink{classtrifinger__simulation_1_1action_1_1Action}{Action}, \hyperlink{classtrifinger__simulation_1_1observation_1_1Observation}{Observation} $>$\+::sim\+\_\+finger\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Instance of the Python class Sim\+Finger that implements the py\+Bullet simulation of the finger robots. 
+
+This needs to be initialized by the child class! 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/trifinger\+\_\+simulation/\hyperlink{pybullet__driver_8hpp}{pybullet\+\_\+driver.\+hpp}\end{DoxyCompactItemize}

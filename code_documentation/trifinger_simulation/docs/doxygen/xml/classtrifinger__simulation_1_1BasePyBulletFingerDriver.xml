@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtrifinger__simulation_1_1BasePyBulletFingerDriver" kind="class" language="C++" prot="public">
+    <compoundname>trifinger_simulation::BasePyBulletFingerDriver</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">robot_interfaces::RobotDriver&lt; Action, Observation &gt;</basecompoundref>
+    <includes refid="pybullet__driver_8hpp" local="no">pybullet_driver.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>Action</declname>
+        <defname>Action</defname>
+      </param>
+      <param>
+        <type>typename</type>
+        <declname>Observation</declname>
+        <defname>Observation</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a4d13936a1864dc4d9d732c30a28aa18a" prot="public" static="no">
+        <type>Observation::JointVector</type>
+        <definition>typedef Observation::JointVector trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::JointVector</definition>
+        <argsstring></argsstring>
+        <name>JointVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="53" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1aa7f77e383b6f5cd7ea49c31d2dd10092" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::real_time_mode_</definition>
+        <argsstring></argsstring>
+        <name>real_time_mode_</name>
+        <briefdescription>
+<para>If true, step simulation at 1 kHz, otherwise as fast as possible. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="39" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a337afe3f5bf8d1d7a16b4634004f92d4" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::visualize_</definition>
+        <argsstring></argsstring>
+        <name>visualize_</name>
+        <briefdescription>
+<para>If true, pyBullet GUI for visualization is started. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="42" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a9f997da6855f64ca5c483093cfb66b06" prot="protected" static="no" mutable="no">
+        <type>py::object</type>
+        <definition>py::object trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::sim_finger_</definition>
+        <argsstring></argsstring>
+        <name>sim_finger_</name>
+        <briefdescription>
+<para>Instance of the Python class SimFinger that implements the pyBullet simulation of the finger robots. </para>        </briefdescription>
+        <detaileddescription>
+<para>This needs to be initialized by the child class! </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="50" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1ad02a0a6e1149723aa334015b94b39137" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::BasePyBulletFingerDriver</definition>
+        <argsstring>(bool real_time_mode, bool visualize)</argsstring>
+        <name>BasePyBulletFingerDriver</name>
+        <param>
+          <type>bool</type>
+          <declname>real_time_mode</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>visualize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="55" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="55" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a3d0356f581f079ef8e3913c88bb9eef0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtrifinger__simulation_1_1observation_1_1Observation" kindref="compound">Observation</ref></type>
+        <definition>Observation trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::get_latest_observation</definition>
+        <argsstring>() override</argsstring>
+        <name>get_latest_observation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="65" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="65" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a5b24dfe1f7f2d9ecc3508f8e27cbe3d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtrifinger__simulation_1_1action_1_1Action" kindref="compound">Action</ref></type>
+        <definition>Action trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::apply_action</definition>
+        <argsstring>(const Action &amp;desired_action) override</argsstring>
+        <name>apply_action</name>
+        <param>
+          <type>const <ref refid="classtrifinger__simulation_1_1action_1_1Action" kindref="compound">Action</ref> &amp;</type>
+          <declname>desired_action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="85" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="85" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a704ff78ce106795581e8d616a863d896" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::get_error</definition>
+        <argsstring>() override</argsstring>
+        <name>get_error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="112" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a0184d28dcb227aa508ef563e3fbe192d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;::shutdown</definition>
+        <argsstring>() override</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="117" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="117" bodyend="121"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base driver for pyBullet of both single Finger and TriFinger. </para>    </briefdescription>
+    <detaileddescription>
+<para>Implements all methods of RobotDriver except <computeroutput>initialize</computeroutput> which needs to be implemented by the child class as there are differences between single Finger and TriFinger.</para><para>All other methods are generic and only need to be templated with the proper types for actions/observations.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Action type used for the specific robot. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Observation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Observation type used for the specific robot. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>robot_interfaces::RobotDriver&lt; Action, Observation &gt;</label>
+      </node>
+      <node id="2">
+        <label>trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;</label>
+        <link refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>robot_interfaces::RobotDriver&lt; Action, Observation &gt;</label>
+      </node>
+      <node id="4">
+        <label>trifinger_simulation::BasePyBulletFingerDriver&lt; Action, Observation &gt;</label>
+        <link refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/trifinger_simulation/pybullet_driver.hpp" line="36" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="34" bodyend="122"/>
+    <listofallmembers>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a5b24dfe1f7f2d9ecc3508f8e27cbe3d5" prot="public" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>apply_action</name></member>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1ad02a0a6e1149723aa334015b94b39137" prot="public" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>BasePyBulletFingerDriver</name></member>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a704ff78ce106795581e8d616a863d896" prot="public" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>get_error</name></member>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a3d0356f581f079ef8e3913c88bb9eef0" prot="public" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>get_latest_observation</name></member>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a4d13936a1864dc4d9d732c30a28aa18a" prot="public" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>JointVector</name></member>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1aa7f77e383b6f5cd7ea49c31d2dd10092" prot="protected" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>real_time_mode_</name></member>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a0184d28dcb227aa508ef563e3fbe192d" prot="public" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>shutdown</name></member>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a9f997da6855f64ca5c483093cfb66b06" prot="protected" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>sim_finger_</name></member>
+      <member refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a337afe3f5bf8d1d7a16b4634004f92d4" prot="protected" virt="non-virtual"><scope>trifinger_simulation::BasePyBulletFingerDriver</scope><name>visualize_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_docs_installation" kind="page">
+    <compoundname>md_docs_installation</compoundname>
+    <title>Build Instructions</title>
+    <detaileddescription>
+<para><simplesect kind="note"><para>If you intend to use this interface to control your own robot, this package (and its dependencies) is enough, and you can follow the instructions below. If you are looking for the interface of the TriFinger robot interface, see the installation instructions of the <ulink url="https://open-dynamic-robot-initiative.github.io/code_documentation/robot_fingers/docs/doxygen/html/index.html"><computeroutput>robot_fingers</computeroutput> package</ulink> instead (this also includes <computeroutput>robot_interfaces</computeroutput>).</para></simplesect>
+<heading level="2">Dependencies </heading>
+</para><para>We are using <ulink url="http://wiki.ros.org/catkin">catkin</ulink> as build tool (i.e. <computeroutput>robot_interfaces</computeroutput> is a catkin package). While we are not really depending on any <ulink url="http://www.ros.org">ROS</ulink> packages, this means you need a basic ROS installation to build.</para><para>In the following we are using catkin_tools which need to be installed separately: <verbatim>pip install catkin_tools
+</verbatim></para><para>We are testing on Ubuntu 18.04 with ROS Melodic. Other versions may work as well but are not officially supported.</para><para><simplesect kind="note"><para>We provide a Singularity image with all dependencies for the TriFinger robot which also covers everything needed for <computeroutput>robot_interfaces</computeroutput>. See the documentation of the <ulink url="https://open-dynamic-robot-initiative.github.io/code_documentation/robot_fingers/docs/doxygen/html/index.html"><computeroutput>robot_fingers</computeroutput> package</ulink> for more information.</para></simplesect>
+<heading level="2">Get the Source </heading>
+</para><para><computeroutput>robot_interfaces</computeroutput> depends on several other of our packages which are organized in separate repositories. We therefore use a workspace management tool called <ulink url="https://pypi.org/project/treep/">treep</ulink> which allows easy cloning of multi-repository projects.</para><para>treep can be installed via pip: <verbatim>pip install treep
+</verbatim></para><para>Clone the treep configuration containing the &quot;ROBOT_INTERFACES&quot; project: <verbatim>git clone git@github.com:machines-in-motion/treep_machines_in_motion.git
+</verbatim></para><para><simplesect kind="note"><para>treep searches for a configuration directory from the current working directory upwards. So you can use treep in the directory in which you invoked the <computeroutput>git clone</computeroutput> command above or any subdirectory.</para></simplesect>
+Now clone the project: <verbatim>treep --clone ROBOT_INTERFACES
+</verbatim></para><para><simplesect kind="note"><para><bold>Important:</bold> treep uses SSH to clone from github. So for the above command to work, you need a github account with a registered SSH key. Further this key needs to work without asking for a password everytime. To achieve this, run <verbatim>ssh-add
+</verbatim></para></simplesect>
+first.</para><para>You should now have the following directory structure: <verbatim>├── treep_machines_in_motion
+└── workspace
+    └── src
+        ├── catkin
+        │   ├── core_robotics
+        │   │   ├── mpi_cmake_modules
+        │   │   ├── pybind11_catkin
+        │   │   ├── real_time_tools
+        │   │   ├── shared_memory
+        │   │   ├── time_series
+        │   │   └── yaml_cpp_catkin
+        │   ├── examples
+        │   │   └── ci_example
+        │   ├── robots
+        │   │   └── robot_interfaces
+        │   └── tools
+        │       ├── serialization_utils
+        │       └── signal_handler
+        └── not_catkin
+            └── third_party
+                └── pybind11
+</verbatim></para><para><heading level="2">Build </heading>
+</para><para>To build, cd into the <computeroutput>workspace</computeroutput> directory and call <verbatim>catkin build
+</verbatim></para><para>to build the whole workspace.</para><para><heading level="3">Python Bindings</heading>
+</para><para>With the above command Python bindings will be build for the default python version of your system (see <computeroutput>python --version</computeroutput>). If you want to use a different version (e.g. python3), you can specify as follows: <verbatim>catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

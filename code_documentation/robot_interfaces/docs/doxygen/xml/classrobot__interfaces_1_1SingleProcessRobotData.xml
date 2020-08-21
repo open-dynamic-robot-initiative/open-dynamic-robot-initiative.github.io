@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classrobot__interfaces_1_1SingleProcessRobotData" kind="class" language="C++" prot="public">
+    <compoundname>robot_interfaces::SingleProcessRobotData</compoundname>
+    <basecompoundref refid="classrobot__interfaces_1_1RobotData" prot="public" virt="non-virtual">robot_interfaces::RobotData&lt; Action, Observation &gt;</basecompoundref>
+    <includes refid="robot__data_8hpp" local="no">robot_data.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Action</type>
+      </param>
+      <param>
+        <type>typename Observation</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1SingleProcessRobotData_1adcb9896c90464e27fb1cd2f303ca7cef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::SingleProcessRobotData&lt; Action, Observation &gt;::SingleProcessRobotData</definition>
+        <argsstring>(size_t history_length=1000)</argsstring>
+        <name>SingleProcessRobotData</name>
+        <param>
+          <type>size_t</type>
+          <declname>history_length</declname>
+          <defval>1000</defval>
+        </param>
+        <briefdescription>
+<para>Construct the time series for the robot data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>history_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>History length of the time series. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_data.hpp" line="87" column="1" bodyfile="include/robot_interfaces/robot_data.hpp" bodystart="87" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref> instance using single process time series. </para>    </briefdescription>
+    <detaileddescription>
+<para>Use this class if all modules accessing the data are running in the same process. If modules run in separate processes, use <ref refid="classrobot__interfaces_1_1MultiProcessRobotData" kindref="compound">MultiProcessRobotData</ref> instead.</para><para>Contains all the input and output data of the robot. This means the<itemizedlist>
+<listitem><para><computeroutput>desired_action</computeroutput> which was requested by the robot user</para></listitem><listitem><para><computeroutput>applied_action</computeroutput> which was actually applied and may not be and may not be identical to desired_action for safety reasons</para></listitem><listitem><para><computeroutput>observation</computeroutput> made by the robot</para></listitem><listitem><para><computeroutput>status</computeroutput> which keeps track of timing issues and errors.</para></listitem></itemizedlist>
+</para><para>See this graph to understand how they relate to each other precisely in terms of time:</para><para><verbatim>|------ t = 0 ------|------ t = 1 ------|
+|----- action0 -----|----- action1 -----|
+o                   o                   o
+b                   b                   b
+s                   s                   s
+0                   1                   2
+</verbatim></para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the actions. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Observation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the observations. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classrobot__interfaces_1_1MultiProcessRobotData" kindref="compound">MultiProcessRobotData</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="91">
+        <label>robot_interfaces::SingleProcessRobotData&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1SingleProcessRobotData"/>
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>robot_interfaces::RobotData&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotData"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="93">
+        <label>robot_interfaces::SingleProcessRobotData&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1SingleProcessRobotData"/>
+        <childnode refid="94" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>robot_interfaces::RobotData&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotData"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/robot_interfaces/robot_data.hpp" line="80" column="1" bodyfile="include/robot_interfaces/robot_data.hpp" bodystart="79" bodyend="100"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1RobotData_1a05fea4d2f75f7fc34daf2bfc71fbfc4b" prot="public" virt="non-virtual"><scope>robot_interfaces::SingleProcessRobotData</scope><name>applied_action</name></member>
+      <member refid="classrobot__interfaces_1_1RobotData_1a03b4160b90de7eac5ffb67cb8a872cee" prot="public" virt="non-virtual"><scope>robot_interfaces::SingleProcessRobotData</scope><name>desired_action</name></member>
+      <member refid="classrobot__interfaces_1_1RobotData_1ae3d13595b92f82f76b0f1df2961258bd" prot="public" virt="non-virtual"><scope>robot_interfaces::SingleProcessRobotData</scope><name>observation</name></member>
+      <member refid="classrobot__interfaces_1_1RobotData_1ad271ee62179d5a16ede25d399659813e" prot="protected" virt="non-virtual"><scope>robot_interfaces::SingleProcessRobotData</scope><name>RobotData</name></member>
+      <member refid="classrobot__interfaces_1_1SingleProcessRobotData_1adcb9896c90464e27fb1cd2f303ca7cef" prot="public" virt="non-virtual"><scope>robot_interfaces::SingleProcessRobotData</scope><name>SingleProcessRobotData</name></member>
+      <member refid="classrobot__interfaces_1_1RobotData_1a47c53daf923c30981d15008e5134f648" prot="public" virt="non-virtual"><scope>robot_interfaces::SingleProcessRobotData</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

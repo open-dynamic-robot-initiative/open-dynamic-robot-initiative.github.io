@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="trifinger__platform__frontend_8cpp" kind="file" language="C++">
+    <compoundname>trifinger_platform_frontend.cpp</compoundname>
+    <includes refid="trifinger__platform__frontend_8hpp" local="no">robot_fingers/trifinger_platform_frontend.hpp</includes>
+    <incdepgraph>
+      <node id="113">
+        <label>robot_interfaces/sensors/sensor_frontend.hpp</label>
+      </node>
+      <node id="115">
+        <label>trifinger_object_tracking/object_tracker_frontend.hpp</label>
+      </node>
+      <node id="111">
+        <label>robot_fingers/trifinger_platform_frontend.hpp</label>
+        <link refid="trifinger__platform__frontend_8hpp"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>trifinger_cameras/tricamera_observation.hpp</label>
+      </node>
+      <node id="110">
+        <label>src/trifinger_platform_frontend.cpp</label>
+        <link refid="trifinger__platform__frontend_8cpp"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>robot_interfaces/finger_types.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacerobot__fingers">robot_fingers</innernamespace>
+    <briefdescription>
+<para>Combined frontend for the TriFinger Platform. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2020, Max Planck Gesellschaft. All rights reserved. </para></simplesect>
+<xrefsect id="license_1_license000003"><xreftitle>License</xreftitle><xrefdescription><para>BSD 3-clause </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="trifinger__platform__frontend_8hpp" kindref="compound">robot_fingers/trifinger_platform_frontend.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerobot__fingers" kindref="compound">robot_fingers</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1aea53f5c5b5443f9b481b33392b5caa25" kindref="member">TriFingerPlatformFrontend::TriFingerPlatformFrontend</ref>(</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>robot_interfaces::TriFingerTypes::BaseDataPtr<sp/>robot_data,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>trifinger_object_tracking::ObjectTrackerData::Ptr<sp/>object_tracker_data,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;robot_interfaces::SensorData&lt;CameraObservation&gt;&gt;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>camera_data)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>robot_frontend_(robot_data),</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>object_tracker_frontend_(object_tracker_data),</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>camera_frontend_(camera_data)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1aea53f5c5b5443f9b481b33392b5caa25" kindref="member">TriFingerPlatformFrontend::TriFingerPlatformFrontend</ref>()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>robot_frontend_(</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_shared&lt;robot_interfaces::TriFingerTypes::MultiProcessData&gt;(</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;trifinger&quot;</highlight><highlight class="normal">,<sp/>false)),</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>object_tracker_frontend_(</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_shared&lt;trifinger_object_tracking::ObjectTrackerData&gt;(</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;object_tracker&quot;</highlight><highlight class="normal">,<sp/>false)),</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>camera_frontend_(</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_shared&lt;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robot_interfaces::MultiProcessSensorData&lt;CameraObservation&gt;&gt;(</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;tricamera&quot;</highlight><highlight class="normal">,<sp/>false,<sp/>100))</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">time_series::Index<sp/><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1a474d2d6fd6c48fc16ccd60ac2bc21c2f" kindref="member">TriFingerPlatformFrontend::append_desired_action</ref>(</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Action<sp/>&amp;desired_action)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>robot_frontend_.append_desired_action(desired_action);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">TriFingerPlatformFrontend::RobotObservation</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1a86149ce45a4ddada714eb0e0fde20e66" kindref="member">TriFingerPlatformFrontend::get_robot_observation</ref>(</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_series::Index<sp/>&amp;t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="46"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>robot_frontend_.get_observation(t);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">TriFingerPlatformFrontend::Action<sp/><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1acdb76e148024bfdcb59bf06a92f30222" kindref="member">TriFingerPlatformFrontend::get_desired_action</ref>(</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_series::Index<sp/>&amp;t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="52"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>robot_frontend_.get_desired_action(t);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">TriFingerPlatformFrontend::Action<sp/><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1a7c0d56e7e1096a3ab299a45e8b832d54" kindref="member">TriFingerPlatformFrontend::get_applied_action</ref>(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_series::Index<sp/>&amp;t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="58"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>robot_frontend_.get_applied_action(t);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">TriFingerPlatformFrontend::RobotStatus</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1afc30cd1aecd9967045a0365c21f964fe" kindref="member">TriFingerPlatformFrontend::get_robot_status</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_series::Index<sp/>&amp;t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="64"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>robot_frontend_.get_status(t);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">time_series::Timestamp<sp/><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1abf6ed97b5f5711058030733fb283aad6" kindref="member">TriFingerPlatformFrontend::get_timestamp_ms</ref>(</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_series::Index<sp/>&amp;t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="70"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>robot_frontend_.get_timestamp_ms(t);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">time_series::Index<sp/><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1a9c97379d70b40a023609521a83253177" kindref="member">TriFingerPlatformFrontend::get_current_timeindex</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="75"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>robot_frontend_.get_current_timeindex();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1a0dc8d9e0d6e26053194e223ac29fc8c4" kindref="member">TriFingerPlatformFrontend::wait_until_timeindex</ref>(</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_series::Index<sp/>&amp;t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="81"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>robot_frontend_.wait_until_timeindex(t);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">trifinger_object_tracking::ObjectPose</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1abb39cc97fbf08af6942f2de3e99e6f54" kindref="member">TriFingerPlatformFrontend::get_object_pose</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_series::Index<sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="87"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>t_tracker<sp/>=<sp/>find_matching_timeindex(object_tracker_frontend_,<sp/>t);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>object_tracker_frontend_.get_pose(t_tracker);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">TriFingerPlatformFrontend::CameraObservation</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><ref refid="classrobot__fingers_1_1TriFingerPlatformFrontend_1a2b83c7b23977185f4a522e16077b204a" kindref="member">TriFingerPlatformFrontend::get_camera_observation</ref>(</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_series::Index<sp/>t)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="95"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>t_camera<sp/>=<sp/>find_matching_timeindex(camera_frontend_,<sp/>t);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>camera_frontend_.get_observation(t_camera);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>robot_fingers</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/trifinger_platform_frontend.cpp"/>
+  </compounddef>
+</doxygen>

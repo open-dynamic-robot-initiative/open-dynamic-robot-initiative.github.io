@@ -1,0 +1,159 @@
+\hypertarget{classrobot__interfaces_1_1example_1_1Driver}{}\section{robot\+\_\+interfaces\+:\+:example\+:\+:Driver Class Reference}
+\label{classrobot__interfaces_1_1example_1_1Driver}\index{robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}}
+
+
+Example \hyperlink{classrobot__interfaces_1_1Robot}{Robot} \hyperlink{classrobot__interfaces_1_1example_1_1Driver}{Driver}.  
+
+
+
+
+{\ttfamily \#include $<$example.\+hpp$>$}
+
+
+
+Inheritance diagram for robot\+\_\+interfaces\+:\+:example\+:\+:Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classrobot__interfaces_1_1example_1_1Driver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for robot\+\_\+interfaces\+:\+:example\+:\+:Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classrobot__interfaces_1_1example_1_1Driver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_a83743c88f8873685b3b628e393ffe9fe}\label{classrobot__interfaces_1_1example_1_1Driver_a83743c88f8873685b3b628e393ffe9fe}} 
+{\bfseries Driver} (int min, int max)
+\item 
+void \hyperlink{classrobot__interfaces_1_1example_1_1Driver_ab6f6c3f3ffb730d162bec70313f8aab7}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the robot. \end{DoxyCompactList}\item 
+Action \hyperlink{classrobot__interfaces_1_1example_1_1Driver_aa18b1bc90441395e86794a90dfdac9fa}{apply\+\_\+action} (const Action \&action\+\_\+to\+\_\+apply)
+\begin{DoxyCompactList}\small\item\em Apply action immediately and block until it is executed. \end{DoxyCompactList}\item 
+Observation \hyperlink{classrobot__interfaces_1_1example_1_1Driver_a2fa7ee03258e65037ed69d9a8363bfe8}{get\+\_\+latest\+\_\+observation} ()
+\begin{DoxyCompactList}\small\item\em Return the latest observation immediately. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classrobot__interfaces_1_1example_1_1Driver_a8465b912da8f11a6db271f11ff4eced1}{get\+\_\+error} ()
+\begin{DoxyCompactList}\small\item\em Get error message if there is any error. \end{DoxyCompactList}\item 
+void \hyperlink{classrobot__interfaces_1_1example_1_1Driver_a91cbe74896c9ed56ff7eee6380964dfe}{shutdown} ()
+\begin{DoxyCompactList}\small\item\em Shut down the robot safely. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_a86c0ec3574adbdb190ee17c51068b59a}\label{classrobot__interfaces_1_1example_1_1Driver_a86c0ec3574adbdb190ee17c51068b59a}} 
+int {\bfseries state\+\_\+} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_a6ffdfed257b3b4466615ec9d4cd7c2d1}\label{classrobot__interfaces_1_1example_1_1Driver_a6ffdfed257b3b4466615ec9d4cd7c2d1}} 
+int {\bfseries min\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_a3d788870eb3c8043e0f3e278a11b87f6}\label{classrobot__interfaces_1_1example_1_1Driver_a3d788870eb3c8043e0f3e278a11b87f6}} 
+int {\bfseries max\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Example \hyperlink{classrobot__interfaces_1_1Robot}{Robot} \hyperlink{classrobot__interfaces_1_1example_1_1Driver}{Driver}. 
+
+Send command to the robot and read observation from the robot. The D\+OF positions simply becomes the ones set by the latest action, capped between a min and a max value. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_aa18b1bc90441395e86794a90dfdac9fa}\label{classrobot__interfaces_1_1example_1_1Driver_aa18b1bc90441395e86794a90dfdac9fa}} 
+\index{robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}!apply\+\_\+action@{apply\+\_\+action}}
+\index{apply\+\_\+action@{apply\+\_\+action}!robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}}
+\subsubsection{\texorpdfstring{apply\+\_\+action()}{apply\_action()}}
+{\footnotesize\ttfamily Action robot\+\_\+interfaces\+::example\+::\+Driver\+::apply\+\_\+action (\begin{DoxyParamCaption}\item[{const Action \&}]{desired\+\_\+action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Apply action immediately and block until it is executed. 
+
+This method must apply the desired\+\_\+action immediately when it is called, and only return once the action has been executed completely. This way we can accommodate both simulators and real robots with this interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired\+\_\+action} & The action we want to apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The action that was actually applied (since due to safety reasons it might not be possible to apply the desired action). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_a4294e522fcd12b38d69f7d53fae5d74a}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_a8465b912da8f11a6db271f11ff4eced1}\label{classrobot__interfaces_1_1example_1_1Driver_a8465b912da8f11a6db271f11ff4eced1}} 
+\index{robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}!get\+\_\+error@{get\+\_\+error}}
+\index{get\+\_\+error@{get\+\_\+error}!robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}}
+\subsubsection{\texorpdfstring{get\+\_\+error()}{get\_error()}}
+{\footnotesize\ttfamily std\+::string robot\+\_\+interfaces\+::example\+::\+Driver\+::get\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get error message if there is any error. 
+
+\begin{DoxyReturn}{Returns}
+Returns an error message or an empty string if there is no error. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_acdf4c5d6993b836a180e6b6fc12b3445}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_a2fa7ee03258e65037ed69d9a8363bfe8}\label{classrobot__interfaces_1_1example_1_1Driver_a2fa7ee03258e65037ed69d9a8363bfe8}} 
+\index{robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}!get\+\_\+latest\+\_\+observation@{get\+\_\+latest\+\_\+observation}}
+\index{get\+\_\+latest\+\_\+observation@{get\+\_\+latest\+\_\+observation}!robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}}
+\subsubsection{\texorpdfstring{get\+\_\+latest\+\_\+observation()}{get\_latest\_observation()}}
+{\footnotesize\ttfamily Observation robot\+\_\+interfaces\+::example\+::\+Driver\+::get\+\_\+latest\+\_\+observation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the latest observation immediately. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classrobot__interfaces_1_1example_1_1Observation}{Observation} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_ad13d4f4fdfe78bdde4fc964f07fa45e2}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_ab6f6c3f3ffb730d162bec70313f8aab7}\label{classrobot__interfaces_1_1example_1_1Driver_ab6f6c3f3ffb730d162bec70313f8aab7}} 
+\index{robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}!initialize@{initialize}}
+\index{initialize@{initialize}!robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void robot\+\_\+interfaces\+::example\+::\+Driver\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the robot. 
+
+Any initialization procedures that need to be done before sending actions to the robot should be done in this method (e.\+g. homing to find the absolute position). 
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_af3cbef570a455e1f8085d701282264ff}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+\mbox{\Hypertarget{classrobot__interfaces_1_1example_1_1Driver_a91cbe74896c9ed56ff7eee6380964dfe}\label{classrobot__interfaces_1_1example_1_1Driver_a91cbe74896c9ed56ff7eee6380964dfe}} 
+\index{robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!robot\+\_\+interfaces\+::example\+::\+Driver@{robot\+\_\+interfaces\+::example\+::\+Driver}}
+\subsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily void robot\+\_\+interfaces\+::example\+::\+Driver\+::shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Shut down the robot safely. 
+
+Use this method if your robot needs to perform some action when shutting down, e.\+g. to move it to a defined rest position. 
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_a3451fb8b15d2840b559f3ee858de01f8}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/\hyperlink{example_8hpp}{example.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacedemo__finger__forward__kinematics" kind="namespace" language="Python">
+    <compoundname>demo_finger_forward_kinematics</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1ac60458896f758f70186eab28da1b38d7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.urdf_pkg_path</definition>
+        <argsstring></argsstring>
+        <name>urdf_pkg_path</name>
+        <initializer>=  rospkg.RosPack().get_path(&quot;robot_properties_manipulator&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="14" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1a6bccb60e38946a0f7b6979ee89a57048" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.urdf_path</definition>
+        <argsstring></argsstring>
+        <name>urdf_path</name>
+        <initializer>=  os.path.join(urdf_pkg_path, &quot;urdf&quot;, &quot;finger.urdf&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="15" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1a24bd3020434a8015774dc1f6c29e564b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <initializer>=  pinocchio.buildModelFromUrdf(urdf_path)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="17" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1ac9b844f728dcdf4df83de60d827cb847" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <initializer>=  model.createData()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="18" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1a76236fc64fd1ed4d6ef00ba599f0f1a3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.tip_link_id</definition>
+        <argsstring></argsstring>
+        <name>tip_link_id</name>
+        <initializer>=  model.getFrameId(&quot;finger_tip_link&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="19" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1aa0b7dea625476751bcccd9ed0cc12f92" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.robot</definition>
+        <argsstring></argsstring>
+        <name>robot</name>
+        <initializer>=  <ref refid="classrobot__fingers_1_1robot_1_1Robot" kindref="compound">robot_fingers.Robot</ref>(
+        robot_interfaces.finger,
+        robot_fingers.create_real_finger_backend,
+        &quot;finger.yml&quot;,
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="21" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1a4b83651cd13e3728c3fd82a7a0e16b57" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.action</definition>
+        <argsstring></argsstring>
+        <name>action</name>
+        <initializer>=  robot.Action()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="28" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1acd1db66642d6ec25becd1ffecedd05d2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <initializer>=  robot.frontend.append_desired_action(action)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="30" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1a276d95975a6896f02d22fddcc15ab1bd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.joint_positions</definition>
+        <argsstring></argsstring>
+        <name>joint_positions</name>
+        <initializer>=  robot.frontend.get_observation(t).position</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="31" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1a3d9da61cc651dd63e3ec706c2a2e799f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <initializer>=  data.oMf[tip_link_id].translation</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="37" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1a905b8f7cbc1098660084a51832a6508b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.n_joints</definition>
+        <argsstring></argsstring>
+        <name>n_joints</name>
+        <initializer>=  len(pos)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="41" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1a7b2fff5eb5e3165e2fce354e30306045" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string demo_finger_forward_kinematics.format_string</definition>
+        <argsstring></argsstring>
+        <name>format_string</name>
+        <initializer>=  &quot;\r&quot; + &quot;, &quot;.join([&quot;{: 6.3f}&quot;] * n_joints)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="42" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__finger__forward__kinematics_8py_1ad42b3ab5745d274fd42b03af7b57317b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_finger_forward_kinematics.end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_finger_forward_kinematics.py" line="43" column="1" bodyfile="demos/demo_finger_forward_kinematics.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="demos/demo_finger_forward_kinematics.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

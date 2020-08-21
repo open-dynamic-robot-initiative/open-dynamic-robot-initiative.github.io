@@ -1,0 +1,112 @@
+\hypertarget{demo_multiprocess_backend_8cpp-example}{}\section{demo\+\_\+multiprocess\+\_\+backend.\+cpp}
+Robot backend for a dummy \char`\"{}2dof\char`\"{} robot in a multi process setup.
+
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include <memory>}
+
+\textcolor{preprocessor}{#include "robot\_interfaces/robot\_backend.hpp"}
+\textcolor{preprocessor}{#include "robot\_interfaces/robot\_driver.hpp"}
+
+\textcolor{preprocessor}{#include "types.hpp"}
+
+\textcolor{keyword}{using namespace }\hyperlink{namespacerobot__interfaces_1_1demo}{robot\_interfaces::demo};
+
+\textcolor{comment}{// TODO put driver in separate file so no duplication to demo.cpp?  Discuss}
+\textcolor{comment}{// with Vincent.}
+
+\textcolor{comment}{// Send command to the robot and read observation from the robot}
+\textcolor{comment}{// The dof positions simply becomes the ones set by the latest action,}
+\textcolor{comment}{// capped between a min and a max value (0 and 1000)}
+\textcolor{keyword}{class }\hyperlink{classDriver}{Driver} : \textcolor{keyword}{public} \hyperlink{classrobot__interfaces_1_1RobotDriver}{robot\_interfaces::RobotDriver}<Action, Observation>
+\{
+\textcolor{keyword}{public}:
+    \hyperlink{classDriver}{Driver}()
+    \{
+    \}
+
+    \textcolor{comment}{// at init dof are at min value}
+    \textcolor{keywordtype}{void} initialize()
+    \{
+        state\_[0] = Driver::MIN;
+        state\_[1] = Driver::MIN;
+    \}
+
+    \textcolor{comment}{// just clip desired values}
+    \textcolor{comment}{// between 0 and 1000}
+    \hyperlink{classrobot__interfaces_1_1demo_1_1Action}{Action} apply\_action(\textcolor{keyword}{const} \hyperlink{classrobot__interfaces_1_1demo_1_1Action}{Action} &action\_to\_apply)
+    \{
+        std::cout << \textcolor{stringliteral}{"received action "};
+        action\_to\_apply.print(\textcolor{keyword}{true});
+
+        \hyperlink{classrobot__interfaces_1_1demo_1_1Action}{Action} applied;
+        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < 2; i++)
+        \{
+            \textcolor{keywordflow}{if} (action\_to\_apply.values[i] > Driver::MAX)
+            \{
+                applied.values[i] = Driver::MAX;
+            \}
+            \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (action\_to\_apply.values[i] < Driver::MIN)
+            \{
+                applied.values[i] = Driver::MIN;
+            \}
+            \textcolor{keywordflow}{else}
+            \{
+                applied.values[i] = action\_to\_apply.values[i];
+            \}
+            \textcolor{comment}{// simulating the time if could take for a real}
+            \textcolor{comment}{// robot to perform the action}
+            usleep(1000);
+            state\_[i] = applied.values[i];
+        \}
+        \textcolor{keywordflow}{return} applied;
+    \}
+
+    \hyperlink{classrobot__interfaces_1_1demo_1_1Observation}{Observation} get\_latest\_observation()
+    \{
+        \hyperlink{classrobot__interfaces_1_1demo_1_1Observation}{Observation} observation;
+        observation.values[0] = state\_[0];
+        observation.values[1] = state\_[1];
+        \textcolor{keywordflow}{return} observation;
+    \}
+
+    std::string get\_error()
+    \{
+        \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};  \textcolor{comment}{// no error}
+    \}
+
+    \textcolor{keywordtype}{void} shutdown()
+    \{
+        \textcolor{comment}{// nothing to do}
+    \}
+
+\textcolor{keyword}{private}:
+    \textcolor{keywordtype}{int} state\_[2];
+
+    \textcolor{keyword}{const} \textcolor{keyword}{static} \textcolor{keywordtype}{int} MAX = 1000;
+    \textcolor{keyword}{const} \textcolor{keyword}{static} \textcolor{keywordtype}{int} MIN = 0;
+\};
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1RobotBackend}{robot\_interfaces::RobotBackend<Action, Observation>}
+       Backend;
+    \textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1MultiProcessRobotData}{robot\_interfaces::MultiProcessRobotData<Action, Observation>}
+        MultiProcessData;
+
+    \textcolor{keyword}{auto} driver\_ptr = std::make\_shared<Driver>();
+    \textcolor{comment}{// the backend process acts as master for the shared memory}
+    \textcolor{keyword}{auto} data\_ptr =
+        std::make\_shared<MultiProcessData>(\textcolor{stringliteral}{"multiprocess\_demo"}, \textcolor{keyword}{true});
+
+    Backend backend(driver\_ptr, data\_ptr);
+    backend.initialize();
+
+    \textcolor{comment}{// TODO would be nicer to check if backend loop is still running}
+    \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+    \{
+    \}
+\}
+\end{DoxyCodeInclude}
+ 

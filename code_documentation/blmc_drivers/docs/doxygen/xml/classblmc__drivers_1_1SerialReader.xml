@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1SerialReader" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::SerialReader</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1a37e1129c27b41cd9f5b4317081b217d8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::SerialReader::is_loop_active_</definition>
+        <argsstring></argsstring>
+        <name>is_loop_active_</name>
+        <briefdescription>
+<para>This boolean makes sure that the loop is stopped upon destruction of this object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="65" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1a89a2a93d8a9e59738f41d8b69cb112d0" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread blmc_drivers::SerialReader::rt_thread_</definition>
+        <argsstring></argsstring>
+        <name>rt_thread_</name>
+        <briefdescription>
+<para>This is the thread object that allow to spwan a real-time thread or not dependening on the current OS. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="71" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1abf30ca34b8f61706a763a431dff68e94" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int blmc_drivers::SerialReader::fd_</definition>
+        <argsstring></argsstring>
+        <name>fd_</name>
+        <briefdescription>
+<para>Holds the device serial port. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="76" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1abb0700e8e752917876798db18a0421db" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::SerialReader::has_error_</definition>
+        <argsstring></argsstring>
+        <name>has_error_</name>
+        <briefdescription>
+<para>If false, the communication is workinng as expected. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="81" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1abf6fd962e185be25e6c61c63f8eb0cc9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::SerialReader::is_active_</definition>
+        <argsstring></argsstring>
+        <name>is_active_</name>
+        <briefdescription>
+<para>If the communication is active. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="86" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1a862829c3e7f3c59b1e3be49b61e6cfb5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int blmc_drivers::SerialReader::new_data_counter_</definition>
+        <argsstring></argsstring>
+        <name>new_data_counter_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="91" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1a516bbec3112f46bb6442858d2d9446bf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int blmc_drivers::SerialReader::missed_data_counter_</definition>
+        <argsstring></argsstring>
+        <name>missed_data_counter_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="93" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1ac6f46fc37c9ce41908ad76b012d2160b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; blmc_drivers::SerialReader::latest_values_</definition>
+        <argsstring></argsstring>
+        <name>latest_values_</name>
+        <briefdescription>
+<para>Holds vector with the latest double values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="98" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SerialReader_1a38d2ba095d199db4ae9858b888ef20de" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex blmc_drivers::SerialReader::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <briefdescription>
+<para>mutex_ multithreading safety </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="103" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SerialReader_1a894216b6799b0ea9945f8a1cf98f9801" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SerialReader::SerialReader</definition>
+        <argsstring>(const std::string &amp;serial_port, const int &amp;num_values)</argsstring>
+        <name>SerialReader</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>serial_port</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>num_values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>serial_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The address of the serial port to use.  num_values The number of values to read in each line. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="30" column="1" bodyfile="src/serial_reader.cpp" bodystart="28" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SerialReader_1ad380cab063a9bfe81f39b1a3bfb8065e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SerialReader::~SerialReader</definition>
+        <argsstring>()</argsstring>
+        <name>~SerialReader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="32" column="1" bodyfile="src/serial_reader.cpp" bodystart="124" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SerialReader_1aa590c82f97cfa6d9222bc3d19952f166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int blmc_drivers::SerialReader::fill_vector</definition>
+        <argsstring>(std::vector&lt; int &gt; &amp;values)</argsstring>
+        <name>fill_vector</name>
+        <param>
+          <type>std::vector&lt; int &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Fills a vector with the latest values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to place values into. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>How often fill_vector was called without new data. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="39" column="1" bodyfile="src/serial_reader.cpp" bodystart="131" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SerialReader_1aaa18311d9c274b0ac8a8bd86a311d3fc" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE blmc_drivers::SerialReader::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+<para>This is the helper function used for spawning the real time thread. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance_pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the current object in this case. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>THREAD_FUNCTION_RETURN_TYPE depends on the current OS. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="49" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="49" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SerialReader_1a24a8f28fa8e56934baa1d0b9fef7a045" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SerialReader::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>This is the real time thread that streams the data to/from the main board. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/serial_reader.hpp" line="59" column="1" bodyfile="src/serial_reader.cpp" bodystart="77" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/blmc_drivers/serial_reader.hpp" line="24" column="1" bodyfile="include/blmc_drivers/serial_reader.hpp" bodystart="23" bodyend="104"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1SerialReader_1abf30ca34b8f61706a763a431dff68e94" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>fd_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1aa590c82f97cfa6d9222bc3d19952f166" prot="public" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>fill_vector</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1abb0700e8e752917876798db18a0421db" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>has_error_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1abf6fd962e185be25e6c61c63f8eb0cc9" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>is_active_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1a37e1129c27b41cd9f5b4317081b217d8" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>is_loop_active_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1ac6f46fc37c9ce41908ad76b012d2160b" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>latest_values_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1aaa18311d9c274b0ac8a8bd86a311d3fc" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1a24a8f28fa8e56934baa1d0b9fef7a045" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1a516bbec3112f46bb6442858d2d9446bf" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>missed_data_counter_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1a38d2ba095d199db4ae9858b888ef20de" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>mutex_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1a862829c3e7f3c59b1e3be49b61e6cfb5" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>new_data_counter_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1a89a2a93d8a9e59738f41d8b69cb112d0" prot="private" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>rt_thread_</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1a894216b6799b0ea9945f8a1cf98f9801" prot="public" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>SerialReader</name></member>
+      <member refid="classblmc__drivers_1_1SerialReader_1ad380cab063a9bfe81f39b1a3bfb8065e" prot="public" virt="non-virtual"><scope>blmc_drivers::SerialReader</scope><name>~SerialReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

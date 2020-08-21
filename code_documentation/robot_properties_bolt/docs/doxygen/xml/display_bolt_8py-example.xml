@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="display_bolt_8py-example" kind="example">
+    <compoundname>display_bolt.py</compoundname>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>1. Building the workspace by executing <computeroutput>catkin build</computeroutput> in the workspace.</para></listitem><listitem><para>2. &quot;source ./devel/setup.bash&quot; is called from the root of the catkin workspace.</para></listitem><listitem><para>3. Run the demo by either:<itemizedlist>
+<listitem><para>3.1. <computeroutput>python3 <ref refid="display__bolt_8py" kindref="compound">display_bolt.py</ref></computeroutput></para></listitem><listitem><para>3.2. <computeroutput>cd /path/to/robot_properties_bolt/</computeroutput> ; <computeroutput>./demos/display_bolt.py</computeroutput> <programlisting><codeline><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>@namespace<sp/>Basic<sp/>loading<sp/>and<sp/>visualization<sp/>for<sp/>the<sp/>Bolt<sp/>robot<sp/>using<sp/>gepetto<sp/>viewer.</highlight></codeline>
+<codeline><highlight class="stringliteral">@file<sp/>display_bolt.py</highlight></codeline>
+<codeline><highlight class="stringliteral">@copyright<sp/>Copyright<sp/>(c)<sp/>2020,</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>New<sp/>York<sp/>University<sp/>and<sp/>Max<sp/>Planck<sp/>Gesellschaft,</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>License<sp/>BSD-3-Clause</highlight></codeline>
+<codeline><highlight class="stringliteral">@example<sp/>display_bolt.py</highlight></codeline>
+<codeline><highlight class="stringliteral">-<sp/>1.<sp/>Building<sp/>the<sp/>workspace<sp/>by<sp/>executing<sp/>`catkin<sp/>build`<sp/>in<sp/>the<sp/>workspace.</highlight></codeline>
+<codeline><highlight class="stringliteral">-<sp/>2.<sp/>&quot;source<sp/>./devel/setup.bash&quot;<sp/>is<sp/>called<sp/>from<sp/>the<sp/>root<sp/>of<sp/>the<sp/>catkin</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>workspace.</highlight></codeline>
+<codeline><highlight class="stringliteral">-<sp/>3.<sp/>Run<sp/>the<sp/>demo<sp/>by<sp/>either:</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-<sp/>3.1.<sp/>`python3<sp/>display_bolt.py`</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-<sp/>3.2.<sp/>`cd<sp/>/path/to/robot_properties_bolt/`<sp/>;<sp/>`./demos/display_bolt.py`</highlight></codeline>
+<codeline><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pinocchio<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>se3</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacerobot__properties__bolt_1_1config" kindref="compound">robot_properties_bolt.config</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>BoltConfig</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>the<sp/>robot<sp/>urdf.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>robot<sp/>=<sp/>BoltConfig.buildRobotWrapper()</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Setup<sp/>the<sp/>display<sp/>(connection<sp/>to<sp/>gepetto<sp/>viewer)<sp/>and<sp/>load<sp/>the<sp/>robot<sp/>model.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>robot.initViewer(loadModel=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Create<sp/>a<sp/>first<sp/>initial<sp/>position<sp/>for<sp/>the<sp/>robot.<sp/>Both<sp/>legs<sp/>are<sp/>bent<sp/>inwards.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>q<sp/>=<sp/>BoltConfig.initial_configuration</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>q[[4]]<sp/>=<sp/>0.6</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Turn<sp/>the<sp/>legs<sp/>outside</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>q[10]<sp/>=<sp/>-0.5<sp/><sp/></highlight><highlight class="comment">#<sp/>Right<sp/>side<sp/>of<sp/>quadruped</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>q[7]<sp/>=<sp/>0.5<sp/><sp/></highlight><highlight class="comment">#<sp/>Left<sp/>side<sp/>of<sp/>quadruped</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Display<sp/>the<sp/>configuration<sp/>in<sp/>the<sp/>viewer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>robot.display(q)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Example<sp/>of<sp/>moving<sp/>the<sp/>robot<sp/>forward<sp/>and<sp/>updating<sp/>the<sp/>display<sp/>every<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(10):</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q[0]<sp/>+=<sp/>0.05</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robot.display(q)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time.sleep(0.2)</highlight></codeline>
+</programlisting> </para></listitem></itemizedlist>
+</para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

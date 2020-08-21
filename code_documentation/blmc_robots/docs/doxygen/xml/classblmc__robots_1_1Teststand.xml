@@ -1,0 +1,803 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__robots_1_1Teststand" kind="class" language="C++" prot="public">
+    <compoundname>blmc_robots::Teststand</compoundname>
+    <includes refid="teststand_8hpp" local="no">teststand.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classblmc__robots_1_1Teststand_1a201214fc01f68b97ceba62af3fb8cccf" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 2, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 2, 1&gt; blmc_robots::Teststand::VectorSlider</definition>
+        <argsstring></argsstring>
+        <name>VectorSlider</name>
+        <briefdescription>
+<para>Data type containing the <ref refid="classblmc__robots_1_1Sliders" kindref="compound">Sliders</ref> data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="28" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__robots_1_1Teststand_1a23b0a73bc99ce4a3588204b7480eb6d7" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 1, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 1, 1&gt; blmc_robots::Teststand::VectorContact</definition>
+        <argsstring></argsstring>
+        <name>VectorContact</name>
+        <briefdescription>
+<para>This represents the contact sensor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="32" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__robots_1_1Teststand_1a51f17cf2b01dd8252e21db97b486e067" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 3, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 3, 1&gt; blmc_robots::Teststand::VectorAtiForce</definition>
+        <argsstring></argsstring>
+        <name>VectorAtiForce</name>
+        <briefdescription>
+<para>This type define the forces from the ati-FT sensors. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="36" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__robots_1_1Teststand_1a466977786f9b007854fa2eb2a97b0de9" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 3, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 3, 1&gt; blmc_robots::Teststand::VectorAtiTorque</definition>
+        <argsstring></argsstring>
+        <name>VectorAtiTorque</name>
+        <briefdescription>
+<para>This type define the torqes from the ati-FT sensors. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="40" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1ac733828512ab4ba2ad43625915a4a9fd" prot="private" static="no" mutable="no">
+        <type>ati_ft_sensor::AtiFTSensor</type>
+        <definition>ati_ft_sensor::AtiFTSensor blmc_robots::Teststand::ati_sensor_</definition>
+        <argsstring></argsstring>
+        <name>ati_sensor_</name>
+        <briefdescription>
+<para>ATI sensor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="242" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1abbde43d983602e1ead15b1b525cc524f" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__robots_1_1Teststand_1a51f17cf2b01dd8252e21db97b486e067" kindref="member">VectorAtiForce</ref></type>
+        <definition>VectorAtiForce blmc_robots::Teststand::ati_force_</definition>
+        <argsstring></argsstring>
+        <name>ati_force_</name>
+        <briefdescription>
+<para>3D linear force from the ATI FT sensor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="247" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a8c4e095818a0c80739a63a91bb0670c6" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__robots_1_1Teststand_1a466977786f9b007854fa2eb2a97b0de9" kindref="member">VectorAtiTorque</ref></type>
+        <definition>VectorAtiTorque blmc_robots::Teststand::ati_torque_</definition>
+        <argsstring></argsstring>
+        <name>ati_torque_</name>
+        <briefdescription>
+<para>3D torque measured from the ATI FT sensor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="252" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1afe8801388760cd85771a99e3a89c9f69" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::motor_inertias_</definition>
+        <argsstring></argsstring>
+        <name>motor_inertias_</name>
+        <briefdescription>
+<para>Motor data. </para>        </briefdescription>
+        <detaileddescription>
+<para>motor_inertias_ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="261" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a0d4bfad1f7afaaf459131667fac2b2d0" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::motor_torque_constants_</definition>
+        <argsstring></argsstring>
+        <name>motor_torque_constants_</name>
+        <briefdescription>
+<para>motor_torque_constants_ are the motor torque constants </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="265" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a5ff6d1081ece6fadf9b3bac578b08001" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::joint_positions_</definition>
+        <argsstring></argsstring>
+        <name>joint_positions_</name>
+        <briefdescription>
+<para>Joint data. </para>        </briefdescription>
+        <detaileddescription>
+<para>joint_positions_ is the measured data from the onboard card converted at the joint level. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="275" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1ab0a776f921bec24b81bc08f7ceebcba6" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::joint_velocities_</definition>
+        <argsstring></argsstring>
+        <name>joint_velocities_</name>
+        <briefdescription>
+<para>joint_velocities_ is the measured data from the onboard card converted at the joint level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="280" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a59ef3d86efd043ee1511bad70624bdae" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::joint_torques_</definition>
+        <argsstring></argsstring>
+        <name>joint_torques_</name>
+        <briefdescription>
+<para>joint_torques_ is the measured data from the onboard card converted at the joint level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="285" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a0db888b3e84fe194629bb14b6fa2e485" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::joint_target_torques_</definition>
+        <argsstring></argsstring>
+        <name>joint_target_torques_</name>
+        <briefdescription>
+<para>joint_target_torques_ is the last given command to be sent. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="289" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1ad7b3b6c032d1b1b9c886089ea21a9c2a" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::joint_gear_ratios_</definition>
+        <argsstring></argsstring>
+        <name>joint_gear_ratios_</name>
+        <briefdescription>
+<para>joint_gear_ratios are the joint gear ratios </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="293" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a2a0b967c36ea63a8bb564bdeebcc0846" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::joint_encoder_index_</definition>
+        <argsstring></argsstring>
+        <name>joint_encoder_index_</name>
+        <briefdescription>
+<para>joint_encoder_index_ The last observed encoder_index at the joints. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="298" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a5923674652df619a0692333fb27b8369" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::joint_zero_positions_</definition>
+        <argsstring></argsstring>
+        <name>joint_zero_positions_</name>
+        <briefdescription>
+<para>joint_zero_positions_ is the configuration considered as zero position </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="304" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1ad0ce099eef5b57553d36927e3f7f1203" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::slider_positions_</definition>
+        <argsstring></argsstring>
+        <name>slider_positions_</name>
+        <briefdescription>
+<para>Additional data. </para>        </briefdescription>
+        <detaileddescription>
+<para>slider_positions_ is the position of the linear potentiometer. Can be used as a joystick input. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="314" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a49bb3cd738af64ef41a9a3d12dde9ac2" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1a932c1319d78144ebcaa8938ae070b784" kindref="member">Vector1d</ref></type>
+        <definition>Vector1d blmc_robots::Teststand::contact_sensors_states_</definition>
+        <argsstring></argsstring>
+        <name>contact_sensors_states_</name>
+        <briefdescription>
+<para>contact_sensors_ is contact sensors at the foot </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="319" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1af9c7f9537b7123dae498d08d5c80fe07" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1a932c1319d78144ebcaa8938ae070b784" kindref="member">Vector1d</ref></type>
+        <definition>Vector1d blmc_robots::Teststand::height_sensors_states_</definition>
+        <argsstring></argsstring>
+        <name>height_sensors_states_</name>
+        <briefdescription>
+<para>height_sensors_ is the height position of the base. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="324" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1aae2cff55630f887e4ed10af78b7dd0c1" prot="private" static="no" mutable="no">
+        <type><ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref></type>
+        <definition>Vector2d blmc_robots::Teststand::motor_max_current_</definition>
+        <argsstring></argsstring>
+        <name>motor_max_current_</name>
+        <briefdescription>
+<para>max_current_ is the maximum current that can be sent to the motors, this a safe guard for development </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="330" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1acf65e7889b3c8b3cbfa8b9e82e984b22" prot="private" static="no" mutable="no">
+        <type>Eigen::Array2d</type>
+        <definition>Eigen::Array2d blmc_robots::Teststand::max_joint_torques_</definition>
+        <argsstring></argsstring>
+        <name>max_joint_torques_</name>
+        <briefdescription>
+<para>max_joint_torques_ (Nm) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="335" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1aedd9aae28f47062870e3afcb9474822b" prot="private" static="no" mutable="no">
+        <type>std::array&lt; bool, 4 &gt;</type>
+        <definition>std::array&lt;bool, 4&gt; blmc_robots::Teststand::motor_enabled_</definition>
+        <argsstring></argsstring>
+        <name>motor_enabled_</name>
+        <briefdescription>
+<para>This gives the status (enabled/disabled) of each motors using the joint ordering convention. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="345" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a62df6b43c18e44f62114b6f4d34ba8f4" prot="private" static="no" mutable="no">
+        <type>std::array&lt; bool, 4 &gt;</type>
+        <definition>std::array&lt;bool, 4&gt; blmc_robots::Teststand::motor_ready_</definition>
+        <argsstring></argsstring>
+        <name>motor_ready_</name>
+        <briefdescription>
+<para>This gives the status (enabled/disabled) of each motors using the joint ordering convention. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="351" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a1fca1e72202c09982c2e77c3166d1ea7" prot="private" static="no" mutable="no">
+        <type>std::array&lt; bool, 2 &gt;</type>
+        <definition>std::array&lt;bool, 2&gt; blmc_robots::Teststand::motor_board_enabled_</definition>
+        <argsstring></argsstring>
+        <name>motor_board_enabled_</name>
+        <briefdescription>
+<para>This gives the status (enabled/disabled of the onboard control cards) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="357" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a89f931457834d37bd01da57944fd21c1" prot="private" static="no" mutable="no">
+        <type>std::array&lt; int, 2 &gt;</type>
+        <definition>std::array&lt;int, 2&gt; blmc_robots::Teststand::motor_board_errors_</definition>
+        <argsstring></argsstring>
+        <name>motor_board_errors_</name>
+        <briefdescription>
+<para>This gives the status (enabled/disabled of the onboard control cards) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="363" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1aab9d6924ad67f65a6931d3db4771c28a" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1a793c8789a7598e8aaf766939da7262af" kindref="member">CanBus_ptr</ref>, 2 &gt;</type>
+        <definition>std::array&lt;CanBus_ptr, 2&gt; blmc_robots::Teststand::can_buses_</definition>
+        <argsstring></argsstring>
+        <name>can_buses_</name>
+        <briefdescription>
+<para>Drivers communication objects. </para>        </briefdescription>
+        <detaileddescription>
+<para>can_buses_ are the 2 can buses on the robot. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="372" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a5ab181273e83c54a66ece2f741b718bb" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1aab1c6ddb1273247a1b45d5e8b417c216" kindref="member">CanBusMotorBoard_ptr</ref>, 2 &gt;</type>
+        <definition>std::array&lt;CanBusMotorBoard_ptr, 2&gt; blmc_robots::Teststand::can_motor_boards_</definition>
+        <argsstring></argsstring>
+        <name>can_motor_boards_</name>
+        <briefdescription>
+<para>can_motor_boards_ are the 2 can motor board. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="377" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1ae530206f8c54cbc04d7cf69a16d1e99a" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1ae1a0f9992bc8fbbc1943d887f517c180" kindref="member">MotorInterface_ptr</ref>, 2 &gt;</type>
+        <definition>std::array&lt;MotorInterface_ptr, 2&gt; blmc_robots::Teststand::motors_</definition>
+        <argsstring></argsstring>
+        <name>motors_</name>
+        <briefdescription>
+<para>motors_ are the objects allowing us to send motor commands and receive data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="383" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a2c14882d88deb56edde5240a8d841f2a" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__robots_1_1BlmcJointModules" kindref="compound">BlmcJointModules</ref>&lt; 2 &gt;</type>
+        <definition>BlmcJointModules&lt;2&gt; blmc_robots::Teststand::joints_</definition>
+        <argsstring></argsstring>
+        <name>joints_</name>
+        <briefdescription>
+<para>joint_ptrs_ are the objects allowing us to send commands and receive data at the joint level. </para>        </briefdescription>
+        <detaileddescription>
+<para>It also ones some self calibration routines. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="390" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="390" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a2a67df9dc9004f9e70bcdd6ad8f8189e" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1a4cb9a95e8b2c0bf237ce29f5252c7b73" kindref="member">Slider_ptr</ref>, 2 &gt;</type>
+        <definition>std::array&lt;Slider_ptr, 2&gt; blmc_robots::Teststand::sliders_</definition>
+        <argsstring></argsstring>
+        <name>sliders_</name>
+        <briefdescription>
+<para>sliders_ these are analogue input from linear potentiometers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="395" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="395" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1af2f14b46da7f2dfbeeea59b47669f1e8" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1ac78fe5c68e56a3b884117109959e4d58" kindref="member">ContactSensor_ptr</ref>, 1 &gt;</type>
+        <definition>std::array&lt;ContactSensor_ptr, 1&gt; blmc_robots::Teststand::contact_sensors_</definition>
+        <argsstring></argsstring>
+        <name>contact_sensors_</name>
+        <briefdescription>
+<para>contact_sensors_ is the contact sensors at each foot tips. </para>        </briefdescription>
+        <detaileddescription>
+<para>They also are analogue inputs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="401" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a41a93d1d128333a9981603eb82d068c0" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1a921d3f5a8878524375bf7e740f2fb788" kindref="member">HeightSensor_ptr</ref>, 1 &gt;</type>
+        <definition>std::array&lt;HeightSensor_ptr, 1&gt; blmc_robots::Teststand::height_sensors_</definition>
+        <argsstring></argsstring>
+        <name>height_sensors_</name>
+        <briefdescription>
+<para>contact_sensors_ is the contact sensors at each foot tips. </para>        </briefdescription>
+        <detaileddescription>
+<para>They also are analogue inputs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="407" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="407" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classblmc__robots_1_1Teststand_1a401728dd5ba91b8603de79125fcb0a66" prot="private" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double blmc_robots::Teststand::max_joint_torque_security_margin_</definition>
+        <argsstring></argsstring>
+        <name>max_joint_torque_security_margin_</name>
+        <initializer>= 0.99</initializer>
+        <briefdescription>
+<para>Security margin on the saturation of the control. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="339" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a4747b0754cd3dd669c02f27662baef7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_robots::Teststand::Teststand</definition>
+        <argsstring>()</argsstring>
+        <name>Teststand</name>
+        <briefdescription>
+<para><ref refid="classblmc__robots_1_1Teststand" kindref="compound">Teststand</ref> is the constructor of the class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Motor data</para><para>Joint data</para><para>Additional data</para><para>Setup some known data</para>        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="45" column="1" bodyfile="src/teststand.cpp" bodystart="8" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1aa41ad951a8259fd15e6309e850a6084a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::Teststand::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <briefdescription>
+<para>initialize the robot by setting aligning the motors and calibrate the sensors to 0 </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="51" column="1" bodyfile="src/teststand.cpp" bodystart="57" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1aabb484d65bca5a341dd24abd91c47b9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_robots::Teststand::send_target_joint_torque</definition>
+        <argsstring>(const Eigen::Ref&lt; Vector2d &gt; target_joint_torque)</argsstring>
+        <name>send_target_joint_torque</name>
+        <param>
+          <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+          <declname>target_joint_torque</declname>
+        </param>
+        <briefdescription>
+<para>send_target_torques sends the target currents to the motors </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="56" column="1" bodyfile="src/teststand.cpp" bodystart="183" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_robots::Teststand::acquire_sensors</definition>
+        <argsstring>()</argsstring>
+        <name>acquire_sensors</name>
+        <briefdescription>
+<para>acquire_sensors acquire all available sensors, WARNING !!!! this method has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Joint data</para><para>Additional data</para><para>Ati sensor readings.</para>        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="63" column="1" bodyfile="src/teststand.cpp" bodystart="118" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1ad4660570e3e1b77717004b3ce8056faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_robots::Teststand::calibrate</definition>
+        <argsstring>(const Vector2d &amp;home_offset_rad)</argsstring>
+        <name>calibrate</name>
+        <param>
+          <type>const <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &amp;</type>
+          <declname>home_offset_rad</declname>
+        </param>
+        <briefdescription>
+<para>This function will run a small controller that will move the joints untils the next joint index and reset the joint zero with this knowledge. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if success </para></simplesect>
+<simplesect kind="return"><para>false if failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="73" column="1" bodyfile="src/teststand.cpp" bodystart="194" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a4897109730380ae0be7da37e2bd69e81" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_motor_inertias</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_inertias</name>
+        <briefdescription>
+<para>get_motor_inertias </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the motor inertias </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="79" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a483bc937ac8c95b93bb90c47744da2e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_motor_torque_constants</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_torque_constants</name>
+        <briefdescription>
+<para>get_motor_torque_constants </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the torque constants of each motor </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="88" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1adf08db3dbb4fd8da74c8ef15fb393c1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_joint_positions</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_positions</name>
+        <briefdescription>
+<para>get_joint_positions WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the joint angle of each module </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="100" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1acd1b325c6039fffbd40198f6deb9542c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_joint_velocities</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_velocities</name>
+        <briefdescription>
+<para>get_joint_velocities WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the joint velocities </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="112" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1ae21ac86534e5ee7f15068f94957ba826" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_joint_torques</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_torques</name>
+        <briefdescription>
+<para>get_joint_torques WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the joint torques </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="124" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a0aa762511624791e4ccbec5ad664371f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_joint_target_torques</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_target_torques</name>
+        <briefdescription>
+<para>get_joint_torques </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the target joint torques </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="133" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a7def64b82a1cb58c9ae8c9c54bcaa887" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_joint_gear_ratios</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_gear_ratios</name>
+        <briefdescription>
+<para>get_joint_gear_ratios </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the joint gear ratios </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="142" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="142" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a2fa7aacb213c7898bb04f791ca3687d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_joint_encoder_index</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_encoder_index</name>
+        <briefdescription>
+<para>get_joint_encoder_index WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The last observed encoder index in joint coordinates. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="154" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="154" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1adbceb17de729cced8e9985b9177efa7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_zero_positions</definition>
+        <argsstring>()</argsstring>
+        <name>get_zero_positions</name>
+        <briefdescription>
+<para>get_zero_positions </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the position where the robot should be in &quot;zero&quot; configuration </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="163" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="163" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1af46acfc1bd408d40b850c4780e834f53" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_slider_positions</definition>
+        <argsstring>()</argsstring>
+        <name>get_slider_positions</name>
+        <briefdescription>
+<para>get_slider_positions WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the current sliders positions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="175" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="175" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a0486afbd05d4f7c354ebad8432c178bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1a932c1319d78144ebcaa8938ae070b784" kindref="member">Vector1d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::Teststand::get_contact_sensors_states</definition>
+        <argsstring>()</argsstring>
+        <name>get_contact_sensors_states</name>
+        <briefdescription>
+<para>get_contact_sensors_states WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the state of the contacts states </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="187" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1af8a0d1cc608f91a0a752758c7554087a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1a932c1319d78144ebcaa8938ae070b784" kindref="member">Vector1d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::Teststand::get_height_sensors</definition>
+        <argsstring>()</argsstring>
+        <name>get_height_sensors</name>
+        <briefdescription>
+<para>get_contact_sensors_states WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the state of the contacts states </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="199" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="199" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a2f912631ee055e3909ef1a5e06d8d27c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" kindref="member">Vector2d</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector2d&gt; blmc_robots::Teststand::get_max_current</definition>
+        <argsstring>()</argsstring>
+        <name>get_max_current</name>
+        <briefdescription>
+<para>get_max_current </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the max current that has been hardcoded in the constructor of this class. TODO: parametrize this via yaml or something else. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="209" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1af4bf3a4692fdeacdad78a7213c3fbe98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="classblmc__robots_1_1Teststand_1a51f17cf2b01dd8252e21db97b486e067" kindref="member">VectorAtiForce</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;VectorAtiForce&gt; blmc_robots::Teststand::get_ati_force</definition>
+        <argsstring>()</argsstring>
+        <name>get_ati_force</name>
+        <briefdescription>
+<para>Get the ati_force_ object WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const Eigen::Ref&lt;VectorAtiForce&gt; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="221" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="221" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1Teststand_1a27ba45a099b4ff6852f5acd0226aa915" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; <ref refid="classblmc__robots_1_1Teststand_1a466977786f9b007854fa2eb2a97b0de9" kindref="member">VectorAtiTorque</ref> &gt;</type>
+        <definition>const Eigen::Ref&lt;VectorAtiTorque&gt; blmc_robots::Teststand::get_ati_torque</definition>
+        <argsstring>()</argsstring>
+        <name>get_ati_torque</name>
+        <briefdescription>
+<para>Get the ati_torque_ object WARNING !!!! The method <ref refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" kindref="member">acquire_sensors()</ref> has to be called prior to any getter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const Eigen::Ref&lt;VectorAtiTorque&gt; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/teststand.hpp" line="233" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="233" bodyend="236"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The class <ref refid="classblmc__robots_1_1Teststand" kindref="compound">Teststand</ref> is used to control the <ref refid="classblmc__robots_1_1Teststand" kindref="compound">Teststand</ref> robot located at MPI-IS Tuebingen. </para>    </briefdescription>
+    <detaileddescription>
+<para>The robot is composed of a single leg on a vertical rail. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="54">
+        <label>blmc_robots::BlmcJointModules&lt; 2 &gt;</label>
+        <link refid="classblmc__robots_1_1BlmcJointModules"/>
+      </node>
+      <node id="53">
+        <label>blmc_robots::Teststand</label>
+        <link refid="classblmc__robots_1_1Teststand"/>
+        <childnode refid="54" relation="usage">
+          <edgelabel>joints_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_robots/teststand.hpp" line="23" column="1" bodyfile="include/blmc_robots/teststand.hpp" bodystart="22" bodyend="408"/>
+    <listofallmembers>
+      <member refid="classblmc__robots_1_1Teststand_1a4203e25148ab5b4ddfef3b46647213c6" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>acquire_sensors</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1abbde43d983602e1ead15b1b525cc524f" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>ati_force_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1ac733828512ab4ba2ad43625915a4a9fd" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>ati_sensor_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a8c4e095818a0c80739a63a91bb0670c6" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>ati_torque_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1ad4660570e3e1b77717004b3ce8056faf" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>calibrate</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1aab9d6924ad67f65a6931d3db4771c28a" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>can_buses_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a5ab181273e83c54a66ece2f741b718bb" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>can_motor_boards_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1af2f14b46da7f2dfbeeea59b47669f1e8" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>contact_sensors_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a49bb3cd738af64ef41a9a3d12dde9ac2" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>contact_sensors_states_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1af4bf3a4692fdeacdad78a7213c3fbe98" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_ati_force</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a27ba45a099b4ff6852f5acd0226aa915" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_ati_torque</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a0486afbd05d4f7c354ebad8432c178bd" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_contact_sensors_states</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1af8a0d1cc608f91a0a752758c7554087a" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_height_sensors</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a2fa7aacb213c7898bb04f791ca3687d1" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_joint_encoder_index</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a7def64b82a1cb58c9ae8c9c54bcaa887" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_joint_gear_ratios</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1adf08db3dbb4fd8da74c8ef15fb393c1a" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_joint_positions</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a0aa762511624791e4ccbec5ad664371f" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_joint_target_torques</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1ae21ac86534e5ee7f15068f94957ba826" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_joint_torques</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1acd1b325c6039fffbd40198f6deb9542c" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_joint_velocities</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a2f912631ee055e3909ef1a5e06d8d27c" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_max_current</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a4897109730380ae0be7da37e2bd69e81" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_motor_inertias</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a483bc937ac8c95b93bb90c47744da2e8" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_motor_torque_constants</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1af46acfc1bd408d40b850c4780e834f53" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_slider_positions</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1adbceb17de729cced8e9985b9177efa7c" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>get_zero_positions</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a41a93d1d128333a9981603eb82d068c0" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>height_sensors_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1af9c7f9537b7123dae498d08d5c80fe07" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>height_sensors_states_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1aa41ad951a8259fd15e6309e850a6084a" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>initialize</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a2a0b967c36ea63a8bb564bdeebcc0846" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>joint_encoder_index_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1ad7b3b6c032d1b1b9c886089ea21a9c2a" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>joint_gear_ratios_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a5ff6d1081ece6fadf9b3bac578b08001" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>joint_positions_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a0db888b3e84fe194629bb14b6fa2e485" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>joint_target_torques_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a59ef3d86efd043ee1511bad70624bdae" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>joint_torques_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1ab0a776f921bec24b81bc08f7ceebcba6" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>joint_velocities_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a5923674652df619a0692333fb27b8369" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>joint_zero_positions_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a2c14882d88deb56edde5240a8d841f2a" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>joints_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a401728dd5ba91b8603de79125fcb0a66" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>max_joint_torque_security_margin_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1acf65e7889b3c8b3cbfa8b9e82e984b22" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>max_joint_torques_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a1fca1e72202c09982c2e77c3166d1ea7" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>motor_board_enabled_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a89f931457834d37bd01da57944fd21c1" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>motor_board_errors_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1aedd9aae28f47062870e3afcb9474822b" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>motor_enabled_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1afe8801388760cd85771a99e3a89c9f69" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>motor_inertias_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1aae2cff55630f887e4ed10af78b7dd0c1" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>motor_max_current_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a62df6b43c18e44f62114b6f4d34ba8f4" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>motor_ready_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a0d4bfad1f7afaaf459131667fac2b2d0" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>motor_torque_constants_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1ae530206f8c54cbc04d7cf69a16d1e99a" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>motors_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1aabb484d65bca5a341dd24abd91c47b9b" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>send_target_joint_torque</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1ad0ce099eef5b57553d36927e3f7f1203" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>slider_positions_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a2a67df9dc9004f9e70bcdd6ad8f8189e" prot="private" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>sliders_</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a4747b0754cd3dd669c02f27662baef7e" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>Teststand</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a51f17cf2b01dd8252e21db97b486e067" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>VectorAtiForce</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a466977786f9b007854fa2eb2a97b0de9" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>VectorAtiTorque</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a23b0a73bc99ce4a3588204b7480eb6d7" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>VectorContact</name></member>
+      <member refid="classblmc__robots_1_1Teststand_1a201214fc01f68b97ceba62af3fb8cccf" prot="public" virt="non-virtual"><scope>blmc_robots::Teststand</scope><name>VectorSlider</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

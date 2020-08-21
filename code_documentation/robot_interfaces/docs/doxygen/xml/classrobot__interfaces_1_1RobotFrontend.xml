@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classrobot__interfaces_1_1RobotFrontend" kind="class" language="C++" prot="public">
+    <compoundname>robot_interfaces::RobotFrontend</compoundname>
+    <derivedcompoundref refid="classrobot__interfaces_1_1Robot" prot="public" virt="non-virtual">robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;</derivedcompoundref>
+    <includes refid="robot__frontend_8hpp" local="no">robot_frontend.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Action</type>
+      </param>
+      <param>
+        <type>typename Observation</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classrobot__interfaces_1_1RobotFrontend_1a02bebc6c3e9822f026c48f970d80a865" prot="public" static="no">
+        <type>time_series::Timestamp</type>
+        <definition>typedef time_series::Timestamp robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::TimeStamp</definition>
+        <argsstring></argsstring>
+        <name>TimeStamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="41" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotFrontend_1a256d4a3359c46caca9fe92d62b4ae413" prot="protected" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref>&lt; Action, Observation &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;RobotData&lt;Action, Observation&gt; &gt; robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::robot_data_</definition>
+        <argsstring></argsstring>
+        <name>robot_data_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="208" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a0bd84764fb1a3004282706963aa48c3e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::RobotFrontend</definition>
+        <argsstring>(std::shared_ptr&lt; RobotData&lt; Action, Observation &gt;&gt; robot_data)</argsstring>
+        <name>RobotFrontend</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref>&lt; Action, Observation &gt;&gt;</type>
+          <declname>robot_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="43" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a95964f3d7aeaab7eec4c9a8782500c0f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Observation</type>
+        <definition>Observation robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::get_observation</definition>
+        <argsstring>(const TimeIndex &amp;t) const</argsstring>
+        <name>get_observation</name>
+        <param>
+          <type>const TimeIndex &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Get observation of time step t. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the time step. If t is in the future, this method will block and wait. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The observation of time step t. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if t is too old and not in the time series buffer anymore. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="57" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a8710ad1f0de000dfb099585e0ac7f140" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Action</type>
+        <definition>Action robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::get_desired_action</definition>
+        <argsstring>(const TimeIndex &amp;t) const</argsstring>
+        <name>get_desired_action</name>
+        <param>
+          <type>const TimeIndex &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Get the desired action of time step t. </para>        </briefdescription>
+        <detaileddescription>
+<para>The desired action is the action as it is passed by the user in <ref refid="classrobot__interfaces_1_1RobotFrontend_1a26c137f65b908d6eddffff75df38361a" kindref="member">append_desired_action</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the time step. If t is in the future, this method will block and wait. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The desired action of time step t. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if t is too old and not in the time series buffer anymore. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="74" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a870651d849fe0f1a4909820cc3b6de40" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Action</type>
+        <definition>Action robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::get_applied_action</definition>
+        <argsstring>(const TimeIndex &amp;t) const</argsstring>
+        <name>get_applied_action</name>
+        <param>
+          <type>const TimeIndex &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Get the applied action of time step t. </para>        </briefdescription>
+        <detaileddescription>
+<para>The applied action is the one that was actually applied to the robot based on the desired action of that time step. It may differ from the desired one e.g. due to some safety checks which limit the maximum torque. If and how the action is modified depends on the implementation of the <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the time step. If t is in the future, this method will block and wait. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The applied action of time step t. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if t is too old and not in the time series buffer anymore. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="94" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a080a709a39ff710c2a38bd53ff313645" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrobot__interfaces_1_1Status" kindref="compound">Status</ref></type>
+        <definition>Status robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::get_status</definition>
+        <argsstring>(const TimeIndex &amp;t) const</argsstring>
+        <name>get_status</name>
+        <param>
+          <type>const TimeIndex &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="98" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a68cfe3df122ae9fe5cc6ea15ea867a6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>TimeStamp</type>
+        <definition>TimeStamp robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::get_time_stamp_ms</definition>
+        <argsstring>(const TimeIndex &amp;t) const</argsstring>
+        <name>get_time_stamp_ms</name>
+        <param>
+          <type>const TimeIndex &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use get_timestamp_ms instead </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="104" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a6ad481cd306ea4fc2739dc9aba4cb96a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>TimeStamp</type>
+        <definition>TimeStamp robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::get_timestamp_ms</definition>
+        <argsstring>(const TimeIndex &amp;t) const</argsstring>
+        <name>get_timestamp_ms</name>
+        <param>
+          <type>const TimeIndex &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Get the timestamp of time step t. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the time step. If t is in the future, this method will block and wait. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Timestamp of time step t. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if t is too old and not in the time series buffer anymore. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="118" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="118" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a6a2120216c6154216994b562c0e7a7b2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>TimeIndex</type>
+        <definition>TimeIndex robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::get_current_timeindex</definition>
+        <argsstring>() const</argsstring>
+        <name>get_current_timeindex</name>
+        <briefdescription>
+<para>Get the current time index. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The latest time index for which observations are available. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="128" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="128" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a26c137f65b908d6eddffff75df38361a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TimeIndex</type>
+        <definition>TimeIndex robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::append_desired_action</definition>
+        <argsstring>(const Action &amp;desired_action)</argsstring>
+        <name>append_desired_action</name>
+        <param>
+          <type>const Action &amp;</type>
+          <declname>desired_action</declname>
+        </param>
+        <briefdescription>
+<para>Append a desired action to the action time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>This will append an action to the &quot;desired actions&quot; time series. Note that this does not block until the action is actually executed. The time series acts like a queue from which the <ref refid="classrobot__interfaces_1_1RobotBackend" kindref="compound">RobotBackend</ref> takes the actions one by one to send them to the actual robot. It is possible to call this method multiple times in a row to already provide actions for the next time steps.</para><para>The time step at which the given action will be applied is returned by this method.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired_action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The action that shall be applied on the robot. Note that the actually applied action might be different depending on the implementation of the <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref> (see <ref refid="classrobot__interfaces_1_1RobotFrontend_1a870651d849fe0f1a4909820cc3b6de40" kindref="member">get_applied_action</ref>). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Time step at which the action will be applied. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="152" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="152" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotFrontend_1a8b3af92df3d5ee90beb9402e45c4745e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::RobotFrontend&lt; Action, Observation &gt;::wait_until_timeindex</definition>
+        <argsstring>(const TimeIndex &amp;t) const</argsstring>
+        <name>wait_until_timeindex</name>
+        <param>
+          <type>const TimeIndex &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Wait until the specified time step is reached. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time step until which is waited. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if t is too old and not in the time series buffer anymore. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_frontend.hpp" line="202" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="202" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Communication link between <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref> and the user. </para>    </briefdescription>
+    <detaileddescription>
+<para>Takes care of communication between the <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref> and the user. It is just a thin wrapper around <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref> to facilitate interaction and also to make sure the user cannot use <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref> in incorrect ways.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Observation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="66">
+        <label>robot_interfaces::RobotFrontend&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotFrontend"/>
+      </node>
+      <node id="67">
+        <label>robot_interfaces::Robot&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1Robot"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/robot_interfaces/robot_frontend.hpp" line="39" column="1" bodyfile="include/robot_interfaces/robot_frontend.hpp" bodystart="38" bodyend="209"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a26c137f65b908d6eddffff75df38361a" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>append_desired_action</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a870651d849fe0f1a4909820cc3b6de40" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>get_applied_action</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a6a2120216c6154216994b562c0e7a7b2" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>get_current_timeindex</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a8710ad1f0de000dfb099585e0ac7f140" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>get_desired_action</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a95964f3d7aeaab7eec4c9a8782500c0f" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>get_observation</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a080a709a39ff710c2a38bd53ff313645" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>get_status</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a68cfe3df122ae9fe5cc6ea15ea867a6e" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>get_time_stamp_ms</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a6ad481cd306ea4fc2739dc9aba4cb96a" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>get_timestamp_ms</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a256d4a3359c46caca9fe92d62b4ae413" prot="protected" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>robot_data_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a0bd84764fb1a3004282706963aa48c3e" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>RobotFrontend</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a02bebc6c3e9822f026c48f970d80a865" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>TimeStamp</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a8b3af92df3d5ee90beb9402e45c4745e" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotFrontend</scope><name>wait_until_timeindex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

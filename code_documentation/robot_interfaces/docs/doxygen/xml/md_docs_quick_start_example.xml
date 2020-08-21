@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_docs_quick_start_example" kind="page">
+    <compoundname>md_docs_quick_start_example</compoundname>
+    <title>Quick Start Example</title>
+    <detaileddescription>
+<para>Sending actions to and getting observations from the robot is very easy. See the following example, using the TriFinger robot, that simply sends a constant position command.</para><para><simplesect kind="note"><para>This example shows only the frontend part of a multi-process setup. The backend for the actual robot needs to be run in a separate process.</para></simplesect>
+<heading level="2">Python</heading>
+</para><para><programlisting><codeline><highlight class="keyword">import</highlight><highlight class="normal"><sp/>robot_interfaces</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">robot_data<sp/>=<sp/>robot_interfaces.trifinger.MultiProcessData(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;trifinger&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">frontend<sp/>=<sp/>robot_interfaces.trifinger.Frontend(robot_data)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">position<sp/>=<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>1,<sp/>Upper<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>1,<sp/>Middle<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>1,<sp/>Lower<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>2,<sp/>Upper<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>2,<sp/>Middle<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>2,<sp/>Lower<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>3,<sp/>Upper<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>3,<sp/>Middle<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/></highlight><highlight class="comment">#<sp/>Finger<sp/>3,<sp/>Lower<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>construct<sp/>an<sp/>action<sp/>with<sp/>a<sp/>position<sp/>command</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>action<sp/>=<sp/>robot_interfaces.trifinger.Action(position=position)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>send<sp/>the<sp/>action<sp/>to<sp/>the<sp/>robot<sp/>(will<sp/>be<sp/>applied<sp/>in<sp/>time<sp/>step<sp/>t)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>frontend.append_desired_action(action)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>wait<sp/>until<sp/>time<sp/>step<sp/>t<sp/>and<sp/>get<sp/>observation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>observation<sp/>=<sp/>frontend.get_observation(t)</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Observed<sp/>Position:<sp/>{}&quot;</highlight><highlight class="normal">.format(observation.position))</highlight></codeline>
+</programlisting></para><para><heading level="2">C++</heading>
+</para><para><programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;robot_interfaces/finger_types.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Some<sp/>convenience<sp/>typedefs<sp/>to<sp/>make<sp/>the<sp/>code<sp/>below<sp/>more<sp/>compact</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classrobot__interfaces_1_1MultiProcessRobotData" kindref="compound">robot_interfaces::TriFingerTypes::MultiProcessData</ref><sp/>RobotData;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classrobot__interfaces_1_1RobotFrontend" kindref="compound">robot_interfaces::TriFingerTypes::Frontend</ref><sp/>RobotFrontend;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">robot_interfaces::TriFingerTypes::Action</ref><sp/>Action;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>robot_data<sp/>=<sp/>std::make_shared&lt;RobotData&gt;(</highlight><highlight class="stringliteral">&quot;trifinger&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>frontend<sp/>=<sp/>RobotFrontend(robot_data);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Action::Vector<sp/>position;<sp/><sp/></highlight><highlight class="comment">//<sp/>&lt;-<sp/>this<sp/>is<sp/>an<sp/>&quot;Eigen::Vector9d&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>position<sp/>&lt;&lt;<sp/><sp/>0.0,<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>1,<sp/>Upper<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>1,<sp/>Middle<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>1,<sp/>Lower<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>2,<sp/>Upper<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>2,<sp/>Middle<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>2,<sp/>Lower<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>3,<sp/>Upper<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>3,<sp/>Middle<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1.7;<sp/><sp/></highlight><highlight class="comment">//<sp/>Finger<sp/>3,<sp/>Lower<sp/>Joint</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>construct<sp/>an<sp/>action<sp/>with<sp/>a<sp/>position<sp/>command</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Action<sp/>action<sp/>=<sp/>Action::Position(position);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>send<sp/>the<sp/>action<sp/>to<sp/>the<sp/>robot<sp/>(will<sp/>be<sp/>applied<sp/>in<sp/>time<sp/>step<sp/>t)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>frontend.append_desired_action(action);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wait<sp/>until<sp/>time<sp/>step<sp/>t<sp/>and<sp/>get<sp/>observation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>observation<sp/>=<sp/>frontend.get_observation(t);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Observed<sp/>Position:<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>observation.position</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para>When using C++ you need to add the package <computeroutput>robot_interfaces</computeroutput> as build dependency to your package.</para><para><heading level="2">More Examples</heading>
+</para><para>For more examples, see the <ulink url="https://github.com/open-dynamic-robot-initiative/robot_interfaces/tree/master/demos">C++ demos of the <computeroutput>robot_interfaces</computeroutput> package</ulink> and the <ulink url="https://github.com/open-dynamic-robot-initiative/robot_fingers/tree/master/demos">Python demos in the <computeroutput>robot_fingers</computeroutput> package</ulink>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

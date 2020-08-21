@@ -1,0 +1,61 @@
+We provide a Singularity image with all required dependencies to build and run the software. See \hyperlink{md_doc_singularity}{About Singularity}.
+
+You can, of course, also use the package without Singularity. In this case you need to install all dependencies locally, though.
+
+\subsection*{Get the Source }
+
+{\ttfamily robot\+\_\+fingers} depends on several other of our packages which are organized in separate repositories. We therefore use a workspace management tool called \href{https://pypi.org/project/treep/}{\tt treep} which allows easy cloning of multi-\/repository projects.
+
+treep can be installed via pip\+: \begin{DoxyVerb}pip install treep
+\end{DoxyVerb}
+
+
+Clone the treep configuration containing the \char`\"{}\+R\+O\+B\+O\+T\+\_\+\+F\+I\+N\+G\+E\+R\+S\char`\"{} project\+: \begin{DoxyVerb}git clone git@github.com:machines-in-motion/treep_machines_in_motion.git
+\end{DoxyVerb}
+
+
+{\bfseries Note\+:} treep searches for a configuration directory from the current working directory upwards. So you can use treep in the directory in which you invoked the {\ttfamily git clone} command above or any subdirectory.
+
+Now clone the project\+: \begin{DoxyVerb}treep --clone ROBOT_FINGERS
+\end{DoxyVerb}
+
+
+{\bfseries Important\+:} treep uses S\+SH to clone from github. So for the above command to work, you need a github account with a registered S\+SH key. Further this key needs to work without asking for a password everytime. To achieve this, run \begin{DoxyVerb}ssh-add
+\end{DoxyVerb}
+
+
+first.
+
+\subsection*{Build }
+
+\subsubsection*{With Singularity}
+
+Go to the root directory of your workspace (the one containing the \char`\"{}src\char`\"{} folder) and run the container in shell mode (see \hyperlink{md_doc_singularity}{About Singularity})\+: \begin{DoxyVerb}singularity shell -e --no-home -B $(pwd) path/to/image.sif
+\end{DoxyVerb}
+
+
+The current working directory gets automatically mounted into the container so you can edit all the files from outside the container using your preferred editor or I\+DE and all changes will directly be visible inside the container. Vise versa modifications done from inside the container will modify the files on the host system!
+
+Inside the container first set up the environment\+: \begin{DoxyVerb}Singularity> source /setup.bash
+\end{DoxyVerb}
+
+
+This will source the R\+OS {\ttfamily setup.\+bash} and create an alias {\ttfamily catbuild} for catkin that already contains the argument to set the Python executable to python3 (needed to get Python 3 bindings).
+
+Now you can build by using this alias\+: \begin{DoxyVerb}Singularity> catbuild
+\end{DoxyVerb}
+
+
+\subsubsection*{Without Singularity}
+
+To build, cd into the {\ttfamily workspace} directory and build with \begin{DoxyVerb}catkin build
+\end{DoxyVerb}
+
+
+\subsubsection*{Python Bindings}
+
+With the above command Python bindings will be build for the default python version of your system (see {\ttfamily python -\/-\/version}). If you want to use a different version (e.\+g. python3), you can specify as follows\+: \begin{DoxyVerb}catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3
+\end{DoxyVerb}
+
+
+Note that all our scripts are implemented for Python 3, so if your default version is not already 3, you need to specify this in order to use these scripts. 

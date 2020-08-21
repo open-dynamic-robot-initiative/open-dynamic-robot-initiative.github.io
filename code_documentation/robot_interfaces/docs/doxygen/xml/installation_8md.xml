@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="installation_8md" kind="file" language="Markdown">
+    <compoundname>installation.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Build<sp/>Instructions</highlight></codeline>
+<codeline><highlight class="normal">==================</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">@note<sp/>If<sp/>you<sp/>intend<sp/>to<sp/>use<sp/>this<sp/>interface<sp/>to<sp/>control<sp/>your<sp/>own<sp/>robot,<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">package<sp/>(and<sp/>its<sp/>dependencies)<sp/>is<sp/>enough,<sp/>and<sp/>you<sp/>can<sp/>follow<sp/>the<sp/>instructions</highlight></codeline>
+<codeline><highlight class="normal">below.<sp/><sp/>If<sp/>you<sp/>are<sp/>looking<sp/>for<sp/>the<sp/>interface<sp/>of<sp/>the<sp/>TriFinger<sp/>robot<sp/>interface,</highlight></codeline>
+<codeline><highlight class="normal">see<sp/>the<sp/>installation<sp/>instructions<sp/>of<sp/>the<sp/>[`robot_fingers`</highlight></codeline>
+<codeline><highlight class="normal">package](https://open-dynamic-robot-initiative.github.io/code_documentation/robot_fingers/docs/doxygen/html/index.html)</highlight></codeline>
+<codeline><highlight class="normal">instead<sp/>(this<sp/>also<sp/>includes<sp/>`robot_interfaces`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Dependencies</highlight></codeline>
+<codeline><highlight class="normal">------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>are<sp/>using<sp/>[catkin](http://wiki.ros.org/catkin)<sp/>as<sp/>build<sp/>tool<sp/>(i.e.</highlight></codeline>
+<codeline><highlight class="normal">`robot_interfaces`<sp/>is<sp/>a<sp/>catkin<sp/>package).<sp/><sp/>While<sp/>we<sp/>are<sp/>not<sp/>really<sp/>depending<sp/>on</highlight></codeline>
+<codeline><highlight class="normal">any<sp/>[ROS](http://www.ros.org)<sp/>packages,<sp/>this<sp/>means<sp/>you<sp/>need<sp/>a<sp/>basic<sp/>ROS</highlight></codeline>
+<codeline><highlight class="normal">installation<sp/>to<sp/>build.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>following<sp/>we<sp/>are<sp/>using<sp/>catkin_tools<sp/>which<sp/>need<sp/>to<sp/>be<sp/>installed</highlight></codeline>
+<codeline><highlight class="normal">separately:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pip<sp/>install<sp/>catkin_tools</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>are<sp/>testing<sp/>on<sp/>Ubuntu<sp/>18.04<sp/>with<sp/>ROS<sp/>Melodic.<sp/><sp/>Other<sp/>versions<sp/>may<sp/>work<sp/>as</highlight></codeline>
+<codeline><highlight class="normal">well<sp/>but<sp/>are<sp/>not<sp/>officially<sp/>supported.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">@note<sp/>We<sp/>provide<sp/>a<sp/>Singularity<sp/>image<sp/>with<sp/>all<sp/>dependencies<sp/>for<sp/>the<sp/>TriFinger</highlight></codeline>
+<codeline><highlight class="normal">robot<sp/>which<sp/>also<sp/>covers<sp/>everything<sp/>needed<sp/>for<sp/>`robot_interfaces`.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">documentation<sp/>of<sp/>the<sp/>[`robot_fingers`</highlight></codeline>
+<codeline><highlight class="normal">package](https://open-dynamic-robot-initiative.github.io/code_documentation/robot_fingers/docs/doxygen/html/index.html)</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>more<sp/>information.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Get<sp/>the<sp/>Source</highlight></codeline>
+<codeline><highlight class="normal">--------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`robot_interfaces`<sp/>depends<sp/>on<sp/>several<sp/>other<sp/>of<sp/>our<sp/>packages<sp/>which<sp/>are</highlight></codeline>
+<codeline><highlight class="normal">organized<sp/>in<sp/>separate<sp/>repositories.<sp/><sp/>We<sp/>therefore<sp/>use<sp/>a<sp/>workspace<sp/>management</highlight></codeline>
+<codeline><highlight class="normal">tool<sp/>called<sp/>[treep](https://pypi.org/project/treep/)<sp/>which<sp/>allows<sp/>easy<sp/>cloning</highlight></codeline>
+<codeline><highlight class="normal">of<sp/>multi-repository<sp/>projects.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">treep<sp/>can<sp/>be<sp/>installed<sp/>via<sp/>pip:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pip<sp/>install<sp/>treep</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Clone<sp/>the<sp/>treep<sp/>configuration<sp/>containing<sp/>the<sp/>&quot;ROBOT_INTERFACES&quot;<sp/>project:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>git<sp/>clone<sp/>git@github.com:machines-in-motion/treep_machines_in_motion.git</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">@note<sp/><sp/>treep<sp/>searches<sp/>for<sp/>a<sp/>configuration<sp/>directory<sp/>from<sp/>the<sp/>current<sp/>working</highlight></codeline>
+<codeline><highlight class="normal">directory<sp/>upwards.<sp/><sp/>So<sp/>you<sp/>can<sp/>use<sp/>treep<sp/>in<sp/>the<sp/>directory<sp/>in<sp/>which<sp/>you<sp/>invoked</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>`git<sp/>clone`<sp/>command<sp/>above<sp/>or<sp/>any<sp/>subdirectory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Now<sp/>clone<sp/>the<sp/>project:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>treep<sp/>--clone<sp/>ROBOT_INTERFACES</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">@note<sp/>**Important:**<sp/>treep<sp/>uses<sp/>SSH<sp/>to<sp/>clone<sp/>from<sp/>github.<sp/><sp/>So<sp/>for<sp/>the<sp/>above<sp/>command<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">work,<sp/>you<sp/>need<sp/>a<sp/>github<sp/>account<sp/>with<sp/>a<sp/>registered<sp/>SSH<sp/>key.<sp/><sp/>Further<sp/>this<sp/>key</highlight></codeline>
+<codeline><highlight class="normal">needs<sp/>to<sp/>work<sp/>without<sp/>asking<sp/>for<sp/>a<sp/>password<sp/>everytime.<sp/><sp/>To<sp/>achieve<sp/>this,<sp/>run</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ssh-add</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">first.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>should<sp/>now<sp/>have<sp/>the<sp/>following<sp/>directory<sp/>structure:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>├──<sp/>treep_machines_in_motion</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>└──<sp/>workspace</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>src</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>catkin</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>├──<sp/>core_robotics</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>│  <sp/>├──<sp/>mpi_cmake_modules</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>│  <sp/>├──<sp/>pybind11_catkin</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>│  <sp/>├──<sp/>real_time_tools</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>│  <sp/>├──<sp/>shared_memory</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>│  <sp/>├──<sp/>time_series</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>│  <sp/>└──<sp/>yaml_cpp_catkin</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>├──<sp/>examples</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>│  <sp/>└──<sp/>ci_example</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>├──<sp/>robots</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>│  <sp/>└──<sp/>robot_interfaces</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/>└──<sp/>tools</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/><sp/><sp/><sp/><sp/>├──<sp/>serialization_utils</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│  <sp/><sp/><sp/><sp/><sp/>└──<sp/>signal_handler</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>not_catkin</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>third_party</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>pybind11</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Build</highlight></codeline>
+<codeline><highlight class="normal">-----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build,<sp/>cd<sp/>into<sp/>the<sp/>`workspace`<sp/>directory<sp/>and<sp/>call</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin<sp/>build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">to<sp/>build<sp/>the<sp/>whole<sp/>workspace.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Python<sp/>Bindings</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">With<sp/>the<sp/>above<sp/>command<sp/>Python<sp/>bindings<sp/>will<sp/>be<sp/>build<sp/>for<sp/>the<sp/>default<sp/>python</highlight></codeline>
+<codeline><highlight class="normal">version<sp/>of<sp/>your<sp/>system<sp/>(see<sp/>`python<sp/>--version`).<sp/><sp/>If<sp/>you<sp/>want<sp/>to<sp/>use<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">different<sp/>version<sp/>(e.g.<sp/>python3),<sp/>you<sp/>can<sp/>specify<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin<sp/>build<sp/>-DPYTHON_EXECUTABLE=/usr/bin/python3</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="docs/installation.md"/>
+  </compounddef>
+</doxygen>

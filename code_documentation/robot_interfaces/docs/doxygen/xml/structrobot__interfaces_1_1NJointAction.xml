@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structrobot__interfaces_1_1NJointAction" kind="struct" language="C++" prot="public">
+    <compoundname>robot_interfaces::NJointAction</compoundname>
+    <basecompoundref refid="classrobot__interfaces_1_1Loggable" prot="public" virt="non-virtual">robot_interfaces::Loggable</basecompoundref>
+    <includes refid="n__joint__action_8hpp" local="no">n_joint_action.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>size_t</type>
+        <declname>N</declname>
+        <defname>N</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structrobot__interfaces_1_1NJointAction_1afdfe44811a3d9063f2a12dc05be515cb" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, N, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, N, 1&gt; robot_interfaces::NJointAction&lt; N &gt;::Vector</definition>
+        <argsstring></argsstring>
+        <name>Vector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="34" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structrobot__interfaces_1_1NJointAction_1a8d5a5328cfc71d1b892b2581e9b22723" prot="public" static="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t robot_interfaces::NJointAction&lt; N &gt;::num_joints</definition>
+        <argsstring></argsstring>
+        <name>num_joints</name>
+        <initializer>= N</initializer>
+        <briefdescription>
+<para>Number of joints. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="32" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrobot__interfaces_1_1NJointAction_1aab60be78c0008092bf3f36b92a25245d" prot="public" static="no" mutable="no">
+        <type>Vector</type>
+        <definition>Vector robot_interfaces::NJointAction&lt; N &gt;::torque</definition>
+        <argsstring></argsstring>
+        <name>torque</name>
+        <briefdescription>
+<para>Desired torque command (in addition to position controller). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="37" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrobot__interfaces_1_1NJointAction_1a1ba640ac58fef08cd8a5c964b7a4096f" prot="public" static="no" mutable="no">
+        <type>Vector</type>
+        <definition>Vector robot_interfaces::NJointAction&lt; N &gt;::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+<para>Desired position. Set to NaN to disable position controller. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="39" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrobot__interfaces_1_1NJointAction_1a4100b04d42c8e1d9b04ba141212c3461" prot="public" static="no" mutable="no">
+        <type>Vector</type>
+        <definition>Vector robot_interfaces::NJointAction&lt; N &gt;::position_kp</definition>
+        <argsstring></argsstring>
+        <name>position_kp</name>
+        <briefdescription>
+<para>P-gain for position controller. If NaN, default is used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="41" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrobot__interfaces_1_1NJointAction_1a652131480e656840e53f8709dae9c487" prot="public" static="no" mutable="no">
+        <type>Vector</type>
+        <definition>Vector robot_interfaces::NJointAction&lt; N &gt;::position_kd</definition>
+        <argsstring></argsstring>
+        <name>position_kd</name>
+        <briefdescription>
+<para>D-gain for position controller. If NaN, default is used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="43" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1aca14e1c3aa3f7ac545405e8a5c9575a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Archive</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void robot_interfaces::NJointAction&lt; N &gt;::serialize</definition>
+        <argsstring>(Archive &amp;archive)</argsstring>
+        <name>serialize</name>
+        <param>
+          <type>Archive &amp;</type>
+          <declname>archive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="46" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1a8c19d0c69b6fac9a86e7a0017d275ac4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; robot_interfaces::NJointAction&lt; N &gt;::get_name</definition>
+        <argsstring>() override</argsstring>
+        <name>get_name</name>
+        <reimplements refid="classrobot__interfaces_1_1Loggable_1a19635ebc166379f11fe4c8e58153243a">get_name</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="51" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1a309b4188b2a508aa85cbedb0f6ef6343" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; std::vector&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;double&gt; &gt; robot_interfaces::NJointAction&lt; N &gt;::get_data</definition>
+        <argsstring>() override</argsstring>
+        <name>get_data</name>
+        <reimplements refid="classrobot__interfaces_1_1Loggable_1a28ffee45cf66a84d16b2c907ed10367c">get_data</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="56" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="56" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1a518f1d5bd4161809c176a4007f58fb0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::NJointAction&lt; N &gt;::NJointAction</definition>
+        <argsstring>(Vector torque=Vector::Zero(), Vector position=None(), Vector position_kp=None(), Vector position_kd=None())</argsstring>
+        <name>NJointAction</name>
+        <param>
+          <type>Vector</type>
+          <declname>torque</declname>
+          <defval>Vector::Zero()</defval>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>position</declname>
+          <defval><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>()</defval>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>position_kp</declname>
+          <defval><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>()</defval>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>position_kd</declname>
+          <defval><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Create action with desired torque and (optional) position. </para>        </briefdescription>
+        <detaileddescription>
+<para>The resulting torque command sent to the robot is <verbatim>sent_torque = torque + PD(position)
+</verbatim></para><para>To disable the position controller, set the target position to NaN. The controller is executed joint-wise, so it is possible to run it only for some joints by setting a target position for these joints and setting the others to NaN.</para><para>The specified torque is always added to the result of the position controller, so if you only want to run the position controller, make sure to set <computeroutput>torque</computeroutput> to zero for all joints.</para><para>For more explicit code, the static factory methods <computeroutput>Troque</computeroutput>, <computeroutput>Position</computeroutput>, <computeroutput>TorqueAndPosition</computeroutput> and <computeroutput>Zero</computeroutput> should be used instead directly creating actions through this constuctor.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>torque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired torque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired position. Set values to NaN to disable position controller for the corresponding joints </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position_kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>P-gains for the position controller. Set to NaN to use default values. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position_kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>D-gains for the position controller. Set to NaN to use default values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="111" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="111" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1ad1e48599cf7ce7b154464db23978a3c2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref></type>
+        <definition>static NJointAction robot_interfaces::NJointAction&lt; N &gt;::Torque</definition>
+        <argsstring>(Vector torque)</argsstring>
+        <name>Torque</name>
+        <param>
+          <type>Vector</type>
+          <declname>torque</declname>
+        </param>
+        <briefdescription>
+<para>Create an action that only contains a torque command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>torque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired torque.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pure &quot;torque action&quot;. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="129" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1ab90dfaabbae281108bf83337f455143c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref></type>
+        <definition>static NJointAction robot_interfaces::NJointAction&lt; N &gt;::Position</definition>
+        <argsstring>(Vector position, Vector kp=None(), Vector kd=None())</argsstring>
+        <name>Position</name>
+        <param>
+          <type>Vector</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>kp</declname>
+          <defval><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>()</defval>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>kd</declname>
+          <defval><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Create an action that only contains a position command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired position. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>P-gain for position controller. If not set, default is used. Set to NaN for specific joints to use default for this joint. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>D-gain for position controller. If not set, default is used. Set to NaN for specific joints to use default for this joint.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pure &quot;position action&quot;. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="147" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="147" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1a4c779f6bc160922b65d3a78d0b561f01" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref></type>
+        <definition>static NJointAction robot_interfaces::NJointAction&lt; N &gt;::TorqueAndPosition</definition>
+        <argsstring>(Vector torque, Vector position, Vector position_kp=None(), Vector position_kd=None())</argsstring>
+        <name>TorqueAndPosition</name>
+        <param>
+          <type>Vector</type>
+          <declname>torque</declname>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>position_kp</declname>
+          <defval><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>()</defval>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>position_kd</declname>
+          <defval><ref refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" kindref="member">None</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Create an action with both torque and position commands. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>torque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired torque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired position. Set to NaN for specific joints to disable position control for this joint. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>P-gain for position controller. If not set, default is used. Set to NaN for specific joints to use default for this joint. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>D-gain for position controller. If not set, default is used. Set to NaN for specific joints to use default for this joint.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Action with both torque and position commands. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="169" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="169" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1a7def88d6d46acd3e77db3dc49d04dd88" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrobot__interfaces_1_1NJointAction" kindref="compound">NJointAction</ref></type>
+        <definition>static NJointAction robot_interfaces::NJointAction&lt; N &gt;::Zero</definition>
+        <argsstring>()</argsstring>
+        <name>Zero</name>
+        <briefdescription>
+<para>Create a zero-torque action. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Zero-torque action with position control disabled. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="182" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector</type>
+        <definition>static Vector robot_interfaces::NJointAction&lt; N &gt;::None</definition>
+        <argsstring>()</argsstring>
+        <name>None</name>
+        <briefdescription>
+<para>Create a NaN-Vector. </para>        </briefdescription>
+        <detaileddescription>
+<para>Helper function to set defaults for position.</para><para><simplesect kind="return"><para>Vector with all elements set to NaN. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/n_joint_action.hpp" line="193" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="193" bodyend="196"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Action of a generic n-joint robot. </para>    </briefdescription>
+    <detaileddescription>
+<para>This action type can be used for all n-joint robots that expect torque or position commands on joint-level.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of joints. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="43">
+        <label>robot_interfaces::Loggable</label>
+        <link refid="classrobot__interfaces_1_1Loggable"/>
+      </node>
+      <node id="42">
+        <label>robot_interfaces::NJointAction&lt; N &gt;</label>
+        <link refid="structrobot__interfaces_1_1NJointAction"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="45">
+        <label>robot_interfaces::Loggable</label>
+        <link refid="classrobot__interfaces_1_1Loggable"/>
+      </node>
+      <node id="44">
+        <label>robot_interfaces::NJointAction&lt; N &gt;</label>
+        <link refid="structrobot__interfaces_1_1NJointAction"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/robot_interfaces/n_joint_action.hpp" line="30" column="1" bodyfile="include/robot_interfaces/n_joint_action.hpp" bodystart="29" bodyend="197"/>
+    <listofallmembers>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a309b4188b2a508aa85cbedb0f6ef6343" prot="public" virt="virtual"><scope>robot_interfaces::NJointAction</scope><name>get_data</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a8c19d0c69b6fac9a86e7a0017d275ac4" prot="public" virt="virtual"><scope>robot_interfaces::NJointAction</scope><name>get_name</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a518f1d5bd4161809c176a4007f58fb0d" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>NJointAction</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1abb5403bb946dc4b9e9e5e13b9195ad86" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>None</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a8d5a5328cfc71d1b892b2581e9b22723" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>num_joints</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a1ba640ac58fef08cd8a5c964b7a4096f" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>position</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1ab90dfaabbae281108bf83337f455143c" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>Position</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a652131480e656840e53f8709dae9c487" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>position_kd</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a4100b04d42c8e1d9b04ba141212c3461" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>position_kp</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1aca14e1c3aa3f7ac545405e8a5c9575a6" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>serialize</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1aab60be78c0008092bf3f36b92a25245d" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>torque</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1ad1e48599cf7ce7b154464db23978a3c2" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>Torque</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a4c779f6bc160922b65d3a78d0b561f01" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>TorqueAndPosition</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1afdfe44811a3d9063f2a12dc05be515cb" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>Vector</name></member>
+      <member refid="structrobot__interfaces_1_1NJointAction_1a7def88d6d46acd3e77db3dc49d04dd88" prot="public" virt="non-virtual"><scope>robot_interfaces::NJointAction</scope><name>Zero</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="custom__driver_8md" kind="file" language="Markdown">
+    <compoundname>custom_driver.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">How<sp/>to<sp/>Implement<sp/>a<sp/>Custom<sp/>RobotDriver</highlight></codeline>
+<codeline><highlight class="normal">=====================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>use<sp/>robot_interfaces<sp/>with<sp/>your<sp/>own<sp/>robot,<sp/>you<sp/>need<sp/>to<sp/>provide<sp/>implementations</highlight></codeline>
+<codeline><highlight class="normal">for</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>the<sp/>Action<sp/>type</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>the<sp/>Observation<sp/>type</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>the<sp/>RobotDriver</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Action<sp/>and<sp/>Observation</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Action<sp/>and<sp/>observation<sp/>can<sp/>be<sp/>any<sp/>arbitrary<sp/>type,<sp/>whatever<sp/>is<sp/>needed<sp/>for<sp/>your</highlight></codeline>
+<codeline><highlight class="normal">robot.<sp/><sp/>There<sp/>are<sp/>only<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>you<sp/>want<sp/>to<sp/>use<sp/>the<sp/>@ref<sp/>robot_interfaces::MultiProcessRobotData,<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>action<sp/>and<sp/>observation<sp/>types<sp/>need<sp/>to<sp/>be<sp/>serializable<sp/>with</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>[cereal](https://uscilab.github.io/cereal/).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>you<sp/>want<sp/>to<sp/>use<sp/>the<sp/>@ref<sp/>robot_interfaces::RobotLogger,<sp/>the<sp/>action<sp/>and</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>observation<sp/>types<sp/>need<sp/>to<sp/>inherit<sp/>from<sp/>@ref<sp/>robot_interfaces::Loggable.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">RobotDriver</highlight></codeline>
+<codeline><highlight class="normal">-----------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Your<sp/>robot<sp/>driver<sp/>needs<sp/>to<sp/>be<sp/>a<sp/>class<sp/>that<sp/>inherits<sp/>from<sp/>@ref</highlight></codeline>
+<codeline><highlight class="normal">robot_interfaces::RobotDriver,<sp/>using<sp/>your<sp/>`Action`<sp/>and<sp/>`Observation`<sp/>types<sp/>(see</highlight></codeline>
+<codeline><highlight class="normal">above).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Example</highlight></codeline>
+<codeline><highlight class="normal">-------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>the<sp/>example<sp/>implementation<sp/>of<sp/>a<sp/>dummy<sp/>robot<sp/>driver<sp/>in<sp/>[example.hpp](https://github.com/open-dynamic-robot-initiative/robot_interfaces/blob/master/include/robot_interfaces/example.hpp).<sp/><sp/>This<sp/>dummy<sp/>driver<sp/>is<sp/>also<sp/>used<sp/>in<sp/>the<sp/>[demos](https://github.com/open-dynamic-robot-initiative/robot_interfaces/blob/master/demos).</highlight></codeline>
+    </programlisting>
+    <location file="docs/custom_driver.md"/>
+  </compounddef>
+</doxygen>

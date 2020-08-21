@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="sensor__log__reader_8hpp" kind="file" language="C++">
+    <compoundname>sensor_log_reader.hpp</compoundname>
+    <includes local="no">fstream</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">cereal/archives/binary.hpp</includes>
+    <includes local="no">cereal/types/vector.hpp</includes>
+    <includedby refid="pybind__sensors_8hpp" local="no">include/robot_interfaces/sensors/pybind_sensors.hpp</includedby>
+    <incdepgraph>
+      <node id="565">
+        <label>include/robot_interfaces/sensors/sensor_log_reader.hpp</label>
+        <link refid="sensor__log__reader_8hpp"/>
+        <childnode refid="566" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
+        </childnode>
+        <childnode refid="568" relation="include">
+        </childnode>
+        <childnode refid="569" relation="include">
+        </childnode>
+      </node>
+      <node id="568">
+        <label>cereal/archives/binary.hpp</label>
+      </node>
+      <node id="566">
+        <label>fstream</label>
+      </node>
+      <node id="567">
+        <label>vector</label>
+      </node>
+      <node id="569">
+        <label>cereal/types/vector.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="570">
+        <label>include/robot_interfaces/sensors/sensor_log_reader.hpp</label>
+        <link refid="sensor__log__reader_8hpp"/>
+        <childnode refid="571" relation="include">
+        </childnode>
+      </node>
+      <node id="571">
+        <label>include/robot_interfaces/sensors/pybind_sensors.hpp</label>
+        <link refid="pybind__sensors_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classrobot__interfaces_1_1SensorLogReader" prot="public">robot_interfaces::SensorLogReader</innerclass>
+    <innernamespace refid="namespacerobot__interfaces">robot_interfaces</innernamespace>
+    <briefdescription>
+<para>API to read the data from a sensor log file. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2020, Max Planck Gesellschaft. All rights reserved. </para></simplesect>
+<xrefsect id="license_1_license000011"><xreftitle>License</xreftitle><xrefdescription><para>BSD 3-clause </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cereal/archives/binary.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cereal/types/vector.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerobot__interfaces" kindref="compound">robot_interfaces</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Observation&gt;</highlight></codeline>
+<codeline lineno="26" refid="classrobot__interfaces_1_1SensorLogReader" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classrobot__interfaces_1_1SensorLogReader" kindref="compound">SensorLogReader</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30" refid="classrobot__interfaces_1_1SensorLogReader_1ae9bc7102e1de64979d2937f465eea9cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Observation&gt;<sp/><ref refid="classrobot__interfaces_1_1SensorLogReader_1ae9bc7102e1de64979d2937f465eea9cc" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classrobot__interfaces_1_1SensorLogReader_1af98cfbebee2e96b24dcba44dff27b783" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classrobot__interfaces_1_1SensorLogReader_1af98cfbebee2e96b24dcba44dff27b783" kindref="member">SensorLogReader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;filename)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrobot__interfaces_1_1SensorLogReader_1a2632219304890e40ff770b1dfef72e6c" kindref="member">read_file</ref>(filename);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classrobot__interfaces_1_1SensorLogReader_1a2632219304890e40ff770b1dfef72e6c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrobot__interfaces_1_1SensorLogReader_1a2632219304890e40ff770b1dfef72e6c" kindref="member">read_file</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;filename)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ifstream<sp/>infile(filename,<sp/>std::ios::binary);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cereal::BinaryInputArchive<sp/>archive(infile);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>archive(data);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>robot_interfaces</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/robot_interfaces/sensors/sensor_log_reader.hpp"/>
+  </compounddef>
+</doxygen>

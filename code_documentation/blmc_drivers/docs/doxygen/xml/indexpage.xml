@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>This is the documentation of the blmc_drivers package.</title>
+    <detaileddescription>
+<para>This package is contains the drivers for the brushless motors developped in the Max Planck Institute for Intelligent System. The BLMC stands for <bold>B</bold>rush<bold>L</bold>ess <bold>M</bold>otor <bold>C</bold>ontrol.</para><para>This package provides guidelines how a device should be implemented (see also the DeviceInterface class). Any device has a number of inputs and outputs, see the following diagram for an example with two inputs and outputs. <image type="html" name="device_class_diagram.svg"></image>
+ generally, we expect the following functions to be implemented:<itemizedlist>
+<listitem><para>a set function for each input (several inputs may share a set function which takes an index argument).</para></listitem><listitem><para>a send_if_input_changed() function which will send the inputs to the device if any of them have changed.</para></listitem><listitem><para>functions to access the current inputs and outputs, as well as the inputs which have been sent to the device. rather than just returning the latest elements, these function should return a ThreadsafeTimeseries of these objects, such that the user can synchronize (e.g. wait for the next element or step through them one by one such that none of them is missed)</para></listitem></itemizedlist>
+</para><para>This package provide a very simple API in order to acquire the sensors and send the controls to the actuators. Example of use of this package can be seens in different demos (PROJECT_SOURCE_DIR/demos) or in different unittests (PROJECT_SOURCE_DIR/tests). The demos contains the documentation inside the code. The unittests should be simple enough to understand wihtout additionnal documentation.</para><para><xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>Manuel, can you explain how the blmc Can cards work? associated with the motor_boards? Thanks</para></xrefdescription></xrefsect></para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,508 @@
+\hypertarget{classblmc__drivers_1_1CanBusMotorBoard}{}\section{blmc\+\_\+drivers\+:\+:Can\+Bus\+Motor\+Board Class Reference}
+\label{classblmc__drivers_1_1CanBusMotorBoard}\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+
+
+This class \hyperlink{classblmc__drivers_1_1CanBusMotorBoard}{Can\+Bus\+Motor\+Board} implements a \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} specific to C\+AN networks.  
+
+
+
+
+{\ttfamily \#include $<$motor\+\_\+board.\+hpp$>$}
+
+
+
+Inheritance diagram for blmc\+\_\+drivers\+:\+:Can\+Bus\+Motor\+Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classblmc__drivers_1_1CanBusMotorBoard__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for blmc\+\_\+drivers\+:\+:Can\+Bus\+Motor\+Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classblmc__drivers_1_1CanBusMotorBoard__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a43674811685fce4dbc3a9996e08454c9}{Can\+Bus\+Motor\+Board} (std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1CanBusInterface}{Can\+Bus\+Interface} $>$ can\+\_\+bus, const size\+\_\+t \&history\+\_\+length=1000, const int \&control\+\_\+timeout\+\_\+ms=100)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__drivers_1_1CanBusMotorBoard}{Can\+Bus\+Motor\+Board} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a4099ee10765570b2bfb1f91a0670b11b}\label{classblmc__drivers_1_1CanBusMotorBoard_a4099ee10765570b2bfb1f91a0670b11b}} 
+\hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a4099ee10765570b2bfb1f91a0670b11b}{$\sim$\+Can\+Bus\+Motor\+Board} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classblmc__drivers_1_1CanBusMotorBoard}{Can\+Bus\+Motor\+Board} object. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a0fac258ce65f51074bdb6c64ce8ebded}{get\+\_\+measurement} (const int \&index) const
+\begin{DoxyCompactList}\small\item\em Getters. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae3777e484dda60c4abe87f2b542ddfb8}{Status\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a7e62dd5126422cfbf587f9c265374fdc}{get\+\_\+status} () const
+\begin{DoxyCompactList}\small\item\em Get the status of the C\+AN card. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a2a1b44b08e57cd112957a33ceb97ebb4}{get\+\_\+control} (const int \&index) const
+\begin{DoxyCompactList}\small\item\em Get the controls to be sent. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Command\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_ac7adb4e5074229bb38e1c288702321e4}{get\+\_\+command} () const
+\begin{DoxyCompactList}\small\item\em Get the commands to be sent. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_aa71ed313381440d9c2af00c5a13d6faa}{get\+\_\+sent\+\_\+control} (const int \&index) const
+\begin{DoxyCompactList}\small\item\em Get the already sent controls. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Command\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a5025602eac7b8c4ca1b2f5602e1a6640}{get\+\_\+sent\+\_\+command} () const
+\begin{DoxyCompactList}\small\item\em Get the already sent commands. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a8dbd787fcfc25d68d5443e2f0bf21f64}{set\+\_\+control} (const double \&control, const int \&index)
+\begin{DoxyCompactList}\small\item\em Setters. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a4bb9c1f7f59507feed145111ccffc625}{set\+\_\+command} (const \hyperlink{classblmc__drivers_1_1MotorBoardCommand}{Motor\+Board\+Command} \&command)
+\begin{DoxyCompactList}\small\item\em Set the commands, see \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a86b4ff810ca652d6761090ceaff65621}{Motor\+Board\+Interface\+::set\+\_\+command}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a19ced11d06984528e6a2308c03ba83ac}\label{classblmc__drivers_1_1CanBusMotorBoard_a19ced11d06984528e6a2308c03ba83ac}} 
+virtual void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a19ced11d06984528e6a2308c03ba83ac}{send\+\_\+if\+\_\+input\+\_\+changed} ()
+\begin{DoxyCompactList}\small\item\em Send the actual command and controls. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a3c496f045d3ef68c02fe6dd5abbdc4eb}\label{classblmc__drivers_1_1CanBusMotorBoard_a3c496f045d3ef68c02fe6dd5abbdc4eb}} 
+void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a3c496f045d3ef68c02fe6dd5abbdc4eb}{wait\+\_\+until\+\_\+ready} ()
+\begin{DoxyCompactList}\small\item\em returns only once board and motors are ready. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_aecd2ba0d3d1f40ffd38a0fd47b8da55d}\label{classblmc__drivers_1_1CanBusMotorBoard_aecd2ba0d3d1f40ffd38a0fd47b8da55d}} 
+bool {\bfseries is\+\_\+ready} ()
+\item 
+void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a19ffd7d9ef9a441299164485e85ec6fd}{pause\+\_\+motors} ()
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a846382d2ad74d2087f5557ecd90937e3}\label{classblmc__drivers_1_1CanBusMotorBoard_a846382d2ad74d2087f5557ecd90937e3}} 
+void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a846382d2ad74d2087f5557ecd90937e3}{disable\+\_\+can\+\_\+recv\+\_\+timeout} ()
+\begin{DoxyCompactList}\small\item\em Disable the can reciever timeout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_addbf32fe0b6fa57134546c1f6ec5eb80}\label{classblmc__drivers_1_1CanBusMotorBoard_addbf32fe0b6fa57134546c1f6ec5eb80}} 
+enum \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_addbf32fe0b6fa57134546c1f6ec5eb80}{Canframe\+I\+Ds} \{ \newline
+{\bfseries C\+O\+M\+M\+A\+N\+D\+\_\+\+ID} = 0x00, 
+{\bfseries Iq\+Ref} = 0x05, 
+{\bfseries S\+T\+A\+T\+U\+S\+M\+SG} = 0x10, 
+{\bfseries Iq} = 0x20, 
+\newline
+{\bfseries P\+OS} = 0x30, 
+{\bfseries S\+P\+E\+ED} = 0x40, 
+{\bfseries A\+D\+C6} = 0x50, 
+{\bfseries E\+N\+C\+\_\+\+I\+N\+D\+EX} = 0x60
+ \}\begin{DoxyCompactList}\small\item\em These are the frame I\+Ds that define the kind of data we acquiere from the C\+AN bus. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\int32\+\_\+t \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_ae320518f2cf2c8af0e50220f11556b85}{bytes\+\_\+to\+\_\+int32} (T bytes)
+\begin{DoxyCompactList}\small\item\em private methods ======================================================== \end{DoxyCompactList}\item 
+float \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a05db7868ff7034289358cdb774b59720}{q24\+\_\+to\+\_\+float} (int32\+\_\+t qval)
+\begin{DoxyCompactList}\small\item\em Convert from 24-\/bit normalized fixed-\/point to float. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_ad6d91ccf867e9a3996492cce33270426}{float\+\_\+to\+\_\+q24} (float fval)
+\begin{DoxyCompactList}\small\item\em Converts from float to 24-\/bit normalized fixed-\/point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\float \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_ad2cee731d455d64d71014c9821219410}{qbytes\+\_\+to\+\_\+float} (T qbytes)
+\begin{DoxyCompactList}\small\item\em Converts from qbytes to float. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a5ec842674fd543a8c834265433740387}{send\+\_\+newest\+\_\+controls} ()
+\begin{DoxyCompactList}\small\item\em send the controls to the cards. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a9f74868318daf4a97a5266e4d8d6f556}\label{classblmc__drivers_1_1CanBusMotorBoard_a9f74868318daf4a97a5266e4d8d6f556}} 
+void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a9f74868318daf4a97a5266e4d8d6f556}{send\+\_\+newest\+\_\+command} ()
+\begin{DoxyCompactList}\small\item\em send the latest commands to the cards. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a542f8df35ff34348976ed1d55797a15a}\label{classblmc__drivers_1_1CanBusMotorBoard_a542f8df35ff34348976ed1d55797a15a}} 
+void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a542f8df35ff34348976ed1d55797a15a}{loop} ()
+\begin{DoxyCompactList}\small\item\em Is the loop that constently communicate with the network. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a43b773d56156d4855e6b3b7b7b00b350}\label{classblmc__drivers_1_1CanBusMotorBoard_a43b773d56156d4855e6b3b7b7b00b350}} 
+void \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a43b773d56156d4855e6b3b7b7b00b350}{print\+\_\+status} ()
+\begin{DoxyCompactList}\small\item\em Display details of this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_af6d242ea933e9ad23c37167ba848f017}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em This is the helper function used for spawning the real time thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_ab58dc93d9117503950fbe4d7a7c70914}\label{classblmc__drivers_1_1CanBusMotorBoard_ab58dc93d9117503950fbe4d7a7c70914}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1CanBusInterface}{Can\+Bus\+Interface} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_ab58dc93d9117503950fbe4d7a7c70914}{can\+\_\+bus\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the pointer to the can bus to communicate with. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__drivers_1_1MotorBoardInterface_abeb474bef6d85dffcd5227e5ea965cc5}{Vector}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_abbba6ad698905e56101c516baa795b29}{measurement\+\_\+}
+\begin{DoxyCompactList}\small\item\em Outputs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a5725ff23bb4f8407c5608cabfa49c692}\label{classblmc__drivers_1_1CanBusMotorBoard_a5725ff23bb4f8407c5608cabfa49c692}} 
+\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae3777e484dda60c4abe87f2b542ddfb8}{Status\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a5725ff23bb4f8407c5608cabfa49c692}{status\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the status history of the C\+AN board. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__drivers_1_1MotorBoardInterface_abeb474bef6d85dffcd5227e5ea965cc5}{Vector}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a65cfba005239247df1ea26795ff14a3f}{control\+\_\+}
+\begin{DoxyCompactList}\small\item\em Inputs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a720c6300bf07245a739713a209799c02}\label{classblmc__drivers_1_1CanBusMotorBoard_a720c6300bf07245a739713a209799c02}} 
+\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Command\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a720c6300bf07245a739713a209799c02}{command\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the buffer of the commands to be sent to the card. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__drivers_1_1MotorBoardInterface_abeb474bef6d85dffcd5227e5ea965cc5}{Vector}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_ab5296d55684d48b538844c3b96df6594}{sent\+\_\+control\+\_\+}
+\begin{DoxyCompactList}\small\item\em Log. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a27712df32104357ac31b97179f1e9211}\label{classblmc__drivers_1_1CanBusMotorBoard_a27712df32104357ac31b97179f1e9211}} 
+\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Command\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a27712df32104357ac31b97179f1e9211}{sent\+\_\+command\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the history of the already sent commands. \end{DoxyCompactList}\item 
+bool \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_ae25808cc09839c2574d134a36b5b4d5d}{is\+\_\+loop\+\_\+active\+\_\+}
+\begin{DoxyCompactList}\small\item\em Loop management. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_abdca3f76908ca197c4f12af814313a56}\label{classblmc__drivers_1_1CanBusMotorBoard_abdca3f76908ca197c4f12af814313a56}} 
+bool \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_abdca3f76908ca197c4f12af814313a56}{motors\+\_\+are\+\_\+paused\+\_\+}
+\begin{DoxyCompactList}\small\item\em Are motor in idle mode = 0 torques?  update this documentation with the actual behavior. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a4f9605b0a147ecd1dde41a0fb7b45d47}\label{classblmc__drivers_1_1CanBusMotorBoard_a4f9605b0a147ecd1dde41a0fb7b45d47}} 
+int \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a4f9605b0a147ecd1dde41a0fb7b45d47}{control\+\_\+timeout\+\_\+ms\+\_\+}
+\begin{DoxyCompactList}\small\item\em If no control is sent for more than control\+\_\+timeout\+\_\+ms\+\_\+ the board will shut down. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a040b0b2f6c2691a54d82404f7a1badd6}\label{classblmc__drivers_1_1CanBusMotorBoard_a040b0b2f6c2691a54d82404f7a1badd6}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classblmc__drivers_1_1CanBusMotorBoard_a040b0b2f6c2691a54d82404f7a1badd6}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the thread object that allow to spwan a real-\/time thread or not dependening on the current OS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class \hyperlink{classblmc__drivers_1_1CanBusMotorBoard}{Can\+Bus\+Motor\+Board} implements a \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} specific to C\+AN networks. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a43674811685fce4dbc3a9996e08454c9}\label{classblmc__drivers_1_1CanBusMotorBoard_a43674811685fce4dbc3a9996e08454c9}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!Can\+Bus\+Motor\+Board@{Can\+Bus\+Motor\+Board}}
+\index{Can\+Bus\+Motor\+Board@{Can\+Bus\+Motor\+Board}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{Can\+Bus\+Motor\+Board()}{CanBusMotorBoard()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::\+Can\+Bus\+Motor\+Board (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1CanBusInterface}{Can\+Bus\+Interface} $>$}]{can\+\_\+bus,  }\item[{const size\+\_\+t \&}]{history\+\_\+length = {\ttfamily 1000},  }\item[{const int \&}]{control\+\_\+timeout\+\_\+ms = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classblmc__drivers_1_1CanBusMotorBoard}{Can\+Bus\+Motor\+Board} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em can\+\_\+bus} & \\
+\hline
+{\em history\+\_\+length} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_ae320518f2cf2c8af0e50220f11556b85}\label{classblmc__drivers_1_1CanBusMotorBoard_ae320518f2cf2c8af0e50220f11556b85}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!bytes\+\_\+to\+\_\+int32@{bytes\+\_\+to\+\_\+int32}}
+\index{bytes\+\_\+to\+\_\+int32@{bytes\+\_\+to\+\_\+int32}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{bytes\+\_\+to\+\_\+int32()}{bytes\_to\_int32()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int32\+\_\+t blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::bytes\+\_\+to\+\_\+int32 (\begin{DoxyParamCaption}\item[{T}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+private methods ======================================================== 
+
+Useful converters Converts from bytes to int32.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & this is the type of the bytes convert. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em bytes} & The bytes value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t the output integer in int32. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_ad6d91ccf867e9a3996492cce33270426}\label{classblmc__drivers_1_1CanBusMotorBoard_ad6d91ccf867e9a3996492cce33270426}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!float\+\_\+to\+\_\+q24@{float\+\_\+to\+\_\+q24}}
+\index{float\+\_\+to\+\_\+q24@{float\+\_\+to\+\_\+q24}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{float\+\_\+to\+\_\+q24()}{float\_to\_q24()}}
+{\footnotesize\ttfamily int32\+\_\+t blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::float\+\_\+to\+\_\+q24 (\begin{DoxyParamCaption}\item[{float}]{fval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts from float to 24-\/bit normalized fixed-\/point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fval} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_ac7adb4e5074229bb38e1c288702321e4}\label{classblmc__drivers_1_1CanBusMotorBoard_ac7adb4e5074229bb38e1c288702321e4}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!get\+\_\+command@{get\+\_\+command}}
+\index{get\+\_\+command@{get\+\_\+command}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{get\+\_\+command()}{get\_command()}}
+{\footnotesize\ttfamily virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Command\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::get\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the commands to be sent. 
+
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Command\+Timeseries$>$ is the list of the command to be sent. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a4913308c1eacc98475aeb8647447c997}{blmc\+\_\+drivers\+::\+Motor\+Board\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a2a1b44b08e57cd112957a33ceb97ebb4}\label{classblmc__drivers_1_1CanBusMotorBoard_a2a1b44b08e57cd112957a33ceb97ebb4}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!get\+\_\+control@{get\+\_\+control}}
+\index{get\+\_\+control@{get\+\_\+control}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{get\+\_\+control()}{get\_control()}}
+{\footnotesize\ttfamily virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::get\+\_\+control (\begin{DoxyParamCaption}\item[{const int \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the controls to be sent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the kind of control we are interested in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Scalar\+Timeseries$>$ is the list of the control to be sent. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorBoardInterface_aa5eeed12c851993f2e2c93f5479df9de}{blmc\+\_\+drivers\+::\+Motor\+Board\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a0fac258ce65f51074bdb6c64ce8ebded}\label{classblmc__drivers_1_1CanBusMotorBoard_a0fac258ce65f51074bdb6c64ce8ebded}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!get\+\_\+measurement@{get\+\_\+measurement}}
+\index{get\+\_\+measurement@{get\+\_\+measurement}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{get\+\_\+measurement()}{get\_measurement()}}
+{\footnotesize\ttfamily virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::get\+\_\+measurement (\begin{DoxyParamCaption}\item[{const int \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Getters. 
+
+Get the measurement data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & is the kind of measurement we are insterested in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Scalar\+Timeseries$>$ is the list of the last measurements acquiered from the C\+AN card. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a34828a0375a3bd1fede4deb4fc74c04d}{blmc\+\_\+drivers\+::\+Motor\+Board\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a5025602eac7b8c4ca1b2f5602e1a6640}\label{classblmc__drivers_1_1CanBusMotorBoard_a5025602eac7b8c4ca1b2f5602e1a6640}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!get\+\_\+sent\+\_\+command@{get\+\_\+sent\+\_\+command}}
+\index{get\+\_\+sent\+\_\+command@{get\+\_\+sent\+\_\+command}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{get\+\_\+sent\+\_\+command()}{get\_sent\_command()}}
+{\footnotesize\ttfamily virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Command\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::get\+\_\+sent\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the already sent commands. 
+
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Command\+Timeseries$>$ is the list of the sent cotnrols. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorBoardInterface_afd3de58f7a900347154b8d323f1c1d94}{blmc\+\_\+drivers\+::\+Motor\+Board\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_aa71ed313381440d9c2af00c5a13d6faa}\label{classblmc__drivers_1_1CanBusMotorBoard_aa71ed313381440d9c2af00c5a13d6faa}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!get\+\_\+sent\+\_\+control@{get\+\_\+sent\+\_\+control}}
+\index{get\+\_\+sent\+\_\+control@{get\+\_\+sent\+\_\+control}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{get\+\_\+sent\+\_\+control()}{get\_sent\_control()}}
+{\footnotesize\ttfamily virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::get\+\_\+sent\+\_\+control (\begin{DoxyParamCaption}\item[{const int \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the already sent controls. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the kind of control we are interested in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Scalar\+Timeseries$>$ is the list of the sent cotnrols. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a8dc6222e915fc96d89b13cbb0fcb0cda}{blmc\+\_\+drivers\+::\+Motor\+Board\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a7e62dd5126422cfbf587f9c265374fdc}\label{classblmc__drivers_1_1CanBusMotorBoard_a7e62dd5126422cfbf587f9c265374fdc}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!get\+\_\+status@{get\+\_\+status}}
+\index{get\+\_\+status@{get\+\_\+status}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{get\+\_\+status()}{get\_status()}}
+{\footnotesize\ttfamily virtual \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae3777e484dda60c4abe87f2b542ddfb8}{Status\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::get\+\_\+status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the status of the C\+AN card. 
+
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Status\+Timeseries$>$ is the list of last acquiered status. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a13b1ffa7d10c1c753d76eaf5368714e3}{blmc\+\_\+drivers\+::\+Motor\+Board\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_af6d242ea933e9ad23c37167ba848f017}\label{classblmc__drivers_1_1CanBusMotorBoard_af6d242ea933e9ad23c37167ba848f017}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!loop@{loop}}
+\index{loop@{loop}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{instance\+\_\+pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+This is the helper function used for spawning the real time thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance\+\_\+pointer} & is the current object in this case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE depends on the current OS. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a19ffd7d9ef9a441299164485e85ec6fd}\label{classblmc__drivers_1_1CanBusMotorBoard_a19ffd7d9ef9a441299164485e85ec6fd}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!pause\+\_\+motors@{pause\+\_\+motors}}
+\index{pause\+\_\+motors@{pause\+\_\+motors}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{pause\+\_\+motors()}{pause\_motors()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::pause\+\_\+motors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]\+: this function should go away, and we should add somewhere a warning in case there is a timeout \end{DoxyRefDesc}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a05db7868ff7034289358cdb774b59720}\label{classblmc__drivers_1_1CanBusMotorBoard_a05db7868ff7034289358cdb774b59720}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!q24\+\_\+to\+\_\+float@{q24\+\_\+to\+\_\+float}}
+\index{q24\+\_\+to\+\_\+float@{q24\+\_\+to\+\_\+float}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{q24\+\_\+to\+\_\+float()}{q24\_to\_float()}}
+{\footnotesize\ttfamily float blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::q24\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{qval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Convert from 24-\/bit normalized fixed-\/point to float. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em qval} & is the floating base point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float is the converted value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_ad2cee731d455d64d71014c9821219410}\label{classblmc__drivers_1_1CanBusMotorBoard_ad2cee731d455d64d71014c9821219410}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!qbytes\+\_\+to\+\_\+float@{qbytes\+\_\+to\+\_\+float}}
+\index{qbytes\+\_\+to\+\_\+float@{qbytes\+\_\+to\+\_\+float}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{qbytes\+\_\+to\+\_\+float()}{qbytes\_to\_float()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+float blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::qbytes\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{T}]{qbytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts from qbytes to float. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of byte to manage \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em qbytes} & the input value in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float the output value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a5ec842674fd543a8c834265433740387}\label{classblmc__drivers_1_1CanBusMotorBoard_a5ec842674fd543a8c834265433740387}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!send\+\_\+newest\+\_\+controls@{send\+\_\+newest\+\_\+controls}}
+\index{send\+\_\+newest\+\_\+controls@{send\+\_\+newest\+\_\+controls}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{send\+\_\+newest\+\_\+controls()}{send\_newest\_controls()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::send\+\_\+newest\+\_\+controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+send the controls to the cards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controls} & are the controls to be sent. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a4bb9c1f7f59507feed145111ccffc625}\label{classblmc__drivers_1_1CanBusMotorBoard_a4bb9c1f7f59507feed145111ccffc625}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!set\+\_\+command@{set\+\_\+command}}
+\index{set\+\_\+command@{set\+\_\+command}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{set\+\_\+command()}{set\_command()}}
+{\footnotesize\ttfamily virtual void blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::set\+\_\+command (\begin{DoxyParamCaption}\item[{const \hyperlink{classblmc__drivers_1_1MotorBoardCommand}{Motor\+Board\+Command} \&}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the commands, see \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a86b4ff810ca652d6761090ceaff65621}{Motor\+Board\+Interface\+::set\+\_\+command}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a86b4ff810ca652d6761090ceaff65621}{blmc\+\_\+drivers\+::\+Motor\+Board\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a8dbd787fcfc25d68d5443e2f0bf21f64}\label{classblmc__drivers_1_1CanBusMotorBoard_a8dbd787fcfc25d68d5443e2f0bf21f64}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!set\+\_\+control@{set\+\_\+control}}
+\index{set\+\_\+control@{set\+\_\+control}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{set\+\_\+control()}{set\_control()}}
+{\footnotesize\ttfamily virtual void blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::set\+\_\+control (\begin{DoxyParamCaption}\item[{const double \&}]{control,  }\item[{const int \&}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Setters. 
+
+Set the controls, see \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a3ace57ba3e09b9b3120d09303ff39a61}{Motor\+Board\+Interface\+::set\+\_\+control}
+
+
+\begin{DoxyParams}{Parameters}
+{\em control} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a3ace57ba3e09b9b3120d09303ff39a61}{blmc\+\_\+drivers\+::\+Motor\+Board\+Interface}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_a65cfba005239247df1ea26795ff14a3f}\label{classblmc__drivers_1_1CanBusMotorBoard_a65cfba005239247df1ea26795ff14a3f}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!control\+\_\+@{control\+\_\+}}
+\index{control\+\_\+@{control\+\_\+}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{control\+\_\+}{control\_}}
+{\footnotesize\ttfamily \hyperlink{classblmc__drivers_1_1MotorBoardInterface_abeb474bef6d85dffcd5227e5ea965cc5}{Vector}$<$\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries}$>$ $>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::control\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Inputs. 
+
+This is the buffer of the controls to be sent to card. \mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_ae25808cc09839c2574d134a36b5b4d5d}\label{classblmc__drivers_1_1CanBusMotorBoard_ae25808cc09839c2574d134a36b5b4d5d}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!is\+\_\+loop\+\_\+active\+\_\+@{is\+\_\+loop\+\_\+active\+\_\+}}
+\index{is\+\_\+loop\+\_\+active\+\_\+@{is\+\_\+loop\+\_\+active\+\_\+}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{is\+\_\+loop\+\_\+active\+\_\+}{is\_loop\_active\_}}
+{\footnotesize\ttfamily bool blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::is\+\_\+loop\+\_\+active\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loop management. 
+
+This boolean makes sure that the loop is stopped upon destruction of this object. \mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_abbba6ad698905e56101c516baa795b29}\label{classblmc__drivers_1_1CanBusMotorBoard_abbba6ad698905e56101c516baa795b29}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!measurement\+\_\+@{measurement\+\_\+}}
+\index{measurement\+\_\+@{measurement\+\_\+}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{measurement\+\_\+}{measurement\_}}
+{\footnotesize\ttfamily \hyperlink{classblmc__drivers_1_1MotorBoardInterface_abeb474bef6d85dffcd5227e5ea965cc5}{Vector}$<$\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries}$>$ $>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::measurement\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Outputs. 
+
+measurement\+\_\+ contains all the measurements acquiered from the C\+AN board. \mbox{\Hypertarget{classblmc__drivers_1_1CanBusMotorBoard_ab5296d55684d48b538844c3b96df6594}\label{classblmc__drivers_1_1CanBusMotorBoard_ab5296d55684d48b538844c3b96df6594}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}!sent\+\_\+control\+\_\+@{sent\+\_\+control\+\_\+}}
+\index{sent\+\_\+control\+\_\+@{sent\+\_\+control\+\_\+}!blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board@{blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board}}
+\subsubsection{\texorpdfstring{sent\+\_\+control\+\_\+}{sent\_control\_}}
+{\footnotesize\ttfamily \hyperlink{classblmc__drivers_1_1MotorBoardInterface_abeb474bef6d85dffcd5227e5ea965cc5}{Vector}$<$\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a6a733b7ed7a3a96f6b0712b6bb5307f8}{Ptr}$<$\hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Scalar\+Timeseries}$>$ $>$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board\+::sent\+\_\+control\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Log. 
+
+This is the history of the already sent controls. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+drivers/devices/\hyperlink{motor__board_8hpp}{motor\+\_\+board.\+hpp}\item 
+src/\hyperlink{motor__board_8cpp}{motor\+\_\+board.\+cpp}\end{DoxyCompactItemize}

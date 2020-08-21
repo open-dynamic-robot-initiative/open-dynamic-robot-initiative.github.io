@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_docs_custom_driver" kind="page">
+    <compoundname>md_docs_custom_driver</compoundname>
+    <title>How to Implement a Custom RobotDriver</title>
+    <detaileddescription>
+<para>To use robot_interfaces with your own robot, you need to provide implementations for</para><para><itemizedlist>
+<listitem><para>the Action type</para></listitem><listitem><para>the Observation type</para></listitem><listitem><para>the RobotDriver</para></listitem></itemizedlist>
+</para><para><heading level="2">Action and Observation </heading>
+</para><para>Action and observation can be any arbitrary type, whatever is needed for your robot. There are only the following restrictions:</para><para><itemizedlist>
+<listitem><para>If you want to use the <ref refid="classrobot__interfaces_1_1MultiProcessRobotData" kindref="compound">robot_interfaces::MultiProcessRobotData</ref>, the action and observation types need to be serializable with <ulink url="https://uscilab.github.io/cereal/">cereal</ulink>.</para></listitem><listitem><para>If you want to use the <ref refid="classrobot__interfaces_1_1RobotLogger" kindref="compound">robot_interfaces::RobotLogger</ref>, the action and observation types need to inherit from <ref refid="classrobot__interfaces_1_1Loggable" kindref="compound">robot_interfaces::Loggable</ref>.</para></listitem></itemizedlist>
+</para><para><heading level="2">RobotDriver </heading>
+</para><para>Your robot driver needs to be a class that inherits from <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">robot_interfaces::RobotDriver</ref>, using your <computeroutput>Action</computeroutput> and <computeroutput>Observation</computeroutput> types (see above).</para><para><heading level="2">Example </heading>
+</para><para>See the example implementation of a dummy robot driver in <ulink url="https://github.com/open-dynamic-robot-initiative/robot_interfaces/blob/master/include/robot_interfaces/example.hpp">example.hpp</ulink>. This dummy driver is also used in the <ulink url="https://github.com/open-dynamic-robot-initiative/robot_interfaces/blob/master/demos">demos</ulink>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

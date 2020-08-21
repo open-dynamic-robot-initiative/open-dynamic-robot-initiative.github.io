@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="plot__ati__log_8py" kind="file" language="Python">
+    <compoundname>plot_ati_log.py</compoundname>
+    <innernamespace refid="namespaceplot__ati__log">plot_ati_log</innernamespace>
+    <innernamespace refid="namespacepylab">pylab</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os,sys</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>pylab<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">data<sp/>=<sp/>loadtxt(</highlight><highlight class="stringliteral">&apos;log_file.dat&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">t<sp/>=<sp/>data[:,0]/1000.0</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">figure()</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(3):</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>subplot(3,1,i+1)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>plot(t,data[:,4+i])</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">title(</highlight><highlight class="stringliteral">&apos;Force<sp/>[N]&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">figure()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(3):</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>subplot(3,1,i+1)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>plot(t,data[:,7+i])</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">title(</highlight><highlight class="stringliteral">&apos;torque<sp/>[Nm]&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">figure()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">subplot(4,1,1)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">plot(data[:,0])</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">xlabel(</highlight><highlight class="stringliteral">&apos;sequence&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">subplot(4,1,2)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">plot(diff(data[:,0]))</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">xlabel(</highlight><highlight class="stringliteral">&apos;diff<sp/>sequence&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">subplot(4,1,3)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">plot(data[:,2])</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">xlabel(</highlight><highlight class="stringliteral">&apos;status&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">subplot(4,1,4)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">plot(data[:,3])</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">xlabel(</highlight><highlight class="stringliteral">&apos;dt<sp/>[s]&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">show()</highlight></codeline>
+    </programlisting>
+    <location file="python/plot_ati_log.py"/>
+  </compounddef>
+</doxygen>

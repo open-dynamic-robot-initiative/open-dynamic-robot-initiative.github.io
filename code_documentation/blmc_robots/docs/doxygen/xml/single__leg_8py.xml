@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="single__leg_8py" kind="file" language="Python">
+    <compoundname>single_leg.py</compoundname>
+    <innernamespace refid="namespacesingle__leg">single_leg</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>blmc_robots<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>SingleLeg</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">np.set_printoptions(suppress=</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>precision=3)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">P<sp/>=<sp/>1.0</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">D<sp/>=<sp/>0.1</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Connect<sp/>to<sp/>the<sp/>leg.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">leg<sp/>=<sp/>SingleLeg()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">leg.initialize()</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">leg.disable_can_recv_timeout()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Simple<sp/>PD<sp/>controller<sp/>setting<sp/>the<sp/>joint<sp/>to<sp/>the<sp/>desired<sp/>slider<sp/>position.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leg.acquire_sensors()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>des_pos<sp/>=<sp/>leg.get_slider_positions()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>leg.get_joint_positions()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vel<sp/>=<sp/>leg.get_joint_velocities()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tau<sp/>=<sp/>P<sp/>*<sp/>(des_pos<sp/>-<sp/>pos)<sp/>-<sp/>D<sp/>*<sp/>vel</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leg.send_target_joint_torque(tau)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time.sleep(0.001)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordflow">except</highlight><highlight class="normal"><sp/>KeyboardInterrupt:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;interrupted!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Need<sp/>to<sp/>send<sp/>zero<sp/>torques.<sp/>Otherwise<sp/>the<sp/>safety<sp/>mode<sp/>on<sp/>the<sp/>card<sp/>kicks<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">#<sp/>and<sp/>the<sp/>card<sp/>goes<sp/>into<sp/>error<sp/>mode.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">leg.send_target_joint_torque(np.array([0.0,<sp/>0.0]))</highlight></codeline>
+    </programlisting>
+    <location file="demos/single_leg.py"/>
+  </compounddef>
+</doxygen>

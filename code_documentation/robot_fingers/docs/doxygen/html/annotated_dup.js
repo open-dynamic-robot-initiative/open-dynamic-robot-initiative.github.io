@@ -20,8 +20,5 @@ var annotated_dup =
       [ "TriFingerDriver", "classrobot__fingers_1_1TriFingerDriver.html", "classrobot__fingers_1_1TriFingerDriver" ],
       [ "TriFingerPlatformFrontend", "classrobot__fingers_1_1TriFingerPlatformFrontend.html", "classrobot__fingers_1_1TriFingerPlatformFrontend" ],
       [ "TwoJointDriver", "classrobot__fingers_1_1TwoJointDriver.html", "classrobot__fingers_1_1TwoJointDriver" ]
-    ] ],
-    [ "single_finger_test", null, [
-      [ "CursesGUI", "classsingle__finger__test_1_1CursesGUI.html", "classsingle__finger__test_1_1CursesGUI" ]
     ] ]
 ];

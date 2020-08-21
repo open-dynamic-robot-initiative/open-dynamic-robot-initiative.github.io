@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="display__bolt_8py" kind="file" language="Python">
+    <compoundname>display_bolt.py</compoundname>
+    <innernamespace refid="namespacedisplay__bolt">display_bolt</innernamespace>
+    <innernamespace refid="namespaceBasic">Basic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>Copyright (c) 2020, New York University and Max Planck Gesellschaft, License BSD-3-Clause </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;<sp/>@namespace<sp/>Basic<sp/>loading<sp/>and<sp/>visualization<sp/>for<sp/>the<sp/>Bolt<sp/>robot<sp/>using<sp/>gepetto<sp/>viewer.</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral">@file<sp/>display_bolt.py</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">@copyright<sp/>Copyright<sp/>(c)<sp/>2020,</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>New<sp/>York<sp/>University<sp/>and<sp/>Max<sp/>Planck<sp/>Gesellschaft,</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>License<sp/>BSD-3-Clause</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">@example<sp/>display_bolt.py</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">-<sp/>1.<sp/>Building<sp/>the<sp/>workspace<sp/>by<sp/>executing<sp/>`catkin<sp/>build`<sp/>in<sp/>the<sp/>workspace.</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">-<sp/>2.<sp/>&quot;source<sp/>./devel/setup.bash&quot;<sp/>is<sp/>called<sp/>from<sp/>the<sp/>root<sp/>of<sp/>the<sp/>catkin</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>workspace.</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">-<sp/>3.<sp/>Run<sp/>the<sp/>demo<sp/>by<sp/>either:</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-<sp/>3.1.<sp/>`python3<sp/>display_bolt.py`</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>-<sp/>3.2.<sp/>`cd<sp/>/path/to/robot_properties_bolt/`<sp/>;<sp/>`./demos/display_bolt.py`</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pinocchio<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>se3</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacerobot__properties__bolt_1_1config" kindref="compound">robot_properties_bolt.config</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>BoltConfig</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>the<sp/>robot<sp/>urdf.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>robot<sp/>=<sp/>BoltConfig.buildRobotWrapper()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Setup<sp/>the<sp/>display<sp/>(connection<sp/>to<sp/>gepetto<sp/>viewer)<sp/>and<sp/>load<sp/>the<sp/>robot<sp/>model.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>robot.initViewer(loadModel=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Create<sp/>a<sp/>first<sp/>initial<sp/>position<sp/>for<sp/>the<sp/>robot.<sp/>Both<sp/>legs<sp/>are<sp/>bent<sp/>inwards.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>q<sp/>=<sp/>BoltConfig.initial_configuration</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>q[[4]]<sp/>=<sp/>0.6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Turn<sp/>the<sp/>legs<sp/>outside</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>q[10]<sp/>=<sp/>-0.5<sp/><sp/></highlight><highlight class="comment">#<sp/>Right<sp/>side<sp/>of<sp/>quadruped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>q[7]<sp/>=<sp/>0.5<sp/><sp/></highlight><highlight class="comment">#<sp/>Left<sp/>side<sp/>of<sp/>quadruped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Display<sp/>the<sp/>configuration<sp/>in<sp/>the<sp/>viewer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>robot.display(q)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Example<sp/>of<sp/>moving<sp/>the<sp/>robot<sp/>forward<sp/>and<sp/>updating<sp/>the<sp/>display<sp/>every<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(10):</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q[0]<sp/>+=<sp/>0.05</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robot.display(q)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time.sleep(0.2)</highlight></codeline>
+    </programlisting>
+    <location file="demos/display_bolt.py"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,76 @@
+\hypertarget{pybind__helper_8hpp}{}\section{include/robot\+\_\+interfaces/pybind\+\_\+helper.hpp File Reference}
+\label{pybind__helper_8hpp}\index{include/robot\+\_\+interfaces/pybind\+\_\+helper.\+hpp@{include/robot\+\_\+interfaces/pybind\+\_\+helper.\+hpp}}
+
+
+Helper functions for creating Python bindings.  
+
+
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$pybind11/eigen.\+h$>$}\newline
+{\ttfamily \#include $<$pybind11/pybind11.\+h$>$}\newline
+{\ttfamily \#include $<$pybind11/stl\+\_\+bind.\+h$>$}\newline
+{\ttfamily \#include $<$robot\+\_\+interfaces/robot\+\_\+frontend.\+hpp$>$}\newline
+Include dependency graph for pybind\+\_\+helper.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pybind__helper_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pybind__helper_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrobot__interfaces_1_1BindTipForceIfExists}{robot\+\_\+interfaces\+::\+Bind\+Tip\+Force\+If\+Exists$<$ Types, typename $>$}
+\begin{DoxyCompactList}\small\item\em Add Python bindings for Types\+::\+Observaton\+::tip\+\_\+force if it exists. \end{DoxyCompactList}\item 
+struct \hyperlink{structrobot__interfaces_1_1BindTipForceIfExists_3_01Types_00_01decltype_07_07void_08_01Types_1_14cbc6933c476f63b7bfd2943748e44ea}{robot\+\_\+interfaces\+::\+Bind\+Tip\+Force\+If\+Exists$<$ Types, decltype((void) Types\+::\+Observation\+::tip\+\_\+force, 0)$>$}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Types $>$ }\\void \hyperlink{pybind__helper_8hpp_a82052567130c3000eeef9f5520885233}{robot\+\_\+interfaces\+::create\+\_\+python\+\_\+bindings} (pybind11\+::module \&m)
+\begin{DoxyCompactList}\small\item\em Create Python bindings for the specified robot Types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper functions for creating Python bindings. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{pybind__helper_8hpp_file_a82052567130c3000eeef9f5520885233}\label{pybind__helper_8hpp_file_a82052567130c3000eeef9f5520885233}} 
+\index{pybind\+\_\+helper.\+hpp@{pybind\+\_\+helper.\+hpp}!create\+\_\+python\+\_\+bindings@{create\+\_\+python\+\_\+bindings}}
+\index{create\+\_\+python\+\_\+bindings@{create\+\_\+python\+\_\+bindings}!pybind\+\_\+helper.\+hpp@{pybind\+\_\+helper.\+hpp}}
+\subsubsection{\texorpdfstring{create\+\_\+python\+\_\+bindings()}{create\_python\_bindings()}}
+{\footnotesize\ttfamily template$<$typename Types $>$ \\
+void robot\+\_\+interfaces\+::create\+\_\+python\+\_\+bindings (\begin{DoxyParamCaption}\item[{pybind11\+::module \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Create Python bindings for the specified robot Types. 
+
+With this function, Python bindings can easily be created for new robots that are based on the N\+Joint\+Robot\+Types. Example\+: \begin{DoxyVerb}PYBIND11_MODULE(py_fortytwo_types, m)
+{
+    create_python_bindings<NJointRobotTypes<42>>(m);
+}
+\end{DoxyVerb}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Types} & An instance of N\+Joint\+Robot\+Types. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The second argument of the P\+Y\+B\+I\+N\+D11\+\_\+\+M\+O\+D\+U\+LE macro. \\
+\hline
+\end{DoxyParams}

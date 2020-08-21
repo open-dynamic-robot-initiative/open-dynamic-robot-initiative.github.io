@@ -3,7 +3,7 @@ var classblmc__drivers_1_1CanBus =
     [ "CanBus", "classblmc__drivers_1_1CanBus.html#a7d376f1ebd6dd8bc3299f6fc9f3d42c6", null ],
     [ "~CanBus", "classblmc__drivers_1_1CanBus.html#aa79afdda8d7f28ea63d32bf1a5a0f196", null ],
     [ "get_input_frame", "classblmc__drivers_1_1CanBus.html#a5b9282bc65bff196e6d6b393fbdc5891", null ],
-    [ "get_output_frame", "classblmc__drivers_1_1CanBus.html#a4504e6b71cba6d71de33925f9d401cb1", null ],
+    [ "get_output_frame", "classblmc__drivers_1_1CanBus.html#a449fa3c1b73a9282193ce85b56e9a729", null ],
     [ "get_sent_input_frame", "classblmc__drivers_1_1CanBus.html#a862e9898a6607ac2e00e712c30e7f348", null ],
     [ "loop", "classblmc__drivers_1_1CanBus.html#ab39625e5a1fea7d25d0967b4a48de0b4", null ],
     [ "loop", "classblmc__drivers_1_1CanBus.html#a65042f6d32e30c7c367d7e5780856a60", null ],

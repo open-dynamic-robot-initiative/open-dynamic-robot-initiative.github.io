@@ -1,0 +1,117 @@
+\hypertarget{demo_8cpp-example}{}\section{demo.\+cpp}
+This demo shows robot\+\_\+interfaces of a dummy \char`\"{}2dof\char`\"{} robot, in which a dof \char`\"{}position\char`\"{} is represented by an integer
+
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include "\hyperlink{example_8hpp}{robot\_interfaces/example.hpp}"}
+\textcolor{preprocessor}{#include "robot\_interfaces/monitored\_robot\_driver.hpp"}
+\textcolor{preprocessor}{#include "robot\_interfaces/robot.hpp"}
+\textcolor{preprocessor}{#include "robot\_interfaces/robot\_backend.hpp"}
+\textcolor{preprocessor}{#include "robot\_interfaces/robot\_driver.hpp"}
+\textcolor{preprocessor}{#include "robot\_interfaces/robot\_frontend.hpp"}
+\textcolor{preprocessor}{#include "\hyperlink{status_8hpp}{robot\_interfaces/status.hpp}"}
+
+\textcolor{preprocessor}{#include <memory>}
+
+\textcolor{keyword}{using namespace }\hyperlink{namespacerobot__interfaces_1_1example}{robot\_interfaces::example};
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1RobotBackend}{robot\_interfaces::RobotBackend<Action, Observation>}
+       Backend;
+    \textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1SingleProcessRobotData}{robot\_interfaces::SingleProcessRobotData<Action, Observation>}
+       Data;
+    \textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\_interfaces::RobotFrontend<Action, Observation>}
+       Frontend;
+
+    \textcolor{comment}{// max time allowed for the robot to apply an action.}
+    \textcolor{keywordtype}{double} max\_action\_duration\_s = 0.02;
+
+    \textcolor{comment}{// max time between for 2 successive actions}
+    \textcolor{keywordtype}{double} max\_inter\_action\_duration\_s = 0.05;
+
+    \textcolor{comment}{// demo showing the separated usage of backend and frontend}
+    \{
+        std::cout << \textcolor{stringliteral}{"\(\backslash\)n -- * -- Frontend and Backend -- * --\(\backslash\)n"} << std::endl;
+
+        std::shared\_ptr<Driver> driver\_ptr = std::make\_shared<Driver>(0, 1000);
+        \textcolor{comment}{// Wrap the driver in a MonitoredRobotDriver to automatically run a}
+        \textcolor{comment}{// timing watchdog.  If timing is violated, the robot will immediately}
+        \textcolor{comment}{// be shut down.}
+        \textcolor{comment}{// If no time monitoring is needed in your application, you can simply}
+        \textcolor{comment}{// use the `driver\_ptr` directly, without the wrapper.}
+        \textcolor{keyword}{auto} monitored\_driver\_ptr =
+            std::make\_shared<robot\_interfaces::MonitoredRobotDriver<Driver>>(
+                driver\_ptr, max\_action\_duration\_s, max\_inter\_action\_duration\_s);
+
+        std::shared\_ptr<Data> data\_ptr = std::make\_shared<Data>();
+
+        Backend backend(monitored\_driver\_ptr, data\_ptr);
+        backend.initialize();
+
+        Frontend frontend(data\_ptr);
+
+        \hyperlink{classrobot__interfaces_1_1example_1_1Action}{Action} action;
+        \hyperlink{classrobot__interfaces_1_1example_1_1Observation}{Observation} observation;
+
+        \textcolor{comment}{// simulated action :}
+        \textcolor{comment}{// 1 dof going from 200 to 300}
+        \textcolor{comment}{// The other going from 300 to 200}
+
+        \textcolor{keywordflow}{for} (uint value = 200; value <= 300; value++)
+        \{
+            action.values[0] = value;
+            action.values[1] = 500 - value;
+            \textcolor{comment}{// this action will be stored at index}
+            robot\_interfaces::TimeIndex index =
+                frontend.append\_desired\_action(action);
+            \textcolor{comment}{// getting the observation corresponding to the applied}
+            \textcolor{comment}{// action, i.e. at the same index}
+            observation = frontend.get\_observation(index);
+            std::cout << \textcolor{stringliteral}{"value: "} << value << \textcolor{stringliteral}{" | "};
+            action.print(\textcolor{keyword}{false});
+            observation.print(\textcolor{keyword}{true});
+        \}
+    \}
+
+    \textcolor{comment}{// demo representing usage of frontend and backend}
+    \textcolor{comment}{// encapsulated in the same instance}
+    \{
+        std::cout << \textcolor{stringliteral}{"\(\backslash\)n -- * -- Robot -- * --\(\backslash\)n"} << std::endl;
+
+        \textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1Robot}{robot\_interfaces::Robot<Action, Observation, Driver>}
+       Robot;
+
+        \textcolor{keywordtype}{int} min = 0;
+        \textcolor{keywordtype}{int} max = 100;
+        Robot robot(
+            max\_action\_duration\_s, max\_inter\_action\_duration\_s, min, max);
+
+        robot.initialize();
+
+        \hyperlink{classrobot__interfaces_1_1example_1_1Action}{Action} action;
+        \hyperlink{classrobot__interfaces_1_1example_1_1Observation}{Observation} observation;
+
+        \textcolor{comment}{// simulated action :}
+        \textcolor{comment}{// 1 dof going from 200 to 300}
+        \textcolor{comment}{// The other going from 300 to 200}
+
+        \textcolor{keywordflow}{for} (uint value = 200; value <= 300; value++)
+        \{
+            action.values[0] = value;
+            action.values[1] = 500 - value;
+            \textcolor{comment}{// this action will be stored at index}
+            robot\_interfaces::TimeIndex index =
+                robot.append\_desired\_action(action);
+            \textcolor{comment}{// getting the observation corresponding to the applied}
+            \textcolor{comment}{// action, i.e. at the same index}
+            observation = robot.get\_observation(index);
+            std::cout << \textcolor{stringliteral}{"value: "} << value << \textcolor{stringliteral}{" | "};
+            action.print(\textcolor{keyword}{false});
+            observation.print(\textcolor{keyword}{true});
+        \}
+    \}
+\}
+\end{DoxyCodeInclude}
+ 

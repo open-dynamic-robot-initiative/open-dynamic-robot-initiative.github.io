@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__robots_1_1SimpleNJointBlmcRobotDriver" kind="class" language="C++" prot="public">
+    <compoundname>blmc_robots::SimpleNJointBlmcRobotDriver</compoundname>
+    <basecompoundref refid="classblmc__robots_1_1NJointBlmcRobotDriver" prot="public" virt="non-virtual">blmc_robots::NJointBlmcRobotDriver&lt; robot_interfaces::NJointObservation&lt; N_JOINTS &gt;, N_JOINTS, N_MOTOR_BOARDS &gt;</basecompoundref>
+    <includes refid="n__joint__blmc__robot__driver_8hpp" local="no">n_joint_blmc_robot_driver.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>size_t</type>
+        <declname>N_JOINTS</declname>
+        <defname>N_JOINTS</defname>
+      </param>
+      <param>
+        <type>size_t</type>
+        <declname>N_MOTOR_BOARDS</declname>
+        <defname>N_MOTOR_BOARDS</defname>
+        <defval>(N_JOINTS + 1) / 2</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classblmc__robots_1_1SimpleNJointBlmcRobotDriver_1aa916b4903890975830f4938d08909038" prot="public" static="no">
+        <type>robot_interfaces::NJointObservation&lt; N_JOINTS &gt;</type>
+        <definition>typedef robot_interfaces::NJointObservation&lt;N_JOINTS&gt; blmc_robots::SimpleNJointBlmcRobotDriver&lt; N_JOINTS, N_MOTOR_BOARDS &gt;::Observation</definition>
+        <argsstring></argsstring>
+        <name>Observation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="455" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="455" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__robots_1_1SimpleNJointBlmcRobotDriver_1a47bf814e68498f5344bd81c3d52906bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Observation</type>
+        <definition>SimpleNJointBlmcRobotDriver&lt; N_JOINTS, N_MOTOR_BOARDS &gt;::Observation blmc_robots::SimpleNJointBlmcRobotDriver&lt; N_JOINTS, N_MOTOR_BOARDS &gt;::get_latest_observation</definition>
+        <argsstring>() override</argsstring>
+        <name>get_latest_observation</name>
+        <reimplements refid="classblmc__robots_1_1NJointBlmcRobotDriver_1abc4c63313e05020b91dad26a580e184f">get_latest_observation</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="461" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hxx" bodystart="714" bodyend="723"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Simple n-joint robot driver that uses NJointObservation. </para>    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>N_JOINTS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of joints </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N_MOTOR_BOARDS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of motor boards. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="21">
+        <label>blmc_robots::SimpleNJointBlmcRobotDriver&lt; N_JOINTS, N_MOTOR_BOARDS &gt;</label>
+        <link refid="classblmc__robots_1_1SimpleNJointBlmcRobotDriver"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>blmc_robots::NJointBlmcRobotDriver&lt; robot_interfaces::NJointObservation&lt; N_JOINTS &gt;, N_JOINTS, N_MOTOR_BOARDS &gt;</label>
+        <link refid="classblmc__robots_1_1NJointBlmcRobotDriver"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>robot_interfaces::RobotDriver&lt; robot_interfaces::NJointAction&lt; N_JOINTS &gt;, robot_interfaces::NJointObservation&lt; N_JOINTS &gt;  &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="27">
+        <label>blmc_robots::BlmcJointModules&lt; N_JOINTS &gt;</label>
+        <link refid="classblmc__robots_1_1BlmcJointModules"/>
+      </node>
+      <node id="29">
+        <label>blmc_robots::MotorParameters</label>
+        <link refid="structblmc__robots_1_1MotorParameters"/>
+      </node>
+      <node id="24">
+        <label>blmc_robots::SimpleNJointBlmcRobotDriver&lt; N_JOINTS, N_MOTOR_BOARDS &gt;</label>
+        <link refid="classblmc__robots_1_1SimpleNJointBlmcRobotDriver"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>blmc_robots::NJointBlmcRobotDriver&lt; robot_interfaces::NJointObservation&lt; N_JOINTS &gt;, N_JOINTS, N_MOTOR_BOARDS &gt;</label>
+        <link refid="classblmc__robots_1_1NJointBlmcRobotDriver"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>joint_modules_</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>config_</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>motor_parameters_</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::Config</label>
+        <link refid="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config"/>
+      </node>
+      <node id="26">
+        <label>robot_interfaces::RobotDriver&lt; robot_interfaces::NJointAction&lt; N_JOINTS &gt;, robot_interfaces::NJointObservation&lt; N_JOINTS &gt;  &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="453" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="448" bodyend="462"/>
+    <listofallmembers>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1aafa20130f746b5cc35eae43ce36e23c6" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>_initialize</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a6c04fde05f933db1703457f94c6cef6b" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>Action</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a200a5a050a1e2d493f47dc1228319d27" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>apply_action</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1aeca6dbdd22e3b40afe89fecf2895dcad" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>apply_action_uninitialized</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a5af27a320384e0189725ee1b13edc314" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>config_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a30f5a6037441bff26ab208bbb91c0c39" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>create_motor_boards</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a2c45384d83e688618a589cb13797e3bc" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>get_error</name></member>
+      <member refid="classblmc__robots_1_1SimpleNJointBlmcRobotDriver_1a47bf814e68498f5344bd81c3d52906bc" prot="public" virt="virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>get_latest_observation</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a8bfdae3670c639a7dc129e17687b0285" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>get_max_torques</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a274d4d97156b77e6f2dcfda74d67e45c" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>get_measured_index_angles</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a584b85a9e8356e4afcdf1559edd700cc" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>has_endstop_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1aa2948efef69215afb233fc63acf88d3f" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>homing</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a7a1ece2b5d4f0f607a4d0516543b0d48" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>initialize</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1af11037c8c3395fcde191037c82ba6c0a" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>is_initialized_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a1d9aedee4887a6f34c07481c4520cb5a" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>is_within_hard_position_limits</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a17f32687708f95c1160ecb708d429ccd" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>joint_modules_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a62f708a1406f8dfb68361c5698a5559b" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>max_torque_Nm_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ad760af5444951e4ce505e45b4e13d4ca" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>motor_boards_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ad5e1875908bb62b2f014c3f8dfce969d" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>motor_parameters_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ab703f92d3c01fbd3d481f886bfb81eca" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>MotorBoards</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a38bce1426a7ad5418dff1d43d0fc338e" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>Motors</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ab29cab22a765bce463f367b6e6dc82ff" prot="protected" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>move_to_position</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1acc2af471c4db682f57854d14430ef3fa" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>NJointBlmcRobotDriver</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a933b81d922085d51a8138cbb648c3e64" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>num_joints</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ad4897dda6376b6fabdf4b5ecd43c6c4c" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>num_motor_boards</name></member>
+      <member refid="classblmc__robots_1_1SimpleNJointBlmcRobotDriver_1aa916b4903890975830f4938d08909038" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>Observation</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a9ac3d22be40ce2c6f8bafd901bdb4a3d" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>pause_motors</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a8f7aaf3bc10c0d4d0f2c7a38f594c166" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>process_desired_action</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a4d57e567a2cd393ee9e4af4bcdde94f0" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>shutdown</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a4827e39990852c1743ce095a74213ac0" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>Types</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1acdeabef6dc3a084af61da9eda3555083" prot="public" virt="non-virtual"><scope>blmc_robots::SimpleNJointBlmcRobotDriver</scope><name>Vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

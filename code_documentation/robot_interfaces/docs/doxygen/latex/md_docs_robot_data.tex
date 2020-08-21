@@ -1,0 +1,11 @@
+The \hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data} class serves as a communication link between the back end and the front end. All data is stored there in time series.
+
+There are two different implementations of {\ttfamily Robot\+Data}\+:
+
+
+\begin{DoxyItemize}
+\item \hyperlink{classrobot__interfaces_1_1SingleProcessRobotData}{Single\+Process\+Robot\+Data}\+: Uses normal memory for the time series. Use this if all modules (back end, front end, logger, ...) are running in the same process.
+\item \hyperlink{classrobot__interfaces_1_1MultiProcessRobotData}{Multi\+Process\+Robot\+Data}\+: Uses shared memory for inter-\/process communication. Use this if back end and front end are running in separate processes.
+\end{DoxyItemize}
+
+See the \href{https://github.com/open-dynamic-robot-initiative/robot_interfaces/blob/master/demos}{\tt demos} for implementations with both the single and the multi process Robot\+Data. 

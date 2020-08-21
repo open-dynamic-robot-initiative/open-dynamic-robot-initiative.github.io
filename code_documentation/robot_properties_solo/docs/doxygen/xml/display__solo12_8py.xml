@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="display__solo12_8py" kind="file" language="Python">
+    <compoundname>display_solo12.py</compoundname>
+    <innernamespace refid="namespacedisplay__solo12">display_solo12</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="stringliteral">&quot;&quot;&quot;<sp/>Basic<sp/>loading<sp/>and<sp/>visualization<sp/>for<sp/>the<sp/>Solo<sp/>robot<sp/>using<sp/>gepetto<sp/>viewer.<sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pinocchio<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>se3</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacerobot__properties__solo_1_1config" kindref="compound">robot_properties_solo.config</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Solo12Config</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Load<sp/>the<sp/>robot<sp/>urdf.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">robot<sp/>=<sp/>Solo12Config.buildRobotWrapper()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Setup<sp/>the<sp/>display<sp/>(connection<sp/>to<sp/>gepetto<sp/>viewer)<sp/>and<sp/>load<sp/>the<sp/>robot<sp/>model.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">robot.initDisplay(loadModel=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Create<sp/>a<sp/>first<sp/>initial<sp/>position<sp/>for<sp/>the<sp/>robot.<sp/>Both<sp/>legs<sp/>are<sp/>bent<sp/>inwards.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">q<sp/>=<sp/>np.matrix(Solo12Config.initial_configuration).T</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Turn<sp/>the<sp/>legs<sp/>outside</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">q[[10,<sp/>16]]<sp/>=<sp/>-0.5<sp/></highlight><highlight class="comment">#<sp/>Right<sp/>side<sp/>of<sp/>quadruped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">q[[<sp/>7,<sp/>13]]<sp/>=<sp/>0.5<sp/><sp/></highlight><highlight class="comment">#<sp/>Left<sp/>side<sp/>of<sp/>quadruped</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Display<sp/>the<sp/>configuration<sp/>in<sp/>the<sp/>viewer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">robot.display(q)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Example<sp/>of<sp/>moving<sp/>the<sp/>robot<sp/>forward<sp/>and<sp/>updating<sp/>the<sp/>display<sp/>every<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(10):</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>q[0]<sp/>+=<sp/>0.05</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>robot.display(q)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>time.sleep(0.2)</highlight></codeline>
+    </programlisting>
+    <location file="demos/display_solo12.py"/>
+  </compounddef>
+</doxygen>

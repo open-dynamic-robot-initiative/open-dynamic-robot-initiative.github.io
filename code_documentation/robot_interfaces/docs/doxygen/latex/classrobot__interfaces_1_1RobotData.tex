@@ -1,0 +1,75 @@
+\hypertarget{classrobot__interfaces_1_1RobotData}{}\section{robot\+\_\+interfaces\+:\+:Robot\+Data$<$ Action, Observation $>$ Class Template Reference}
+\label{classrobot__interfaces_1_1RobotData}\index{robot\+\_\+interfaces\+::\+Robot\+Data$<$ Action, Observation $>$@{robot\+\_\+interfaces\+::\+Robot\+Data$<$ Action, Observation $>$}}
+
+
+Contains all the input and output data of the robot.  
+
+
+
+
+{\ttfamily \#include $<$robot\+\_\+data.\+hpp$>$}
+
+
+
+Inheritance diagram for robot\+\_\+interfaces\+:\+:Robot\+Data$<$ Action, Observation $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrobot__interfaces_1_1RobotData__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotData_a03b4160b90de7eac5ffb67cb8a872cee}\label{classrobot__interfaces_1_1RobotData_a03b4160b90de7eac5ffb67cb8a872cee}} 
+std\+::shared\+\_\+ptr$<$ time\+\_\+series\+::\+Time\+Series\+Interface$<$ Action $>$ $>$ \hyperlink{classrobot__interfaces_1_1RobotData_a03b4160b90de7eac5ffb67cb8a872cee}{desired\+\_\+action}
+\begin{DoxyCompactList}\small\item\em Time series of the desired actions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotData_a05fea4d2f75f7fc34daf2bfc71fbfc4b}\label{classrobot__interfaces_1_1RobotData_a05fea4d2f75f7fc34daf2bfc71fbfc4b}} 
+std\+::shared\+\_\+ptr$<$ time\+\_\+series\+::\+Time\+Series\+Interface$<$ Action $>$ $>$ \hyperlink{classrobot__interfaces_1_1RobotData_a05fea4d2f75f7fc34daf2bfc71fbfc4b}{applied\+\_\+action}
+\begin{DoxyCompactList}\small\item\em Time series of the actually applied actions (due to safety. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotData_ae3d13595b92f82f76b0f1df2961258bd}\label{classrobot__interfaces_1_1RobotData_ae3d13595b92f82f76b0f1df2961258bd}} 
+std\+::shared\+\_\+ptr$<$ time\+\_\+series\+::\+Time\+Series\+Interface$<$ Observation $>$ $>$ \hyperlink{classrobot__interfaces_1_1RobotData_ae3d13595b92f82f76b0f1df2961258bd}{observation}
+\begin{DoxyCompactList}\small\item\em Time series of the observations retrieved from the robot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotData_a47c53daf923c30981d15008e5134f648}\label{classrobot__interfaces_1_1RobotData_a47c53daf923c30981d15008e5134f648}} 
+std\+::shared\+\_\+ptr$<$ time\+\_\+series\+::\+Time\+Series\+Interface$<$ \hyperlink{structrobot__interfaces_1_1Status}{Status} $>$ $>$ \hyperlink{classrobot__interfaces_1_1RobotData_a47c53daf923c30981d15008e5134f648}{status}
+\begin{DoxyCompactList}\small\item\em Time series of status messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Action, typename Observation$>$\newline
+class robot\+\_\+interfaces\+::\+Robot\+Data$<$ Action, Observation $>$}
+
+Contains all the input and output data of the robot. 
+
+This means the
+\begin{DoxyItemize}
+\item {\ttfamily desired\+\_\+action} which was requested by the robot user
+\item {\ttfamily applied\+\_\+action} which was actually applied and may not be and may not be identical to desired\+\_\+action for safety reasons
+\item {\ttfamily observation} made by the robot
+\item {\ttfamily status} which keeps track of timing issues and errors.
+\end{DoxyItemize}
+
+See this graph to understand how they relate to each other precisely in terms of time\+:
+
+\begin{DoxyVerb}|------ t = 0 ------|------ t = 1 ------|
+|----- action0 -----|----- action1 -----|
+o                   o                   o
+b                   b                   b
+s                   s                   s
+0                   1                   2
+\end{DoxyVerb}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Action} & Type of the actions. \\
+\hline
+{\em Observation} & Type of the observations. \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/\hyperlink{robot__data_8hpp}{robot\+\_\+data.\+hpp}\end{DoxyCompactItemize}

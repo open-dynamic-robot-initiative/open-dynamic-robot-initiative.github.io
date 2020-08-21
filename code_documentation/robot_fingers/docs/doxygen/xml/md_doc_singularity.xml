@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_doc_singularity" kind="page">
+    <compoundname>md_doc_singularity</compoundname>
+    <title>About Singularity</title>
+    <detaileddescription>
+<para><heading level="2">What is Singularity? </heading>
+</para><para>Singularity is a tool to run software inside containers, similar to Docker. Compared to Docker it has a higher focus on security and can be used without root permission. Also programs in the container are executed as the user of the host system which makes it much more convenient when touching files of the host system (as it is happening when building a mounted workspace).</para><para><heading level="2">Get our Singularity Image </heading>
+</para><para>We provide a Singularity image with Ubuntu 18.04 with all dependencies needed to build and run the software here:</para><para><itemizedlist>
+<listitem><para><ulink url="https://drive.google.com/file/d/1yJ_RI1GpnPcs_fxcNYYUXZtQPHvhlGNH/view?usp=sharing">Download Singularity Image</ulink></para></listitem></itemizedlist>
+</para><para><heading level="2">Install Singularity </heading>
+</para><para>We are using Singularity version 3.6. Other recent versions are probably also so fine, however, we cannot guarantee compatibility for those. Unfortunately, most versions of Ubuntu still provide Singularity version 2.x in their official repositories. A newer version can be installed from source in this case. For this you may follow the <ulink url="https://sylabs.io/guides/3.6/user-guide/quick_start.html#quick-installation-steps">official installation instructions</ulink> or use the following, slightly simplified instructions (assuming you are working with Ubuntu).</para><para>Install system dependencies: <verbatim>$ sudo apt-get update &amp;&amp; sudo apt-get install -y \
+    build-essential \
+    libssl-dev \
+    uuid-dev \
+    libgpgme11-dev \
+    squashfs-tools \
+    libseccomp-dev \
+    wget \
+    pkg-config \
+    git \
+    cryptsetup
+</verbatim></para><para>Get the required version of the Go compiler: <verbatim>cd ~/Downloads  # you can save it anywhere else, just adjust paths below
+wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+tar -xzf go1.13.linux-amd64.tar.gz
+</verbatim></para><para>Note that it is only needed once for building singularity, so no need to install it permanently (we just add it to PATH temporarily for building, see below).</para><para>Now download and unpack the singularity source: <verbatim>wget https://github.com/sylabs/singularity/releases/download/v3.6.1/singularity-3.6.1.tar.gz
+tar -xzf singularity-3.6.1.tar.gz
+</verbatim></para><para>And finally build and install it: <verbatim>export PATH=~/Downloads/go/bin:${PATH}  # adjust path if you used a different directory
+cd singularity  # the folder to which the singularity source was extracted
+./mconfig
+cd builddir
+make
+sudo make install
+</verbatim></para><para>Now you should be able to use Singularity. You can test this, for example, by running <computeroutput>singularity --version</computeroutput> which should print &quot;singularity version 3.6.1&quot;. For more information on how to use Singularity, see the <ulink url="https://sylabs.io/guides/3.6/user-guide/index.html">official documentation</ulink>.</para><para><heading level="2">Run Something in the Container </heading>
+</para><para>To run the container in shell mode (i.e. opening a shell inside the container), the following is often enough: <verbatim>singularity shell path/to/image.sif
+</verbatim></para><para>This will, however, be influenced by your local setup as environment variables are exported and the home directory is mounted by default. Further the current working directory from which singularity is run is also bound inside the container.</para><para>This default behaviour is often convenient but can cause issues in some cases. A typical example would be a Python package installed in your home directory (which will then be available in the container) which is not compatible with versions of other packages inside the container. To avoid these kind of issues it is recommended to use the following command to run the container in a more isolated way: <verbatim>export SINGULARITYENV_DISPLAY=$DISPLAY
+singularity shell -e --no-home -B $(pwd) path/to/image.sif
+</verbatim></para><para>The arguments explained:</para><para><itemizedlist>
+<listitem><para>The first line makes sure the DISPLAY environment variable is set correctly inside the container (only needed if you want to run GUI-based applications).</para></listitem><listitem><para><computeroutput>-e</computeroutput> (short for <computeroutput>--cleanenv</computeroutput>) prevents environment variables to be exported.</para></listitem><listitem><para><computeroutput>--no-home</computeroutput> prevents your home directory from being bound.</para></listitem><listitem><para><computeroutput>-B </computeroutput> explicitly binds the current working directory. This should normally not be necessary but Singularity 3.6 seems to have a bug that the PWD is not bound automatically if it is somewhere inside your home directory and <computeroutput>--no-home</computeroutput> is used.</para></listitem></itemizedlist>
+</para><para>Note that with the above the current working directory is still bound in the image, so it is possible to build/modify the workspace from the host-system when Singularity is run from the root directory of the workspace.</para><para><heading level="3">Compatibility with Nvidia Drivers</heading>
+</para><para>When you are using Nvidia drivers and want to run a GUI-based application in the container, you may need to add the <computeroutput>--nv</computeroutput> flag: <verbatim>singularity shell --nv ... path/to/image.sif
+</verbatim></para><para><heading level="2">Add Custom Dependencies to the Container </heading>
+</para><para>The image we provide already includes everything needed to run the robot and the simulation. However, you may need additional libraries to use them in our own code, which are not yet present. In this case, you can create your own image which is based on our standard image but extends it with your additional dependencies.</para><para>To extend the image, create <emphasis>definition file</emphasis> like the following: <verbatim># Specify the name of the base image below
+Bootstrap: localimage
+From: ./base_image.sif
+
+%post
+    # Put commands to install additional dependencies here.
+    # Make sure everything runs automatically without human input (e.g. add
+    # `-y` to automatically say &quot;yes&quot; below).
+    apt-get install -y package_name
+</verbatim></para><para>See the official <ulink url="https://sylabs.io/guides/3.6/user-guide/definition_files.html">Documentation for Definition Files</ulink> for all options in the definition file.</para><para>Assuming you called your definition file <computeroutput>user_image.def</computeroutput>, use the following command to build the image. Note that the base image (specified in the <computeroutput>From:</computeroutput> line) needs to be present in the directory in which you call the command. <verbatim>$ singularity build --fakeroot user_image.sif path/to/user_image.def</verbatim> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

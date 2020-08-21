@@ -1,0 +1,471 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classati__ft__sensor_1_1AtiFTSensor" kind="class" language="C++" prot="public">
+    <compoundname>ati_ft_sensor::AtiFTSensor</compoundname>
+    <innerclass refid="structati__ft__sensor_1_1AtiFTSensor_1_1received__msg" prot="private">ati_ft_sensor::AtiFTSensor::received_msg</innerclass>
+    <innerclass refid="structati__ft__sensor_1_1AtiFTSensor_1_1send__msg" prot="private">ati_ft_sensor::AtiFTSensor::send_msg</innerclass>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a0ecc044012d8459b62512a9affb46067" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ati_ft_sensor::AtiFTSensor::F_[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>F_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="45" column="1" bodyfile="include/AtiFTSensor.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a167f338cd1552c8be72e2ab142826a88" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ati_ft_sensor::AtiFTSensor::T_[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>T_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="46" column="1" bodyfile="include/AtiFTSensor.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a7ca149744596b46315fa2ef591a08e7c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ati_ft_sensor::AtiFTSensor::rdt_sequence_</definition>
+        <argsstring></argsstring>
+        <name>rdt_sequence_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="47" column="1" bodyfile="include/AtiFTSensor.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a45931532f785eb26b5a8e85c5f7ab2d5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ati_ft_sensor::AtiFTSensor::ft_sequence_</definition>
+        <argsstring></argsstring>
+        <name>ft_sequence_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="48" column="1" bodyfile="include/AtiFTSensor.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a75557dcf54e92df5e6b491cca26c57ee" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ati_ft_sensor::AtiFTSensor::status_</definition>
+        <argsstring></argsstring>
+        <name>status_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="49" column="1" bodyfile="include/AtiFTSensor.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1ad6a9362c8a68676e9c70857f1d0731ec" prot="private" static="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double ati_ft_sensor::AtiFTSensor::count_per_force_</definition>
+        <argsstring></argsstring>
+        <name>count_per_force_</name>
+        <initializer>= 1000000.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="66" column="1" bodyfile="include/AtiFTSensor.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1afe77e60a64a50e9e39c1099bfc33d908" prot="private" static="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double ati_ft_sensor::AtiFTSensor::count_per_torque_</definition>
+        <argsstring></argsstring>
+        <name>count_per_torque_</name>
+        <initializer>= 1000000.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="67" column="1" bodyfile="include/AtiFTSensor.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1adf13f1b427343f60330498ca0e98b9ea" prot="private" static="no" mutable="no">
+        <type>sockaddr_in</type>
+        <definition>sockaddr_in ati_ft_sensor::AtiFTSensor::local_address_</definition>
+        <argsstring></argsstring>
+        <name>local_address_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="99" column="1" bodyfile="include/AtiFTSensor.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a6fc5b75e8a26437b6697862400c90690" prot="private" static="no" mutable="no">
+        <type>sockaddr_in</type>
+        <definition>sockaddr_in ati_ft_sensor::AtiFTSensor::remote_address_</definition>
+        <argsstring></argsstring>
+        <name>remote_address_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="99" column="1" bodyfile="include/AtiFTSensor.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1affe56e51dc6cae8a4b456abb4db7fa35" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ati_ft_sensor::AtiFTSensor::socket_</definition>
+        <argsstring></argsstring>
+        <name>socket_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="100" column="1" bodyfile="include/AtiFTSensor.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1ad0dde98310e810e75a5d1e03344ac3c5" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread ati_ft_sensor::AtiFTSensor::reading_thread_</definition>
+        <argsstring></argsstring>
+        <name>reading_thread_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="101" column="1" bodyfile="include/AtiFTSensor.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a36113d47f1a7c97f58c18d03c99da63c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ati_ft_sensor::AtiFTSensor::F_bias_[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>F_bias_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="103" column="1" bodyfile="include/AtiFTSensor.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a02280dd5595224c64b3031f79219a209" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ati_ft_sensor::AtiFTSensor::T_bias_[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>T_bias_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="103" column="1" bodyfile="include/AtiFTSensor.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a8513adb153671c83f8924c940a23791a" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex ati_ft_sensor::AtiFTSensor::mutex_</definition>
+        <argsstring></argsstring>
+        <name>mutex_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="109" column="1" bodyfile="include/AtiFTSensor.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1ada2c116afa79f3fff2885887cf3155f3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ati_ft_sensor::AtiFTSensor::initialized_</definition>
+        <argsstring></argsstring>
+        <name>initialized_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="112" column="1" bodyfile="include/AtiFTSensor.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a5b38378ea71b88a534959b165195778b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ati_ft_sensor::AtiFTSensor::going_</definition>
+        <argsstring></argsstring>
+        <name>going_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="113" column="1" bodyfile="include/AtiFTSensor.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classati__ft__sensor_1_1AtiFTSensor_1a82c97328a137772d0a1dac5d55793199" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ati_ft_sensor::AtiFTSensor::streaming_</definition>
+        <argsstring></argsstring>
+        <name>streaming_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="114" column="1" bodyfile="include/AtiFTSensor.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a059a3bb504163db1bef0d97f8e79a770" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ati_ft_sensor::AtiFTSensor::AtiFTSensor</definition>
+        <argsstring>()</argsstring>
+        <name>AtiFTSensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="32" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a9a5ae29c20e1724df1886f8b9f822dbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ati_ft_sensor::AtiFTSensor::~AtiFTSensor</definition>
+        <argsstring>()</argsstring>
+        <name>~AtiFTSensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="33" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="272" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1aa8c6b79e86229c5a3040aa584b41315c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ati_ft_sensor::AtiFTSensor::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="35" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="41" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1ad81139f635267570ef24146aa42e79e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ati_ft_sensor::AtiFTSensor::getStatus</definition>
+        <argsstring>(uint32_t &amp;rdt_seq, uint32_t &amp;ft_seq, uint32_t &amp;status)</argsstring>
+        <name>getStatus</name>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>rdt_seq</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>ft_seq</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="37" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="225" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a36beff3967fe1dee6e03e0f365003152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ati_ft_sensor::AtiFTSensor::getFT</definition>
+        <argsstring>(double *force, double *torque)</argsstring>
+        <name>getFT</name>
+        <param>
+          <type>double *</type>
+          <declname>force</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>torque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="38" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="236" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a8216e2f36a4d98a118c08f3a7975ed77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ati_ft_sensor::AtiFTSensor::stream</definition>
+        <argsstring>(bool stream)</argsstring>
+        <name>stream</name>
+        <param>
+          <type>bool</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="39" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="265" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a56e90ab175ed70198a5f7f17064d78ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ati_ft_sensor::AtiFTSensor::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="40" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="249" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a659d13141fb516206fcf27c609dcab92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ati_ft_sensor::AtiFTSensor::setBias</definition>
+        <argsstring>()</argsstring>
+        <name>setBias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="41" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="188" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a1eb465631b61e83def48c419d2994185" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ati_ft_sensor::AtiFTSensor::setBias</definition>
+        <argsstring>(double *force, double *torque)</argsstring>
+        <name>setBias</name>
+        <param>
+          <type>double *</type>
+          <declname>force</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>torque</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="42" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="195" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a0746f28aa6b624427ad6b4074b64c859" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ati_ft_sensor::AtiFTSensor::resetBias</definition>
+        <argsstring>()</argsstring>
+        <name>resetBias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="43" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="213" bodyend="222"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1a96564d744e3a5daeb8f56395ba7e832f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE ati_ft_sensor::AtiFTSensor::read_ft</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>read_ft</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="91" column="1" bodyfile="include/AtiFTSensor.h" bodystart="91" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classati__ft__sensor_1_1AtiFTSensor_1ae52996f61d96739b05c01815c386c3cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ati_ft_sensor::AtiFTSensor::read_ft</definition>
+        <argsstring>()</argsstring>
+        <name>read_ft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/AtiFTSensor.h" line="97" column="1" bodyfile="src/AtiFTSensor.cpp" bodystart="109" bodyend="186"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/AtiFTSensor.h" line="30" column="1" bodyfile="include/AtiFTSensor.h" bodystart="30" bodyend="115"/>
+    <listofallmembers>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a059a3bb504163db1bef0d97f8e79a770" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>AtiFTSensor</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1ad6a9362c8a68676e9c70857f1d0731ec" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>count_per_force_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1afe77e60a64a50e9e39c1099bfc33d908" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>count_per_torque_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a0ecc044012d8459b62512a9affb46067" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>F_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a36113d47f1a7c97f58c18d03c99da63c" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>F_bias_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a45931532f785eb26b5a8e85c5f7ab2d5" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>ft_sequence_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a36beff3967fe1dee6e03e0f365003152" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>getFT</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1ad81139f635267570ef24146aa42e79e3" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>getStatus</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a5b38378ea71b88a534959b165195778b" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>going_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1aa8c6b79e86229c5a3040aa584b41315c" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>initialize</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1ada2c116afa79f3fff2885887cf3155f3" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>initialized_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1adf13f1b427343f60330498ca0e98b9ea" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>local_address_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a8513adb153671c83f8924c940a23791a" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>mutex_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a7ca149744596b46315fa2ef591a08e7c" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>rdt_sequence_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a96564d744e3a5daeb8f56395ba7e832f" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>read_ft</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1ae52996f61d96739b05c01815c386c3cc" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>read_ft</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1ad0dde98310e810e75a5d1e03344ac3c5" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>reading_thread_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a6fc5b75e8a26437b6697862400c90690" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>remote_address_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a0746f28aa6b624427ad6b4074b64c859" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>resetBias</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a659d13141fb516206fcf27c609dcab92" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>setBias</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a1eb465631b61e83def48c419d2994185" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>setBias</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1affe56e51dc6cae8a4b456abb4db7fa35" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>socket_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a75557dcf54e92df5e6b491cca26c57ee" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>status_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a56e90ab175ed70198a5f7f17064d78ac" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>stop</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a8216e2f36a4d98a118c08f3a7975ed77" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>stream</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a82c97328a137772d0a1dac5d55793199" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>streaming_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a167f338cd1552c8be72e2ab142826a88" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>T_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a02280dd5595224c64b3031f79219a209" prot="private" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>T_bias_</name></member>
+      <member refid="classati__ft__sensor_1_1AtiFTSensor_1a9a5ae29c20e1724df1886f8b9f822dbc" prot="public" virt="non-virtual"><scope>ati_ft_sensor::AtiFTSensor</scope><name>~AtiFTSensor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

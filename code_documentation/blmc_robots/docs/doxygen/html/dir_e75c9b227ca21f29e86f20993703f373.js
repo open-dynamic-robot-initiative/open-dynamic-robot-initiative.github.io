@@ -2,6 +2,7 @@ var dir_e75c9b227ca21f29e86f20993703f373 =
 [
     [ "mathematics", "dir_0c6ebdba214de001ef8499d43dd1d7c4.html", "dir_0c6ebdba214de001ef8499d43dd1d7c4" ],
     [ "blmc_joint_module.hpp", "blmc__joint__module_8hpp.html", "blmc__joint__module_8hpp" ],
+    [ "clamp.hpp", "clamp_8hpp.html", "clamp_8hpp" ],
     [ "common_header.hpp", "common__header_8hpp.html", "common__header_8hpp" ],
     [ "common_programs_header.hpp", "common__programs__header_8hpp_source.html", null ],
     [ "n_joint_blmc_robot_driver.hpp", "n__joint__blmc__robot__driver_8hpp.html", "n__joint__blmc__robot__driver_8hpp" ],

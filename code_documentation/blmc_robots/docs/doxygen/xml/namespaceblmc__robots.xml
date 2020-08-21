@@ -1,0 +1,506 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceblmc__robots" kind="namespace" language="C++">
+    <compoundname>blmc_robots</compoundname>
+    <innerclass refid="classblmc__robots_1_1BlmcJointModule" prot="public">blmc_robots::BlmcJointModule</innerclass>
+    <innerclass refid="classblmc__robots_1_1BlmcJointModules" prot="public">blmc_robots::BlmcJointModules</innerclass>
+    <innerclass refid="structblmc__robots_1_1HomingState" prot="public">blmc_robots::HomingState</innerclass>
+    <innerclass refid="structblmc__robots_1_1MotorParameters" prot="public">blmc_robots::MotorParameters</innerclass>
+    <innerclass refid="classblmc__robots_1_1NJointBlmcRobotDriver" prot="public">blmc_robots::NJointBlmcRobotDriver</innerclass>
+    <innerclass refid="classblmc__robots_1_1Polynome" prot="public">blmc_robots::Polynome</innerclass>
+    <innerclass refid="classblmc__robots_1_1SimpleNJointBlmcRobotDriver" prot="public">blmc_robots::SimpleNJointBlmcRobotDriver</innerclass>
+    <innerclass refid="classblmc__robots_1_1SingleLeg" prot="public">blmc_robots::SingleLeg</innerclass>
+    <innerclass refid="classblmc__robots_1_1SingleMotor" prot="public">blmc_robots::SingleMotor</innerclass>
+    <innerclass refid="classblmc__robots_1_1Slider" prot="public">blmc_robots::Slider</innerclass>
+    <innerclass refid="classblmc__robots_1_1Sliders" prot="public">blmc_robots::Sliders</innerclass>
+    <innerclass refid="classblmc__robots_1_1Solo12" prot="public">blmc_robots::Solo12</innerclass>
+    <innerclass refid="classblmc__robots_1_1Solo8" prot="public">blmc_robots::Solo8</innerclass>
+    <innerclass refid="classblmc__robots_1_1Solo8TI" prot="public">blmc_robots::Solo8TI</innerclass>
+    <innerclass refid="classblmc__robots_1_1SpiJointModules" prot="public">blmc_robots::SpiJointModules</innerclass>
+    <innerclass refid="classblmc__robots_1_1Stuggihop" prot="public">blmc_robots::Stuggihop</innerclass>
+    <innerclass refid="classblmc__robots_1_1TestBench8Motors" prot="public">blmc_robots::TestBench8Motors</innerclass>
+    <innerclass refid="classblmc__robots_1_1Teststand" prot="public">blmc_robots::Teststand</innerclass>
+    <innerclass refid="structblmc__robots_1_1ThreadCalibrationData" prot="public">blmc_robots::ThreadCalibrationData</innerclass>
+    <innerclass refid="classblmc__robots_1_1TimePolynome" prot="public">blmc_robots::TimePolynome</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="blmc__joint__module_8hpp_1aa1075809042ff261e4b0a20d161448b6" prot="public" static="no">
+        <name>HomingReturnCode</name>
+        <enumvalue id="dummy_1aa1075809042ff261e4b0a20d161448b6a02de9649e258d1dd94056e676061e969" prot="public">
+          <name>NOT_INITIALIZED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Homing was not initialized and can therefore not be performed. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1aa1075809042ff261e4b0a20d161448b6a43491564ebcfd38568918efbd6e840fd" prot="public">
+          <name>RUNNING</name>
+          <briefdescription>
+<para>Homing is currently running. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1aa1075809042ff261e4b0a20d161448b6afd9f6519d3f45276829fe74eb2c4bb85" prot="public">
+          <name>SUCCEEDED</name>
+          <briefdescription>
+<para>Homing is succeeded. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1aa1075809042ff261e4b0a20d161448b6ab9e14d9b2886bcff408b85aefa780419" prot="public">
+          <name>FAILED</name>
+          <briefdescription>
+<para>Homing failed. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Possible return values of the homing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="30" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="29" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="enum" id="blmc__joint__module_8hpp_1ae2dd8b0230887c948d2583feb6beb051" prot="public" static="no">
+        <name>GoToReturnCode</name>
+        <enumvalue id="dummy_1ae2dd8b0230887c948d2583feb6beb051a43491564ebcfd38568918efbd6e840fd" prot="public">
+          <name>RUNNING</name>
+          <briefdescription>
+<para>GoTo is currently running. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1ae2dd8b0230887c948d2583feb6beb051afd9f6519d3f45276829fe74eb2c4bb85" prot="public">
+          <name>SUCCEEDED</name>
+          <briefdescription>
+<para>Position has been reached succeeded. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="dummy_1ae2dd8b0230887c948d2583feb6beb051ab9e14d9b2886bcff408b85aefa780419" prot="public">
+          <name>FAILED</name>
+          <briefdescription>
+<para>Robot is stuck(hit an obstacle) before reaching its final position. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Possible return values of the go_to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="45" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="44" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="blmc__joint__module_8hpp_1aa5066dce11e2e3ae56b844676b132a09" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classblmc__robots_1_1BlmcJointModule" kindref="compound">BlmcJointModule</ref> &gt;</type>
+        <definition>typedef std::shared_ptr&lt;BlmcJointModule&gt; blmc_robots::BlmcJointModule_ptr</definition>
+        <argsstring></argsstring>
+        <name>BlmcJointModule_ptr</name>
+        <briefdescription>
+<para>BlmcJointModule_ptr shortcut for the shared pointer <ref refid="classblmc__robots_1_1BlmcJointModule" kindref="compound">BlmcJointModule</ref> type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="368" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="368" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1a932c1319d78144ebcaa8938ae070b784" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 1, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 1, 1&gt; blmc_robots::Vector1d</definition>
+        <argsstring></argsstring>
+        <name>Vector1d</name>
+        <briefdescription>
+<para>Vector2d shortcut for the eigen vector of size 1. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="38" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1acb6916bc8c9fe9d98c484fd4cc201447" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 2, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 2, 1&gt; blmc_robots::Vector2d</definition>
+        <argsstring></argsstring>
+        <name>Vector2d</name>
+        <briefdescription>
+<para>Vector2d shortcut for the eigen vector of size 2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="43" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1ac3c26fc5a016ed8f49235f2b3cd38aa2" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 6, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 6, 1&gt; blmc_robots::Vector6d</definition>
+        <argsstring></argsstring>
+        <name>Vector6d</name>
+        <briefdescription>
+<para>Vector2d shortcut for the eigen vector of size 6. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="48" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1a98975ffbe0bca1296078e0350dfedd60" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 8, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 8, 1&gt; blmc_robots::Vector8d</definition>
+        <argsstring></argsstring>
+        <name>Vector8d</name>
+        <briefdescription>
+<para>Vector8d shortcut for the eigen vector of size 8. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="53" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1a80313eb420184518596e745eecf4b494" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 12, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 12, 1&gt; blmc_robots::Vector12d</definition>
+        <argsstring></argsstring>
+        <name>Vector12d</name>
+        <briefdescription>
+<para>Vector8d shortcut for the eigen vector of size 12. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="58" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1a793c8789a7598e8aaf766939da7262af" prot="public" static="no">
+        <type>std::shared_ptr&lt; blmc_drivers::CanBus &gt;</type>
+        <definition>typedef std::shared_ptr&lt;blmc_drivers::CanBus&gt; blmc_robots::CanBus_ptr</definition>
+        <argsstring></argsstring>
+        <name>CanBus_ptr</name>
+        <briefdescription>
+<para>CanBus_ptr shortcut for the shared pointer CanBus type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="63" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1aab1c6ddb1273247a1b45d5e8b417c216" prot="public" static="no">
+        <type>std::shared_ptr&lt; blmc_drivers::CanBusMotorBoard &gt;</type>
+        <definition>typedef std::shared_ptr&lt;blmc_drivers::CanBusMotorBoard&gt; blmc_robots::CanBusMotorBoard_ptr</definition>
+        <argsstring></argsstring>
+        <name>CanBusMotorBoard_ptr</name>
+        <briefdescription>
+<para>CanBusMotorBoard_Ptr shortcut for the shared pointer CanBus type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="68" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1ae1a0f9992bc8fbbc1943d887f517c180" prot="public" static="no">
+        <type>std::shared_ptr&lt; blmc_drivers::MotorInterface &gt;</type>
+        <definition>typedef std::shared_ptr&lt;blmc_drivers::MotorInterface&gt; blmc_robots::MotorInterface_ptr</definition>
+        <argsstring></argsstring>
+        <name>MotorInterface_ptr</name>
+        <briefdescription>
+<para>MotorInterface_ptr shortcut for the shared pointer MotorInterface type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="73" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1aeba0df1e898326cde4922419d871c5c6" prot="public" static="no">
+        <type>std::shared_ptr&lt; blmc_drivers::Motor &gt;</type>
+        <definition>typedef std::shared_ptr&lt;blmc_drivers::Motor&gt; blmc_robots::Motor_ptr</definition>
+        <argsstring></argsstring>
+        <name>Motor_ptr</name>
+        <briefdescription>
+<para>Motor_ptr shortcut for the shared pointer Motor type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="78" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1a9850cf917156e20846aef3f8195aea0f" prot="public" static="no">
+        <type>std::shared_ptr&lt; blmc_drivers::SafeMotor &gt;</type>
+        <definition>typedef std::shared_ptr&lt;blmc_drivers::SafeMotor&gt; blmc_robots::SafeMotor_ptr</definition>
+        <argsstring></argsstring>
+        <name>SafeMotor_ptr</name>
+        <briefdescription>
+<para>SafeMotor_ptr shortcut for the shared pointer SafeMotor type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="83" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1a4cb9a95e8b2c0bf237ce29f5252c7b73" prot="public" static="no">
+        <type>std::shared_ptr&lt; blmc_drivers::AnalogSensor &gt;</type>
+        <definition>typedef std::shared_ptr&lt;blmc_drivers::AnalogSensor&gt; blmc_robots::Slider_ptr</definition>
+        <argsstring></argsstring>
+        <name>Slider_ptr</name>
+        <briefdescription>
+<para>Slider_ptr shortcut for the linear potentiometer analog sensor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="88" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1ac78fe5c68e56a3b884117109959e4d58" prot="public" static="no">
+        <type>std::shared_ptr&lt; blmc_drivers::AnalogSensor &gt;</type>
+        <definition>typedef std::shared_ptr&lt;blmc_drivers::AnalogSensor&gt; blmc_robots::ContactSensor_ptr</definition>
+        <argsstring></argsstring>
+        <name>ContactSensor_ptr</name>
+        <briefdescription>
+<para>ContactSensor_ptr shortcut for the contact sensor. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is also an analog sensor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="94" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1a921d3f5a8878524375bf7e740f2fb788" prot="public" static="no">
+        <type>std::shared_ptr&lt; blmc_drivers::AnalogSensor &gt;</type>
+        <definition>typedef std::shared_ptr&lt;blmc_drivers::AnalogSensor&gt; blmc_robots::HeightSensor_ptr</definition>
+        <argsstring></argsstring>
+        <name>HeightSensor_ptr</name>
+        <briefdescription>
+<para>HeightSensor_ptr shortcut for the height sensor. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is also an analog sensor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="100" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="common__header_8hpp_1a1975c6bb47bc85dfc8edfe349c30dae1" prot="public" static="no">
+        <type>blmc_drivers::MotorInterface::MeasurementIndex</type>
+        <definition>typedef blmc_drivers::MotorInterface::MeasurementIndex blmc_robots::mi</definition>
+        <argsstring></argsstring>
+        <name>mi</name>
+        <briefdescription>
+<para>mi, this typedef is used to get the measurements from the blmc api </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_header.hpp" line="105" column="1" bodyfile="include/blmc_robots/common_header.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="clamp_8hpp_1a00195e5b1ad14316624d026f7e590ad1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Vector</type>
+          </param>
+        </templateparamlist>
+        <type>Vector</type>
+        <definition>Vector blmc_robots::clamp</definition>
+        <argsstring>(const Vector &amp;vector, const double lower_limit, const double upper_limit)</argsstring>
+        <name>clamp</name>
+        <param>
+          <type>const Vector &amp;</type>
+          <declname>vector</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>lower_limit</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>upper_limit</declname>
+        </param>
+        <briefdescription>
+<para>Clamp an arbitrary Eigen vector. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector that is to be clamped. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lower_limit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower limit. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>upper_limit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper limit.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Copy of vector where values below or above the limits are set to the corresponding limit values. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/clamp.hpp" line="20" column="1" bodyfile="include/blmc_robots/clamp.hpp" bodystart="20" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="common__programs__header_8hpp_1abfd8d06b759d97ec838177001e6b1db5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::atomic_bool</type>
+        <definition>std::atomic_bool blmc_robots::CTRL_C_DETECTED</definition>
+        <argsstring>(false)</argsstring>
+        <name>CTRL_C_DETECTED</name>
+        <param>
+          <type>false</type>
+        </param>
+        <briefdescription>
+<para>This boolean is here to kill cleanly the application upon ctrl+c. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_programs_header.hpp" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="common__programs__header_8hpp_1a6cbe0854f5b1ab199d0a8933a1d87ccb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::my_handler</definition>
+        <argsstring>(int)</argsstring>
+        <name>my_handler</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>This function is the callback upon a ctrl+c call from the terminal. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the signal </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_programs_header.hpp" line="27" column="1" bodyfile="include/blmc_robots/common_programs_header.hpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="common__programs__header_8hpp_1a3be311d1071a3f5ca0517a2b2de91517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::enable_ctrl_c</definition>
+        <argsstring>()</argsstring>
+        <name>enable_ctrl_c</name>
+        <briefdescription>
+<para>Enable to kill the demos cleanly with a ctrl+c. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_programs_header.hpp" line="35" column="1" bodyfile="include/blmc_robots/common_programs_header.hpp" bodystart="35" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="common__programs__header_8hpp_1ab6161d948656e4888f9c325719e4cc70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::print_vector</definition>
+        <argsstring>(std::string v_name, Eigen::Ref&lt; Eigen::VectorXd &gt; v)</argsstring>
+        <name>print_vector</name>
+        <param>
+          <type>std::string</type>
+          <declname>v_name</declname>
+        </param>
+        <param>
+          <type>Eigen::Ref&lt; Eigen::VectorXd &gt;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Usefull tool for the demos and programs in order to print data in real time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a string defining the data to print. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the vector to print. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/common_programs_header.hpp" line="53" column="1" bodyfile="include/blmc_robots/common_programs_header.hpp" bodystart="53" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="n__joint__blmc__robot__driver_8hpp_1a988c07200135ba12bf9ec1bbe955bde8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Driver</type>
+          </param>
+        </templateparamlist>
+        <type>Driver::Types::BackendPtr</type>
+        <definition>Driver::Types::BackendPtr blmc_robots::create_backend</definition>
+        <argsstring>(typename Driver::Types::BaseDataPtr robot_data, const std::string &amp;config_file_path, const double first_action_timeout=std::numeric_limits&lt; double &gt;::infinity())</argsstring>
+        <name>create_backend</name>
+        <param>
+          <type>typename Driver::Types::BaseDataPtr</type>
+          <declname>robot_data</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>config_file_path</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>first_action_timeout</declname>
+          <defval>std::numeric_limits&lt; double &gt;::infinity()</defval>
+        </param>
+        <briefdescription>
+<para>Create backend using the specified driver. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Driver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the driver. Expected to inherit from <ref refid="classblmc__robots_1_1NJointBlmcRobotDriver" kindref="compound">NJointBlmcRobotDriver</ref>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>robot_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Instance of RobotData used for communication. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the driver configuration file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>first_action_timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration for which the backend waits for the first action to arrive. If exceeded, the backend shuts down.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A RobotBackend instances with a driver of the specified type. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="478" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="478" bodyend="504"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="demos/common_demo_header.hpp" line="15" column="1"/>
+  </compounddef>
+</doxygen>

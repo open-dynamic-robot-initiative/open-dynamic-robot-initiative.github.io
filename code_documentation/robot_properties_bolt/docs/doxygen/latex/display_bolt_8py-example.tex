@@ -1,0 +1,62 @@
+\hypertarget{display_bolt_8py-example}{}\section{display\+\_\+bolt.\+py}
+
+\begin{DoxyItemize}
+\item 1. Building the workspace by executing {\ttfamily catkin build} in the workspace.
+\item 2. \char`\"{}source ./devel/setup.\+bash\char`\"{} is called from the root of the catkin workspace.
+\item 3. Run the demo by either\+:
+\begin{DoxyItemize}
+\item 3.\+1. {\ttfamily python3 \hyperlink{display__bolt_8py}{display\+\_\+bolt.\+py}}
+\item 3.\+2. {\ttfamily cd /path/to/robot\+\_\+properties\+\_\+bolt/} ; {\ttfamily ./demos/display\+\_\+bolt.py}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{comment}{#!/usr/bin/env python3}
+2 \textcolor{stringliteral}{""" @namespace Basic loading and visualization for the Bolt robot using gepetto viewer.}
+3 \textcolor{stringliteral}{@file display\_bolt.py}
+4 \textcolor{stringliteral}{@copyright Copyright (c) 2020,}
+5 \textcolor{stringliteral}{           New York University and Max Planck Gesellschaft,}
+6 \textcolor{stringliteral}{           License BSD-3-Clause}
+7 \textcolor{stringliteral}{@example display\_bolt.py}
+8 \textcolor{stringliteral}{- 1. Building the workspace by executing `catkin build` in the workspace.}
+9 \textcolor{stringliteral}{- 2. "source ./devel/setup.bash" is called from the root of the catkin}
+10 \textcolor{stringliteral}{     workspace.}
+11 \textcolor{stringliteral}{- 3. Run the demo by either:}
+12 \textcolor{stringliteral}{    - 3.1. `python3 display\_bolt.py`}
+13 \textcolor{stringliteral}{    - 3.2. `cd /path/to/robot\_properties\_bolt/` ; `./demos/display\_bolt.py`}
+14 \textcolor{stringliteral}{"""}
+15 
+16 \textcolor{keyword}{import} numpy \textcolor{keyword}{as} np
+17 \textcolor{keyword}{import} pinocchio \textcolor{keyword}{as} se3
+18 \textcolor{keyword}{import} time
+19 \textcolor{keyword}{import} os
+20 
+21 \textcolor{keyword}{from} \hyperlink{namespacerobot__properties__bolt_1_1config}{robot\_properties\_bolt.config} \textcolor{keyword}{import} BoltConfig
+22 
+23 
+24 \textcolor{keywordflow}{if} \_\_name\_\_ == \textcolor{stringliteral}{"\_\_main\_\_"}:
+25     \textcolor{comment}{# Load the robot urdf.}
+26     robot = BoltConfig.buildRobotWrapper()
+27 
+28     \textcolor{comment}{# Setup the display (connection to gepetto viewer) and load the robot model.}
+29     robot.initViewer(loadModel=\textcolor{keyword}{True})
+30 
+31     \textcolor{comment}{# Create a first initial position for the robot. Both legs are bent inwards.}
+32     q = BoltConfig.initial\_configuration
+33 
+34     \textcolor{comment}{# q[[4]] = 0.6}
+35     \textcolor{comment}{# Turn the legs outside}
+36     q[10] = -0.5  \textcolor{comment}{# Right side of quadruped}
+37     q[7] = 0.5  \textcolor{comment}{# Left side of quadruped}
+38 
+39     \textcolor{comment}{# Display the configuration in the viewer.}
+40     robot.display(q)
+41 
+42     \textcolor{comment}{# Example of moving the robot forward and updating the display every time.}
+43     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(10):
+44         q[0] += 0.05
+45         robot.display(q)
+46         time.sleep(0.2)
+\end{DoxyCodeInclude}
+ 

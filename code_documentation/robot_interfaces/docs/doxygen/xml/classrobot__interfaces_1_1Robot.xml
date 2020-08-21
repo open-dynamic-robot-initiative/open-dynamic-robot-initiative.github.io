@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classrobot__interfaces_1_1Robot" kind="class" language="C++" prot="public">
+    <compoundname>robot_interfaces::Robot</compoundname>
+    <basecompoundref refid="classrobot__interfaces_1_1RobotFrontend" prot="public" virt="non-virtual">robot_interfaces::RobotFrontend&lt; Action, Observation &gt;</basecompoundref>
+    <includes refid="robot_8hpp" local="no">robot.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Action</type>
+      </param>
+      <param>
+        <type>typename Observation</type>
+      </param>
+      <param>
+        <type>typename <ref refid="classDriver" kindref="compound">Driver</ref></type>
+      </param>
+      <param>
+        <type>typename Data</type>
+        <defval><ref refid="classrobot__interfaces_1_1SingleProcessRobotData" kindref="compound">SingleProcessRobotData</ref>&lt;Action, Observation&gt;</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classrobot__interfaces_1_1Robot_1aae6cdfcef2853a056a6f7d7d2356b7df" prot="private" static="no">
+        <type>std::shared_ptr&lt; Data &gt;</type>
+        <definition>typedef std::shared_ptr&lt;Data&gt; robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;::DataPtr</definition>
+        <argsstring></argsstring>
+        <name>DataPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot.hpp" line="30" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classrobot__interfaces_1_1Robot_1a8aa32d96551cdd9234288203b1790f6d" prot="private" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classDriver" kindref="compound">Driver</ref> &gt;</type>
+        <definition>typedef std::shared_ptr&lt;Driver&gt; robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;::RobotDriverPtr</definition>
+        <argsstring></argsstring>
+        <name>RobotDriverPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot.hpp" line="31" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__interfaces_1_1Robot_1add04574720fb6d4ecc9fd74678b3627e" prot="private" static="no" mutable="no">
+        <type>RobotDriverPtr</type>
+        <definition>RobotDriverPtr robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;::driver_ptr_</definition>
+        <argsstring></argsstring>
+        <name>driver_ptr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot.hpp" line="107" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1Robot_1abefd57cd42aad6c21b3db990d4488db4" prot="private" static="no" mutable="no">
+        <type><ref refid="classrobot__interfaces_1_1RobotBackend" kindref="compound">RobotBackend</ref>&lt; Action, Observation &gt;</type>
+        <definition>RobotBackend&lt;Action, Observation&gt; robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;::backend_</definition>
+        <argsstring></argsstring>
+        <name>backend_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot.hpp" line="108" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1Robot_1ad91be1a022f648a691de55202f58543e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;::Robot</definition>
+        <argsstring>(double max_action_duration_s, double max_inter_action_duration_s, Args... args)</argsstring>
+        <name>Robot</name>
+        <param>
+          <type>double</type>
+          <declname>max_action_duration_s</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max_inter_action_duration_s</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>max_action_duration_s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>See <ref refid="classrobot__interfaces_1_1MonitoredRobotDriver" kindref="compound">MonitoredRobotDriver</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_inter_action_duration_s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>See <ref refid="classrobot__interfaces_1_1MonitoredRobotDriver" kindref="compound">MonitoredRobotDriver</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments for instantiating <ref refid="classDriver" kindref="compound">Driver</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot.hpp" line="40" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="40" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1Robot_1a2db649f1bb6951f30111e0d35b760407" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;::Robot</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>Robot</name>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classrobot__interfaces_1_1Robot" kindref="compound">Robot</ref> which instantiates a non real time mode backend. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>max_action_duration_s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>See <ref refid="classrobot__interfaces_1_1MonitoredRobotDriver" kindref="compound">MonitoredRobotDriver</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_inter_action_duration_s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>See <ref refid="classrobot__interfaces_1_1MonitoredRobotDriver" kindref="compound">MonitoredRobotDriver</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments for instantiating <ref refid="classDriver" kindref="compound">Driver</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot.hpp" line="69" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="69" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1Robot_1af2d47a88a06f94e90bc0145ba1171cd0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <briefdescription>
+<para>initialize the backend </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot.hpp" line="93" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1Robot_1af6e817bb62ff3d22ce1a9353709818c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Data &amp;</type>
+        <definition>const Data&amp; robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;::get_data</definition>
+        <argsstring>() const</argsstring>
+        <name>get_data</name>
+        <briefdescription>
+<para>return the data shared by the frontend and the backend. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot.hpp" line="101" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="101" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classrobot__interfaces_1_1RobotFrontend" kindref="compound">RobotFrontend</ref> that construct and encapsulates its related <ref refid="classrobot__interfaces_1_1RobotBackend" kindref="compound">RobotBackend</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>It also construct and starts the robot driver. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="55">
+        <label>robot_interfaces::RobotFrontend&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotFrontend"/>
+      </node>
+      <node id="54">
+        <label>robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;</label>
+        <link refid="classrobot__interfaces_1_1Robot"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="57">
+        <label>robot_interfaces::RobotFrontend&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotFrontend"/>
+      </node>
+      <node id="56">
+        <label>robot_interfaces::Robot&lt; Action, Observation, Driver, Data &gt;</label>
+        <link refid="classrobot__interfaces_1_1Robot"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/robot_interfaces/robot.hpp" line="29" column="1" bodyfile="include/robot_interfaces/robot.hpp" bodystart="28" bodyend="109"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a26c137f65b908d6eddffff75df38361a" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>append_desired_action</name></member>
+      <member refid="classrobot__interfaces_1_1Robot_1abefd57cd42aad6c21b3db990d4488db4" prot="private" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>backend_</name></member>
+      <member refid="classrobot__interfaces_1_1Robot_1aae6cdfcef2853a056a6f7d7d2356b7df" prot="private" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>DataPtr</name></member>
+      <member refid="classrobot__interfaces_1_1Robot_1add04574720fb6d4ecc9fd74678b3627e" prot="private" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>driver_ptr_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a870651d849fe0f1a4909820cc3b6de40" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>get_applied_action</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a6a2120216c6154216994b562c0e7a7b2" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>get_current_timeindex</name></member>
+      <member refid="classrobot__interfaces_1_1Robot_1af6e817bb62ff3d22ce1a9353709818c3" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>get_data</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a8710ad1f0de000dfb099585e0ac7f140" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>get_desired_action</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a95964f3d7aeaab7eec4c9a8782500c0f" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>get_observation</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a080a709a39ff710c2a38bd53ff313645" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>get_status</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a68cfe3df122ae9fe5cc6ea15ea867a6e" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>get_time_stamp_ms</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a6ad481cd306ea4fc2739dc9aba4cb96a" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>get_timestamp_ms</name></member>
+      <member refid="classrobot__interfaces_1_1Robot_1af2d47a88a06f94e90bc0145ba1171cd0" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>initialize</name></member>
+      <member refid="classrobot__interfaces_1_1Robot_1ad91be1a022f648a691de55202f58543e" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>Robot</name></member>
+      <member refid="classrobot__interfaces_1_1Robot_1a2db649f1bb6951f30111e0d35b760407" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>Robot</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a256d4a3359c46caca9fe92d62b4ae413" prot="protected" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>robot_data_</name></member>
+      <member refid="classrobot__interfaces_1_1Robot_1a8aa32d96551cdd9234288203b1790f6d" prot="private" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>RobotDriverPtr</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a0bd84764fb1a3004282706963aa48c3e" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>RobotFrontend</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a02bebc6c3e9822f026c48f970d80a865" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>TimeStamp</name></member>
+      <member refid="classrobot__interfaces_1_1RobotFrontend_1a8b3af92df3d5ee90beb9402e45c4745e" prot="public" virt="non-virtual"><scope>robot_interfaces::Robot</scope><name>wait_until_timeindex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

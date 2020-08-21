@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="homing_8md" kind="file" language="Markdown">
+    <compoundname>homing.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Homing<sp/>(Joint<sp/>Position<sp/>Calibration)<sp/>{#homing}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>What<sp/>is<sp/>&quot;Homing&quot;<sp/>and<sp/>Why<sp/>is<sp/>it<sp/>Needed?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>using<sp/>relative<sp/>encoders<sp/>(like<sp/>the<sp/>quadrature<sp/>encoders,<sp/>we<sp/>are<sp/>using),<sp/>we</highlight></codeline>
+<codeline><highlight class="normal">only<sp/>get<sp/>relative<sp/>position<sp/>changes<sp/>(e.g.<sp/>&quot;motor<sp/>moved<sp/>by<sp/>13<sp/>degree&quot;).<sp/><sp/>By</highlight></codeline>
+<codeline><highlight class="normal">accumulating<sp/>these<sp/>changes,<sp/>the<sp/>position<sp/>can<sp/>be<sp/>computed.<sp/><sp/>However,<sp/>when<sp/>turning</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>robot<sp/>on,<sp/>the<sp/>motor<sp/>controller<sp/>does<sp/>not<sp/>know<sp/>the<sp/>absolute<sp/>position<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">motor<sp/>so<sp/>it<sp/>just<sp/>defines<sp/>the<sp/>current<sp/>position<sp/>to<sp/>be<sp/>zero.<sp/><sp/>This<sp/>means<sp/>that<sp/>while</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>position<sp/>is<sp/>consistent<sp/>while<sp/>the<sp/>robot<sp/>is<sp/>running,<sp/>the<sp/>same<sp/>physical</highlight></codeline>
+<codeline><highlight class="normal">position<sp/>can<sp/>get<sp/>different<sp/>position<sp/>values<sp/>when<sp/>the<sp/>robot<sp/>is<sp/>turned<sp/>off<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">between.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>solve<sp/>this<sp/>problem,<sp/>the<sp/>so<sp/>called<sp/>&quot;homing&quot;<sp/>is<sp/>performed<sp/>in<sp/>the<sp/>beginning<sp/>when</highlight></codeline>
+<codeline><highlight class="normal">turning<sp/>the<sp/>robot<sp/>on.<sp/><sp/>The<sp/>idea<sp/>is<sp/>to<sp/>search<sp/>for<sp/>a<sp/>fixed<sp/>physical<sp/>position<sp/>that</highlight></codeline>
+<codeline><highlight class="normal">can<sp/>always<sp/>be<sp/>found,<sp/>independent<sp/>of<sp/>where<sp/>the<sp/>joint<sp/>is<sp/>located<sp/>when<sp/>turned<sp/>on</highlight></codeline>
+<codeline><highlight class="normal">(e.g.<sp/>by<sp/>having<sp/>a<sp/>switch<sp/>that<sp/>is<sp/>triggered<sp/>when<sp/>the<sp/>joint<sp/>gets<sp/>at<sp/>that</highlight></codeline>
+<codeline><highlight class="normal">position).<sp/><sp/>Once<sp/>this<sp/>&quot;home<sp/>position&quot;<sp/>is<sp/>found,<sp/>it<sp/>can<sp/>be<sp/>set<sp/>as<sp/>zero<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>way,<sp/>the<sp/>same<sp/>physical<sp/>position<sp/>will<sp/>always<sp/>correspond<sp/>to<sp/>the<sp/>same<sp/>position</highlight></codeline>
+<codeline><highlight class="normal">value,<sp/>even<sp/>if<sp/>the<sp/>robot<sp/>is<sp/>turned<sp/>off<sp/>between<sp/>runs.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>How<sp/>is<sp/>the<sp/>Homing<sp/>Implemented<sp/>for<sp/>the<sp/>BLMC<sp/>Robots?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>`BlmcJointModule[s]`<sp/>class,<sp/>the<sp/>following<sp/>procedure<sp/>is<sp/>implemented:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>From<sp/>the<sp/>current<sp/>position<sp/>move<sp/>slowly<sp/>in<sp/>one<sp/>direction<sp/>(depending<sp/>on</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>parameters)<sp/>until<sp/>the<sp/>next<sp/>occurrence<sp/>of<sp/>the<sp/>encoder<sp/>index<sp/>is<sp/>reached.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Set<sp/>this<sp/>position<sp/>as<sp/>home<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Set<sp/>the<sp/>zero<sp/>position<sp/>to<sp/>home_position<sp/>+<sp/>home_offset.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>_encoder<sp/>index_<sp/>is<sp/>a<sp/>special<sp/>tick<sp/>on<sp/>the<sp/>encoder<sp/>wheel<sp/>that<sp/>appears<sp/>only</highlight></codeline>
+<codeline><highlight class="normal">once<sp/>per<sp/>motor<sp/>revolution.<sp/><sp/>This<sp/>means<sp/>once<sp/>the<sp/>encoder<sp/>index<sp/>is<sp/>found,<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">absolute<sp/>position<sp/>of<sp/>the<sp/>motor<sp/>is<sp/>known.<sp/><sp/>However,<sp/>there<sp/>is<sp/>typically<sp/>a<sp/>gear<sp/>box</highlight></codeline>
+<codeline><highlight class="normal">so<sp/>that<sp/>multiple<sp/>motor<sp/>revolutions<sp/>are<sp/>needed<sp/>for<sp/>one<sp/>joint<sp/>revolution.<sp/><sp/>So</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>the<sp/>motor<sp/>position<sp/>is<sp/>now<sp/>known,<sp/>the<sp/>absolute<sp/>position<sp/>of<sp/>the<sp/>joint<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">still<sp/>unknown<sp/>as<sp/>there<sp/>are<sp/>multiple<sp/>occurrences<sp/>of<sp/>the<sp/>encoder<sp/>index<sp/>within<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">range<sp/>of<sp/>the<sp/>joint.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>solve<sp/>this<sp/>issue,<sp/>it<sp/>needs<sp/>to<sp/>be<sp/>ensured<sp/>that<sp/>the<sp/>&quot;correct&quot;<sp/>encoder<sp/>index<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">found.<sp/><sp/>For<sp/>robots<sp/>with<sp/>joint<sp/>end-stops<sp/>(e.g.<sp/>the<sp/>Finger<sp/>robot)<sp/>this<sp/>is<sp/>done<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">first<sp/>moving<sp/>in<sp/>one<sp/>direction<sp/>until<sp/>the<sp/>end-stop<sp/>is<sp/>reached<sp/>(detected<sp/>by<sp/>waiting</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>the<sp/>velocity<sp/>to<sp/>become<sp/>zero).<sp/><sp/>Then<sp/>the<sp/>encoder<sp/>index<sp/>search<sp/>is<sp/>started<sp/>from</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>end-stop<sp/>position,<sp/>thus<sp/>guaranteeing<sp/>that<sp/>always<sp/>the<sp/>same<sp/>index<sp/>is<sp/>found.</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>robots<sp/>without<sp/>end-stops<sp/>(e.g.<sp/>Solo)<sp/>this<sp/>can<sp/>be<sp/>solved<sp/>by<sp/>first<sp/>moving<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">robot<sp/>manually<sp/>to<sp/>a<sp/>defined<sp/>position<sp/>before<sp/>starting<sp/>the<sp/>homing.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Home<sp/>Position<sp/>vs<sp/>Zero<sp/>Position<sp/><sp/>–<sp/>Meaning<sp/>of<sp/>the<sp/>Home<sp/>Offset</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>home<sp/>position<sp/>is<sp/>typically<sp/>given<sp/>by<sp/>the<sp/>mechanics<sp/>(e.g.<sp/>based<sp/>on<sp/>where<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">encoder<sp/>index<sp/>is<sp/>located)<sp/>and<sp/>can<sp/>not<sp/>be<sp/>influenced<sp/>by<sp/>the<sp/>user.<sp/><sp/>This<sp/>position</highlight></codeline>
+<codeline><highlight class="normal">is<sp/>often<sp/>not<sp/>the<sp/>one<sp/>where<sp/>the<sp/>user<sp/>wants<sp/>to<sp/>have<sp/>the<sp/>zero<sp/>position.<sp/><sp/>To<sp/>place</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>zero<sp/>at<sp/>a<sp/>different<sp/>position,<sp/>the<sp/>&quot;home<sp/>offset&quot;<sp/>parameter<sp/>can<sp/>be<sp/>used.<sp/><sp/>Once</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>home<sp/>position<sp/>is<sp/>found,<sp/>the<sp/>zero<sp/>is<sp/>set<sp/>to</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>zero_position<sp/>=<sp/>home_position<sp/>+<sp/>home_offset</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>means,<sp/>the<sp/>zero<sp/>can<sp/>be<sp/>placed<sp/>wherever<sp/>is<sp/>best<sp/>for<sp/>the<sp/>application<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">simply<sp/>setting<sp/>the<sp/>home<sp/>offset<sp/>accordingly.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>How<sp/>to<sp/>Determine<sp/>the<sp/>Home<sp/>Offset</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>determine<sp/>the<sp/>desired<sp/>home<sp/>offset<sp/>value<sp/>(e.g.<sp/>when<sp/>setting<sp/>up<sp/>a<sp/>new<sp/>robot),</highlight></codeline>
+<codeline><highlight class="normal">simply<sp/>follow<sp/>these<sp/>steps:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>First<sp/>set<sp/>the<sp/>home<sp/>offset<sp/>to<sp/>zero.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Start<sp/>the<sp/>robot<sp/>and<sp/>perform<sp/>the<sp/>homing.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Manually<sp/>move<sp/>the<sp/>robot<sp/>to<sp/>the<sp/>desired<sp/>zero<sp/>position<sp/>and<sp/>print<sp/>the<sp/>position</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>of<sp/>the<sp/>joints<sp/>(after<sp/>homing<sp/>these<sp/>positions<sp/>are<sp/>now<sp/>relative<sp/>to<sp/>the<sp/>home</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>position).</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Set<sp/>the<sp/>joint<sp/>positions<sp/>of<sp/>the<sp/>desired<sp/>zero<sp/>position<sp/>as<sp/>home<sp/>offset.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>restarting<sp/>now,<sp/>the<sp/>actual<sp/>zero<sp/>position<sp/>after<sp/>homing<sp/>should<sp/>be<sp/>at<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">desired<sp/>one.</highlight></codeline>
+    </programlisting>
+    <location file="doc/homing.md"/>
+  </compounddef>
+</doxygen>

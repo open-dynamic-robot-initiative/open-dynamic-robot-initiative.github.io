@@ -9,7 +9,7 @@ var classrobot__interfaces_1_1RobotLogger =
     [ "loop", "classrobot__interfaces_1_1RobotLogger.html#ad21b7aa8531a57bb3740ac5282093815", null ],
     [ "start", "classrobot__interfaces_1_1RobotLogger.html#a7a1b50c75aab3255ac7e6d412de833d1", null ],
     [ "stop", "classrobot__interfaces_1_1RobotLogger.html#a55ec7dcacd849adee53fa49a2a0c8234", null ],
-    [ "write_current_buffer", "classrobot__interfaces_1_1RobotLogger.html#ada7467fbac96a67ab798c4e6ef56c9b1", null ],
+    [ "write_current_buffer", "classrobot__interfaces_1_1RobotLogger.html#a36b22a51e9615ee696a5baa350d3dee0", null ],
     [ "write_header_to_file", "classrobot__interfaces_1_1RobotLogger.html#a3ff864106933593e16e5f3d6b5a8c4c2", null ],
     [ "block_size_", "classrobot__interfaces_1_1RobotLogger.html#a0465f86efac78a429f8980bd2a12959e", null ],
     [ "index_", "classrobot__interfaces_1_1RobotLogger.html#ac47398855bcb94ca8a3e83334ee1d382", null ],

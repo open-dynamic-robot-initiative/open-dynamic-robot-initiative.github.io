@@ -1,0 +1,257 @@
+\hypertarget{classblmc__robots_1_1SpiJointModules}{}\section{blmc\+\_\+robots\+:\+:Spi\+Joint\+Modules$<$ C\+O\+U\+NT $>$ Class Template Reference}
+\label{classblmc__robots_1_1SpiJointModules}\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules$<$ C\+O\+U\+N\+T $>$@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules$<$ C\+O\+U\+N\+T $>$}}
+
+
+This class defines an interface to a collection of B\+L\+MC joints.  
+
+
+
+
+{\ttfamily \#include $<$spi\+\_\+joint\+\_\+module.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}\label{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}} 
+typedef Eigen\+::\+Matrix$<$ double, C\+O\+U\+NT, 1 $>$ \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector}
+\begin{DoxyCompactList}\small\item\em Defines a static Eigen vector type in order to define the interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_afae5860967bce60813f72ae905b81d13}\label{classblmc__robots_1_1SpiJointModules_afae5860967bce60813f72ae905b81d13}} 
+\hyperlink{classblmc__robots_1_1SpiJointModules_afae5860967bce60813f72ae905b81d13}{Spi\+Joint\+Modules} (std\+::shared\+\_\+ptr$<$ Master\+Board\+Interface $>$ robot\+\_\+if, std\+::array$<$ int, C\+O\+U\+NT $>$ \&motor\+\_\+to\+\_\+card\+\_\+index, std\+::array$<$ int, C\+O\+U\+NT $>$ \&motor\+\_\+to\+\_\+card\+\_\+port\+\_\+index, const \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \&motor\+\_\+constants, const \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \&gear\+\_\+ratios, const \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \&zero\+\_\+angles, const \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \&max\+\_\+currents, std\+::array$<$ bool, C\+O\+U\+NT $>$ reverse\+\_\+polarities)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__robots_1_1SpiJointModules}{Spi\+Joint\+Modules} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a427be7b88b487059317425fa2d725d56}\label{classblmc__robots_1_1SpiJointModules_a427be7b88b487059317425fa2d725d56}} 
+void \hyperlink{classblmc__robots_1_1SpiJointModules_a427be7b88b487059317425fa2d725d56}{enable} ()
+\begin{DoxyCompactList}\small\item\em Enable all motors and motor drivers used by the joint module. \end{DoxyCompactList}\item 
+bool \hyperlink{classblmc__robots_1_1SpiJointModules_a100d408ad8452cddde9c053cc33e8b3b}{is\+\_\+ready} ()
+\begin{DoxyCompactList}\small\item\em Checks if all motors report ready. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_aed433d32a92fb49a0597d06121f39695}\label{classblmc__robots_1_1SpiJointModules_aed433d32a92fb49a0597d06121f39695}} 
+std\+::array$<$ bool, C\+O\+U\+NT $>$ {\bfseries get\+\_\+motor\+\_\+enabled} ()
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a71100d256d263b29636fdc44e640c624}\label{classblmc__robots_1_1SpiJointModules_a71100d256d263b29636fdc44e640c624}} 
+std\+::array$<$ bool, C\+O\+U\+NT $>$ {\bfseries get\+\_\+motor\+\_\+ready} ()
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a13bab38386fcc431b89dd24e794fe90f}\label{classblmc__robots_1_1SpiJointModules_a13bab38386fcc431b89dd24e794fe90f}} 
+void \hyperlink{classblmc__robots_1_1SpiJointModules_a13bab38386fcc431b89dd24e794fe90f}{send\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em Send the registered torques to all modules. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_ace3da158cead5e39198f8f7e9f24a04a}\label{classblmc__robots_1_1SpiJointModules_ace3da158cead5e39198f8f7e9f24a04a}} 
+void \hyperlink{classblmc__robots_1_1SpiJointModules_ace3da158cead5e39198f8f7e9f24a04a}{acquire\+\_\+sensors} ()
+\begin{DoxyCompactList}\small\item\em Updates the measurements based on the lastest package from the master board. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1SpiJointModules_ad4abbcc6c228d823c06827093606983a}{set\+\_\+torques} (const \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \&desired\+\_\+torques)
+\begin{DoxyCompactList}\small\item\em Register the joint torques to be sent for all modules. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules_a84c6efc9eddde57a1409c724193f3c50}{get\+\_\+max\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum admissible joint torque that can be applied. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules_a832ad3d4c2817bd20f50109d628d70b0}{get\+\_\+sent\+\_\+torques} () const
+\begin{DoxyCompactList}\small\item\em Get the previously sent torques. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules_ae244269604abea4bff4c1199820e36a5}{get\+\_\+measured\+\_\+torques} () const
+\begin{DoxyCompactList}\small\item\em Get the measured joint torques. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules_a5e15bdf82a46aeddc671eb843f181459}{get\+\_\+measured\+\_\+angles} () const
+\begin{DoxyCompactList}\small\item\em Get the measured joint angles. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules_a3857a40c65dda1200c37a7f58e87fc6b}{get\+\_\+measured\+\_\+velocities} () const
+\begin{DoxyCompactList}\small\item\em Get the measured joint velocities. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1SpiJointModules_a9b6c71b98d4738e1167daf1baa443400}{set\+\_\+zero\+\_\+angles} (const \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \&zero\+\_\+angles)
+\begin{DoxyCompactList}\small\item\em Set the zero\+\_\+angles. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules_a601fccbb1fda008282729b7bd1cf2e08}{get\+\_\+zero\+\_\+angles} () const
+\begin{DoxyCompactList}\small\item\em Get the zero\+\_\+angles. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules_ac4dff8f20dee3d73d8885f8f2d6fc141}{get\+\_\+measured\+\_\+index\+\_\+angles} () const
+\begin{DoxyCompactList}\small\item\em Get the index\+\_\+angles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a87f424216d09445281566603c8af10a0}\label{classblmc__robots_1_1SpiJointModules_a87f424216d09445281566603c8af10a0}} 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} {\bfseries motor\+\_\+constants\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a8b13dc01434cd2ef5780f9f3490b2ae5}\label{classblmc__robots_1_1SpiJointModules_a8b13dc01434cd2ef5780f9f3490b2ae5}} 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} {\bfseries gear\+\_\+ratios\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a97aa9bd455858bc730c977f367bed388}\label{classblmc__robots_1_1SpiJointModules_a97aa9bd455858bc730c977f367bed388}} 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} {\bfseries max\+\_\+currents\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_aad02dd6aed8aa046e12a9dfa7167af86}\label{classblmc__robots_1_1SpiJointModules_aad02dd6aed8aa046e12a9dfa7167af86}} 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} {\bfseries zero\+\_\+angles\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a24c95c4f58e036b2d22f7869d7ab2f33}\label{classblmc__robots_1_1SpiJointModules_a24c95c4f58e036b2d22f7869d7ab2f33}} 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} {\bfseries polarities\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a7e178bb2ddc3ef73b5d0324b0283988c}\label{classblmc__robots_1_1SpiJointModules_a7e178bb2ddc3ef73b5d0324b0283988c}} 
+std\+::array$<$ int, C\+O\+U\+NT $>$ {\bfseries motor\+\_\+to\+\_\+card\+\_\+index\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_aac1df863ca8e03de7406c171c1632380}\label{classblmc__robots_1_1SpiJointModules_aac1df863ca8e03de7406c171c1632380}} 
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} {\bfseries index\+\_\+angles\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a039c25eda9a899f86787f4adfc5a0339}\label{classblmc__robots_1_1SpiJointModules_a039c25eda9a899f86787f4adfc5a0339}} 
+std\+::array$<$ bool, C\+O\+U\+NT $>$ {\bfseries saw\+\_\+index\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a75e008104482474a6d5120ac43cb15a2}\label{classblmc__robots_1_1SpiJointModules_a75e008104482474a6d5120ac43cb15a2}} 
+std\+::array$<$ Motor $\ast$, C\+O\+U\+NT $>$ \hyperlink{classblmc__robots_1_1SpiJointModules_a75e008104482474a6d5120ac43cb15a2}{motors\+\_\+}
+\begin{DoxyCompactList}\small\item\em Holds the motors in the joint order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a4b0c786e8d478d6c85955d01439ccd46}\label{classblmc__robots_1_1SpiJointModules_a4b0c786e8d478d6c85955d01439ccd46}} 
+std\+::shared\+\_\+ptr$<$ Master\+Board\+Interface $>$ {\bfseries robot\+\_\+if\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int C\+O\+U\+NT$>$\newline
+class blmc\+\_\+robots\+::\+Spi\+Joint\+Modules$<$ C\+O\+U\+N\+T $>$}
+
+This class defines an interface to a collection of B\+L\+MC joints. 
+
+It creates a B\+L\+M\+C\+Joint\+Module for every blmc\+\_\+driver\+::\+Motor\+Interface provided. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a84c6efc9eddde57a1409c724193f3c50}\label{classblmc__robots_1_1SpiJointModules_a84c6efc9eddde57a1409c724193f3c50}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!get\+\_\+max\+\_\+torques@{get\+\_\+max\+\_\+torques}}
+\index{get\+\_\+max\+\_\+torques@{get\+\_\+max\+\_\+torques}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+torques()}{get\_max\_torques()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::get\+\_\+max\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the maximum admissible joint torque that can be applied. 
+
+\begin{DoxyReturn}{Returns}
+Vector (N/m) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a5e15bdf82a46aeddc671eb843f181459}\label{classblmc__robots_1_1SpiJointModules_a5e15bdf82a46aeddc671eb843f181459}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!get\+\_\+measured\+\_\+angles@{get\+\_\+measured\+\_\+angles}}
+\index{get\+\_\+measured\+\_\+angles@{get\+\_\+measured\+\_\+angles}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{get\+\_\+measured\+\_\+angles()}{get\_measured\_angles()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::get\+\_\+measured\+\_\+angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the measured joint angles. 
+
+\begin{DoxyReturn}{Returns}
+Vector (rad) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_ac4dff8f20dee3d73d8885f8f2d6fc141}\label{classblmc__robots_1_1SpiJointModules_ac4dff8f20dee3d73d8885f8f2d6fc141}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!get\+\_\+measured\+\_\+index\+\_\+angles@{get\+\_\+measured\+\_\+index\+\_\+angles}}
+\index{get\+\_\+measured\+\_\+index\+\_\+angles@{get\+\_\+measured\+\_\+index\+\_\+angles}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{get\+\_\+measured\+\_\+index\+\_\+angles()}{get\_measured\_index\_angles()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::get\+\_\+measured\+\_\+index\+\_\+angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the index\+\_\+angles. 
+
+There is one index per motor rotation so there are gear\+\_\+ratio indexes per joint rotation.
+
+\begin{DoxyReturn}{Returns}
+Vector (rad) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_ae244269604abea4bff4c1199820e36a5}\label{classblmc__robots_1_1SpiJointModules_ae244269604abea4bff4c1199820e36a5}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!get\+\_\+measured\+\_\+torques@{get\+\_\+measured\+\_\+torques}}
+\index{get\+\_\+measured\+\_\+torques@{get\+\_\+measured\+\_\+torques}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{get\+\_\+measured\+\_\+torques()}{get\_measured\_torques()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::get\+\_\+measured\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the measured joint torques. 
+
+\begin{DoxyReturn}{Returns}
+Vector (Nm) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a3857a40c65dda1200c37a7f58e87fc6b}\label{classblmc__robots_1_1SpiJointModules_a3857a40c65dda1200c37a7f58e87fc6b}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!get\+\_\+measured\+\_\+velocities@{get\+\_\+measured\+\_\+velocities}}
+\index{get\+\_\+measured\+\_\+velocities@{get\+\_\+measured\+\_\+velocities}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{get\+\_\+measured\+\_\+velocities()}{get\_measured\_velocities()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::get\+\_\+measured\+\_\+velocities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the measured joint velocities. 
+
+\begin{DoxyReturn}{Returns}
+Vector (rad/s) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a832ad3d4c2817bd20f50109d628d70b0}\label{classblmc__robots_1_1SpiJointModules_a832ad3d4c2817bd20f50109d628d70b0}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!get\+\_\+sent\+\_\+torques@{get\+\_\+sent\+\_\+torques}}
+\index{get\+\_\+sent\+\_\+torques@{get\+\_\+sent\+\_\+torques}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{get\+\_\+sent\+\_\+torques()}{get\_sent\_torques()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::get\+\_\+sent\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the previously sent torques. 
+
+\begin{DoxyReturn}{Returns}
+Vector (Nm) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a601fccbb1fda008282729b7bd1cf2e08}\label{classblmc__robots_1_1SpiJointModules_a601fccbb1fda008282729b7bd1cf2e08}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!get\+\_\+zero\+\_\+angles@{get\+\_\+zero\+\_\+angles}}
+\index{get\+\_\+zero\+\_\+angles@{get\+\_\+zero\+\_\+angles}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{get\+\_\+zero\+\_\+angles()}{get\_zero\_angles()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+\hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::get\+\_\+zero\+\_\+angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the zero\+\_\+angles. 
+
+These are the joint angles between the starting pose and the zero theoretical pose of the urdf.
+
+\begin{DoxyReturn}{Returns}
+Vector (rad) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a100d408ad8452cddde9c053cc33e8b3b}\label{classblmc__robots_1_1SpiJointModules_a100d408ad8452cddde9c053cc33e8b3b}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!is\+\_\+ready@{is\+\_\+ready}}
+\index{is\+\_\+ready@{is\+\_\+ready}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{is\+\_\+ready()}{is\_ready()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+bool \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::is\+\_\+ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if all motors report ready. 
+
+\begin{DoxyReturn}{Returns}
+True if all motors are ready, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_ad4abbcc6c228d823c06827093606983a}\label{classblmc__robots_1_1SpiJointModules_ad4abbcc6c228d823c06827093606983a}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!set\+\_\+torques@{set\+\_\+torques}}
+\index{set\+\_\+torques@{set\+\_\+torques}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{set\+\_\+torques()}{set\_torques()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+void \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::set\+\_\+torques (\begin{DoxyParamCaption}\item[{const \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \&}]{desired\+\_\+torques }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Register the joint torques to be sent for all modules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired\+\_\+torques} & (Nm) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__robots_1_1SpiJointModules_a9b6c71b98d4738e1167daf1baa443400}\label{classblmc__robots_1_1SpiJointModules_a9b6c71b98d4738e1167daf1baa443400}} 
+\index{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}!set\+\_\+zero\+\_\+angles@{set\+\_\+zero\+\_\+angles}}
+\index{set\+\_\+zero\+\_\+angles@{set\+\_\+zero\+\_\+angles}!blmc\+\_\+robots\+::\+Spi\+Joint\+Modules@{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}}
+\subsubsection{\texorpdfstring{set\+\_\+zero\+\_\+angles()}{set\_zero\_angles()}}
+{\footnotesize\ttfamily template$<$int C\+O\+U\+NT$>$ \\
+void \hyperlink{classblmc__robots_1_1SpiJointModules}{blmc\+\_\+robots\+::\+Spi\+Joint\+Modules}$<$ C\+O\+U\+NT $>$\+::set\+\_\+zero\+\_\+angles (\begin{DoxyParamCaption}\item[{const \hyperlink{classblmc__robots_1_1SpiJointModules_a2d48f81ec41a42a240e80cd22d4fa2f8}{Vector} \&}]{zero\+\_\+angles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the zero\+\_\+angles. 
+
+These are the joint angles between the starting pose and the zero theoretical pose of the urdf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zero\+\_\+angles} & (rad) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+robots/spi\+\_\+joint\+\_\+module.\+hpp\end{DoxyCompactItemize}

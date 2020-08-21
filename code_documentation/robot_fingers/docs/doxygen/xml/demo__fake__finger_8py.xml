@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="demo__fake__finger_8py" kind="file" language="Python">
+    <compoundname>demo_fake_finger.py</compoundname>
+    <innernamespace refid="namespacedemo__fake__finger">demo_fake_finger</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;Basic<sp/>demo<sp/>on<sp/>how<sp/>to<sp/>control<sp/>the<sp/>Finger<sp/>robot<sp/>using<sp/>a<sp/>fake<sp/>driver.</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">This<sp/>script<sp/>illustrates<sp/>how<sp/>to<sp/>control<sp/>a<sp/>robot<sp/>via<sp/>the<sp/>Python<sp/>interface.<sp/><sp/>It</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">uses<sp/>a<sp/>fake<sp/>driver,<sp/>i.e.<sp/>it<sp/>can<sp/>be<sp/>executed<sp/>without<sp/>an<sp/>actual<sp/>robot.<sp/><sp/>The<sp/>fake</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">driver<sp/>will<sp/>simply<sp/>provide<sp/>fake<sp/>observations<sp/>and<sp/>ignore<sp/>any<sp/>actions<sp/>that<sp/>are</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">sent<sp/>to<sp/>it.</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>robot_interfaces</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>robot_fingers</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">main():</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Storage<sp/>for<sp/>all<sp/>observations,<sp/>actions,<sp/>etc.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>finger_data<sp/>=<sp/>robot_interfaces.finger.MultiProcessData(&quot;foo&quot;,<sp/>True)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>finger_data<sp/>=<sp/>robot_interfaces.finger.SingleProcessData()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>The<sp/>backend<sp/>sends<sp/>actions<sp/>from<sp/>the<sp/>data<sp/>to<sp/>the<sp/>robot<sp/>and<sp/>writes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>observations<sp/>from<sp/>the<sp/>robot<sp/>to<sp/>the<sp/>data.<sp/><sp/>Here<sp/>we<sp/>use<sp/>a<sp/>backend<sp/>using<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>&quot;random<sp/>finger<sp/>driver&quot;<sp/>which<sp/>just<sp/>provides<sp/>fake<sp/>observations<sp/>and<sp/>does<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>need<sp/>an<sp/>actual<sp/>robot<sp/>to<sp/>be<sp/>executed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>fake_finger_backend<sp/>=<sp/><ref refid="fake__finger__driver_8hpp_1adc5e72501280c03e0b9f887b90e4d552" kindref="member">robot_fingers.create_fake_finger_backend</ref>(finger_data)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>The<sp/>frontend<sp/>is<sp/>used<sp/>by<sp/>the<sp/>user<sp/>to<sp/>get<sp/>observations<sp/>and<sp/>send<sp/>actions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>finger<sp/>=<sp/>robot_interfaces.finger.Frontend(finger_data)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initializes<sp/>the<sp/>robot<sp/>(e.g.<sp/>performs<sp/>homing).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>fake_finger_backend.initialize()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Control<sp/>gains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>kp<sp/>=<sp/>5</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>kd<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Action<sp/>=<sp/>robot_interfaces.finger.Action</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>desired_torque<sp/>=<sp/>np.zeros(3)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Run<sp/>a<sp/>position<sp/>controller<sp/>that<sp/>randomly<sp/>changes<sp/>the<sp/>desired<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>every<sp/>300<sp/>steps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>One<sp/>time<sp/>step<sp/>corresponds<sp/>to<sp/>roughly<sp/>1<sp/>ms.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desired_position<sp/>=<sp/>np.random.rand(3)<sp/>*<sp/>6<sp/>-<sp/>1</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>_<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(300):</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Appends<sp/>a<sp/>torque<sp/>command<sp/>(&quot;action&quot;)<sp/>to<sp/>the<sp/>action<sp/>queue.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Returns<sp/>the<sp/>time<sp/>step<sp/>at<sp/>which<sp/>the<sp/>action<sp/>is<sp/>going<sp/>to<sp/>be</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>executed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/>finger.append_desired_action(Action(torque=desired_torque))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Get<sp/>observations<sp/>of<sp/>the<sp/>time<sp/>step<sp/>t.<sp/><sp/>Will<sp/>block<sp/>and<sp/>wait<sp/>if<sp/>t<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>in<sp/>the<sp/>future.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_position<sp/>=<sp/>finger.get_observation(t).position</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_velocity<sp/>=<sp/>finger.get_observation(t).velocity</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Simple<sp/>PD<sp/>controller<sp/>to<sp/>compute<sp/>desired<sp/>torque<sp/>for<sp/>next<sp/>iteration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position_error<sp/>=<sp/>desired_position<sp/>-<sp/>current_position</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desired_torque<sp/>=<sp/>kp<sp/>*<sp/>position_error<sp/>-<sp/>kd<sp/>*<sp/>current_velocity</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>print<sp/>current<sp/>position<sp/>from<sp/>time<sp/>to<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Position:<sp/>%s&quot;</highlight><highlight class="normal"><sp/>%<sp/>current_position)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>main()</highlight></codeline>
+    </programlisting>
+    <location file="demos/demo_fake_finger.py"/>
+  </compounddef>
+</doxygen>

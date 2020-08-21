@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="action_8py" kind="file" language="Python">
+    <compoundname>action.py</compoundname>
+    <innerclass refid="classtrifinger__simulation_1_1action_1_1Action" prot="public">trifinger_simulation::action::Action</innerclass>
+    <innernamespace refid="namespacetrifinger__simulation_1_1action">trifinger_simulation::action</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Action:</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Robot<sp/>action.</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>The<sp/>length<sp/>of<sp/>the<sp/>attributes<sp/>depends<sp/>on<sp/>the<sp/>robot<sp/>type.<sp/><sp/>In<sp/>the<sp/>following</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>``n_joints``<sp/>is<sp/>the<sp/>number<sp/>of<sp/>joints<sp/>and<sp/>``n_fingers``<sp/>the<sp/>number<sp/>of</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>fingers<sp/>(e.g.<sp/>for<sp/>the<sp/>TriFinger<sp/>robots<sp/>``n_fingers<sp/>=<sp/>3,<sp/>n_joints<sp/>=<sp/>9``).</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Attributes:</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>torque<sp/>(array,<sp/>shape=(n_joints,)):<sp/><sp/>Torque<sp/>commands<sp/>for<sp/>the<sp/>joints.</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position<sp/>(array,<sp/>shape=(n_joints,)):<sp/><sp/>Position<sp/>commands<sp/>for<sp/>the<sp/>joints.</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Set<sp/>to<sp/>NaN<sp/>to<sp/>disable<sp/>position<sp/>control<sp/>for<sp/>the<sp/>corresponding<sp/>joint.</highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kp<sp/>(array,<sp/>shape=(n_joints,)):<sp/><sp/>P-gain<sp/>for<sp/>position<sp/>controller.<sp/><sp/>Set<sp/>to</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NaN<sp/>to<sp/>use<sp/>default<sp/>gain<sp/>for<sp/>the<sp/>corresponding<sp/>joint.</highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kd<sp/>(array,<sp/>shape=(n_joints,)):<sp/><sp/>D-gain<sp/>for<sp/>position<sp/>controller.<sp/><sp/>Set<sp/>to</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NaN<sp/>to<sp/>use<sp/>default<sp/>gain<sp/>for<sp/>the<sp/>corresponding<sp/>joint.</highlight></codeline>
+<codeline lineno="20" refid="classtrifinger__simulation_1_1action_1_1Action" refkind="compound"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1action_1_1Action_1a8cf3247a4080f46bc05c62ba66ec8016" kindref="member">__init__</ref>(self,<sp/>torque,<sp/>position,<sp/>kp=None,<sp/>kd=None):</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Initialize</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>torque:<sp/><sp/>See<sp/>:attr:`torque`.</highlight></codeline>
+<codeline lineno="27"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position:<sp/><sp/>See<sp/>:attr:`position`.</highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kp:<sp/><sp/>See<sp/>:attr:`kp`.</highlight></codeline>
+<codeline lineno="29"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kd:<sp/><sp/>See<sp/>:attr:`kd`.</highlight></codeline>
+<codeline lineno="30"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1action_1_1Action_1afa60ba875dbdd6c4903f04760a5c20d9" kindref="member">torque</ref><sp/>=<sp/>torque</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1action_1_1Action_1ad5a6eb34bca8a17b78c70df059fa01ff" kindref="member">position</ref><sp/>=<sp/>position</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>kp<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1action_1_1Action_1a86037a7a4580aea71607188aeafa7bfd" kindref="member">position_kp</ref><sp/>=<sp/>np.full_like(position,<sp/>np.nan,<sp/>dtype=float)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1action_1_1Action_1a86037a7a4580aea71607188aeafa7bfd" kindref="member">position_kp</ref><sp/>=<sp/>kp</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>kd<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1action_1_1Action_1ac42443e1e4f0be5c6db4dab6c28417c4" kindref="member">position_kd</ref><sp/>=<sp/>np.full_like(position,<sp/>np.nan,<sp/>dtype=float)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1action_1_1Action_1ac42443e1e4f0be5c6db4dab6c28417c4" kindref="member">position_kd</ref><sp/>=<sp/>kd</highlight></codeline>
+    </programlisting>
+    <location file="python/trifinger_simulation/action.py"/>
+  </compounddef>
+</doxygen>

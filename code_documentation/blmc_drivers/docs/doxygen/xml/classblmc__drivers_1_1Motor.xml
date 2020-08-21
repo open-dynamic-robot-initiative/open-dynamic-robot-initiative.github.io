@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1Motor" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::Motor</compoundname>
+    <basecompoundref refid="classblmc__drivers_1_1MotorInterface" prot="public" virt="non-virtual">blmc_drivers::MotorInterface</basecompoundref>
+    <derivedcompoundref refid="classblmc__drivers_1_1SafeMotor" prot="public" virt="non-virtual">blmc_drivers::SafeMotor</derivedcompoundref>
+    <includes refid="motor_8hpp" local="no">motor.hpp</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1Motor_1a779365c022edb7d4beb4060dcdb7dd72" prot="protected" static="no" mutable="no">
+        <type><ref refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> &gt;</type>
+        <definition>Ptr&lt;MotorBoardInterface&gt; blmc_drivers::Motor::board_</definition>
+        <argsstring></argsstring>
+        <name>board_</name>
+        <briefdescription>
+<para>The MotorBoard to be used for the communication. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="198" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1Motor_1a614903579bd6001169d11b72bc17042b" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::Motor::motor_id_</definition>
+        <argsstring></argsstring>
+        <name>motor_id_</name>
+        <briefdescription>
+<para>The id of the motor on the MotorBoard. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="203" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1a923be3c8e5027cdead1006f3878b6ec3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::Motor::Motor</definition>
+        <argsstring>(Ptr&lt; MotorBoardInterface &gt; board, bool motor_id)</argsstring>
+        <name>Motor</name>
+        <param>
+          <type><ref refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> &gt;</type>
+          <declname>board</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>motor_id</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1Motor" kindref="compound">Motor</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>board</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the MotorBoard to be used. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motor_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the motor on the on-board card </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="123" column="1" bodyfile="src/motor.cpp" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1ad93b64d54b40ff12df7081e009c71239" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual blmc_drivers::Motor::~Motor</definition>
+        <argsstring>()</argsstring>
+        <name>~Motor</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1Motor" kindref="compound">Motor</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="129" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="129" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1acf7389e09918c1955986a641efd4f032" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void blmc_drivers::Motor::send_if_input_changed</definition>
+        <argsstring>()</argsstring>
+        <name>send_if_input_changed</name>
+        <reimplements refid="classblmc__drivers_1_1MotorInterface_1a7ac16ddd18d76781612714a485dcb6bd">send_if_input_changed</reimplements>
+        <briefdescription>
+<para>Actually send the command and controls via the network, See <ref refid="classblmc__drivers_1_1MotorInterface" kindref="compound">MotorInterface</ref> for more information. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="135" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1a0ff1a1b5eb5da4791cc27879e761eb22" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>Motor::Ptr&lt; const Motor::ScalarTimeseries &gt; blmc_drivers::Motor::get_measurement</definition>
+        <argsstring>(const int &amp;index=0) const</argsstring>
+        <name>get_measurement</name>
+        <reimplements refid="classblmc__drivers_1_1MotorInterface_1a7f6afed670f078518ccb46e1e3b44892">get_measurement</reimplements>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Getters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the measurements</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the kind of measurement we are instersted in. see <ref refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33" kindref="member">MotorInterface::MeasurementIndex</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; The history of the measurement </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="151" column="1" bodyfile="src/motor.cpp" bodystart="25" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1ace26e74e3c8072c8bee867a2a0a7e013" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>Motor::Ptr&lt; const Motor::ScalarTimeseries &gt; blmc_drivers::Motor::get_current_target</definition>
+        <argsstring>() const</argsstring>
+        <name>get_current_target</name>
+        <reimplements refid="classblmc__drivers_1_1MotorInterface_1a167ffe5df0412b9abcac9a93861e58d2">get_current_target</reimplements>
+        <reimplementedby refid="classblmc__drivers_1_1SafeMotor_1ae40e4c51272c46f037ea0ba393b2033e">get_current_target</reimplementedby>
+        <briefdescription>
+<para>Get the current target to be sent. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; the list of current values to be sent. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="160" column="1" bodyfile="src/motor.cpp" bodystart="62" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1aed5e8ee5136b76a94fc17a4430b108c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>Motor::Ptr&lt; const Motor::ScalarTimeseries &gt; blmc_drivers::Motor::get_sent_current_target</definition>
+        <argsstring>() const</argsstring>
+        <name>get_sent_current_target</name>
+        <reimplements refid="classblmc__drivers_1_1MotorInterface_1a709804e11aa22fbb3107e781c9799bdb">get_sent_current_target</reimplements>
+        <briefdescription>
+<para>Get the already sent current target values. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="167" column="1" bodyfile="src/motor.cpp" bodystart="74" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1a48801c9858a7b1784b0a0ac4272fdaf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::Motor::set_current_target</definition>
+        <argsstring>(const double &amp;current_target)</argsstring>
+        <name>set_current_target</name>
+        <reimplements refid="classblmc__drivers_1_1MotorInterface_1a76b49a1228ad549fa407a54c8da14d13">set_current_target</reimplements>
+        <reimplementedby refid="classblmc__drivers_1_1SafeMotor_1adedaee24408b94b3d1ed8f856e218b12">set_current_target</reimplementedby>
+        <param>
+          <type>const double &amp;</type>
+          <declname>current_target</declname>
+        </param>
+        <briefdescription>
+<para>Setters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the current (Ampere) target. See <ref refid="classblmc__drivers_1_1MotorInterface" kindref="compound">MotorInterface</ref> for more information.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>current_target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>in Ampere </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="179" column="1" bodyfile="src/motor.cpp" bodystart="88" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1a4af56df5466d011fc2a567dd815a6c1b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void blmc_drivers::Motor::set_command</definition>
+        <argsstring>(const MotorBoardCommand &amp;command)</argsstring>
+        <name>set_command</name>
+        <reimplements refid="classblmc__drivers_1_1MotorInterface_1a723a772b2be5beb0f07097a5b3e00a89">set_command</reimplements>
+        <param>
+          <type>const <ref refid="classblmc__drivers_1_1MotorBoardCommand" kindref="compound">MotorBoardCommand</ref> &amp;</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>Set the command. </para>        </briefdescription>
+        <detaileddescription>
+<para>See <ref refid="classblmc__drivers_1_1MotorInterface" kindref="compound">MotorInterface</ref> for more information.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="186" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="186" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1Motor_1a2779f53af7b066254cac47bf07a162a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::Motor::print</definition>
+        <argsstring>() const</argsstring>
+        <name>print</name>
+        <briefdescription>
+<para>Print the motor status and state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="192" column="1" bodyfile="src/motor.cpp" bodystart="102" bodyend="150"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class implements the <ref refid="classblmc__drivers_1_1MotorInterface" kindref="compound">MotorInterface</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="66">
+        <label>blmc_drivers::Motor</label>
+        <link refid="classblmc__drivers_1_1Motor"/>
+        <childnode refid="67" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="67">
+        <label>blmc_drivers::MotorInterface</label>
+        <link refid="classblmc__drivers_1_1MotorInterface"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>blmc_drivers::SafeMotor</label>
+        <link refid="classblmc__drivers_1_1SafeMotor"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="70">
+        <label>blmc_drivers::Motor</label>
+        <link refid="classblmc__drivers_1_1Motor"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="71">
+        <label>blmc_drivers::MotorInterface</label>
+        <link refid="classblmc__drivers_1_1MotorInterface"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_drivers/devices/motor.hpp" line="115" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="114" bodyend="204"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1Motor_1a779365c022edb7d4beb4060dcdb7dd72" prot="protected" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>board_</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33a781e5fac9a7a2eafeea329774b61f9ce" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>current</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33aa6e7aa183d7fc6ab546494580dbb60b8" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>encoder_index</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1ace26e74e3c8072c8bee867a2a0a7e013" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>get_current_target</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a0ff1a1b5eb5da4791cc27879e761eb22" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>get_measurement</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1aed5e8ee5136b76a94fc17a4430b108c8" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>get_sent_current_target</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33ad9b4b38e780d8eb8b345fb0854788bf7" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>measurement_count</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>MeasurementIndex</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a923be3c8e5027cdead1006f3878b6ec3" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>Motor</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a614903579bd6001169d11b72bc17042b" prot="protected" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>motor_id_</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33ab088fb75ffc5bb9a890ab8713914fb82" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>position</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a2779f53af7b066254cac47bf07a162a4" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>print</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>Ptr</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>ScalarTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1acf7389e09918c1955986a641efd4f032" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>send_if_input_changed</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a4af56df5466d011fc2a567dd815a6c1b" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>set_command</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a48801c9858a7b1784b0a0ac4272fdaf5" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>set_current_target</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33ad0fda361d547805e453c069e2b53613e" prot="public" virt="non-virtual"><scope>blmc_drivers::Motor</scope><name>velocity</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1ad93b64d54b40ff12df7081e009c71239" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>~Motor</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a1f535a7de62ae8246f44541216254da5" prot="public" virt="virtual"><scope>blmc_drivers::Motor</scope><name>~MotorInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

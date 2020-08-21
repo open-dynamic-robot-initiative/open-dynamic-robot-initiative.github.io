@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classrobot__interfaces_1_1MultiProcessSensorData" kind="class" language="C++" prot="public">
+    <compoundname>robot_interfaces::MultiProcessSensorData</compoundname>
+    <basecompoundref refid="classrobot__interfaces_1_1SensorData" prot="public" virt="non-virtual">robot_interfaces::SensorData&lt; Observation &gt;</basecompoundref>
+    <includes refid="sensor__data_8hpp" local="no">sensor_data.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Observation</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1MultiProcessSensorData_1a8267ab3dc86230372571af2af73e07c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::MultiProcessSensorData&lt; Observation &gt;::MultiProcessSensorData</definition>
+        <argsstring>(const std::string &amp;shared_memory_id, bool is_master, size_t history_length=1000)</argsstring>
+        <name>MultiProcessSensorData</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>shared_memory_id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_master</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>history_length</declname>
+          <defval>1000</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_data.hpp" line="75" column="1" bodyfile="include/robot_interfaces/sensors/sensor_data.hpp" bodystart="75" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classrobot__interfaces_1_1SensorData" kindref="compound">SensorData</ref> instance using multi process time series. </para>    </briefdescription>
+    <detaileddescription>
+<para>Use this class if modules accessing the data are running in separate processes. When all modules run as threads in the same process, this class can be used as well, however, <ref refid="classrobot__interfaces_1_1SingleProcessSensorData" kindref="compound">SingleProcessSensorData</ref> might be more efficient in that case.</para><para>Contains the data coming from the sensors. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Observation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the sensor observation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classrobot__interfaces_1_1SingleProcessSensorData" kindref="compound">SingleProcessSensorData</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="34">
+        <label>robot_interfaces::MultiProcessSensorData&lt; Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1MultiProcessSensorData"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>robot_interfaces::SensorData&lt; Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1SensorData"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="36">
+        <label>robot_interfaces::MultiProcessSensorData&lt; Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1MultiProcessSensorData"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>robot_interfaces::SensorData&lt; Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1SensorData"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/robot_interfaces/sensors/sensor_data.hpp" line="73" column="1" bodyfile="include/robot_interfaces/sensors/sensor_data.hpp" bodystart="72" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1MultiProcessSensorData_1a8267ab3dc86230372571af2af73e07c0" prot="public" virt="non-virtual"><scope>robot_interfaces::MultiProcessSensorData</scope><name>MultiProcessSensorData</name></member>
+      <member refid="classrobot__interfaces_1_1SensorData_1afb270cde8fa55814d76787589f05ce44" prot="public" virt="non-virtual"><scope>robot_interfaces::MultiProcessSensorData</scope><name>observation</name></member>
+      <member refid="classrobot__interfaces_1_1SensorData_1aa9d6f149ed2baeddaa678c9a2e0dc97b" prot="protected" virt="non-virtual"><scope>robot_interfaces::MultiProcessSensorData</scope><name>SensorData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

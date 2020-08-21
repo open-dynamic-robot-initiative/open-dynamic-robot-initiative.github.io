@@ -1,0 +1,103 @@
+\hypertarget{classblmc__drivers_1_1SineTorqueControl}{}\section{blmc\+\_\+drivers\+:\+:Sine\+Torque\+Control Class Reference}
+\label{classblmc__drivers_1_1SineTorqueControl}\index{blmc\+\_\+drivers\+::\+Sine\+Torque\+Control@{blmc\+\_\+drivers\+::\+Sine\+Torque\+Control}}
+
+
+This is a basic PD controller to be used in the demos of this package.  
+
+
+
+
+{\ttfamily \#include $<$sine\+\_\+torque\+\_\+control.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__drivers_1_1SineTorqueControl_ab3fcdb73429a6e4a664dc294f80e6d3c}{Sine\+Torque\+Control} (std\+::vector$<$ \hyperlink{namespaceblmc__drivers_ab975c3be3c53a93a10c491f07a132e2b}{Safe\+Motor\+\_\+ptr} $>$ motor\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__drivers_1_1SineTorqueControl}{Sine\+Torque\+Control} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_ae66565e4a8be3eb93d84f6dc0c825ce6}\label{classblmc__drivers_1_1SineTorqueControl_ae66565e4a8be3eb93d84f6dc0c825ce6}} 
+\hyperlink{classblmc__drivers_1_1SineTorqueControl_ae66565e4a8be3eb93d84f6dc0c825ce6}{$\sim$\+Sine\+Torque\+Control} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classblmc__drivers_1_1SineTorqueControl}{Sine\+Torque\+Control} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_aa884278b4fc524c8e6d93b23630aa967}\label{classblmc__drivers_1_1SineTorqueControl_aa884278b4fc524c8e6d93b23630aa967}} 
+void \hyperlink{classblmc__drivers_1_1SineTorqueControl_aa884278b4fc524c8e6d93b23630aa967}{start\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em This method is a helper to start the thread loop. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a1ecff8c52b3a8b0f6ece6818c42ec94a}\label{classblmc__drivers_1_1SineTorqueControl_a1ecff8c52b3a8b0f6ece6818c42ec94a}} 
+void \hyperlink{classblmc__drivers_1_1SineTorqueControl_a1ecff8c52b3a8b0f6ece6818c42ec94a}{stop\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em Stop the control and dump the data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classblmc__drivers_1_1SineTorqueControl_a9f5f27389db0a303e2bae2f9c5135417}{loop} ()
+\begin{DoxyCompactList}\small\item\em this is a simple control loop which runs at a kilohertz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a6882e509d6e81f09a70aa4214aeadf16}\label{classblmc__drivers_1_1SineTorqueControl_a6882e509d6e81f09a70aa4214aeadf16}} 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classblmc__drivers_1_1SineTorqueControl_a6882e509d6e81f09a70aa4214aeadf16}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a9c0d1d276c8c1e6e483ca257ccd12c73}\label{classblmc__drivers_1_1SineTorqueControl_a9c0d1d276c8c1e6e483ca257ccd12c73}} 
+std\+::vector$<$ \hyperlink{namespaceblmc__drivers_ab975c3be3c53a93a10c491f07a132e2b}{Safe\+Motor\+\_\+ptr} $>$ \hyperlink{classblmc__drivers_1_1SineTorqueControl_a9c0d1d276c8c1e6e483ca257ccd12c73}{motor\+\_\+list\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is list of motors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a526b5a28129d498481c948edec6f4639}\label{classblmc__drivers_1_1SineTorqueControl_a526b5a28129d498481c948edec6f4639}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classblmc__drivers_1_1SineTorqueControl_a526b5a28129d498481c948edec6f4639}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the real time thread object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a96ab17f38eb5dba5792f1dfd0f5fac35}\label{classblmc__drivers_1_1SineTorqueControl_a96ab17f38eb5dba5792f1dfd0f5fac35}} 
+bool \hyperlink{classblmc__drivers_1_1SineTorqueControl_a96ab17f38eb5dba5792f1dfd0f5fac35}{stop\+\_\+loop\+\_\+}
+\begin{DoxyCompactList}\small\item\em managing the stopping of the loop \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a3dcbc9b83ae5e2956e7172a9197c7964}\label{classblmc__drivers_1_1SineTorqueControl_a3dcbc9b83ae5e2956e7172a9197c7964}} 
+unsigned \hyperlink{classblmc__drivers_1_1SineTorqueControl_a3dcbc9b83ae5e2956e7172a9197c7964}{memory\+\_\+buffer\+\_\+size\+\_\+}
+\begin{DoxyCompactList}\small\item\em memory\+\_\+buffer\+\_\+size\+\_\+ is the max size of the memory buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a501ea19e046c51d747b638f13fafae96}\label{classblmc__drivers_1_1SineTorqueControl_a501ea19e046c51d747b638f13fafae96}} 
+std\+::vector$<$ std\+::deque$<$ double $>$ $>$ \hyperlink{classblmc__drivers_1_1SineTorqueControl_a501ea19e046c51d747b638f13fafae96}{encoders\+\_\+}
+\begin{DoxyCompactList}\small\item\em Encoder data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a93eed363c979a64cfe93fb19916c3a75}\label{classblmc__drivers_1_1SineTorqueControl_a93eed363c979a64cfe93fb19916c3a75}} 
+std\+::vector$<$ std\+::deque$<$ double $>$ $>$ \hyperlink{classblmc__drivers_1_1SineTorqueControl_a93eed363c979a64cfe93fb19916c3a75}{velocities\+\_\+}
+\begin{DoxyCompactList}\small\item\em Velocity data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a1519f05faec9972e15f48b3084debbc2}\label{classblmc__drivers_1_1SineTorqueControl_a1519f05faec9972e15f48b3084debbc2}} 
+std\+::vector$<$ std\+::deque$<$ double $>$ $>$ \hyperlink{classblmc__drivers_1_1SineTorqueControl_a1519f05faec9972e15f48b3084debbc2}{currents\+\_\+}
+\begin{DoxyCompactList}\small\item\em current data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a41969250f8847160f590a688bdf1e026}\label{classblmc__drivers_1_1SineTorqueControl_a41969250f8847160f590a688bdf1e026}} 
+std\+::vector$<$ std\+::deque$<$ double $>$ $>$ \hyperlink{classblmc__drivers_1_1SineTorqueControl_a41969250f8847160f590a688bdf1e026}{control\+\_\+buffer\+\_\+}
+\begin{DoxyCompactList}\small\item\em control\+\_\+buffer\+\_\+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a basic PD controller to be used in the demos of this package. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_ab3fcdb73429a6e4a664dc294f80e6d3c}\label{classblmc__drivers_1_1SineTorqueControl_ab3fcdb73429a6e4a664dc294f80e6d3c}} 
+\index{blmc\+\_\+drivers\+::\+Sine\+Torque\+Control@{blmc\+\_\+drivers\+::\+Sine\+Torque\+Control}!Sine\+Torque\+Control@{Sine\+Torque\+Control}}
+\index{Sine\+Torque\+Control@{Sine\+Torque\+Control}!blmc\+\_\+drivers\+::\+Sine\+Torque\+Control@{blmc\+\_\+drivers\+::\+Sine\+Torque\+Control}}
+\subsubsection{\texorpdfstring{Sine\+Torque\+Control()}{SineTorqueControl()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+Sine\+Torque\+Control\+::\+Sine\+Torque\+Control (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{namespaceblmc__drivers_ab975c3be3c53a93a10c491f07a132e2b}{Safe\+Motor\+\_\+ptr} $>$}]{motor\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{classblmc__drivers_1_1SineTorqueControl}{Sine\+Torque\+Control} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+slider\+\_\+pairs} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SineTorqueControl_a9f5f27389db0a303e2bae2f9c5135417}\label{classblmc__drivers_1_1SineTorqueControl_a9f5f27389db0a303e2bae2f9c5135417}} 
+\index{blmc\+\_\+drivers\+::\+Sine\+Torque\+Control@{blmc\+\_\+drivers\+::\+Sine\+Torque\+Control}!loop@{loop}}
+\index{loop@{loop}!blmc\+\_\+drivers\+::\+Sine\+Torque\+Control@{blmc\+\_\+drivers\+::\+Sine\+Torque\+Control}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Sine\+Torque\+Control\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+this is a simple control loop which runs at a kilohertz. 
+
+it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+demos/\hyperlink{sine__torque__control_8hpp}{sine\+\_\+torque\+\_\+control.\+hpp}\item 
+demos/\hyperlink{sine__torque__control_8cpp}{sine\+\_\+torque\+\_\+control.\+cpp}\end{DoxyCompactItemize}

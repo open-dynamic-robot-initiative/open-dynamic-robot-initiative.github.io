@@ -1,0 +1,720 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__robots_1_1NJointBlmcRobotDriver" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>blmc_robots::NJointBlmcRobotDriver</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">robot_interfaces::RobotDriver&lt; robot_interfaces::NJointAction&lt; N_JOINTS &gt;, Observation &gt;</basecompoundref>
+    <includes refid="n__joint__blmc__robot__driver_8hpp" local="no">n_joint_blmc_robot_driver.hpp</includes>
+    <innerclass refid="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config" prot="public">blmc_robots::NJointBlmcRobotDriver::Config</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>Observation</declname>
+        <defname>Observation</defname>
+      </param>
+      <param>
+        <type>size_t</type>
+        <declname>N_JOINTS</declname>
+        <defname>N_JOINTS</defname>
+      </param>
+      <param>
+        <type>size_t</type>
+        <declname>N_MOTOR_BOARDS</declname>
+        <defname>N_MOTOR_BOARDS</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a6c04fde05f933db1703457f94c6cef6b" prot="public" static="no">
+        <type>robot_interfaces::NJointAction&lt; N_JOINTS &gt;</type>
+        <definition>typedef robot_interfaces::NJointAction&lt;N_JOINTS&gt; blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::Action</definition>
+        <argsstring></argsstring>
+        <name>Action</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="65" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a4827e39990852c1743ce095a74213ac0" prot="public" static="no">
+        <type>robot_interfaces::RobotInterfaceTypes&lt; Action, Observation &gt;</type>
+        <definition>typedef robot_interfaces::RobotInterfaceTypes&lt;Action, Observation&gt; blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::Types</definition>
+        <argsstring></argsstring>
+        <name>Types</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="67" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__robots_1_1NJointBlmcRobotDriver_1acdeabef6dc3a084af61da9eda3555083" prot="public" static="no">
+        <type>Action::Vector</type>
+        <definition>typedef Action::Vector blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::Vector</definition>
+        <argsstring></argsstring>
+        <name>Vector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="69" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a38bce1426a7ad5418dff1d43d0fc338e" prot="public" static="no">
+        <type>std::array&lt; std::shared_ptr&lt; blmc_drivers::MotorInterface &gt;, N_JOINTS &gt;</type>
+        <definition>typedef std::array&lt;std::shared_ptr&lt;blmc_drivers::MotorInterface&gt;, N_JOINTS&gt; blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::Motors</definition>
+        <argsstring></argsstring>
+        <name>Motors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="71" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__robots_1_1NJointBlmcRobotDriver_1ab703f92d3c01fbd3d481f886bfb81eca" prot="public" static="no">
+        <type>std::array&lt; std::shared_ptr&lt; blmc_drivers::CanBusMotorBoard &gt;, N_MOTOR_BOARDS &gt;</type>
+        <definition>typedef std::array&lt;std::shared_ptr&lt;blmc_drivers::CanBusMotorBoard&gt;, N_MOTOR_BOARDS&gt; blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::MotorBoards</definition>
+        <argsstring></argsstring>
+        <name>MotorBoards</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="74" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a933b81d922085d51a8138cbb648c3e64" prot="public" static="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::num_joints</definition>
+        <argsstring></argsstring>
+        <name>num_joints</name>
+        <initializer>= N_JOINTS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="62" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1ad4897dda6376b6fabdf4b5ecd43c6c4c" prot="public" static="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::num_motor_boards</definition>
+        <argsstring></argsstring>
+        <name>num_motor_boards</name>
+        <initializer>= N_MOTOR_BOARDS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="63" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a584b85a9e8356e4afcdf1559edd700cc" prot="public" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::has_endstop_</definition>
+        <argsstring></argsstring>
+        <name>has_endstop_</name>
+        <briefdescription>
+<para>True if the joints have mechanical end stops, false if not. </para>        </briefdescription>
+        <detaileddescription>
+<para>If set to true, it is assumed that all joints of the robot have end stops that mechanically prevent them from moving out of the valid range.</para><para>If present, the end stops are used for a fully automated homing procedure in which the joints first move until they hit the end stop before starting the encoder index search. This way it is ensured that the correct index is used for homing without any need for manual set up. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="90" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a17f32687708f95c1160ecb708d429ccd" prot="protected" static="no" mutable="no">
+        <type><ref refid="classblmc__robots_1_1BlmcJointModules" kindref="compound">BlmcJointModules</ref>&lt; N_JOINTS &gt;</type>
+        <definition>BlmcJointModules&lt;N_JOINTS&gt; blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::joint_modules_</definition>
+        <argsstring></argsstring>
+        <name>joint_modules_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="203" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1ad760af5444951e4ce505e45b4e13d4ca" prot="protected" static="no" mutable="no">
+        <type>MotorBoards</type>
+        <definition>MotorBoards blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::motor_boards_</definition>
+        <argsstring></argsstring>
+        <name>motor_boards_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="204" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1ad5e1875908bb62b2f014c3f8dfce969d" prot="protected" static="no" mutable="no">
+        <type><ref refid="structblmc__robots_1_1MotorParameters" kindref="compound">MotorParameters</ref></type>
+        <definition>MotorParameters blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::motor_parameters_</definition>
+        <argsstring></argsstring>
+        <name>motor_parameters_</name>
+        <briefdescription>
+<para>Fixed motor parameters (assuming all joints use same setup). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="207" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a62f708a1406f8dfb68361c5698a5559b" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::max_torque_Nm_</definition>
+        <argsstring></argsstring>
+        <name>max_torque_Nm_</name>
+        <briefdescription>
+<para>Maximum torque allowed on each joint. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="210" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a5af27a320384e0189725ee1b13edc314" prot="protected" static="no" mutable="no">
+        <type><ref refid="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config" kindref="compound">Config</ref></type>
+        <definition>Config blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::config_</definition>
+        <argsstring></argsstring>
+        <name>config_</name>
+        <briefdescription>
+<para>User-defined configuration of the driver. </para>        </briefdescription>
+        <detaileddescription>
+<para>Contains all configuration values that can be modified by the user (via the configuration file). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="218" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1NJointBlmcRobotDriver_1af11037c8c3395fcde191037c82ba6c0a" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::is_initialized_</definition>
+        <argsstring></argsstring>
+        <name>is_initialized_</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="220" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1acc2af471c4db682f57854d14430ef3fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::NJointBlmcRobotDriver</definition>
+        <argsstring>(const MotorBoards &amp;motor_boards, const Motors &amp;motors, const MotorParameters &amp;motor_parameters, const Config &amp;config)</argsstring>
+        <name>NJointBlmcRobotDriver</name>
+        <param>
+          <type>const MotorBoards &amp;</type>
+          <declname>motor_boards</declname>
+        </param>
+        <param>
+          <type>const Motors &amp;</type>
+          <declname>motors</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structblmc__robots_1_1MotorParameters" kindref="compound">MotorParameters</ref> &amp;</type>
+          <declname>motor_parameters</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config" kindref="compound">Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="92" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="92" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a8bfdae3670c639a7dc129e17687b0285" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector</type>
+        <definition>Vector blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::get_max_torques</definition>
+        <argsstring>() const</argsstring>
+        <name>get_max_torques</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="116" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a9ac3d22be40ce2c6f8bafd901bdb4a3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::pause_motors</definition>
+        <argsstring>()</argsstring>
+        <name>pause_motors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a274d4d97156b77e6f2dcfda74d67e45c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector</type>
+        <definition>Vector blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::get_measured_index_angles</definition>
+        <argsstring>() const</argsstring>
+        <name>get_measured_index_angles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="123" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a7a1ece2b5d4f0f607a4d0516543b0d48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::initialize</definition>
+        <argsstring>() override</argsstring>
+        <name>initialize</name>
+        <briefdescription>
+<para>Find home position of all joints and move to start position. </para>        </briefdescription>
+        <detaileddescription>
+<para>Homes all joints using home_on_index_after_negative_end_stop. When finished, move the joint to the starting position (defined in <computeroutput>config_.initial_position_rad</computeroutput>). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="133" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1abc4c63313e05020b91dad26a580e184f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>Observation</type>
+        <definition>virtual Observation blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::get_latest_observation</definition>
+        <argsstring>() override=0</argsstring>
+        <name>get_latest_observation</name>
+        <reimplementedby refid="classblmc__robots_1_1SimpleNJointBlmcRobotDriver_1a47bf814e68498f5344bd81c3d52906bc">get_latest_observation</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="135" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a200a5a050a1e2d493f47dc1228319d27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Action</type>
+        <definition>Action blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::apply_action</definition>
+        <argsstring>(const Action &amp;desired_action) override</argsstring>
+        <name>apply_action</name>
+        <param>
+          <type>const Action &amp;</type>
+          <declname>desired_action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="136" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a2c45384d83e688618a589cb13797e3bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::get_error</definition>
+        <argsstring>() override</argsstring>
+        <name>get_error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="137" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a4d57e567a2cd393ee9e4af4bcdde94f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::shutdown</definition>
+        <argsstring>() override</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="138" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a1d9aedee4887a6f34c07481c4520cb5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::is_within_hard_position_limits</definition>
+        <argsstring>(const Observation &amp;observation) const</argsstring>
+        <name>is_within_hard_position_limits</name>
+        <param>
+          <type>const Observation &amp;</type>
+          <declname>observation</declname>
+        </param>
+        <briefdescription>
+<para>Check if the joint position is within the hard limits. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config_1ae34fb8f28bdec0401b72b09bc8d48b65" kindref="member">Config::is_within_hard_position_limits</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="200" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a30f5a6037441bff26ab208bbb91c0c39" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MotorBoards</type>
+        <definition>static MotorBoards blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::create_motor_boards</definition>
+        <argsstring>(const std::array&lt; std::string, N_MOTOR_BOARDS &gt; &amp;can_ports)</argsstring>
+        <name>create_motor_boards</name>
+        <param>
+          <type>const std::array&lt; std::string, N_MOTOR_BOARDS &gt; &amp;</type>
+          <declname>can_ports</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="113" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1a8f7aaf3bc10c0d4d0f2c7a38f594c166" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Action</type>
+        <definition>static Action blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::process_desired_action</definition>
+        <argsstring>(const Action &amp;desired_action, const Observation &amp;latest_observation, const double max_torque_Nm, const Vector &amp;safety_kd, const Vector &amp;default_position_control_kp, const Vector &amp;default_position_control_kd, const Vector &amp;lower_position_limits=Vector::Constant(-std::numeric_limits&lt; double &gt;::infinity()), const Vector &amp;upper_position_limits=Vector::Constant(std::numeric_limits&lt; double &gt;::infinity()))</argsstring>
+        <name>process_desired_action</name>
+        <param>
+          <type>const Action &amp;</type>
+          <declname>desired_action</declname>
+        </param>
+        <param>
+          <type>const Observation &amp;</type>
+          <declname>latest_observation</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>max_torque_Nm</declname>
+        </param>
+        <param>
+          <type>const Vector &amp;</type>
+          <declname>safety_kd</declname>
+        </param>
+        <param>
+          <type>const Vector &amp;</type>
+          <declname>default_position_control_kp</declname>
+        </param>
+        <param>
+          <type>const Vector &amp;</type>
+          <declname>default_position_control_kd</declname>
+        </param>
+        <param>
+          <type>const Vector &amp;</type>
+          <declname>lower_position_limits</declname>
+          <defval>Vector::Constant(-std::numeric_limits&lt; double &gt;::infinity())</defval>
+        </param>
+        <param>
+          <type>const Vector &amp;</type>
+          <declname>upper_position_limits</declname>
+          <defval>Vector::Constant(std::numeric_limits&lt; double &gt;::infinity())</defval>
+        </param>
+        <briefdescription>
+<para>Process the desired action provided by the user. </para>        </briefdescription>
+        <detaileddescription>
+<para>Takes the desired action from the user and does the following processing:</para><para><heading level="2">1. Check position limits</heading>
+</para><para>If the observed position of a joint exceeds the limits, actions for that joint that do not point back towards the allowed range are replaced with a position command to the limit value. Further custom PD-gains are ignored in this case.</para><para><heading level="2">2. Run the position controller in case a target position is set.</heading>
+</para><para>If the target position is set to a value unequal to NaN for any joint, a PD position controller is executed for this joint and the resulting torque command is added to the torque command in the action.</para><para>If the P- and/or D-gains are set to a non-NaN value in the action, they are used for the control. NaN-values are replaced with the default gains.</para><para><heading level="2">3. Apply safety checks.</heading>
+</para><para><itemizedlist>
+<listitem><para>Limit the torque to the allowed maximum value.</para></listitem><listitem><para>Dampen velocity using the given safety_kd gains. Damping us done joint-wise using this equation: <verbatim>torque_damped = torque_desired - safety_kd * current_velocity
+</verbatim></para></listitem></itemizedlist>
+</para><para>The resulting action with modifications of all steps is returned.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired_action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired action given by the user. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>latest_observation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Latest observation from the robot. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_torque_Nm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum allowed absolute torque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>safety_kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>D-gain for velocity damping. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>default_position_control_kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Default P-gain for position control. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>default_position_control_kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Default D-gain for position control. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lower_position_limits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower limits for joint positions. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>upper_position_limits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper limits for joint positions.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resulting action after applying all the processing. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="183" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1aeca6dbdd22e3b40afe89fecf2895dcad" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Action</type>
+        <definition>Action blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::apply_action_uninitialized</definition>
+        <argsstring>(const Action &amp;desired_action)</argsstring>
+        <name>apply_action_uninitialized</name>
+        <param>
+          <type>const Action &amp;</type>
+          <declname>desired_action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="222" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1aafa20130f746b5cc35eae43ce36e23c6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::_initialize</definition>
+        <argsstring>()</argsstring>
+        <name>_initialize</name>
+        <briefdescription>
+<para>Actual initialization that is called in a real-time thread in <ref refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a7a1ece2b5d4f0f607a4d0516543b0d48" kindref="member">initialize()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="226" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1aa2948efef69215afb233fc63acf88d3f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::homing</definition>
+        <argsstring>(Vector endstop_search_torques_Nm, Vector home_offset_rad=Vector::Zero())</argsstring>
+        <name>homing</name>
+        <param>
+          <type>Vector</type>
+          <declname>endstop_search_torques_Nm</declname>
+        </param>
+        <param>
+          <type>Vector</type>
+          <declname>home_offset_rad</declname>
+          <defval>Vector::Zero()</defval>
+        </param>
+        <briefdescription>
+<para>Homing using end stops (optional) and encoder indices. </para>        </briefdescription>
+        <detaileddescription>
+<para>Procedure for finding an absolute zero position (or &quot;home&quot; position) when using relative encoders.</para><para>If the robot has end stops (according to configuration), all joints first move in negative direction until they hit the end stop. Then an encoder index search is started where each joint moves slowly in positive direction until the next encoder index. The position of this encoder index is the &quot;home position&quot;.</para><para>By default, the zero position is the same as the home position. The optional argument home_offset_rad provides a means to move the zero position relative to the home position. The zero position is computed as <verbatim>zero position = encoder index position + home offset
+</verbatim></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>endstop_search_torques_Nm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Torques that are used to move the joints while searching the end stop. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>home_offset_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Offset between the home position and the desired zero position. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="253" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1NJointBlmcRobotDriver_1ab29cab22a765bce463f367b6e6dc82ff" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::move_to_position</definition>
+        <argsstring>(const Vector &amp;goal_pos, const double tolerance, const uint32_t time_steps)</argsstring>
+        <name>move_to_position</name>
+        <param>
+          <type>const Vector &amp;</type>
+          <declname>goal_pos</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>tolerance</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>time_steps</declname>
+        </param>
+        <briefdescription>
+<para>Move to given goal position with a minimum jerk trajectory. </para>        </briefdescription>
+        <detaileddescription>
+<para>Use a series of position actions to move to the given goal position on a minimum jerk trajectory.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>goal_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angular goal position for each joint. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allowed position error for reaching the goal. This is checked per joint, that is the maximal possible error is +/-tolerance on each joint. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time_steps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of control loop cycles for reaching the goal. The lower the number of steps, the faster the robot will move. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if goal position is reached, false if timeout is exceeded. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="270" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for n-joint BLMC robots. </para>    </briefdescription>
+    <detaileddescription>
+<para>This is a generic base class to easily implement drivers for simple BLMC robots that consist of N_JOINTS joints.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>N_JOINTS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of joints. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N_MOTOR_BOARDS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of motor control boards that are used. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="11">
+        <label>blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;</label>
+        <link refid="classblmc__robots_1_1NJointBlmcRobotDriver"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>robot_interfaces::RobotDriver&lt; robot_interfaces::NJointAction&lt; N_JOINTS &gt;, Observation &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="15">
+        <label>blmc_robots::BlmcJointModules&lt; N_JOINTS &gt;</label>
+        <link refid="classblmc__robots_1_1BlmcJointModules"/>
+      </node>
+      <node id="13">
+        <label>blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;</label>
+        <link refid="classblmc__robots_1_1NJointBlmcRobotDriver"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>joint_modules_</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>config_</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>motor_parameters_</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>robot_interfaces::RobotDriver&lt; robot_interfaces::NJointAction&lt; N_JOINTS &gt;, Observation &gt;</label>
+      </node>
+      <node id="17">
+        <label>blmc_robots::MotorParameters</label>
+        <link refid="structblmc__robots_1_1MotorParameters"/>
+      </node>
+      <node id="16">
+        <label>blmc_robots::NJointBlmcRobotDriver&lt; Observation, N_JOINTS, N_MOTOR_BOARDS &gt;::Config</label>
+        <link refid="structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_robots/n_joint_blmc_robot_driver.hpp" line="60" column="1" bodyfile="include/blmc_robots/n_joint_blmc_robot_driver.hpp" bodystart="56" bodyend="273"/>
+    <listofallmembers>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1aafa20130f746b5cc35eae43ce36e23c6" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>_initialize</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a6c04fde05f933db1703457f94c6cef6b" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>Action</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a200a5a050a1e2d493f47dc1228319d27" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>apply_action</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1aeca6dbdd22e3b40afe89fecf2895dcad" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>apply_action_uninitialized</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a5af27a320384e0189725ee1b13edc314" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>config_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a30f5a6037441bff26ab208bbb91c0c39" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>create_motor_boards</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a2c45384d83e688618a589cb13797e3bc" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>get_error</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1abc4c63313e05020b91dad26a580e184f" prot="public" virt="pure-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>get_latest_observation</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a8bfdae3670c639a7dc129e17687b0285" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>get_max_torques</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a274d4d97156b77e6f2dcfda74d67e45c" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>get_measured_index_angles</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a584b85a9e8356e4afcdf1559edd700cc" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>has_endstop_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1aa2948efef69215afb233fc63acf88d3f" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>homing</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a7a1ece2b5d4f0f607a4d0516543b0d48" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>initialize</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1af11037c8c3395fcde191037c82ba6c0a" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>is_initialized_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a1d9aedee4887a6f34c07481c4520cb5a" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>is_within_hard_position_limits</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a17f32687708f95c1160ecb708d429ccd" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>joint_modules_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a62f708a1406f8dfb68361c5698a5559b" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>max_torque_Nm_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ad760af5444951e4ce505e45b4e13d4ca" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>motor_boards_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ad5e1875908bb62b2f014c3f8dfce969d" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>motor_parameters_</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ab703f92d3c01fbd3d481f886bfb81eca" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>MotorBoards</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a38bce1426a7ad5418dff1d43d0fc338e" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>Motors</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ab29cab22a765bce463f367b6e6dc82ff" prot="protected" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>move_to_position</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1acc2af471c4db682f57854d14430ef3fa" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>NJointBlmcRobotDriver</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a933b81d922085d51a8138cbb648c3e64" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>num_joints</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1ad4897dda6376b6fabdf4b5ecd43c6c4c" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>num_motor_boards</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a9ac3d22be40ce2c6f8bafd901bdb4a3d" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>pause_motors</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a8f7aaf3bc10c0d4d0f2c7a38f594c166" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>process_desired_action</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a4d57e567a2cd393ee9e4af4bcdde94f0" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>shutdown</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1a4827e39990852c1743ce095a74213ac0" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>Types</name></member>
+      <member refid="classblmc__robots_1_1NJointBlmcRobotDriver_1acdeabef6dc3a084af61da9eda3555083" prot="public" virt="non-virtual"><scope>blmc_robots::NJointBlmcRobotDriver</scope><name>Vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

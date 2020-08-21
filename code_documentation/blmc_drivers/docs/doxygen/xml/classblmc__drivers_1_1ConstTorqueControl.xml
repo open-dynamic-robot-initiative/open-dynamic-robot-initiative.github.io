@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1ConstTorqueControl" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::ConstTorqueControl</compoundname>
+    <includes refid="const__torque__control_8hpp" local="no">const_torque_control.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1ConstTorqueControl_1a0833792423b525088e94d51c830f9d91" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceblmc__drivers_1ab975c3be3c53a93a10c491f07a132e2b" kindref="member">SafeMotor_ptr</ref> &gt;</type>
+        <definition>std::vector&lt;SafeMotor_ptr&gt; blmc_drivers::ConstTorqueControl::motor_list_</definition>
+        <argsstring></argsstring>
+        <name>motor_list_</name>
+        <briefdescription>
+<para>This is list of motors. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="77" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1ConstTorqueControl_1a2367f5e138d88c0dfd8ce063e62d64c5" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread blmc_drivers::ConstTorqueControl::rt_thread_</definition>
+        <argsstring></argsstring>
+        <name>rt_thread_</name>
+        <briefdescription>
+<para>This is the real time thread object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="81" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1ConstTorqueControl_1a18fb1033acd14e7e03a6cccc3f11674b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::ConstTorqueControl::stop_loop_</definition>
+        <argsstring></argsstring>
+        <name>stop_loop_</name>
+        <briefdescription>
+<para>managing the stopping of the loop </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="105" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1ConstTorqueControl_1a3f54bb926eb80b9b78e3e70b96468fa3" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned blmc_drivers::ConstTorqueControl::memory_buffer_size_</definition>
+        <argsstring></argsstring>
+        <name>memory_buffer_size_</name>
+        <briefdescription>
+<para>memory_buffer_size_ is the max size of the memory buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="110" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1ConstTorqueControl_1a109a0b7342daf335e5a535cbd68b800a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::ConstTorqueControl::encoders_</definition>
+        <argsstring></argsstring>
+        <name>encoders_</name>
+        <briefdescription>
+<para>Encoder data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="115" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1ConstTorqueControl_1adb46410fc955b4232e0b11c9081409b5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::ConstTorqueControl::velocities_</definition>
+        <argsstring></argsstring>
+        <name>velocities_</name>
+        <briefdescription>
+<para>Velocity data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="120" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1ConstTorqueControl_1aec86c0a1864866b3169af7d9938cd518" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::ConstTorqueControl::currents_</definition>
+        <argsstring></argsstring>
+        <name>currents_</name>
+        <briefdescription>
+<para>current data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="125" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1ConstTorqueControl_1a90f61569eda4245f7ed01569a42d0ef1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::ConstTorqueControl::control_buffer_</definition>
+        <argsstring></argsstring>
+        <name>control_buffer_</name>
+        <briefdescription>
+<para>control_buffer_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="130" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1ConstTorqueControl_1a2253fc0273462fa35c21f1424dcc919c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::ConstTorqueControl::ConstTorqueControl</definition>
+        <argsstring>(std::vector&lt; SafeMotor_ptr &gt; motor_list)</argsstring>
+        <name>ConstTorqueControl</name>
+        <param>
+          <type>std::vector&lt; <ref refid="namespaceblmc__drivers_1ab975c3be3c53a93a10c491f07a132e2b" kindref="member">SafeMotor_ptr</ref> &gt;</type>
+          <declname>motor_list</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1ConstTorqueControl" kindref="compound">ConstTorqueControl</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor_slider_pairs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="28" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="28" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1ConstTorqueControl_1a19dab80ddeb10158d1ad17cdcfd0cc47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::ConstTorqueControl::~ConstTorqueControl</definition>
+        <argsstring>()</argsstring>
+        <name>~ConstTorqueControl</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1ConstTorqueControl" kindref="compound">ConstTorqueControl</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="53" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1ConstTorqueControl_1aa5e7bae477c05904c00f4e843d635c14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::ConstTorqueControl::start_loop</definition>
+        <argsstring>()</argsstring>
+        <name>start_loop</name>
+        <briefdescription>
+<para>This method is a helper to start the thread loop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="62" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1ConstTorqueControl_1aeb954986cb31a9cb0796f6bee9b22b1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::ConstTorqueControl::stop_loop</definition>
+        <argsstring>()</argsstring>
+        <name>stop_loop</name>
+        <briefdescription>
+<para>Stop the control and dump the data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="70" column="1" bodyfile="demos/const_torque_control.cpp" bodystart="70" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1ConstTorqueControl_1a8598e9ab1701eb978bf1155fc38c8736" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE blmc_drivers::ConstTorqueControl::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+<para>this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="87" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="87" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1ConstTorqueControl_1a82a2bc2327fc6fb6a10a4ae88d01e87f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::ConstTorqueControl::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>this is a simple control loop which runs at a kilohertz. </para>        </briefdescription>
+        <detaileddescription>
+<para>it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/const_torque_control.hpp" line="100" column="1" bodyfile="demos/const_torque_control.cpp" bodystart="14" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is a basic PD controller to be used in the demos of this package. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="demos/const_torque_control.hpp" line="21" column="1" bodyfile="demos/const_torque_control.hpp" bodystart="20" bodyend="132"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a2253fc0273462fa35c21f1424dcc919c" prot="public" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>ConstTorqueControl</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a90f61569eda4245f7ed01569a42d0ef1" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>control_buffer_</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1aec86c0a1864866b3169af7d9938cd518" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>currents_</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a109a0b7342daf335e5a535cbd68b800a" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>encoders_</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a8598e9ab1701eb978bf1155fc38c8736" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a82a2bc2327fc6fb6a10a4ae88d01e87f" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a3f54bb926eb80b9b78e3e70b96468fa3" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>memory_buffer_size_</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a0833792423b525088e94d51c830f9d91" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>motor_list_</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a2367f5e138d88c0dfd8ce063e62d64c5" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>rt_thread_</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1aa5e7bae477c05904c00f4e843d635c14" prot="public" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>start_loop</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1aeb954986cb31a9cb0796f6bee9b22b1a" prot="public" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>stop_loop</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a18fb1033acd14e7e03a6cccc3f11674b" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>stop_loop_</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1adb46410fc955b4232e0b11c9081409b5" prot="private" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>velocities_</name></member>
+      <member refid="classblmc__drivers_1_1ConstTorqueControl_1a19dab80ddeb10158d1ad17cdcfd0cc47" prot="public" virt="non-virtual"><scope>blmc_drivers::ConstTorqueControl</scope><name>~ConstTorqueControl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

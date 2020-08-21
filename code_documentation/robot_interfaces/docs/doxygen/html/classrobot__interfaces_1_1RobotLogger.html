@@ -105,9 +105,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a55ec7dcacd849adee53fa49a2a0c8234"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a55ec7dcacd849adee53fa49a2a0c8234">stop</a> ()</td></tr>
 <tr class="memdesc:a55ec7dcacd849adee53fa49a2a0c8234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop logging that was started with <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a7a1b50c75aab3255ac7e6d412de833d1" title="Start a thread to continuously log to file in the background. ">start()</a></code> previously.  <a href="#a55ec7dcacd849adee53fa49a2a0c8234">More...</a><br /></td></tr>
 <tr class="separator:a55ec7dcacd849adee53fa49a2a0c8234"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada7467fbac96a67ab798c4e6ef56c9b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#ada7467fbac96a67ab798c4e6ef56c9b1">write_current_buffer</a> (const std::string filename, long int start_index=0)</td></tr>
-<tr class="memdesc:ada7467fbac96a67ab798c4e6ef56c9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write current content of robot data to log file.  <a href="#ada7467fbac96a67ab798c4e6ef56c9b1">More...</a><br /></td></tr>
-<tr class="separator:ada7467fbac96a67ab798c4e6ef56c9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b22a51e9615ee696a5baa350d3dee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a36b22a51e9615ee696a5baa350d3dee0">write_current_buffer</a> (const std::string filename, long int start_index=0, long int end_index=-1)</td></tr>
+<tr class="memdesc:a36b22a51e9615ee696a5baa350d3dee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write current content of robot data to log file.  <a href="#a36b22a51e9615ee696a5baa350d3dee0">More...</a><br /></td></tr>
+<tr class="separator:a36b22a51e9615ee696a5baa350d3dee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -165,7 +165,7 @@ class robot_interfaces::RobotLogger&lt; Action, Observation &gt;</h3>
 <p>Logs for each time step the time index, timestamp, and the values Observation, Action, and <a class="el" href="structrobot__interfaces_1_1Status.html" title="Status information from the backend. ">Status</a>. The data is written to a text file, one line per time step with values separated by spaces. This format can easily be read e.g. with NumPy or Pandas.</p>
 <p>There are two different ways of using the logger:</p>
 <ol type="1">
-<li>Write all the data from the time series to the file in one function call. Use this if the time series buffer is big enough to cover the whole time span that you want to log. This way all the data is written to the file in the end, when the robot is not moving anymore. This way it will not interfere with the running robot but there is the risk of losing all data in case the software crashes before writing the log. Use the method <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#ada7467fbac96a67ab798c4e6ef56c9b1" title="Write current content of robot data to log file. ">write_current_buffer()</a></code> for this.</li>
+<li>Write all the data from the time series to the file in one function call. Use this if the time series buffer is big enough to cover the whole time span that you want to log. This way all the data is written to the file in the end, when the robot is not moving anymore. This way it will not interfere with the running robot but there is the risk of losing all data in case the software crashes before writing the log. Use the method <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a36b22a51e9615ee696a5baa350d3dee0" title="Write current content of robot data to log file. ">write_current_buffer()</a></code> for this.</li>
 <li>Run the logger in the background and write blocks of data to the log file while the robot is running. This has the advantage that arbitrary time spans can be logged independent of the buffer size of the time series. Further in case of a software crash not all data will be lost but only the data since the last block was written. However, it has the huge disadvantage that writing to the file may cause delays in the real-time critical robot code, thus causing the robot to shut down if timing constraints are violated. Use the <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a7a1b50c75aab3255ac7e6d412de833d1" title="Start a thread to continuously log to file in the background. ">start()</a></code> and <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a55ec7dcacd849adee53fa49a2a0c8234" title="Stop logging that was started with start() previously. ">stop()</a></code> methods for this.</li>
 </ol>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -495,8 +495,8 @@ template&lt;typename Action , typename Observation &gt; </div>
 
 </div>
 </div>
-<a id="ada7467fbac96a67ab798c4e6ef56c9b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada7467fbac96a67ab798c4e6ef56c9b1">&#9670;&nbsp;</a></span>write_current_buffer()</h2>
+<a id="a36b22a51e9615ee696a5baa350d3dee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b22a51e9615ee696a5baa350d3dee0">&#9670;&nbsp;</a></span>write_current_buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -516,7 +516,13 @@ template&lt;typename Action , typename Observation &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">long int&#160;</td>
-          <td class="paramname"><em>start_index</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>start_index</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long int&#160;</td>
+          <td class="paramname"><em>end_index</em> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -532,17 +538,19 @@ template&lt;typename Action , typename Observation &gt; </div>
 </div><div class="memdoc">
 
 <p>Write current content of robot data to log file. </p>
-<p>Logs the whole content of the robot data starting from the time index specified by <code>start_index</code> until the current time index. If <code>start_index</code> is too old (i.e. not inside the robot data buffer anymore), logging will start at the oldest available time index instead.</p>
+<p>Write data of the time steps <code>[start_index, end_index)</code> to a log file. This assumes that the specified range is completely included in the active robot data buffer. If this is not the case, only the time steps which are still held in the buffer will be logged.</p>
+<p>With the default values for start_index and end_index, the whole content of the current buffer is logged.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>Path to the log file. Existing files will be overwritten! </td></tr>
     <tr><td class="paramname">start_index</td><td>Time index at which to start logging. If not specified, the whole buffer is logged. </td></tr>
+    <tr><td class="paramname">end_index</td><td>Time index at which to stop logging. This is exclusive, i.e. the specified time index itself will not be part of the log. If set to a negative value (default) or a value greater than the newest time index, the newest time index is used instead (see newest_timeindex()). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>If called while the logger thread is running. In case the logger thread was started via <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a7a1b50c75aab3255ac7e6d412de833d1" title="Start a thread to continuously log to file in the background. ">start()</a></code>, it needs to be stopped by calling <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a55ec7dcacd849adee53fa49a2a0c8234" title="Stop logging that was started with start() previously. ">stop()</a></code> before <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#ada7467fbac96a67ab798c4e6ef56c9b1" title="Write current content of robot data to log file. ">write_current_buffer()</a></code> can be used. </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>If called while the logger thread is running. In case the logger thread was started via <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a7a1b50c75aab3255ac7e6d412de833d1" title="Start a thread to continuously log to file in the background. ">start()</a></code>, it needs to be stopped by calling <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a55ec7dcacd849adee53fa49a2a0c8234" title="Stop logging that was started with start() previously. ">stop()</a></code> before <code><a class="el" href="classrobot__interfaces_1_1RobotLogger.html#a36b22a51e9615ee696a5baa350d3dee0" title="Write current content of robot data to log file. ">write_current_buffer()</a></code> can be used. </td></tr>
   </table>
   </dd>
 </dl>

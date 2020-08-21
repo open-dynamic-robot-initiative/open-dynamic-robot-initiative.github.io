@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1SafeMotor" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::SafeMotor</compoundname>
+    <basecompoundref refid="classblmc__drivers_1_1Motor" prot="public" virt="non-virtual">blmc_drivers::Motor</basecompoundref>
+    <includes refid="motor_8hpp" local="no">motor.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1SafeMotor_1ae58230855ac502d9c702304d785eb833" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_drivers::SafeMotor::max_current_target_</definition>
+        <argsstring></argsstring>
+        <name>max_current_target_</name>
+        <briefdescription>
+<para>max_current_target_ is the limit of the current. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="281" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SafeMotor_1a1885b2a1c298765cae0a7ccda75d5f3f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_drivers::SafeMotor::max_velocity_</definition>
+        <argsstring></argsstring>
+        <name>max_velocity_</name>
+        <briefdescription>
+<para>max_velocity_ limits the motor velocity. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="286" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SafeMotor_1af79e6910868177f18a498ea83b350e3f" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>Ptr&lt;ScalarTimeseries&gt; blmc_drivers::SafeMotor::current_target_</definition>
+        <argsstring></argsstring>
+        <name>current_target_</name>
+        <briefdescription>
+<para>History of the target current sent. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="291" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SafeMotor_1a6e9cda054c161d28f062955d97e73f82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SafeMotor::SafeMotor</definition>
+        <argsstring>(Ptr&lt; MotorBoardInterface &gt; board, bool motor_id, const double &amp;max_current_target=2.0, const size_t &amp;history_length=1000, const double &amp;max_velocity=std::numeric_limits&lt; double &gt;::quiet_NaN())</argsstring>
+        <name>SafeMotor</name>
+        <param>
+          <type><ref refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> &gt;</type>
+          <declname>board</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>motor_id</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>max_current_target</declname>
+          <defval>2.0</defval>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>history_length</declname>
+          <defval>1000</defval>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>max_velocity</declname>
+          <defval>std::numeric_limits&lt; double &gt;::quiet_NaN()</defval>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1SafeMotor" kindref="compound">SafeMotor</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>board</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motor_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_current_target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>history_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="226" column="1" bodyfile="src/motor.cpp" bodystart="152" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SafeMotor_1ae40e4c51272c46f037ea0ba393b2033e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const ScalarTimeseries&gt; blmc_drivers::SafeMotor::get_current_target</definition>
+        <argsstring>() const</argsstring>
+        <name>get_current_target</name>
+        <reimplements refid="classblmc__drivers_1_1Motor_1ace26e74e3c8072c8bee867a2a0a7e013">get_current_target</reimplements>
+        <briefdescription>
+<para>Getters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the _current_target object</para><para><simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="241" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SafeMotor_1adedaee24408b94b3d1ed8f856e218b12" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SafeMotor::set_current_target</definition>
+        <argsstring>(const double &amp;current_target)</argsstring>
+        <name>set_current_target</name>
+        <reimplements refid="classblmc__drivers_1_1Motor_1a48801c9858a7b1784b0a0ac4272fdaf5">set_current_target</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>current_target</declname>
+        </param>
+        <briefdescription>
+<para>Setters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the current target (Ampere)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>current_target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="255" column="1" bodyfile="src/motor.cpp" bodystart="165" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SafeMotor_1ad4f4bb531e2a9e7f965b319afb53d43c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SafeMotor::set_max_current</definition>
+        <argsstring>(double max_current_target)</argsstring>
+        <name>set_max_current</name>
+        <param>
+          <type>double</type>
+          <declname>max_current_target</declname>
+        </param>
+        <briefdescription>
+<para>Set the max_current_target_ object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>max_current_target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="262" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="262" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SafeMotor_1aaa0083a39d815d7b3cd38c680bfea48a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SafeMotor::set_max_velocity</definition>
+        <argsstring>(double max_velocity)</argsstring>
+        <name>set_max_velocity</name>
+        <param>
+          <type>double</type>
+          <declname>max_velocity</declname>
+        </param>
+        <briefdescription>
+<para>Set the max_velocity_ constant. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>max_velocity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor.hpp" line="272" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="272" bodyend="275"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class is a safe implementation of the <ref refid="classblmc__drivers_1_1Motor" kindref="compound">Motor</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para>It contains utilities to bound the control input. It could also contains some velocity limits at the motor level and why not some temperature management.</para><para><xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>the velocity limit should be implemented in a smoother way, and the parameters should be passed in the constructor. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="92">
+        <label>blmc_drivers::Motor</label>
+        <link refid="classblmc__drivers_1_1Motor"/>
+        <childnode refid="93" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="93">
+        <label>blmc_drivers::MotorInterface</label>
+        <link refid="classblmc__drivers_1_1MotorInterface"/>
+        <childnode refid="94" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>blmc_drivers::SafeMotor</label>
+        <link refid="classblmc__drivers_1_1SafeMotor"/>
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="96">
+        <label>blmc_drivers::Motor</label>
+        <link refid="classblmc__drivers_1_1Motor"/>
+        <childnode refid="97" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="97">
+        <label>blmc_drivers::MotorInterface</label>
+        <link refid="classblmc__drivers_1_1MotorInterface"/>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>blmc_drivers::SafeMotor</label>
+        <link refid="classblmc__drivers_1_1SafeMotor"/>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_drivers/devices/motor.hpp" line="216" column="1" bodyfile="include/blmc_drivers/devices/motor.hpp" bodystart="215" bodyend="292"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1Motor_1a779365c022edb7d4beb4060dcdb7dd72" prot="protected" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>board_</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33a781e5fac9a7a2eafeea329774b61f9ce" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>current</name></member>
+      <member refid="classblmc__drivers_1_1SafeMotor_1af79e6910868177f18a498ea83b350e3f" prot="private" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>current_target_</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33aa6e7aa183d7fc6ab546494580dbb60b8" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>encoder_index</name></member>
+      <member refid="classblmc__drivers_1_1SafeMotor_1ae40e4c51272c46f037ea0ba393b2033e" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>get_current_target</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a0ff1a1b5eb5da4791cc27879e761eb22" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>get_measurement</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1aed5e8ee5136b76a94fc17a4430b108c8" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>get_sent_current_target</name></member>
+      <member refid="classblmc__drivers_1_1SafeMotor_1ae58230855ac502d9c702304d785eb833" prot="private" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>max_current_target_</name></member>
+      <member refid="classblmc__drivers_1_1SafeMotor_1a1885b2a1c298765cae0a7ccda75d5f3f" prot="private" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>max_velocity_</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33ad9b4b38e780d8eb8b345fb0854788bf7" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>measurement_count</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>MeasurementIndex</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a923be3c8e5027cdead1006f3878b6ec3" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>Motor</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a614903579bd6001169d11b72bc17042b" prot="protected" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>motor_id_</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33ab088fb75ffc5bb9a890ab8713914fb82" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>position</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a2779f53af7b066254cac47bf07a162a4" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>print</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1ae31f230b9da3674a05543023c90b124c" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>Ptr</name></member>
+      <member refid="classblmc__drivers_1_1SafeMotor_1a6e9cda054c161d28f062955d97e73f82" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>SafeMotor</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>ScalarTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1acf7389e09918c1955986a641efd4f032" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>send_if_input_changed</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1a4af56df5466d011fc2a567dd815a6c1b" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>set_command</name></member>
+      <member refid="classblmc__drivers_1_1SafeMotor_1adedaee24408b94b3d1ed8f856e218b12" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>set_current_target</name></member>
+      <member refid="classblmc__drivers_1_1SafeMotor_1ad4f4bb531e2a9e7f965b319afb53d43c" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>set_max_current</name></member>
+      <member refid="classblmc__drivers_1_1SafeMotor_1aaa0083a39d815d7b3cd38c680bfea48a" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>set_max_velocity</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a35c1217dd295078c67bacc2cba08ab33ad0fda361d547805e453c069e2b53613e" prot="public" virt="non-virtual"><scope>blmc_drivers::SafeMotor</scope><name>velocity</name></member>
+      <member refid="classblmc__drivers_1_1Motor_1ad93b64d54b40ff12df7081e009c71239" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>~Motor</name></member>
+      <member refid="classblmc__drivers_1_1MotorInterface_1a1f535a7de62ae8246f44541216254da5" prot="public" virt="virtual"><scope>blmc_drivers::SafeMotor</scope><name>~MotorInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

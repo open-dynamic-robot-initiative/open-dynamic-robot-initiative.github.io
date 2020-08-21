@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1PDController" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::PDController</compoundname>
+    <includes refid="pd__control_8hpp" local="no">pd_control.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1PDController_1a11b0e1df638bc792b752349f39187a67" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceblmc__drivers_1a134270c90d29a9a28b64ab0e5f7158f7" kindref="member">PairMotorSlider</ref> &gt;</type>
+        <definition>std::vector&lt;PairMotorSlider&gt; blmc_drivers::PDController::motor_slider_pairs_</definition>
+        <argsstring></argsstring>
+        <name>motor_slider_pairs_</name>
+        <briefdescription>
+<para>This is a pair of motor and sliders so that we associate one with the other. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/pd_control.hpp" line="64" column="1" bodyfile="demos/pd_control.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1PDController_1a425d7f9c093a0c586ef608d4c11c8889" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread blmc_drivers::PDController::rt_thread_</definition>
+        <argsstring></argsstring>
+        <name>rt_thread_</name>
+        <briefdescription>
+<para>This is the real time thread object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/pd_control.hpp" line="68" column="1" bodyfile="demos/pd_control.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1PDController_1a3520dd968bde954399bf3ef4508c3d54" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::PDController::stop_loop</definition>
+        <argsstring></argsstring>
+        <name>stop_loop</name>
+        <briefdescription>
+<para>managing the stopping of the loop </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/pd_control.hpp" line="92" column="1" bodyfile="demos/pd_control.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1PDController_1a78e3d01f6bcc263b20b81a7525d072cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::PDController::PDController</definition>
+        <argsstring>(std::vector&lt; PairMotorSlider &gt; motor_slider_pairs)</argsstring>
+        <name>PDController</name>
+        <param>
+          <type>std::vector&lt; <ref refid="namespaceblmc__drivers_1a134270c90d29a9a28b64ab0e5f7158f7" kindref="member">PairMotorSlider</ref> &gt;</type>
+          <declname>motor_slider_pairs</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1PDController" kindref="compound">PDController</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor_slider_pairs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/pd_control.hpp" line="35" column="1" bodyfile="demos/pd_control.hpp" bodystart="35" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1PDController_1aed8ffc7914eb5976f95936315bcd9c47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::PDController::~PDController</definition>
+        <argsstring>()</argsstring>
+        <name>~PDController</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1PDController" kindref="compound">PDController</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/pd_control.hpp" line="44" column="1" bodyfile="demos/pd_control.hpp" bodystart="44" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1PDController_1a9c9258e9f1af0f4ca00d2ede682ad511" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::PDController::start_loop</definition>
+        <argsstring>()</argsstring>
+        <name>start_loop</name>
+        <briefdescription>
+<para>This method is a helper to start the thread loop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/pd_control.hpp" line="53" column="1" bodyfile="demos/pd_control.hpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1PDController_1aaae22ea8cb0324570926c16b43885948" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE blmc_drivers::PDController::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+<para>this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/pd_control.hpp" line="74" column="1" bodyfile="demos/pd_control.hpp" bodystart="74" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1PDController_1ae00d08095b9ff6b6dfd550c59ba2857a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::PDController::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>this is a simple control loop which runs at a kilohertz. </para>        </briefdescription>
+        <detaileddescription>
+<para>it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/pd_control.hpp" line="87" column="1" bodyfile="demos/pd_control.cpp" bodystart="12" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is a basic PD controller to be used in the demos of this package. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="demos/pd_control.hpp" line="28" column="1" bodyfile="demos/pd_control.hpp" bodystart="27" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1PDController_1aaae22ea8cb0324570926c16b43885948" prot="private" virt="non-virtual"><scope>blmc_drivers::PDController</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1PDController_1ae00d08095b9ff6b6dfd550c59ba2857a" prot="private" virt="non-virtual"><scope>blmc_drivers::PDController</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1PDController_1a11b0e1df638bc792b752349f39187a67" prot="private" virt="non-virtual"><scope>blmc_drivers::PDController</scope><name>motor_slider_pairs_</name></member>
+      <member refid="classblmc__drivers_1_1PDController_1a78e3d01f6bcc263b20b81a7525d072cf" prot="public" virt="non-virtual"><scope>blmc_drivers::PDController</scope><name>PDController</name></member>
+      <member refid="classblmc__drivers_1_1PDController_1a425d7f9c093a0c586ef608d4c11c8889" prot="private" virt="non-virtual"><scope>blmc_drivers::PDController</scope><name>rt_thread_</name></member>
+      <member refid="classblmc__drivers_1_1PDController_1a9c9258e9f1af0f4ca00d2ede682ad511" prot="public" virt="non-virtual"><scope>blmc_drivers::PDController</scope><name>start_loop</name></member>
+      <member refid="classblmc__drivers_1_1PDController_1a3520dd968bde954399bf3ef4508c3d54" prot="private" virt="non-virtual"><scope>blmc_drivers::PDController</scope><name>stop_loop</name></member>
+      <member refid="classblmc__drivers_1_1PDController_1aed8ffc7914eb5976f95936315bcd9c47" prot="public" virt="non-virtual"><scope>blmc_drivers::PDController</scope><name>~PDController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
