@@ -48,20 +48,40 @@ def copy_doc_package(package_name, share_path):
     """
     Copy/Replace the documentation of the ros package in this repository.
     """
-    share_path = get_ros_install_share_path()
-    local_doc = path.join("../code_documentation", package_name, "docs")
-    local_doc_html = path.join(share_path, package_name, "docs")
 
-    if not path.isdir(local_doc_html):
-        print ("WARNING: cannot find the documentation for the package [",
-               package_name,
-               "]. Nothing to be done")
-        return
+    def overwrite_doc(copy_from, copy_to):
+        """Detect and overwrite the local doc if possible
 
-    if path.isdir(local_doc):
-        shutil.rmtree(local_doc)
+        Args:
+            copy_from (path): path to the html folder to copy.
+            copy_to (path): path to the html folder in this package.
+        """
+        # check if the input is correct.
+        if not path.isfile(path.join(copy_from, 'index.html')):
+            print ("WARNING: cannot find the documentation for the package [",
+                   copy_from,
+                   "]. Nothing to be done")
+            return
 
-    shutil.copytree(local_doc_html, local_doc)
+        # check if the local dir exists. if yes delete it.
+        if path.isdir(copy_to):
+            print("rm: ", path.dirname(copy_to))
+            shutil.rmtree(path.dirname(copy_to))
+
+        # copy the doc.
+        shutil.copytree(copy_from, copy_to)
+
+    # deal with the doxygen folder
+    copy_from = path.join(share_path, package_name, "docs", "doxygen", "html")
+    copy_to = path.join("..", "code_documentation",
+                        package_name, "docs", "doxygen", "html")
+    overwrite_doc(copy_from, copy_to)
+
+    # deal with the sphinx folder
+    copy_from = path.join(share_path, package_name, "docs", "sphinx", "html")
+    copy_to = path.join("..", "code_documentation",
+                        package_name, "docs", "sphinx", "html")
+    overwrite_doc(copy_from, copy_to)
     return
 
 
