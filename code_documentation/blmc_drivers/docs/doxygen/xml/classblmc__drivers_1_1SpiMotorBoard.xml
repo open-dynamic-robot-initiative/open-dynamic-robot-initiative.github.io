@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1SpiMotorBoard" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::SpiMotorBoard</compoundname>
+    <basecompoundref refid="classblmc__drivers_1_1MotorBoardInterface" prot="public" virt="non-virtual">blmc_drivers::MotorBoardInterface</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1SpiMotorBoard_1a767abb6f687ed8bf7fef873ab892eaf7" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classblmc__drivers_1_1SpiBus" kindref="compound">SpiBus</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;SpiBus&gt; blmc_drivers::SpiMotorBoard::spi_bus_</definition>
+        <argsstring></argsstring>
+        <name>spi_bus_</name>
+        <briefdescription>
+<para>Communication related attributes. </para>        </briefdescription>
+        <detaileddescription>
+<para>Master board interface sdk: <ulink url="https://github.com/open-dynamic-robot-initiative/master-board">https://github.com/open-dynamic-robot-initiative/master-board</ulink> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="137" column="1" bodyfile="include/blmc_drivers/devices/spi_motor_board.hpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SpiMotorBoard_1a4b865479722dbecec8ebb66d6b93ecae" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t blmc_drivers::SpiMotorBoard::udriver_id_</definition>
+        <argsstring></argsstring>
+        <name>udriver_id_</name>
+        <briefdescription>
+<para>udriver_id_ is the index of the udriver controlled by the master board. </para>        </briefdescription>
+        <detaileddescription>
+<para>The index is the one used in MasterBoardInterface. The index should correspond to the hardware SPI index onboard the card. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="144" column="1" bodyfile="include/blmc_drivers/devices/spi_motor_board.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1a740572d586d73b678a177bc3de351f8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SpiMotorBoard::SpiMotorBoard</definition>
+        <argsstring>(std::shared_ptr&lt; SpiBus &gt; spi_bus, const size_t udriver_id)</argsstring>
+        <name>SpiMotorBoard</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classblmc__drivers_1_1SpiBus" kindref="compound">SpiBus</ref> &gt;</type>
+          <declname>spi_bus</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>udriver_id</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1SpiMotorBoard" kindref="compound">SpiMotorBoard</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The constructor starts a real time thread: SpiMotorBoard::loop(). This thread streams the data back and forth collecting the sensor data and sends the control/commands.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>spi_bus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the object that communicate with the master board which in turn communicate with the motor boards. The master board provides the hardware informations and sends the commands. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>udriver_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the udriver this class represents. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="41" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="25" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1a3bc0c19b79504a96426646090c7fbc54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SpiMotorBoard::~SpiMotorBoard</definition>
+        <argsstring>()</argsstring>
+        <name>~SpiMotorBoard</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1SpiMotorBoard" kindref="compound">SpiMotorBoard</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The destructor handles the proper shutdown of the class and the threads. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="47" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1af3793742536e6d8dc5f5782c460553fd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" kindref="member">MotorInterface::ScalarTimeseries</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; const MotorBoardInterface::ScalarTimeseries &gt; blmc_drivers::SpiMotorBoard::get_measurement</definition>
+        <argsstring>(const int &amp;index) const</argsstring>
+        <name>get_measurement</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a34828a0375a3bd1fede4deb4fc74c04d">get_measurement</reimplements>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Output and status. </para>        </briefdescription>
+        <detaileddescription>
+<para>Getters. Get the measurements</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the kind of measurement we are looking for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the last time stamped measurement acquiered. Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="58" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1a2402ab8f55dce8c4bc35bae619e61e23" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae3777e484dda60c4abe87f2b542ddfb8" kindref="member">MotorBoardInterface::StatusTimeseries</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; const MotorBoardInterface::StatusTimeseries &gt; blmc_drivers::SpiMotorBoard::get_status</definition>
+        <argsstring>() const</argsstring>
+        <name>get_status</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a13b1ffa7d10c1c753d76eaf5368714e3">get_status</reimplements>
+        <briefdescription>
+<para>Get the status of the motor board. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Ptr&lt;const StatusTimeseries&gt; is the list of the last status of the card. Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="65" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1a52791e9a5e9fd7db347c97b399bdeee8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" kindref="member">MotorInterface::ScalarTimeseries</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; const MotorBoardInterface::ScalarTimeseries &gt; blmc_drivers::SpiMotorBoard::get_control</definition>
+        <argsstring>(const int &amp;index) const</argsstring>
+        <name>get_control</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1aa5eeed12c851993f2e2c93f5479df9de">get_control</reimplements>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>input logs </para>        </briefdescription>
+        <detaileddescription>
+<para>input logs Get the controls to be send.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>define the kind of control we are looking for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the controls to be send. Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="76" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1ad8640595ac4c46af1847fd141946d640" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae2afe94a023d9f08a4c689e9b7660f15" kindref="member">MotorBoardInterface::CommandTimeseries</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; const MotorBoardInterface::CommandTimeseries &gt; blmc_drivers::SpiMotorBoard::get_command</definition>
+        <argsstring>() const</argsstring>
+        <name>get_command</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a4913308c1eacc98475aeb8647447c997">get_command</reimplements>
+        <briefdescription>
+<para>Get the commands to be send. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Ptr&lt;const CommandTimeseries&gt; is the list of the commands to be send. Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="83" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1af6e2b210a6746b82a01aa2f2b550d05d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1MotorInterface_1a49b8fc916b9f9debbd7b0988463db5cd" kindref="member">MotorInterface::ScalarTimeseries</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; const MotorBoardInterface::ScalarTimeseries &gt; blmc_drivers::SpiMotorBoard::get_sent_control</definition>
+        <argsstring>(const int &amp;index) const</argsstring>
+        <name>get_sent_control</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a8dc6222e915fc96d89b13cbb0fcb0cda">get_sent_control</reimplements>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Get the sent controls. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>define the kind of control we are looking for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the controls sent recently. Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="90" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1a4efe6ae858714de5cf5e54346fb6493c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae2afe94a023d9f08a4c689e9b7660f15" kindref="member">MotorBoardInterface::CommandTimeseries</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; const MotorBoardInterface::CommandTimeseries &gt; blmc_drivers::SpiMotorBoard::get_sent_command</definition>
+        <argsstring>() const</argsstring>
+        <name>get_sent_command</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1afd3de58f7a900347154b8d323f1c1d94">get_sent_command</reimplements>
+        <briefdescription>
+<para>Get the sent commands. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Ptr&lt;const CommandTimeseries&gt; is the list of the commands sent recently. Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="97" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1ae11c5382665adfa718bcc43ec1e84b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SpiMotorBoard::set_control</definition>
+        <argsstring>(const double &amp;control, const int &amp;index)</argsstring>
+        <name>set_control</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a3ace57ba3e09b9b3120d09303ff39a61">set_control</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>control</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Setters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Setters. set_control save the control internally. In order to actaully send the controls to the network please call &quot;send_if_input_changed&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>control</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the value of the control. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>define the kind of control we want to send. Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="107" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="88" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1a6b626225af993444bdee397952281772" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SpiMotorBoard::set_command</definition>
+        <argsstring>(const MotorBoardCommand &amp;command)</argsstring>
+        <name>set_command</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a86b4ff810ca652d6761090ceaff65621">set_command</reimplements>
+        <param>
+          <type>const <ref refid="classblmc__drivers_1_1MotorBoardCommand" kindref="compound">MotorBoardCommand</ref> &amp;</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>set_command save the command internally. </para>        </briefdescription>
+        <detaileddescription>
+<para>In order to actaully send the controls to the network please call &quot;send_if_input_changed&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the command to be sent. Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="113" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1a39e986b4df42867f8d5896c35c7c4464" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SpiMotorBoard::send_if_input_changed</definition>
+        <argsstring>()</argsstring>
+        <name>send_if_input_changed</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a79afd172c736718868f4d269125f2581">send_if_input_changed</reimplements>
+        <briefdescription>
+<para>Actually send the commands and the controls. </para>        </briefdescription>
+        <detaileddescription>
+<para>Inherited from <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref>. This particualr instance does not actually check if it is is a new command or control as the full status of the robot is exchange at every tick. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="121" column="1" bodyfile="src/spi_motor_board.cpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SpiMotorBoard_1aebd1424f4bee236b2e2ca3bbb1dd8f93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_drivers::SpiMotorBoard::is_ready</definition>
+        <argsstring>()</argsstring>
+        <name>is_ready</name>
+        <briefdescription>
+<para>return s only once board and motors are ready. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="126" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="110">
+        <label>blmc_drivers::MotorBoardInterface</label>
+        <link refid="classblmc__drivers_1_1MotorBoardInterface"/>
+        <childnode refid="111" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="109">
+        <label>blmc_drivers::SpiMotorBoard</label>
+        <link refid="classblmc__drivers_1_1SpiMotorBoard"/>
+        <childnode refid="110" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="113">
+        <label>blmc_drivers::MotorBoardInterface</label>
+        <link refid="classblmc__drivers_1_1MotorBoardInterface"/>
+        <childnode refid="114" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="112">
+        <label>blmc_drivers::SpiMotorBoard</label>
+        <link refid="classblmc__drivers_1_1SpiMotorBoard"/>
+        <childnode refid="113" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_drivers/devices/spi_motor_board.hpp" line="25" column="1" bodyfile="include/blmc_drivers/devices/spi_motor_board.hpp" bodystart="24" bodyend="145"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba8d4c4df803687c9e24ee277ae6abf38e" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>analog_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba34d7aeb549f4c6e5e9f6e9f9d584ebb6" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>analog_1</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1ae2afe94a023d9f08a4c689e9b7660f15" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>CommandTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a82ed4d0fa527521707281396095a88caa22aa2ad714a3d21d3599340e5a735d03" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>control_count</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a82ed4d0fa527521707281396095a88ca" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>ControlIndex</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba3a7016c860809f0398f58cbb49c13773" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>current_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba063eeeff31565ec122b6ac7e686c0b7d" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>current_1</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a82ed4d0fa527521707281396095a88caa51e106e07073a2488985f016b8a25006" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>current_target_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a82ed4d0fa527521707281396095a88caaddd8c44f283091cde84249668af74928" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>current_target_1</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafbaa9d352ff89787dce3b8359e2687a12ec" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>encoder_index_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba8f832d4e58f7c60915018e3df5473d35" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>encoder_index_1</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1ad8640595ac4c46af1847fd141946d640" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>get_command</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a52791e9a5e9fd7db347c97b399bdeee8" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>get_control</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1af3793742536e6d8dc5f5782c460553fd" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>get_measurement</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a4efe6ae858714de5cf5e54346fb6493c" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>get_sent_command</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1af6e2b210a6746b82a01aa2f2b550d05d" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>get_sent_control</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a2402ab8f55dce8c4bc35bae619e61e23" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>get_status</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1ab0e201396fe808cbc480b69768c81fa2" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>Index</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1aef0ca990410b130b67abce74d20d58a5" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>IndexTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1aebd1424f4bee236b2e2ca3bbb1dd8f93" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>is_ready</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafbae093f0705e01ef8c5e09964daeb225de" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>measurement_count</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafb" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>MeasurementIndex</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba21da354c17fbe69438209b3f021e30ef" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>position_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba088cf02c867acd573d6fb0f4a450f781" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>position_1</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>Ptr</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a14e237254ba495a66091ea3a3a33fa75" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>ScalarTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a39e986b4df42867f8d5896c35c7c4464" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>send_if_input_changed</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a6b626225af993444bdee397952281772" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>set_command</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1ae11c5382665adfa718bcc43ec1e84b6e" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>set_control</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a767abb6f687ed8bf7fef873ab892eaf7" prot="private" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>spi_bus_</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a740572d586d73b678a177bc3de351f8b" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>SpiMotorBoard</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1ae3777e484dda60c4abe87f2b542ddfb8" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>StatusTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a4b865479722dbecec8ebb66d6b93ecae" prot="private" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>udriver_id_</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1abeb474bef6d85dffcd5227e5ea965cc5" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>Vector</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba92b90796c7e002902bfed9a4811a66c2" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>velocity_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba1884d733defabdbdb150c38eefc499a6" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>velocity_1</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1aecd23682c4a8c0df8e57b4c752e1d9ee" prot="public" virt="virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>~MotorBoardInterface</name></member>
+      <member refid="classblmc__drivers_1_1SpiMotorBoard_1a3bc0c19b79504a96426646090c7fbc54" prot="public" virt="non-virtual"><scope>blmc_drivers::SpiMotorBoard</scope><name>~SpiMotorBoard</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

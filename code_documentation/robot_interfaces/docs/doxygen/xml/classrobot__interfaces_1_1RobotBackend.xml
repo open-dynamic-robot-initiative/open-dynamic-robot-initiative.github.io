@@ -1,0 +1,405 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classrobot__interfaces_1_1RobotBackend" kind="class" language="C++" prot="public">
+    <compoundname>robot_interfaces::RobotBackend</compoundname>
+    <includes refid="robot__backend_8hpp" local="no">robot_backend.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>Action</declname>
+        <defname>Action</defname>
+      </param>
+      <param>
+        <type>typename</type>
+        <declname>Observation</declname>
+        <defname>Observation</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1a9c07b9b4a8c98b3f1b63d0754cbcb85b" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref>&lt; Action, Observation &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;RobotDriver&lt;Action, Observation&gt; &gt; robot_interfaces::RobotBackend&lt; Action, Observation &gt;::robot_driver_</definition>
+        <argsstring></argsstring>
+        <name>robot_driver_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="155" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1a4bb04e584d971d4d99a32ea8c5b0cd68" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref>&lt; Action, Observation &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;RobotData&lt;Action, Observation&gt; &gt; robot_interfaces::RobotBackend&lt; Action, Observation &gt;::robot_data_</definition>
+        <argsstring></argsstring>
+        <name>robot_data_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="156" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1a81610183c52c9fe2088304bbd3b6f83f" prot="private" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool robot_interfaces::RobotBackend&lt; Action, Observation &gt;::real_time_mode_</definition>
+        <argsstring></argsstring>
+        <name>real_time_mode_</name>
+        <briefdescription>
+<para>Enable/disable real time mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>If real time mode is enabled (true), the back end expects new actions to be provided in time by the user. If this does not happen, the last received action is repeated until the configured number of repetitions is exceeded in which case it stops with an error.</para><para>If real time mode is disabled (false), the back-end loop blocks and waits for the next action if it is not provided in time.</para><para><simplesect kind="see"><para><ref refid="classrobot__interfaces_1_1RobotBackend_1ae40ecdc44212f79f96d63a84f7b8a6e8" kindref="member">max_action_repetitions_</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="171" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1a56f111a9e0663eedefbaf55de36f7cac" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double robot_interfaces::RobotBackend&lt; Action, Observation &gt;::first_action_timeout_</definition>
+        <argsstring></argsstring>
+        <name>first_action_timeout_</name>
+        <briefdescription>
+<para>Timeout for the first action to arrive. </para>        </briefdescription>
+        <detaileddescription>
+<para>Timeout for the time between starting the backend loop and receiving the first action from the user. If exceeded, the backend shuts down. Set to infinity to disable the timeout. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="180" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1a7cac555549bff96a32da042a97919d47" prot="private" static="no" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t robot_interfaces::RobotBackend&lt; Action, Observation &gt;::max_number_of_actions_</definition>
+        <argsstring></argsstring>
+        <name>max_number_of_actions_</name>
+        <briefdescription>
+<para>Maximum number of actions that are executed by the backend. </para>        </briefdescription>
+        <detaileddescription>
+<para>If set to a value greater than zero, the backend will automatically shut down after the specified number of actions is executed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="188" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1abe24206dcf102b33f8ee472e287f485a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; robot_interfaces::RobotBackend&lt; Action, Observation &gt;::is_shutdown_requested_</definition>
+        <argsstring></argsstring>
+        <name>is_shutdown_requested_</name>
+        <briefdescription>
+<para>Set to true when shutdown is requested. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is used to notify the background loop about requested shutdown, so it terminates itself. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="196" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1a0e91800b352b7b52f22820775b1d5e99" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; robot_interfaces::RobotBackend&lt; Action, Observation &gt;::loop_is_running_</definition>
+        <argsstring></argsstring>
+        <name>loop_is_running_</name>
+        <briefdescription>
+<para>Indicates if the background loop is still running. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="199" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1ae40ecdc44212f79f96d63a84f7b8a6e8" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t robot_interfaces::RobotBackend&lt; Action, Observation &gt;::max_action_repetitions_</definition>
+        <argsstring></argsstring>
+        <name>max_action_repetitions_</name>
+        <briefdescription>
+<para>Number of times the previous action is repeated if no new one is provided. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="205" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1a69c9b7f07651484d1677121f72832482" prot="private" static="no" mutable="no">
+        <type>real_time_tools::CheckpointTimer&lt; 6, false &gt;</type>
+        <definition>real_time_tools::CheckpointTimer&lt;6, false&gt; robot_interfaces::RobotBackend&lt; Action, Observation &gt;::timer_</definition>
+        <argsstring></argsstring>
+        <name>timer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="207" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1RobotBackend_1afcf4f2443b7f3000cece9b0851284717" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; real_time_tools::RealTimeThread &gt;</type>
+        <definition>std::shared_ptr&lt;real_time_tools::RealTimeThread&gt; robot_interfaces::RobotBackend&lt; Action, Observation &gt;::thread_</definition>
+        <argsstring></argsstring>
+        <name>thread_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="209" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1af454a09b5d269ed32b0ae2d35abdb833" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::RobotBackend&lt; Action, Observation &gt;::RobotBackend</definition>
+        <argsstring>(std::shared_ptr&lt; RobotDriver&lt; Action, Observation &gt;&gt; robot_driver, std::shared_ptr&lt; RobotData&lt; Action, Observation &gt;&gt; robot_data, const bool real_time_mode=true, const double first_action_timeout=std::numeric_limits&lt; double &gt;::infinity(), const uint32_t max_number_of_actions=0)</argsstring>
+        <name>RobotBackend</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref>&lt; Action, Observation &gt;&gt;</type>
+          <declname>robot_driver</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref>&lt; Action, Observation &gt;&gt;</type>
+          <declname>robot_data</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>real_time_mode</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>first_action_timeout</declname>
+          <defval>std::numeric_limits&lt; double &gt;::infinity()</defval>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>max_number_of_actions</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>robot_driver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDriver" kindref="compound">Driver</ref> instance for the actual robot. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>robot_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data is send to/retrieved from here. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>real_time_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Enable/disable real-time mode. In real-time mode, the backend will repeat previous actions if the new one is not provided in time or fail with an error if the allowed number of repetitions is exceeded. In non-real-time mode, it will simply block and wait until the action is provided. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>first_action_timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>See <ref refid="classrobot__interfaces_1_1RobotBackend_1a56f111a9e0663eedefbaf55de36f7cac" kindref="member">RobotBackend::first_action_timeout_</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_number_of_actions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>See <ref refid="classrobot__interfaces_1_1RobotBackend_1a7cac555549bff96a32da042a97919d47" kindref="member">RobotBackend::max_number_of_actions_</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="56" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="56" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1af43d9fbf6fcac1e37d8fc6196440dec5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual robot_interfaces::RobotBackend&lt; Action, Observation &gt;::~RobotBackend</definition>
+        <argsstring>()</argsstring>
+        <name>~RobotBackend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="77" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="77" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1ae354dfd960d4fd0d2f9242dcfb4a701f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t robot_interfaces::RobotBackend&lt; Action, Observation &gt;::get_max_action_repetitions</definition>
+        <argsstring>()</argsstring>
+        <name>get_max_action_repetitions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="101" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1aad761d1e0ab7296a9632b9c4cc9c91db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::RobotBackend&lt; Action, Observation &gt;::set_max_action_repetitions</definition>
+        <argsstring>(const uint32_t &amp;max_action_repetitions)</argsstring>
+        <name>set_max_action_repetitions</name>
+        <param>
+          <type>const uint32_t &amp;</type>
+          <declname>max_action_repetitions</declname>
+        </param>
+        <briefdescription>
+<para>Set how often an action is repeated if no new one is provided. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the next action is due to be executed but the user did not provide one yet (i.e. there is no new action in the robot data time series), the last action will be repeated by automatically adding it to the time series again.</para><para>Use this this method to specify how often the action shall be repeated (default is 0, i.e. no repetition at all). If this limit is exceeded, the robot will be shut down and the <ref refid="classrobot__interfaces_1_1RobotBackend" kindref="compound">RobotBackend</ref> stops.</para><para><bold>Note:</bold> This is ignored in non-real-time mode.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>max_action_repetitions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="122" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1a7e4eb9f5362b79c0c21b824e3b639ae6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::RobotBackend&lt; Action, Observation &gt;::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="127" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="127" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1a3da1748227b56acf7b745aff64023715" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::RobotBackend&lt; Action, Observation &gt;::request_shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>request_shutdown</name>
+        <briefdescription>
+<para>Request shutdown of the backend loop. </para>        </briefdescription>
+        <detaileddescription>
+<para>The loop may take some time to actually terminate after calling this function. Use <ref refid="classrobot__interfaces_1_1RobotBackend_1ad4e9c9fda8d3bbab60b1896df1e1e78b" kindref="member">wait_until_terminated()</ref> to ensure it has really terminated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="138" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1ad4e9c9fda8d3bbab60b1896df1e1e78b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::RobotBackend&lt; Action, Observation &gt;::wait_until_terminated</definition>
+        <argsstring>() const</argsstring>
+        <name>wait_until_terminated</name>
+        <briefdescription>
+<para>Wait until the backend loop terminates. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="146" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="146" bodyend="152"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1acfbf64755fc1910ca26f441085c99225" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool robot_interfaces::RobotBackend&lt; Action, Observation &gt;::has_shutdown_request</definition>
+        <argsstring>() const</argsstring>
+        <name>has_shutdown_request</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="211" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="211" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1a7cc66183743f277c41614a44fcc47b1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::RobotBackend&lt; Action, Observation &gt;::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>Main loop. </para>        </briefdescription>
+        <detaileddescription>
+<para>Iterate over robot_data_.desired_action and apply these actions to the robot, and read the applied_action and the observation from the robot and append them to the corresponding timeseries in robot_data_. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="232" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="232" bodyend="355"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1RobotBackend_1a44f21ab5414ea7742e34a3cf3dfe0650" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void *</type>
+        <definition>static void* robot_interfaces::RobotBackend&lt; Action, Observation &gt;::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/robot_backend.hpp" line="219" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="219" bodyend="223"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Communication link between <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref> and <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>At each time-step, it gets the observation from the <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref> and writes it to <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref>, and it takes the desired_action from <ref refid="classrobot__interfaces_1_1RobotData" kindref="compound">RobotData</ref> and applies it on the <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref>.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Observation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="include/robot_interfaces/robot_backend.hpp" line="43" column="1" bodyfile="include/robot_interfaces/robot_backend.hpp" bodystart="42" bodyend="356"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a56f111a9e0663eedefbaf55de36f7cac" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>first_action_timeout_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1ae354dfd960d4fd0d2f9242dcfb4a701f" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>get_max_action_repetitions</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1acfbf64755fc1910ca26f441085c99225" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>has_shutdown_request</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a7e4eb9f5362b79c0c21b824e3b639ae6" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>initialize</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1abe24206dcf102b33f8ee472e287f485a" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>is_shutdown_requested_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a44f21ab5414ea7742e34a3cf3dfe0650" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>loop</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a7cc66183743f277c41614a44fcc47b1a" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>loop</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a0e91800b352b7b52f22820775b1d5e99" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>loop_is_running_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1ae40ecdc44212f79f96d63a84f7b8a6e8" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>max_action_repetitions_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a7cac555549bff96a32da042a97919d47" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>max_number_of_actions_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a81610183c52c9fe2088304bbd3b6f83f" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>real_time_mode_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a3da1748227b56acf7b745aff64023715" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>request_shutdown</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a4bb04e584d971d4d99a32ea8c5b0cd68" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>robot_data_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a9c07b9b4a8c98b3f1b63d0754cbcb85b" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>robot_driver_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1af454a09b5d269ed32b0ae2d35abdb833" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>RobotBackend</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1aad761d1e0ab7296a9632b9c4cc9c91db" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>set_max_action_repetitions</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1afcf4f2443b7f3000cece9b0851284717" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>thread_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1a69c9b7f07651484d1677121f72832482" prot="private" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>timer_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1ad4e9c9fda8d3bbab60b1896df1e1e78b" prot="public" virt="non-virtual"><scope>robot_interfaces::RobotBackend</scope><name>wait_until_terminated</name></member>
+      <member refid="classrobot__interfaces_1_1RobotBackend_1af43d9fbf6fcac1e37d8fc6196440dec5" prot="public" virt="virtual"><scope>robot_interfaces::RobotBackend</scope><name>~RobotBackend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

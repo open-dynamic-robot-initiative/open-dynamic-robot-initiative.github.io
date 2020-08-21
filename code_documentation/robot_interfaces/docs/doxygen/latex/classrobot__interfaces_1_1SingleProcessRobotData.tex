@@ -1,0 +1,103 @@
+\hypertarget{classrobot__interfaces_1_1SingleProcessRobotData}{}\section{robot\+\_\+interfaces\+:\+:Single\+Process\+Robot\+Data$<$ Action, Observation $>$ Class Template Reference}
+\label{classrobot__interfaces_1_1SingleProcessRobotData}\index{robot\+\_\+interfaces\+::\+Single\+Process\+Robot\+Data$<$ Action, Observation $>$@{robot\+\_\+interfaces\+::\+Single\+Process\+Robot\+Data$<$ Action, Observation $>$}}
+
+
+\hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data} instance using single process time series.  
+
+
+
+
+{\ttfamily \#include $<$robot\+\_\+data.\+hpp$>$}
+
+
+
+Inheritance diagram for robot\+\_\+interfaces\+:\+:Single\+Process\+Robot\+Data$<$ Action, Observation $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classrobot__interfaces_1_1SingleProcessRobotData__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for robot\+\_\+interfaces\+:\+:Single\+Process\+Robot\+Data$<$ Action, Observation $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classrobot__interfaces_1_1SingleProcessRobotData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrobot__interfaces_1_1SingleProcessRobotData_adcb9896c90464e27fb1cd2f303ca7cef}{Single\+Process\+Robot\+Data} (size\+\_\+t history\+\_\+length=1000)
+\begin{DoxyCompactList}\small\item\em Construct the time series for the robot data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Action, typename Observation$>$\newline
+class robot\+\_\+interfaces\+::\+Single\+Process\+Robot\+Data$<$ Action, Observation $>$}
+
+\hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data} instance using single process time series. 
+
+Use this class if all modules accessing the data are running in the same process. If modules run in separate processes, use \hyperlink{classrobot__interfaces_1_1MultiProcessRobotData}{Multi\+Process\+Robot\+Data} instead.
+
+Contains all the input and output data of the robot. This means the
+\begin{DoxyItemize}
+\item {\ttfamily desired\+\_\+action} which was requested by the robot user
+\item {\ttfamily applied\+\_\+action} which was actually applied and may not be and may not be identical to desired\+\_\+action for safety reasons
+\item {\ttfamily observation} made by the robot
+\item {\ttfamily status} which keeps track of timing issues and errors.
+\end{DoxyItemize}
+
+See this graph to understand how they relate to each other precisely in terms of time\+:
+
+\begin{DoxyVerb}|------ t = 0 ------|------ t = 1 ------|
+|----- action0 -----|----- action1 -----|
+o                   o                   o
+b                   b                   b
+s                   s                   s
+0                   1                   2
+\end{DoxyVerb}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Action} & Type of the actions. \\
+\hline
+{\em Observation} & Type of the observations. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classrobot__interfaces_1_1MultiProcessRobotData}{Multi\+Process\+Robot\+Data} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_8cpp-example}{demo.\+cpp}.\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrobot__interfaces_1_1SingleProcessRobotData_adcb9896c90464e27fb1cd2f303ca7cef}\label{classrobot__interfaces_1_1SingleProcessRobotData_adcb9896c90464e27fb1cd2f303ca7cef}} 
+\index{robot\+\_\+interfaces\+::\+Single\+Process\+Robot\+Data@{robot\+\_\+interfaces\+::\+Single\+Process\+Robot\+Data}!Single\+Process\+Robot\+Data@{Single\+Process\+Robot\+Data}}
+\index{Single\+Process\+Robot\+Data@{Single\+Process\+Robot\+Data}!robot\+\_\+interfaces\+::\+Single\+Process\+Robot\+Data@{robot\+\_\+interfaces\+::\+Single\+Process\+Robot\+Data}}
+\subsubsection{\texorpdfstring{Single\+Process\+Robot\+Data()}{SingleProcessRobotData()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+\hyperlink{classrobot__interfaces_1_1SingleProcessRobotData}{robot\+\_\+interfaces\+::\+Single\+Process\+Robot\+Data}$<$ Action, Observation $>$\+::\hyperlink{classrobot__interfaces_1_1SingleProcessRobotData}{Single\+Process\+Robot\+Data} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{history\+\_\+length = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct the time series for the robot data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em history\+\_\+length} & History length of the time series. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/\hyperlink{robot__data_8hpp}{robot\+\_\+data.\+hpp}\end{DoxyCompactItemize}

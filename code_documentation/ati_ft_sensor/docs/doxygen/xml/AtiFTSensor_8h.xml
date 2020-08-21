@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="AtiFTSensor_8h" kind="file" language="C++">
+    <compoundname>AtiFTSensor.h</compoundname>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">arpa/inet.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">real_time_tools/thread.hpp</includes>
+    <includes local="no">boost/thread.hpp</includes>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes local="no">boost/bind.hpp</includes>
+    <includedby refid="AtiFTSensor_8cpp" local="no">src/AtiFTSensor.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="2">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="7">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="0">
+        <label>include/AtiFTSensor.h</label>
+        <link refid="AtiFTSensor_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>errno.h</label>
+      </node>
+      <node id="5">
+        <label>real_time_tools/thread.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/thread.hpp</label>
+      </node>
+      <node id="8">
+        <label>boost/bind.hpp</label>
+      </node>
+      <node id="4">
+        <label>mutex</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classati__ft__sensor_1_1AtiFTSensor" prot="public">ati_ft_sensor::AtiFTSensor</innerclass>
+    <innerclass refid="structati__ft__sensor_1_1AtiFTSensor_1_1received__msg" prot="private">ati_ft_sensor::AtiFTSensor::received_msg</innerclass>
+    <innerclass refid="structati__ft__sensor_1_1AtiFTSensor_1_1send__msg" prot="private">ati_ft_sensor::AtiFTSensor::send_msg</innerclass>
+    <innernamespace refid="namespaceati__ft__sensor">ati_ft_sensor</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ludovic Righetti </para></simplesect>
+<xrefsect id="license_1_license000001"><xreftitle>License</xreftitle><xrefdescription><para>License BSD-3-Clause </para></xrefdescription></xrefsect><simplesect kind="copyright"><para>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </para></simplesect>
+<simplesect kind="date"><para>2013-10-22 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#ifndef<sp/>ATIFTSENSOR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ATIFTSENSOR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;arpa/inet.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>XENOMAI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;native/task.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;native/mutex.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;native/pipe.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::mutex</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;real_time_tools/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/thread.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/bind.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceati__ft__sensor" kindref="compound">ati_ft_sensor</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classati__ft__sensor_1_1AtiFTSensor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classati__ft__sensor_1_1AtiFTSensor" kindref="compound">AtiFTSensor</ref>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="classati__ft__sensor_1_1AtiFTSensor" kindref="compound">AtiFTSensor</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>~<ref refid="classati__ft__sensor_1_1AtiFTSensor" kindref="compound">AtiFTSensor</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialize();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getStatus(uint32_t&amp;<sp/>rdt_seq,<sp/>uint32_t&amp;<sp/>ft_seq,<sp/>uint32_t&amp;<sp/>status);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getFT(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>force,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>torque);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stream(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>stream);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stop();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setBias();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setBias(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>force,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>torque);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetBias();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>F_[3];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>T_[3];</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>uint32_t<sp/>rdt_sequence_;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>uint32_t<sp/>ft_sequence_;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>uint32_t<sp/>status_;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Streaming<sp/>support<sp/>is<sp/>only<sp/>available<sp/>on<sp/>xenomai.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>XENOMAI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">steaming_msg</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>rdt_seq;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>ft_seq;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>status;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>F[3];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>T[3];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>count_per_force_<sp/>=<sp/>1000000.0;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>count_per_torque_<sp/>=<sp/>1000000.0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="structati__ft__sensor_1_1AtiFTSensor_1_1received__msg" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structati__ft__sensor_1_1AtiFTSensor_1_1received__msg" kindref="compound">received_msg</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>rdt_sequence;<sp/></highlight><highlight class="comment">//<sp/>RDT<sp/>sequence<sp/>number<sp/>of<sp/>this<sp/>packet.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>ft_sequence;<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>record’s<sp/>internal<sp/>sequence<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>status;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>System<sp/>status<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Force<sp/>and<sp/>torque<sp/>readings<sp/>use<sp/>counts<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Fx;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>X-axis<sp/>force</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Fy;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Y-axis<sp/>force</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Fz;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Z-axis<sp/>force</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Tx;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>X-axis<sp/>torque</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Ty;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Y-axis<sp/>torque</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>Tz;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Z-axis<sp/>torque</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="structati__ft__sensor_1_1AtiFTSensor_1_1send__msg" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structati__ft__sensor_1_1AtiFTSensor_1_1send__msg" kindref="compound">send_msg</ref></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>command_header;<sp/></highlight><highlight class="comment">//<sp/>=<sp/>0x1234<sp/>//<sp/>Required</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>command;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Command<sp/>to<sp/>execute</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>sample_count;<sp/><sp/></highlight><highlight class="comment">//<sp/>Samples<sp/>to<sp/>output<sp/>(0<sp/>=<sp/>infinite)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>THREAD_FUNCTION_RETURN_TYPE<sp/>read_ft(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>instance_pointer)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>((<ref refid="classati__ft__sensor_1_1AtiFTSensor" kindref="compound">AtiFTSensor</ref>*)(instance_pointer))-&gt;read_ft();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>THREAD_FUNCTION_RETURN_VALUE;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>read_ft();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>sockaddr_in<sp/>local_address_,<sp/>remote_address_;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket_;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>real_time_tools::RealTimeThread<sp/>reading_thread_;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>F_bias_[3],<sp/>T_bias_[3];</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>XENOMAI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>RT_MUTEX<sp/>mutex_;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>RT_PIPE<sp/>stream_pipe_;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>std::mutex<sp/>mutex_;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized_;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>going_;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>streaming_;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ATIFTSENSOR_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/AtiFTSensor.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,296 @@
+\hypertarget{classblmc__drivers_1_1CanBus}{}\section{blmc\+\_\+drivers\+:\+:Can\+Bus Class Reference}
+\label{classblmc__drivers_1_1CanBus}\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+
+
+\hyperlink{classblmc__drivers_1_1CanBus}{Can\+Bus} is the implementation of the \hyperlink{classblmc__drivers_1_1CanBusInterface}{Can\+Bus\+Interface}.  
+
+
+
+
+{\ttfamily \#include $<$can\+\_\+bus.\+hpp$>$}
+
+
+
+Inheritance diagram for blmc\+\_\+drivers\+:\+:Can\+Bus\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classblmc__drivers_1_1CanBus__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for blmc\+\_\+drivers\+:\+:Can\+Bus\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classblmc__drivers_1_1CanBus__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__drivers_1_1CanBus_a7d376f1ebd6dd8bc3299f6fc9f3d42c6}{Can\+Bus} (const std\+::string \&can\+\_\+interface\+\_\+name, const size\+\_\+t \&history\+\_\+length=1000)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__drivers_1_1CanBus}{Can\+Bus} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_aa79afdda8d7f28ea63d32bf1a5a0f196}\label{classblmc__drivers_1_1CanBus_aa79afdda8d7f28ea63d32bf1a5a0f196}} 
+virtual \hyperlink{classblmc__drivers_1_1CanBus_aa79afdda8d7f28ea63d32bf1a5a0f196}{$\sim$\+Can\+Bus} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classblmc__drivers_1_1CanBus}{Can\+Bus} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1CanBusInterface_a2da2627c961927f48359ae7d7e1aa4da}{Canframe\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBus_a449fa3c1b73a9282193ce85b56e9a729}{get\+\_\+output\+\_\+frame} () const
+\begin{DoxyCompactList}\small\item\em Getters. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1CanBusInterface_a2da2627c961927f48359ae7d7e1aa4da}{Canframe\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBus_a5b9282bc65bff196e6d6b393fbdc5891}{get\+\_\+input\+\_\+frame} ()
+\begin{DoxyCompactList}\small\item\em Get the input frame. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1CanBusInterface_a2da2627c961927f48359ae7d7e1aa4da}{Canframe\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1CanBus_a862e9898a6607ac2e00e712c30e7f348}{get\+\_\+sent\+\_\+input\+\_\+frame} ()
+\begin{DoxyCompactList}\small\item\em Get the input frame thas has been sent. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1CanBus_ae4887644960c0a92fc82f8bdffbe9c48}{set\+\_\+input\+\_\+frame} (const \hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} \&input\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Setters. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1CanBus_acf90b96ca5727f9ecb328ce20d7a2cbc}{send\+\_\+if\+\_\+input\+\_\+changed} ()
+\begin{DoxyCompactList}\small\item\em Sender. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a65042f6d32e30c7c367d7e5780856a60}\label{classblmc__drivers_1_1CanBus_a65042f6d32e30c7c367d7e5780856a60}} 
+void \hyperlink{classblmc__drivers_1_1CanBus_a65042f6d32e30c7c367d7e5780856a60}{loop} ()
+\begin{DoxyCompactList}\small\item\em Execute the communication loop with the can bus. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__drivers_1_1CanBus_ae445662e791d0b6149289d9df39e1ea0}{send\+\_\+frame} (const \hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} \&unstamped\+\_\+can\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Send input data. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} \hyperlink{classblmc__drivers_1_1CanBus_ada25ff1dcd774666f423b23d4de664ea}{receive\+\_\+frame} ()
+\begin{DoxyCompactList}\small\item\em Get the output frame from the bus. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__drivers_1_1CanBusConnection}{Can\+Bus\+Connection} \hyperlink{classblmc__drivers_1_1CanBus_a86826b4acc0833e041e6ea02824f8d48}{setup\+\_\+can} (std\+::string name, uint32\+\_\+t err\+\_\+mask)
+\begin{DoxyCompactList}\small\item\em Setup and initialize the \hyperlink{classblmc__drivers_1_1CanBus}{Can\+Bus} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classblmc__drivers_1_1CanBus_ab39625e5a1fea7d25d0967b4a48de0b4}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em private attributes and methods \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object$<$ \hyperlink{classblmc__drivers_1_1CanBusConnection}{Can\+Bus\+Connection}, 1 $>$ \hyperlink{classblmc__drivers_1_1CanBus_a996c9b1bc46071b2d002de38d6e9f781}{can\+\_\+connection\+\_\+}
+\begin{DoxyCompactList}\small\item\em Attributes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_ab09707f2c5f6cb7eb98f82e8e190d3c4}\label{classblmc__drivers_1_1CanBus_ab09707f2c5f6cb7eb98f82e8e190d3c4}} 
+std\+::shared\+\_\+ptr$<$ real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries$<$ \hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} $>$ $>$ \hyperlink{classblmc__drivers_1_1CanBus_ab09707f2c5f6cb7eb98f82e8e190d3c4}{input\+\_\+}
+\begin{DoxyCompactList}\small\item\em input\+\_\+ is a list of time stamped frame to be send to the can network. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_ae1ecf491b819c83eb999bb9cdde6fb21}\label{classblmc__drivers_1_1CanBus_ae1ecf491b819c83eb999bb9cdde6fb21}} 
+std\+::shared\+\_\+ptr$<$ real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries$<$ \hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} $>$ $>$ \hyperlink{classblmc__drivers_1_1CanBus_ae1ecf491b819c83eb999bb9cdde6fb21}{sent\+\_\+input\+\_\+}
+\begin{DoxyCompactList}\small\item\em sent\+\_\+inupt\+\_\+ is the list of the input already sent to the network. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_ad9802d502698f202f9842a0c00372931}\label{classblmc__drivers_1_1CanBus_ad9802d502698f202f9842a0c00372931}} 
+std\+::shared\+\_\+ptr$<$ real\+\_\+time\+\_\+tools\+::\+Threadsafe\+Timeseries$<$ \hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} $>$ $>$ \hyperlink{classblmc__drivers_1_1CanBus_ad9802d502698f202f9842a0c00372931}{output\+\_\+}
+\begin{DoxyCompactList}\small\item\em output\+\_\+ is the list of the frames received from the can network. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a85c9d5d9c6413c6871d48a247660ac20}\label{classblmc__drivers_1_1CanBus_a85c9d5d9c6413c6871d48a247660ac20}} 
+bool \hyperlink{classblmc__drivers_1_1CanBus_a85c9d5d9c6413c6871d48a247660ac20}{is\+\_\+loop\+\_\+active\+\_\+}
+\begin{DoxyCompactList}\small\item\em This boolean makes sure that the loop is not active upon destruction of the current object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a906baf827eff3c2850728478764a4759}\label{classblmc__drivers_1_1CanBus_a906baf827eff3c2850728478764a4759}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classblmc__drivers_1_1CanBus_a906baf827eff3c2850728478764a4759}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em rt\+\_\+thread\+\_\+ is the thread object allowing us to spawn real-\/time threads. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_aef341b0b36d3f02087047b5234ccbf79}\label{classblmc__drivers_1_1CanBus_aef341b0b36d3f02087047b5234ccbf79}} 
+std\+::string \hyperlink{classblmc__drivers_1_1CanBus_aef341b0b36d3f02087047b5234ccbf79}{log\+\_\+dir\+\_\+}
+\begin{DoxyCompactList}\small\item\em Log directory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_aa726bd0d63a783d2a3cc02e2ef9c929b}\label{classblmc__drivers_1_1CanBus_aa726bd0d63a783d2a3cc02e2ef9c929b}} 
+std\+::string \hyperlink{classblmc__drivers_1_1CanBus_aa726bd0d63a783d2a3cc02e2ef9c929b}{name\+\_\+}
+\begin{DoxyCompactList}\small\item\em time\+\_\+log\+\_\+name is the name of the loggin \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classblmc__drivers_1_1CanBus}{Can\+Bus} is the implementation of the \hyperlink{classblmc__drivers_1_1CanBusInterface}{Can\+Bus\+Interface}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a7d376f1ebd6dd8bc3299f6fc9f3d42c6}\label{classblmc__drivers_1_1CanBus_a7d376f1ebd6dd8bc3299f6fc9f3d42c6}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!Can\+Bus@{Can\+Bus}}
+\index{Can\+Bus@{Can\+Bus}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{Can\+Bus()}{CanBus()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+Can\+Bus\+::\+Can\+Bus (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{can\+\_\+interface\+\_\+name,  }\item[{const size\+\_\+t \&}]{history\+\_\+length = {\ttfamily 1000} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classblmc__drivers_1_1CanBus}{Can\+Bus} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em can\+\_\+interface\+\_\+name} & \\
+\hline
+{\em history\+\_\+length} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a5b9282bc65bff196e6d6b393fbdc5891}\label{classblmc__drivers_1_1CanBus_a5b9282bc65bff196e6d6b393fbdc5891}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!get\+\_\+input\+\_\+frame@{get\+\_\+input\+\_\+frame}}
+\index{get\+\_\+input\+\_\+frame@{get\+\_\+input\+\_\+frame}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+input\+\_\+frame()}{get\_input\_frame()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$const \hyperlink{classblmc__drivers_1_1CanBusInterface_a2da2627c961927f48359ae7d7e1aa4da}{Canframe\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+::get\+\_\+input\+\_\+frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the input frame. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$const Canframe\+Timeseries$>$ 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1CanBusInterface_a40b62805094dc0a454695a988ab0d403}{blmc\+\_\+drivers\+::\+Can\+Bus\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a449fa3c1b73a9282193ce85b56e9a729}\label{classblmc__drivers_1_1CanBus_a449fa3c1b73a9282193ce85b56e9a729}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!get\+\_\+output\+\_\+frame@{get\+\_\+output\+\_\+frame}}
+\index{get\+\_\+output\+\_\+frame@{get\+\_\+output\+\_\+frame}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+output\+\_\+frame()}{get\_output\_frame()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$const \hyperlink{classblmc__drivers_1_1CanBusInterface_a2da2627c961927f48359ae7d7e1aa4da}{Canframe\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+::get\+\_\+output\+\_\+frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Getters. 
+
+Get the output frame
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$const Canframe\+Timeseries$>$ 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1CanBusInterface_ac169b1c119b707d2946a999b81fb5a46}{blmc\+\_\+drivers\+::\+Can\+Bus\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a862e9898a6607ac2e00e712c30e7f348}\label{classblmc__drivers_1_1CanBus_a862e9898a6607ac2e00e712c30e7f348}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!get\+\_\+sent\+\_\+input\+\_\+frame@{get\+\_\+sent\+\_\+input\+\_\+frame}}
+\index{get\+\_\+sent\+\_\+input\+\_\+frame@{get\+\_\+sent\+\_\+input\+\_\+frame}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+sent\+\_\+input\+\_\+frame()}{get\_sent\_input\_frame()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$const \hyperlink{classblmc__drivers_1_1CanBusInterface_a2da2627c961927f48359ae7d7e1aa4da}{Canframe\+Timeseries}$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+::get\+\_\+sent\+\_\+input\+\_\+frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the input frame thas has been sent. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$const Canframe\+Timeseries$>$ 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1CanBusInterface_aca7e703983284a09c497c8182c0684d5}{blmc\+\_\+drivers\+::\+Can\+Bus\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_ab39625e5a1fea7d25d0967b4a48de0b4}\label{classblmc__drivers_1_1CanBus_ab39625e5a1fea7d25d0967b4a48de0b4}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!loop@{loop}}
+\index{loop@{loop}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE blmc\+\_\+drivers\+::\+Can\+Bus\+::loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{instance\+\_\+pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+private attributes and methods 
+
+This function is an helper that allows us to launch real-\/time thread in xenaomai, ubunt, or rt-\/preempt seemlessly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance\+\_\+pointer} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE (is void or void$\ast$ depending on the OS. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_ada25ff1dcd774666f423b23d4de664ea}\label{classblmc__drivers_1_1CanBus_ada25ff1dcd774666f423b23d4de664ea}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!receive\+\_\+frame@{receive\+\_\+frame}}
+\index{receive\+\_\+frame@{receive\+\_\+frame}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{receive\+\_\+frame()}{receive\_frame()}}
+{\footnotesize\ttfamily \hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} blmc\+\_\+drivers\+::\+Can\+Bus\+::receive\+\_\+frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the output frame from the bus. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} is the output frame data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_ae445662e791d0b6149289d9df39e1ea0}\label{classblmc__drivers_1_1CanBus_ae445662e791d0b6149289d9df39e1ea0}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!send\+\_\+frame@{send\+\_\+frame}}
+\index{send\+\_\+frame@{send\+\_\+frame}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{send\+\_\+frame()}{send\_frame()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Can\+Bus\+::send\+\_\+frame (\begin{DoxyParamCaption}\item[{const \hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} \&}]{unstamped\+\_\+can\+\_\+frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Send input data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unstamped\+\_\+can\+\_\+frame} & is a frame without id nor time. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_acf90b96ca5727f9ecb328ce20d7a2cbc}\label{classblmc__drivers_1_1CanBus_acf90b96ca5727f9ecb328ce20d7a2cbc}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!send\+\_\+if\+\_\+input\+\_\+changed@{send\+\_\+if\+\_\+input\+\_\+changed}}
+\index{send\+\_\+if\+\_\+input\+\_\+changed@{send\+\_\+if\+\_\+input\+\_\+changed}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{send\+\_\+if\+\_\+input\+\_\+changed()}{send\_if\_input\_changed()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Can\+Bus\+::send\+\_\+if\+\_\+input\+\_\+changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sender. 
+
+Send the queue of message to the can network 
+
+Implements \hyperlink{classblmc__drivers_1_1CanBusInterface_aa97ce2a204aa8354b8ea62af5f3820a2}{blmc\+\_\+drivers\+::\+Can\+Bus\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_ae4887644960c0a92fc82f8bdffbe9c48}\label{classblmc__drivers_1_1CanBus_ae4887644960c0a92fc82f8bdffbe9c48}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!set\+\_\+input\+\_\+frame@{set\+\_\+input\+\_\+frame}}
+\index{set\+\_\+input\+\_\+frame@{set\+\_\+input\+\_\+frame}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{set\+\_\+input\+\_\+frame()}{set\_input\_frame()}}
+{\footnotesize\ttfamily virtual void blmc\+\_\+drivers\+::\+Can\+Bus\+::set\+\_\+input\+\_\+frame (\begin{DoxyParamCaption}\item[{const \hyperlink{classblmc__drivers_1_1CanBusFrame}{Can\+Bus\+Frame} \&}]{input\+\_\+frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Setters. 
+
+Set the input frame
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+frame} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classblmc__drivers_1_1CanBusInterface_acf9305b548421e837950a0988172d57a}{blmc\+\_\+drivers\+::\+Can\+Bus\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a86826b4acc0833e041e6ea02824f8d48}\label{classblmc__drivers_1_1CanBus_a86826b4acc0833e041e6ea02824f8d48}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!setup\+\_\+can@{setup\+\_\+can}}
+\index{setup\+\_\+can@{setup\+\_\+can}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{setup\+\_\+can()}{setup\_can()}}
+{\footnotesize\ttfamily \hyperlink{classblmc__drivers_1_1CanBusConnection}{Can\+Bus\+Connection} blmc\+\_\+drivers\+::\+Can\+Bus\+::setup\+\_\+can (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{uint32\+\_\+t}]{err\+\_\+mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Setup and initialize the \hyperlink{classblmc__drivers_1_1CanBus}{Can\+Bus} object. 
+
+It connects to the can bus. This method is used once in the constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the can card name. \\
+\hline
+{\em err\+\_\+mask,always} & used with \char`\"{}0\char`\"{} so far (T\+O\+DO\+: Manuel explain) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classblmc__drivers_1_1CanBusConnection}{Can\+Bus\+Connection} 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1CanBus_a996c9b1bc46071b2d002de38d6e9f781}\label{classblmc__drivers_1_1CanBus_a996c9b1bc46071b2d002de38d6e9f781}} 
+\index{blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}!can\+\_\+connection\+\_\+@{can\+\_\+connection\+\_\+}}
+\index{can\+\_\+connection\+\_\+@{can\+\_\+connection\+\_\+}!blmc\+\_\+drivers\+::\+Can\+Bus@{blmc\+\_\+drivers\+::\+Can\+Bus}}
+\subsubsection{\texorpdfstring{can\+\_\+connection\+\_\+}{can\_connection\_}}
+{\footnotesize\ttfamily real\+\_\+time\+\_\+tools\+::\+Singletype\+Threadsafe\+Object$<$\hyperlink{classblmc__drivers_1_1CanBusConnection}{Can\+Bus\+Connection}, 1$>$ blmc\+\_\+drivers\+::\+Can\+Bus\+::can\+\_\+connection\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attributes. 
+
+can\+\_\+connection\+\_\+ is the communication object allowing to send or receive can frames. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+drivers/devices/\hyperlink{can__bus_8hpp}{can\+\_\+bus.\+hpp}\item 
+src/\hyperlink{can__bus_8cpp}{can\+\_\+bus.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1DeviceInterface" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::DeviceInterface</compoundname>
+    <derivedcompoundref refid="classblmc__drivers_1_1AnalogSensorInterface" prot="public" virt="non-virtual">blmc_drivers::AnalogSensorInterface</derivedcompoundref>
+    <derivedcompoundref refid="classblmc__drivers_1_1CanBusInterface" prot="public" virt="non-virtual">blmc_drivers::CanBusInterface</derivedcompoundref>
+    <derivedcompoundref refid="classblmc__drivers_1_1LegInterface" prot="public" virt="non-virtual">blmc_drivers::LegInterface</derivedcompoundref>
+    <derivedcompoundref refid="classblmc__drivers_1_1MotorBoardInterface" prot="public" virt="non-virtual">blmc_drivers::MotorBoardInterface</derivedcompoundref>
+    <derivedcompoundref refid="classblmc__drivers_1_1MotorInterface" prot="public" virt="non-virtual">blmc_drivers::MotorInterface</derivedcompoundref>
+    <derivedcompoundref refid="classblmc__drivers_1_1SpiBus" prot="public" virt="non-virtual">blmc_drivers::SpiBus</derivedcompoundref>
+    <includes refid="device__interface_8hpp" local="no">device_interface.hpp</includes>
+    <briefdescription>
+<para>this class exists purely for logical reasons, it does not in itself implement anything. </para>    </briefdescription>
+    <detaileddescription>
+<para>the purpose of this class is to provide guidelines how a device should be implemented. any device has a number of inputs and outputs, see the following diagram for an example with two inputs and outputs. <image type="html" name="device_class_diagram.svg"></image>
+ generally, we expect the following functions to be implemented:<itemizedlist>
+<listitem><para>a set function for each input (several inputs may share a set function which takes an index argument).</para></listitem><listitem><para>a send_if_input_changed() function which will send the inputs to the device if any of them have changed.</para></listitem><listitem><para>functions to access the current inputs and outputs, as well as the inputs which have been sent to the device. rather than just returning the latest elements, these function should return a ThreadsafeTimeseries of these objects, such that the user can synchronize (e.g. wait for the next element or step through them one by one such that none of them is missed) </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="43">
+        <label>blmc_drivers::MotorBoardInterface</label>
+        <link refid="classblmc__drivers_1_1MotorBoardInterface"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>blmc_drivers::Motor</label>
+        <link refid="classblmc__drivers_1_1Motor"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="49">
+        <label>blmc_drivers::SpiBus</label>
+        <link refid="classblmc__drivers_1_1SpiBus"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>blmc_drivers::LegInterface</label>
+        <link refid="classblmc__drivers_1_1LegInterface"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>blmc_drivers::AnalogSensorInterface</label>
+        <link refid="classblmc__drivers_1_1AnalogSensorInterface"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>blmc_drivers::SpiMotorBoard</label>
+        <link refid="classblmc__drivers_1_1SpiMotorBoard"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>blmc_drivers::CanBusInterface</label>
+        <link refid="classblmc__drivers_1_1CanBusInterface"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>blmc_drivers::AnalogSensor</label>
+        <link refid="classblmc__drivers_1_1AnalogSensor"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>blmc_drivers::CanBusMotorBoard</label>
+        <link refid="classblmc__drivers_1_1CanBusMotorBoard"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>blmc_drivers::Leg</label>
+        <link refid="classblmc__drivers_1_1Leg"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>blmc_drivers::MotorInterface</label>
+        <link refid="classblmc__drivers_1_1MotorInterface"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>blmc_drivers::CanBus</label>
+        <link refid="classblmc__drivers_1_1CanBus"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>blmc_drivers::SafeMotor</label>
+        <link refid="classblmc__drivers_1_1SafeMotor"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/blmc_drivers/devices/device_interface.hpp" line="37" column="1" bodyfile="include/blmc_drivers/devices/device_interface.hpp" bodystart="36" bodyend="39"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

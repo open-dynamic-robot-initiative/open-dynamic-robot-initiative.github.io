@@ -2,7 +2,7 @@ var classrobot__properties__solo_1_1config_1_1SoloConfig =
 [
     [ "a0", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#af3ec693097bbe39397e347532f4aea8b", null ],
     [ "base_name", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#a0b4136fce9ca843680096545d6dc34a8", null ],
-    [ "initial_configuration", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#a2f9f72586fbc5ef55c7d1bd25ba85453", null ],
+    [ "initial_configuration", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#abdba63d2ef4991c576f26b0a46edfcf7", null ],
     [ "initial_velocity", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#a192588a74211fd2b922e1630671e49cc", null ],
     [ "joint_names", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#a466e5eda1f7fbcac30906e3d386bd747", null ],
     [ "map_joint_limits", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#ad3ac7879d8f6d5b6c1c02ea13e45aef8", null ],

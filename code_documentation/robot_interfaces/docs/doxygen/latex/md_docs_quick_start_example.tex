@@ -1,0 +1,91 @@
+Sending actions to and getting observations from the robot is very easy. See the following example, using the Tri\+Finger robot, that simply sends a constant position command.
+
+\begin{DoxyNote}{Note}
+This example shows only the frontend part of a multi-\/process setup. The backend for the actual robot needs to be run in a separate process.
+\end{DoxyNote}
+\subsection*{Python}
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{import} robot\_interfaces
+
+robot\_data = robot\_interfaces.trifinger.MultiProcessData(
+    \textcolor{stringliteral}{"trifinger"}, \textcolor{keyword}{False})
+frontend = robot\_interfaces.trifinger.Frontend(robot\_data)
+
+position = [
+     0.0,  \textcolor{comment}{# Finger 1, Upper Joint}
+    -0.9,  \textcolor{comment}{# Finger 1, Middle Joint}
+    -1.7,  \textcolor{comment}{# Finger 1, Lower Joint}
+     0.0,  \textcolor{comment}{# Finger 2, Upper Joint}
+    -0.9,  \textcolor{comment}{# Finger 2, Middle Joint}
+    -1.7,  \textcolor{comment}{# Finger 2, Lower Joint}
+     0.0,  \textcolor{comment}{# Finger 3, Upper Joint}
+    -0.9,  \textcolor{comment}{# Finger 3, Middle Joint}
+    -1.7,  \textcolor{comment}{# Finger 3, Lower Joint}
+]
+
+\textcolor{keywordflow}{while} \textcolor{keyword}{True}:
+    \textcolor{comment}{# construct an action with a position command}
+    action = robot\_interfaces.trifinger.Action(position=position)
+    \textcolor{comment}{# send the action to the robot (will be applied in time step t)}
+    t = frontend.append\_desired\_action(action)
+    \textcolor{comment}{# wait until time step t and get observation}
+    observation = frontend.get\_observation(t)
+
+    print(\textcolor{stringliteral}{"Observed Position: \{\}"}.format(observation.position))
+\end{DoxyCode}
+
+
+\subsection*{C++}
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <robot\_interfaces/finger\_types.hpp>}
+
+\textcolor{comment}{// Some convenience typedefs to make the code below more compact}
+\textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1MultiProcessRobotData}{robot\_interfaces::TriFingerTypes::MultiProcessData}
+       RobotData;
+\textcolor{keyword}{typedef} \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\_interfaces::TriFingerTypes::Frontend} RobotFrontend;
+\textcolor{keyword}{typedef} \hyperlink{structrobot__interfaces_1_1NJointAction}{robot\_interfaces::TriFingerTypes::Action} Action;
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{keyword}{auto} robot\_data = std::make\_shared<RobotData>(\textcolor{stringliteral}{"trifinger"}, \textcolor{keyword}{false});
+    \textcolor{keyword}{auto} frontend = RobotFrontend(robot\_data);
+
+    Action::Vector position;  \textcolor{comment}{// <- this is an "Eigen::Vector9d"}
+    position <<  0.0,  \textcolor{comment}{// Finger 1, Upper Joint}
+                -0.9,  \textcolor{comment}{// Finger 1, Middle Joint}
+                -1.7,  \textcolor{comment}{// Finger 1, Lower Joint}
+                 0.0,  \textcolor{comment}{// Finger 2, Upper Joint}
+                -0.9,  \textcolor{comment}{// Finger 2, Middle Joint}
+                -1.7,  \textcolor{comment}{// Finger 2, Lower Joint}
+                 0.0,  \textcolor{comment}{// Finger 3, Upper Joint}
+                -0.9,  \textcolor{comment}{// Finger 3, Middle Joint}
+                -1.7;  \textcolor{comment}{// Finger 3, Lower Joint}
+
+    \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+    \{
+        \textcolor{comment}{// construct an action with a position command}
+        Action action = Action::Position(position);
+        \textcolor{comment}{// send the action to the robot (will be applied in time step t)}
+        \textcolor{keyword}{auto} t = frontend.append\_desired\_action(action);
+        \textcolor{comment}{// wait until time step t and get observation}
+        \textcolor{keyword}{auto} observation = frontend.get\_observation(t);
+
+        std::cout << \textcolor{stringliteral}{"Observed Position: "}
+                  << observation.position
+                  << std::endl;
+    \}
+
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+When using C++ you need to add the package {\ttfamily robot\+\_\+interfaces} as build dependency to your package.
+
+\subsection*{More Examples}
+
+For more examples, see the \href{https://github.com/open-dynamic-robot-initiative/robot_interfaces/tree/master/demos}{\tt C++ demos of the {\ttfamily robot\+\_\+interfaces} package} and the \href{https://github.com/open-dynamic-robot-initiative/robot_fingers/tree/master/demos}{\tt Python demos in the {\ttfamily robot\+\_\+fingers} package}. 

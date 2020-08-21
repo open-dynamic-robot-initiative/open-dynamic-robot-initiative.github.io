@@ -1,0 +1,253 @@
+\hypertarget{classrobot__interfaces_1_1RobotFrontend}{}\section{robot\+\_\+interfaces\+:\+:Robot\+Frontend$<$ Action, Observation $>$ Class Template Reference}
+\label{classrobot__interfaces_1_1RobotFrontend}\index{robot\+\_\+interfaces\+::\+Robot\+Frontend$<$ Action, Observation $>$@{robot\+\_\+interfaces\+::\+Robot\+Frontend$<$ Action, Observation $>$}}
+
+
+Communication link between \hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data} and the user.  
+
+
+
+
+{\ttfamily \#include $<$robot\+\_\+frontend.\+hpp$>$}
+
+
+
+Inheritance diagram for robot\+\_\+interfaces\+:\+:Robot\+Frontend$<$ Action, Observation $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classrobot__interfaces_1_1RobotFrontend__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a02bebc6c3e9822f026c48f970d80a865}\label{classrobot__interfaces_1_1RobotFrontend_a02bebc6c3e9822f026c48f970d80a865}} 
+typedef time\+\_\+series\+::\+Timestamp {\bfseries Time\+Stamp}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a0bd84764fb1a3004282706963aa48c3e}\label{classrobot__interfaces_1_1RobotFrontend_a0bd84764fb1a3004282706963aa48c3e}} 
+{\bfseries Robot\+Frontend} (std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data}$<$ Action, Observation $>$$>$ robot\+\_\+data)
+\item 
+Observation \hyperlink{classrobot__interfaces_1_1RobotFrontend_a95964f3d7aeaab7eec4c9a8782500c0f}{get\+\_\+observation} (const Time\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get observation of time step t. \end{DoxyCompactList}\item 
+Action \hyperlink{classrobot__interfaces_1_1RobotFrontend_a8710ad1f0de000dfb099585e0ac7f140}{get\+\_\+desired\+\_\+action} (const Time\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get the desired action of time step t. \end{DoxyCompactList}\item 
+Action \hyperlink{classrobot__interfaces_1_1RobotFrontend_a870651d849fe0f1a4909820cc3b6de40}{get\+\_\+applied\+\_\+action} (const Time\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get the applied action of time step t. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a080a709a39ff710c2a38bd53ff313645}\label{classrobot__interfaces_1_1RobotFrontend_a080a709a39ff710c2a38bd53ff313645}} 
+\hyperlink{structrobot__interfaces_1_1Status}{Status} {\bfseries get\+\_\+status} (const Time\+Index \&t) const
+\item 
+Time\+Stamp \hyperlink{classrobot__interfaces_1_1RobotFrontend_a68cfe3df122ae9fe5cc6ea15ea867a6e}{get\+\_\+time\+\_\+stamp\+\_\+ms} (const Time\+Index \&t) const
+\item 
+Time\+Stamp \hyperlink{classrobot__interfaces_1_1RobotFrontend_a6ad481cd306ea4fc2739dc9aba4cb96a}{get\+\_\+timestamp\+\_\+ms} (const Time\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get the timestamp of time step t. \end{DoxyCompactList}\item 
+Time\+Index \hyperlink{classrobot__interfaces_1_1RobotFrontend_a6a2120216c6154216994b562c0e7a7b2}{get\+\_\+current\+\_\+timeindex} () const
+\begin{DoxyCompactList}\small\item\em Get the current time index. \end{DoxyCompactList}\item 
+Time\+Index \hyperlink{classrobot__interfaces_1_1RobotFrontend_a26c137f65b908d6eddffff75df38361a}{append\+\_\+desired\+\_\+action} (const Action \&desired\+\_\+action)
+\begin{DoxyCompactList}\small\item\em Append a desired action to the action time series. \end{DoxyCompactList}\item 
+void \hyperlink{classrobot__interfaces_1_1RobotFrontend_a8b3af92df3d5ee90beb9402e45c4745e}{wait\+\_\+until\+\_\+timeindex} (const Time\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Wait until the specified time step is reached. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a256d4a3359c46caca9fe92d62b4ae413}\label{classrobot__interfaces_1_1RobotFrontend_a256d4a3359c46caca9fe92d62b4ae413}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data}$<$ Action, Observation $>$ $>$ {\bfseries robot\+\_\+data\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Action, typename Observation$>$\newline
+class robot\+\_\+interfaces\+::\+Robot\+Frontend$<$ Action, Observation $>$}
+
+Communication link between \hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data} and the user. 
+
+Takes care of communication between the \hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data} and the user. It is just a thin wrapper around \hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data} to facilitate interaction and also to make sure the user cannot use \hyperlink{classrobot__interfaces_1_1RobotData}{Robot\+Data} in incorrect ways.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Action} & \\
+\hline
+{\em Observation} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_8cpp-example}{demo.\+cpp}, and \hyperlink{demo_multiprocess_frontend_8cpp-example}{demo\+\_\+multiprocess\+\_\+frontend.\+cpp}.\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a26c137f65b908d6eddffff75df38361a}\label{classrobot__interfaces_1_1RobotFrontend_a26c137f65b908d6eddffff75df38361a}} 
+\index{robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}!append\+\_\+desired\+\_\+action@{append\+\_\+desired\+\_\+action}}
+\index{append\+\_\+desired\+\_\+action@{append\+\_\+desired\+\_\+action}!robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}}
+\subsubsection{\texorpdfstring{append\+\_\+desired\+\_\+action()}{append\_desired\_action()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+Time\+Index \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\+\_\+interfaces\+::\+Robot\+Frontend}$<$ Action, Observation $>$\+::append\+\_\+desired\+\_\+action (\begin{DoxyParamCaption}\item[{const Action \&}]{desired\+\_\+action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a desired action to the action time series. 
+
+This will append an action to the \char`\"{}desired actions\char`\"{} time series. Note that this does not block until the action is actually executed. The time series acts like a queue from which the \hyperlink{classrobot__interfaces_1_1RobotBackend}{Robot\+Backend} takes the actions one by one to send them to the actual robot. It is possible to call this method multiple times in a row to already provide actions for the next time steps.
+
+The time step at which the given action will be applied is returned by this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired\+\_\+action} & The action that shall be applied on the robot. Note that the actually applied action might be different depending on the implementation of the \hyperlink{classrobot__interfaces_1_1RobotDriver}{Robot\+Driver} (see \hyperlink{classrobot__interfaces_1_1RobotFrontend_a870651d849fe0f1a4909820cc3b6de40}{get\+\_\+applied\+\_\+action}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Time step at which the action will be applied. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a870651d849fe0f1a4909820cc3b6de40}\label{classrobot__interfaces_1_1RobotFrontend_a870651d849fe0f1a4909820cc3b6de40}} 
+\index{robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}!get\+\_\+applied\+\_\+action@{get\+\_\+applied\+\_\+action}}
+\index{get\+\_\+applied\+\_\+action@{get\+\_\+applied\+\_\+action}!robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+applied\+\_\+action()}{get\_applied\_action()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+Action \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\+\_\+interfaces\+::\+Robot\+Frontend}$<$ Action, Observation $>$\+::get\+\_\+applied\+\_\+action (\begin{DoxyParamCaption}\item[{const Time\+Index \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the applied action of time step t. 
+
+The applied action is the one that was actually applied to the robot based on the desired action of that time step. It may differ from the desired one e.\+g. due to some safety checks which limit the maximum torque. If and how the action is modified depends on the implementation of the \hyperlink{classrobot__interfaces_1_1RobotDriver}{Robot\+Driver}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Index of the time step. If t is in the future, this method will block and wait. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The applied action of time step t. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if t is too old and not in the time series buffer anymore. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a6a2120216c6154216994b562c0e7a7b2}\label{classrobot__interfaces_1_1RobotFrontend_a6a2120216c6154216994b562c0e7a7b2}} 
+\index{robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}!get\+\_\+current\+\_\+timeindex@{get\+\_\+current\+\_\+timeindex}}
+\index{get\+\_\+current\+\_\+timeindex@{get\+\_\+current\+\_\+timeindex}!robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+timeindex()}{get\_current\_timeindex()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+Time\+Index \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\+\_\+interfaces\+::\+Robot\+Frontend}$<$ Action, Observation $>$\+::get\+\_\+current\+\_\+timeindex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current time index. 
+
+\begin{DoxyReturn}{Returns}
+The latest time index for which observations are available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a8710ad1f0de000dfb099585e0ac7f140}\label{classrobot__interfaces_1_1RobotFrontend_a8710ad1f0de000dfb099585e0ac7f140}} 
+\index{robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}!get\+\_\+desired\+\_\+action@{get\+\_\+desired\+\_\+action}}
+\index{get\+\_\+desired\+\_\+action@{get\+\_\+desired\+\_\+action}!robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+desired\+\_\+action()}{get\_desired\_action()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+Action \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\+\_\+interfaces\+::\+Robot\+Frontend}$<$ Action, Observation $>$\+::get\+\_\+desired\+\_\+action (\begin{DoxyParamCaption}\item[{const Time\+Index \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the desired action of time step t. 
+
+The desired action is the action as it is passed by the user in \hyperlink{classrobot__interfaces_1_1RobotFrontend_a26c137f65b908d6eddffff75df38361a}{append\+\_\+desired\+\_\+action}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Index of the time step. If t is in the future, this method will block and wait. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The desired action of time step t. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if t is too old and not in the time series buffer anymore. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a95964f3d7aeaab7eec4c9a8782500c0f}\label{classrobot__interfaces_1_1RobotFrontend_a95964f3d7aeaab7eec4c9a8782500c0f}} 
+\index{robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}!get\+\_\+observation@{get\+\_\+observation}}
+\index{get\+\_\+observation@{get\+\_\+observation}!robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+observation()}{get\_observation()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+Observation \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\+\_\+interfaces\+::\+Robot\+Frontend}$<$ Action, Observation $>$\+::get\+\_\+observation (\begin{DoxyParamCaption}\item[{const Time\+Index \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get observation of time step t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Index of the time step. If t is in the future, this method will block and wait. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The observation of time step t. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if t is too old and not in the time series buffer anymore. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a68cfe3df122ae9fe5cc6ea15ea867a6e}\label{classrobot__interfaces_1_1RobotFrontend_a68cfe3df122ae9fe5cc6ea15ea867a6e}} 
+\index{robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}!get\+\_\+time\+\_\+stamp\+\_\+ms@{get\+\_\+time\+\_\+stamp\+\_\+ms}}
+\index{get\+\_\+time\+\_\+stamp\+\_\+ms@{get\+\_\+time\+\_\+stamp\+\_\+ms}!robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+time\+\_\+stamp\+\_\+ms()}{get\_time\_stamp\_ms()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+Time\+Stamp \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\+\_\+interfaces\+::\+Robot\+Frontend}$<$ Action, Observation $>$\+::get\+\_\+time\+\_\+stamp\+\_\+ms (\begin{DoxyParamCaption}\item[{const Time\+Index \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]Use get\+\_\+timestamp\+\_\+ms instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a6ad481cd306ea4fc2739dc9aba4cb96a}\label{classrobot__interfaces_1_1RobotFrontend_a6ad481cd306ea4fc2739dc9aba4cb96a}} 
+\index{robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}!get\+\_\+timestamp\+\_\+ms@{get\+\_\+timestamp\+\_\+ms}}
+\index{get\+\_\+timestamp\+\_\+ms@{get\+\_\+timestamp\+\_\+ms}!robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+timestamp\+\_\+ms()}{get\_timestamp\_ms()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+Time\+Stamp \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\+\_\+interfaces\+::\+Robot\+Frontend}$<$ Action, Observation $>$\+::get\+\_\+timestamp\+\_\+ms (\begin{DoxyParamCaption}\item[{const Time\+Index \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the timestamp of time step t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Index of the time step. If t is in the future, this method will block and wait. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Timestamp of time step t. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if t is too old and not in the time series buffer anymore. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classrobot__interfaces_1_1RobotFrontend_a8b3af92df3d5ee90beb9402e45c4745e}\label{classrobot__interfaces_1_1RobotFrontend_a8b3af92df3d5ee90beb9402e45c4745e}} 
+\index{robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}!wait\+\_\+until\+\_\+timeindex@{wait\+\_\+until\+\_\+timeindex}}
+\index{wait\+\_\+until\+\_\+timeindex@{wait\+\_\+until\+\_\+timeindex}!robot\+\_\+interfaces\+::\+Robot\+Frontend@{robot\+\_\+interfaces\+::\+Robot\+Frontend}}
+\subsubsection{\texorpdfstring{wait\+\_\+until\+\_\+timeindex()}{wait\_until\_timeindex()}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation $>$ \\
+void \hyperlink{classrobot__interfaces_1_1RobotFrontend}{robot\+\_\+interfaces\+::\+Robot\+Frontend}$<$ Action, Observation $>$\+::wait\+\_\+until\+\_\+timeindex (\begin{DoxyParamCaption}\item[{const Time\+Index \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wait until the specified time step is reached. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time step until which is waited. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if t is too old and not in the time series buffer anymore. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/robot\+\_\+frontend.\+hpp\end{DoxyCompactItemize}

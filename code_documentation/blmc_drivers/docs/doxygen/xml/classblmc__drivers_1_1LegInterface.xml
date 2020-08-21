@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1LegInterface" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>blmc_drivers::LegInterface</compoundname>
+    <basecompoundref refid="classblmc__drivers_1_1DeviceInterface" prot="public" virt="non-virtual">blmc_drivers::DeviceInterface</basecompoundref>
+    <derivedcompoundref refid="classblmc__drivers_1_1Leg" prot="public" virt="non-virtual">blmc_drivers::Leg</derivedcompoundref>
+    <includes refid="leg_8hpp" local="no">leg.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346" prot="public" static="no">
+        <name>MotorMeasurementIndexing</name>
+        <enumvalue id="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346aac6a6abe5c04116b45720c653cf455be" prot="public">
+          <name>current</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346ae510ea3731f54ad1bcb07cfe1881d506" prot="public">
+          <name>position</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346ad0ceef60e7db0a810c2b4b2bfcb0f0eb" prot="public">
+          <name>velocity</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346aacc74789d4355fc6efb5bbba38315d58" prot="public">
+          <name>encoder_index</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346aad0d6b841d7483f7c9b2bb177bd8a424" prot="public">
+          <name>motor_measurement_count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>MotorMeasurementIndexing this enum allow to access the different kind of sensor measurements in an understandable way in the code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="46" column="1" bodyfile="include/blmc_drivers/devices/leg.hpp" bodystart="46" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="enum" id="classblmc__drivers_1_1LegInterface_1a2a11567617debfdb731ac06e2938712c" prot="public" static="no">
+        <name>MotorIndexing</name>
+        <enumvalue id="classblmc__drivers_1_1LegInterface_1a2a11567617debfdb731ac06e2938712ca6c349f074188ba18b583d65a8b5d3ab4" prot="public">
+          <name>hip</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1LegInterface_1a2a11567617debfdb731ac06e2938712caacb08ef6d387d377c9809df529a91a4f" prot="public">
+          <name>knee</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1LegInterface_1a2a11567617debfdb731ac06e2938712ca5516d110e8e8a98f652bdde525a482b9" prot="public">
+          <name>motor_count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum list the motors in the leg. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="52" column="1" bodyfile="include/blmc_drivers/devices/leg.hpp" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__drivers_1_1LegInterface_1a57a35b64a76fb4225637828d1b1c35a6" prot="public" static="no">
+        <type>real_time_tools::ThreadsafeTimeseries&lt; double &gt;</type>
+        <definition>typedef real_time_tools::ThreadsafeTimeseries&lt;double&gt; blmc_drivers::LegInterface::ScalarTimeseries</definition>
+        <argsstring></argsstring>
+        <name>ScalarTimeseries</name>
+        <briefdescription>
+<para>ScalarTimeseries is a simple shortcut for more intelligible code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="32" column="1" bodyfile="include/blmc_drivers/devices/leg.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__drivers_1_1LegInterface_1ac5af9e6514abff5ee918813925a8e42d" prot="public" static="no">
+        <type>std::shared_ptr&lt; Type &gt;</type>
+        <definition>using blmc_drivers::LegInterface::Ptr =  std::shared_ptr&lt;Type&gt;</definition>
+        <argsstring></argsstring>
+        <name>Ptr</name>
+        <briefdescription>
+<para>This is a shortcut for creating shared pointer in a simpler writting expression. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the template paramer of the shared pointer. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="40" column="1" bodyfile="include/blmc_drivers/devices/leg.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1LegInterface_1afe46102b0ce1c790e921d71f86868066" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual blmc_drivers::LegInterface::~LegInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~LegInterface</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1LegInterface" kindref="compound">LegInterface</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="57" column="1" bodyfile="include/blmc_drivers/devices/leg.hpp" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1LegInterface_1ae653c7ee0ab7aa9d16a6bfce01580200" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classblmc__drivers_1_1LegInterface_1ac5af9e6514abff5ee918813925a8e42d" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1LegInterface_1a57a35b64a76fb4225637828d1b1c35a6" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const ScalarTimeseries&gt; blmc_drivers::LegInterface::get_motor_measurement</definition>
+        <argsstring>(const int &amp;motor_index, const int &amp;measurement_index) const =0</argsstring>
+        <name>get_motor_measurement</name>
+        <reimplementedby refid="classblmc__drivers_1_1Leg_1a52fe5c7cc7ad0242a481d969f5b2ff54">get_motor_measurement</reimplementedby>
+        <param>
+          <type>const int &amp;</type>
+          <declname>motor_index</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>measurement_index</declname>
+        </param>
+        <briefdescription>
+<para>Getters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the device output</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">motor_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>designate the motor from which we want the data from. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">measurement_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is teh kind of data we are looking for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the lasts time stamped acquiered. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1LegInterface_1a44bac5c9a6015f0e08370b3bc9957512" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classblmc__drivers_1_1LegInterface_1ac5af9e6514abff5ee918813925a8e42d" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1LegInterface_1a57a35b64a76fb4225637828d1b1c35a6" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const ScalarTimeseries&gt; blmc_drivers::LegInterface::get_current_target</definition>
+        <argsstring>(const int &amp;motor_index) const =0</argsstring>
+        <name>get_current_target</name>
+        <reimplementedby refid="classblmc__drivers_1_1Leg_1aeeb8a84e6dd1f1809d220ee1da8d3007">get_current_target</reimplementedby>
+        <param>
+          <type>const int &amp;</type>
+          <declname>motor_index</declname>
+        </param>
+        <briefdescription>
+<para>Get the actual target current. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">motor_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>designate the motor from which we want the data from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the lasts time stamped acquiered. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1LegInterface_1ab724283c8eeadca0e7b8829de64f4f44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classblmc__drivers_1_1LegInterface_1ac5af9e6514abff5ee918813925a8e42d" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1LegInterface_1a57a35b64a76fb4225637828d1b1c35a6" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const ScalarTimeseries&gt; blmc_drivers::LegInterface::get_sent_current_target</definition>
+        <argsstring>(const int &amp;motor_index) const =0</argsstring>
+        <name>get_sent_current_target</name>
+        <reimplementedby refid="classblmc__drivers_1_1Leg_1a94760dbfc66ba22e68dfa8d89eec4c9f">get_sent_current_target</reimplementedby>
+        <param>
+          <type>const int &amp;</type>
+          <declname>motor_index</declname>
+        </param>
+        <briefdescription>
+<para>Get the last sent target current. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">motor_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>designate the motor from which we want the data from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the lasts time stamped acquiered. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1LegInterface_1a6917a158f12589c9ee6aa45304fdafce" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void blmc_drivers::LegInterface::set_current_target</definition>
+        <argsstring>(const double &amp;current_target, const int &amp;motor_index)=0</argsstring>
+        <name>set_current_target</name>
+        <reimplementedby refid="classblmc__drivers_1_1Leg_1a05415969ef111f86837b34bdaecb7320">set_current_target</reimplementedby>
+        <param>
+          <type>const double &amp;</type>
+          <declname>current_target</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>motor_index</declname>
+        </param>
+        <briefdescription>
+<para>Setters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the current target saves internally the desired current. This data is not send to the motor yet. Please call send_if_input_changed in order to actually send the data to the card.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>current_target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the current to achieve on the motor card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motor_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the motor to control. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1LegInterface_1aaf3d3759b63a3ffe7e9cee360302f9b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void blmc_drivers::LegInterface::send_if_input_changed</definition>
+        <argsstring>()=0</argsstring>
+        <name>send_if_input_changed</name>
+        <reimplementedby refid="classblmc__drivers_1_1Leg_1a82bb681e4c5047babf699cff559e9488">send_if_input_changed</reimplementedby>
+        <briefdescription>
+<para>Sender. </para>        </briefdescription>
+        <detaileddescription>
+<para>Actually send the target current to the motor cards. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/leg.hpp" line="121" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class defines an interface to control a leg. </para>    </briefdescription>
+    <detaileddescription>
+<para>This legg is composed of 2 motor, one for the hip and one for the knee. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="62">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="61">
+        <label>blmc_drivers::LegInterface</label>
+        <link refid="classblmc__drivers_1_1LegInterface"/>
+        <childnode refid="62" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>blmc_drivers::Leg</label>
+        <link refid="classblmc__drivers_1_1Leg"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="65">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="64">
+        <label>blmc_drivers::LegInterface</label>
+        <link refid="classblmc__drivers_1_1LegInterface"/>
+        <childnode refid="65" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_drivers/devices/leg.hpp" line="27" column="1" bodyfile="include/blmc_drivers/devices/leg.hpp" bodystart="26" bodyend="122"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346aac6a6abe5c04116b45720c653cf455be" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>current</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346aacc74789d4355fc6efb5bbba38315d58" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>encoder_index</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a44bac5c9a6015f0e08370b3bc9957512" prot="public" virt="pure-virtual"><scope>blmc_drivers::LegInterface</scope><name>get_current_target</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1ae653c7ee0ab7aa9d16a6bfce01580200" prot="public" virt="pure-virtual"><scope>blmc_drivers::LegInterface</scope><name>get_motor_measurement</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1ab724283c8eeadca0e7b8829de64f4f44" prot="public" virt="pure-virtual"><scope>blmc_drivers::LegInterface</scope><name>get_sent_current_target</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a2a11567617debfdb731ac06e2938712ca6c349f074188ba18b583d65a8b5d3ab4" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>hip</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a2a11567617debfdb731ac06e2938712caacb08ef6d387d377c9809df529a91a4f" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>knee</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a2a11567617debfdb731ac06e2938712ca5516d110e8e8a98f652bdde525a482b9" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>motor_count</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346aad0d6b841d7483f7c9b2bb177bd8a424" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>motor_measurement_count</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a2a11567617debfdb731ac06e2938712c" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>MotorIndexing</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>MotorMeasurementIndexing</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346ae510ea3731f54ad1bcb07cfe1881d506" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>position</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1ac5af9e6514abff5ee918813925a8e42d" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>Ptr</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a57a35b64a76fb4225637828d1b1c35a6" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>ScalarTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1aaf3d3759b63a3ffe7e9cee360302f9b7" prot="public" virt="pure-virtual"><scope>blmc_drivers::LegInterface</scope><name>send_if_input_changed</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a6917a158f12589c9ee6aa45304fdafce" prot="public" virt="pure-virtual"><scope>blmc_drivers::LegInterface</scope><name>set_current_target</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1a9335cf8bf2595f70716159927d927346ad0ceef60e7db0a810c2b4b2bfcb0f0eb" prot="public" virt="non-virtual"><scope>blmc_drivers::LegInterface</scope><name>velocity</name></member>
+      <member refid="classblmc__drivers_1_1LegInterface_1afe46102b0ce1c790e921d71f86868066" prot="public" virt="virtual"><scope>blmc_drivers::LegInterface</scope><name>~LegInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

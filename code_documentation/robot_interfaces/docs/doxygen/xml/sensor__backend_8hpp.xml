@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="sensor__backend_8hpp" kind="file" language="C++">
+    <compoundname>sensor_backend.hpp</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">thread</includes>
+    <includes refid="sensor__data_8hpp" local="no">robot_interfaces/sensors/sensor_data.hpp</includes>
+    <includes refid="sensor__driver_8hpp" local="no">robot_interfaces/sensors/sensor_driver.hpp</includes>
+    <includedby refid="pybind__sensors_8hpp" local="no">include/robot_interfaces/sensors/pybind_sensors.hpp</includedby>
+    <incdepgraph>
+      <node id="534">
+        <label>time_series/time_series.hpp</label>
+      </node>
+      <node id="533">
+        <label>time_series/multiprocess_time_series.hpp</label>
+      </node>
+      <node id="527">
+        <label>cstdint</label>
+      </node>
+      <node id="526">
+        <label>cmath</label>
+      </node>
+      <node id="532">
+        <label>string</label>
+      </node>
+      <node id="524">
+        <label>include/robot_interfaces/sensors/sensor_backend.hpp</label>
+        <link refid="sensor__backend_8hpp"/>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+      </node>
+      <node id="529">
+        <label>robot_interfaces/sensors/sensor_data.hpp</label>
+        <link refid="sensor__data_8hpp"/>
+        <childnode refid="530" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="534" relation="include">
+        </childnode>
+      </node>
+      <node id="530">
+        <label>iostream</label>
+      </node>
+      <node id="535">
+        <label>robot_interfaces/sensors/sensor_driver.hpp</label>
+        <link refid="sensor__driver_8hpp"/>
+        <childnode refid="530" relation="include">
+        </childnode>
+      </node>
+      <node id="528">
+        <label>thread</label>
+      </node>
+      <node id="525">
+        <label>algorithm</label>
+      </node>
+      <node id="531">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="537">
+        <label>include/robot_interfaces/sensors/pybind_sensors.hpp</label>
+        <link refid="pybind__sensors_8hpp"/>
+      </node>
+      <node id="536">
+        <label>include/robot_interfaces/sensors/sensor_backend.hpp</label>
+        <link refid="sensor__backend_8hpp"/>
+        <childnode refid="537" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classrobot__interfaces_1_1SensorBackend" prot="public">robot_interfaces::SensorBackend</innerclass>
+    <innernamespace refid="namespacerobot__interfaces">robot_interfaces</innernamespace>
+    <briefdescription>
+<para>Connects the driver with sensor data. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2020, New York University, Max Planck Gesellschaft. All rights reserved. </para></simplesect>
+<xrefsect id="license_1_license000007"><xreftitle>License</xreftitle><xrefdescription><para>BSD 3-clause </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="sensor__data_8hpp" kindref="compound">robot_interfaces/sensors/sensor_data.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="sensor__driver_8hpp" kindref="compound">robot_interfaces/sensors/sensor_driver.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerobot__interfaces" kindref="compound">robot_interfaces</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ObservationType&gt;</highlight></codeline>
+<codeline lineno="31" refid="classrobot__interfaces_1_1SensorBackend" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classrobot__interfaces_1_1SensorBackend" kindref="compound">SensorBackend</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="classrobot__interfaces_1_1SensorBackend_1af24fda0e1d54274cf8122195f82acea9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classrobot__interfaces_1_1SensorBackend_1af24fda0e1d54274cf8122195f82acea9" kindref="member">SensorBackend</ref>(std::shared_ptr&lt;<ref refid="classrobot__interfaces_1_1SensorDriver" kindref="compound">SensorDriver&lt;ObservationType&gt;</ref>&gt;<sp/>sensor_driver,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;<ref refid="classrobot__interfaces_1_1SensorData" kindref="compound">SensorData&lt;ObservationType&gt;</ref>&gt;<sp/>sensor_data)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>sensor_driver_(sensor_driver),</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sensor_data_(sensor_data),</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destructor_was_called_(false)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread_<sp/>=<sp/>std::thread(&amp;<ref refid="classrobot__interfaces_1_1SensorBackend" kindref="compound">SensorBackend&lt;ObservationType&gt;::loop</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reinstate<sp/>the<sp/>implicit<sp/>move<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>See<sp/>https://stackoverflow.com/a/27474070</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classrobot__interfaces_1_1SensorBackend_1af24fda0e1d54274cf8122195f82acea9" kindref="member">SensorBackend</ref>(<ref refid="classrobot__interfaces_1_1SensorBackend" kindref="compound">SensorBackend</ref><sp/>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classrobot__interfaces_1_1SensorBackend" kindref="compound">SensorBackend</ref>()</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destructor_was_called_<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread_.join();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SensorDriver&lt;ObservationType&gt;&gt;<sp/>sensor_driver_;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SensorData&lt;ObservationType&gt;&gt;<sp/>sensor_data_;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>destructor_was_called_;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>std::thread<sp/>thread_;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classrobot__interfaces_1_1SensorBackend_1aee2c015c331cf8acd80b57523f10beaa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrobot__interfaces_1_1SensorBackend_1aee2c015c331cf8acd80b57523f10beaa" kindref="member">loop</ref>()</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>0;<sp/>!destructor_was_called_;<sp/>t++)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ObservationType<sp/>sensor_observation;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sensor_observation<sp/>=<sp/>sensor_driver_-&gt;get_observation();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::runtime_error<sp/>&amp;e)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sensor_data_-&gt;observation-&gt;append(sensor_observation);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>robot_interfaces</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/robot_interfaces/sensors/sensor_backend.hpp"/>
+  </compounddef>
+</doxygen>

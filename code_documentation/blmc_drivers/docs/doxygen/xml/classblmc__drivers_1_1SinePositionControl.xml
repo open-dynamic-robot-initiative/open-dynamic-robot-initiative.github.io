@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1SinePositionControl" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::SinePositionControl</compoundname>
+    <includes refid="sine__position__control_8hpp" local="no">sine_position_control.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1af210bec9cf5b60d5f6a481449e65112b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceblmc__drivers_1ab975c3be3c53a93a10c491f07a132e2b" kindref="member">SafeMotor_ptr</ref> &gt;</type>
+        <definition>std::vector&lt;SafeMotor_ptr&gt; blmc_drivers::SinePositionControl::motor_list_</definition>
+        <argsstring></argsstring>
+        <name>motor_list_</name>
+        <briefdescription>
+<para>This is list of motors. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="84" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1a89c0d71051efbc318f80833b3dc50b55" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread blmc_drivers::SinePositionControl::rt_thread_</definition>
+        <argsstring></argsstring>
+        <name>rt_thread_</name>
+        <briefdescription>
+<para>This is the real time thread object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="88" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1a65b832cf1c7762140b79bbac39f42a09" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::SinePositionControl::stop_loop_</definition>
+        <argsstring></argsstring>
+        <name>stop_loop_</name>
+        <briefdescription>
+<para>managing the stopping of the loop </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="112" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1a6d934043fd7ef066c5cd680e0c055b58" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned blmc_drivers::SinePositionControl::memory_buffer_size_</definition>
+        <argsstring></argsstring>
+        <name>memory_buffer_size_</name>
+        <briefdescription>
+<para>memory_buffer_size_ is the max size of the memory buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="117" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1a8d9d600b107301dfec87f04615e3721a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::SinePositionControl::encoders_</definition>
+        <argsstring></argsstring>
+        <name>encoders_</name>
+        <briefdescription>
+<para>Encoder data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="122" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1a1ad95cec3a68d2dff06219dff5f83ab8" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::SinePositionControl::velocities_</definition>
+        <argsstring></argsstring>
+        <name>velocities_</name>
+        <briefdescription>
+<para>Velocity data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="127" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1ab7903dd177f6dcaa7efa00591ad656d9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::SinePositionControl::currents_</definition>
+        <argsstring></argsstring>
+        <name>currents_</name>
+        <briefdescription>
+<para>current data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="132" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1a29bd0da456de8a71467de12a3ab42265" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::SinePositionControl::control_buffer_</definition>
+        <argsstring></argsstring>
+        <name>control_buffer_</name>
+        <briefdescription>
+<para>control_buffer_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="137" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1a1b9b44bf55c548c937b4a8ff06d0102d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_drivers::SinePositionControl::kp_</definition>
+        <argsstring></argsstring>
+        <name>kp_</name>
+        <briefdescription>
+<para><ref refid="classController" kindref="compound">Controller</ref> proportional gain. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="142" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SinePositionControl_1ab48d1f5927551b7856474b92a84859e9" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_drivers::SinePositionControl::kd_</definition>
+        <argsstring></argsstring>
+        <name>kd_</name>
+        <briefdescription>
+<para><ref refid="classController" kindref="compound">Controller</ref> derivative gain. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="147" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SinePositionControl_1a6f5a006338c7975f9aeef5987384c661" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SinePositionControl::SinePositionControl</definition>
+        <argsstring>(std::vector&lt; SafeMotor_ptr &gt; motor_list)</argsstring>
+        <name>SinePositionControl</name>
+        <param>
+          <type>std::vector&lt; <ref refid="namespaceblmc__drivers_1ab975c3be3c53a93a10c491f07a132e2b" kindref="member">SafeMotor_ptr</ref> &gt;</type>
+          <declname>motor_list</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1SinePositionControl" kindref="compound">SinePositionControl</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor_slider_pairs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="27" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="27" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SinePositionControl_1a35004249215059c73863e71680b977a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SinePositionControl::~SinePositionControl</definition>
+        <argsstring>()</argsstring>
+        <name>~SinePositionControl</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1SinePositionControl" kindref="compound">SinePositionControl</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="54" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="54" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SinePositionControl_1a0766604ca7e58200e97547e61e0f4cc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SinePositionControl::start_loop</definition>
+        <argsstring>()</argsstring>
+        <name>start_loop</name>
+        <briefdescription>
+<para>This method is a helper to start the thread loop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="63" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SinePositionControl_1a61875cedee870d5cc0cb5e10799b1c24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SinePositionControl::stop_loop</definition>
+        <argsstring>()</argsstring>
+        <name>stop_loop</name>
+        <briefdescription>
+<para>Stop the control and dump the data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="71" column="1" bodyfile="demos/sine_position_control.cpp" bodystart="94" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SinePositionControl_1a0a86810773b5a172cbc5f407fa59df4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SinePositionControl::set_gains</definition>
+        <argsstring>(double kp, double kd)</argsstring>
+        <name>set_gains</name>
+        <param>
+          <type>double</type>
+          <declname>kp</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>kd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="73" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="73" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SinePositionControl_1ad24e437d64cd1ac1fca2bc5428c844f4" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE blmc_drivers::SinePositionControl::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+<para>this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="94" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="94" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SinePositionControl_1a1e5ab43762ca2511a6badc7065f47e4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SinePositionControl::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>this is a simple control loop which runs at a kilohertz. </para>        </briefdescription>
+        <detaileddescription>
+<para>it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_position_control.hpp" line="107" column="1" bodyfile="demos/sine_position_control.cpp" bodystart="13" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is a basic PD controller to be used in the demos of this package. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="demos/sine_position_control.hpp" line="20" column="1" bodyfile="demos/sine_position_control.hpp" bodystart="19" bodyend="149"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a29bd0da456de8a71467de12a3ab42265" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>control_buffer_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1ab7903dd177f6dcaa7efa00591ad656d9" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>currents_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a8d9d600b107301dfec87f04615e3721a" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>encoders_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1ab48d1f5927551b7856474b92a84859e9" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>kd_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a1b9b44bf55c548c937b4a8ff06d0102d" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>kp_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1ad24e437d64cd1ac1fca2bc5428c844f4" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a1e5ab43762ca2511a6badc7065f47e4b" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a6d934043fd7ef066c5cd680e0c055b58" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>memory_buffer_size_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1af210bec9cf5b60d5f6a481449e65112b" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>motor_list_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a89c0d71051efbc318f80833b3dc50b55" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>rt_thread_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a0a86810773b5a172cbc5f407fa59df4d" prot="public" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>set_gains</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a6f5a006338c7975f9aeef5987384c661" prot="public" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>SinePositionControl</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a0766604ca7e58200e97547e61e0f4cc8" prot="public" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>start_loop</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a61875cedee870d5cc0cb5e10799b1c24" prot="public" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>stop_loop</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a65b832cf1c7762140b79bbac39f42a09" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>stop_loop_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a1ad95cec3a68d2dff06219dff5f83ab8" prot="private" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>velocities_</name></member>
+      <member refid="classblmc__drivers_1_1SinePositionControl_1a35004249215059c73863e71680b977a8" prot="public" virt="non-virtual"><scope>blmc_drivers::SinePositionControl</scope><name>~SinePositionControl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

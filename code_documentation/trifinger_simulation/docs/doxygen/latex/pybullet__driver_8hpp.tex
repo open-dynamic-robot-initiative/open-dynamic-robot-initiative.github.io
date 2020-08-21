@@ -1,0 +1,76 @@
+\hypertarget{pybullet__driver_8hpp}{}\section{include/trifinger\+\_\+simulation/pybullet\+\_\+driver.hpp File Reference}
+\label{pybullet__driver_8hpp}\index{include/trifinger\+\_\+simulation/pybullet\+\_\+driver.\+hpp@{include/trifinger\+\_\+simulation/pybullet\+\_\+driver.\+hpp}}
+
+
+C++ wrappers to use py\+Bullet simulation of fingers as robot\+\_\+interfaces\+::\+Robot\+Driver.  
+
+
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$pybind11/eigen.\+h$>$}\newline
+{\ttfamily \#include $<$pybind11/embed.\+h$>$}\newline
+{\ttfamily \#include $<$robot\+\_\+interfaces/finger\+\_\+types.\+hpp$>$}\newline
+Include dependency graph for pybullet\+\_\+driver.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pybullet__driver_8hpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtrifinger__simulation_1_1BasePyBulletFingerDriver}{trifinger\+\_\+simulation\+::\+Base\+Py\+Bullet\+Finger\+Driver$<$ Action, Observation $>$}
+\begin{DoxyCompactList}\small\item\em Base driver for py\+Bullet of both single Finger and Tri\+Finger. \end{DoxyCompactList}\item 
+class \hyperlink{classtrifinger__simulation_1_1PyBulletSingleFingerDriver}{trifinger\+\_\+simulation\+::\+Py\+Bullet\+Single\+Finger\+Driver}
+\begin{DoxyCompactList}\small\item\em py\+Bullet driver for the single Finger. \end{DoxyCompactList}\item 
+class \hyperlink{classtrifinger__simulation_1_1PyBulletTriFingerDriver}{trifinger\+\_\+simulation\+::\+Py\+Bullet\+Tri\+Finger\+Driver}
+\begin{DoxyCompactList}\small\item\em py\+Bullet driver for the Tri\+Finger \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Types , typename Driver $>$ }\\Types\+::\+Backend\+Ptr \hyperlink{pybullet__driver_8hpp_a41d03263393c283e44ad605b4acc0d8b}{trifinger\+\_\+simulation\+::create\+\_\+finger\+\_\+backend} (typename Types\+::\+Base\+Data\+Ptr robot\+\_\+data, const bool real\+\_\+time\+\_\+mode, const bool visualize, const double first\+\_\+action\+\_\+timeout=std\+::numeric\+\_\+limits$<$ double $>$\+::infinity(), const uint32\+\_\+t max\+\_\+number\+\_\+of\+\_\+actions=0)
+\begin{DoxyCompactList}\small\item\em Create a Finger/\+Tri\+Finger-\/backend using py\+Bullet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C++ wrappers to use py\+Bullet simulation of fingers as robot\+\_\+interfaces\+::\+Robot\+Driver. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{pybullet__driver_8hpp_file_a41d03263393c283e44ad605b4acc0d8b}\label{pybullet__driver_8hpp_file_a41d03263393c283e44ad605b4acc0d8b}} 
+\index{pybullet\+\_\+driver.\+hpp@{pybullet\+\_\+driver.\+hpp}!create\+\_\+finger\+\_\+backend@{create\+\_\+finger\+\_\+backend}}
+\index{create\+\_\+finger\+\_\+backend@{create\+\_\+finger\+\_\+backend}!pybullet\+\_\+driver.\+hpp@{pybullet\+\_\+driver.\+hpp}}
+\subsubsection{\texorpdfstring{create\+\_\+finger\+\_\+backend()}{create\_finger\_backend()}}
+{\footnotesize\ttfamily template$<$typename Types , typename Driver $>$ \\
+Types\+::\+Backend\+Ptr trifinger\+\_\+simulation\+::create\+\_\+finger\+\_\+backend (\begin{DoxyParamCaption}\item[{typename Types\+::\+Base\+Data\+Ptr}]{robot\+\_\+data,  }\item[{const bool}]{real\+\_\+time\+\_\+mode,  }\item[{const bool}]{visualize,  }\item[{const double}]{first\+\_\+action\+\_\+timeout = {\ttfamily std\+:\+:numeric\+\_\+limits$<$double$>$\+:\+:infinity()},  }\item[{const uint32\+\_\+t}]{max\+\_\+number\+\_\+of\+\_\+actions = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Create a Finger/\+Tri\+Finger-\/backend using py\+Bullet. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Types} & The struct providing the types for action, observation, etc. \\
+\hline
+{\em Driver} & py\+Bullet-\/\+Driver class for either single Finger or Tri\+Finger.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em robot\+\_\+data} & Robot\+Data instance for the backend. \\
+\hline
+{\em real\+\_\+time\+\_\+mode} & If true, step the simulation in real time, otherwise as fast as possible. \\
+\hline
+{\em visualize} & If true, py\+Bullet\textquotesingle{}s G\+UI is started for visualization. \\
+\hline
+{\em first\+\_\+action\+\_\+timeout} & See Robot\+Backend \\
+\hline
+{\em max\+\_\+number\+\_\+of\+\_\+actions} & See Robot\+Backend\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Backend using a driver of the specified type. 
+\end{DoxyReturn}

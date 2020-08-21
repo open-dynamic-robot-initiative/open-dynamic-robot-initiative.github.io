@@ -1,0 +1,497 @@
+\hypertarget{classblmc__robots_1_1Teststand}{}\section{blmc\+\_\+robots\+:\+:Teststand Class Reference}
+\label{classblmc__robots_1_1Teststand}\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+
+
+The class \hyperlink{classblmc__robots_1_1Teststand}{Teststand} is used to control the \hyperlink{classblmc__robots_1_1Teststand}{Teststand} robot located at M\+P\+I-\/\+IS Tuebingen.  
+
+
+
+
+{\ttfamily \#include $<$teststand.\+hpp$>$}
+
+
+
+Collaboration diagram for blmc\+\_\+robots\+:\+:Teststand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classblmc__robots_1_1Teststand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a201214fc01f68b97ceba62af3fb8cccf}\label{classblmc__robots_1_1Teststand_a201214fc01f68b97ceba62af3fb8cccf}} 
+typedef Eigen\+::\+Matrix$<$ double, 2, 1 $>$ \hyperlink{classblmc__robots_1_1Teststand_a201214fc01f68b97ceba62af3fb8cccf}{Vector\+Slider}
+\begin{DoxyCompactList}\small\item\em Data type containing the \hyperlink{classblmc__robots_1_1Sliders}{Sliders} data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a23b0a73bc99ce4a3588204b7480eb6d7}\label{classblmc__robots_1_1Teststand_a23b0a73bc99ce4a3588204b7480eb6d7}} 
+typedef Eigen\+::\+Matrix$<$ double, 1, 1 $>$ \hyperlink{classblmc__robots_1_1Teststand_a23b0a73bc99ce4a3588204b7480eb6d7}{Vector\+Contact}
+\begin{DoxyCompactList}\small\item\em This represents the contact sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a51f17cf2b01dd8252e21db97b486e067}\label{classblmc__robots_1_1Teststand_a51f17cf2b01dd8252e21db97b486e067}} 
+typedef Eigen\+::\+Matrix$<$ double, 3, 1 $>$ \hyperlink{classblmc__robots_1_1Teststand_a51f17cf2b01dd8252e21db97b486e067}{Vector\+Ati\+Force}
+\begin{DoxyCompactList}\small\item\em This type define the forces from the ati-\/\+FT sensors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a466977786f9b007854fa2eb2a97b0de9}\label{classblmc__robots_1_1Teststand_a466977786f9b007854fa2eb2a97b0de9}} 
+typedef Eigen\+::\+Matrix$<$ double, 3, 1 $>$ \hyperlink{classblmc__robots_1_1Teststand_a466977786f9b007854fa2eb2a97b0de9}{Vector\+Ati\+Torque}
+\begin{DoxyCompactList}\small\item\em This type define the torqes from the ati-\/\+FT sensors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__robots_1_1Teststand_a4747b0754cd3dd669c02f27662baef7e}{Teststand} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classblmc__robots_1_1Teststand}{Teststand} is the constructor of the class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_aa41ad951a8259fd15e6309e850a6084a}\label{classblmc__robots_1_1Teststand_aa41ad951a8259fd15e6309e850a6084a}} 
+void \hyperlink{classblmc__robots_1_1Teststand_aa41ad951a8259fd15e6309e850a6084a}{initialize} ()
+\begin{DoxyCompactList}\small\item\em initialize the robot by setting aligning the motors and calibrate the sensors to 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_aabb484d65bca5a341dd24abd91c47b9b}\label{classblmc__robots_1_1Teststand_aabb484d65bca5a341dd24abd91c47b9b}} 
+bool \hyperlink{classblmc__robots_1_1Teststand_aabb484d65bca5a341dd24abd91c47b9b}{send\+\_\+target\+\_\+joint\+\_\+torque} (const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ target\+\_\+joint\+\_\+torque)
+\begin{DoxyCompactList}\small\item\em send\+\_\+target\+\_\+torques sends the target currents to the motors \end{DoxyCompactList}\item 
+bool \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors} ()
+\begin{DoxyCompactList}\small\item\em acquire\+\_\+sensors acquire all available sensors, W\+A\+R\+N\+I\+NG !!!! this method has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+bool \hyperlink{classblmc__robots_1_1Teststand_ad4660570e3e1b77717004b3ce8056faf}{calibrate} (const \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \&home\+\_\+offset\+\_\+rad)
+\begin{DoxyCompactList}\small\item\em This function will run a small controller that will move the joints untils the next joint index and reset the joint zero with this knowledge. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_a4897109730380ae0be7da37e2bd69e81}{get\+\_\+motor\+\_\+inertias} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+inertias \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_a483bc937ac8c95b93bb90c47744da2e8}{get\+\_\+motor\+\_\+torque\+\_\+constants} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+torque\+\_\+constants \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_adf08db3dbb4fd8da74c8ef15fb393c1a}{get\+\_\+joint\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+positions W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_acd1b325c6039fffbd40198f6deb9542c}{get\+\_\+joint\+\_\+velocities} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+velocities W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_ae21ac86534e5ee7f15068f94957ba826}{get\+\_\+joint\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+torques W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_a0aa762511624791e4ccbec5ad664371f}{get\+\_\+joint\+\_\+target\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+torques \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_a7def64b82a1cb58c9ae8c9c54bcaa887}{get\+\_\+joint\+\_\+gear\+\_\+ratios} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+gear\+\_\+ratios \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_a2fa7aacb213c7898bb04f791ca3687d1}{get\+\_\+joint\+\_\+encoder\+\_\+index} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+encoder\+\_\+index W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_adbceb17de729cced8e9985b9177efa7c}{get\+\_\+zero\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+zero\+\_\+positions \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_af46acfc1bd408d40b850c4780e834f53}{get\+\_\+slider\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+slider\+\_\+positions W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}{Vector1d} $>$ \hyperlink{classblmc__robots_1_1Teststand_a0486afbd05d4f7c354ebad8432c178bd}{get\+\_\+contact\+\_\+sensors\+\_\+states} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+contact\+\_\+sensors\+\_\+states W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}{Vector1d} $>$ \hyperlink{classblmc__robots_1_1Teststand_af8a0d1cc608f91a0a752758c7554087a}{get\+\_\+height\+\_\+sensors} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+contact\+\_\+sensors\+\_\+states W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} $>$ \hyperlink{classblmc__robots_1_1Teststand_a2f912631ee055e3909ef1a5e06d8d27c}{get\+\_\+max\+\_\+current} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+max\+\_\+current \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{classblmc__robots_1_1Teststand_a51f17cf2b01dd8252e21db97b486e067}{Vector\+Ati\+Force} $>$ \hyperlink{classblmc__robots_1_1Teststand_af4bf3a4692fdeacdad78a7213c3fbe98}{get\+\_\+ati\+\_\+force} ()
+\begin{DoxyCompactList}\small\item\em Get the ati\+\_\+force\+\_\+ object W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ \hyperlink{classblmc__robots_1_1Teststand_a466977786f9b007854fa2eb2a97b0de9}{Vector\+Ati\+Torque} $>$ \hyperlink{classblmc__robots_1_1Teststand_a27ba45a099b4ff6852f5acd0226aa915}{get\+\_\+ati\+\_\+torque} ()
+\begin{DoxyCompactList}\small\item\em Get the ati\+\_\+torque\+\_\+ object W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_ac733828512ab4ba2ad43625915a4a9fd}\label{classblmc__robots_1_1Teststand_ac733828512ab4ba2ad43625915a4a9fd}} 
+ati\+\_\+ft\+\_\+sensor\+::\+Ati\+F\+T\+Sensor \hyperlink{classblmc__robots_1_1Teststand_ac733828512ab4ba2ad43625915a4a9fd}{ati\+\_\+sensor\+\_\+}
+\begin{DoxyCompactList}\small\item\em A\+TI sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_abbde43d983602e1ead15b1b525cc524f}\label{classblmc__robots_1_1Teststand_abbde43d983602e1ead15b1b525cc524f}} 
+\hyperlink{classblmc__robots_1_1Teststand_a51f17cf2b01dd8252e21db97b486e067}{Vector\+Ati\+Force} \hyperlink{classblmc__robots_1_1Teststand_abbde43d983602e1ead15b1b525cc524f}{ati\+\_\+force\+\_\+}
+\begin{DoxyCompactList}\small\item\em 3D linear force from the A\+TI FT sensor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a8c4e095818a0c80739a63a91bb0670c6}\label{classblmc__robots_1_1Teststand_a8c4e095818a0c80739a63a91bb0670c6}} 
+\hyperlink{classblmc__robots_1_1Teststand_a466977786f9b007854fa2eb2a97b0de9}{Vector\+Ati\+Torque} \hyperlink{classblmc__robots_1_1Teststand_a8c4e095818a0c80739a63a91bb0670c6}{ati\+\_\+torque\+\_\+}
+\begin{DoxyCompactList}\small\item\em 3D torque measured from the A\+TI FT sensor \end{DoxyCompactList}\item 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_afe8801388760cd85771a99e3a89c9f69}{motor\+\_\+inertias\+\_\+}
+\begin{DoxyCompactList}\small\item\em Motor data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a0d4bfad1f7afaaf459131667fac2b2d0}\label{classblmc__robots_1_1Teststand_a0d4bfad1f7afaaf459131667fac2b2d0}} 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_a0d4bfad1f7afaaf459131667fac2b2d0}{motor\+\_\+torque\+\_\+constants\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+torque\+\_\+constants\+\_\+ are the motor torque constants \end{DoxyCompactList}\item 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_a5ff6d1081ece6fadf9b3bac578b08001}{joint\+\_\+positions\+\_\+}
+\begin{DoxyCompactList}\small\item\em Joint data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_ab0a776f921bec24b81bc08f7ceebcba6}\label{classblmc__robots_1_1Teststand_ab0a776f921bec24b81bc08f7ceebcba6}} 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_ab0a776f921bec24b81bc08f7ceebcba6}{joint\+\_\+velocities\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+velocities\+\_\+ is the measured data from the onboard card converted at the joint level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a59ef3d86efd043ee1511bad70624bdae}\label{classblmc__robots_1_1Teststand_a59ef3d86efd043ee1511bad70624bdae}} 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_a59ef3d86efd043ee1511bad70624bdae}{joint\+\_\+torques\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+torques\+\_\+ is the measured data from the onboard card converted at the joint level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a0db888b3e84fe194629bb14b6fa2e485}\label{classblmc__robots_1_1Teststand_a0db888b3e84fe194629bb14b6fa2e485}} 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_a0db888b3e84fe194629bb14b6fa2e485}{joint\+\_\+target\+\_\+torques\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+target\+\_\+torques\+\_\+ is the last given command to be sent. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_ad7b3b6c032d1b1b9c886089ea21a9c2a}\label{classblmc__robots_1_1Teststand_ad7b3b6c032d1b1b9c886089ea21a9c2a}} 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_ad7b3b6c032d1b1b9c886089ea21a9c2a}{joint\+\_\+gear\+\_\+ratios\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+gear\+\_\+ratios are the joint gear ratios \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a2a0b967c36ea63a8bb564bdeebcc0846}\label{classblmc__robots_1_1Teststand_a2a0b967c36ea63a8bb564bdeebcc0846}} 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_a2a0b967c36ea63a8bb564bdeebcc0846}{joint\+\_\+encoder\+\_\+index\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+encoder\+\_\+index\+\_\+ The last observed encoder\+\_\+index at the joints. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a5923674652df619a0692333fb27b8369}\label{classblmc__robots_1_1Teststand_a5923674652df619a0692333fb27b8369}} 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_a5923674652df619a0692333fb27b8369}{joint\+\_\+zero\+\_\+positions\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+zero\+\_\+positions\+\_\+ is the configuration considered as zero position \end{DoxyCompactList}\item 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_ad0ce099eef5b57553d36927e3f7f1203}{slider\+\_\+positions\+\_\+}
+\begin{DoxyCompactList}\small\item\em Additional data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a49bb3cd738af64ef41a9a3d12dde9ac2}\label{classblmc__robots_1_1Teststand_a49bb3cd738af64ef41a9a3d12dde9ac2}} 
+\hyperlink{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}{Vector1d} \hyperlink{classblmc__robots_1_1Teststand_a49bb3cd738af64ef41a9a3d12dde9ac2}{contact\+\_\+sensors\+\_\+states\+\_\+}
+\begin{DoxyCompactList}\small\item\em contact\+\_\+sensors\+\_\+ is contact sensors at the foot \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_af9c7f9537b7123dae498d08d5c80fe07}\label{classblmc__robots_1_1Teststand_af9c7f9537b7123dae498d08d5c80fe07}} 
+\hyperlink{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}{Vector1d} \hyperlink{classblmc__robots_1_1Teststand_af9c7f9537b7123dae498d08d5c80fe07}{height\+\_\+sensors\+\_\+states\+\_\+}
+\begin{DoxyCompactList}\small\item\em height\+\_\+sensors\+\_\+ is the height position of the base. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_aae2cff55630f887e4ed10af78b7dd0c1}\label{classblmc__robots_1_1Teststand_aae2cff55630f887e4ed10af78b7dd0c1}} 
+\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \hyperlink{classblmc__robots_1_1Teststand_aae2cff55630f887e4ed10af78b7dd0c1}{motor\+\_\+max\+\_\+current\+\_\+}
+\begin{DoxyCompactList}\small\item\em max\+\_\+current\+\_\+ is the maximum current that can be sent to the motors, this a safe guard for development \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_acf65e7889b3c8b3cbfa8b9e82e984b22}\label{classblmc__robots_1_1Teststand_acf65e7889b3c8b3cbfa8b9e82e984b22}} 
+Eigen\+::\+Array2d \hyperlink{classblmc__robots_1_1Teststand_acf65e7889b3c8b3cbfa8b9e82e984b22}{max\+\_\+joint\+\_\+torques\+\_\+}
+\begin{DoxyCompactList}\small\item\em max\+\_\+joint\+\_\+torques\+\_\+ (Nm) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_aedd9aae28f47062870e3afcb9474822b}\label{classblmc__robots_1_1Teststand_aedd9aae28f47062870e3afcb9474822b}} 
+std\+::array$<$ bool, 4 $>$ \hyperlink{classblmc__robots_1_1Teststand_aedd9aae28f47062870e3afcb9474822b}{motor\+\_\+enabled\+\_\+}
+\begin{DoxyCompactList}\small\item\em This gives the status (enabled/disabled) of each motors using the joint ordering convention. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a62df6b43c18e44f62114b6f4d34ba8f4}\label{classblmc__robots_1_1Teststand_a62df6b43c18e44f62114b6f4d34ba8f4}} 
+std\+::array$<$ bool, 4 $>$ \hyperlink{classblmc__robots_1_1Teststand_a62df6b43c18e44f62114b6f4d34ba8f4}{motor\+\_\+ready\+\_\+}
+\begin{DoxyCompactList}\small\item\em This gives the status (enabled/disabled) of each motors using the joint ordering convention. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a1fca1e72202c09982c2e77c3166d1ea7}\label{classblmc__robots_1_1Teststand_a1fca1e72202c09982c2e77c3166d1ea7}} 
+std\+::array$<$ bool, 2 $>$ \hyperlink{classblmc__robots_1_1Teststand_a1fca1e72202c09982c2e77c3166d1ea7}{motor\+\_\+board\+\_\+enabled\+\_\+}
+\begin{DoxyCompactList}\small\item\em This gives the status (enabled/disabled of the onboard control cards) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a89f931457834d37bd01da57944fd21c1}\label{classblmc__robots_1_1Teststand_a89f931457834d37bd01da57944fd21c1}} 
+std\+::array$<$ int, 2 $>$ \hyperlink{classblmc__robots_1_1Teststand_a89f931457834d37bd01da57944fd21c1}{motor\+\_\+board\+\_\+errors\+\_\+}
+\begin{DoxyCompactList}\small\item\em This gives the status (enabled/disabled of the onboard control cards) \end{DoxyCompactList}\item 
+std\+::array$<$ \hyperlink{common__header_8hpp_a793c8789a7598e8aaf766939da7262af}{Can\+Bus\+\_\+ptr}, 2 $>$ \hyperlink{classblmc__robots_1_1Teststand_aab9d6924ad67f65a6931d3db4771c28a}{can\+\_\+buses\+\_\+}
+\begin{DoxyCompactList}\small\item\em Drivers communication objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a5ab181273e83c54a66ece2f741b718bb}\label{classblmc__robots_1_1Teststand_a5ab181273e83c54a66ece2f741b718bb}} 
+std\+::array$<$ \hyperlink{common__header_8hpp_aab1c6ddb1273247a1b45d5e8b417c216}{Can\+Bus\+Motor\+Board\+\_\+ptr}, 2 $>$ \hyperlink{classblmc__robots_1_1Teststand_a5ab181273e83c54a66ece2f741b718bb}{can\+\_\+motor\+\_\+boards\+\_\+}
+\begin{DoxyCompactList}\small\item\em can\+\_\+motor\+\_\+boards\+\_\+ are the 2 can motor board. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_ae530206f8c54cbc04d7cf69a16d1e99a}\label{classblmc__robots_1_1Teststand_ae530206f8c54cbc04d7cf69a16d1e99a}} 
+std\+::array$<$ \hyperlink{common__header_8hpp_ae1a0f9992bc8fbbc1943d887f517c180}{Motor\+Interface\+\_\+ptr}, 2 $>$ \hyperlink{classblmc__robots_1_1Teststand_ae530206f8c54cbc04d7cf69a16d1e99a}{motors\+\_\+}
+\begin{DoxyCompactList}\small\item\em motors\+\_\+ are the objects allowing us to send motor commands and receive data \end{DoxyCompactList}\item 
+\hyperlink{classblmc__robots_1_1BlmcJointModules}{Blmc\+Joint\+Modules}$<$ 2 $>$ \hyperlink{classblmc__robots_1_1Teststand_a2c14882d88deb56edde5240a8d841f2a}{joints\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+ptrs\+\_\+ are the objects allowing us to send commands and receive data at the joint level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a2a67df9dc9004f9e70bcdd6ad8f8189e}\label{classblmc__robots_1_1Teststand_a2a67df9dc9004f9e70bcdd6ad8f8189e}} 
+std\+::array$<$ \hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr}, 2 $>$ \hyperlink{classblmc__robots_1_1Teststand_a2a67df9dc9004f9e70bcdd6ad8f8189e}{sliders\+\_\+}
+\begin{DoxyCompactList}\small\item\em sliders\+\_\+ these are analogue input from linear potentiometers. \end{DoxyCompactList}\item 
+std\+::array$<$ \hyperlink{common__header_8hpp_ac78fe5c68e56a3b884117109959e4d58}{Contact\+Sensor\+\_\+ptr}, 1 $>$ \hyperlink{classblmc__robots_1_1Teststand_af2f14b46da7f2dfbeeea59b47669f1e8}{contact\+\_\+sensors\+\_\+}
+\begin{DoxyCompactList}\small\item\em contact\+\_\+sensors\+\_\+ is the contact sensors at each foot tips. \end{DoxyCompactList}\item 
+std\+::array$<$ \hyperlink{common__header_8hpp_a921d3f5a8878524375bf7e740f2fb788}{Height\+Sensor\+\_\+ptr}, 1 $>$ \hyperlink{classblmc__robots_1_1Teststand_a41a93d1d128333a9981603eb82d068c0}{height\+\_\+sensors\+\_\+}
+\begin{DoxyCompactList}\small\item\em contact\+\_\+sensors\+\_\+ is the contact sensors at each foot tips. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a401728dd5ba91b8603de79125fcb0a66}\label{classblmc__robots_1_1Teststand_a401728dd5ba91b8603de79125fcb0a66}} 
+static const double \hyperlink{classblmc__robots_1_1Teststand_a401728dd5ba91b8603de79125fcb0a66}{max\+\_\+joint\+\_\+torque\+\_\+security\+\_\+margin\+\_\+} = 0.\+99
+\begin{DoxyCompactList}\small\item\em Security margin on the saturation of the control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class \hyperlink{classblmc__robots_1_1Teststand}{Teststand} is used to control the \hyperlink{classblmc__robots_1_1Teststand}{Teststand} robot located at M\+P\+I-\/\+IS Tuebingen. 
+
+The robot is composed of a single leg on a vertical rail. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a4747b0754cd3dd669c02f27662baef7e}\label{classblmc__robots_1_1Teststand_a4747b0754cd3dd669c02f27662baef7e}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!Teststand@{Teststand}}
+\index{Teststand@{Teststand}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{Teststand()}{Teststand()}}
+{\footnotesize\ttfamily blmc\+\_\+robots\+::\+Teststand\+::\+Teststand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classblmc__robots_1_1Teststand}{Teststand} is the constructor of the class. 
+
+Motor data
+
+Joint data
+
+Additional data
+
+Setup some known data
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}\label{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!acquire\+\_\+sensors@{acquire\+\_\+sensors}}
+\index{acquire\+\_\+sensors@{acquire\+\_\+sensors}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{acquire\+\_\+sensors()}{acquire\_sensors()}}
+{\footnotesize\ttfamily bool blmc\+\_\+robots\+::\+Teststand\+::acquire\+\_\+sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+acquire\+\_\+sensors acquire all available sensors, W\+A\+R\+N\+I\+NG !!!! this method has to be called prior to any getter to have up to date data. 
+
+Joint data
+
+Additional data
+
+Ati sensor readings.\mbox{\Hypertarget{classblmc__robots_1_1Teststand_ad4660570e3e1b77717004b3ce8056faf}\label{classblmc__robots_1_1Teststand_ad4660570e3e1b77717004b3ce8056faf}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily bool blmc\+\_\+robots\+::\+Teststand\+::calibrate (\begin{DoxyParamCaption}\item[{const \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} \&}]{home\+\_\+offset\+\_\+rad }\end{DoxyParamCaption})}
+
+
+
+This function will run a small controller that will move the joints untils the next joint index and reset the joint zero with this knowledge. 
+
+\begin{DoxyReturn}{Returns}
+true if success 
+
+false if failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_af4bf3a4692fdeacdad78a7213c3fbe98}\label{classblmc__robots_1_1Teststand_af4bf3a4692fdeacdad78a7213c3fbe98}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+ati\+\_\+force@{get\+\_\+ati\+\_\+force}}
+\index{get\+\_\+ati\+\_\+force@{get\+\_\+ati\+\_\+force}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+ati\+\_\+force()}{get\_ati\_force()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{classblmc__robots_1_1Teststand_a51f17cf2b01dd8252e21db97b486e067}{Vector\+Ati\+Force}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+ati\+\_\+force (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the ati\+\_\+force\+\_\+ object W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Ref$<$\+Vector\+Ati\+Force$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a27ba45a099b4ff6852f5acd0226aa915}\label{classblmc__robots_1_1Teststand_a27ba45a099b4ff6852f5acd0226aa915}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+ati\+\_\+torque@{get\+\_\+ati\+\_\+torque}}
+\index{get\+\_\+ati\+\_\+torque@{get\+\_\+ati\+\_\+torque}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+ati\+\_\+torque()}{get\_ati\_torque()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{classblmc__robots_1_1Teststand_a466977786f9b007854fa2eb2a97b0de9}{Vector\+Ati\+Torque}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+ati\+\_\+torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the ati\+\_\+torque\+\_\+ object W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+const Eigen\+::\+Ref$<$\+Vector\+Ati\+Torque$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a0486afbd05d4f7c354ebad8432c178bd}\label{classblmc__robots_1_1Teststand_a0486afbd05d4f7c354ebad8432c178bd}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+contact\+\_\+sensors\+\_\+states@{get\+\_\+contact\+\_\+sensors\+\_\+states}}
+\index{get\+\_\+contact\+\_\+sensors\+\_\+states@{get\+\_\+contact\+\_\+sensors\+\_\+states}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+contact\+\_\+sensors\+\_\+states()}{get\_contact\_sensors\_states()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}{Vector1d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+contact\+\_\+sensors\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+contact\+\_\+sensors\+\_\+states W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+the state of the contacts states 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_af8a0d1cc608f91a0a752758c7554087a}\label{classblmc__robots_1_1Teststand_af8a0d1cc608f91a0a752758c7554087a}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+height\+\_\+sensors@{get\+\_\+height\+\_\+sensors}}
+\index{get\+\_\+height\+\_\+sensors@{get\+\_\+height\+\_\+sensors}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+height\+\_\+sensors()}{get\_height\_sensors()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}{Vector1d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+height\+\_\+sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+contact\+\_\+sensors\+\_\+states W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+the state of the contacts states 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a2fa7aacb213c7898bb04f791ca3687d1}\label{classblmc__robots_1_1Teststand_a2fa7aacb213c7898bb04f791ca3687d1}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+joint\+\_\+encoder\+\_\+index@{get\+\_\+joint\+\_\+encoder\+\_\+index}}
+\index{get\+\_\+joint\+\_\+encoder\+\_\+index@{get\+\_\+joint\+\_\+encoder\+\_\+index}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+encoder\+\_\+index()}{get\_joint\_encoder\_index()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+joint\+\_\+encoder\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+encoder\+\_\+index W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+The last observed encoder index in joint coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a7def64b82a1cb58c9ae8c9c54bcaa887}\label{classblmc__robots_1_1Teststand_a7def64b82a1cb58c9ae8c9c54bcaa887}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+joint\+\_\+gear\+\_\+ratios@{get\+\_\+joint\+\_\+gear\+\_\+ratios}}
+\index{get\+\_\+joint\+\_\+gear\+\_\+ratios@{get\+\_\+joint\+\_\+gear\+\_\+ratios}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+gear\+\_\+ratios()}{get\_joint\_gear\_ratios()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+joint\+\_\+gear\+\_\+ratios (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+gear\+\_\+ratios 
+
+\begin{DoxyReturn}{Returns}
+the joint gear ratios 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_adf08db3dbb4fd8da74c8ef15fb393c1a}\label{classblmc__robots_1_1Teststand_adf08db3dbb4fd8da74c8ef15fb393c1a}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+joint\+\_\+positions@{get\+\_\+joint\+\_\+positions}}
+\index{get\+\_\+joint\+\_\+positions@{get\+\_\+joint\+\_\+positions}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+positions()}{get\_joint\_positions()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+joint\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+positions W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+the joint angle of each module 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a0aa762511624791e4ccbec5ad664371f}\label{classblmc__robots_1_1Teststand_a0aa762511624791e4ccbec5ad664371f}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+joint\+\_\+target\+\_\+torques@{get\+\_\+joint\+\_\+target\+\_\+torques}}
+\index{get\+\_\+joint\+\_\+target\+\_\+torques@{get\+\_\+joint\+\_\+target\+\_\+torques}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+target\+\_\+torques()}{get\_joint\_target\_torques()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+joint\+\_\+target\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+torques 
+
+\begin{DoxyReturn}{Returns}
+the target joint torques 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_ae21ac86534e5ee7f15068f94957ba826}\label{classblmc__robots_1_1Teststand_ae21ac86534e5ee7f15068f94957ba826}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+joint\+\_\+torques@{get\+\_\+joint\+\_\+torques}}
+\index{get\+\_\+joint\+\_\+torques@{get\+\_\+joint\+\_\+torques}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+torques()}{get\_joint\_torques()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+joint\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+torques W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+the joint torques 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_acd1b325c6039fffbd40198f6deb9542c}\label{classblmc__robots_1_1Teststand_acd1b325c6039fffbd40198f6deb9542c}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+joint\+\_\+velocities@{get\+\_\+joint\+\_\+velocities}}
+\index{get\+\_\+joint\+\_\+velocities@{get\+\_\+joint\+\_\+velocities}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+velocities()}{get\_joint\_velocities()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+joint\+\_\+velocities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+velocities W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+the joint velocities 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a2f912631ee055e3909ef1a5e06d8d27c}\label{classblmc__robots_1_1Teststand_a2f912631ee055e3909ef1a5e06d8d27c}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+max\+\_\+current@{get\+\_\+max\+\_\+current}}
+\index{get\+\_\+max\+\_\+current@{get\+\_\+max\+\_\+current}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+current()}{get\_max\_current()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+max\+\_\+current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+max\+\_\+current 
+
+\begin{DoxyReturn}{Returns}
+the max current that has been hardcoded in the constructor of this class. T\+O\+DO\+: parametrize this via yaml or something else. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a4897109730380ae0be7da37e2bd69e81}\label{classblmc__robots_1_1Teststand_a4897109730380ae0be7da37e2bd69e81}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+motor\+\_\+inertias@{get\+\_\+motor\+\_\+inertias}}
+\index{get\+\_\+motor\+\_\+inertias@{get\+\_\+motor\+\_\+inertias}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+inertias()}{get\_motor\_inertias()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+motor\+\_\+inertias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+inertias 
+
+\begin{DoxyReturn}{Returns}
+the motor inertias 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_a483bc937ac8c95b93bb90c47744da2e8}\label{classblmc__robots_1_1Teststand_a483bc937ac8c95b93bb90c47744da2e8}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+motor\+\_\+torque\+\_\+constants@{get\+\_\+motor\+\_\+torque\+\_\+constants}}
+\index{get\+\_\+motor\+\_\+torque\+\_\+constants@{get\+\_\+motor\+\_\+torque\+\_\+constants}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+torque\+\_\+constants()}{get\_motor\_torque\_constants()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+motor\+\_\+torque\+\_\+constants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+torque\+\_\+constants 
+
+\begin{DoxyReturn}{Returns}
+the torque constants of each motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_af46acfc1bd408d40b850c4780e834f53}\label{classblmc__robots_1_1Teststand_af46acfc1bd408d40b850c4780e834f53}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+slider\+\_\+positions@{get\+\_\+slider\+\_\+positions}}
+\index{get\+\_\+slider\+\_\+positions@{get\+\_\+slider\+\_\+positions}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+slider\+\_\+positions()}{get\_slider\_positions()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+slider\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+slider\+\_\+positions W\+A\+R\+N\+I\+NG !!!! The method \hyperlink{classblmc__robots_1_1Teststand_a4203e25148ab5b4ddfef3b46647213c6}{acquire\+\_\+sensors()} has to be called prior to any getter to have up to date data. 
+
+\begin{DoxyReturn}{Returns}
+the current sliders positions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_adbceb17de729cced8e9985b9177efa7c}\label{classblmc__robots_1_1Teststand_adbceb17de729cced8e9985b9177efa7c}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!get\+\_\+zero\+\_\+positions@{get\+\_\+zero\+\_\+positions}}
+\index{get\+\_\+zero\+\_\+positions@{get\+\_\+zero\+\_\+positions}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{get\+\_\+zero\+\_\+positions()}{get\_zero\_positions()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$\hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d}$>$ blmc\+\_\+robots\+::\+Teststand\+::get\+\_\+zero\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+zero\+\_\+positions 
+
+\begin{DoxyReturn}{Returns}
+the position where the robot should be in \char`\"{}zero\char`\"{} configuration 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1Teststand_aab9d6924ad67f65a6931d3db4771c28a}\label{classblmc__robots_1_1Teststand_aab9d6924ad67f65a6931d3db4771c28a}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!can\+\_\+buses\+\_\+@{can\+\_\+buses\+\_\+}}
+\index{can\+\_\+buses\+\_\+@{can\+\_\+buses\+\_\+}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{can\+\_\+buses\+\_\+}{can\_buses\_}}
+{\footnotesize\ttfamily std\+::array$<$\hyperlink{common__header_8hpp_a793c8789a7598e8aaf766939da7262af}{Can\+Bus\+\_\+ptr}, 2$>$ blmc\+\_\+robots\+::\+Teststand\+::can\+\_\+buses\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Drivers communication objects. 
+
+can\+\_\+buses\+\_\+ are the 2 can buses on the robot. \mbox{\Hypertarget{classblmc__robots_1_1Teststand_af2f14b46da7f2dfbeeea59b47669f1e8}\label{classblmc__robots_1_1Teststand_af2f14b46da7f2dfbeeea59b47669f1e8}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!contact\+\_\+sensors\+\_\+@{contact\+\_\+sensors\+\_\+}}
+\index{contact\+\_\+sensors\+\_\+@{contact\+\_\+sensors\+\_\+}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{contact\+\_\+sensors\+\_\+}{contact\_sensors\_}}
+{\footnotesize\ttfamily std\+::array$<$\hyperlink{common__header_8hpp_ac78fe5c68e56a3b884117109959e4d58}{Contact\+Sensor\+\_\+ptr}, 1$>$ blmc\+\_\+robots\+::\+Teststand\+::contact\+\_\+sensors\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+contact\+\_\+sensors\+\_\+ is the contact sensors at each foot tips. 
+
+They also are analogue inputs. \mbox{\Hypertarget{classblmc__robots_1_1Teststand_a41a93d1d128333a9981603eb82d068c0}\label{classblmc__robots_1_1Teststand_a41a93d1d128333a9981603eb82d068c0}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!height\+\_\+sensors\+\_\+@{height\+\_\+sensors\+\_\+}}
+\index{height\+\_\+sensors\+\_\+@{height\+\_\+sensors\+\_\+}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{height\+\_\+sensors\+\_\+}{height\_sensors\_}}
+{\footnotesize\ttfamily std\+::array$<$\hyperlink{common__header_8hpp_a921d3f5a8878524375bf7e740f2fb788}{Height\+Sensor\+\_\+ptr}, 1$>$ blmc\+\_\+robots\+::\+Teststand\+::height\+\_\+sensors\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+contact\+\_\+sensors\+\_\+ is the contact sensors at each foot tips. 
+
+They also are analogue inputs. \mbox{\Hypertarget{classblmc__robots_1_1Teststand_a5ff6d1081ece6fadf9b3bac578b08001}\label{classblmc__robots_1_1Teststand_a5ff6d1081ece6fadf9b3bac578b08001}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!joint\+\_\+positions\+\_\+@{joint\+\_\+positions\+\_\+}}
+\index{joint\+\_\+positions\+\_\+@{joint\+\_\+positions\+\_\+}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{joint\+\_\+positions\+\_\+}{joint\_positions\_}}
+{\footnotesize\ttfamily \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} blmc\+\_\+robots\+::\+Teststand\+::joint\+\_\+positions\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Joint data. 
+
+joint\+\_\+positions\+\_\+ is the measured data from the onboard card converted at the joint level. \mbox{\Hypertarget{classblmc__robots_1_1Teststand_a2c14882d88deb56edde5240a8d841f2a}\label{classblmc__robots_1_1Teststand_a2c14882d88deb56edde5240a8d841f2a}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!joints\+\_\+@{joints\+\_\+}}
+\index{joints\+\_\+@{joints\+\_\+}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{joints\+\_\+}{joints\_}}
+{\footnotesize\ttfamily \hyperlink{classblmc__robots_1_1BlmcJointModules}{Blmc\+Joint\+Modules}$<$2$>$ blmc\+\_\+robots\+::\+Teststand\+::joints\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+joint\+\_\+ptrs\+\_\+ are the objects allowing us to send commands and receive data at the joint level. 
+
+It also ones some self calibration routines. \mbox{\Hypertarget{classblmc__robots_1_1Teststand_afe8801388760cd85771a99e3a89c9f69}\label{classblmc__robots_1_1Teststand_afe8801388760cd85771a99e3a89c9f69}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!motor\+\_\+inertias\+\_\+@{motor\+\_\+inertias\+\_\+}}
+\index{motor\+\_\+inertias\+\_\+@{motor\+\_\+inertias\+\_\+}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{motor\+\_\+inertias\+\_\+}{motor\_inertias\_}}
+{\footnotesize\ttfamily \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} blmc\+\_\+robots\+::\+Teststand\+::motor\+\_\+inertias\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Motor data. 
+
+motor\+\_\+inertias\+\_\+ \mbox{\Hypertarget{classblmc__robots_1_1Teststand_ad0ce099eef5b57553d36927e3f7f1203}\label{classblmc__robots_1_1Teststand_ad0ce099eef5b57553d36927e3f7f1203}} 
+\index{blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}!slider\+\_\+positions\+\_\+@{slider\+\_\+positions\+\_\+}}
+\index{slider\+\_\+positions\+\_\+@{slider\+\_\+positions\+\_\+}!blmc\+\_\+robots\+::\+Teststand@{blmc\+\_\+robots\+::\+Teststand}}
+\subsubsection{\texorpdfstring{slider\+\_\+positions\+\_\+}{slider\_positions\_}}
+{\footnotesize\ttfamily \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{Vector2d} blmc\+\_\+robots\+::\+Teststand\+::slider\+\_\+positions\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Additional data. 
+
+slider\+\_\+positions\+\_\+ is the position of the linear potentiometer. Can be used as a joystick input. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+robots/\hyperlink{teststand_8hpp}{teststand.\+hpp}\item 
+src/teststand.\+cpp\end{DoxyCompactItemize}

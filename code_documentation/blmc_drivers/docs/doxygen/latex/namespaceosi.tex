@@ -1,0 +1,142 @@
+\hypertarget{namespaceosi}{}\section{osi Namespace Reference}
+\label{namespaceosi}\index{osi@{osi}}
+
+
+Common include.  
+
+
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceosi_ac3d484da0f89f06e329d4b84d7459d9b}\label{namespaceosi_ac3d484da0f89f06e329d4b84d7459d9b}} 
+typedef std\+::mutex \hyperlink{namespaceosi_ac3d484da0f89f06e329d4b84d7459d9b}{Mutex}
+\begin{DoxyCompactList}\small\item\em Wrapper around the posix specific Mutex implementation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceosi_a31b1ce104b168554e4832b5d3b684073}\label{namespaceosi_a31b1ce104b168554e4832b5d3b684073}} 
+typedef std\+::condition\+\_\+variable \hyperlink{namespaceosi_a31b1ce104b168554e4832b5d3b684073}{Condition\+Variable}
+\begin{DoxyCompactList}\small\item\em Wrapper around the posix specific Condition\+Variable implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceosi_a001686caee0f34611f14ab94c7303254}{send\+\_\+to\+\_\+can\+\_\+device} (int fd, const void $\ast$buf, size\+\_\+t len, int flags, const struct sockaddr $\ast$to, socklen\+\_\+t tolen)
+\begin{DoxyCompactList}\small\item\em Use the osi workspace A\+PI to communicate with the can bus. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceosi_a92dc20de3b4933a10f24c98cecf2568b}{close\+\_\+can\+\_\+device} (int socket)
+\begin{DoxyCompactList}\small\item\em This function is closing a socket on the Can device. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceosi_a244466c0afc9ae9fe059cee665fb0603}{receive\+\_\+message\+\_\+from\+\_\+can\+\_\+device} (int fd, struct msghdr $\ast$msg, int flags)
+\begin{DoxyCompactList}\small\item\em Poll? a message from the C\+AN device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceosi_a48e36c862c77befc86f53140722c3f43}\label{namespaceosi_a48e36c862c77befc86f53140722c3f43}} 
+void \hyperlink{namespaceosi_a48e36c862c77befc86f53140722c3f43}{initialize\+\_\+realtime\+\_\+printing} ()
+\begin{DoxyCompactList}\small\item\em This function is needed in xenomai to initialize the real time console display of text. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceosi_a499cdf6336a907d1327044b0f595f3a9}{sleep\+\_\+ms} (const double \&sleep\+\_\+time\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em This function uses eather the xenomai A\+PI or the posix one. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceosi_a2409ab591c4f78d9a8bcfbbe38df9429}{get\+\_\+current\+\_\+time\+\_\+ms} ()
+\begin{DoxyCompactList}\small\item\em Get the current time in millisecond. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceosi_af6772d4aea95e99bc2bd0aabc557a20e}\label{namespaceosi_af6772d4aea95e99bc2bd0aabc557a20e}} 
+void \hyperlink{namespaceosi_af6772d4aea95e99bc2bd0aabc557a20e}{make\+\_\+this\+\_\+thread\+\_\+realtime} ()
+\begin{DoxyCompactList}\small\item\em This methd is requiered in xenomai to create a real time thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Common include. 
+
+osi stands for Operating System Interface. \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]This workspace should be replaced eventually by the real\+\_\+time\+\_\+tools package. \end{DoxyRefDesc}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceosi_a92dc20de3b4933a10f24c98cecf2568b}\label{namespaceosi_a92dc20de3b4933a10f24c98cecf2568b}} 
+\index{osi@{osi}!close\+\_\+can\+\_\+device@{close\+\_\+can\+\_\+device}}
+\index{close\+\_\+can\+\_\+device@{close\+\_\+can\+\_\+device}!osi@{osi}}
+\subsubsection{\texorpdfstring{close\+\_\+can\+\_\+device()}{close\_can\_device()}}
+{\footnotesize\ttfamily void osi\+::close\+\_\+can\+\_\+device (\begin{DoxyParamCaption}\item[{int}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is closing a socket on the Can device. 
+
+It is os independent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceosi_a2409ab591c4f78d9a8bcfbbe38df9429}\label{namespaceosi_a2409ab591c4f78d9a8bcfbbe38df9429}} 
+\index{osi@{osi}!get\+\_\+current\+\_\+time\+\_\+ms@{get\+\_\+current\+\_\+time\+\_\+ms}}
+\index{get\+\_\+current\+\_\+time\+\_\+ms@{get\+\_\+current\+\_\+time\+\_\+ms}!osi@{osi}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+time\+\_\+ms()}{get\_current\_time\_ms()}}
+{\footnotesize\ttfamily double osi\+::get\+\_\+current\+\_\+time\+\_\+ms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current time in millisecond. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]remove as the one form the Timer class is much better embeded.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+double which is the time in milli second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceosi_a244466c0afc9ae9fe059cee665fb0603}\label{namespaceosi_a244466c0afc9ae9fe059cee665fb0603}} 
+\index{osi@{osi}!receive\+\_\+message\+\_\+from\+\_\+can\+\_\+device@{receive\+\_\+message\+\_\+from\+\_\+can\+\_\+device}}
+\index{receive\+\_\+message\+\_\+from\+\_\+can\+\_\+device@{receive\+\_\+message\+\_\+from\+\_\+can\+\_\+device}!osi@{osi}}
+\subsubsection{\texorpdfstring{receive\+\_\+message\+\_\+from\+\_\+can\+\_\+device()}{receive\_message\_from\_can\_device()}}
+{\footnotesize\ttfamily void osi\+::receive\+\_\+message\+\_\+from\+\_\+can\+\_\+device (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{struct msghdr $\ast$}]{msg,  }\item[{int}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Poll? a message from the C\+AN device. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]Manuel can you confrim this? And precise the arguments of the function?\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & \\
+\hline
+{\em msg} & \\
+\hline
+{\em flags} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceosi_a001686caee0f34611f14ab94c7303254}\label{namespaceosi_a001686caee0f34611f14ab94c7303254}} 
+\index{osi@{osi}!send\+\_\+to\+\_\+can\+\_\+device@{send\+\_\+to\+\_\+can\+\_\+device}}
+\index{send\+\_\+to\+\_\+can\+\_\+device@{send\+\_\+to\+\_\+can\+\_\+device}!osi@{osi}}
+\subsubsection{\texorpdfstring{send\+\_\+to\+\_\+can\+\_\+device()}{send\_to\_can\_device()}}
+{\footnotesize\ttfamily void osi\+::send\+\_\+to\+\_\+can\+\_\+device (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{int}]{flags,  }\item[{const struct sockaddr $\ast$}]{to,  }\item[{socklen\+\_\+t}]{tolen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Use the osi workspace A\+PI to communicate with the can bus. 
+
+/todo Manuel can you describe the argument of this function? 
+\begin{DoxyParams}{Parameters}
+{\em fd} & \\
+\hline
+{\em buf} & \\
+\hline
+{\em len} & \\
+\hline
+{\em flags} & \\
+\hline
+{\em to} & \\
+\hline
+{\em tolen} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceosi_a499cdf6336a907d1327044b0f595f3a9}\label{namespaceosi_a499cdf6336a907d1327044b0f595f3a9}} 
+\index{osi@{osi}!sleep\+\_\+ms@{sleep\+\_\+ms}}
+\index{sleep\+\_\+ms@{sleep\+\_\+ms}!osi@{osi}}
+\subsubsection{\texorpdfstring{sleep\+\_\+ms()}{sleep\_ms()}}
+{\footnotesize\ttfamily void osi\+::sleep\+\_\+ms (\begin{DoxyParamCaption}\item[{const double \&}]{sleep\+\_\+time\+\_\+ms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function uses eather the xenomai A\+PI or the posix one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sleep\+\_\+time\+\_\+ms} & is the sleeping time in milli seconds. \\
+\hline
+\end{DoxyParams}

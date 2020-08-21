@@ -1,0 +1,151 @@
+\hypertarget{classDriver}{}\section{Driver Class Reference}
+\label{classDriver}\index{Driver@{Driver}}
+
+
+Inheritance diagram for Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classDriver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Driver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classDriver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDriver_a81c0beb523fad80cd40cfcc6a6e3de2d}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the robot. \end{DoxyCompactList}\item 
+Action \hyperlink{classDriver_a0f8d51bef151ccc38a0cb7b226048e28}{apply\+\_\+action} (const Action \&action\+\_\+to\+\_\+apply)
+\begin{DoxyCompactList}\small\item\em Apply action immediately and block until it is executed. \end{DoxyCompactList}\item 
+Observation \hyperlink{classDriver_afb09663997bffc5c694fb5aa8aca243a}{get\+\_\+latest\+\_\+observation} ()
+\begin{DoxyCompactList}\small\item\em Return the latest observation immediately. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classDriver_a6fb739b87c892c4102e838508855c0be}{get\+\_\+error} ()
+\begin{DoxyCompactList}\small\item\em Get error message if there is any error. \end{DoxyCompactList}\item 
+void \hyperlink{classDriver_a630fc9183eb419beb09b5828b4547b6d}{shutdown} ()
+\begin{DoxyCompactList}\small\item\em Shut down the robot safely. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDriver_acf6c56cd7c260695439a8625fa07aef9}\label{classDriver_acf6c56cd7c260695439a8625fa07aef9}} 
+int {\bfseries state\+\_\+} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDriver_a2f75d16f4af650ca9cf1cdd8b653cc18}\label{classDriver_a2f75d16f4af650ca9cf1cdd8b653cc18}} 
+static const int {\bfseries M\+AX} = 1000
+\item 
+\mbox{\Hypertarget{classDriver_a09b06e92e4ea9df756e3b6e038fa25f6}\label{classDriver_a09b06e92e4ea9df756e3b6e038fa25f6}} 
+static const int {\bfseries M\+IN} = 0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_multiprocess_backend_8cpp-example}{demo\+\_\+multiprocess\+\_\+backend.\+cpp}.\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDriver_a0f8d51bef151ccc38a0cb7b226048e28}\label{classDriver_a0f8d51bef151ccc38a0cb7b226048e28}} 
+\index{Driver@{Driver}!apply\+\_\+action@{apply\+\_\+action}}
+\index{apply\+\_\+action@{apply\+\_\+action}!Driver@{Driver}}
+\subsubsection{\texorpdfstring{apply\+\_\+action()}{apply\_action()}}
+{\footnotesize\ttfamily Action Driver\+::apply\+\_\+action (\begin{DoxyParamCaption}\item[{const Action \&}]{desired\+\_\+action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Apply action immediately and block until it is executed. 
+
+This method must apply the desired\+\_\+action immediately when it is called, and only return once the action has been executed completely. This way we can accommodate both simulators and real robots with this interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired\+\_\+action} & The action we want to apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The action that was actually applied (since due to safety reasons it might not be possible to apply the desired action). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_a4294e522fcd12b38d69f7d53fae5d74a}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+\mbox{\Hypertarget{classDriver_a6fb739b87c892c4102e838508855c0be}\label{classDriver_a6fb739b87c892c4102e838508855c0be}} 
+\index{Driver@{Driver}!get\+\_\+error@{get\+\_\+error}}
+\index{get\+\_\+error@{get\+\_\+error}!Driver@{Driver}}
+\subsubsection{\texorpdfstring{get\+\_\+error()}{get\_error()}}
+{\footnotesize\ttfamily std\+::string Driver\+::get\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get error message if there is any error. 
+
+\begin{DoxyReturn}{Returns}
+Returns an error message or an empty string if there is no error. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_acdf4c5d6993b836a180e6b6fc12b3445}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+\mbox{\Hypertarget{classDriver_afb09663997bffc5c694fb5aa8aca243a}\label{classDriver_afb09663997bffc5c694fb5aa8aca243a}} 
+\index{Driver@{Driver}!get\+\_\+latest\+\_\+observation@{get\+\_\+latest\+\_\+observation}}
+\index{get\+\_\+latest\+\_\+observation@{get\+\_\+latest\+\_\+observation}!Driver@{Driver}}
+\subsubsection{\texorpdfstring{get\+\_\+latest\+\_\+observation()}{get\_latest\_observation()}}
+{\footnotesize\ttfamily Observation Driver\+::get\+\_\+latest\+\_\+observation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the latest observation immediately. 
+
+\begin{DoxyReturn}{Returns}
+Observation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_ad13d4f4fdfe78bdde4fc964f07fa45e2}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+\mbox{\Hypertarget{classDriver_a81c0beb523fad80cd40cfcc6a6e3de2d}\label{classDriver_a81c0beb523fad80cd40cfcc6a6e3de2d}} 
+\index{Driver@{Driver}!initialize@{initialize}}
+\index{initialize@{initialize}!Driver@{Driver}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Driver\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the robot. 
+
+Any initialization procedures that need to be done before sending actions to the robot should be done in this method (e.\+g. homing to find the absolute position). 
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_af3cbef570a455e1f8085d701282264ff}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+\mbox{\Hypertarget{classDriver_a630fc9183eb419beb09b5828b4547b6d}\label{classDriver_a630fc9183eb419beb09b5828b4547b6d}} 
+\index{Driver@{Driver}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!Driver@{Driver}}
+\subsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily void Driver\+::shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Shut down the robot safely. 
+
+Use this method if your robot needs to perform some action when shutting down, e.\+g. to move it to a defined rest position. 
+
+Implements \hyperlink{classrobot__interfaces_1_1RobotDriver_a3451fb8b15d2840b559f3ee858de01f8}{robot\+\_\+interfaces\+::\+Robot\+Driver$<$ Action, Observation $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+demos/\hyperlink{demo__multiprocess__backend_8cpp}{demo\+\_\+multiprocess\+\_\+backend.\+cpp}\end{DoxyCompactItemize}

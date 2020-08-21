@@ -1,0 +1,17 @@
+\subsection*{Single Finger Test }
+
+The {\ttfamily robot\+\_\+fingers} package provides a script {\ttfamily single\+\_\+finger\+\_\+test.\+py} for testing basic functionality of a single Finger. After initialization, it holds all joints at their current position using position control. All available data is shown and constantly updated on the terminal\+:
+
+ \subsubsection*{Running}
+
+Start the application with the following command\+: \begin{DoxyVerb}rosrun robot_fingers single_finger_test.py
+\end{DoxyVerb}
+
+
+For this application, homing is done without end stops, that is the joints will simply home on the nearest encoder index without offset.
+
+To quit simply press \char`\"{}q\char`\"{}.
+
+\subsubsection*{Configuration}
+
+The robot configuration used in application is found in {\ttfamily robot\+\_\+fingers/config/single\+\_\+finger\+\_\+test.\+yml}. Typically the configuration should work well, however, you may need to adjust the C\+AN ports to match the ports on which the finger is connected. 

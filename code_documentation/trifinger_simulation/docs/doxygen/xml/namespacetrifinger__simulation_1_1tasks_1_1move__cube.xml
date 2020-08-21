@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacetrifinger__simulation_1_1tasks_1_1move__cube" kind="namespace" language="Python">
+    <compoundname>trifinger_simulation::tasks::move_cube</compoundname>
+    <innerclass refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError" prot="public">trifinger_simulation::tasks::move_cube::InvalidGoalError</innerclass>
+    <innerclass refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose" prot="public">trifinger_simulation::tasks::move_cube::Pose</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="move__cube_8py_1ac49ea820e7a597d8ccd3b4c305d44d66" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>trifinger_simulation::tasks::move_cube.random</definition>
+        <argsstring></argsstring>
+        <name>random</name>
+        <initializer>=  np.random.RandomState()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="10" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="move__cube_8py_1a887cf8ce75c265a68c11b054bd1438e4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int trifinger_simulation::tasks::move_cube.episode_length</definition>
+        <argsstring></argsstring>
+        <name>episode_length</name>
+        <initializer>=  3750</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="14" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="move__cube_8py_1a94f72e4c4dfca70ba69ff07689fc40d8" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>trifinger_simulation::tasks::move_cube::_CUBE_WIDTH</definition>
+        <argsstring></argsstring>
+        <name>_CUBE_WIDTH</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="20" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="move__cube_8py_1aa541e3aead42f5573a92b78a36d19607" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>trifinger_simulation::tasks::move_cube::_ARENA_RADIUS</definition>
+        <argsstring></argsstring>
+        <name>_ARENA_RADIUS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="24" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="move__cube_8py_1adfe3ba068c50c75a6839542e1b07d590" prot="private" static="no" mutable="no">
+        <type>def</type>
+        <definition>trifinger_simulation::tasks::move_cube::_cube_3d_radius</definition>
+        <argsstring></argsstring>
+        <name>_cube_3d_radius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="29" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="move__cube_8py_1a912df32064cf89a326279273105cc3d0" prot="private" static="no" mutable="no">
+        <type>def</type>
+        <definition>trifinger_simulation::tasks::move_cube::_max_cube_com_distance_to_center</definition>
+        <argsstring></argsstring>
+        <name>_max_cube_com_distance_to_center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="33" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="move__cube_8py_1a6aafc1a98aff14882d3550102b1d0109" prot="private" static="no" mutable="no">
+        <type>def</type>
+        <definition>trifinger_simulation::tasks::move_cube::_min_height</definition>
+        <argsstring></argsstring>
+        <name>_min_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="38" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="move__cube_8py_1a37d4d9a803fd5ef701bd51a86327633b" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>trifinger_simulation::tasks::move_cube::_max_height</definition>
+        <argsstring></argsstring>
+        <name>_max_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="42" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="move__cube_8py_1afadfbc549bde9142bf144ba65d8ce060" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>trifinger_simulation::tasks::move_cube::_cube_corners</definition>
+        <argsstring></argsstring>
+        <name>_cube_corners</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="48" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="move__cube_8py_1a7d7b1df9866a4ab1a868828904aca2d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.tasks.move_cube.get_cube_corner_positions</definition>
+        <argsstring>(pose)</argsstring>
+        <name>get_cube_corner_positions</name>
+        <param>
+          <type>pose</type>
+          <defname>pose</defname>
+        </param>
+        <briefdescription>
+<para>Get the positions of the cube&apos;s corners with the given pose. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose" kindref="compound">Pose</ref> of the cube.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(array, shape=(8, 3)): Positions of the corners of the cube in the given pose. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="119" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="119" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="move__cube_8py_1a1037f59515f9fc558a983e810f641bbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.tasks.move_cube.sample_goal</definition>
+        <argsstring>(difficulty)</argsstring>
+        <name>sample_goal</name>
+        <param>
+          <type>difficulty</type>
+          <defname>difficulty</defname>
+        </param>
+        <briefdescription>
+<para>Sample a goal pose for the cube. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>difficulty</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Difficulty level. The higher, the more difficult is the goal. Possible levels are:</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<itemizedlist>
+<listitem><para>1: Random goal position on the table, no orientation.</para></listitem><listitem><para>2: Fixed goal position in the air with x,y = 0. No orientation.</para></listitem><listitem><para>3: Random goal position in the air, no orientation.</para></listitem><listitem><para>4: Random goal pose in the air, including orientation.</para></listitem></itemizedlist>
+</para><para><simplesect kind="return"><para></para></simplesect>
+<simplesect kind="return"><para><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose" kindref="compound">Pose</ref> Goal pose of the cube relative to the world frame. Note that the pose always contains an orientation. For difficulty levels where the orientation is not considered, this is set to <computeroutput>[0, 0, 0, 1]</computeroutput> and will be ignored when computing the reward. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="143" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="143" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="move__cube_8py_1ac6237dddece5610e019ff6722b4fd00d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.tasks.move_cube.validate_goal</definition>
+        <argsstring>(goal)</argsstring>
+        <name>validate_goal</name>
+        <param>
+          <type>goal</type>
+          <defname>goal</defname>
+        </param>
+        <briefdescription>
+<para>Validate that the given pose is a valid goal (e.g. </para>        </briefdescription>
+        <detaileddescription>
+<para>no collision)</para><para>Raises an error if the given goal pose is invalid.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>goal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Goal pose.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ValueError</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If given values are not a valid 3d position/orientation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError" kindref="compound">InvalidGoalError</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the given pose exceeds the allowed goal space. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="212" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="212" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="move__cube_8py_1a4d316963b924e62f9e0722a87cb3b26a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.tasks.move_cube.evaluate_state</definition>
+        <argsstring>(goal_pose, actual_pose, difficulty)</argsstring>
+        <name>evaluate_state</name>
+        <param>
+          <type>goal_pose</type>
+          <defname>goal_pose</defname>
+        </param>
+        <param>
+          <type>actual_pose</type>
+          <defname>actual_pose</defname>
+        </param>
+        <param>
+          <type>difficulty</type>
+          <defname>difficulty</defname>
+        </param>
+        <briefdescription>
+<para>Compute cost of a given cube pose. </para>        </briefdescription>
+        <detaileddescription>
+<para>Less is better.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>goal_pose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Goal pose of the cube. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>actual_pose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Actual pose of the cube. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>difficulty</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The difficulty level of the goal (see :func:<computeroutput>sample_goal</computeroutput>). The metric for evaluating a state differs depending on the level.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Cost of the actual pose w.r.t. to the goal pose. Lower value means that the actual pose is closer to the goal. Zero if actual == goal. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="258" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="258" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="move__cube_8py_1a295afb43cf4f54787e20054475c7439c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.tasks.move_cube.goal_to_json</definition>
+        <argsstring>(goal)</argsstring>
+        <name>goal_to_json</name>
+        <param>
+          <type>goal</type>
+          <defname>goal</defname>
+        </param>
+        <briefdescription>
+<para>Convert goal object to JSON string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>goal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A goal pose.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+<simplesect kind="return"><para>str JSON string representing the goal pose. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="308" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="308" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="move__cube_8py_1a07ca4809eb313f7c687bf7ea6f95ba18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.tasks.move_cube.goal_from_json</definition>
+        <argsstring>(json_string)</argsstring>
+        <name>goal_from_json</name>
+        <param>
+          <type>json_string</type>
+          <defname>json_string</defname>
+        </param>
+        <briefdescription>
+<para>Create goal object from JSON string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>json_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>JSON string containing &quot;position&quot; and &quot;orientation&quot; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keys.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+<simplesect kind="return"><para><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose" kindref="compound">Pose</ref> Goal pose. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/tasks/move_cube.py" line="325" column="1" bodyfile="python/trifinger_simulation/tasks/move_cube.py" bodystart="325" bodyend="331"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="python/trifinger_simulation/tasks/move_cube.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

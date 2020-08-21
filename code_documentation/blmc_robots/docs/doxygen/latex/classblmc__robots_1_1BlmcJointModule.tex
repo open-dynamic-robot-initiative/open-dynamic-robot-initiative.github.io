@@ -1,0 +1,508 @@
+\hypertarget{classblmc__robots_1_1BlmcJointModule}{}\section{blmc\+\_\+robots\+:\+:Blmc\+Joint\+Module Class Reference}
+\label{classblmc__robots_1_1BlmcJointModule}\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+
+
+The \hyperlink{classblmc__robots_1_1BlmcJointModule}{Blmc\+Joint\+Module} class is containing the joint information.  
+
+
+
+
+{\ttfamily \#include $<$blmc\+\_\+joint\+\_\+module.\+hpp$>$}
+
+
+
+Collaboration diagram for blmc\+\_\+robots\+:\+:Blmc\+Joint\+Module\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classblmc__robots_1_1BlmcJointModule__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__robots_1_1BlmcJointModule_a09a0b8815e6c447e3ee6632ade940e0b}{Blmc\+Joint\+Module} (std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Motor\+Interface $>$ motor, const double \&motor\+\_\+constant, const double \&gear\+\_\+ratio, const double \&zero\+\_\+angle, const bool \&reverse\+\_\+polarity=false, const double \&max\+\_\+current=2.\+1)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__robots_1_1BlmcJointModule}{Blmc\+Joint\+Module} object. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1BlmcJointModule_adeb28005a7160ead68603aed4262508f}{set\+\_\+torque} (const double \&desired\+\_\+torque)
+\begin{DoxyCompactList}\small\item\em Set the joint torque to be sent. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1BlmcJointModule_ae59680a947539306e391a12ad2d071bb}{set\+\_\+zero\+\_\+angle} (const double \&zero\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Set the zero\+\_\+angle. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1BlmcJointModule_a137da65771a8628db4692e3bfc924f07}{set\+\_\+joint\+\_\+polarity} (const bool \&reverse\+\_\+polarity)
+\begin{DoxyCompactList}\small\item\em Define if the motor should turn clock-\/wize or counter clock-\/wize. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1BlmcJointModule_af0484dd9efc47843706fc71d4351bdbd}{send\+\_\+torque} ()
+\begin{DoxyCompactList}\small\item\em send the joint torque to the motor. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a53be7ff5c2b54c15813a68116e85747e}{get\+\_\+max\+\_\+torque} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum admissible joint torque that can be applied. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_af3f19ffc942e9b49dce892b207d3d476}{get\+\_\+sent\+\_\+torque} () const
+\begin{DoxyCompactList}\small\item\em Get the sent joint torque. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_abb57fdffcc0222b192658239ef45ab63}{get\+\_\+measured\+\_\+torque} () const
+\begin{DoxyCompactList}\small\item\em Get the measured joint torque. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a8c6419cfb80eb5986dffd982df18a817}{get\+\_\+measured\+\_\+angle} () const
+\begin{DoxyCompactList}\small\item\em Get the measured angle of the joint. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a6db4f8c98e9a3e931b19a98dc1339e27}{get\+\_\+measured\+\_\+velocity} () const
+\begin{DoxyCompactList}\small\item\em Get the measured velocity of the joint. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a47b6a71bb9c300d2398924403a6e7e3c}{get\+\_\+measured\+\_\+index\+\_\+angle} () const
+\begin{DoxyCompactList}\small\item\em Get the measured index angle. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_ad6fab5bc289e01a34374ea8031f5383e}{get\+\_\+zero\+\_\+angle} () const
+\begin{DoxyCompactList}\small\item\em Get the zero\+\_\+angle\+\_\+. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1BlmcJointModule_a464ab2a846630eba6582d09895df2852}{set\+\_\+position\+\_\+control\+\_\+gains} (double kp, double kd)
+\begin{DoxyCompactList}\small\item\em Set control gains for PD position controller. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a3100c088a17264562c67429334e3dbf2}{execute\+\_\+position\+\_\+controller} (double target\+\_\+position\+\_\+rad) const
+\begin{DoxyCompactList}\small\item\em Execute one iteration of the position controller. \end{DoxyCompactList}\item 
+bool \hyperlink{classblmc__robots_1_1BlmcJointModule_a17a1da041dae31e9a16f955722c36d6c}{calibrate} (double \&angle\+\_\+zero\+\_\+to\+\_\+index, double \&index\+\_\+angle, bool mechanical\+\_\+calibration=false)
+\begin{DoxyCompactList}\small\item\em This method calibrate the joint position knowing the angle between the closest (in positive torque) motor index and the theoretical zero pose. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1BlmcJointModule_aa534604b5ead6a3eee5c47a9454f6834}{init\+\_\+homing} (int joint\+\_\+id, double search\+\_\+distance\+\_\+limit\+\_\+rad, double home\+\_\+offset\+\_\+rad, double profile\+\_\+step\+\_\+size\+\_\+rad=0.\+001)
+\begin{DoxyCompactList}\small\item\em Initialize the homing procedure. \end{DoxyCompactList}\item 
+\hyperlink{blmc__joint__module_8hpp_aa1075809042ff261e4b0a20d161448b6}{Homing\+Return\+Code} \hyperlink{classblmc__robots_1_1BlmcJointModule_abb2712542f3c340bc0ecf76bd343b6b3}{update\+\_\+homing} ()
+\begin{DoxyCompactList}\small\item\em Perform one step of homing on encoder index. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a9fd53d7e340b4067f3505633e5a8a06d}{get\+\_\+distance\+\_\+travelled\+\_\+during\+\_\+homing} () const
+\begin{DoxyCompactList}\small\item\em Get distance between start and end position of homing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a2b6886df9dc909854ff74c2ec21cbb34}{joint\+\_\+torque\+\_\+to\+\_\+motor\+\_\+current} (double torque) const
+\begin{DoxyCompactList}\small\item\em Convert from joint torque to motor current. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_aa300e4c820a6cd356ac77ba50829c50f}{motor\+\_\+current\+\_\+to\+\_\+joint\+\_\+torque} (double current) const
+\begin{DoxyCompactList}\small\item\em Convert from motor current to joint torque. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a219d4e433d03ea8a2bae115d5563d844}{get\+\_\+motor\+\_\+measurement} (const \hyperlink{common__header_8hpp_a1975c6bb47bc85dfc8edfe349c30dae1}{mi} \&measurement\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Get motor measurements and check if there are data or not. \end{DoxyCompactList}\item 
+long int \hyperlink{classblmc__robots_1_1BlmcJointModule_adf5e083076bdc53f24f14f0c22b9061b}{get\+\_\+motor\+\_\+measurement\+\_\+index} (const \hyperlink{common__header_8hpp_a1975c6bb47bc85dfc8edfe349c30dae1}{mi} \&measurement\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Get the last motor measurement index for a specific data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a0ff5ce1cb26ed04212914dc152ec0486}\label{classblmc__robots_1_1BlmcJointModule_a0ff5ce1cb26ed04212914dc152ec0486}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Motor\+Interface $>$ \hyperlink{classblmc__robots_1_1BlmcJointModule_a0ff5ce1cb26ed04212914dc152ec0486}{motor\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the pointer to the motor interface. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a4e2e6f6cc7f0f7aed02efdca60394b40}\label{classblmc__robots_1_1BlmcJointModule_a4e2e6f6cc7f0f7aed02efdca60394b40}} 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a4e2e6f6cc7f0f7aed02efdca60394b40}{motor\+\_\+constant\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the torque constant of the motor\+: $ \tau_{motor} = k * i_{motor} $. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_af013668d69e7cea2dcc21da8c1c9e4e6}{gear\+\_\+ratio\+\_\+}
+\begin{DoxyCompactList}\small\item\em This correspond to the reduction ( $ \beta $) between the motor rotation and the joint. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_abdf774193a8ae31486e937eb432dc702}\label{classblmc__robots_1_1BlmcJointModule_abdf774193a8ae31486e937eb432dc702}} 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_abdf774193a8ae31486e937eb432dc702}{zero\+\_\+angle\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the distance between the closest positive index and the zero configuration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a6ec97901099ebcc3466851624c656f08}\label{classblmc__robots_1_1BlmcJointModule_a6ec97901099ebcc3466851624c656f08}} 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a6ec97901099ebcc3466851624c656f08}{polarity\+\_\+}
+\begin{DoxyCompactList}\small\item\em This change the motor rotation direction. \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_af10e1b734a9d4735301962fd9f9c413f}{max\+\_\+current\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the maximum current we can apply during one experiment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_afa5a06b057850fc626649fd13e3f376c}\label{classblmc__robots_1_1BlmcJointModule_afa5a06b057850fc626649fd13e3f376c}} 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_afa5a06b057850fc626649fd13e3f376c}{position\+\_\+control\+\_\+gain\+\_\+p\+\_\+}
+\begin{DoxyCompactList}\small\item\em P gain of the position PD controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a1141b35d0c53d1f4cca107919c1c861e}\label{classblmc__robots_1_1BlmcJointModule_a1141b35d0c53d1f4cca107919c1c861e}} 
+double \hyperlink{classblmc__robots_1_1BlmcJointModule_a1141b35d0c53d1f4cca107919c1c861e}{position\+\_\+control\+\_\+gain\+\_\+d\+\_\+}
+\begin{DoxyCompactList}\small\item\em D gain of the position PD controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_ab7a861d47a808b14e43af7f58ca56284}\label{classblmc__robots_1_1BlmcJointModule_ab7a861d47a808b14e43af7f58ca56284}} 
+struct \hyperlink{structblmc__robots_1_1HomingState}{Homing\+State} {\bfseries homing\+\_\+state\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classblmc__robots_1_1BlmcJointModule}{Blmc\+Joint\+Module} class is containing the joint information. 
+
+It is here to help converting the data from the motor side to the joint side. It also allows the calibration of the joint position during initialization. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a09a0b8815e6c447e3ee6632ade940e0b}\label{classblmc__robots_1_1BlmcJointModule_a09a0b8815e6c447e3ee6632ade940e0b}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!Blmc\+Joint\+Module@{Blmc\+Joint\+Module}}
+\index{Blmc\+Joint\+Module@{Blmc\+Joint\+Module}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{Blmc\+Joint\+Module()}{BlmcJointModule()}}
+{\footnotesize\ttfamily blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::\+Blmc\+Joint\+Module (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Motor\+Interface $>$}]{motor,  }\item[{const double \&}]{motor\+\_\+constant,  }\item[{const double \&}]{gear\+\_\+ratio,  }\item[{const double \&}]{zero\+\_\+angle,  }\item[{const bool \&}]{reverse\+\_\+polarity = {\ttfamily false},  }\item[{const double \&}]{max\+\_\+current = {\ttfamily 2.1} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classblmc__robots_1_1BlmcJointModule}{Blmc\+Joint\+Module} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & is the C++ object allowing us to send commands and receive sensor data. \\
+\hline
+{\em motor\+\_\+constant} & ( $ k $) is the torque constant of the motor $ \tau_{motor} = k * i_{motor} $ \\
+\hline
+{\em gear\+\_\+ratio} & is the gear ratio between the motor and the joint. \\
+\hline
+{\em zero\+\_\+angle} & is the angle between the closest positive motor index and the zero configuration. \\
+\hline
+{\em reverse\+\_\+polarity} & \\
+\hline
+{\em max\+\_\+current} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a17a1da041dae31e9a16f955722c36d6c}\label{classblmc__robots_1_1BlmcJointModule_a17a1da041dae31e9a16f955722c36d6c}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{calibrate()}{calibrate()}}
+{\footnotesize\ttfamily bool blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::calibrate (\begin{DoxyParamCaption}\item[{double \&}]{angle\+\_\+zero\+\_\+to\+\_\+index,  }\item[{double \&}]{index\+\_\+angle,  }\item[{bool}]{mechanical\+\_\+calibration = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+This method calibrate the joint position knowing the angle between the closest (in positive torque) motor index and the theoretical zero pose. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]!!!!!!! \end{DoxyRefDesc}
+Warning, this method should be called in a real time thread!
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a3100c088a17264562c67429334e3dbf2}\label{classblmc__robots_1_1BlmcJointModule_a3100c088a17264562c67429334e3dbf2}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!execute\+\_\+position\+\_\+controller@{execute\+\_\+position\+\_\+controller}}
+\index{execute\+\_\+position\+\_\+controller@{execute\+\_\+position\+\_\+controller}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{execute\+\_\+position\+\_\+controller()}{execute\_position\_controller()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::execute\+\_\+position\+\_\+controller (\begin{DoxyParamCaption}\item[{double}]{target\+\_\+position\+\_\+rad }\end{DoxyParamCaption}) const}
+
+
+
+Execute one iteration of the position controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+\_\+position\+\_\+rad} & Target position (rad).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Torque command (Nm). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a9fd53d7e340b4067f3505633e5a8a06d}\label{classblmc__robots_1_1BlmcJointModule_a9fd53d7e340b4067f3505633e5a8a06d}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+distance\+\_\+travelled\+\_\+during\+\_\+homing@{get\+\_\+distance\+\_\+travelled\+\_\+during\+\_\+homing}}
+\index{get\+\_\+distance\+\_\+travelled\+\_\+during\+\_\+homing@{get\+\_\+distance\+\_\+travelled\+\_\+during\+\_\+homing}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+distance\+\_\+travelled\+\_\+during\+\_\+homing()}{get\_distance\_travelled\_during\_homing()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+distance\+\_\+travelled\+\_\+during\+\_\+homing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get distance between start and end position of homing. 
+
+Compute the distance that the joint moved between initialization of homing and reaching the home position.
+
+This can be used to determine the home offset by first moving the joint to the desired zero position, then executing the homing and finally calling this function which will provide the desired home offset.
+
+\begin{DoxyReturn}{Returns}
+Distance between start and end position of homing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a53be7ff5c2b54c15813a68116e85747e}\label{classblmc__robots_1_1BlmcJointModule_a53be7ff5c2b54c15813a68116e85747e}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+max\+\_\+torque@{get\+\_\+max\+\_\+torque}}
+\index{get\+\_\+max\+\_\+torque@{get\+\_\+max\+\_\+torque}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+torque()}{get\_max\_torque()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+max\+\_\+torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the maximum admissible joint torque that can be applied. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a8c6419cfb80eb5986dffd982df18a817}\label{classblmc__robots_1_1BlmcJointModule_a8c6419cfb80eb5986dffd982df18a817}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+measured\+\_\+angle@{get\+\_\+measured\+\_\+angle}}
+\index{get\+\_\+measured\+\_\+angle@{get\+\_\+measured\+\_\+angle}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+measured\+\_\+angle()}{get\_measured\_angle()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+measured\+\_\+angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the measured angle of the joint. 
+
+\begin{DoxyReturn}{Returns}
+double (rad). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a47b6a71bb9c300d2398924403a6e7e3c}\label{classblmc__robots_1_1BlmcJointModule_a47b6a71bb9c300d2398924403a6e7e3c}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+measured\+\_\+index\+\_\+angle@{get\+\_\+measured\+\_\+index\+\_\+angle}}
+\index{get\+\_\+measured\+\_\+index\+\_\+angle@{get\+\_\+measured\+\_\+index\+\_\+angle}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+measured\+\_\+index\+\_\+angle()}{get\_measured\_index\_angle()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+measured\+\_\+index\+\_\+angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the measured index angle. 
+
+There is one index per motor rotation so there are gear\+\_\+ratio indexes per joint rotation.
+
+\begin{DoxyReturn}{Returns}
+double (rad). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_abb57fdffcc0222b192658239ef45ab63}\label{classblmc__robots_1_1BlmcJointModule_abb57fdffcc0222b192658239ef45ab63}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+measured\+\_\+torque@{get\+\_\+measured\+\_\+torque}}
+\index{get\+\_\+measured\+\_\+torque@{get\+\_\+measured\+\_\+torque}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+measured\+\_\+torque()}{get\_measured\_torque()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+measured\+\_\+torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the measured joint torque. 
+
+\begin{DoxyReturn}{Returns}
+double (Nm). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a6db4f8c98e9a3e931b19a98dc1339e27}\label{classblmc__robots_1_1BlmcJointModule_a6db4f8c98e9a3e931b19a98dc1339e27}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+measured\+\_\+velocity@{get\+\_\+measured\+\_\+velocity}}
+\index{get\+\_\+measured\+\_\+velocity@{get\+\_\+measured\+\_\+velocity}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+measured\+\_\+velocity()}{get\_measured\_velocity()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+measured\+\_\+velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the measured velocity of the joint. 
+
+This data is computed on board of the control card.
+
+\begin{DoxyReturn}{Returns}
+double (rad/s). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a219d4e433d03ea8a2bae115d5563d844}\label{classblmc__robots_1_1BlmcJointModule_a219d4e433d03ea8a2bae115d5563d844}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+motor\+\_\+measurement@{get\+\_\+motor\+\_\+measurement}}
+\index{get\+\_\+motor\+\_\+measurement@{get\+\_\+motor\+\_\+measurement}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+measurement()}{get\_motor\_measurement()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+motor\+\_\+measurement (\begin{DoxyParamCaption}\item[{const \hyperlink{common__header_8hpp_a1975c6bb47bc85dfc8edfe349c30dae1}{mi} \&}]{measurement\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get motor measurements and check if there are data or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em measurement\+\_\+id} & is the id of the measurement you want to get. check\+: blmc\+\_\+drivers\+::\+Motor\+Interface\+::\+Measurement\+Index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double the measurement. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_adf5e083076bdc53f24f14f0c22b9061b}\label{classblmc__robots_1_1BlmcJointModule_adf5e083076bdc53f24f14f0c22b9061b}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+motor\+\_\+measurement\+\_\+index@{get\+\_\+motor\+\_\+measurement\+\_\+index}}
+\index{get\+\_\+motor\+\_\+measurement\+\_\+index@{get\+\_\+motor\+\_\+measurement\+\_\+index}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+measurement\+\_\+index()}{get\_motor\_measurement\_index()}}
+{\footnotesize\ttfamily long int blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+motor\+\_\+measurement\+\_\+index (\begin{DoxyParamCaption}\item[{const \hyperlink{common__header_8hpp_a1975c6bb47bc85dfc8edfe349c30dae1}{mi} \&}]{measurement\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get the last motor measurement index for a specific data. 
+
+If there was no data yet, return NaN
+
+
+\begin{DoxyParams}{Parameters}
+{\em measurement\+\_\+id} & is the id of the measurement you want to get. check\+: blmc\+\_\+drivers\+::\+Motor\+Interface\+::\+Measurement\+Index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double the measurement. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_af3f19ffc942e9b49dce892b207d3d476}\label{classblmc__robots_1_1BlmcJointModule_af3f19ffc942e9b49dce892b207d3d476}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+sent\+\_\+torque@{get\+\_\+sent\+\_\+torque}}
+\index{get\+\_\+sent\+\_\+torque@{get\+\_\+sent\+\_\+torque}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+sent\+\_\+torque()}{get\_sent\_torque()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+sent\+\_\+torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sent joint torque. 
+
+\begin{DoxyReturn}{Returns}
+double (Nm). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_ad6fab5bc289e01a34374ea8031f5383e}\label{classblmc__robots_1_1BlmcJointModule_ad6fab5bc289e01a34374ea8031f5383e}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!get\+\_\+zero\+\_\+angle@{get\+\_\+zero\+\_\+angle}}
+\index{get\+\_\+zero\+\_\+angle@{get\+\_\+zero\+\_\+angle}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{get\+\_\+zero\+\_\+angle()}{get\_zero\_angle()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::get\+\_\+zero\+\_\+angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the zero\+\_\+angle\+\_\+. 
+
+These are the angle between the starting pose and the theoretical zero pose.
+
+\begin{DoxyReturn}{Returns}
+double (rad). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_aa534604b5ead6a3eee5c47a9454f6834}\label{classblmc__robots_1_1BlmcJointModule_aa534604b5ead6a3eee5c47a9454f6834}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!init\+\_\+homing@{init\+\_\+homing}}
+\index{init\+\_\+homing@{init\+\_\+homing}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{init\+\_\+homing()}{init\_homing()}}
+{\footnotesize\ttfamily void blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::init\+\_\+homing (\begin{DoxyParamCaption}\item[{int}]{joint\+\_\+id,  }\item[{double}]{search\+\_\+distance\+\_\+limit\+\_\+rad,  }\item[{double}]{home\+\_\+offset\+\_\+rad,  }\item[{double}]{profile\+\_\+step\+\_\+size\+\_\+rad = {\ttfamily 0.001} }\end{DoxyParamCaption})}
+
+
+
+Initialize the homing procedure. 
+
+This has to be called before \hyperlink{classblmc__robots_1_1BlmcJointModule_abb2712542f3c340bc0ecf76bd343b6b3}{update\+\_\+homing()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+id} & ID of the joint. This is only used for debug prints. \\
+\hline
+{\em search\+\_\+distance\+\_\+limit\+\_\+rad} & Maximum distance the motor moves while searching for the encoder index. Unit\+: radian. \\
+\hline
+{\em home\+\_\+offset\+\_\+rad} & Offset from home position to zero position. Unit\+: radian. \\
+\hline
+{\em profile\+\_\+step\+\_\+size\+\_\+rad} & Distance by which the target position of the position profile is changed in each step. Set to a negative value to search for the next encoder index in negative direction. Unit\+: radian. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a2b6886df9dc909854ff74c2ec21cbb34}\label{classblmc__robots_1_1BlmcJointModule_a2b6886df9dc909854ff74c2ec21cbb34}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!joint\+\_\+torque\+\_\+to\+\_\+motor\+\_\+current@{joint\+\_\+torque\+\_\+to\+\_\+motor\+\_\+current}}
+\index{joint\+\_\+torque\+\_\+to\+\_\+motor\+\_\+current@{joint\+\_\+torque\+\_\+to\+\_\+motor\+\_\+current}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{joint\+\_\+torque\+\_\+to\+\_\+motor\+\_\+current()}{joint\_torque\_to\_motor\_current()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::joint\+\_\+torque\+\_\+to\+\_\+motor\+\_\+current (\begin{DoxyParamCaption}\item[{double}]{torque }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Convert from joint torque to motor current. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em torque} & is the input joint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double the equivalent motor current. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_aa300e4c820a6cd356ac77ba50829c50f}\label{classblmc__robots_1_1BlmcJointModule_aa300e4c820a6cd356ac77ba50829c50f}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!motor\+\_\+current\+\_\+to\+\_\+joint\+\_\+torque@{motor\+\_\+current\+\_\+to\+\_\+joint\+\_\+torque}}
+\index{motor\+\_\+current\+\_\+to\+\_\+joint\+\_\+torque@{motor\+\_\+current\+\_\+to\+\_\+joint\+\_\+torque}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{motor\+\_\+current\+\_\+to\+\_\+joint\+\_\+torque()}{motor\_current\_to\_joint\_torque()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::motor\+\_\+current\+\_\+to\+\_\+joint\+\_\+torque (\begin{DoxyParamCaption}\item[{double}]{current }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Convert from motor current to joint torque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & is the motor current. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double is the equivalent joint torque. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_af0484dd9efc47843706fc71d4351bdbd}\label{classblmc__robots_1_1BlmcJointModule_af0484dd9efc47843706fc71d4351bdbd}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!send\+\_\+torque@{send\+\_\+torque}}
+\index{send\+\_\+torque@{send\+\_\+torque}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{send\+\_\+torque()}{send\_torque()}}
+{\footnotesize\ttfamily void blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::send\+\_\+torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+send the joint torque to the motor. 
+
+The conversion between joint torque and motor current is done automatically. \mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a137da65771a8628db4692e3bfc924f07}\label{classblmc__robots_1_1BlmcJointModule_a137da65771a8628db4692e3bfc924f07}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!set\+\_\+joint\+\_\+polarity@{set\+\_\+joint\+\_\+polarity}}
+\index{set\+\_\+joint\+\_\+polarity@{set\+\_\+joint\+\_\+polarity}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{set\+\_\+joint\+\_\+polarity()}{set\_joint\_polarity()}}
+{\footnotesize\ttfamily void blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::set\+\_\+joint\+\_\+polarity (\begin{DoxyParamCaption}\item[{const bool \&}]{reverse\+\_\+polarity }\end{DoxyParamCaption})}
+
+
+
+Define if the motor should turn clock-\/wize or counter clock-\/wize. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reverse\+\_\+polarity} & true\+:reverse rotation axis, false\+:do nothing. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_a464ab2a846630eba6582d09895df2852}\label{classblmc__robots_1_1BlmcJointModule_a464ab2a846630eba6582d09895df2852}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!set\+\_\+position\+\_\+control\+\_\+gains@{set\+\_\+position\+\_\+control\+\_\+gains}}
+\index{set\+\_\+position\+\_\+control\+\_\+gains@{set\+\_\+position\+\_\+control\+\_\+gains}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{set\+\_\+position\+\_\+control\+\_\+gains()}{set\_position\_control\_gains()}}
+{\footnotesize\ttfamily void blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::set\+\_\+position\+\_\+control\+\_\+gains (\begin{DoxyParamCaption}\item[{double}]{kp,  }\item[{double}]{kd }\end{DoxyParamCaption})}
+
+
+
+Set control gains for PD position controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & P gain ( (Nm) / rad ). \\
+\hline
+{\em kd} & D gain ( (Nm) / (rad/s) ). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_adeb28005a7160ead68603aed4262508f}\label{classblmc__robots_1_1BlmcJointModule_adeb28005a7160ead68603aed4262508f}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!set\+\_\+torque@{set\+\_\+torque}}
+\index{set\+\_\+torque@{set\+\_\+torque}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{set\+\_\+torque()}{set\_torque()}}
+{\footnotesize\ttfamily void blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::set\+\_\+torque (\begin{DoxyParamCaption}\item[{const double \&}]{desired\+\_\+torque }\end{DoxyParamCaption})}
+
+
+
+Set the joint torque to be sent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired\+\_\+torque} & (Nm) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_ae59680a947539306e391a12ad2d071bb}\label{classblmc__robots_1_1BlmcJointModule_ae59680a947539306e391a12ad2d071bb}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!set\+\_\+zero\+\_\+angle@{set\+\_\+zero\+\_\+angle}}
+\index{set\+\_\+zero\+\_\+angle@{set\+\_\+zero\+\_\+angle}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{set\+\_\+zero\+\_\+angle()}{set\_zero\_angle()}}
+{\footnotesize\ttfamily void blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::set\+\_\+zero\+\_\+angle (\begin{DoxyParamCaption}\item[{const double \&}]{zero\+\_\+angle }\end{DoxyParamCaption})}
+
+
+
+Set the zero\+\_\+angle. 
+
+The zero\+\_\+angle is the angle between the closest positive motor index and the zero configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zero\+\_\+angle} & (rad) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_abb2712542f3c340bc0ecf76bd343b6b3}\label{classblmc__robots_1_1BlmcJointModule_abb2712542f3c340bc0ecf76bd343b6b3}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!update\+\_\+homing@{update\+\_\+homing}}
+\index{update\+\_\+homing@{update\+\_\+homing}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{update\+\_\+homing()}{update\_homing()}}
+{\footnotesize\ttfamily \hyperlink{blmc__joint__module_8hpp_aa1075809042ff261e4b0a20d161448b6}{Homing\+Return\+Code} blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::update\+\_\+homing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Perform one step of homing on encoder index. 
+
+Searches for the next encoder index in positive direction and, when found, sets it as home position.
+
+Only performs one step, so this method needs to be called in a loop. This method only set the control, one {\itshape M\+U\+ST} send the control for the motor after calling this method.
+
+The motor is moved with a position profile until either the encoder index is reached or the search distance limit is exceeded. The position is controlled with a simple PD controller.
+
+If the encoder index is found, its position is used as home position. The zero position is offset from the home position by adding the \char`\"{}home
+offset\char`\"{} to it (i.\+e. zero = home pos. + home offset). If the search distance limit is reached before the encoder index occurs, the homing fails.
+
+\begin{DoxyReturn}{Returns}
+Status of the homing procedure. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_af013668d69e7cea2dcc21da8c1c9e4e6}\label{classblmc__robots_1_1BlmcJointModule_af013668d69e7cea2dcc21da8c1c9e4e6}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!gear\+\_\+ratio\+\_\+@{gear\+\_\+ratio\+\_\+}}
+\index{gear\+\_\+ratio\+\_\+@{gear\+\_\+ratio\+\_\+}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{gear\+\_\+ratio\+\_\+}{gear\_ratio\_}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::gear\+\_\+ratio\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This correspond to the reduction ( $ \beta $) between the motor rotation and the joint. 
+
+$ \theta_{joint} = \theta_{motor} / \beta $ \mbox{\Hypertarget{classblmc__robots_1_1BlmcJointModule_af10e1b734a9d4735301962fd9f9c413f}\label{classblmc__robots_1_1BlmcJointModule_af10e1b734a9d4735301962fd9f9c413f}} 
+\index{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}!max\+\_\+current\+\_\+@{max\+\_\+current\+\_\+}}
+\index{max\+\_\+current\+\_\+@{max\+\_\+current\+\_\+}!blmc\+\_\+robots\+::\+Blmc\+Joint\+Module@{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}}
+\subsubsection{\texorpdfstring{max\+\_\+current\+\_\+}{max\_current\_}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+::max\+\_\+current\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This is the maximum current we can apply during one experiment. 
+
+The program shut down if this value is achieved. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+robots/\hyperlink{blmc__joint__module_8hpp}{blmc\+\_\+joint\+\_\+module.\+hpp}\item 
+src/\hyperlink{blmc__joint__module_8cpp}{blmc\+\_\+joint\+\_\+module.\+cpp}\end{DoxyCompactItemize}

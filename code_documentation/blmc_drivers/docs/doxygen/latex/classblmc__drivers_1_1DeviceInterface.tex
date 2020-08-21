@@ -1,0 +1,36 @@
+\hypertarget{classblmc__drivers_1_1DeviceInterface}{}\section{blmc\+\_\+drivers\+:\+:Device\+Interface Class Reference}
+\label{classblmc__drivers_1_1DeviceInterface}\index{blmc\+\_\+drivers\+::\+Device\+Interface@{blmc\+\_\+drivers\+::\+Device\+Interface}}
+
+
+this class exists purely for logical reasons, it does not in itself implement anything.  
+
+
+
+
+{\ttfamily \#include $<$device\+\_\+interface.\+hpp$>$}
+
+
+
+Inheritance diagram for blmc\+\_\+drivers\+:\+:Device\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classblmc__drivers_1_1DeviceInterface__inherit__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+this class exists purely for logical reasons, it does not in itself implement anything. 
+
+the purpose of this class is to provide guidelines how a device should be implemented. any device has a number of inputs and outputs, see the following diagram for an example with two inputs and outputs.  generally, we expect the following functions to be implemented\+:
+\begin{DoxyItemize}
+\item a set function for each input (several inputs may share a set function which takes an index argument).
+\item a send\+\_\+if\+\_\+input\+\_\+changed() function which will send the inputs to the device if any of them have changed.
+\item functions to access the current inputs and outputs, as well as the inputs which have been sent to the device. rather than just returning the latest elements, these function should return a Threadsafe\+Timeseries of these objects, such that the user can synchronize (e.\+g. wait for the next element or step through them one by one such that none of them is missed) 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+drivers/devices/\hyperlink{device__interface_8hpp}{device\+\_\+interface.\+hpp}\end{DoxyCompactItemize}

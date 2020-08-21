@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structrobot__interfaces_1_1Status" kind="struct" language="C++" prot="public">
+    <compoundname>robot_interfaces::Status</compoundname>
+    <basecompoundref refid="classrobot__interfaces_1_1Loggable" prot="public" virt="non-virtual">robot_interfaces::Loggable</basecompoundref>
+    <includes refid="status_8hpp" local="no">status.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="structrobot__interfaces_1_1Status_1a88f1cb8387648815ca75754985bdb3b6" prot="public" static="no">
+        <name>ErrorStatus</name>
+        <enumvalue id="structrobot__interfaces_1_1Status_1a88f1cb8387648815ca75754985bdb3b6ad306b6fdee05fe87455110ddf6501e6c" prot="public">
+          <name>NO_ERROR</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Indicates that there is no error. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structrobot__interfaces_1_1Status_1a88f1cb8387648815ca75754985bdb3b6a5cd5516428d081129a4aea1db455272e" prot="public">
+          <name>DRIVER_ERROR</name>
+          <briefdescription>
+<para>Error reported from the <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref>. </para>          </briefdescription>
+          <detaileddescription>
+<para>An error reported by the low level robot driver (see <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref>). This is depending on the driver implementation. It can, for example, be used to report some hardware failure). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structrobot__interfaces_1_1Status_1a88f1cb8387648815ca75754985bdb3b6ac44598cc3395b73e9fd2866f42945bd3" prot="public">
+          <name>BACKEND_ERROR</name>
+          <briefdescription>
+<para>Error from the <ref refid="classrobot__interfaces_1_1RobotBackend" kindref="compound">RobotBackend</ref>. </para>          </briefdescription>
+          <detaileddescription>
+<para>An error which is issued by the back end itself, for example if no new action is provided and the allowed number of repetitions is exceeded. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Different types of errors that can occur in the backend. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="34" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="33" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrobot__interfaces_1_1Status_1a8ccb682cd2ba81059991f3b0b9ff0c00" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t robot_interfaces::Status::action_repetitions</definition>
+        <argsstring></argsstring>
+        <name>action_repetitions</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Number of times the current action has been repeated. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the back end wants to apply the next action but no new action was provided by the user in time, it may (depending on configuration) repeat the previous action. Each time this happens, <computeroutput>action_repetitions</computeroutput> is increased by one. Once a new action is provided, it will be reset to zero.</para><para>See also <ref refid="md_docs_timeseries_1next-action-not-in-time" kindref="member">When Next Action Is Not Provided In Time</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="68" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrobot__interfaces_1_1Status_1a80ffe66121d425d48386b39984cd4c7b" prot="public" static="no" mutable="no">
+        <type><ref refid="structrobot__interfaces_1_1Status_1a88f1cb8387648815ca75754985bdb3b6" kindref="member">ErrorStatus</ref></type>
+        <definition>ErrorStatus robot_interfaces::Status::error_status</definition>
+        <argsstring></argsstring>
+        <name>error_status</name>
+        <initializer>= <ref refid="structrobot__interfaces_1_1Status_1a88f1cb8387648815ca75754985bdb3b6ad306b6fdee05fe87455110ddf6501e6c" kindref="member">ErrorStatus::NO_ERROR</ref></initializer>
+        <briefdescription>
+<para>Indicates if there is an error and, if yes, in which component. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>If there is an error reported in the status, the robot is not in an operational state anymore. Trying to append another action in the <ref refid="classrobot__interfaces_1_1RobotFrontend" kindref="compound">RobotFrontend</ref> will result in an exception in this case.</para></simplesect>
+<simplesect kind="see"><para><ref refid="structrobot__interfaces_1_1Status_1a7da10fb73cd19f2840c438d321eac744" kindref="member">error_message</ref> for more information on the error. </para></simplesect>
+<simplesect kind="see"><para><ref refid="structrobot__interfaces_1_1Status_1a83507b0921dc1e67e690b34daa3bcbc3" kindref="member">has_error()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="80" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrobot__interfaces_1_1Status_1a7da10fb73cd19f2840c438d321eac744" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string robot_interfaces::Status::error_message</definition>
+        <argsstring></argsstring>
+        <name>error_message</name>
+        <briefdescription>
+<para>Human-readable message describing the error. </para>        </briefdescription>
+        <detaileddescription>
+<para>Value is undefined if <computeroutput>error_status == NO_ERROR</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="87" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structrobot__interfaces_1_1Status_1aa5bbec49d6faba7507abc8772dec505d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::Status::set_error</definition>
+        <argsstring>(ErrorStatus error_type, const std::string &amp;message)</argsstring>
+        <name>set_error</name>
+        <param>
+          <type><ref refid="structrobot__interfaces_1_1Status_1a88f1cb8387648815ca75754985bdb3b6" kindref="member">ErrorStatus</ref></type>
+          <declname>error_type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Set error. </para>        </briefdescription>
+        <detaileddescription>
+<para>If another error was set before, the old one is kept and the new one ignored.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the error. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="98" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="98" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1Status_1a83507b0921dc1e67e690b34daa3bcbc3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool robot_interfaces::Status::has_error</definition>
+        <argsstring>() const</argsstring>
+        <name>has_error</name>
+        <briefdescription>
+<para>Check if an error is set. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>If there is an error reported in the status, the robot is not in an operational state anymore. Trying to append another action in the <ref refid="classrobot__interfaces_1_1RobotFrontend" kindref="compound">RobotFrontend</ref> will result in an exception in this case.</para></simplesect>
+See <ref refid="structrobot__interfaces_1_1Status_1a80ffe66121d425d48386b39984cd4c7b" kindref="member">error_status</ref> and <ref refid="structrobot__interfaces_1_1Status_1a7da10fb73cd19f2840c438d321eac744" kindref="member">error_message</ref> for more details on the error. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="118" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="118" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1Status_1a5531f83e2ef30f7629548194b4e3e9da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Archive</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void robot_interfaces::Status::serialize</definition>
+        <argsstring>(Archive &amp;archive)</argsstring>
+        <name>serialize</name>
+        <param>
+          <type>Archive &amp;</type>
+          <declname>archive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="124" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1Status_1a2cd6543deb86d878ba43153c18d2fadb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; robot_interfaces::Status::get_name</definition>
+        <argsstring>() override</argsstring>
+        <name>get_name</name>
+        <reimplements refid="classrobot__interfaces_1_1Loggable_1a19635ebc166379f11fe4c8e58153243a">get_name</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="129" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="structrobot__interfaces_1_1Status_1af530134f33fa21c02d1157636c385fa3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; std::vector&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;double&gt; &gt; robot_interfaces::Status::get_data</definition>
+        <argsstring>() override</argsstring>
+        <name>get_data</name>
+        <reimplements refid="classrobot__interfaces_1_1Loggable_1a28ffee45cf66a84d16b2c907ed10367c">get_data</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/status.hpp" line="134" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="134" bodyend="140"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="structrobot__interfaces_1_1Status" kindref="compound">Status</ref> information from the backend. </para>    </briefdescription>
+    <detaileddescription>
+<para>Used to report status information that is not directly robot-related from the backend to the frontend. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="100">
+        <label>robot_interfaces::Loggable</label>
+        <link refid="classrobot__interfaces_1_1Loggable"/>
+      </node>
+      <node id="99">
+        <label>robot_interfaces::Status</label>
+        <link refid="structrobot__interfaces_1_1Status"/>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="102">
+        <label>robot_interfaces::Loggable</label>
+        <link refid="classrobot__interfaces_1_1Loggable"/>
+      </node>
+      <node id="101">
+        <label>robot_interfaces::Status</label>
+        <link refid="structrobot__interfaces_1_1Status"/>
+        <childnode refid="102" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/robot_interfaces/status.hpp" line="31" column="1" bodyfile="include/robot_interfaces/status.hpp" bodystart="30" bodyend="141"/>
+    <listofallmembers>
+      <member refid="structrobot__interfaces_1_1Status_1a8ccb682cd2ba81059991f3b0b9ff0c00" prot="public" virt="non-virtual"><scope>robot_interfaces::Status</scope><name>action_repetitions</name></member>
+      <member refid="structrobot__interfaces_1_1Status_1a7da10fb73cd19f2840c438d321eac744" prot="public" virt="non-virtual"><scope>robot_interfaces::Status</scope><name>error_message</name></member>
+      <member refid="structrobot__interfaces_1_1Status_1a80ffe66121d425d48386b39984cd4c7b" prot="public" virt="non-virtual"><scope>robot_interfaces::Status</scope><name>error_status</name></member>
+      <member refid="structrobot__interfaces_1_1Status_1a88f1cb8387648815ca75754985bdb3b6" prot="public" virt="non-virtual"><scope>robot_interfaces::Status</scope><name>ErrorStatus</name></member>
+      <member refid="structrobot__interfaces_1_1Status_1af530134f33fa21c02d1157636c385fa3" prot="public" virt="virtual"><scope>robot_interfaces::Status</scope><name>get_data</name></member>
+      <member refid="structrobot__interfaces_1_1Status_1a2cd6543deb86d878ba43153c18d2fadb" prot="public" virt="virtual"><scope>robot_interfaces::Status</scope><name>get_name</name></member>
+      <member refid="structrobot__interfaces_1_1Status_1a83507b0921dc1e67e690b34daa3bcbc3" prot="public" virt="non-virtual"><scope>robot_interfaces::Status</scope><name>has_error</name></member>
+      <member refid="structrobot__interfaces_1_1Status_1a5531f83e2ef30f7629548194b4e3e9da" prot="public" virt="non-virtual"><scope>robot_interfaces::Status</scope><name>serialize</name></member>
+      <member refid="structrobot__interfaces_1_1Status_1aa5bbec49d6faba7507abc8772dec505d" prot="public" virt="non-virtual"><scope>robot_interfaces::Status</scope><name>set_error</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

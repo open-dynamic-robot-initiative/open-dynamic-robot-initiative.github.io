@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="example_2evaluate__policy_8py" kind="file" language="Python">
+    <compoundname>evaluate_policy.py</compoundname>
+    <innerclass refid="classevaluate__policy_1_1RandomPolicy" prot="public">evaluate_policy::RandomPolicy</innerclass>
+    <innerclass refid="classevaluate__policy_1_1PPOPolicy" prot="public">evaluate_policy::PPOPolicy</innerclass>
+    <innernamespace refid="namespaceevaluate__policy">evaluate_policy</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;Example<sp/>evaluation<sp/>script<sp/>to<sp/>evaluate<sp/>a<sp/>policy.</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">This<sp/>is<sp/>an<sp/>example<sp/>evaluation<sp/>script<sp/>which<sp/>loads<sp/>a<sp/>policy<sp/>trained<sp/>with<sp/>PPO.<sp/>If</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">this<sp/>script<sp/>were<sp/>moved<sp/>into<sp/>the<sp/>top<sp/>trifinger_simulation<sp/>folder<sp/>(since<sp/>this<sp/>is<sp/>where</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">we<sp/>will<sp/>execute<sp/>the<sp/>trifinger_evaluate<sp/>command),<sp/>it<sp/>would<sp/>consistute<sp/>a<sp/>valid</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">submission<sp/>(naturally,<sp/>imports<sp/>below<sp/>would<sp/>have<sp/>to<sp/>be<sp/>adjusted<sp/>accordingly).</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">This<sp/>script<sp/>will<sp/>be<sp/>executed<sp/>in<sp/>an<sp/>automated<sp/>procedure.<sp/><sp/>For<sp/>this<sp/>to<sp/>work,<sp/>make</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">sure<sp/>you<sp/>do<sp/>not<sp/>change<sp/>the<sp/>overall<sp/>structure<sp/>of<sp/>the<sp/>script!</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">This<sp/>script<sp/>expects<sp/>the<sp/>following<sp/>arguments<sp/>in<sp/>the<sp/>given<sp/>order:</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"><sp/>-<sp/>Difficulty<sp/>level<sp/>(needed<sp/>for<sp/>reward<sp/>computation)</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral"><sp/>-<sp/>initial<sp/>pose<sp/>of<sp/>the<sp/>cube<sp/>(as<sp/>JSON<sp/>string)</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"><sp/>-<sp/>goal<sp/>pose<sp/>of<sp/>the<sp/>cube<sp/>(as<sp/>JSON<sp/>string)</highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"><sp/>-<sp/>file<sp/>to<sp/>which<sp/>the<sp/>action<sp/>log<sp/>is<sp/>written</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral">It<sp/>is<sp/>then<sp/>expected<sp/>to<sp/>initialize<sp/>the<sp/>environment<sp/>with<sp/>the<sp/>given<sp/>initial<sp/>pose</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral">and<sp/>execute<sp/>exactly<sp/>one<sp/>episode<sp/>with<sp/>the<sp/>policy<sp/>that<sp/>is<sp/>to<sp/>be<sp/>evaluated.</highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral">When<sp/>finished,<sp/>the<sp/>action<sp/>log,<sp/>which<sp/>is<sp/>created<sp/>by<sp/>the<sp/>TriFingerPlatform<sp/>class,</highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral">is<sp/>written<sp/>to<sp/>the<sp/>specified<sp/>file.<sp/><sp/>This<sp/>log<sp/>file<sp/>is<sp/>crucial<sp/>as<sp/>it<sp/>is<sp/>used<sp/>to</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral">evaluate<sp/>the<sp/>actual<sp/>performance<sp/>of<sp/>the<sp/>policy.</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>gym</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacetrifinger__simulation_1_1gym__wrapper_1_1envs" kindref="compound">trifinger_simulation.gym_wrapper.envs</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>cube_env</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacetrifinger__simulation_1_1tasks" kindref="compound">trifinger_simulation.tasks</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>move_cube</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>example_pushing_training_env<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ExamplePushingTrainingEnv</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>example_pushing_training_env<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>FlatObservationWrapper</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>stable_baselines<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>PPO2</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">RandomPolicy:</highlight></codeline>
+<codeline lineno="40" refid="classevaluate__policy_1_1RandomPolicy" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Dummy<sp/>policy<sp/>which<sp/>uses<sp/>random<sp/>actions.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>action_space):</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classevaluate__policy_1_1RandomPolicy_1adfcfaa59da2ab4aed58a1cd95f99b7d8" kindref="member">action_space</ref><sp/>=<sp/>action_space</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">predict(self,<sp/>observation):</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classevaluate__policy_1_1RandomPolicy_1adfcfaa59da2ab4aed58a1cd95f99b7d8" kindref="member">action_space</ref>.sample()</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classevaluate__policy_1_1PPOPolicy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classevaluate__policy_1_1PPOPolicy" kindref="compound">PPOPolicy</ref>:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>path):</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classevaluate__policy_1_1PPOPolicy_1a8d4650b85dad2525dbc7dd6fd34b61ee" kindref="member">ppo_policy</ref><sp/>=<sp/>PPO2.load(path)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">predict(self,<sp/>observation):</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classevaluate__policy_1_1PPOPolicy_1a8d4650b85dad2525dbc7dd6fd34b61ee" kindref="member">ppo_policy</ref>.predict(observation,<sp/>deterministic=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)[0]</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">main():</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>difficulty<sp/>=<sp/>int(sys.argv[1])</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initial_pose_json<sp/>=<sp/>sys.argv[2]</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal_pose_json<sp/>=<sp/>sys.argv[3]</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output_file<sp/>=<sp/>sys.argv[4]</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal"><sp/>IndexError:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Incorrect<sp/>number<sp/>of<sp/>arguments.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Usage:\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\tevaluate_policy.py<sp/>&lt;difficulty_level&gt;<sp/>&lt;initial_pose&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>&lt;goal_pose&gt;<sp/>&lt;output_file&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.exit(1)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>the<sp/>poses<sp/>are<sp/>passed<sp/>as<sp/>JSON<sp/>strings,<sp/>so<sp/>they<sp/>need<sp/>to<sp/>be<sp/>converted<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>initial_pose<sp/>=<sp/>move_cube.Pose.from_json(initial_pose_json)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>goal_pose<sp/>=<sp/>move_cube.Pose.from_json(goal_pose_json)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>create<sp/>a<sp/>FixedInitializer<sp/>with<sp/>the<sp/>given<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>initializer<sp/>=<sp/>cube_env.FixedInitializer(</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>difficulty,<sp/>initial_pose,<sp/>goal_pose</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>if<sp/>difficulty<sp/>==<sp/>1<sp/>(i.e.<sp/>pushing),<sp/>we<sp/>load<sp/>the<sp/>policy<sp/>we<sp/>trained<sp/>for<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>task.<sp/>otherwise,<sp/>we<sp/>just<sp/>use<sp/>the<sp/>RandomPolicy<sp/>as<sp/>placeholder.<sp/>Naturally,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>when<sp/>you<sp/>submit<sp/>you<sp/>would<sp/>have<sp/>a<sp/>policy<sp/>for<sp/>each<sp/>difficulty<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>difficulty<sp/>==<sp/>1:</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>we<sp/>create<sp/>the<sp/>same<sp/>env<sp/>as<sp/>we<sp/>used<sp/>for<sp/>training<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>train_pushing_ppo.py,<sp/>such<sp/>that<sp/>action<sp/>and<sp/>observation<sp/>space<sp/>remain</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>coherent<sp/>with<sp/>the<sp/>policy.<sp/>however,<sp/>unlike<sp/>during<sp/><sp/>training,<sp/>we<sp/>set<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>initialization<sp/>using<sp/>the<sp/>initializer,<sp/>since<sp/>this<sp/>is<sp/>what&apos;s<sp/>expected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>during<sp/>evaluation.<sp/>if<sp/>you<sp/>do<sp/>not<sp/>use<sp/>the<sp/>initializer,<sp/>or<sp/>modify<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>standard<sp/>CubeEnv<sp/>in<sp/>any<sp/>way<sp/>which<sp/>will<sp/>affect<sp/>the<sp/>simulation<sp/>(i.e.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>affect<sp/>the<sp/>state<sp/>action<sp/>trajectories),<sp/>the<sp/>action<sp/>trajectories<sp/>you</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>compute<sp/>will<sp/>not<sp/>make<sp/>sense.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>env<sp/>=<sp/><ref refid="classexample__pushing__training__env_1_1ExamplePushingTrainingEnv" kindref="compound">ExamplePushingTrainingEnv</ref>(</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initializer=initializer,<sp/>frameskip=3,<sp/>visualization=</highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>env<sp/>=<sp/><ref refid="classexample__pushing__training__env_1_1FlatObservationWrapper" kindref="compound">FlatObservationWrapper</ref>(env)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>we<sp/>load<sp/>the<sp/>trained<sp/>policy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>policy_path<sp/>=<sp/>os.path.join(</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;./training_checkpoints&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;model_78000000_steps&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>policy<sp/>=<sp/><ref refid="classevaluate__policy_1_1PPOPolicy" kindref="compound">PPOPolicy</ref>(policy_path)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>env<sp/>=<sp/>gym.make(</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;trifinger_simulation.gym_wrapper:real_robot_challenge_phase_1-v1&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initializer=initializer,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>action_type=cube_env.ActionType.POSITION,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>visualization=</highlight><highlight class="keyword">False</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>policy<sp/>=<sp/><ref refid="classevaluate__policy_1_1RandomPolicy" kindref="compound">RandomPolicy</ref>(env.action_space)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Execute<sp/>one<sp/>episode.<sp/><sp/>Make<sp/>sure<sp/>that<sp/>the<sp/>number<sp/>of<sp/>simulation<sp/>steps</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>matches<sp/>with<sp/>the<sp/>episode<sp/>length<sp/>of<sp/>the<sp/>task.<sp/><sp/>When<sp/>using<sp/>the<sp/>default<sp/>Gym</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>environment,<sp/>this<sp/>is<sp/>the<sp/>case<sp/>when<sp/>looping<sp/>until<sp/>is_done<sp/>==<sp/>True.<sp/><sp/>Make</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>sure<sp/>to<sp/>adjust<sp/>this<sp/>in<sp/>case<sp/>your<sp/>custom<sp/>environment<sp/>behaves<sp/>differently!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>is_done<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>observation<sp/>=<sp/>env.reset()</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>accumulated_reward<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>is_done:</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>action<sp/>=<sp/>policy.predict(observation)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observation,<sp/>reward,<sp/>is_done,<sp/>info<sp/>=<sp/>env.step(action)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accumulated_reward<sp/>+=<sp/>reward</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Accumulated<sp/>reward:<sp/>{}&quot;</highlight><highlight class="normal">.format(accumulated_reward))</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>store<sp/>the<sp/>log<sp/>for<sp/>evaluation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>env.platform.store_action_log(output_file)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>main()</highlight></codeline>
+    </programlisting>
+    <location file="example/evaluate_policy.py"/>
+  </compounddef>
+</doxygen>

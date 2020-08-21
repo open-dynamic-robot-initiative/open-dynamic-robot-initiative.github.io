@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacedemo__plain__torque__control" kind="namespace" language="Python">
+    <compoundname>demo_plain_torque_control</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="demo__plain__torque__control_8py_1aeebb99bb869d03be818bcc65712846fc" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float demo_plain_torque_control.time_step</definition>
+        <argsstring></argsstring>
+        <name>time_step</name>
+        <initializer>=  0.001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_plain_torque_control.py" line="10" column="1" bodyfile="demos/demo_plain_torque_control.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__plain__torque__control_8py_1a761d110367840d00ab313b8005df64b4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_plain_torque_control.finger</definition>
+        <argsstring></argsstring>
+        <name>finger</name>
+        <initializer>=  sim_finger.SimFinger(
+        finger_type=&quot;fingerone&quot;,
+        time_step=time_step,
+        enable_visualization=True,
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_plain_torque_control.py" line="12" column="1" bodyfile="demos/demo_plain_torque_control.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__plain__torque__control_8py_1ad897d86dbd6e76b9cc9dfc2a0f80e742" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_plain_torque_control.torque</definition>
+        <argsstring></argsstring>
+        <name>torque</name>
+        <initializer>=  np.array([0.0, 0.3, 0.3])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_plain_torque_control.py" line="21" column="1" bodyfile="demos/demo_plain_torque_control.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__plain__torque__control_8py_1abec17eab713bb381f7703631c3bfc6ed" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_plain_torque_control.action</definition>
+        <argsstring></argsstring>
+        <name>action</name>
+        <initializer>=  finger.Action(torque=torque)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_plain_torque_control.py" line="25" column="1" bodyfile="demos/demo_plain_torque_control.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__plain__torque__control_8py_1a9742deb4de19e3798d763da5e4aa1233" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_plain_torque_control.t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <initializer>=  finger.append_desired_action(action)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_plain_torque_control.py" line="26" column="1" bodyfile="demos/demo_plain_torque_control.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="demo__plain__torque__control_8py_1a5110aeac3742c8112ddfe976e0d9f3fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>demo_plain_torque_control.observation</definition>
+        <argsstring></argsstring>
+        <name>observation</name>
+        <initializer>=  finger.get_observation(t)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_plain_torque_control.py" line="27" column="1" bodyfile="demos/demo_plain_torque_control.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="demos/demo_plain_torque_control.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1SineTorqueControl" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::SineTorqueControl</compoundname>
+    <includes refid="sine__torque__control_8hpp" local="no">sine_torque_control.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1SineTorqueControl_1a9c0d1d276c8c1e6e483ca257ccd12c73" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceblmc__drivers_1ab975c3be3c53a93a10c491f07a132e2b" kindref="member">SafeMotor_ptr</ref> &gt;</type>
+        <definition>std::vector&lt;SafeMotor_ptr&gt; blmc_drivers::SineTorqueControl::motor_list_</definition>
+        <argsstring></argsstring>
+        <name>motor_list_</name>
+        <briefdescription>
+<para>This is list of motors. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="76" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SineTorqueControl_1a526b5a28129d498481c948edec6f4639" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread blmc_drivers::SineTorqueControl::rt_thread_</definition>
+        <argsstring></argsstring>
+        <name>rt_thread_</name>
+        <briefdescription>
+<para>This is the real time thread object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="80" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SineTorqueControl_1a96ab17f38eb5dba5792f1dfd0f5fac35" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::SineTorqueControl::stop_loop_</definition>
+        <argsstring></argsstring>
+        <name>stop_loop_</name>
+        <briefdescription>
+<para>managing the stopping of the loop </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="104" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SineTorqueControl_1a3dcbc9b83ae5e2956e7172a9197c7964" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned blmc_drivers::SineTorqueControl::memory_buffer_size_</definition>
+        <argsstring></argsstring>
+        <name>memory_buffer_size_</name>
+        <briefdescription>
+<para>memory_buffer_size_ is the max size of the memory buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="109" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SineTorqueControl_1a501ea19e046c51d747b638f13fafae96" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::SineTorqueControl::encoders_</definition>
+        <argsstring></argsstring>
+        <name>encoders_</name>
+        <briefdescription>
+<para>Encoder data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="114" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SineTorqueControl_1a93eed363c979a64cfe93fb19916c3a75" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::SineTorqueControl::velocities_</definition>
+        <argsstring></argsstring>
+        <name>velocities_</name>
+        <briefdescription>
+<para>Velocity data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="119" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SineTorqueControl_1a1519f05faec9972e15f48b3084debbc2" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::SineTorqueControl::currents_</definition>
+        <argsstring></argsstring>
+        <name>currents_</name>
+        <briefdescription>
+<para>current data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="124" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1SineTorqueControl_1a41969250f8847160f590a688bdf1e026" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::deque&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::deque&lt;double&gt; &gt; blmc_drivers::SineTorqueControl::control_buffer_</definition>
+        <argsstring></argsstring>
+        <name>control_buffer_</name>
+        <briefdescription>
+<para>control_buffer_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="129" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SineTorqueControl_1ab3fcdb73429a6e4a664dc294f80e6d3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SineTorqueControl::SineTorqueControl</definition>
+        <argsstring>(std::vector&lt; SafeMotor_ptr &gt; motor_list)</argsstring>
+        <name>SineTorqueControl</name>
+        <param>
+          <type>std::vector&lt; <ref refid="namespaceblmc__drivers_1ab975c3be3c53a93a10c491f07a132e2b" kindref="member">SafeMotor_ptr</ref> &gt;</type>
+          <declname>motor_list</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1SineTorqueControl" kindref="compound">SineTorqueControl</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor_slider_pairs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="27" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="27" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SineTorqueControl_1ae66565e4a8be3eb93d84f6dc0c825ce6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::SineTorqueControl::~SineTorqueControl</definition>
+        <argsstring>()</argsstring>
+        <name>~SineTorqueControl</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1SineTorqueControl" kindref="compound">SineTorqueControl</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="52" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="52" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SineTorqueControl_1aa884278b4fc524c8e6d93b23630aa967" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SineTorqueControl::start_loop</definition>
+        <argsstring>()</argsstring>
+        <name>start_loop</name>
+        <briefdescription>
+<para>This method is a helper to start the thread loop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="61" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1SineTorqueControl_1a1ecff8c52b3a8b0f6ece6818c42ec94a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SineTorqueControl::stop_loop</definition>
+        <argsstring>()</argsstring>
+        <name>stop_loop</name>
+        <briefdescription>
+<para>Stop the control and dump the data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="69" column="1" bodyfile="demos/sine_torque_control.cpp" bodystart="76" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SineTorqueControl_1a6882e509d6e81f09a70aa4214aeadf16" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE blmc_drivers::SineTorqueControl::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+<para>this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="86" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="86" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1SineTorqueControl_1a9f5f27389db0a303e2bae2f9c5135417" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::SineTorqueControl::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>this is a simple control loop which runs at a kilohertz. </para>        </briefdescription>
+        <detaileddescription>
+<para>it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/sine_torque_control.hpp" line="99" column="1" bodyfile="demos/sine_torque_control.cpp" bodystart="13" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is a basic PD controller to be used in the demos of this package. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="demos/sine_torque_control.hpp" line="20" column="1" bodyfile="demos/sine_torque_control.hpp" bodystart="19" bodyend="131"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a41969250f8847160f590a688bdf1e026" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>control_buffer_</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a1519f05faec9972e15f48b3084debbc2" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>currents_</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a501ea19e046c51d747b638f13fafae96" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>encoders_</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a6882e509d6e81f09a70aa4214aeadf16" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a9f5f27389db0a303e2bae2f9c5135417" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a3dcbc9b83ae5e2956e7172a9197c7964" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>memory_buffer_size_</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a9c0d1d276c8c1e6e483ca257ccd12c73" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>motor_list_</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a526b5a28129d498481c948edec6f4639" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>rt_thread_</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1ab3fcdb73429a6e4a664dc294f80e6d3c" prot="public" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>SineTorqueControl</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1aa884278b4fc524c8e6d93b23630aa967" prot="public" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>start_loop</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a1ecff8c52b3a8b0f6ece6818c42ec94a" prot="public" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>stop_loop</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a96ab17f38eb5dba5792f1dfd0f5fac35" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>stop_loop_</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1a93eed363c979a64cfe93fb19916c3a75" prot="private" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>velocities_</name></member>
+      <member refid="classblmc__drivers_1_1SineTorqueControl_1ae66565e4a8be3eb93d84f6dc0c825ce6" prot="public" virt="non-virtual"><scope>blmc_drivers::SineTorqueControl</scope><name>~SineTorqueControl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

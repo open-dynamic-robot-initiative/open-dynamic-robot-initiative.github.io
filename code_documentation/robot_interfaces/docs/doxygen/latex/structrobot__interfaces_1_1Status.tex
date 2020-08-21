@@ -1,0 +1,179 @@
+\hypertarget{structrobot__interfaces_1_1Status}{}\section{robot\+\_\+interfaces\+:\+:Status Struct Reference}
+\label{structrobot__interfaces_1_1Status}\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}
+
+
+\hyperlink{structrobot__interfaces_1_1Status}{Status} information from the backend.  
+
+
+
+
+{\ttfamily \#include $<$status.\+hpp$>$}
+
+
+
+Inheritance diagram for robot\+\_\+interfaces\+:\+:Status\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structrobot__interfaces_1_1Status__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for robot\+\_\+interfaces\+:\+:Status\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structrobot__interfaces_1_1Status__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6}{Error\+Status} \{ \hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6ad306b6fdee05fe87455110ddf6501e6c}{Error\+Status\+::\+N\+O\+\_\+\+E\+R\+R\+OR} = 0, 
+\hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6a5cd5516428d081129a4aea1db455272e}{Error\+Status\+::\+D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR}, 
+\hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6ac44598cc3395b73e9fd2866f42945bd3}{Error\+Status\+::\+B\+A\+C\+K\+E\+N\+D\+\_\+\+E\+R\+R\+OR}
+ \}\begin{DoxyCompactList}\small\item\em Different types of errors that can occur in the backend. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structrobot__interfaces_1_1Status_aa5bbec49d6faba7507abc8772dec505d}{set\+\_\+error} (\hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6}{Error\+Status} error\+\_\+type, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Set error. \end{DoxyCompactList}\item 
+bool \hyperlink{structrobot__interfaces_1_1Status_a83507b0921dc1e67e690b34daa3bcbc3}{has\+\_\+error} () const
+\begin{DoxyCompactList}\small\item\em Check if an error is set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1Status_a5531f83e2ef30f7629548194b4e3e9da}\label{structrobot__interfaces_1_1Status_a5531f83e2ef30f7629548194b4e3e9da}} 
+{\footnotesize template$<$class Archive $>$ }\\void {\bfseries serialize} (Archive \&archive)
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1Status_a2cd6543deb86d878ba43153c18d2fadb}\label{structrobot__interfaces_1_1Status_a2cd6543deb86d878ba43153c18d2fadb}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+\_\+name} () override
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1Status_af530134f33fa21c02d1157636c385fa3}\label{structrobot__interfaces_1_1Status_af530134f33fa21c02d1157636c385fa3}} 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ {\bfseries get\+\_\+data} () override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{structrobot__interfaces_1_1Status_a8ccb682cd2ba81059991f3b0b9ff0c00}{action\+\_\+repetitions} = 0
+\begin{DoxyCompactList}\small\item\em Number of times the current action has been repeated. \end{DoxyCompactList}\item 
+\hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6}{Error\+Status} \hyperlink{structrobot__interfaces_1_1Status_a80ffe66121d425d48386b39984cd4c7b}{error\+\_\+status} = \hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6ad306b6fdee05fe87455110ddf6501e6c}{Error\+Status\+::\+N\+O\+\_\+\+E\+R\+R\+OR}
+\begin{DoxyCompactList}\small\item\em Indicates if there is an error and, if yes, in which component. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structrobot__interfaces_1_1Status_a7da10fb73cd19f2840c438d321eac744}{error\+\_\+message}
+\begin{DoxyCompactList}\small\item\em Human-\/readable message describing the error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{structrobot__interfaces_1_1Status}{Status} information from the backend. 
+
+Used to report status information that is not directly robot-\/related from the backend to the frontend. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6}\label{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6}} 
+\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!Error\+Status@{Error\+Status}}
+\index{Error\+Status@{Error\+Status}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}
+\subsubsection{\texorpdfstring{Error\+Status}{ErrorStatus}}
+{\footnotesize\ttfamily enum \hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6}{robot\+\_\+interfaces\+::\+Status\+::\+Error\+Status}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Different types of errors that can occur in the backend. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+\_\+\+E\+R\+R\+OR@{N\+O\+\_\+\+E\+R\+R\+OR}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!N\+O\+\_\+\+E\+R\+R\+OR@{N\+O\+\_\+\+E\+R\+R\+OR}}}\mbox{\Hypertarget{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6ad306b6fdee05fe87455110ddf6501e6c}\label{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6ad306b6fdee05fe87455110ddf6501e6c}} 
+N\+O\+\_\+\+E\+R\+R\+OR&Indicates that there is no error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR@{D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR@{D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR}}}\mbox{\Hypertarget{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6a5cd5516428d081129a4aea1db455272e}\label{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6a5cd5516428d081129a4aea1db455272e}} 
+D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR&Error reported from the \hyperlink{classrobot__interfaces_1_1RobotDriver}{Robot\+Driver}. An error reported by the low level robot driver (see \hyperlink{classrobot__interfaces_1_1RobotDriver}{Robot\+Driver}). This is depending on the driver implementation. It can, for example, be used to report some hardware failure). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+A\+C\+K\+E\+N\+D\+\_\+\+E\+R\+R\+OR@{B\+A\+C\+K\+E\+N\+D\+\_\+\+E\+R\+R\+OR}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!B\+A\+C\+K\+E\+N\+D\+\_\+\+E\+R\+R\+OR@{B\+A\+C\+K\+E\+N\+D\+\_\+\+E\+R\+R\+OR}}}\mbox{\Hypertarget{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6ac44598cc3395b73e9fd2866f42945bd3}\label{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6ac44598cc3395b73e9fd2866f42945bd3}} 
+B\+A\+C\+K\+E\+N\+D\+\_\+\+E\+R\+R\+OR&Error from the \hyperlink{classrobot__interfaces_1_1RobotBackend}{Robot\+Backend}. An error which is issued by the back end itself, for example if no new action is provided and the allowed number of repetitions is exceeded. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structrobot__interfaces_1_1Status_a83507b0921dc1e67e690b34daa3bcbc3}\label{structrobot__interfaces_1_1Status_a83507b0921dc1e67e690b34daa3bcbc3}} 
+\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!has\+\_\+error@{has\+\_\+error}}
+\index{has\+\_\+error@{has\+\_\+error}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}
+\subsubsection{\texorpdfstring{has\+\_\+error()}{has\_error()}}
+{\footnotesize\ttfamily bool robot\+\_\+interfaces\+::\+Status\+::has\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if an error is set. 
+
+\begin{DoxyNote}{Note}
+If there is an error reported in the status, the robot is not in an operational state anymore. Trying to append another action in the \hyperlink{classrobot__interfaces_1_1RobotFrontend}{Robot\+Frontend} will result in an exception in this case.
+\end{DoxyNote}
+See \hyperlink{structrobot__interfaces_1_1Status_a80ffe66121d425d48386b39984cd4c7b}{error\+\_\+status} and \hyperlink{structrobot__interfaces_1_1Status_a7da10fb73cd19f2840c438d321eac744}{error\+\_\+message} for more details on the error. \mbox{\Hypertarget{structrobot__interfaces_1_1Status_aa5bbec49d6faba7507abc8772dec505d}\label{structrobot__interfaces_1_1Status_aa5bbec49d6faba7507abc8772dec505d}} 
+\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!set\+\_\+error@{set\+\_\+error}}
+\index{set\+\_\+error@{set\+\_\+error}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}
+\subsubsection{\texorpdfstring{set\+\_\+error()}{set\_error()}}
+{\footnotesize\ttfamily void robot\+\_\+interfaces\+::\+Status\+::set\+\_\+error (\begin{DoxyParamCaption}\item[{\hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6}{Error\+Status}}]{error\+\_\+type,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set error. 
+
+If another error was set before, the old one is kept and the new one ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+\_\+type} & The type of the error. \\
+\hline
+{\em message} & Error message. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structrobot__interfaces_1_1Status_a8ccb682cd2ba81059991f3b0b9ff0c00}\label{structrobot__interfaces_1_1Status_a8ccb682cd2ba81059991f3b0b9ff0c00}} 
+\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!action\+\_\+repetitions@{action\+\_\+repetitions}}
+\index{action\+\_\+repetitions@{action\+\_\+repetitions}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}
+\subsubsection{\texorpdfstring{action\+\_\+repetitions}{action\_repetitions}}
+{\footnotesize\ttfamily uint32\+\_\+t robot\+\_\+interfaces\+::\+Status\+::action\+\_\+repetitions = 0}
+
+
+
+Number of times the current action has been repeated. 
+
+If the back end wants to apply the next action but no new action was provided by the user in time, it may (depending on configuration) repeat the previous action. Each time this happens, {\ttfamily action\+\_\+repetitions} is increased by one. Once a new action is provided, it will be reset to zero.
+
+See also \hyperlink{md_docs_timeseries_next-action-not-in-time}{When Next Action Is Not Provided In Time}. \mbox{\Hypertarget{structrobot__interfaces_1_1Status_a7da10fb73cd19f2840c438d321eac744}\label{structrobot__interfaces_1_1Status_a7da10fb73cd19f2840c438d321eac744}} 
+\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!error\+\_\+message@{error\+\_\+message}}
+\index{error\+\_\+message@{error\+\_\+message}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}
+\subsubsection{\texorpdfstring{error\+\_\+message}{error\_message}}
+{\footnotesize\ttfamily std\+::string robot\+\_\+interfaces\+::\+Status\+::error\+\_\+message}
+
+
+
+Human-\/readable message describing the error. 
+
+Value is undefined if {\ttfamily error\+\_\+status == N\+O\+\_\+\+E\+R\+R\+OR}. \mbox{\Hypertarget{structrobot__interfaces_1_1Status_a80ffe66121d425d48386b39984cd4c7b}\label{structrobot__interfaces_1_1Status_a80ffe66121d425d48386b39984cd4c7b}} 
+\index{robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}!error\+\_\+status@{error\+\_\+status}}
+\index{error\+\_\+status@{error\+\_\+status}!robot\+\_\+interfaces\+::\+Status@{robot\+\_\+interfaces\+::\+Status}}
+\subsubsection{\texorpdfstring{error\+\_\+status}{error\_status}}
+{\footnotesize\ttfamily \hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6}{Error\+Status} robot\+\_\+interfaces\+::\+Status\+::error\+\_\+status = \hyperlink{structrobot__interfaces_1_1Status_a88f1cb8387648815ca75754985bdb3b6ad306b6fdee05fe87455110ddf6501e6c}{Error\+Status\+::\+N\+O\+\_\+\+E\+R\+R\+OR}}
+
+
+
+Indicates if there is an error and, if yes, in which component. 
+
+\begin{DoxyNote}{Note}
+If there is an error reported in the status, the robot is not in an operational state anymore. Trying to append another action in the \hyperlink{classrobot__interfaces_1_1RobotFrontend}{Robot\+Frontend} will result in an exception in this case.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structrobot__interfaces_1_1Status_a7da10fb73cd19f2840c438d321eac744}{error\+\_\+message} for more information on the error. 
+
+\hyperlink{structrobot__interfaces_1_1Status_a83507b0921dc1e67e690b34daa3bcbc3}{has\+\_\+error()} 
+\end{DoxySeeAlso}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/\hyperlink{status_8hpp}{status.\+hpp}\end{DoxyCompactItemize}

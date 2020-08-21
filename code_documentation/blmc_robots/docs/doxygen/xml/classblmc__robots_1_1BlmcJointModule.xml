@@ -1,0 +1,736 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__robots_1_1BlmcJointModule" kind="class" language="C++" prot="public">
+    <compoundname>blmc_robots::BlmcJointModule</compoundname>
+    <includes refid="blmc__joint__module_8hpp" local="no">blmc_joint_module.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1a0ff5ce1cb26ed04212914dc152ec0486" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; blmc_drivers::MotorInterface &gt;</type>
+        <definition>std::shared_ptr&lt;blmc_drivers::MotorInterface&gt; blmc_robots::BlmcJointModule::motor_</definition>
+        <argsstring></argsstring>
+        <name>motor_</name>
+        <briefdescription>
+<para>This is the pointer to the motor interface. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="329" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1a4e2e6f6cc7f0f7aed02efdca60394b40" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::motor_constant_</definition>
+        <argsstring></argsstring>
+        <name>motor_constant_</name>
+        <briefdescription>
+<para>This is the torque constant of the motor: <formula id="1">$ \tau_{motor} = k * i_{motor} $</formula>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="335" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1af013668d69e7cea2dcc21da8c1c9e4e6" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::gear_ratio_</definition>
+        <argsstring></argsstring>
+        <name>gear_ratio_</name>
+        <briefdescription>
+<para>This correspond to the reduction ( <formula id="2">$ \beta $</formula>) between the motor rotation and the joint. </para>        </briefdescription>
+        <detaileddescription>
+<para><formula id="3">$ \theta_{joint} = \theta_{motor} / \beta $</formula> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="340" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1abdf774193a8ae31486e937eb432dc702" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::zero_angle_</definition>
+        <argsstring></argsstring>
+        <name>zero_angle_</name>
+        <briefdescription>
+<para>This is the distance between the closest positive index and the zero configuration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="345" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1a6ec97901099ebcc3466851624c656f08" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::polarity_</definition>
+        <argsstring></argsstring>
+        <name>polarity_</name>
+        <briefdescription>
+<para>This change the motor rotation direction. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="349" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1af10e1b734a9d4735301962fd9f9c413f" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::max_current_</definition>
+        <argsstring></argsstring>
+        <name>max_current_</name>
+        <briefdescription>
+<para>This is the maximum current we can apply during one experiment. </para>        </briefdescription>
+        <detaileddescription>
+<para>The program shut down if this value is achieved. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="354" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1afa5a06b057850fc626649fd13e3f376c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::position_control_gain_p_</definition>
+        <argsstring></argsstring>
+        <name>position_control_gain_p_</name>
+        <briefdescription>
+<para>P gain of the position PD controller. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="357" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1a1141b35d0c53d1f4cca107919c1c861e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::position_control_gain_d_</definition>
+        <argsstring></argsstring>
+        <name>position_control_gain_d_</name>
+        <briefdescription>
+<para>D gain of the position PD controller. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="359" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1BlmcJointModule_1ab7a861d47a808b14e43af7f58ca56284" prot="private" static="no" mutable="no">
+        <type>struct <ref refid="structblmc__robots_1_1HomingState" kindref="compound">HomingState</ref></type>
+        <definition>struct HomingState blmc_robots::BlmcJointModule::homing_state_</definition>
+        <argsstring></argsstring>
+        <name>homing_state_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="359" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a09a0b8815e6c447e3ee6632ade940e0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_robots::BlmcJointModule::BlmcJointModule</definition>
+        <argsstring>(std::shared_ptr&lt; blmc_drivers::MotorInterface &gt; motor, const double &amp;motor_constant, const double &amp;gear_ratio, const double &amp;zero_angle, const bool &amp;reverse_polarity=false, const double &amp;max_current=2.1)</argsstring>
+        <name>BlmcJointModule</name>
+        <param>
+          <type>std::shared_ptr&lt; blmc_drivers::MotorInterface &gt;</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>motor_constant</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>gear_ratio</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>zero_angle</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>reverse_polarity</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>max_current</declname>
+          <defval>2.1</defval>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__robots_1_1BlmcJointModule" kindref="compound">BlmcJointModule</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the C++ object allowing us to send commands and receive sensor data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motor_constant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>( <formula id="0">$ k $</formula>) is the torque constant of the motor <formula id="1">$ \tau_{motor} = k * i_{motor} $</formula> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gear_ratio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the gear ratio between the motor and the joint. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zero_angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the angle between the closest positive motor index and the zero configuration. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reverse_polarity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="109" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="18" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1adeb28005a7160ead68603aed4262508f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::BlmcJointModule::set_torque</definition>
+        <argsstring>(const double &amp;desired_torque)</argsstring>
+        <name>set_torque</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>desired_torque</declname>
+        </param>
+        <briefdescription>
+<para>Set the joint torque to be sent. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired_torque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(Nm) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="121" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="37" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1ae59680a947539306e391a12ad2d071bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::BlmcJointModule::set_zero_angle</definition>
+        <argsstring>(const double &amp;zero_angle)</argsstring>
+        <name>set_zero_angle</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>zero_angle</declname>
+        </param>
+        <briefdescription>
+<para>Set the zero_angle. </para>        </briefdescription>
+        <detaileddescription>
+<para>The zero_angle is the angle between the closest positive motor index and the zero configuration.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>zero_angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(rad) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="129" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a137da65771a8628db4692e3bfc924f07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::BlmcJointModule::set_joint_polarity</definition>
+        <argsstring>(const bool &amp;reverse_polarity)</argsstring>
+        <name>set_joint_polarity</name>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>reverse_polarity</declname>
+        </param>
+        <briefdescription>
+<para>Define if the motor should turn clock-wize or counter clock-wize. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reverse_polarity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true:reverse rotation axis, false:do nothing. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="136" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1af0484dd9efc47843706fc71d4351bdbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::BlmcJointModule::send_torque</definition>
+        <argsstring>()</argsstring>
+        <name>send_torque</name>
+        <briefdescription>
+<para>send the joint torque to the motor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The conversion between joint torque and motor current is done automatically. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="142" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a53be7ff5c2b54c15813a68116e85747e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_max_torque</definition>
+        <argsstring>() const</argsstring>
+        <name>get_max_torque</name>
+        <briefdescription>
+<para>Get the maximum admissible joint torque that can be applied. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="149" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1af3f19ffc942e9b49dce892b207d3d476" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_sent_torque</definition>
+        <argsstring>() const</argsstring>
+        <name>get_sent_torque</name>
+        <briefdescription>
+<para>Get the sent joint torque. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double (Nm). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="156" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="71" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1abb57fdffcc0222b192658239ef45ab63" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_measured_torque</definition>
+        <argsstring>() const</argsstring>
+        <name>get_measured_torque</name>
+        <briefdescription>
+<para>Get the measured joint torque. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double (Nm). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="163" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a8c6419cfb80eb5986dffd982df18a817" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_measured_angle</definition>
+        <argsstring>() const</argsstring>
+        <name>get_measured_angle</name>
+        <briefdescription>
+<para>Get the measured angle of the joint. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double (rad). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="170" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a6db4f8c98e9a3e931b19a98dc1339e27" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_measured_velocity</definition>
+        <argsstring>() const</argsstring>
+        <name>get_measured_velocity</name>
+        <briefdescription>
+<para>Get the measured velocity of the joint. </para>        </briefdescription>
+        <detaileddescription>
+<para>This data is computed on board of the control card.</para><para><simplesect kind="return"><para>double (rad/s). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="178" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a47b6a71bb9c300d2398924403a6e7e3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_measured_index_angle</definition>
+        <argsstring>() const</argsstring>
+        <name>get_measured_index_angle</name>
+        <briefdescription>
+<para>Get the measured index angle. </para>        </briefdescription>
+        <detaileddescription>
+<para>There is one index per motor rotation so there are gear_ratio indexes per joint rotation.</para><para><simplesect kind="return"><para>double (rad). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="186" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1ad6fab5bc289e01a34374ea8031f5383e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_zero_angle</definition>
+        <argsstring>() const</argsstring>
+        <name>get_zero_angle</name>
+        <briefdescription>
+<para>Get the zero_angle_. </para>        </briefdescription>
+        <detaileddescription>
+<para>These are the angle between the starting pose and the theoretical zero pose.</para><para><simplesect kind="return"><para>double (rad). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="194" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a464ab2a846630eba6582d09895df2852" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::BlmcJointModule::set_position_control_gains</definition>
+        <argsstring>(double kp, double kd)</argsstring>
+        <name>set_position_control_gains</name>
+        <param>
+          <type>double</type>
+          <declname>kp</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>kd</declname>
+        </param>
+        <briefdescription>
+<para>Set control gains for PD position controller. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>P gain ( (Nm) / rad ). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>D gain ( (Nm) / (rad/s) ). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="202" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="142" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a3100c088a17264562c67429334e3dbf2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::execute_position_controller</definition>
+        <argsstring>(double target_position_rad) const</argsstring>
+        <name>execute_position_controller</name>
+        <param>
+          <type>double</type>
+          <declname>target_position_rad</declname>
+        </param>
+        <briefdescription>
+<para>Execute one iteration of the position controller. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target_position_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target position (rad).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Torque command (Nm). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="211" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="148" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a17a1da041dae31e9a16f955722c36d6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_robots::BlmcJointModule::calibrate</definition>
+        <argsstring>(double &amp;angle_zero_to_index, double &amp;index_angle, bool mechanical_calibration=false)</argsstring>
+        <name>calibrate</name>
+        <param>
+          <type>double &amp;</type>
+          <declname>angle_zero_to_index</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>index_angle</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>mechanical_calibration</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>This method calibrate the joint position knowing the angle between the closest (in positive torque) motor index and the theoretical zero pose. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>!!!!!!! </para></xrefdescription></xrefsect>Warning, this method should be called in a real time thread!</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="228" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="171" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1aa534604b5ead6a3eee5c47a9454f6834" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::BlmcJointModule::init_homing</definition>
+        <argsstring>(int joint_id, double search_distance_limit_rad, double home_offset_rad, double profile_step_size_rad=0.001)</argsstring>
+        <name>init_homing</name>
+        <param>
+          <type>int</type>
+          <declname>joint_id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>search_distance_limit_rad</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>home_offset_rad</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>profile_step_size_rad</declname>
+          <defval>0.001</defval>
+        </param>
+        <briefdescription>
+<para>Initialize the homing procedure. </para>        </briefdescription>
+        <detaileddescription>
+<para>This has to be called before <ref refid="classblmc__robots_1_1BlmcJointModule_1abb2712542f3c340bc0ecf76bd343b6b3" kindref="member">update_homing()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>joint_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the joint. This is only used for debug prints. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>search_distance_limit_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum distance the motor moves while searching for the encoder index. Unit: radian. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>home_offset_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Offset from home position to zero position. Unit: radian. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>profile_step_size_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distance by which the target position of the position profile is changed in each step. Set to a negative value to search for the next encoder index in negative direction. Unit: radian. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="247" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="301" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1abb2712542f3c340bc0ecf76bd343b6b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="blmc__joint__module_8hpp_1aa1075809042ff261e4b0a20d161448b6" kindref="member">HomingReturnCode</ref></type>
+        <definition>HomingReturnCode blmc_robots::BlmcJointModule::update_homing</definition>
+        <argsstring>()</argsstring>
+        <name>update_homing</name>
+        <briefdescription>
+<para>Perform one step of homing on encoder index. </para>        </briefdescription>
+        <detaileddescription>
+<para>Searches for the next encoder index in positive direction and, when found, sets it as home position.</para><para>Only performs one step, so this method needs to be called in a loop. This method only set the control, one <emphasis>MUST</emphasis> send the control for the motor after calling this method.</para><para>The motor is moved with a position profile until either the encoder index is reached or the search distance limit is exceeded. The position is controlled with a simple PD controller.</para><para>If the encoder index is found, its position is used as home position. The zero position is offset from the home position by adding the &quot;home
+offset&quot; to it (i.e. zero = home pos. + home offset). If the search distance limit is reached before the encoder index occurs, the homing fails.</para><para><simplesect kind="return"><para>Status of the homing procedure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="274" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="325" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a9fd53d7e340b4067f3505633e5a8a06d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_distance_travelled_during_homing</definition>
+        <argsstring>() const</argsstring>
+        <name>get_distance_travelled_during_homing</name>
+        <briefdescription>
+<para>Get distance between start and end position of homing. </para>        </briefdescription>
+        <detaileddescription>
+<para>Compute the distance that the joint moved between initialization of homing and reaching the home position.</para><para>This can be used to determine the home offset by first moving the joint to the desired zero position, then executing the homing and finally calling this function which will provide the desired home offset.</para><para><simplesect kind="return"><para>Distance between start and end position of homing. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="288" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="432" bodyend="442"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a2b6886df9dc909854ff74c2ec21cbb34" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::joint_torque_to_motor_current</definition>
+        <argsstring>(double torque) const</argsstring>
+        <name>joint_torque_to_motor_current</name>
+        <param>
+          <type>double</type>
+          <declname>torque</declname>
+        </param>
+        <briefdescription>
+<para>Convert from joint torque to motor current. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">torque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the input joint </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double the equivalent motor current. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="297" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1aa300e4c820a6cd356ac77ba50829c50f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::motor_current_to_joint_torque</definition>
+        <argsstring>(double current) const</argsstring>
+        <name>motor_current_to_joint_torque</name>
+        <param>
+          <type>double</type>
+          <declname>current</declname>
+        </param>
+        <briefdescription>
+<para>Convert from motor current to joint torque. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the motor current. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double is the equivalent joint torque. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="305" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="102" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1a219d4e433d03ea8a2bae115d5563d844" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double blmc_robots::BlmcJointModule::get_motor_measurement</definition>
+        <argsstring>(const mi &amp;measurement_id) const</argsstring>
+        <name>get_motor_measurement</name>
+        <param>
+          <type>const <ref refid="common__header_8hpp_1a1975c6bb47bc85dfc8edfe349c30dae1" kindref="member">mi</ref> &amp;</type>
+          <declname>measurement_id</declname>
+        </param>
+        <briefdescription>
+<para>Get motor measurements and check if there are data or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>measurement_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the measurement you want to get. check: blmc_drivers::MotorInterface::MeasurementIndex </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double the measurement. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="314" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="117" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1BlmcJointModule_1adf5e083076bdc53f24f14f0c22b9061b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int blmc_robots::BlmcJointModule::get_motor_measurement_index</definition>
+        <argsstring>(const mi &amp;measurement_id) const</argsstring>
+        <name>get_motor_measurement_index</name>
+        <param>
+          <type>const <ref refid="common__header_8hpp_1a1975c6bb47bc85dfc8edfe349c30dae1" kindref="member">mi</ref> &amp;</type>
+          <declname>measurement_id</declname>
+        </param>
+        <briefdescription>
+<para>Get the last motor measurement index for a specific data. </para>        </briefdescription>
+        <detaileddescription>
+<para>If there was no data yet, return NaN</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>measurement_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the id of the measurement you want to get. check: blmc_drivers::MotorInterface::MeasurementIndex </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double the measurement. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/blmc_joint_module.hpp" line="324" column="1" bodyfile="src/blmc_joint_module.cpp" bodystart="129" bodyend="140"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="classblmc__robots_1_1BlmcJointModule" kindref="compound">BlmcJointModule</ref> class is containing the joint information. </para>    </briefdescription>
+    <detaileddescription>
+<para>It is here to help converting the data from the motor side to the joint side. It also allows the calibration of the joint position during initialization. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>blmc_robots::BlmcJointModule</label>
+        <link refid="classblmc__robots_1_1BlmcJointModule"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>homing_state_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>blmc_robots::HomingState</label>
+        <link refid="structblmc__robots_1_1HomingState"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_robots/blmc_joint_module.hpp" line="94" column="1" bodyfile="include/blmc_robots/blmc_joint_module.hpp" bodystart="93" bodyend="362"/>
+    <listofallmembers>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a09a0b8815e6c447e3ee6632ade940e0b" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>BlmcJointModule</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a17a1da041dae31e9a16f955722c36d6c" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>calibrate</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a3100c088a17264562c67429334e3dbf2" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>execute_position_controller</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1af013668d69e7cea2dcc21da8c1c9e4e6" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>gear_ratio_</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a9fd53d7e340b4067f3505633e5a8a06d" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_distance_travelled_during_homing</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a53be7ff5c2b54c15813a68116e85747e" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_max_torque</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a8c6419cfb80eb5986dffd982df18a817" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_measured_angle</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a47b6a71bb9c300d2398924403a6e7e3c" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_measured_index_angle</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1abb57fdffcc0222b192658239ef45ab63" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_measured_torque</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a6db4f8c98e9a3e931b19a98dc1339e27" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_measured_velocity</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a219d4e433d03ea8a2bae115d5563d844" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_motor_measurement</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1adf5e083076bdc53f24f14f0c22b9061b" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_motor_measurement_index</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1af3f19ffc942e9b49dce892b207d3d476" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_sent_torque</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1ad6fab5bc289e01a34374ea8031f5383e" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>get_zero_angle</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1ab7a861d47a808b14e43af7f58ca56284" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>homing_state_</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1aa534604b5ead6a3eee5c47a9454f6834" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>init_homing</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a2b6886df9dc909854ff74c2ec21cbb34" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>joint_torque_to_motor_current</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1af10e1b734a9d4735301962fd9f9c413f" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>max_current_</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a0ff5ce1cb26ed04212914dc152ec0486" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>motor_</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a4e2e6f6cc7f0f7aed02efdca60394b40" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>motor_constant_</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1aa300e4c820a6cd356ac77ba50829c50f" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>motor_current_to_joint_torque</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a6ec97901099ebcc3466851624c656f08" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>polarity_</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a1141b35d0c53d1f4cca107919c1c861e" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>position_control_gain_d_</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1afa5a06b057850fc626649fd13e3f376c" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>position_control_gain_p_</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1af0484dd9efc47843706fc71d4351bdbd" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>send_torque</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a137da65771a8628db4692e3bfc924f07" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>set_joint_polarity</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1a464ab2a846630eba6582d09895df2852" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>set_position_control_gains</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1adeb28005a7160ead68603aed4262508f" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>set_torque</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1ae59680a947539306e391a12ad2d071bb" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>set_zero_angle</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1abb2712542f3c340bc0ecf76bd343b6b3" prot="public" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>update_homing</name></member>
+      <member refid="classblmc__robots_1_1BlmcJointModule_1abdf774193a8ae31486e937eb432dc702" prot="private" virt="non-virtual"><scope>blmc_robots::BlmcJointModule</scope><name>zero_angle_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

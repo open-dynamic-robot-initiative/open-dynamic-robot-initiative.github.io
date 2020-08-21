@@ -1,0 +1,26 @@
+To use robot\+\_\+interfaces with your own robot, you need to provide implementations for
+
+
+\begin{DoxyItemize}
+\item the Action type
+\item the Observation type
+\item the Robot\+Driver
+\end{DoxyItemize}
+
+\subsection*{Action and Observation }
+
+Action and observation can be any arbitrary type, whatever is needed for your robot. There are only the following restrictions\+:
+
+
+\begin{DoxyItemize}
+\item If you want to use the \hyperlink{classrobot__interfaces_1_1MultiProcessRobotData}{robot\+\_\+interfaces\+::\+Multi\+Process\+Robot\+Data}, the action and observation types need to be serializable with \href{https://uscilab.github.io/cereal/}{\tt cereal}.
+\item If you want to use the \hyperlink{classrobot__interfaces_1_1RobotLogger}{robot\+\_\+interfaces\+::\+Robot\+Logger}, the action and observation types need to inherit from \hyperlink{classrobot__interfaces_1_1Loggable}{robot\+\_\+interfaces\+::\+Loggable}.
+\end{DoxyItemize}
+
+\subsection*{Robot\+Driver }
+
+Your robot driver needs to be a class that inherits from \hyperlink{classrobot__interfaces_1_1RobotDriver}{robot\+\_\+interfaces\+::\+Robot\+Driver}, using your {\ttfamily Action} and {\ttfamily Observation} types (see above).
+
+\subsection*{Example }
+
+See the example implementation of a dummy robot driver in \href{https://github.com/open-dynamic-robot-initiative/robot_interfaces/blob/master/include/robot_interfaces/example.hpp}{\tt example.\+hpp}. This dummy driver is also used in the \href{https://github.com/open-dynamic-robot-initiative/robot_interfaces/blob/master/demos}{\tt demos}. 

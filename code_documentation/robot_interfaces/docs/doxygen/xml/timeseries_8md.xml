@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="timeseries_8md" kind="file" language="Markdown">
+    <compoundname>timeseries.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Logic<sp/>of<sp/>Actions<sp/>and<sp/>Observations</highlight></codeline>
+<codeline><highlight class="normal">=================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>this<sp/>section<sp/>the<sp/>logic<sp/>of<sp/>the<sp/>_time<sp/>series_<sp/>used<sp/>for<sp/>communication<sp/>between</highlight></codeline>
+<codeline><highlight class="normal">front<sp/>and<sp/>back<sp/>end<sp/>and<sp/>for<sp/>synchronization<sp/>between<sp/>actions<sp/>and<sp/>observations<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">explained.<sp/><sp/>For<sp/>more<sp/>details,<sp/>please<sp/>see<sp/>our</highlight></codeline>
+<codeline><highlight class="normal">[paper](https://arxiv.org/abs/2008.03596)<sp/>on<sp/>the<sp/>open-source<sp/>version<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">TriFinger<sp/>robot.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">On<sp/>Time<sp/>Series<sp/>and<sp/>Time<sp/>Relation<sp/>of<sp/>Actions<sp/>and<sp/>Observations</highlight></codeline>
+<codeline><highlight class="normal">------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>data<sp/>transfer<sp/>between<sp/>the<sp/>front<sp/>end<sp/>(=<sp/>user<sp/>code)<sp/>and<sp/>the<sp/>back<sp/>end<sp/>(=<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal">hardware)<sp/>goes<sp/>through<sp/>so<sp/>called<sp/>time<sp/>series.<sp/>When<sp/>calling</highlight></codeline>
+<codeline><highlight class="normal">`append_desired_action(action)`,<sp/>the<sp/>action<sp/>is<sp/>not<sp/>applied<sp/>immediately<sp/>but<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">*appended*<sp/>to<sp/>the<sp/>time<sp/>series<sp/>of<sp/>desired<sp/>actions<sp/>which<sp/>serves<sp/>as<sp/>a<sp/>queue.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">At<sp/>each<sp/>time<sp/>step,<sp/>identified<sp/>by<sp/>a<sp/>_time<sp/>index<sp/>t_,<sp/>the<sp/>backend<sp/>takes<sp/>the<sp/>action</highlight></codeline>
+<codeline><highlight class="normal">at<sp/>position<sp/>_t_<sp/>from<sp/>the<sp/>&quot;desired<sp/>actions&quot;<sp/>time<sp/>series<sp/>and<sp/>sends<sp/>it<sp/>to<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal">driver.<sp/><sp/>At<sp/>the<sp/>same<sp/>time<sp/>an<sp/>observation<sp/>is<sp/>acquired<sp/>from<sp/>the<sp/>robot<sp/>and<sp/>added<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>&quot;observation&quot;<sp/>time<sp/>series.<sp/>This<sp/>means<sp/>that<sp/>the<sp/>effect<sp/>of<sp/>the<sp/>desired<sp/>action</highlight></codeline>
+<codeline><highlight class="normal">`a_t`<sp/>is<sp/>not<sp/>yet<sp/>visible<sp/>in<sp/>the<sp/>observation<sp/>`y_t`<sp/>as<sp/>is<sp/>illustrated<sp/>below.</highlight></codeline>
+<codeline><highlight class="normal">(`a&apos;_t`<sp/>corresponds<sp/>to<sp/>the<sp/>*applied<sp/>action*,<sp/>see<sp/>@ref</highlight></codeline>
+<codeline><highlight class="normal">md_docs_desired_vs_applied_action)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Time<sp/>relation<sp/>of<sp/>actions<sp/>and<sp/>observations](images/action_observation_timing.png)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`append_desired_action()`<sp/>returns<sp/>the<sp/>time<sp/>index<sp/>`t`<sp/>at<sp/>which<sp/>the<sp/>appended</highlight></codeline>
+<codeline><highlight class="normal">action<sp/>will<sp/>be<sp/>executed.<sp/>Methods<sp/>like<sp/>`get_observation()`<sp/>expect<sp/>a<sp/>time<sp/>index<sp/>as</highlight></codeline>
+<codeline><highlight class="normal">input.<sp/><sp/>If<sp/>the<sp/>specified<sp/>time<sp/>step<sp/>has<sp/>already<sp/>passed,<sp/>they<sp/>immediately<sp/>return</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>value<sp/>from<sp/>the<sp/>corresponding<sp/>step.<sp/>If<sp/>it<sp/>lies<sp/>in<sp/>the<sp/>future,<sp/>the<sp/>method<sp/>will</highlight></codeline>
+<codeline><highlight class="normal">block<sp/>and<sp/>wait<sp/>until<sp/>the<sp/>specified<sp/>time<sp/>step<sp/>is<sp/>reached<sp/>and<sp/>then<sp/>return.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Note<sp/>that<sp/>the<sp/>buffer<sp/>size<sp/>of<sp/>the<sp/>time<sp/>series<sp/>is<sp/>limited<sp/>(see<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">`history_length`<sp/>argument<sp/>of<sp/>`SingleProcessRobotData`<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">`MultiProcessRobotData`).<sp/><sp/>If<sp/>the<sp/>buffer<sp/>is<sp/>full,<sp/>the<sp/>oldest<sp/>element<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">discarded.<sp/><sp/>Trying<sp/>to<sp/>access<sp/>an<sp/>time<sp/>index<sp/>that<sp/>is<sp/>not<sp/>in<sp/>the<sp/>buffer<sp/>anymore</highlight></codeline>
+<codeline><highlight class="normal">results<sp/>in<sp/>an<sp/>exception.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>design<sp/>allows<sp/>for<sp/>simple<sp/>code<sp/>that<sp/>is<sp/>automatically<sp/>executed<sp/>at<sp/>the<sp/>control</highlight></codeline>
+<codeline><highlight class="normal">rate<sp/>of<sp/>the<sp/>robot:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```{.py}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>send<sp/>zero-torque<sp/>action<sp/>to<sp/>get<sp/>first<sp/>observation,<sp/>see<sp/>explanation<sp/>below</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>zero_torque_action<sp/>=<sp/>robot_interfaces.trifinger.Action()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>frontend.append_desired_action(zero_torque_action)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>observation<sp/>=<sp/>frontend.get_observation(t)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>True:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>action<sp/>=<sp/>smart_algorithm_to_compute_next_action(observation)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/>frontend.append_desired_action(action)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>The<sp/>t<sp/>given<sp/>above<sp/>refers<sp/>to<sp/>the<sp/>moment<sp/>the<sp/>given<sp/>action<sp/>will<sp/>be</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>executed.<sp/><sp/>Right<sp/>now,<sp/>this<sp/>is<sp/>in<sp/>the<sp/>future,<sp/>so<sp/>the<sp/>following<sp/>call</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>will<sp/>automatically<sp/>wait<sp/>until<sp/>the<sp/>action<sp/>is<sp/>actually<sp/>applied<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>platform</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observation<sp/>=<sp/>frontend.get_observation(t)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Send<sp/>Action<sp/>to<sp/>Start<sp/>Backend</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>beginning<sp/>of<sp/>the<sp/>program<sp/>execution,<sp/>the<sp/>back<sp/>end<sp/>is<sp/>idle<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">waiting<sp/>for<sp/>the<sp/>first<sp/>action.<sp/>Only<sp/>after<sp/>the<sp/>first<sp/>action<sp/>is<sp/>received,</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>loop<sp/>is<sp/>started<sp/>that<sp/>applies<sp/>actions<sp/>and<sp/>writes<sp/>observations<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">time<sp/>series.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>means<sp/>**you<sp/>first<sp/>have<sp/>to<sp/>send<sp/>an<sp/>action<sp/>before<sp/>you<sp/>can<sp/>read<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">first<sp/>observation!**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>applications<sp/>where<sp/>an<sp/>observation<sp/>is<sp/>needed<sp/>before<sp/>sending<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">first<sp/>real<sp/>action<sp/>(e.g.<sp/>when<sp/>the<sp/>action<sp/>depends<sp/>on<sp/>the<sp/>current</highlight></codeline>
+<codeline><highlight class="normal">position).<sp/><sp/>In<sp/>this<sp/>case<sp/>you<sp/>need<sp/>to<sp/>send<sp/>a<sp/>&quot;neutral&quot;<sp/>action<sp/>first.<sp/><sp/>How<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">action<sp/>may<sp/>look<sp/>is<sp/>robot<sp/>dependent.<sp/><sp/>The<sp/>_TriFinger_<sp/>robot,<sp/>for<sp/>example,<sp/>can</highlight></codeline>
+<codeline><highlight class="normal">safely<sp/>be<sp/>started<sp/>with<sp/>a<sp/>zero-torque<sp/>action:</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Python:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```{.py}</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>an<sp/>action<sp/>without<sp/>arguments<sp/>defaults<sp/>to<sp/>zero<sp/>torque</highlight></codeline>
+<codeline><highlight class="normal">zero_torque_action<sp/>=<sp/>robot_interfaces.trifinger.Action()</highlight></codeline>
+<codeline><highlight class="normal">t<sp/>=<sp/>frontend.append_desired_action(zero_torque_action)</highlight></codeline>
+<codeline><highlight class="normal">first_observation<sp/>=<sp/>frontend.get_observation(t)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">C++:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```{.cpp}</highlight></codeline>
+<codeline><highlight class="normal">Action<sp/>zero_torque_action<sp/>=<sp/>Action::Zero();</highlight></codeline>
+<codeline><highlight class="normal">auto<sp/>t<sp/>=<sp/>frontend.append_desired_action(zero_torque_action);</highlight></codeline>
+<codeline><highlight class="normal">auto<sp/>first_observation<sp/>=<sp/>frontend.get_observation(t);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Note<sp/>that<sp/>the<sp/>creation<sp/>of<sp/>the<sp/>zero<sp/>torque<sp/>action<sp/>in<sp/>the<sp/>above<sp/>example<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">specific<sp/>to<sp/>the<sp/>_TriFinger_<sp/>robot.<sp/><sp/>For<sp/>other<sp/>robots,<sp/>the<sp/>creation<sp/>of<sp/>the<sp/>action</highlight></codeline>
+<codeline><highlight class="normal">would<sp/>need<sp/>to<sp/>be<sp/>adjusted<sp/>to<sp/>the<sp/>action<sp/>type<sp/>of<sp/>that<sp/>specific<sp/>robot.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>When<sp/>Next<sp/>Action<sp/>Is<sp/>Not<sp/>Provided<sp/>In<sp/>Time<sp/>{#next-action-not-in-time}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>the<sp/>back<sp/>end<sp/>reaches<sp/>a<sp/>time<sp/>step<sp/>`t`<sp/>but<sp/>the<sp/>user<sp/>did<sp/>not<sp/>yet<sp/>provide</highlight></codeline>
+<codeline><highlight class="normal">an<sp/>action<sp/>for<sp/>this<sp/>time<sp/>step<sp/>(e.g.<sp/>because<sp/>the<sp/>user<sp/>code<sp/>is<sp/>running</highlight></codeline>
+<codeline><highlight class="normal">slower<sp/>than<sp/>1<sp/>kHz),<sp/>the<sp/>back<sp/>end<sp/>automatically<sp/>sets<sp/>the<sp/>desired<sp/>action</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>step<sp/>`t`<sp/>to<sp/>the<sp/>same<sp/>as<sp/>the<sp/>one<sp/>of<sp/>`t<sp/>-<sp/>1`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>indicated<sp/>to<sp/>the<sp/>user<sp/>through<sp/>the<sp/>`action_repetitions`<sp/>field<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>status<sp/>message<sp/>which<sp/>contains<sp/>the<sp/>number<sp/>of<sp/>times<sp/>the<sp/>current<sp/>action</highlight></codeline>
+<codeline><highlight class="normal">has<sp/>been<sp/>repeated.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="docs/timeseries.md"/>
+  </compounddef>
+</doxygen>

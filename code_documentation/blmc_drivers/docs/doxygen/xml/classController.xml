@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classController" kind="class" language="C++" prot="public">
+    <compoundname>Controller</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classController_1abad7e0e003f885504b2de5e929afd187" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classblmc__drivers_1_1Motor" kindref="compound">blmc_drivers::Motor</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;blmc_drivers::Motor&gt; Controller::motor_</definition>
+        <argsstring></argsstring>
+        <name>motor_</name>
+        <briefdescription>
+<para>one motor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_leg.cpp" line="42" column="1" bodyfile="demos/demo_leg.cpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1a33ba57988a9da049562e61572ae53a05" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classblmc__drivers_1_1AnalogSensor" kindref="compound">blmc_drivers::AnalogSensor</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;blmc_drivers::AnalogSensor&gt; Controller::analog_sensor_</definition>
+        <argsstring></argsstring>
+        <name>analog_sensor_</name>
+        <briefdescription>
+<para>one slider. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_leg.cpp" line="46" column="1" bodyfile="demos/demo_leg.cpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classController_1abef4676ee65620e3e61fd2fb6107c00e" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread Controller::rt_thread_</definition>
+        <argsstring></argsstring>
+        <name>rt_thread_</name>
+        <briefdescription>
+<para>the realt time thread object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_leg.cpp" line="50" column="1" bodyfile="demos/demo_leg.cpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classController_1aceedb7c8fbd0fab8080fd7273d9dc65d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Controller::Controller</definition>
+        <argsstring>(std::shared_ptr&lt; blmc_drivers::Motor &gt; motor, std::shared_ptr&lt; blmc_drivers::AnalogSensor &gt; analog_sensor)</argsstring>
+        <name>Controller</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classblmc__drivers_1_1Motor" kindref="compound">blmc_drivers::Motor</ref> &gt;</type>
+          <declname>motor</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classblmc__drivers_1_1AnalogSensor" kindref="compound">blmc_drivers::AnalogSensor</ref> &gt;</type>
+          <declname>analog_sensor</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classController" kindref="compound">Controller</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>analog_sensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_leg.cpp" line="59" column="1" bodyfile="demos/demo_leg.cpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classController_1a63abf4d0c948dca6887de01050491f8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller::start_loop</definition>
+        <argsstring>()</argsstring>
+        <name>start_loop</name>
+        <briefdescription>
+<para>main control loop </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_leg.cpp" line="65" column="1" bodyfile="demos/demo_leg.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classController_1a596a9a35dcda61307e36bb2d8c4f067e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE Controller::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+<para>this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_leg.cpp" line="74" column="1" bodyfile="demos/demo_leg.cpp" bodystart="74" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classController_1a9ec8c2d4a68acccd118537c36894e516" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Controller::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>this is a simple control loop which runs at a kilohertz. </para>        </briefdescription>
+        <detaileddescription>
+<para>it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_leg.cpp" line="89" column="1" bodyfile="demos/demo_leg.cpp" bodystart="89" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is a simple PD control on one motor and one slider. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="demos/demo_leg.cpp" line="37" column="1" bodyfile="demos/demo_leg.cpp" bodystart="36" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classController_1a33ba57988a9da049562e61572ae53a05" prot="private" virt="non-virtual"><scope>Controller</scope><name>analog_sensor_</name></member>
+      <member refid="classController_1aceedb7c8fbd0fab8080fd7273d9dc65d" prot="public" virt="non-virtual"><scope>Controller</scope><name>Controller</name></member>
+      <member refid="classController_1a596a9a35dcda61307e36bb2d8c4f067e" prot="public" virt="non-virtual"><scope>Controller</scope><name>loop</name></member>
+      <member refid="classController_1a9ec8c2d4a68acccd118537c36894e516" prot="private" virt="non-virtual"><scope>Controller</scope><name>loop</name></member>
+      <member refid="classController_1abad7e0e003f885504b2de5e929afd187" prot="private" virt="non-virtual"><scope>Controller</scope><name>motor_</name></member>
+      <member refid="classController_1abef4676ee65620e3e61fd2fb6107c00e" prot="private" virt="non-virtual"><scope>Controller</scope><name>rt_thread_</name></member>
+      <member refid="classController_1a63abf4d0c948dca6887de01050491f8d" prot="public" virt="non-virtual"><scope>Controller</scope><name>start_loop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

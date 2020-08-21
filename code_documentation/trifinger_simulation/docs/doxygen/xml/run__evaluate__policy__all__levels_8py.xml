@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="run__evaluate__policy__all__levels_8py" kind="file" language="Python">
+    <compoundname>run_evaluate_policy_all_levels.py</compoundname>
+    <innerclass refid="classrun__evaluate__policy__all__levels_1_1TestSample" prot="public">run_evaluate_policy_all_levels::TestSample</innerclass>
+    <innernamespace refid="namespacerun__evaluate__policy__all__levels">run_evaluate_policy_all_levels</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;Run<sp/>`evaluate_policy.py`<sp/>with<sp/>random<sp/>goals<sp/>for<sp/>all<sp/>difficulty<sp/>levels</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">Creates<sp/>a<sp/>dataset<sp/>of<sp/>multiple<sp/>pairs<sp/>of<sp/>random<sp/>initial<sp/>state<sp/>and<sp/>goal<sp/>for<sp/>the</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">cube<sp/>for<sp/>each<sp/>difficulty<sp/>level.<sp/><sp/>Then<sp/>executes<sp/>`evaluate_policy.py`<sp/>on<sp/>each<sp/>of</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">these<sp/>samples<sp/>and<sp/>collects<sp/>the<sp/>log<sp/>files<sp/>in<sp/>the<sp/>specified<sp/>output<sp/>directory.</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">The<sp/>`evaluate_policy.py`<sp/>script<sp/>is<sp/>expected<sp/>to<sp/>be<sp/>located<sp/>in<sp/>the<sp/>current</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">working<sp/>directory.<sp/><sp/>Replace<sp/>the<sp/>dummy<sp/>policy<sp/>there<sp/>with<sp/>your<sp/>actual<sp/>policy<sp/>to</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">evaluate<sp/>it.</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">This<sp/>is<sp/>used<sp/>for<sp/>the<sp/>evaluation<sp/>of<sp/>the<sp/>submissions<sp/>of<sp/>this<sp/>phase<sp/>of<sp/>the<sp/>first</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">phase<sp/>of<sp/>the<sp/>real<sp/>robot<sp/>challenge.<sp/><sp/>Make<sp/>sure<sp/>this<sp/>script<sp/>runs<sp/>with<sp/>your</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">`evaluate_policy.py`<sp/>script<sp/>without<sp/>any<sp/>errors<sp/>before<sp/>submitting<sp/>your<sp/>code.</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">#<sp/>IMPORTANT:<sp/><sp/>DO<sp/>NOT<sp/>MODIFY<sp/>THIS<sp/>FILE!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Submissions<sp/>will<sp/>be<sp/>evaluate<sp/>on<sp/>our<sp/>side<sp/>with<sp/>a<sp/>similar<sp/>script<sp/>but<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">#<sp/>exactly<sp/>this<sp/>one.<sp/><sp/>To<sp/>make<sp/>sure<sp/>that<sp/>your<sp/>code<sp/>is<sp/>compatible<sp/>with<sp/>our</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">#<sp/>evaluation<sp/>script,<sp/>make<sp/>sure<sp/>it<sp/>runs<sp/>with<sp/>this<sp/>one<sp/>without<sp/>any<sp/>modifications.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>argparse</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pickle</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>subprocess</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>typing</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacetrifinger__simulation_1_1tasks" kindref="compound">trifinger_simulation.tasks</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>move_cube</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classrun__evaluate__policy__all__levels_1_1TestSample" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classrun__evaluate__policy__all__levels_1_1TestSample" kindref="compound">TestSample</ref>(typing.NamedTuple):</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>difficulty:<sp/>int</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>iteration:<sp/>int</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>init_pose_json:<sp/>str</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>goal_pose_json:<sp/>str</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>logfile:<sp/>str</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">generate_test_set(</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>levels:<sp/>typing.List[int],<sp/>samples_per_level:<sp/>int,<sp/>logfile_tmpl:<sp/>str</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">)<sp/>-&gt;<sp/>typing.List[TestSample]:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Generate<sp/>random<sp/>test<sp/>set<sp/>for<sp/>policy<sp/>evaluation.</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>For<sp/>each<sp/>difficulty<sp/>level<sp/>a<sp/>list<sp/>of<sp/>samples,<sp/>consisting<sp/>of<sp/>randomized</highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>initial<sp/>pose<sp/>and<sp/>goal<sp/>pose,<sp/>is<sp/>generated.</highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>levels:<sp/><sp/>List<sp/>of<sp/>difficulty<sp/>levels.</highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>samples_per_level:<sp/><sp/>How<sp/>many<sp/>samples<sp/>are<sp/>generated<sp/>per<sp/>level.</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logfile_tmpl:<sp/><sp/>Format<sp/>string<sp/>for<sp/>the<sp/>log<sp/>file<sp/>associated<sp/>with<sp/>this</highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sample.<sp/><sp/>Needs<sp/>to<sp/>contain<sp/>placeholders<sp/>&quot;{level}&quot;<sp/>and<sp/>&quot;{iteration}&quot;.</highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>List<sp/>of<sp/>``len(levels)<sp/>*<sp/>samples_per_level``<sp/>test<sp/>samples.</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>samples<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>level<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>levels:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(samples_per_level):</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init<sp/>=<sp/>move_cube.sample_goal(-1)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal<sp/>=<sp/>move_cube.sample_goal(level)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logfile<sp/>=<sp/>logfile_tmpl.format(level=level,<sp/>iteration=i)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>samples.append(</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrun__evaluate__policy__all__levels_1_1TestSample" kindref="compound">TestSample</ref>(level,<sp/>i,<sp/>init.to_json(),<sp/>goal.to_json(),<sp/>logfile)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>samples</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">run_evaluate_policy(sample:<sp/>TestSample):</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Run<sp/>evaluate_policy.py<sp/>with<sp/>the<sp/>given<sp/>sample.</highlight></codeline>
+<codeline lineno="73"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="74"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="75"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sample<sp/>(TestSample):<sp/>Contains<sp/>all<sp/>required<sp/>information<sp/>to<sp/>run<sp/>the</highlight></codeline>
+<codeline lineno="76"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>evaluation<sp/>script.</highlight></codeline>
+<codeline lineno="77"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>cmd<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;./evaluate_policy.py&quot;</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="comment">#<sp/>TODO:<sp/>make<sp/>path<sp/>configurable?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str(sample.difficulty),</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sample.init_pose_json,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sample.goal_pose_json,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sample.logfile,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>subprocess.run(cmd,<sp/>check=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">main():</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>parser<sp/>=<sp/>argparse.ArgumentParser(</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>description=__doc__,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>formatter_class=argparse.RawDescriptionHelpFormatter,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>parser.add_argument(</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;output_directory&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type=str,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>help=</highlight><highlight class="stringliteral">&quot;Directory<sp/>in<sp/>which<sp/>generated<sp/>files<sp/>are<sp/>stored.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>args<sp/>=<sp/>parser.parse_args()</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>os.path.isdir(args.output_directory):</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&apos;{}&apos;<sp/>does<sp/>not<sp/>exist<sp/>or<sp/>is<sp/>not<sp/>a<sp/>directory.&quot;</highlight><highlight class="normal">.format(</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args.output_directory</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.exit(1)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>levels<sp/>=<sp/>(1,<sp/>2,<sp/>3,<sp/>4)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>runs_per_level<sp/>=<sp/>10</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>logfile_tmpl<sp/>=<sp/>os.path.join(</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>args.output_directory,<sp/></highlight><highlight class="stringliteral">&quot;action_log_l{level}_i{iteration}.json&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>generate<sp/>n<sp/>samples<sp/>for<sp/>each<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>test_data<sp/>=<sp/>generate_test_set(levels,<sp/>runs_per_level,<sp/>logfile_tmpl)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>store<sp/>samples</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>sample_file<sp/>=<sp/>os.path.join(args.output_directory,<sp/></highlight><highlight class="stringliteral">&quot;test_data.p&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>with<sp/>open(sample_file,<sp/></highlight><highlight class="stringliteral">&quot;wb&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>fh:</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pickle.dump(test_data,<sp/>fh,<sp/>pickle.HIGHEST_PROTOCOL)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>run<sp/>&quot;evaluate_policy.py&quot;<sp/>for<sp/>each<sp/>sample</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>sample<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>test_data:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\n___Evaluate<sp/>level<sp/>{}<sp/>sample<sp/>{}___&quot;</highlight><highlight class="normal">.format(</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sample.difficulty,<sp/>sample.iteration</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>run_evaluate_policy(sample)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>main()</highlight></codeline>
+    </programlisting>
+    <location file="scripts/run_evaluate_policy_all_levels.py"/>
+  </compounddef>
+</doxygen>

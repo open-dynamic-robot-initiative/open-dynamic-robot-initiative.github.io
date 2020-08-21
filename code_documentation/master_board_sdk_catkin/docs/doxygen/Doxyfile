@@ -1,0 +1,69 @@
+#
+# @file Doxyfile.in
+# @author Maximilien Naveau (maximilien.naveau@gmail.com)
+# @copyright Copyright (c) 2019, New York University and Max Planck Gesellschaft.
+# @license License BSD-3 clause
+# @date 2019-05-06
+# 
+# @brief This file is the parameter file for the Doxygen ouput. All the variables
+# surrounded by "@" are CMake variable. See doxygen.cmake for details.
+# 
+
+PROJECT_NAME           = "master_board_sdk_catkin"
+OUTPUT_DIRECTORY       = .
+JAVADOC_AUTOBRIEF      = YES
+TAB_SIZE               = 4
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+# Add examples from this folder.
+EXAMPLE_PATH           = /workspace/software/workspace/src/catkin/hardware/master-board/sdk/master_board_sdk_catkin/demos
+
+# Look for any files in this folder ...(see RECURSIVE)
+INPUT                  = /workspace/software/workspace/src/catkin/hardware/master-board/sdk/master_board_sdk_catkin
+# (see INPUT)... and recursively.
+RECURSIVE              = YES
+
+# Set the root path for the images.
+IMAGE_PATH             = /workspace/software/workspace/src/catkin/hardware/master-board/sdk/master_board_sdk_catkin
+
+# Filter the python docstring as Doxygen ones.
+FILTER_PATTERNS = *.py=/workspace/software/workspace/src/catkin/core_robotics/mpi_cmake_modules/resources/py_filter
+
+# Remove the absolute path to the package from the file path.
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = /workspace/software/workspace/src/catkin/hardware/master-board/sdk/master_board_sdk_catkin
+
+# Get all the intersting files by looking for them recursively and according to
+# their extension
+FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.c *.cc *.hxx *.dox *.md *.py
+
+# Side bar with the tree.
+GENERATE_TREEVIEW = YES
+
+# remove the useless folders from the documentation.
+EXCLUDE_PATTERNS       = */*deprecated*/*
+EXCLUDE_PATTERNS      += */*build*/*
+EXCLUDE_PATTERNS      += */tests/*
+EXCLUDE_PATTERNS      += */internal/*
+
+# removing joss paper
+EXCLUDE_PATTERNS      += */paper.md
+
+GENERATE_TAGFILE       = master_board_sdk_catkin.tag
+GENERATE_HTML          = YES
+GENERATE_XML           = YES
+
+# Include and resize and image.
+ALIASES += imageSize{3}="\htmlonly <style> div.image img[src=\"\1\"]{\2} </style> \endhtmlonly \image html \1 \"\3\""
+# add a `@license` tag
+ALIASES += "license=\xrefitem license \"License\" \"License\" "
+
+# Allow searching from teh client side.
+SERVER_BASED_SEARCH = NO
+SEARCHENGINE        = YES
+
+# TODO manage this tag file with the cmake macro:
+# e.g. "/workspace/software/workspace/install/share/doc/.doxytag = /workspace/software/workspace/install/share/doc/@DEPENDENCY_PROJECT_NAME"
+# TAGFILES =  @master_board_sdk_catkin_TAGFILES@

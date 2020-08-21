@@ -1,0 +1,120 @@
+\hypertarget{structrobot__interfaces_1_1NFingerObservation}{}\section{robot\+\_\+interfaces\+:\+:N\+Finger\+Observation$<$ N\+\_\+\+F\+I\+N\+G\+E\+RS $>$ Struct Template Reference}
+\label{structrobot__interfaces_1_1NFingerObservation}\index{robot\+\_\+interfaces\+::\+N\+Finger\+Observation$<$ N\+\_\+\+F\+I\+N\+G\+E\+R\+S $>$@{robot\+\_\+interfaces\+::\+N\+Finger\+Observation$<$ N\+\_\+\+F\+I\+N\+G\+E\+R\+S $>$}}
+
+
+Observation of a Finger robot.  
+
+
+
+
+{\ttfamily \#include $<$n\+\_\+finger\+\_\+observation.\+hpp$>$}
+
+
+
+Inheritance diagram for robot\+\_\+interfaces\+:\+:N\+Finger\+Observation$<$ N\+\_\+\+F\+I\+N\+G\+E\+RS $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{structrobot__interfaces_1_1NFingerObservation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for robot\+\_\+interfaces\+:\+:N\+Finger\+Observation$<$ N\+\_\+\+F\+I\+N\+G\+E\+RS $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{structrobot__interfaces_1_1NFingerObservation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_a59675be5ce3ffe4c61fb1e88d131d31a}\label{structrobot__interfaces_1_1NFingerObservation_a59675be5ce3ffe4c61fb1e88d131d31a}} 
+typedef Eigen\+::\+Matrix$<$ double, num\+\_\+joints, 1 $>$ {\bfseries Joint\+Vector}
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_aa97c4d41b53b370f0e7301a051f0e60a}\label{structrobot__interfaces_1_1NFingerObservation_aa97c4d41b53b370f0e7301a051f0e60a}} 
+typedef Eigen\+::\+Matrix$<$ double, num\+\_\+fingers, 1 $>$ {\bfseries Finger\+Vector}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_a66ebefed2f36a1c538cf4c0524931e60}\label{structrobot__interfaces_1_1NFingerObservation_a66ebefed2f36a1c538cf4c0524931e60}} 
+{\footnotesize template$<$class Archive $>$ }\\void {\bfseries serialize} (Archive \&archive)
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_a0fd596a36ab38bdb148b64497499f32b}\label{structrobot__interfaces_1_1NFingerObservation_a0fd596a36ab38bdb148b64497499f32b}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+\_\+name} () override
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_af8b4692b935585942a51b9342605b712}\label{structrobot__interfaces_1_1NFingerObservation_af8b4692b935585942a51b9342605b712}} 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ {\bfseries get\+\_\+data} () override
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_ac830302468e0dee99c3c1e7e388267c3}\label{structrobot__interfaces_1_1NFingerObservation_ac830302468e0dee99c3c1e7e388267c3}} 
+Joint\+Vector \hyperlink{structrobot__interfaces_1_1NFingerObservation_ac830302468e0dee99c3c1e7e388267c3}{position} = Joint\+Vector\+::\+Zero()
+\begin{DoxyCompactList}\small\item\em Measured angular position of all joints in radian. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_a27ebb82cb119786e1ae9f85f89dfa76a}\label{structrobot__interfaces_1_1NFingerObservation_a27ebb82cb119786e1ae9f85f89dfa76a}} 
+Joint\+Vector \hyperlink{structrobot__interfaces_1_1NFingerObservation_a27ebb82cb119786e1ae9f85f89dfa76a}{velocity} = Joint\+Vector\+::\+Zero()
+\begin{DoxyCompactList}\small\item\em Measured velocity of all joints in radian/second. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_a693ccc700f9506bcc73cb12b63275194}\label{structrobot__interfaces_1_1NFingerObservation_a693ccc700f9506bcc73cb12b63275194}} 
+Joint\+Vector \hyperlink{structrobot__interfaces_1_1NFingerObservation_a693ccc700f9506bcc73cb12b63275194}{torque} = Joint\+Vector\+::\+Zero()
+\begin{DoxyCompactList}\small\item\em Measured torques of all joints in Nm. \end{DoxyCompactList}\item 
+Finger\+Vector \hyperlink{structrobot__interfaces_1_1NFingerObservation_a48ea78dfbc3e17a313a312d758d27343}{tip\+\_\+force} = Finger\+Vector\+::\+Zero()
+\begin{DoxyCompactList}\small\item\em Measurements of the pressure sensors at the finger tips. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_ac3e7fa7d87b5af61378985e541152d46}\label{structrobot__interfaces_1_1NFingerObservation_ac3e7fa7d87b5af61378985e541152d46}} 
+static constexpr size\+\_\+t {\bfseries num\+\_\+fingers} = N\+\_\+\+F\+I\+N\+G\+E\+RS
+\item 
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_a52ba830179e60bdf07c90df1614bad11}\label{structrobot__interfaces_1_1NFingerObservation_a52ba830179e60bdf07c90df1614bad11}} 
+static constexpr size\+\_\+t {\bfseries num\+\_\+joints} = N\+\_\+\+F\+I\+N\+G\+E\+RS $\ast$ 3
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t N\+\_\+\+F\+I\+N\+G\+E\+RS$>$\newline
+struct robot\+\_\+interfaces\+::\+N\+Finger\+Observation$<$ N\+\_\+\+F\+I\+N\+G\+E\+R\+S $>$}
+
+Observation of a Finger robot. 
+
+Values like angular position, velocity or torque of the joints are represented as a 1-\/dimensional vector with one element per joint. The order of the joints in these vectors is as follows\+: \begin{DoxyVerb}0. Finger 1, upper joint
+1. Finger 1, middle joint
+2. Finger 1, lower joint
+3. Finger 2, upper joint
+4. Finger 2, middle joint
+5. Finger 2, lower joint
+...
+#. Finger n, upper joint
+#. Finger n, middle joint
+#. Finger n, lower joint
+\end{DoxyVerb}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N\+\_\+\+F\+I\+N\+G\+E\+RS} & Number of fingers. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structrobot__interfaces_1_1NFingerObservation_a48ea78dfbc3e17a313a312d758d27343}\label{structrobot__interfaces_1_1NFingerObservation_a48ea78dfbc3e17a313a312d758d27343}} 
+\index{robot\+\_\+interfaces\+::\+N\+Finger\+Observation@{robot\+\_\+interfaces\+::\+N\+Finger\+Observation}!tip\+\_\+force@{tip\+\_\+force}}
+\index{tip\+\_\+force@{tip\+\_\+force}!robot\+\_\+interfaces\+::\+N\+Finger\+Observation@{robot\+\_\+interfaces\+::\+N\+Finger\+Observation}}
+\subsubsection{\texorpdfstring{tip\+\_\+force}{tip\_force}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N\+\_\+\+F\+I\+N\+G\+E\+RS$>$ \\
+Finger\+Vector \hyperlink{structrobot__interfaces_1_1NFingerObservation}{robot\+\_\+interfaces\+::\+N\+Finger\+Observation}$<$ N\+\_\+\+F\+I\+N\+G\+E\+RS $>$\+::tip\+\_\+force = Finger\+Vector\+::\+Zero()}
+
+
+
+Measurements of the pressure sensors at the finger tips. 
+
+One per finger. Ranges between 0 and 1 without specific unit. Note that not all fingers are equipped with an actual sensor! For fingers without sensor, this value is undefined. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/\hyperlink{n__finger__observation_8hpp}{n\+\_\+finger\+\_\+observation.\+hpp}\end{DoxyCompactItemize}

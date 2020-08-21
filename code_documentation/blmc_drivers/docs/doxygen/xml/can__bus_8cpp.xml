@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="can__bus_8cpp" kind="file" language="C++">
+    <compoundname>can_bus.cpp</compoundname>
+    <includes local="no">sstream</includes>
+    <includes refid="can__bus_8hpp" local="no">blmc_drivers/devices/can_bus.hpp</includes>
+    <incdepgraph>
+      <node id="1157">
+        <label>blmc_drivers/utils/os_interface.hpp</label>
+        <link refid="os__interface_8hpp"/>
+        <childnode refid="1158" relation="include">
+        </childnode>
+        <childnode refid="1159" relation="include">
+        </childnode>
+        <childnode refid="1160" relation="include">
+        </childnode>
+        <childnode refid="1161" relation="include">
+        </childnode>
+        <childnode refid="1162" relation="include">
+        </childnode>
+        <childnode refid="1163" relation="include">
+        </childnode>
+        <childnode refid="1164" relation="include">
+        </childnode>
+        <childnode refid="1165" relation="include">
+        </childnode>
+        <childnode refid="1166" relation="include">
+        </childnode>
+        <childnode refid="1167" relation="include">
+        </childnode>
+        <childnode refid="1168" relation="include">
+        </childnode>
+        <childnode refid="1169" relation="include">
+        </childnode>
+        <childnode refid="1151" relation="include">
+        </childnode>
+        <childnode refid="1170" relation="include">
+        </childnode>
+        <childnode refid="1147" relation="include">
+        </childnode>
+        <childnode refid="1171" relation="include">
+        </childnode>
+        <childnode refid="1172" relation="include">
+        </childnode>
+        <childnode refid="1173" relation="include">
+        </childnode>
+      </node>
+      <node id="1163">
+        <label>net/if.h</label>
+      </node>
+      <node id="1151">
+        <label>real_time_tools/timer.hpp</label>
+      </node>
+      <node id="1161">
+        <label>stdint.h</label>
+      </node>
+      <node id="1173">
+        <label>sys/mman.h</label>
+      </node>
+      <node id="1159">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1156">
+        <label>real_time_tools/threadsafe/threadsafe_timeseries.hpp</label>
+      </node>
+      <node id="1152">
+        <label>real_time_tools/thread.hpp</label>
+      </node>
+      <node id="1150">
+        <label>string</label>
+      </node>
+      <node id="1168">
+        <label>linux/can/raw.h</label>
+      </node>
+      <node id="1166">
+        <label>sys/ioctl.h</label>
+      </node>
+      <node id="1167">
+        <label>linux/can.h</label>
+      </node>
+      <node id="1155">
+        <label>real_time_tools/threadsafe/threadsafe_object.hpp</label>
+      </node>
+      <node id="1169">
+        <label>limits.h</label>
+      </node>
+      <node id="1154">
+        <label>real_time_tools/spinner.hpp</label>
+      </node>
+      <node id="1153">
+        <label>real_time_tools/iostream.hpp</label>
+      </node>
+      <node id="1172">
+        <label>condition_variable</label>
+      </node>
+      <node id="1164">
+        <label>sys/types.h</label>
+      </node>
+      <node id="1162">
+        <label>string.h</label>
+      </node>
+      <node id="1146">
+        <label>src/can_bus.cpp</label>
+        <link refid="can__bus_8cpp"/>
+        <childnode refid="1147" relation="include">
+        </childnode>
+        <childnode refid="1148" relation="include">
+        </childnode>
+      </node>
+      <node id="1160">
+        <label>unistd.h</label>
+      </node>
+      <node id="1147">
+        <label>sstream</label>
+      </node>
+      <node id="1170">
+        <label>iostream</label>
+      </node>
+      <node id="1148">
+        <label>blmc_drivers/devices/can_bus.hpp</label>
+        <link refid="can__bus_8hpp"/>
+        <childnode refid="1149" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+        <childnode refid="1151" relation="include">
+        </childnode>
+        <childnode refid="1152" relation="include">
+        </childnode>
+        <childnode refid="1153" relation="include">
+        </childnode>
+        <childnode refid="1154" relation="include">
+        </childnode>
+        <childnode refid="1155" relation="include">
+        </childnode>
+        <childnode refid="1156" relation="include">
+        </childnode>
+        <childnode refid="1157" relation="include">
+        </childnode>
+        <childnode refid="1174" relation="include">
+        </childnode>
+      </node>
+      <node id="1171">
+        <label>mutex</label>
+      </node>
+      <node id="1165">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="1174">
+        <label>blmc_drivers/devices/device_interface.hpp</label>
+        <link refid="device__interface_8hpp"/>
+      </node>
+      <node id="1158">
+        <label>stdio.h</label>
+      </node>
+      <node id="1149">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceblmc__drivers">blmc_drivers</innernamespace>
+    <briefdescription>
+<para>This file defines classes that allow communication with a Can network. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Felix Widmaier (<ulink url="mailto:felix.widmaier@tuebingen.mpg.de">felix.widmaier@tuebingen.mpg.de</ulink>) </para></simplesect>
+<simplesect kind="author"><para>Manuel Wuthrich (<ulink url="mailto:manuel.wuthrich@gmail.com">manuel.wuthrich@gmail.com</ulink>) </para></simplesect>
+<simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<simplesect kind="version"><para>0.1 </para></simplesect>
+<simplesect kind="date"><para>2018-11-23</para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2018 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="14"><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="can__bus_8hpp" kindref="compound">blmc_drivers/devices/can_bus.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceblmc__drivers" kindref="compound">blmc_drivers</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="classblmc__drivers_1_1CanBus_1a7d376f1ebd6dd8bc3299f6fc9f3d42c6" kindref="member">CanBus::CanBus</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>can_interface_name,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>history_length)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1ab09707f2c5f6cb7eb98f82e8e190d3c4" kindref="member">input_</ref><sp/>=<sp/>std::make_shared&lt;CanframeTimeseries&gt;(history_length);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1ae1ecf491b819c83eb999bb9cdde6fb21" kindref="member">sent_input_</ref><sp/>=<sp/>std::make_shared&lt;CanframeTimeseries&gt;(history_length);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1ad9802d502698f202f9842a0c00372931" kindref="member">output_</ref><sp/>=<sp/>std::make_shared&lt;CanframeTimeseries&gt;(history_length);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1aa726bd0d63a783d2a3cc02e2ef9c929b" kindref="member">name_</ref><sp/>=<sp/>can_interface_name;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1a996c9b1bc46071b2d002de38d6e9f781" kindref="member">can_connection_</ref>.set(<ref refid="classblmc__drivers_1_1CanBus_1a86826b4acc0833e041e6ea02824f8d48" kindref="member">setup_can</ref>(can_interface_name,<sp/>0));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1a85c9d5d9c6413c6871d48a247660ac20" kindref="member">is_loop_active_</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1a906baf827eff3c2850728478764a4759" kindref="member">rt_thread_</ref>.create_realtime_thread(&amp;<ref refid="classblmc__drivers_1_1CanBus_1a65042f6d32e30c7c367d7e5780856a60" kindref="member">CanBus::loop</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="classblmc__drivers_1_1CanBus_1aa79afdda8d7f28ea63d32bf1a5a0f196" kindref="member">CanBus::~CanBus</ref>()</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1a85c9d5d9c6413c6871d48a247660ac20" kindref="member">is_loop_active_</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1a906baf827eff3c2850728478764a4759" kindref="member">rt_thread_</ref>.join();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceosi_1a92dc20de3b4933a10f24c98cecf2568b" kindref="member">osi::close_can_device</ref>(<ref refid="classblmc__drivers_1_1CanBus_1a996c9b1bc46071b2d002de38d6e9f781" kindref="member">can_connection_</ref>.get().socket);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classblmc__drivers_1_1CanBus_1acf90b96ca5727f9ecb328ce20d7a2cbc" kindref="member">CanBus::send_if_input_changed</ref>()</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classblmc__drivers_1_1CanBus_1ab09707f2c5f6cb7eb98f82e8e190d3c4" kindref="member">input_</ref>-&gt;has_changed_since_tag())</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CanframeTimeseries::Index</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeindex_to_send<sp/>=<sp/><ref refid="classblmc__drivers_1_1CanBus_1ab09707f2c5f6cb7eb98f82e8e190d3c4" kindref="member">input_</ref>-&gt;newest_timeindex();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CanBusFrame<sp/>frame_to_send<sp/>=<sp/>(*input_)[timeindex_to_send];</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1ab09707f2c5f6cb7eb98f82e8e190d3c4" kindref="member">input_</ref>-&gt;tag(timeindex_to_send);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sent_input_-&gt;append(frame_to_send);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classblmc__drivers_1_1CanBus_1ae445662e791d0b6149289d9df39e1ea0" kindref="member">send_frame</ref>(frame_to_send);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classblmc__drivers_1_1CanBus_1a65042f6d32e30c7c367d7e5780856a60" kindref="member">CanBus::loop</ref>()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="classblmc__drivers_1_1CanBus_1a85c9d5d9c6413c6871d48a247660ac20" kindref="member">is_loop_active_</ref>)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output_-&gt;append(<ref refid="classblmc__drivers_1_1CanBus_1ada25ff1dcd774666f423b23d4de664ea" kindref="member">receive_frame</ref>());</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classblmc__drivers_1_1CanBus_1ae445662e791d0b6149289d9df39e1ea0" kindref="member">CanBus::send_frame</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CanBusFrame&amp;<sp/>unstamped_can_frame)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>address<sp/>---------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket<sp/>=<sp/><ref refid="classblmc__drivers_1_1CanBus_1a996c9b1bc46071b2d002de38d6e9f781" kindref="member">can_connection_</ref>.get().socket;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_can<sp/>address<sp/>=<sp/><ref refid="classblmc__drivers_1_1CanBus_1a996c9b1bc46071b2d002de38d6e9f781" kindref="member">can_connection_</ref>.get().send_addr;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>put<sp/>data<sp/>into<sp/>can<sp/>frame<sp/>---------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a8bc67ce447b2fa424a45f3e01162035f" kindref="member">can_frame_t</ref><sp/>can_frame;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>can_frame.can_id<sp/>=<sp/>unstamped_can_frame.id;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>can_frame.can_dlc<sp/>=<sp/>unstamped_can_frame.dlc;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(can_frame.data,<sp/>unstamped_can_frame.data.begin(),</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unstamped_can_frame.dlc);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>send<sp/>----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceosi_1a001686caee0f34611f14ab94c7303254" kindref="member">osi::send_to_can_device</ref>(socket,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)&amp;can_frame,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="os__interface_8hpp_1a8bc67ce447b2fa424a45f3e01162035f" kindref="member">can_frame_t</ref>),</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)&amp;address,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(address));</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">CanBusFrame<sp/><ref refid="classblmc__drivers_1_1CanBus_1ada25ff1dcd774666f423b23d4de664ea" kindref="member">CanBus::receive_frame</ref>()</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket<sp/>=<sp/><ref refid="classblmc__drivers_1_1CanBus_1a996c9b1bc46071b2d002de38d6e9f781" kindref="member">can_connection_</ref>.get().socket;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>data<sp/>we<sp/>want<sp/>to<sp/>obtain<sp/>----------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a8bc67ce447b2fa424a45f3e01162035f" kindref="member">can_frame_t</ref><sp/>can_frame;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1ad3b24c25feabadba465f8797d8c7fe27" kindref="member">nanosecs_abs_t</ref><sp/>timestamp;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_can<sp/>message_address;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>setup<sp/>message<sp/>such<sp/>that<sp/>data<sp/>can<sp/>be<sp/>received<sp/>to<sp/>variables<sp/>above<sp/>-----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">iovec<sp/>input_output_vector;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>input_output_vector.iov_base<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)&amp;can_frame;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>input_output_vector.iov_len<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="os__interface_8hpp_1a8bc67ce447b2fa424a45f3e01162035f" kindref="member">can_frame_t</ref>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">msghdr<sp/>message_header;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>message_header.msg_iov<sp/>=<sp/>&amp;input_output_vector;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>message_header.msg_iovlen<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>message_header.msg_name<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)&amp;message_address;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>message_header.msg_namelen<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_can);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>message_header.msg_control<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)&amp;timestamp;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>message_header.msg_controllen<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="os__interface_8hpp_1ad3b24c25feabadba465f8797d8c7fe27" kindref="member">nanosecs_abs_t</ref>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>receive<sp/>message<sp/>from<sp/>can<sp/>bus<sp/>----------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceosi_1a244466c0afc9ae9fe059cee665fb0603" kindref="member">osi::receive_message_from_can_device</ref>(socket,<sp/>&amp;message_header,<sp/>0);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>process<sp/>received<sp/>data<sp/>and<sp/>put<sp/>into<sp/>felix<sp/>widmaier&apos;s<sp/>format<sp/>----------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(message_header.msg_controllen<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>No<sp/>timestamp<sp/>for<sp/>this<sp/>frame<sp/>available.<sp/>Make<sp/>sure<sp/>we<sp/>dont<sp/>get</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>garbage.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timestamp<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>CanBusFrame<sp/>out_frame;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>out_frame.id<sp/>=<sp/>can_frame.can_id;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>out_frame.dlc<sp/>=<sp/>can_frame.can_dlc;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>can_frame.can_dlc;<sp/>i++)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out_frame.data[i]<sp/>=<sp/>can_frame.data[i];</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out_frame;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">CanBusConnection<sp/><ref refid="classblmc__drivers_1_1CanBus_1a86826b4acc0833e041e6ea02824f8d48" kindref="member">CanBus::setup_can</ref>(std::string<sp/>name,<sp/>uint32_t<sp/>err_mask)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>socket_number;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>sockaddr_can<sp/>recv_addr;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>sockaddr_can<sp/>send_addr;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ifreq<sp/>ifr;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="os__interface_8hpp_1ac420926cbb955a79a41eba7cec1bc1c8" kindref="member">rt_dev_socket</ref>(PF_CAN,<sp/>SOCK_RAW,<sp/>CAN_RAW);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a25df6b00e3fd8b8740896ecc5c337fdc" kindref="member">rt_fprintf</ref>(stderr,<sp/></highlight><highlight class="stringliteral">&quot;rt_dev_socket:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>strerror(-ret));</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a1acf1ce04ab7fe3a5972c0618adcbbac" kindref="member">rt_printf</ref>(</highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>setup<sp/>CAN<sp/>connection.<sp/>Exit.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>socket_number<sp/>=<sp/>ret;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>strncpy(ifr.ifr_name,<sp/>name.c_str(),<sp/>IFNAMSIZ);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="os__interface_8hpp_1a81e55d2bdf351cd53218a3085ba56955" kindref="member">rt_dev_ioctl</ref>(socket_number,<sp/>SIOCGIFINDEX,<sp/>&amp;ifr);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a25df6b00e3fd8b8740896ecc5c337fdc" kindref="member">rt_fprintf</ref>(stderr,<sp/></highlight><highlight class="stringliteral">&quot;rt_dev_ioctl<sp/>GET_IFINDEX:<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strerror(-ret));</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceosi_1a92dc20de3b4933a10f24c98cecf2568b" kindref="member">osi::close_can_device</ref>(socket_number);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a1acf1ce04ab7fe3a5972c0618adcbbac" kindref="member">rt_printf</ref>(</highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>setup<sp/>CAN<sp/>connection.<sp/>Exit.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>error<sp/>mask</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(err_mask)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="os__interface_8hpp_1a80d28afb04b8db1e0192593ebcb4d07b" kindref="member">rt_dev_setsockopt</ref>(socket_number,<sp/>SOL_CAN_RAW,<sp/>CAN_RAW_ERR_FILTER,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;err_mask,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(err_mask));</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a25df6b00e3fd8b8740896ecc5c337fdc" kindref="member">rt_fprintf</ref>(stderr,<sp/></highlight><highlight class="stringliteral">&quot;rt_dev_setsockopt:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>strerror(-ret));</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceosi_1a92dc20de3b4933a10f24c98cecf2568b" kindref="member">osi::close_can_device</ref>(socket_number);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a1acf1ce04ab7fe3a5972c0618adcbbac" kindref="member">rt_printf</ref>(</highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>setup<sp/>CAN<sp/>connection.<sp/>Exit.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bind<sp/>to<sp/>socket</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_addr.can_family<sp/>=<sp/>AF_CAN;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_addr.can_ifindex<sp/>=<sp/>ifr.ifr_ifindex;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="os__interface_8hpp_1a68219f584f63b92f4d23bd708140056d" kindref="member">rt_dev_bind</ref>(socket_number,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)&amp;recv_addr,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_can));</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a25df6b00e3fd8b8740896ecc5c337fdc" kindref="member">rt_fprintf</ref>(stderr,<sp/></highlight><highlight class="stringliteral">&quot;rt_dev_bind:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>strerror(-ret));</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceosi_1a92dc20de3b4933a10f24c98cecf2568b" kindref="member">osi::close_can_device</ref>(socket_number);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a1acf1ce04ab7fe3a5972c0618adcbbac" kindref="member">rt_printf</ref>(</highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>setup<sp/>CAN<sp/>connection.<sp/>Exit.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__XENO__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>timestamps<sp/>for<sp/>frames</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="os__interface_8hpp_1a81e55d2bdf351cd53218a3085ba56955" kindref="member">rt_dev_ioctl</ref>(socket,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RTCAN_RTIOC_TAKE_TIMESTAMP,<sp/>RTCAN_TAKE_TIMESTAMPS);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a25df6b00e3fd8b8740896ecc5c337fdc" kindref="member">rt_fprintf</ref>(stderr,<sp/></highlight><highlight class="stringliteral">&quot;rt_dev_ioctl<sp/>TAKE_TIMESTAMP:<sp/>%s\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strerror(-ret));</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceosi_1a92dc20de3b4933a10f24c98cecf2568b" kindref="member">osi::close_can_device</ref>(socket);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="os__interface_8hpp_1a1acf1ce04ab7fe3a5972c0618adcbbac" kindref="member">rt_printf</ref>(</highlight><highlight class="stringliteral">&quot;Couldn&apos;t<sp/>setup<sp/>CAN<sp/>connection.<sp/>Exit.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined<sp/>RT_PREEMPT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Need<sp/>to<sp/>support<sp/>timestamps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>why<sp/>the<sp/>memset?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(&amp;send_addr,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(send_addr));</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>send_addr.can_family<sp/>=<sp/>AF_CAN;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>send_addr.can_ifindex<sp/>=<sp/>ifr.ifr_ifindex;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>CanBusConnection<sp/>can_connection;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>can_connection.send_addr<sp/>=<sp/>send_addr;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>can_connection.socket<sp/>=<sp/>socket_number;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>can_connection;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>blmc_drivers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/can_bus.cpp"/>
+  </compounddef>
+</doxygen>

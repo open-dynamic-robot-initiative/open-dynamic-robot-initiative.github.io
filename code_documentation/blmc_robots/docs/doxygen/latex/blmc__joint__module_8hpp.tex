@@ -1,0 +1,88 @@
+\hypertarget{blmc__joint__module_8hpp}{}\section{include/blmc\+\_\+robots/blmc\+\_\+joint\+\_\+module.hpp File Reference}
+\label{blmc__joint__module_8hpp}\index{include/blmc\+\_\+robots/blmc\+\_\+joint\+\_\+module.\+hpp@{include/blmc\+\_\+robots/blmc\+\_\+joint\+\_\+module.\+hpp}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Eigen$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include \char`\"{}blmc\+\_\+drivers/devices/motor.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blmc\+\_\+robots/common\+\_\+header.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blmc\+\_\+robots/mathematics/polynome.\+hpp\char`\"{}}\newline
+Include dependency graph for blmc\+\_\+joint\+\_\+module.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{blmc__joint__module_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{blmc__joint__module_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structblmc__robots_1_1HomingState}{blmc\+\_\+robots\+::\+Homing\+State}
+\begin{DoxyCompactList}\small\item\em State variables required for the homing. \end{DoxyCompactList}\item 
+class \hyperlink{classblmc__robots_1_1BlmcJointModule}{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classblmc__robots_1_1BlmcJointModule}{Blmc\+Joint\+Module} class is containing the joint information. \end{DoxyCompactList}\item 
+class \hyperlink{classblmc__robots_1_1BlmcJointModules}{blmc\+\_\+robots\+::\+Blmc\+Joint\+Modules$<$ C\+O\+U\+N\+T $>$}
+\begin{DoxyCompactList}\small\item\em This class defines an interface to a collection of B\+L\+MC joints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{blmc__joint__module_8hpp_aa5066dce11e2e3ae56b844676b132a09}\label{blmc__joint__module_8hpp_aa5066dce11e2e3ae56b844676b132a09}} 
+typedef std\+::shared\+\_\+ptr$<$ Blmc\+Joint\+Module $>$ \hyperlink{blmc__joint__module_8hpp_aa5066dce11e2e3ae56b844676b132a09}{blmc\+\_\+robots\+::\+Blmc\+Joint\+Module\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Blmc\+Joint\+Module\+\_\+ptr shortcut for the shared pointer \hyperlink{classblmc__robots_1_1BlmcJointModule}{Blmc\+Joint\+Module} type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{blmc__joint__module_8hpp_aa1075809042ff261e4b0a20d161448b6}\label{blmc__joint__module_8hpp_aa1075809042ff261e4b0a20d161448b6}} 
+enum \hyperlink{blmc__joint__module_8hpp_aa1075809042ff261e4b0a20d161448b6}{blmc\+\_\+robots\+::\+Homing\+Return\+Code} \{ {\bfseries blmc\+\_\+robots\+::\+Homing\+Return\+Code\+::\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED} = 0, 
+{\bfseries blmc\+\_\+robots\+::\+Homing\+Return\+Code\+::\+R\+U\+N\+N\+I\+NG}, 
+{\bfseries blmc\+\_\+robots\+::\+Homing\+Return\+Code\+::\+S\+U\+C\+C\+E\+E\+D\+ED}, 
+{\bfseries blmc\+\_\+robots\+::\+Homing\+Return\+Code\+::\+F\+A\+I\+L\+ED}
+ \}\begin{DoxyCompactList}\small\item\em Possible return values of the homing. \end{DoxyCompactList}
+\item 
+\mbox{\Hypertarget{blmc__joint__module_8hpp_ae2dd8b0230887c948d2583feb6beb051}\label{blmc__joint__module_8hpp_ae2dd8b0230887c948d2583feb6beb051}} 
+enum \hyperlink{blmc__joint__module_8hpp_ae2dd8b0230887c948d2583feb6beb051}{blmc\+\_\+robots\+::\+Go\+To\+Return\+Code} \{ {\bfseries blmc\+\_\+robots\+::\+Go\+To\+Return\+Code\+::\+R\+U\+N\+N\+I\+NG}, 
+{\bfseries blmc\+\_\+robots\+::\+Go\+To\+Return\+Code\+::\+S\+U\+C\+C\+E\+E\+D\+ED}, 
+{\bfseries blmc\+\_\+robots\+::\+Go\+To\+Return\+Code\+::\+F\+A\+I\+L\+ED}
+ \}\begin{DoxyCompactList}\small\item\em Possible return values of the go\+\_\+to. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Manuel Wuthrich 
+
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{License}
+\item[\hyperlink{license__license000001}{License}]License B\+S\+D-\/3-\/\+Clause \end{DoxyRefDesc}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019, New York University and Max Planck Gesellschaft. 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2019-\/07-\/11
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Manuel Wuthrich 
+
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) 
+
+Julian Viereck (\href{mailto:jviereck@tuebingen.mpg.de}{\tt jviereck@tuebingen.\+mpg.\+de}) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{License}
+\item[\hyperlink{license__license000002}{License}]License B\+S\+D-\/3-\/\+Clause \end{DoxyRefDesc}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019, New York University and Max Planck Gesellschaft. 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2020-\/02-\/17 
+\end{DoxyDate}

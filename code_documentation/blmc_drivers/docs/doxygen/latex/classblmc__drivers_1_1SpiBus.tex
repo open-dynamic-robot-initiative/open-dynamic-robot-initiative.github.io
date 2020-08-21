@@ -1,0 +1,397 @@
+\hypertarget{classblmc__drivers_1_1SpiBus}{}\section{blmc\+\_\+drivers\+:\+:Spi\+Bus Class Reference}
+\label{classblmc__drivers_1_1SpiBus}\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+
+
+Inheritance diagram for blmc\+\_\+drivers\+:\+:Spi\+Bus\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classblmc__drivers_1_1SpiBus__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for blmc\+\_\+drivers\+:\+:Spi\+Bus\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classblmc__drivers_1_1SpiBus__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__drivers_1_1SpiBus_a020b550fdd3c00a5361f0bee0382dbe2}{Spi\+Bus} (std\+::shared\+\_\+ptr$<$ Master\+Board\+Interface $>$ main\+\_\+board\+\_\+interface, const size\+\_\+t \&nb\+\_\+udrivers, const size\+\_\+t \&history\+\_\+length=1000)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__drivers_1_1SpiBus}{Spi\+Bus} object. \end{DoxyCompactList}\item 
+\hyperlink{classblmc__drivers_1_1SpiBus_a0c711c24c403c532c5d5bccfa5c1dc68}{$\sim$\+Spi\+Bus} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classblmc__drivers_1_1SpiBus}{Spi\+Bus} object. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a2f70f7c7d6a0fc22f03d0ca407f0c01b}{get\+\_\+measurement} (const size\+\_\+t udriver\+\_\+id, const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a8e869cbdb9fcc872ba5a33813e0dfafb}{Motor\+Board\+Interface\+::\+Measurement\+Index} \&index) const
+\begin{DoxyCompactList}\small\item\em Output and status. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae3777e484dda60c4abe87f2b542ddfb8}{Motor\+Board\+Interface\+::\+Status\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a80113b000cb68ee9869235ed42a3c547}{get\+\_\+status} (const size\+\_\+t udriver\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Get the status of the motor board. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a06300c7a9b8266966e281c8437a75a1b}{get\+\_\+control} (const size\+\_\+t udriver\+\_\+id, const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a82ed4d0fa527521707281396095a88ca}{Motor\+Board\+Interface\+::\+Control\+Index} \&index) const
+\begin{DoxyCompactList}\small\item\em input logs \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Motor\+Board\+Interface\+::\+Command\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a70f133d24ab7de8efcea007eb73d78a1}{get\+\_\+command} (const size\+\_\+t udriver\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Get the commands to be send. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a2b94f55bf4a71e0d819653c99fe4bce9}{get\+\_\+sent\+\_\+control} (const size\+\_\+t udriver\+\_\+id, const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a82ed4d0fa527521707281396095a88ca}{Motor\+Board\+Interface\+::\+Control\+Index} \&index) const
+\begin{DoxyCompactList}\small\item\em Get the sent controls. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Motor\+Board\+Interface\+::\+Command\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1SpiBus_ad1f3cdf8a05233b007a81f3752dc2a92}{get\+\_\+sent\+\_\+command} (const size\+\_\+t udriver\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Get the sent commands. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1SpiBus_a9cf14c27b226c454795cc1e508ae9a2f}{set\+\_\+control} (const size\+\_\+t udriver\+\_\+id, const double \&control, const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a82ed4d0fa527521707281396095a88ca}{Motor\+Board\+Interface\+::\+Control\+Index} \&index)
+\begin{DoxyCompactList}\small\item\em Setters. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1SpiBus_af5ca19baccb36befbbc697cdd2e2922c}{set\+\_\+command} (const size\+\_\+t udriver\+\_\+id, const \hyperlink{classblmc__drivers_1_1MotorBoardCommand}{Motor\+Board\+Command} \&command)
+\begin{DoxyCompactList}\small\item\em set\+\_\+command save the command internally. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1SpiBus_ab3802bb10a387b14c7cedc9175823421}{send\+\_\+if\+\_\+input\+\_\+changed} ()
+\begin{DoxyCompactList}\small\item\em Actually send the commands and the controls. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_ac8c8047626990074b5203ea8010f4570}\label{classblmc__drivers_1_1SpiBus_ac8c8047626990074b5203ea8010f4570}} 
+bool \hyperlink{classblmc__drivers_1_1SpiBus_ac8c8047626990074b5203ea8010f4570}{is\+\_\+ready} ()
+\begin{DoxyCompactList}\small\item\em return s only once board and motors are ready. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a1ff5ba883178951fdd4cc2c5d41d2342}\label{classblmc__drivers_1_1SpiBus_a1ff5ba883178951fdd4cc2c5d41d2342}} 
+void \hyperlink{classblmc__drivers_1_1SpiBus_a1ff5ba883178951fdd4cc2c5d41d2342}{wait\+\_\+until\+\_\+ready} ()
+\begin{DoxyCompactList}\small\item\em Wait until the robot is ready. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a21b3790ae435d8845c1a47e31d628cc9}\label{classblmc__drivers_1_1SpiBus_a21b3790ae435d8845c1a47e31d628cc9}} 
+void \hyperlink{classblmc__drivers_1_1SpiBus_a21b3790ae435d8845c1a47e31d628cc9}{loop} ()
+\begin{DoxyCompactList}\small\item\em This is the real time thread that streams the data to/from the main board. \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__drivers_1_1SpiBus_ad1332260ea455812464723ede9f2c1d1}{send\+\_\+newest\+\_\+command} ()
+\begin{DoxyCompactList}\small\item\em Send the newest control stored in the time series. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_adedb766b0bcc857f3aa53e3468d4c02a}\label{classblmc__drivers_1_1SpiBus_adedb766b0bcc857f3aa53e3468d4c02a}} 
+void \hyperlink{classblmc__drivers_1_1SpiBus_adedb766b0bcc857f3aa53e3468d4c02a}{send\+\_\+newest\+\_\+controls} ()
+\begin{DoxyCompactList}\small\item\em Send the newest control stored in the time series. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classblmc__drivers_1_1SpiBus_a1838b3861afd142bb5db570841baada1}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em Private methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ Master\+Board\+Interface $>$ \hyperlink{classblmc__drivers_1_1SpiBus_aa5505729650a363fc5ea2d03c27f0b90}{main\+\_\+board\+\_\+interface\+\_\+}
+\begin{DoxyCompactList}\small\item\em Communication related attributes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_ad6f453d80f7c40994d7c2d770e0bcb7a}\label{classblmc__drivers_1_1SpiBus_ad6f453d80f7c40994d7c2d770e0bcb7a}} 
+size\+\_\+t \hyperlink{classblmc__drivers_1_1SpiBus_ad6f453d80f7c40994d7c2d770e0bcb7a}{nb\+\_\+udrivers\+\_\+}
+\begin{DoxyCompactList}\small\item\em nb\+\_\+udrivers\+\_\+ is the number of the udriver controlled by the main board. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1SpiBus_ae3ad20f9cd7e06585b3af84697870cfa}{measurement\+\_\+}
+\begin{DoxyCompactList}\small\item\em Outputs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a6a39a07f72d977243eac5346ae4cabba}\label{classblmc__drivers_1_1SpiBus_a6a39a07f72d977243eac5346ae4cabba}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae3777e484dda60c4abe87f2b542ddfb8}{Motor\+Board\+Interface\+::\+Status\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a6a39a07f72d977243eac5346ae4cabba}{status\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the status history of the udriver board. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a39d0629b2cb78b7aeae9a4022ca487ed}{control\+\_\+}
+\begin{DoxyCompactList}\small\item\em Inputs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a0dadae58644afb41beba8df8f9f09727}\label{classblmc__drivers_1_1SpiBus_a0dadae58644afb41beba8df8f9f09727}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Motor\+Board\+Interface\+::\+Command\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a0dadae58644afb41beba8df8f9f09727}{command\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the buffer of the commands to be sent to the card. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a8d0b70b8d02c386d436051a571930c58}\label{classblmc__drivers_1_1SpiBus_a8d0b70b8d02c386d436051a571930c58}} 
+size\+\_\+t \hyperlink{classblmc__drivers_1_1SpiBus_a8d0b70b8d02c386d436051a571930c58}{history\+\_\+length\+\_\+}
+\begin{DoxyCompactList}\small\item\em history\+\_\+length\+\_\+ is the length of data buffers in number of iteration. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a9c17b8887fc58ca1d5bfb1d5c2fd1e8a}{sent\+\_\+control\+\_\+}
+\begin{DoxyCompactList}\small\item\em Log. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_aa0e964e18db278c1d281d1406ff6d42a}\label{classblmc__drivers_1_1SpiBus_aa0e964e18db278c1d281d1406ff6d42a}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Motor\+Board\+Interface\+::\+Command\+Timeseries} $>$ $>$ \hyperlink{classblmc__drivers_1_1SpiBus_aa0e964e18db278c1d281d1406ff6d42a}{sent\+\_\+command\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the history of the already sent commands. \end{DoxyCompactList}\item 
+bool \hyperlink{classblmc__drivers_1_1SpiBus_acf6f61ce04098f05fd04971b477da07c}{is\+\_\+loop\+\_\+active\+\_\+}
+\begin{DoxyCompactList}\small\item\em Loop management. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_ab1ac8ef913898d20cc678f205e27662e}\label{classblmc__drivers_1_1SpiBus_ab1ac8ef913898d20cc678f205e27662e}} 
+bool \hyperlink{classblmc__drivers_1_1SpiBus_ab1ac8ef913898d20cc678f205e27662e}{motors\+\_\+are\+\_\+paused\+\_\+}
+\begin{DoxyCompactList}\small\item\em Are motor in idle mode = 0 torques. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_ab861c026ce0d206b802ab521055885fd}\label{classblmc__drivers_1_1SpiBus_ab861c026ce0d206b802ab521055885fd}} 
+int \hyperlink{classblmc__drivers_1_1SpiBus_ab861c026ce0d206b802ab521055885fd}{control\+\_\+timeout\+\_\+ms\+\_\+}
+\begin{DoxyCompactList}\small\item\em If no control is sent for more than control\+\_\+timeout\+\_\+ms\+\_\+ the board will shut down. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_aaae2fa36dfe60f6155cf8b010c16fc8f}\label{classblmc__drivers_1_1SpiBus_aaae2fa36dfe60f6155cf8b010c16fc8f}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classblmc__drivers_1_1SpiBus_aaae2fa36dfe60f6155cf8b010c16fc8f}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the thread object that allow to spwan a real-\/time thread or not dependening on the current OS. \end{DoxyCompactList}\item 
+std\+::array$<$ bool, 12 $>$ \hyperlink{classblmc__drivers_1_1SpiBus_a5805dd95171df8f26efdae85ea02662c}{motor\+\_\+index\+\_\+toggle\+\_\+bits\+\_\+}
+\begin{DoxyCompactList}\small\item\em Everytime a motor index is detected the corresponding bit change for the opposite value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a020b550fdd3c00a5361f0bee0382dbe2}\label{classblmc__drivers_1_1SpiBus_a020b550fdd3c00a5361f0bee0382dbe2}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!Spi\+Bus@{Spi\+Bus}}
+\index{Spi\+Bus@{Spi\+Bus}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{Spi\+Bus()}{SpiBus()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+Spi\+Bus\+::\+Spi\+Bus (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ Master\+Board\+Interface $>$}]{main\+\_\+board\+\_\+interface,  }\item[{const size\+\_\+t \&}]{nb\+\_\+udrivers,  }\item[{const size\+\_\+t \&}]{history\+\_\+length = {\ttfamily 1000} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classblmc__drivers_1_1SpiBus}{Spi\+Bus} object. 
+
+The constructor starts a real time thread\+: \hyperlink{classblmc__drivers_1_1SpiBus_a21b3790ae435d8845c1a47e31d628cc9}{Spi\+Bus\+::loop()}. This thread streams the data back and forth collecting the sensor data and sends the control/commands.
+
+
+\begin{DoxyParams}{Parameters}
+{\em main\+\_\+board\+\_\+interface} & is the object that communicate with the main board. The main board provides the hardware informations. \\
+\hline
+{\em nb\+\_\+udrivers} & is the number udrivers plugged on the main board. \\
+\hline
+{\em history\+\_\+length} & is the size of the buffer of messages stored. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a0c711c24c403c532c5d5bccfa5c1dc68}\label{classblmc__drivers_1_1SpiBus_a0c711c24c403c532c5d5bccfa5c1dc68}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!````~Spi\+Bus@{$\sim$\+Spi\+Bus}}
+\index{````~Spi\+Bus@{$\sim$\+Spi\+Bus}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{$\sim$\+Spi\+Bus()}{~SpiBus()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+Spi\+Bus\+::$\sim$\+Spi\+Bus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \hyperlink{classblmc__drivers_1_1SpiBus}{Spi\+Bus} object. 
+
+The destructor handles the proper shutdown of the class and the threads. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a70f133d24ab7de8efcea007eb73d78a1}\label{classblmc__drivers_1_1SpiBus_a70f133d24ab7de8efcea007eb73d78a1}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!get\+\_\+command@{get\+\_\+command}}
+\index{get\+\_\+command@{get\+\_\+command}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+command()}{get\_command()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Motor\+Board\+Interface\+::\+Command\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::get\+\_\+command (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{udriver\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the commands to be send. 
+
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Command\+Timeseries$>$ is the list of the commands to be send. Inherited from \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a06300c7a9b8266966e281c8437a75a1b}\label{classblmc__drivers_1_1SpiBus_a06300c7a9b8266966e281c8437a75a1b}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!get\+\_\+control@{get\+\_\+control}}
+\index{get\+\_\+control@{get\+\_\+control}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+control()}{get\_control()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Motor\+Board\+Interface\+::\+Scalar\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::get\+\_\+control (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{udriver\+\_\+id,  }\item[{const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a82ed4d0fa527521707281396095a88ca}{Motor\+Board\+Interface\+::\+Control\+Index} \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+input logs 
+
+input logs Get the controls to be send.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & define the kind of control we are looking for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Scalar\+Timeseries$>$ is the list of the controls to be send. Inherited from \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a2f70f7c7d6a0fc22f03d0ca407f0c01b}\label{classblmc__drivers_1_1SpiBus_a2f70f7c7d6a0fc22f03d0ca407f0c01b}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!get\+\_\+measurement@{get\+\_\+measurement}}
+\index{get\+\_\+measurement@{get\+\_\+measurement}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+measurement()}{get\_measurement()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Motor\+Board\+Interface\+::\+Scalar\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::get\+\_\+measurement (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{udriver\+\_\+id,  }\item[{const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a8e869cbdb9fcc872ba5a33813e0dfafb}{Motor\+Board\+Interface\+::\+Measurement\+Index} \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Output and status. 
+
+Get the measurements from the main board.
+
+
+\begin{DoxyParams}{Parameters}
+{\em udriver\+\_\+id} & is the index of the spi port on the control board \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$const Motor\+Interface\+::\+Scalar\+Timeseries$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_ad1f3cdf8a05233b007a81f3752dc2a92}\label{classblmc__drivers_1_1SpiBus_ad1f3cdf8a05233b007a81f3752dc2a92}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!get\+\_\+sent\+\_\+command@{get\+\_\+sent\+\_\+command}}
+\index{get\+\_\+sent\+\_\+command@{get\+\_\+sent\+\_\+command}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+sent\+\_\+command()}{get\_sent\_command()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae2afe94a023d9f08a4c689e9b7660f15}{Motor\+Board\+Interface\+::\+Command\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::get\+\_\+sent\+\_\+command (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{udriver\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the sent commands. 
+
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Command\+Timeseries$>$ is the list of the commands sent recently. Inherited from \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a2b94f55bf4a71e0d819653c99fe4bce9}\label{classblmc__drivers_1_1SpiBus_a2b94f55bf4a71e0d819653c99fe4bce9}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!get\+\_\+sent\+\_\+control@{get\+\_\+sent\+\_\+control}}
+\index{get\+\_\+sent\+\_\+control@{get\+\_\+sent\+\_\+control}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+sent\+\_\+control()}{get\_sent\_control()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a14e237254ba495a66091ea3a3a33fa75}{Motor\+Board\+Interface\+::\+Scalar\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::get\+\_\+sent\+\_\+control (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{udriver\+\_\+id,  }\item[{const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a82ed4d0fa527521707281396095a88ca}{Motor\+Board\+Interface\+::\+Control\+Index} \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the sent controls. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & define the kind of control we are looking for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Scalar\+Timeseries$>$ is the list of the controls sent recently. Inherited from \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a80113b000cb68ee9869235ed42a3c547}\label{classblmc__drivers_1_1SpiBus_a80113b000cb68ee9869235ed42a3c547}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!get\+\_\+status@{get\+\_\+status}}
+\index{get\+\_\+status@{get\+\_\+status}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{get\+\_\+status()}{get\_status()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_ae3777e484dda60c4abe87f2b542ddfb8}{Motor\+Board\+Interface\+::\+Status\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::get\+\_\+status (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{udriver\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the status of the motor board. 
+
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Status\+Timeseries$>$ is the list of the last status of the card. Inherited from \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a1838b3861afd142bb5db570841baada1}\label{classblmc__drivers_1_1SpiBus_a1838b3861afd142bb5db570841baada1}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!loop@{loop}}
+\index{loop@{loop}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE blmc\+\_\+drivers\+::\+Spi\+Bus\+::loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{instance\+\_\+pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Private methods. 
+
+This is the helper function used for spawning the real time thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance\+\_\+pointer} & is the current object in this case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE depends on the current OS. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_ab3802bb10a387b14c7cedc9175823421}\label{classblmc__drivers_1_1SpiBus_ab3802bb10a387b14c7cedc9175823421}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!send\+\_\+if\+\_\+input\+\_\+changed@{send\+\_\+if\+\_\+input\+\_\+changed}}
+\index{send\+\_\+if\+\_\+input\+\_\+changed@{send\+\_\+if\+\_\+input\+\_\+changed}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{send\+\_\+if\+\_\+input\+\_\+changed()}{send\_if\_input\_changed()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Spi\+Bus\+::send\+\_\+if\+\_\+input\+\_\+changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Actually send the commands and the controls. 
+
+Inherited from \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface}. This particualr instance does not actually check if it is is a new command or control as the full status of the robot is exchange at every tick. \mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_ad1332260ea455812464723ede9f2c1d1}\label{classblmc__drivers_1_1SpiBus_ad1332260ea455812464723ede9f2c1d1}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!send\+\_\+newest\+\_\+command@{send\+\_\+newest\+\_\+command}}
+\index{send\+\_\+newest\+\_\+command@{send\+\_\+newest\+\_\+command}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{send\+\_\+newest\+\_\+command()}{send\_newest\_command()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Spi\+Bus\+::send\+\_\+newest\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Send the newest control stored in the time series. 
+
+Some of the command are not implemented/will be implemented. A warning is issued upon miss-\/use. \mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_af5ca19baccb36befbbc697cdd2e2922c}\label{classblmc__drivers_1_1SpiBus_af5ca19baccb36befbbc697cdd2e2922c}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!set\+\_\+command@{set\+\_\+command}}
+\index{set\+\_\+command@{set\+\_\+command}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{set\+\_\+command()}{set\_command()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Spi\+Bus\+::set\+\_\+command (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{udriver\+\_\+id,  }\item[{const \hyperlink{classblmc__drivers_1_1MotorBoardCommand}{Motor\+Board\+Command} \&}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+\_\+command save the command internally. 
+
+In order to actaully send the controls to the network please call \char`\"{}send\+\_\+if\+\_\+input\+\_\+changed\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & is the command to be sent. Inherited from \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a9cf14c27b226c454795cc1e508ae9a2f}\label{classblmc__drivers_1_1SpiBus_a9cf14c27b226c454795cc1e508ae9a2f}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!set\+\_\+control@{set\+\_\+control}}
+\index{set\+\_\+control@{set\+\_\+control}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{set\+\_\+control()}{set\_control()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Spi\+Bus\+::set\+\_\+control (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{udriver\+\_\+id,  }\item[{const double \&}]{control,  }\item[{const \hyperlink{classblmc__drivers_1_1MotorBoardInterface_a82ed4d0fa527521707281396095a88ca}{Motor\+Board\+Interface\+::\+Control\+Index} \&}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setters. 
+
+Setters. set\+\_\+control save the control internally. In order to actaully send the controls to the network please call \char`\"{}send\+\_\+if\+\_\+input\+\_\+changed\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em control} & is the value of the control. \\
+\hline
+{\em index} & define the kind of control we want to send. Inherited from \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a39d0629b2cb78b7aeae9a4022ca487ed}\label{classblmc__drivers_1_1SpiBus_a39d0629b2cb78b7aeae9a4022ca487ed}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!control\+\_\+@{control\+\_\+}}
+\index{control\+\_\+@{control\+\_\+}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{control\+\_\+}{control\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries}$>$ $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::control\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Inputs. 
+
+This is the buffer of the controls to be sent to card. \mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_acf6f61ce04098f05fd04971b477da07c}\label{classblmc__drivers_1_1SpiBus_acf6f61ce04098f05fd04971b477da07c}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!is\+\_\+loop\+\_\+active\+\_\+@{is\+\_\+loop\+\_\+active\+\_\+}}
+\index{is\+\_\+loop\+\_\+active\+\_\+@{is\+\_\+loop\+\_\+active\+\_\+}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{is\+\_\+loop\+\_\+active\+\_\+}{is\_loop\_active\_}}
+{\footnotesize\ttfamily bool blmc\+\_\+drivers\+::\+Spi\+Bus\+::is\+\_\+loop\+\_\+active\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loop management. 
+
+This boolean makes sure that the loop is stopped upon destruction of this object. \mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_aa5505729650a363fc5ea2d03c27f0b90}\label{classblmc__drivers_1_1SpiBus_aa5505729650a363fc5ea2d03c27f0b90}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!main\+\_\+board\+\_\+interface\+\_\+@{main\+\_\+board\+\_\+interface\+\_\+}}
+\index{main\+\_\+board\+\_\+interface\+\_\+@{main\+\_\+board\+\_\+interface\+\_\+}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{main\+\_\+board\+\_\+interface\+\_\+}{main\_board\_interface\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$Master\+Board\+Interface$>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::main\+\_\+board\+\_\+interface\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Communication related attributes. 
+
+Main board interface sdk\+: \href{https://github.com/open-dynamic-robot-initiative/master-board}{\tt https\+://github.\+com/open-\/dynamic-\/robot-\/initiative/master-\/board} \mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_ae3ad20f9cd7e06585b3af84697870cfa}\label{classblmc__drivers_1_1SpiBus_ae3ad20f9cd7e06585b3af84697870cfa}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!measurement\+\_\+@{measurement\+\_\+}}
+\index{measurement\+\_\+@{measurement\+\_\+}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{measurement\+\_\+}{measurement\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries}$>$ $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::measurement\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Outputs. 
+
+All the measurements acquiered from the C\+AN board. \mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a5805dd95171df8f26efdae85ea02662c}\label{classblmc__drivers_1_1SpiBus_a5805dd95171df8f26efdae85ea02662c}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!motor\+\_\+index\+\_\+toggle\+\_\+bits\+\_\+@{motor\+\_\+index\+\_\+toggle\+\_\+bits\+\_\+}}
+\index{motor\+\_\+index\+\_\+toggle\+\_\+bits\+\_\+@{motor\+\_\+index\+\_\+toggle\+\_\+bits\+\_\+}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{motor\+\_\+index\+\_\+toggle\+\_\+bits\+\_\+}{motor\_index\_toggle\_bits\_}}
+{\footnotesize\ttfamily std\+::array$<$bool, 12$>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::motor\+\_\+index\+\_\+toggle\+\_\+bits\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Everytime a motor index is detected the corresponding bit change for the opposite value. 
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (index detected on motor X)
+\{
+    \hyperlink{classblmc__drivers_1_1SpiBus_a5805dd95171df8f26efdae85ea02662c}{motor\_index\_toggle\_bits\_}[X] = !
+      \hyperlink{classblmc__drivers_1_1SpiBus_a5805dd95171df8f26efdae85ea02662c}{motor\_index\_toggle\_bits\_}[X]
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{classblmc__drivers_1_1SpiBus_a9c17b8887fc58ca1d5bfb1d5c2fd1e8a}\label{classblmc__drivers_1_1SpiBus_a9c17b8887fc58ca1d5bfb1d5c2fd1e8a}} 
+\index{blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}!sent\+\_\+control\+\_\+@{sent\+\_\+control\+\_\+}}
+\index{sent\+\_\+control\+\_\+@{sent\+\_\+control\+\_\+}!blmc\+\_\+drivers\+::\+Spi\+Bus@{blmc\+\_\+drivers\+::\+Spi\+Bus}}
+\subsubsection{\texorpdfstring{sent\+\_\+control\+\_\+}{sent\_control\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+Interface\+::\+Scalar\+Timeseries}$>$ $>$ blmc\+\_\+drivers\+::\+Spi\+Bus\+::sent\+\_\+control\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Log. 
+
+This is the history of the already sent controls. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+drivers/devices/\hyperlink{spi__bus_8hpp}{spi\+\_\+bus.\+hpp}\item 
+src/\hyperlink{spi__bus_8cpp}{spi\+\_\+bus.\+cpp}\end{DoxyCompactItemize}

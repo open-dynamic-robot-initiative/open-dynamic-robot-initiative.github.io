@@ -1,0 +1,43 @@
+This package provides a real-\/time A\+PI for communication with the motor control board and the Opto\+Force sensor via C\+AN.
+
+A description of the C\+AN protocol that is implemented by this library can be found on Confluence\+: \href{https://atlas.is.localnet/confluence/display/AMDW/BLMC+-+CAN+Interface}{\tt https\+://atlas.\+is.\+localnet/confluence/display/\+A\+M\+D\+W/\+B\+L\+M\+C+-\/+\+C\+A\+N+\+Interface}
+
+This package contains a executable blmc\+\_\+can\+\_\+demo, that shows how to use the library.
+
+\subsection*{Dependencies and other Requirements }
+
+Supports (tested) Ubuntu patched with R\+T-\/preempt. Supports (experimental) Mac OS , Ubuntu patched with Xenomai
+
+(see\+: \href{https://github.com/machines-in-motion/real_time_tools}{\tt https\+://github.\+com/machines-\/in-\/motion/real\+\_\+time\+\_\+tools})
+
+A real-\/time C\+AN driver has to be loaded and the interface to be set up. This can be done with the script {\ttfamily start\+\_\+rtcan} that is included in the xenomai-\/core repository (\href{https://git-amd.tuebingen.mpg.de/amd-clmc/xenomai-core}{\tt https\+://git-\/amd.\+tuebingen.\+mpg.\+de/amd-\/clmc/xenomai-\/core}).
+
+Note that the board has to run a program that implements the same C\+AN protocol. At the time of writing this R\+E\+A\+D\+ME, this is only the case for dual\+\_\+motor\+\_\+torque\+\_\+ctrl.
+
+\subsection*{Documentation }
+
+The code is well documented with Doxygen comments. To generate a H\+T\+ML documentation, build with \begin{DoxyVerb}catkin_make install -DBUILD_DOCUMENTATION=ON
+\end{DoxyVerb}
+
+
+Documentations will be in $<$\+Workspace$>$/install/share/
+
+\subsection*{Authors }
+
+
+\begin{DoxyItemize}
+\item Felix Widmaier
+\item Manuel Wuethrich
+\item Maximilien Naveau
+\item Steve Heim
+\item Diego Agudelo
+\item Julian Viereck
+\end{DoxyItemize}
+
+\subsection*{Copyrights }
+
+Copyright(c) 2018-\/2019 Max Planck Gesellschaft, New York University
+
+\subsection*{License }
+
+B\+SD 3-\/\+Clause License 

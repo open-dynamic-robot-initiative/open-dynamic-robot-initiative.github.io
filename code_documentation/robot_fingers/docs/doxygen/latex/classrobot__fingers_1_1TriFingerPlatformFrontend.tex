@@ -1,0 +1,317 @@
+\hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend}{}\section{robot\+\_\+fingers\+:\+:Tri\+Finger\+Platform\+Frontend Class Reference}
+\label{classrobot__fingers_1_1TriFingerPlatformFrontend}\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+
+
+Combined frontend for the Tri\+Finger Platform.  
+
+
+
+
+{\ttfamily \#include $<$trifinger\+\_\+platform\+\_\+frontend.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_af657fd0a6ea4023926ab23a225ca3bab}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_af657fd0a6ea4023926ab23a225ca3bab}} 
+typedef robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Action {\bfseries Action}
+\item 
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a993606d1334ac3d932ba9b9637388cab}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a993606d1334ac3d932ba9b9637388cab}} 
+typedef robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Observation {\bfseries Robot\+Observation}
+\item 
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a2bb400ff94b8c528fd3be4a3112bda81}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a2bb400ff94b8c528fd3be4a3112bda81}} 
+typedef robot\+\_\+interfaces\+::\+Status {\bfseries Robot\+Status}
+\item 
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a96f578b30c6f8e2220a8cbccc91974c1}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a96f578b30c6f8e2220a8cbccc91974c1}} 
+typedef trifinger\+\_\+cameras\+::\+Tri\+Camera\+Observation {\bfseries Camera\+Observation}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_a47150cf36520116808333d5c3e8a2fdc}{Tri\+Finger\+Platform\+Frontend} (robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Base\+Data\+Ptr robot\+\_\+data, trifinger\+\_\+object\+\_\+tracking\+::\+Object\+Tracker\+Data\+::\+Ptr object\+\_\+tracker\+\_\+data, std\+::shared\+\_\+ptr$<$ robot\+\_\+interfaces\+::\+Sensor\+Data$<$ Camera\+Observation $>$$>$ camera\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Initialize with data instances for all internal frontends. \end{DoxyCompactList}\item 
+\hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_aea53f5c5b5443f9b481b33392b5caa25}{Tri\+Finger\+Platform\+Frontend} ()
+\begin{DoxyCompactList}\small\item\em Initialize with default data instances. \end{DoxyCompactList}\item 
+time\+\_\+series\+::\+Index \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_a474d2d6fd6c48fc16ccd60ac2bc21c2f}{append\+\_\+desired\+\_\+action} (const Action \&desired\+\_\+action)
+\begin{DoxyCompactList}\small\item\em Append a desired robot action to the action queue. \end{DoxyCompactList}\item 
+Robot\+Observation \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_a86149ce45a4ddada714eb0e0fde20e66}{get\+\_\+robot\+\_\+observation} (const time\+\_\+series\+::\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get robot observation of the time step t. \end{DoxyCompactList}\item 
+Action \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_acdb76e148024bfdcb59bf06a92f30222}{get\+\_\+desired\+\_\+action} (const time\+\_\+series\+::\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get desired action of time step t. \end{DoxyCompactList}\item 
+Action \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_a7c0d56e7e1096a3ab299a45e8b832d54}{get\+\_\+applied\+\_\+action} (const time\+\_\+series\+::\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get actually applied action of time step t. \end{DoxyCompactList}\item 
+Robot\+Status \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_afc30cd1aecd9967045a0365c21f964fe}{get\+\_\+robot\+\_\+status} (const time\+\_\+series\+::\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get robot status of time step t. \end{DoxyCompactList}\item 
+time\+\_\+series\+::\+Timestamp \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_abf6ed97b5f5711058030733fb283aad6}{get\+\_\+timestamp\+\_\+ms} (const time\+\_\+series\+::\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Get timestamp (in milliseconds) of time step t. \end{DoxyCompactList}\item 
+time\+\_\+series\+::\+Index \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_a9c97379d70b40a023609521a83253177}{get\+\_\+current\+\_\+timeindex} () const
+\begin{DoxyCompactList}\small\item\em Get the current time index. \end{DoxyCompactList}\item 
+void \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_a0dc8d9e0d6e26053194e223ac29fc8c4}{wait\+\_\+until\+\_\+timeindex} (const time\+\_\+series\+::\+Index \&t) const
+\begin{DoxyCompactList}\small\item\em Wait until time step t. \end{DoxyCompactList}\item 
+trifinger\+\_\+object\+\_\+tracking\+::\+Object\+Pose \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_abb39cc97fbf08af6942f2de3e99e6f54}{get\+\_\+object\+\_\+pose} (const time\+\_\+series\+::\+Index t) const
+\begin{DoxyCompactList}\small\item\em Get observation of the object tracker of time step t. \end{DoxyCompactList}\item 
+Camera\+Observation \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_a2b83c7b23977185f4a522e16077b204a}{get\+\_\+camera\+\_\+observation} (const time\+\_\+series\+::\+Index t) const
+\begin{DoxyCompactList}\small\item\em Get camera images of time step t. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Frontend\+Type $>$ }\\time\+\_\+series\+::\+Index \hyperlink{classrobot__fingers_1_1TriFingerPlatformFrontend_a4c67fd3d8d1e887ed0f5b1b8ec2d30b3}{find\+\_\+matching\+\_\+timeindex} (const Frontend\+Type \&other\+\_\+frontend, const time\+\_\+series\+::\+Index t\+\_\+robot) const
+\begin{DoxyCompactList}\small\item\em Find time index of frontend that matches with the given robot time index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_aa8cef15571ffada758d86370b86b8777}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_aa8cef15571ffada758d86370b86b8777}} 
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend {\bfseries robot\+\_\+frontend\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a7475483ecc42aba5910e7b3bceeecde3}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a7475483ecc42aba5910e7b3bceeecde3}} 
+trifinger\+\_\+object\+\_\+tracking\+::\+Object\+Tracker\+Frontend {\bfseries object\+\_\+tracker\+\_\+frontend\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a075fa9bb1d76bbb47955e2ce6126a0e9}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a075fa9bb1d76bbb47955e2ce6126a0e9}} 
+robot\+\_\+interfaces\+::\+Sensor\+Frontend$<$ Camera\+Observation $>$ {\bfseries camera\+\_\+frontend\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Combined frontend for the Tri\+Finger Platform. 
+
+This class combines the frontends for robot, cameras and object tracking in one class using unified time indices.
+
+Internally the different frontends all have their own time indices which are unrelated to each other. In this combined class, the time index used is the one that belongs to the robot frontend. When accessing observations of the other frontends, it also takes this index t and internally matches it to the time index t\+\_\+o that was active in the other frontend at the time of t.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Methods to get timestamp from camera or object tracker? \end{DoxyRefDesc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a47150cf36520116808333d5c3e8a2fdc}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a47150cf36520116808333d5c3e8a2fdc}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!Tri\+Finger\+Platform\+Frontend@{Tri\+Finger\+Platform\+Frontend}}
+\index{Tri\+Finger\+Platform\+Frontend@{Tri\+Finger\+Platform\+Frontend}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{Tri\+Finger\+Platform\+Frontend()}{TriFingerPlatformFrontend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::\+Tri\+Finger\+Platform\+Frontend (\begin{DoxyParamCaption}\item[{robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Base\+Data\+Ptr}]{robot\+\_\+data,  }\item[{trifinger\+\_\+object\+\_\+tracking\+::\+Object\+Tracker\+Data\+::\+Ptr}]{object\+\_\+tracker\+\_\+data,  }\item[{std\+::shared\+\_\+ptr$<$ robot\+\_\+interfaces\+::\+Sensor\+Data$<$ Camera\+Observation $>$$>$}]{camera\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Initialize with data instances for all internal frontends. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em robot\+\_\+data} & Robot\+Data instance used by the robot frontend. \\
+\hline
+{\em object\+\_\+tracker\+\_\+data} & Object\+Tracker\+Data instance used by the object tracker frontend. \\
+\hline
+{\em camera\+\_\+data} & Sensor\+Data instance, used by the camera frontend. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_aea53f5c5b5443f9b481b33392b5caa25}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_aea53f5c5b5443f9b481b33392b5caa25}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!Tri\+Finger\+Platform\+Frontend@{Tri\+Finger\+Platform\+Frontend}}
+\index{Tri\+Finger\+Platform\+Frontend@{Tri\+Finger\+Platform\+Frontend}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{Tri\+Finger\+Platform\+Frontend()}{TriFingerPlatformFrontend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::\+Tri\+Finger\+Platform\+Frontend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize with default data instances. 
+
+Creates for each internal frontend a corresponding mutli-\/process data instance with the default shared memory ID for the corresponding data type. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a474d2d6fd6c48fc16ccd60ac2bc21c2f}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a474d2d6fd6c48fc16ccd60ac2bc21c2f}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!append\+\_\+desired\+\_\+action@{append\+\_\+desired\+\_\+action}}
+\index{append\+\_\+desired\+\_\+action@{append\+\_\+desired\+\_\+action}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{append\+\_\+desired\+\_\+action()}{append\_desired\_action()}}
+{\footnotesize\ttfamily time\+\_\+series\+::\+Index robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::append\+\_\+desired\+\_\+action (\begin{DoxyParamCaption}\item[{const Action \&}]{desired\+\_\+action }\end{DoxyParamCaption})}
+
+
+
+Append a desired robot action to the action queue. 
+
+\begin{DoxySeeAlso}{See also}
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend\+::append\+\_\+desired\+\_\+action
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The index of the time step at which this action is going to be executed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a4c67fd3d8d1e887ed0f5b1b8ec2d30b3}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a4c67fd3d8d1e887ed0f5b1b8ec2d30b3}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!find\+\_\+matching\+\_\+timeindex@{find\+\_\+matching\+\_\+timeindex}}
+\index{find\+\_\+matching\+\_\+timeindex@{find\+\_\+matching\+\_\+timeindex}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{find\+\_\+matching\+\_\+timeindex()}{find\_matching\_timeindex()}}
+{\footnotesize\ttfamily template$<$typename Frontend\+Type $>$ \\
+time\+\_\+series\+::\+Index robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::find\+\_\+matching\+\_\+timeindex (\begin{DoxyParamCaption}\item[{const Frontend\+Type \&}]{other\+\_\+frontend,  }\item[{const time\+\_\+series\+::\+Index}]{t\+\_\+robot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Find time index of frontend that matches with the given robot time index. 
+
+The given time index t\+\_\+robot refers to the robot data time series. To provide the correct observation from the other frontend for this time step, find the highest time index t\+\_\+other of the other frontend where \begin{DoxyVerb} timestamp(t_other) <= timestamp(t_robot)
+\end{DoxyVerb}
+
+
+Note that this is not always the one that is closest w.\+r.\+t. to the timestamp, i.\+e. \begin{DoxyVerb} t_other != argmin(|timestamp(t_other) - timestamp(t_robot)|)
+\end{DoxyVerb}
+
+
+The latter would not be deterministic\+: the outcome could change when called twice with the same {\ttfamily t\+\_\+robot} if a new \char`\"{}other\char`\"{} observation arrived in between the calls.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]The implementation below is very naive. It simply does a linear search starting from the latest time index. So worst case performance is O(n) where n is the number of \char`\"{}other\char`\"{} observations over the period that is covered by the buffer of the robot data.\end{DoxyRefDesc}
+\begin{DoxyVerb}  Options to speed this up:
+   - binary search (?)
+   - estimate time step size based on last observations
+   - store matched indices of last call
+
+  Note, however, that `t_robot` is very likely the latest time index
+  in most cases.  In this case the match for `t_other` will also be
+  the latest index of the corresponding time series.  In this case,
+  the complexity is O(1).  So even when implementing a more complex
+  search algorithm, the first candidate for `t_other` that is checked
+  should always be the latest one.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Frontend\+Type} & Type of the frontend. This is templated so that the same implementation can be used for both camera and object tracker frontend. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em other\+\_\+frontend} & The frontend for which a matching time index needs to be found. \\
+\hline
+{\em t\+\_\+robot} & Time index of the robot frontend.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Time index for other\+\_\+frontend which is/was active at the time of t\+\_\+robot. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a7c0d56e7e1096a3ab299a45e8b832d54}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a7c0d56e7e1096a3ab299a45e8b832d54}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!get\+\_\+applied\+\_\+action@{get\+\_\+applied\+\_\+action}}
+\index{get\+\_\+applied\+\_\+action@{get\+\_\+applied\+\_\+action}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+applied\+\_\+action()}{get\_applied\_action()}}
+{\footnotesize\ttfamily Tri\+Finger\+Platform\+Frontend\+::\+Action robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::get\+\_\+applied\+\_\+action (\begin{DoxyParamCaption}\item[{const time\+\_\+series\+::\+Index \&}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Get actually applied action of time step t. 
+
+\begin{DoxySeeAlso}{See also}
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend\+::get\+\_\+applied\+\_\+action 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a2b83c7b23977185f4a522e16077b204a}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a2b83c7b23977185f4a522e16077b204a}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!get\+\_\+camera\+\_\+observation@{get\+\_\+camera\+\_\+observation}}
+\index{get\+\_\+camera\+\_\+observation@{get\+\_\+camera\+\_\+observation}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+camera\+\_\+observation()}{get\_camera\_observation()}}
+{\footnotesize\ttfamily Tri\+Finger\+Platform\+Frontend\+::\+Camera\+Observation robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::get\+\_\+camera\+\_\+observation (\begin{DoxyParamCaption}\item[{const time\+\_\+series\+::\+Index}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Get camera images of time step t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time index of the robot time series. This is internally mapped to the corresponding time index of the camera time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Camera images of time step t. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a9c97379d70b40a023609521a83253177}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a9c97379d70b40a023609521a83253177}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!get\+\_\+current\+\_\+timeindex@{get\+\_\+current\+\_\+timeindex}}
+\index{get\+\_\+current\+\_\+timeindex@{get\+\_\+current\+\_\+timeindex}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+timeindex()}{get\_current\_timeindex()}}
+{\footnotesize\ttfamily time\+\_\+series\+::\+Index robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::get\+\_\+current\+\_\+timeindex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current time index. 
+
+\begin{DoxySeeAlso}{See also}
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend\+::get\+\_\+current\+\_\+timeindex 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_acdb76e148024bfdcb59bf06a92f30222}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_acdb76e148024bfdcb59bf06a92f30222}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!get\+\_\+desired\+\_\+action@{get\+\_\+desired\+\_\+action}}
+\index{get\+\_\+desired\+\_\+action@{get\+\_\+desired\+\_\+action}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+desired\+\_\+action()}{get\_desired\_action()}}
+{\footnotesize\ttfamily Tri\+Finger\+Platform\+Frontend\+::\+Action robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::get\+\_\+desired\+\_\+action (\begin{DoxyParamCaption}\item[{const time\+\_\+series\+::\+Index \&}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Get desired action of time step t. 
+
+\begin{DoxySeeAlso}{See also}
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend\+::get\+\_\+desired\+\_\+action 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_abb39cc97fbf08af6942f2de3e99e6f54}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_abb39cc97fbf08af6942f2de3e99e6f54}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!get\+\_\+object\+\_\+pose@{get\+\_\+object\+\_\+pose}}
+\index{get\+\_\+object\+\_\+pose@{get\+\_\+object\+\_\+pose}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+object\+\_\+pose()}{get\_object\_pose()}}
+{\footnotesize\ttfamily trifinger\+\_\+object\+\_\+tracking\+::\+Object\+Pose robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::get\+\_\+object\+\_\+pose (\begin{DoxyParamCaption}\item[{const time\+\_\+series\+::\+Index}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Get observation of the object tracker of time step t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time index of the robot time series. This is internally mapped to the corresponding time index of the object tracker time series.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Observation of the object tracker of time step t. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a86149ce45a4ddada714eb0e0fde20e66}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a86149ce45a4ddada714eb0e0fde20e66}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!get\+\_\+robot\+\_\+observation@{get\+\_\+robot\+\_\+observation}}
+\index{get\+\_\+robot\+\_\+observation@{get\+\_\+robot\+\_\+observation}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+robot\+\_\+observation()}{get\_robot\_observation()}}
+{\footnotesize\ttfamily Tri\+Finger\+Platform\+Frontend\+::\+Robot\+Observation robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::get\+\_\+robot\+\_\+observation (\begin{DoxyParamCaption}\item[{const time\+\_\+series\+::\+Index \&}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Get robot observation of the time step t. 
+
+\begin{DoxySeeAlso}{See also}
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend\+::get\+\_\+observation 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_afc30cd1aecd9967045a0365c21f964fe}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_afc30cd1aecd9967045a0365c21f964fe}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!get\+\_\+robot\+\_\+status@{get\+\_\+robot\+\_\+status}}
+\index{get\+\_\+robot\+\_\+status@{get\+\_\+robot\+\_\+status}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+robot\+\_\+status()}{get\_robot\_status()}}
+{\footnotesize\ttfamily Tri\+Finger\+Platform\+Frontend\+::\+Robot\+Status robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::get\+\_\+robot\+\_\+status (\begin{DoxyParamCaption}\item[{const time\+\_\+series\+::\+Index \&}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Get robot status of time step t. 
+
+\begin{DoxySeeAlso}{See also}
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend\+::get\+\_\+status 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_abf6ed97b5f5711058030733fb283aad6}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_abf6ed97b5f5711058030733fb283aad6}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!get\+\_\+timestamp\+\_\+ms@{get\+\_\+timestamp\+\_\+ms}}
+\index{get\+\_\+timestamp\+\_\+ms@{get\+\_\+timestamp\+\_\+ms}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{get\+\_\+timestamp\+\_\+ms()}{get\_timestamp\_ms()}}
+{\footnotesize\ttfamily time\+\_\+series\+::\+Timestamp robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::get\+\_\+timestamp\+\_\+ms (\begin{DoxyParamCaption}\item[{const time\+\_\+series\+::\+Index \&}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Get timestamp (in milliseconds) of time step t. 
+
+\begin{DoxySeeAlso}{See also}
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend\+::get\+\_\+timestamp\+\_\+ms 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classrobot__fingers_1_1TriFingerPlatformFrontend_a0dc8d9e0d6e26053194e223ac29fc8c4}\label{classrobot__fingers_1_1TriFingerPlatformFrontend_a0dc8d9e0d6e26053194e223ac29fc8c4}} 
+\index{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}!wait\+\_\+until\+\_\+timeindex@{wait\+\_\+until\+\_\+timeindex}}
+\index{wait\+\_\+until\+\_\+timeindex@{wait\+\_\+until\+\_\+timeindex}!robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend@{robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend}}
+\subsubsection{\texorpdfstring{wait\+\_\+until\+\_\+timeindex()}{wait\_until\_timeindex()}}
+{\footnotesize\ttfamily void robot\+\_\+fingers\+::\+Tri\+Finger\+Platform\+Frontend\+::wait\+\_\+until\+\_\+timeindex (\begin{DoxyParamCaption}\item[{const time\+\_\+series\+::\+Index \&}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Wait until time step t. 
+
+\begin{DoxySeeAlso}{See also}
+robot\+\_\+interfaces\+::\+Tri\+Finger\+Types\+::\+Frontend\+::wait\+\_\+until\+\_\+timeindex 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+fingers/\hyperlink{trifinger__platform__frontend_8hpp}{trifinger\+\_\+platform\+\_\+frontend.\+hpp}\item 
+src/\hyperlink{trifinger__platform__frontend_8cpp}{trifinger\+\_\+platform\+\_\+frontend.\+cpp}\end{DoxyCompactItemize}

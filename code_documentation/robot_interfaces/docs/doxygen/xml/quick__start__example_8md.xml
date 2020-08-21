@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="quick__start__example_8md" kind="file" language="Markdown">
+    <compoundname>quick_start_example.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Quick<sp/>Start<sp/>Example</highlight></codeline>
+<codeline><highlight class="normal">===================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Sending<sp/>actions<sp/>to<sp/>and<sp/>getting<sp/>observations<sp/>from<sp/>the<sp/>robot<sp/>is<sp/>very<sp/>easy.<sp/><sp/>See</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>following<sp/>example,<sp/>using<sp/>the<sp/>TriFinger<sp/>robot,<sp/>that<sp/>simply<sp/>sends<sp/>a<sp/>constant</highlight></codeline>
+<codeline><highlight class="normal">position<sp/>command.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">@note<sp/>This<sp/>example<sp/>shows<sp/>only<sp/>the<sp/>frontend<sp/>part<sp/>of<sp/>a<sp/>multi-process<sp/>setup.<sp/><sp/>The</highlight></codeline>
+<codeline><highlight class="normal">backend<sp/>for<sp/>the<sp/>actual<sp/>robot<sp/>needs<sp/>to<sp/>be<sp/>run<sp/>in<sp/>a<sp/>separate<sp/>process.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Python</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.py}</highlight></codeline>
+<codeline><highlight class="normal">import<sp/>robot_interfaces</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">robot_data<sp/>=<sp/>robot_interfaces.trifinger.MultiProcessData(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;trifinger&quot;,<sp/>False)</highlight></codeline>
+<codeline><highlight class="normal">frontend<sp/>=<sp/>robot_interfaces.trifinger.Frontend(robot_data)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">position<sp/>=<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/>#<sp/>Finger<sp/>1,<sp/>Upper<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/>#<sp/>Finger<sp/>1,<sp/>Middle<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/>#<sp/>Finger<sp/>1,<sp/>Lower<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/>#<sp/>Finger<sp/>2,<sp/>Upper<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/>#<sp/>Finger<sp/>2,<sp/>Middle<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/>#<sp/>Finger<sp/>2,<sp/>Lower<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/>#<sp/>Finger<sp/>3,<sp/>Upper<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/>#<sp/>Finger<sp/>3,<sp/>Middle<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/>#<sp/>Finger<sp/>3,<sp/>Lower<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal">]</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">while<sp/>True:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>construct<sp/>an<sp/>action<sp/>with<sp/>a<sp/>position<sp/>command</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>action<sp/>=<sp/>robot_interfaces.trifinger.Action(position=position)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>send<sp/>the<sp/>action<sp/>to<sp/>the<sp/>robot<sp/>(will<sp/>be<sp/>applied<sp/>in<sp/>time<sp/>step<sp/>t)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>frontend.append_desired_action(action)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>wait<sp/>until<sp/>time<sp/>step<sp/>t<sp/>and<sp/>get<sp/>observation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>observation<sp/>=<sp/>frontend.get_observation(t)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>print(&quot;Observed<sp/>Position:<sp/>{}&quot;.format(observation.position))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>C++</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.cpp}</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;robot_interfaces/finger_types.hpp&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Some<sp/>convenience<sp/>typedefs<sp/>to<sp/>make<sp/>the<sp/>code<sp/>below<sp/>more<sp/>compact</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>robot_interfaces::TriFingerTypes::MultiProcessData<sp/>RobotData;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>robot_interfaces::TriFingerTypes::Frontend<sp/>RobotFrontend;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>robot_interfaces::TriFingerTypes::Action<sp/>Action;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>main()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>auto<sp/>robot_data<sp/>=<sp/>std::make_shared&lt;RobotData&gt;(&quot;trifinger&quot;,<sp/>false);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>auto<sp/>frontend<sp/>=<sp/>RobotFrontend(robot_data);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Action::Vector<sp/>position;<sp/><sp/>//<sp/>&lt;-<sp/>this<sp/>is<sp/>an<sp/>&quot;Eigen::Vector9d&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>position<sp/>&lt;&lt;<sp/><sp/>0.0,<sp/><sp/>//<sp/>Finger<sp/>1,<sp/>Upper<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/>//<sp/>Finger<sp/>1,<sp/>Middle<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/>//<sp/>Finger<sp/>1,<sp/>Lower<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/>//<sp/>Finger<sp/>2,<sp/>Upper<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/>//<sp/>Finger<sp/>2,<sp/>Middle<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1.7,<sp/><sp/>//<sp/>Finger<sp/>2,<sp/>Lower<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,<sp/><sp/>//<sp/>Finger<sp/>3,<sp/>Upper<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-0.9,<sp/><sp/>//<sp/>Finger<sp/>3,<sp/>Middle<sp/>Joint</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1.7;<sp/><sp/>//<sp/>Finger<sp/>3,<sp/>Lower<sp/>Joint</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(true)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>construct<sp/>an<sp/>action<sp/>with<sp/>a<sp/>position<sp/>command</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Action<sp/>action<sp/>=<sp/>Action::Position(position);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>send<sp/>the<sp/>action<sp/>to<sp/>the<sp/>robot<sp/>(will<sp/>be<sp/>applied<sp/>in<sp/>time<sp/>step<sp/>t)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>t<sp/>=<sp/>frontend.append_desired_action(action);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>wait<sp/>until<sp/>time<sp/>step<sp/>t<sp/>and<sp/>get<sp/>observation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>observation<sp/>=<sp/>frontend.get_observation(t);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Observed<sp/>Position:<sp/>&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>observation.position</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>using<sp/>C++<sp/>you<sp/>need<sp/>to<sp/>add<sp/>the<sp/>package<sp/>`robot_interfaces`<sp/>as<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">dependency<sp/>to<sp/>your<sp/>package.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>More<sp/>Examples</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>examples,<sp/>see<sp/>the<sp/>[C++<sp/>demos<sp/>of<sp/>the<sp/>`robot_interfaces`<sp/>package](https://github.com/open-dynamic-robot-initiative/robot_interfaces/tree/master/demos)<sp/>and<sp/>the<sp/>[Python<sp/>demos<sp/>in<sp/>the<sp/>`robot_fingers`<sp/>package](https://github.com/open-dynamic-robot-initiative/robot_fingers/tree/master/demos).</highlight></codeline>
+    </programlisting>
+    <location file="docs/quick_start_example.md"/>
+  </compounddef>
+</doxygen>

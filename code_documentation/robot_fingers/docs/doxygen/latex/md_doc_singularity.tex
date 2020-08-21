@@ -1,0 +1,106 @@
+\subsection*{What is Singularity? }
+
+Singularity is a tool to run software inside containers, similar to Docker. Compared to Docker it has a higher focus on security and can be used without root permission. Also programs in the container are executed as the user of the host system which makes it much more convenient when touching files of the host system (as it is happening when building a mounted workspace).
+
+\subsection*{Get our Singularity Image }
+
+We provide a Singularity image with Ubuntu 18.\+04 with all dependencies needed to build and run the software here\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://drive.google.com/file/d/1yJ_RI1GpnPcs_fxcNYYUXZtQPHvhlGNH/view?usp=sharing}{\tt Download Singularity Image}
+\end{DoxyItemize}
+
+\subsection*{Install Singularity }
+
+We are using Singularity version 3.\+6. Other recent versions are probably also so fine, however, we cannot guarantee compatibility for those. Unfortunately, most versions of Ubuntu still provide Singularity version 2.\+x in their official repositories. A newer version can be installed from source in this case. For this you may follow the \href{https://sylabs.io/guides/3.6/user-guide/quick_start.html#quick-installation-steps}{\tt official installation instructions} or use the following, slightly simplified instructions (assuming you are working with Ubuntu).
+
+Install system dependencies\+: \begin{DoxyVerb}$ sudo apt-get update && sudo apt-get install -y \
+    build-essential \
+    libssl-dev \
+    uuid-dev \
+    libgpgme11-dev \
+    squashfs-tools \
+    libseccomp-dev \
+    wget \
+    pkg-config \
+    git \
+    cryptsetup
+\end{DoxyVerb}
+
+
+Get the required version of the Go compiler\+: \begin{DoxyVerb}cd ~/Downloads  # you can save it anywhere else, just adjust paths below
+wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+tar -xzf go1.13.linux-amd64.tar.gz
+\end{DoxyVerb}
+
+
+Note that it is only needed once for building singularity, so no need to install it permanently (we just add it to P\+A\+TH temporarily for building, see below).
+
+Now download and unpack the singularity source\+: \begin{DoxyVerb}wget https://github.com/sylabs/singularity/releases/download/v3.6.1/singularity-3.6.1.tar.gz
+tar -xzf singularity-3.6.1.tar.gz
+\end{DoxyVerb}
+
+
+And finally build and install it\+: \begin{DoxyVerb}export PATH=~/Downloads/go/bin:${PATH}  # adjust path if you used a different directory
+cd singularity  # the folder to which the singularity source was extracted
+./mconfig
+cd builddir
+make
+sudo make install
+\end{DoxyVerb}
+
+
+Now you should be able to use Singularity. You can test this, for example, by running {\ttfamily singularity -\/-\/version} which should print \char`\"{}singularity version 3.\+6.\+1\char`\"{}. For more information on how to use Singularity, see the \href{https://sylabs.io/guides/3.6/user-guide/index.html}{\tt official documentation}.
+
+\subsection*{Run Something in the Container }
+
+To run the container in shell mode (i.\+e. opening a shell inside the container), the following is often enough\+: \begin{DoxyVerb}singularity shell path/to/image.sif
+\end{DoxyVerb}
+
+
+This will, however, be influenced by your local setup as environment variables are exported and the home directory is mounted by default. Further the current working directory from which singularity is run is also bound inside the container.
+
+This default behaviour is often convenient but can cause issues in some cases. A typical example would be a Python package installed in your home directory (which will then be available in the container) which is not compatible with versions of other packages inside the container. To avoid these kind of issues it is recommended to use the following command to run the container in a more isolated way\+: \begin{DoxyVerb}export SINGULARITYENV_DISPLAY=$DISPLAY
+singularity shell -e --no-home -B $(pwd) path/to/image.sif
+\end{DoxyVerb}
+
+
+The arguments explained\+:
+
+
+\begin{DoxyItemize}
+\item The first line makes sure the D\+I\+S\+P\+L\+AY environment variable is set correctly inside the container (only needed if you want to run G\+U\+I-\/based applications).
+\item {\ttfamily -\/e} (short for {\ttfamily -\/-\/cleanenv}) prevents environment variables to be exported.
+\item {\ttfamily -\/-\/no-\/home} prevents your home directory from being bound.
+\item {\ttfamily -\/B } explicitly binds the current working directory. This should normally not be necessary but Singularity 3.\+6 seems to have a bug that the P\+WD is not bound automatically if it is somewhere inside your home directory and {\ttfamily -\/-\/no-\/home} is used.
+\end{DoxyItemize}
+
+Note that with the above the current working directory is still bound in the image, so it is possible to build/modify the workspace from the host-\/system when Singularity is run from the root directory of the workspace.
+
+\subsubsection*{Compatibility with Nvidia Drivers}
+
+When you are using Nvidia drivers and want to run a G\+U\+I-\/based application in the container, you may need to add the {\ttfamily -\/-\/nv} flag\+: \begin{DoxyVerb}singularity shell --nv ... path/to/image.sif
+\end{DoxyVerb}
+
+
+\subsection*{Add Custom Dependencies to the Container }
+
+The image we provide already includes everything needed to run the robot and the simulation. However, you may need additional libraries to use them in our own code, which are not yet present. In this case, you can create your own image which is based on our standard image but extends it with your additional dependencies.
+
+To extend the image, create {\itshape definition file} like the following\+: \begin{DoxyVerb}# Specify the name of the base image below
+Bootstrap: localimage
+From: ./base_image.sif
+
+%post
+    # Put commands to install additional dependencies here.
+    # Make sure everything runs automatically without human input (e.g. add
+    # `-y` to automatically say "yes" below).
+    apt-get install -y package_name
+\end{DoxyVerb}
+
+
+See the official \href{https://sylabs.io/guides/3.6/user-guide/definition_files.html}{\tt Documentation for Definition Files} for all options in the definition file.
+
+Assuming you called your definition file {\ttfamily user\+\_\+image.\+def}, use the following command to build the image. Note that the base image (specified in the {\ttfamily From\+:} line) needs to be present in the directory in which you call the command. \begin{DoxyVerb}$ singularity build --fakeroot user_image.sif path/to/user_image.def\end{DoxyVerb}
+ 

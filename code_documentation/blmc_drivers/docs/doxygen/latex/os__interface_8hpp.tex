@@ -1,0 +1,138 @@
+\hypertarget{os__interface_8hpp}{}\section{include/blmc\+\_\+drivers/utils/os\+\_\+interface.hpp File Reference}
+\label{os__interface_8hpp}\index{include/blmc\+\_\+drivers/utils/os\+\_\+interface.\+hpp@{include/blmc\+\_\+drivers/utils/os\+\_\+interface.\+hpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$net/if.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$linux/can.\+h$>$}\newline
+{\ttfamily \#include $<$linux/can/raw.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$real\+\_\+time\+\_\+tools/timer.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+Include dependency graph for os\+\_\+interface.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os__interface_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{os__interface_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceosi}{osi}
+\begin{DoxyCompactList}\small\item\em Common include. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{os__interface_8hpp_a25df6b00e3fd8b8740896ecc5c337fdc}\label{os__interface_8hpp_a25df6b00e3fd8b8740896ecc5c337fdc}} 
+\#define \hyperlink{os__interface_8hpp_a25df6b00e3fd8b8740896ecc5c337fdc}{rt\+\_\+fprintf}~fprintf
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_a1acf1ce04ab7fe3a5972c0618adcbbac}\label{os__interface_8hpp_a1acf1ce04ab7fe3a5972c0618adcbbac}} 
+\#define \hyperlink{os__interface_8hpp_a1acf1ce04ab7fe3a5972c0618adcbbac}{rt\+\_\+printf}~printf
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_ac420926cbb955a79a41eba7cec1bc1c8}\label{os__interface_8hpp_ac420926cbb955a79a41eba7cec1bc1c8}} 
+\#define \hyperlink{os__interface_8hpp_ac420926cbb955a79a41eba7cec1bc1c8}{rt\+\_\+dev\+\_\+socket}~socket
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_a81e55d2bdf351cd53218a3085ba56955}\label{os__interface_8hpp_a81e55d2bdf351cd53218a3085ba56955}} 
+\#define \hyperlink{os__interface_8hpp_a81e55d2bdf351cd53218a3085ba56955}{rt\+\_\+dev\+\_\+ioctl}~ioctl
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_a7be59cefa5f5e5da067c04078f504aa6}\label{os__interface_8hpp_a7be59cefa5f5e5da067c04078f504aa6}} 
+\#define \hyperlink{os__interface_8hpp_a7be59cefa5f5e5da067c04078f504aa6}{rt\+\_\+dev\+\_\+close}~close
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_a80d28afb04b8db1e0192593ebcb4d07b}\label{os__interface_8hpp_a80d28afb04b8db1e0192593ebcb4d07b}} 
+\#define \hyperlink{os__interface_8hpp_a80d28afb04b8db1e0192593ebcb4d07b}{rt\+\_\+dev\+\_\+setsockopt}~setsockopt
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_a68219f584f63b92f4d23bd708140056d}\label{os__interface_8hpp_a68219f584f63b92f4d23bd708140056d}} 
+\#define \hyperlink{os__interface_8hpp_a68219f584f63b92f4d23bd708140056d}{rt\+\_\+dev\+\_\+bind}~bind
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_ab599460d70a4af2e3bcb07b395f13ad4}\label{os__interface_8hpp_ab599460d70a4af2e3bcb07b395f13ad4}} 
+\#define \hyperlink{os__interface_8hpp_ab599460d70a4af2e3bcb07b395f13ad4}{rt\+\_\+dev\+\_\+recvmsg}~recvmsg
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_ad9b081422ea995f98485f5545e20211d}\label{os__interface_8hpp_ad9b081422ea995f98485f5545e20211d}} 
+\#define \hyperlink{os__interface_8hpp_ad9b081422ea995f98485f5545e20211d}{rt\+\_\+dev\+\_\+sendto}~sendto
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct can\+\_\+frame \hyperlink{os__interface_8hpp_a8bc67ce447b2fa424a45f3e01162035f}{can\+\_\+frame\+\_\+t}
+\begin{DoxyCompactList}\small\item\em xeno specific include \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_ab9491ad99890aa9ecf1785d1edd23d64}\label{os__interface_8hpp_ab9491ad99890aa9ecf1785d1edd23d64}} 
+typedef canid\+\_\+t \hyperlink{os__interface_8hpp_ab9491ad99890aa9ecf1785d1edd23d64}{can\+\_\+id\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{os__interface_8hpp_ad3b24c25feabadba465f8797d8c7fe27}\label{os__interface_8hpp_ad3b24c25feabadba465f8797d8c7fe27}} 
+typedef uint64\+\_\+t \hyperlink{os__interface_8hpp_ad3b24c25feabadba465f8797d8c7fe27}{nanosecs\+\_\+abs\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Create a common type\+\_\+def to wrap xenomai and posix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceosi_ac3d484da0f89f06e329d4b84d7459d9b}\label{namespaceosi_ac3d484da0f89f06e329d4b84d7459d9b}} 
+typedef std\+::mutex \hyperlink{namespaceosi_ac3d484da0f89f06e329d4b84d7459d9b}{osi\+::\+Mutex}
+\begin{DoxyCompactList}\small\item\em Wrapper around the posix specific Mutex implementation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceosi_a31b1ce104b168554e4832b5d3b684073}\label{namespaceosi_a31b1ce104b168554e4832b5d3b684073}} 
+typedef std\+::condition\+\_\+variable \hyperlink{namespaceosi_a31b1ce104b168554e4832b5d3b684073}{osi\+::\+Condition\+Variable}
+\begin{DoxyCompactList}\small\item\em Wrapper around the posix specific Condition\+Variable implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceosi_a001686caee0f34611f14ab94c7303254}{osi\+::send\+\_\+to\+\_\+can\+\_\+device} (int fd, const void $\ast$buf, size\+\_\+t len, int flags, const struct sockaddr $\ast$to, socklen\+\_\+t tolen)
+\begin{DoxyCompactList}\small\item\em Use the osi workspace A\+PI to communicate with the can bus. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceosi_a92dc20de3b4933a10f24c98cecf2568b}{osi\+::close\+\_\+can\+\_\+device} (int socket)
+\begin{DoxyCompactList}\small\item\em This function is closing a socket on the Can device. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceosi_a244466c0afc9ae9fe059cee665fb0603}{osi\+::receive\+\_\+message\+\_\+from\+\_\+can\+\_\+device} (int fd, struct msghdr $\ast$msg, int flags)
+\begin{DoxyCompactList}\small\item\em Poll? a message from the C\+AN device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceosi_a48e36c862c77befc86f53140722c3f43}\label{namespaceosi_a48e36c862c77befc86f53140722c3f43}} 
+void \hyperlink{namespaceosi_a48e36c862c77befc86f53140722c3f43}{osi\+::initialize\+\_\+realtime\+\_\+printing} ()
+\begin{DoxyCompactList}\small\item\em This function is needed in xenomai to initialize the real time console display of text. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceosi_a499cdf6336a907d1327044b0f595f3a9}{osi\+::sleep\+\_\+ms} (const double \&sleep\+\_\+time\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em This function uses eather the xenomai A\+PI or the posix one. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceosi_a2409ab591c4f78d9a8bcfbbe38df9429}{osi\+::get\+\_\+current\+\_\+time\+\_\+ms} ()
+\begin{DoxyCompactList}\small\item\em Get the current time in millisecond. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceosi_af6772d4aea95e99bc2bd0aabc557a20e}\label{namespaceosi_af6772d4aea95e99bc2bd0aabc557a20e}} 
+void \hyperlink{namespaceosi_af6772d4aea95e99bc2bd0aabc557a20e}{osi\+::make\+\_\+this\+\_\+thread\+\_\+realtime} ()
+\begin{DoxyCompactList}\small\item\em This methd is requiered in xenomai to create a real time thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Manuel Wuthrich (\href{mailto:manuel.wuthrich@gmail.com}{\tt manuel.\+wuthrich@gmail.\+com}) 
+
+Maximilien Naveau (\href{mailto:maximilien.naveau@gmail.com}{\tt maximilien.\+naveau@gmail.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018-\/11-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2018 
+\end{DoxyCopyright}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{os__interface_8hpp_a8bc67ce447b2fa424a45f3e01162035f}\label{os__interface_8hpp_a8bc67ce447b2fa424a45f3e01162035f}} 
+\index{os\+\_\+interface.\+hpp@{os\+\_\+interface.\+hpp}!can\+\_\+frame\+\_\+t@{can\+\_\+frame\+\_\+t}}
+\index{can\+\_\+frame\+\_\+t@{can\+\_\+frame\+\_\+t}!os\+\_\+interface.\+hpp@{os\+\_\+interface.\+hpp}}
+\subsubsection{\texorpdfstring{can\+\_\+frame\+\_\+t}{can\_frame\_t}}
+{\footnotesize\ttfamily typedef struct can\+\_\+frame \hyperlink{os__interface_8hpp_a8bc67ce447b2fa424a45f3e01162035f}{can\+\_\+frame\+\_\+t}}
+
+
+
+xeno specific include 
+
+Define typedefs to make code compatible with Xenomai code. Create a common type\+\_\+def to wrap xenomai and posix. 

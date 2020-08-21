@@ -1,0 +1,151 @@
+\hypertarget{classrobot__interfaces_1_1SensorLogger}{}\section{robot\+\_\+interfaces\+:\+:Sensor\+Logger$<$ Observation $>$ Class Template Reference}
+\label{classrobot__interfaces_1_1SensorLogger}\index{robot\+\_\+interfaces\+::\+Sensor\+Logger$<$ Observation $>$@{robot\+\_\+interfaces\+::\+Sensor\+Logger$<$ Observation $>$}}
+
+
+Record sensor observations and store them to a file.  
+
+
+
+
+{\ttfamily \#include $<$sensor\+\_\+logger.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_abfffa764f13c4b260416fbfe7e6a14ea}\label{classrobot__interfaces_1_1SensorLogger_abfffa764f13c4b260416fbfe7e6a14ea}} 
+typedef std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data}$<$ Observation $>$ $>$ {\bfseries Data\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrobot__interfaces_1_1SensorLogger_aa2b7935cb32b53c49d6c3e541964d968}{Sensor\+Logger} (Data\+Ptr sensor\+\_\+data, size\+\_\+t buffer\+\_\+limit)
+\begin{DoxyCompactList}\small\item\em Initialize the logger. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_a1b2121061d96e3f026546f4359cfd769}\label{classrobot__interfaces_1_1SensorLogger_a1b2121061d96e3f026546f4359cfd769}} 
+{\bfseries Sensor\+Logger} (\hyperlink{classrobot__interfaces_1_1SensorLogger}{Sensor\+Logger} \&\&)=default
+\item 
+void \hyperlink{classrobot__interfaces_1_1SensorLogger_a264f301075b8b4330b35776b3192bee9}{start} ()
+\begin{DoxyCompactList}\small\item\em Start logging. \end{DoxyCompactList}\item 
+void \hyperlink{classrobot__interfaces_1_1SensorLogger_ac4432aabd2e52401ec02bdcdfbc54e1f}{stop} ()
+\begin{DoxyCompactList}\small\item\em Stop logging. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_ab12a1bf654d7d09d3dd498d9d86476f2}\label{classrobot__interfaces_1_1SensorLogger_ab12a1bf654d7d09d3dd498d9d86476f2}} 
+void \hyperlink{classrobot__interfaces_1_1SensorLogger_ab12a1bf654d7d09d3dd498d9d86476f2}{reset} ()
+\begin{DoxyCompactList}\small\item\em Clear the log buffer. \end{DoxyCompactList}\item 
+void \hyperlink{classrobot__interfaces_1_1SensorLogger_a1ab1fc25c3f20624a240430dff78b029}{stop\+\_\+and\+\_\+save} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Stop logging and save logged messages to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_af05366bd0418ab2dea5a8f7de4031c5b}\label{classrobot__interfaces_1_1SensorLogger_af05366bd0418ab2dea5a8f7de4031c5b}} 
+void \hyperlink{classrobot__interfaces_1_1SensorLogger_af05366bd0418ab2dea5a8f7de4031c5b}{loop} ()
+\begin{DoxyCompactList}\small\item\em Get observations from sensor\+\_\+data\+\_\+ and add them to the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_a1771168bc44050029fac7f5943796ff9}\label{classrobot__interfaces_1_1SensorLogger_a1771168bc44050029fac7f5943796ff9}} 
+Data\+Ptr {\bfseries sensor\+\_\+data\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_a0fcc2523aa7c8b05a17429c01ec19975}\label{classrobot__interfaces_1_1SensorLogger_a0fcc2523aa7c8b05a17429c01ec19975}} 
+std\+::vector$<$ Observation $>$ {\bfseries buffer\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_a4ac7be763d55fa33344246fbe20598b6}\label{classrobot__interfaces_1_1SensorLogger_a4ac7be763d55fa33344246fbe20598b6}} 
+size\+\_\+t {\bfseries buffer\+\_\+limit\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_a22eba71448f0428c1b4daf72243e3bf8}\label{classrobot__interfaces_1_1SensorLogger_a22eba71448f0428c1b4daf72243e3bf8}} 
+std\+::thread {\bfseries buffer\+\_\+thread\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_a4af2d1815c0f205ea9c5c064723947f1}\label{classrobot__interfaces_1_1SensorLogger_a4af2d1815c0f205ea9c5c064723947f1}} 
+bool {\bfseries enabled\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Observation$>$\newline
+class robot\+\_\+interfaces\+::\+Sensor\+Logger$<$ Observation $>$}
+
+Record sensor observations and store them to a file. 
+
+Fetches observations from the given \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data} and buffers them in memory. Buffered observations can be written to a file. For writing to file cereal is used, so the Observation type has to be serializable by cereal.
+
+Usage Example\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{auto} logger = SensorLogger<int>(sensor\_data, BUFFER\_LIMIT);
+logger.start();
+\textcolor{comment}{// do something}
+logger.stop\_and\_save(\textcolor{stringliteral}{"/tmp/sensordata.log"});
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Observation} & Typ of the observation that is recorded. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_aa2b7935cb32b53c49d6c3e541964d968}\label{classrobot__interfaces_1_1SensorLogger_aa2b7935cb32b53c49d6c3e541964d968}} 
+\index{robot\+\_\+interfaces\+::\+Sensor\+Logger@{robot\+\_\+interfaces\+::\+Sensor\+Logger}!Sensor\+Logger@{Sensor\+Logger}}
+\index{Sensor\+Logger@{Sensor\+Logger}!robot\+\_\+interfaces\+::\+Sensor\+Logger@{robot\+\_\+interfaces\+::\+Sensor\+Logger}}
+\subsubsection{\texorpdfstring{Sensor\+Logger()}{SensorLogger()}}
+{\footnotesize\ttfamily template$<$typename Observation $>$ \\
+\hyperlink{classrobot__interfaces_1_1SensorLogger}{robot\+\_\+interfaces\+::\+Sensor\+Logger}$<$ Observation $>$\+::\hyperlink{classrobot__interfaces_1_1SensorLogger}{Sensor\+Logger} (\begin{DoxyParamCaption}\item[{Data\+Ptr}]{sensor\+\_\+data,  }\item[{size\+\_\+t}]{buffer\+\_\+limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialize the logger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+\_\+data} & Pointer to the \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data} instance from which observations are obtained. \\
+\hline
+{\em buffer\+\_\+limit} & Maximum number of observations that are logged. When this limit is reached, the logger will stop automatically, that is new observations are not logged anymore. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_a264f301075b8b4330b35776b3192bee9}\label{classrobot__interfaces_1_1SensorLogger_a264f301075b8b4330b35776b3192bee9}} 
+\index{robot\+\_\+interfaces\+::\+Sensor\+Logger@{robot\+\_\+interfaces\+::\+Sensor\+Logger}!start@{start}}
+\index{start@{start}!robot\+\_\+interfaces\+::\+Sensor\+Logger@{robot\+\_\+interfaces\+::\+Sensor\+Logger}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily template$<$typename Observation $>$ \\
+void \hyperlink{classrobot__interfaces_1_1SensorLogger}{robot\+\_\+interfaces\+::\+Sensor\+Logger}$<$ Observation $>$\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Start logging. 
+
+If the logger is already running, this is a noop. \mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_ac4432aabd2e52401ec02bdcdfbc54e1f}\label{classrobot__interfaces_1_1SensorLogger_ac4432aabd2e52401ec02bdcdfbc54e1f}} 
+\index{robot\+\_\+interfaces\+::\+Sensor\+Logger@{robot\+\_\+interfaces\+::\+Sensor\+Logger}!stop@{stop}}
+\index{stop@{stop}!robot\+\_\+interfaces\+::\+Sensor\+Logger@{robot\+\_\+interfaces\+::\+Sensor\+Logger}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily template$<$typename Observation $>$ \\
+void \hyperlink{classrobot__interfaces_1_1SensorLogger}{robot\+\_\+interfaces\+::\+Sensor\+Logger}$<$ Observation $>$\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stop logging. 
+
+If the logger is already stopped, this is a noop. \mbox{\Hypertarget{classrobot__interfaces_1_1SensorLogger_a1ab1fc25c3f20624a240430dff78b029}\label{classrobot__interfaces_1_1SensorLogger_a1ab1fc25c3f20624a240430dff78b029}} 
+\index{robot\+\_\+interfaces\+::\+Sensor\+Logger@{robot\+\_\+interfaces\+::\+Sensor\+Logger}!stop\+\_\+and\+\_\+save@{stop\+\_\+and\+\_\+save}}
+\index{stop\+\_\+and\+\_\+save@{stop\+\_\+and\+\_\+save}!robot\+\_\+interfaces\+::\+Sensor\+Logger@{robot\+\_\+interfaces\+::\+Sensor\+Logger}}
+\subsubsection{\texorpdfstring{stop\+\_\+and\+\_\+save()}{stop\_and\_save()}}
+{\footnotesize\ttfamily template$<$typename Observation $>$ \\
+void \hyperlink{classrobot__interfaces_1_1SensorLogger}{robot\+\_\+interfaces\+::\+Sensor\+Logger}$<$ Observation $>$\+::stop\+\_\+and\+\_\+save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stop logging and save logged messages to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the output file. Existing files will be overwritten. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/sensors/sensor\+\_\+logger.\+hpp\end{DoxyCompactItemize}

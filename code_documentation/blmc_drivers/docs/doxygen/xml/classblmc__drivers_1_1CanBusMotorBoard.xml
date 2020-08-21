@@ -1,0 +1,872 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1CanBusMotorBoard" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::CanBusMotorBoard</compoundname>
+    <basecompoundref refid="classblmc__drivers_1_1MotorBoardInterface" prot="public" virt="non-virtual">blmc_drivers::MotorBoardInterface</basecompoundref>
+    <includes refid="motor__board_8hpp" local="no">motor_board.hpp</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80" prot="private" static="no">
+        <name>CanframeIDs</name>
+        <enumvalue id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80abf1a55c2af5e372b8509f160469e1b6a" prot="private">
+          <name>COMMAND_ID</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80ad1e74b4d6968b2b8e92d6606a71fa1e8" prot="private">
+          <name>IqRef</name>
+          <initializer>= 0x05</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a4380d3738c99a963f48fd22dfa8bfa2f" prot="private">
+          <name>STATUSMSG</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a9ccf5bf9572c09450b35c2cc06299a5d" prot="private">
+          <name>Iq</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a4b7c19cd1fa6d91f68229da2c08da3f8" prot="private">
+          <name>POS</name>
+          <initializer>= 0x30</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a0f89b07e3f8e9c151665b2c7f07ca3fd" prot="private">
+          <name>SPEED</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a50d4e798de72aa70d94313fbba110e05" prot="private">
+          <name>ADC6</name>
+          <initializer>= 0x50</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a08c7d897240dc0f7527ebf660fd6a00b" prot="private">
+          <name>ENC_INDEX</name>
+          <initializer>= 0x60</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>These are the frame IDs that define the kind of data we acquiere from the CAN bus. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="616" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="615" bodyend="625"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1ab58dc93d9117503950fbe4d7a7c70914" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classblmc__drivers_1_1CanBusInterface" kindref="compound">CanBusInterface</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;CanBusInterface&gt; blmc_drivers::CanBusMotorBoard::can_bus_</definition>
+        <argsstring></argsstring>
+        <name>can_bus_</name>
+        <briefdescription>
+<para>This is the pointer to the can bus to communicate with. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="609" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="609" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1abbba6ad698905e56101c516baa795b29" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1abeb474bef6d85dffcd5227e5ea965cc5" kindref="member">Vector</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a14e237254ba495a66091ea3a3a33fa75" kindref="member">ScalarTimeseries</ref> &gt; &gt;</type>
+        <definition>Vector&lt;Ptr&lt;ScalarTimeseries&gt; &gt; blmc_drivers::CanBusMotorBoard::measurement_</definition>
+        <argsstring></argsstring>
+        <name>measurement_</name>
+        <briefdescription>
+<para>Outputs. </para>        </briefdescription>
+        <detaileddescription>
+<para>measurement_ contains all the measurements acquiered from the CAN board. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="635" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="635" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1a5725ff23bb4f8407c5608cabfa49c692" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae3777e484dda60c4abe87f2b542ddfb8" kindref="member">StatusTimeseries</ref> &gt;</type>
+        <definition>Ptr&lt;StatusTimeseries&gt; blmc_drivers::CanBusMotorBoard::status_</definition>
+        <argsstring></argsstring>
+        <name>status_</name>
+        <briefdescription>
+<para>This is the status history of the CAN board. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="640" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="640" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1a65cfba005239247df1ea26795ff14a3f" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1abeb474bef6d85dffcd5227e5ea965cc5" kindref="member">Vector</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a14e237254ba495a66091ea3a3a33fa75" kindref="member">ScalarTimeseries</ref> &gt; &gt;</type>
+        <definition>Vector&lt;Ptr&lt;ScalarTimeseries&gt; &gt; blmc_drivers::CanBusMotorBoard::control_</definition>
+        <argsstring></argsstring>
+        <name>control_</name>
+        <briefdescription>
+<para>Inputs. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the buffer of the controls to be sent to card. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="649" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="649" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1a720c6300bf07245a739713a209799c02" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae2afe94a023d9f08a4c689e9b7660f15" kindref="member">CommandTimeseries</ref> &gt;</type>
+        <definition>Ptr&lt;CommandTimeseries&gt; blmc_drivers::CanBusMotorBoard::command_</definition>
+        <argsstring></argsstring>
+        <name>command_</name>
+        <briefdescription>
+<para>This is the buffer of the commands to be sent to the card. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="654" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="654" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1ab5296d55684d48b538844c3b96df6594" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1abeb474bef6d85dffcd5227e5ea965cc5" kindref="member">Vector</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a14e237254ba495a66091ea3a3a33fa75" kindref="member">ScalarTimeseries</ref> &gt; &gt;</type>
+        <definition>Vector&lt;Ptr&lt;ScalarTimeseries&gt; &gt; blmc_drivers::CanBusMotorBoard::sent_control_</definition>
+        <argsstring></argsstring>
+        <name>sent_control_</name>
+        <briefdescription>
+<para>Log. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the history of the already sent controls. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="663" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="663" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1a27712df32104357ac31b97179f1e9211" prot="private" static="no" mutable="no">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae2afe94a023d9f08a4c689e9b7660f15" kindref="member">CommandTimeseries</ref> &gt;</type>
+        <definition>Ptr&lt;CommandTimeseries&gt; blmc_drivers::CanBusMotorBoard::sent_command_</definition>
+        <argsstring></argsstring>
+        <name>sent_command_</name>
+        <briefdescription>
+<para>This is the history of the already sent commands. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="668" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="668" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1ae25808cc09839c2574d134a36b5b4d5d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::CanBusMotorBoard::is_loop_active_</definition>
+        <argsstring></argsstring>
+        <name>is_loop_active_</name>
+        <briefdescription>
+<para>Loop management. </para>        </briefdescription>
+        <detaileddescription>
+<para>This boolean makes sure that the loop is stopped upon destruction of this object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="678" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="678" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1abdca3f76908ca197c4f12af814313a56" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::CanBusMotorBoard::motors_are_paused_</definition>
+        <argsstring></argsstring>
+        <name>motors_are_paused_</name>
+        <briefdescription>
+<para>Are motor in idle mode = 0 torques?  update this documentation with the actual behavior. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="684" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="684" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1a4f9605b0a147ecd1dde41a0fb7b45d47" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int blmc_drivers::CanBusMotorBoard::control_timeout_ms_</definition>
+        <argsstring></argsstring>
+        <name>control_timeout_ms_</name>
+        <briefdescription>
+<para>If no control is sent for more than control_timeout_ms_ the board will shut down. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="691" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="691" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBusMotorBoard_1a040b0b2f6c2691a54d82404f7a1badd6" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread blmc_drivers::CanBusMotorBoard::rt_thread_</definition>
+        <argsstring></argsstring>
+        <name>rt_thread_</name>
+        <briefdescription>
+<para>This is the thread object that allow to spwan a real-time thread or not dependening on the current OS. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="697" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="697" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a43674811685fce4dbc3a9996e08454c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::CanBusMotorBoard::CanBusMotorBoard</definition>
+        <argsstring>(std::shared_ptr&lt; CanBusInterface &gt; can_bus, const size_t &amp;history_length=1000, const int &amp;control_timeout_ms=100)</argsstring>
+        <name>CanBusMotorBoard</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classblmc__drivers_1_1CanBusInterface" kindref="compound">CanBusInterface</ref> &gt;</type>
+          <declname>can_bus</declname>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>history_length</declname>
+          <defval>1000</defval>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>control_timeout_ms</declname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1CanBusMotorBoard" kindref="compound">CanBusMotorBoard</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>can_bus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>history_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="386" column="1" bodyfile="src/motor_board.cpp" bodystart="20" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a4099ee10765570b2bfb1f91a0670b11b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::CanBusMotorBoard::~CanBusMotorBoard</definition>
+        <argsstring>()</argsstring>
+        <name>~CanBusMotorBoard</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1CanBusMotorBoard" kindref="compound">CanBusMotorBoard</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="393" column="1" bodyfile="src/motor_board.cpp" bodystart="45" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a0fac258ce65f51074bdb6c64ce8ebded" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a14e237254ba495a66091ea3a3a33fa75" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const ScalarTimeseries&gt; blmc_drivers::CanBusMotorBoard::get_measurement</definition>
+        <argsstring>(const int &amp;index) const</argsstring>
+        <name>get_measurement</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a34828a0375a3bd1fede4deb4fc74c04d">get_measurement</reimplements>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Getters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the measurement data.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the kind of measurement we are insterested in. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the last measurements acquiered from the CAN card. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="408" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="408" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a7e62dd5126422cfbf587f9c265374fdc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae3777e484dda60c4abe87f2b542ddfb8" kindref="member">StatusTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const StatusTimeseries&gt; blmc_drivers::CanBusMotorBoard::get_status</definition>
+        <argsstring>() const</argsstring>
+        <name>get_status</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a13b1ffa7d10c1c753d76eaf5368714e3">get_status</reimplements>
+        <briefdescription>
+<para>Get the status of the CAN card. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Ptr&lt;const StatusTimeseries&gt; is the list of last acquiered status. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="418" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="418" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a2a1b44b08e57cd112957a33ceb97ebb4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a14e237254ba495a66091ea3a3a33fa75" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const ScalarTimeseries&gt; blmc_drivers::CanBusMotorBoard::get_control</definition>
+        <argsstring>(const int &amp;index) const</argsstring>
+        <name>get_control</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1aa5eeed12c851993f2e2c93f5479df9de">get_control</reimplements>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Get the controls to be sent. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the kind of control we are interested in. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the control to be sent. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="430" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="430" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1ac7adb4e5074229bb38e1c288702321e4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae2afe94a023d9f08a4c689e9b7660f15" kindref="member">CommandTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const CommandTimeseries&gt; blmc_drivers::CanBusMotorBoard::get_command</definition>
+        <argsstring>() const</argsstring>
+        <name>get_command</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a4913308c1eacc98475aeb8647447c997">get_command</reimplements>
+        <briefdescription>
+<para>Get the commands to be sent. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Ptr&lt;const CommandTimeseries&gt; is the list of the command to be sent. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="441" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="441" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1aa71ed313381440d9c2af00c5a13d6faa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a14e237254ba495a66091ea3a3a33fa75" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const ScalarTimeseries&gt; blmc_drivers::CanBusMotorBoard::get_sent_control</definition>
+        <argsstring>(const int &amp;index) const</argsstring>
+        <name>get_sent_control</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a8dc6222e915fc96d89b13cbb0fcb0cda">get_sent_control</reimplements>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Get the already sent controls. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the kind of control we are interested in. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ptr&lt;const ScalarTimeseries&gt; is the list of the sent cotnrols. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="452" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="452" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a5025602eac7b8c4ca1b2f5602e1a6640" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" kindref="member">Ptr</ref>&lt; const <ref refid="classblmc__drivers_1_1MotorBoardInterface_1ae2afe94a023d9f08a4c689e9b7660f15" kindref="member">CommandTimeseries</ref> &gt;</type>
+        <definition>virtual Ptr&lt;const CommandTimeseries&gt; blmc_drivers::CanBusMotorBoard::get_sent_command</definition>
+        <argsstring>() const</argsstring>
+        <name>get_sent_command</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1afd3de58f7a900347154b8d323f1c1d94">get_sent_command</reimplements>
+        <briefdescription>
+<para>Get the already sent commands. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Ptr&lt;const CommandTimeseries&gt; is the list of the sent cotnrols. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="463" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="463" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a8dbd787fcfc25d68d5443e2f0bf21f64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void blmc_drivers::CanBusMotorBoard::set_control</definition>
+        <argsstring>(const double &amp;control, const int &amp;index)</argsstring>
+        <name>set_control</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a3ace57ba3e09b9b3120d09303ff39a61">set_control</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>control</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Setters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the controls, see <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a3ace57ba3e09b9b3120d09303ff39a61" kindref="member">MotorBoardInterface::set_control</ref></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>control</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="478" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="478" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a4bb9c1f7f59507feed145111ccffc625" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void blmc_drivers::CanBusMotorBoard::set_command</definition>
+        <argsstring>(const MotorBoardCommand &amp;command)</argsstring>
+        <name>set_command</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a86b4ff810ca652d6761090ceaff65621">set_command</reimplements>
+        <param>
+          <type>const <ref refid="classblmc__drivers_1_1MotorBoardCommand" kindref="compound">MotorBoardCommand</ref> &amp;</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>Set the commands, see <ref refid="classblmc__drivers_1_1MotorBoardInterface_1a86b4ff810ca652d6761090ceaff65621" kindref="member">MotorBoardInterface::set_command</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="488" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="488" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a19ced11d06984528e6a2308c03ba83ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBusMotorBoard::send_if_input_changed</definition>
+        <argsstring>()</argsstring>
+        <name>send_if_input_changed</name>
+        <reimplements refid="classblmc__drivers_1_1MotorBoardInterface_1a79afd172c736718868f4d269125f2581">send_if_input_changed</reimplements>
+        <briefdescription>
+<para>Send the actual command and controls. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="496" column="1" bodyfile="src/motor_board.cpp" bodystart="54" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a3c496f045d3ef68c02fe6dd5abbdc4eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBusMotorBoard::wait_until_ready</definition>
+        <argsstring>()</argsstring>
+        <name>wait_until_ready</name>
+        <briefdescription>
+<para>returns only once board and motors are ready. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="501" column="1" bodyfile="src/motor_board.cpp" bodystart="77" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1aecd2ba0d3d1f40ffd38a0fd47b8da55d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool blmc_drivers::CanBusMotorBoard::is_ready</definition>
+        <argsstring>()</argsstring>
+        <name>is_ready</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="503" column="1" bodyfile="src/motor_board.cpp" bodystart="93" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a19ffd7d9ef9a441299164485e85ec6fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBusMotorBoard::pause_motors</definition>
+        <argsstring>()</argsstring>
+        <name>pause_motors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>: this function should go away, and we should add somewhere a warning in case there is a timeout </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="507" column="1" bodyfile="src/motor_board.cpp" bodystart="105" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a846382d2ad74d2087f5557ecd90937e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBusMotorBoard::disable_can_recv_timeout</definition>
+        <argsstring>()</argsstring>
+        <name>disable_can_recv_timeout</name>
+        <briefdescription>
+<para>Disable the can reciever timeout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="512" column="1" bodyfile="src/motor_board.cpp" bodystart="118" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1ae320518f2cf2c8af0e50220f11556b85" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>int32_t</type>
+        <definition>int32_t blmc_drivers::CanBusMotorBoard::bytes_to_int32</definition>
+        <argsstring>(T bytes)</argsstring>
+        <name>bytes_to_int32</name>
+        <param>
+          <type>T</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+<para>private methods ======================================================== </para>        </briefdescription>
+        <detaileddescription>
+<para>Useful converters Converts from bytes to int32.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>this is the type of the bytes convert. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bytes value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int32_t the output integer in int32. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="528" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="528" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a05db7868ff7034289358cdb774b59720" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float blmc_drivers::CanBusMotorBoard::q24_to_float</definition>
+        <argsstring>(int32_t qval)</argsstring>
+        <name>q24_to_float</name>
+        <param>
+          <type>int32_t</type>
+          <declname>qval</declname>
+        </param>
+        <briefdescription>
+<para>Convert from 24-bit normalized fixed-point to float. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>qval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the floating base point. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float is the converted value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="540" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="540" bodyend="543"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1ad6d91ccf867e9a3996492cce33270426" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t blmc_drivers::CanBusMotorBoard::float_to_q24</definition>
+        <argsstring>(float fval)</argsstring>
+        <name>float_to_q24</name>
+        <param>
+          <type>float</type>
+          <declname>fval</declname>
+        </param>
+        <briefdescription>
+<para>Converts from float to 24-bit normalized fixed-point. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int32_t </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="551" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="551" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1ad2cee731d455d64d71014c9821219410" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float blmc_drivers::CanBusMotorBoard::qbytes_to_float</definition>
+        <argsstring>(T qbytes)</argsstring>
+        <name>qbytes_to_float</name>
+        <param>
+          <type>T</type>
+          <declname>qbytes</declname>
+        </param>
+        <briefdescription>
+<para>Converts from qbytes to float. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of byte to manage </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>qbytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the input value in bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float the output value. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="563" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="563" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a5ec842674fd543a8c834265433740387" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBusMotorBoard::send_newest_controls</definition>
+        <argsstring>()</argsstring>
+        <name>send_newest_controls</name>
+        <briefdescription>
+<para>send the controls to the cards. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>are the controls to be sent. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="573" column="1" bodyfile="src/motor_board.cpp" bodystart="126" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a9f74868318daf4a97a5266e4d8d6f556" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBusMotorBoard::send_newest_command</definition>
+        <argsstring>()</argsstring>
+        <name>send_newest_command</name>
+        <briefdescription>
+<para>send the latest commands to the cards. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="579" column="1" bodyfile="src/motor_board.cpp" bodystart="187" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a542f8df35ff34348976ed1d55797a15a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBusMotorBoard::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>Is the loop that constently communicate with the network. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="597" column="1" bodyfile="src/motor_board.cpp" bodystart="229" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1a43b773d56156d4855e6b3b7b7b00b350" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBusMotorBoard::print_status</definition>
+        <argsstring>()</argsstring>
+        <name>print_status</name>
+        <briefdescription>
+<para>Display details of this object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="602" column="1" bodyfile="src/motor_board.cpp" bodystart="346" bodyend="381"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBusMotorBoard_1af6d242ea933e9ad23c37167ba848f017" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE blmc_drivers::CanBusMotorBoard::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+<para>This is the helper function used for spawning the real time thread. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance_pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the current object in this case. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>THREAD_FUNCTION_RETURN_TYPE depends on the current OS. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/motor_board.hpp" line="588" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="588" bodyend="592"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class <ref refid="classblmc__drivers_1_1CanBusMotorBoard" kindref="compound">CanBusMotorBoard</ref> implements a <ref refid="classblmc__drivers_1_1MotorBoardInterface" kindref="compound">MotorBoardInterface</ref> specific to CAN networks. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="27">
+        <label>blmc_drivers::MotorBoardInterface</label>
+        <link refid="classblmc__drivers_1_1MotorBoardInterface"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="26">
+        <label>blmc_drivers::CanBusMotorBoard</label>
+        <link refid="classblmc__drivers_1_1CanBusMotorBoard"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="30">
+        <label>blmc_drivers::MotorBoardInterface</label>
+        <link refid="classblmc__drivers_1_1MotorBoardInterface"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="29">
+        <label>blmc_drivers::CanBusMotorBoard</label>
+        <link refid="classblmc__drivers_1_1CanBusMotorBoard"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_drivers/devices/motor_board.hpp" line="377" column="1" bodyfile="include/blmc_drivers/devices/motor_board.hpp" bodystart="376" bodyend="699"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a50d4e798de72aa70d94313fbba110e05" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>ADC6</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba8d4c4df803687c9e24ee277ae6abf38e" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>analog_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba34d7aeb549f4c6e5e9f6e9f9d584ebb6" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>analog_1</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1ae320518f2cf2c8af0e50220f11556b85" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>bytes_to_int32</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1ab58dc93d9117503950fbe4d7a7c70914" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>can_bus_</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a43674811685fce4dbc3a9996e08454c9" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>CanBusMotorBoard</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>CanframeIDs</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a720c6300bf07245a739713a209799c02" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>command_</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80abf1a55c2af5e372b8509f160469e1b6a" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>COMMAND_ID</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1ae2afe94a023d9f08a4c689e9b7660f15" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>CommandTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a65cfba005239247df1ea26795ff14a3f" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>control_</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a82ed4d0fa527521707281396095a88caa22aa2ad714a3d21d3599340e5a735d03" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>control_count</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a4f9605b0a147ecd1dde41a0fb7b45d47" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>control_timeout_ms_</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a82ed4d0fa527521707281396095a88ca" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>ControlIndex</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba3a7016c860809f0398f58cbb49c13773" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>current_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba063eeeff31565ec122b6ac7e686c0b7d" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>current_1</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a82ed4d0fa527521707281396095a88caa51e106e07073a2488985f016b8a25006" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>current_target_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a82ed4d0fa527521707281396095a88caaddd8c44f283091cde84249668af74928" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>current_target_1</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a846382d2ad74d2087f5557ecd90937e3" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>disable_can_recv_timeout</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a08c7d897240dc0f7527ebf660fd6a00b" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>ENC_INDEX</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafbaa9d352ff89787dce3b8359e2687a12ec" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>encoder_index_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba8f832d4e58f7c60915018e3df5473d35" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>encoder_index_1</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1ad6d91ccf867e9a3996492cce33270426" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>float_to_q24</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1ac7adb4e5074229bb38e1c288702321e4" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>get_command</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a2a1b44b08e57cd112957a33ceb97ebb4" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>get_control</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a0fac258ce65f51074bdb6c64ce8ebded" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>get_measurement</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a5025602eac7b8c4ca1b2f5602e1a6640" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>get_sent_command</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1aa71ed313381440d9c2af00c5a13d6faa" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>get_sent_control</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a7e62dd5126422cfbf587f9c265374fdc" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>get_status</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1ab0e201396fe808cbc480b69768c81fa2" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>Index</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1aef0ca990410b130b67abce74d20d58a5" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>IndexTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a9ccf5bf9572c09450b35c2cc06299a5d" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>Iq</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80ad1e74b4d6968b2b8e92d6606a71fa1e8" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>IqRef</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1ae25808cc09839c2574d134a36b5b4d5d" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>is_loop_active_</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1aecd2ba0d3d1f40ffd38a0fd47b8da55d" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>is_ready</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1af6d242ea933e9ad23c37167ba848f017" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a542f8df35ff34348976ed1d55797a15a" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1abbba6ad698905e56101c516baa795b29" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>measurement_</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafbae093f0705e01ef8c5e09964daeb225de" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>measurement_count</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafb" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>MeasurementIndex</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1abdca3f76908ca197c4f12af814313a56" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>motors_are_paused_</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a19ffd7d9ef9a441299164485e85ec6fd" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>pause_motors</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a4b7c19cd1fa6d91f68229da2c08da3f8" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>POS</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba21da354c17fbe69438209b3f021e30ef" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>position_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba088cf02c867acd573d6fb0f4a450f781" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>position_1</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a43b773d56156d4855e6b3b7b7b00b350" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>print_status</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a6a733b7ed7a3a96f6b0712b6bb5307f8" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>Ptr</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a05db7868ff7034289358cdb774b59720" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>q24_to_float</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1ad2cee731d455d64d71014c9821219410" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>qbytes_to_float</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a040b0b2f6c2691a54d82404f7a1badd6" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>rt_thread_</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a14e237254ba495a66091ea3a3a33fa75" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>ScalarTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a19ced11d06984528e6a2308c03ba83ac" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>send_if_input_changed</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a9f74868318daf4a97a5266e4d8d6f556" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>send_newest_command</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a5ec842674fd543a8c834265433740387" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>send_newest_controls</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a27712df32104357ac31b97179f1e9211" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>sent_command_</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1ab5296d55684d48b538844c3b96df6594" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>sent_control_</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a4bb9c1f7f59507feed145111ccffc625" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>set_command</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a8dbd787fcfc25d68d5443e2f0bf21f64" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>set_control</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a0f89b07e3f8e9c151665b2c7f07ca3fd" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>SPEED</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a5725ff23bb4f8407c5608cabfa49c692" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>status_</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1addbf32fe0b6fa57134546c1f6ec5eb80a4380d3738c99a963f48fd22dfa8bfa2f" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>STATUSMSG</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1ae3777e484dda60c4abe87f2b542ddfb8" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>StatusTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1abeb474bef6d85dffcd5227e5ea965cc5" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>Vector</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba92b90796c7e002902bfed9a4811a66c2" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>velocity_0</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1a8e869cbdb9fcc872ba5a33813e0dfafba1884d733defabdbdb150c38eefc499a6" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>velocity_1</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a3c496f045d3ef68c02fe6dd5abbdc4eb" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>wait_until_ready</name></member>
+      <member refid="classblmc__drivers_1_1CanBusMotorBoard_1a4099ee10765570b2bfb1f91a0670b11b" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>~CanBusMotorBoard</name></member>
+      <member refid="classblmc__drivers_1_1MotorBoardInterface_1aecd23682c4a8c0df8e57b4c752e1d9ee" prot="public" virt="virtual"><scope>blmc_drivers::CanBusMotorBoard</scope><name>~MotorBoardInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

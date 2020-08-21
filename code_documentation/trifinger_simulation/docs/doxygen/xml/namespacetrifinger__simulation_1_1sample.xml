@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacetrifinger__simulation_1_1sample" kind="namespace" language="Python">
+    <compoundname>trifinger_simulation::sample</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="sample_8py_1a5d6bac75bdb65eb1ccea822ad1c0347e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.sample.random_position_in_arena</definition>
+        <argsstring>(height_limits=(0.05, 0.15), angle_limits=(-2 *math.pi, 2 *math.pi), radius_limits=(0.0, 0.15))</argsstring>
+        <name>random_position_in_arena</name>
+        <param>
+          <type>height_limits</type>
+          <defname>height_limits</defname>
+          <defval>(0.05, 0.15)</defval>
+        </param>
+        <param>
+          <type>angle_limits</type>
+          <defname>angle_limits</defname>
+          <defval>(-2 *math.pi, 2 *math.pi)</defval>
+        </param>
+        <param>
+          <type>radius_limits</type>
+          <defname>radius_limits</defname>
+          <defval>(0.0, 0.15)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/sample.py" line="20" column="1" bodyfile="python/trifinger_simulation/sample.py" bodystart="24" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="sample_8py_1ae494a98c2170a2c0f1ea62d310828461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.sample.random_joint_positions</definition>
+        <argsstring>(number_of_fingers, lower_bounds=[-math.radians(30), math, radians, math, radians, upper_bounds=[math.radians(30), math, radians, math, radians)</argsstring>
+        <name>random_joint_positions</name>
+        <param>
+          <type>number_of_fingers</type>
+          <defname>number_of_fingers</defname>
+        </param>
+        <param>
+          <type>lower_bounds</type>
+          <defname>lower_bounds</defname>
+          <defval>[-math.radians(30)</defval>
+        </param>
+        <param>
+          <type>math</type>
+          <defname>math</defname>
+        </param>
+        <param>
+          <type>radians</type>
+          <defname>radians</defname>
+        </param>
+        <param>
+          <type>math</type>
+          <defname>math</defname>
+        </param>
+        <param>
+          <type>radians</type>
+          <defname>radians</defname>
+        </param>
+        <param>
+          <type>upper_bounds</type>
+          <defname>upper_bounds</defname>
+          <defval>[math.radians(30)</defval>
+        </param>
+        <param>
+          <type>math</type>
+          <defname>math</defname>
+        </param>
+        <param>
+          <type>radians</type>
+          <defname>radians</defname>
+        </param>
+        <param>
+          <type>math</type>
+          <defname>math</defname>
+        </param>
+        <param>
+          <type>radians</type>
+          <defname>radians</defname>
+        </param>
+        <briefdescription>
+<para>Sample a random joint configuration for each finger. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>number_of_fingers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specify if positions are to be sampled for joints of 1 finger, or 3 fingers </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lower_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of lower position bounds for upper, middle and lower joint of a single finger. The same values will be used for all fingers if number_of_fingers &gt; 1. Unit: radian. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>upper_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper position bounds of the joints. See lower_bounds.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Flat list of joint positions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/sample.py" line="55" column="1" bodyfile="python/trifinger_simulation/sample.py" bodystart="59" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="sample_8py_1a412a62e6831e3391b41dc5a144ba364b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.sample.feasible_random_joint_positions_for_reaching</definition>
+        <argsstring>(finger, action_bounds, sampling_strategy=&quot;separated&quot;)</argsstring>
+        <name>feasible_random_joint_positions_for_reaching</name>
+        <param>
+          <type>finger</type>
+          <defname>finger</defname>
+        </param>
+        <param>
+          <type>action_bounds</type>
+          <defname>action_bounds</defname>
+        </param>
+        <param>
+          <type>sampling_strategy</type>
+          <defname>sampling_strategy</defname>
+          <defval>&quot;separated&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Sample random joint configuration with low risk of collisions. </para>        </briefdescription>
+        <detaileddescription>
+<para>In case of only one finger, this just calls random_joint_positions().</para><para>In case of three fingers, the sampling strategy depends on self.sampling_strategy.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>finger</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A SimFinger object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>action_bounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The limits of the action space used by the policy network. Has to contain keys &quot;low&quot; and &quot;high&quot; with lists of limit values. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sampling_strategy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Strategy with which positions for the three fingers are sampled. Unused when using the single finger. Has to be one of the following values:</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<itemizedlist>
+<listitem><para>&quot;separated&quot;: Samples for each finger a tip position somewhere in this fingers section of the workspace. This should result in target positions that minimize the risk of collisions between the fingers.</para></listitem><listitem><para>&quot;uniform&quot;: Samples for each finger a position uniformly over the whole joint range.</para></listitem><listitem><para>&quot;triangle&quot;: Samples a position somewhere in the workspace and places the tips of the free fingers around it with fixed <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>distance.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Flat list of joint angles. </para></simplesect>
+</para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/sample.py" line="99" column="1" bodyfile="python/trifinger_simulation/sample.py" bodystart="101" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="sample_8py_1acc2628de8940a6b2bd57d098110dc720" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def trifinger_simulation.sample.get_tip_positions_around_position</definition>
+        <argsstring>(number_of_fingers, position)</argsstring>
+        <name>get_tip_positions_around_position</name>
+        <param>
+          <type>number_of_fingers</type>
+          <defname>number_of_fingers</defname>
+        </param>
+        <param>
+          <type>position</type>
+          <defname>position</defname>
+        </param>
+        <briefdescription>
+<para>Compute finger tip positions close to the given target position. </para>        </briefdescription>
+        <detaileddescription>
+<para>For single finger, the tip position will be the same as the given position. For the TriFinger, the tips of the three fingers will be placed around it with some distance to avoid collision.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>number_of_fingers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tips of 1 finger or 3 fingers </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target x,y,z-position.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>tip_positions (list of array-like): List with one target position for each finger tip (each position given as a (x, y, z) tuple). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="python/trifinger_simulation/sample.py" line="178" column="1" bodyfile="python/trifinger_simulation/sample.py" bodystart="178" bodyend="201"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="python/trifinger_simulation/sample.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

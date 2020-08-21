@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1CanBus" kind="class" language="C++" prot="public">
+    <compoundname>blmc_drivers::CanBus</compoundname>
+    <basecompoundref refid="classblmc__drivers_1_1CanBusInterface" prot="public" virt="non-virtual">blmc_drivers::CanBusInterface</basecompoundref>
+    <includes refid="can__bus_8hpp" local="no">can_bus.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBus_1a996c9b1bc46071b2d002de38d6e9f781" prot="private" static="no" mutable="no">
+        <type>real_time_tools::SingletypeThreadsafeObject&lt; <ref refid="classblmc__drivers_1_1CanBusConnection" kindref="compound">CanBusConnection</ref>, 1 &gt;</type>
+        <definition>real_time_tools::SingletypeThreadsafeObject&lt;CanBusConnection, 1&gt; blmc_drivers::CanBus::can_connection_</definition>
+        <argsstring></argsstring>
+        <name>can_connection_</name>
+        <briefdescription>
+<para>Attributes. </para>        </briefdescription>
+        <detaileddescription>
+<para>can_connection_ is the communication object allowing to send or receive can frames. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="280" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBus_1ab09707f2c5f6cb7eb98f82e8e190d3c4" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; real_time_tools::ThreadsafeTimeseries&lt; <ref refid="classblmc__drivers_1_1CanBusFrame" kindref="compound">CanBusFrame</ref> &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;real_time_tools::ThreadsafeTimeseries&lt;CanBusFrame&gt; &gt; blmc_drivers::CanBus::input_</definition>
+        <argsstring></argsstring>
+        <name>input_</name>
+        <briefdescription>
+<para>input_ is a list of time stamped frame to be send to the can network. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="286" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBus_1ae1ecf491b819c83eb999bb9cdde6fb21" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; real_time_tools::ThreadsafeTimeseries&lt; <ref refid="classblmc__drivers_1_1CanBusFrame" kindref="compound">CanBusFrame</ref> &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;real_time_tools::ThreadsafeTimeseries&lt;CanBusFrame&gt; &gt; blmc_drivers::CanBus::sent_input_</definition>
+        <argsstring></argsstring>
+        <name>sent_input_</name>
+        <briefdescription>
+<para>sent_inupt_ is the list of the input already sent to the network. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="291" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBus_1ad9802d502698f202f9842a0c00372931" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; real_time_tools::ThreadsafeTimeseries&lt; <ref refid="classblmc__drivers_1_1CanBusFrame" kindref="compound">CanBusFrame</ref> &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;real_time_tools::ThreadsafeTimeseries&lt;CanBusFrame&gt; &gt; blmc_drivers::CanBus::output_</definition>
+        <argsstring></argsstring>
+        <name>output_</name>
+        <briefdescription>
+<para>output_ is the list of the frames received from the can network. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="296" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBus_1a85c9d5d9c6413c6871d48a247660ac20" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool blmc_drivers::CanBus::is_loop_active_</definition>
+        <argsstring></argsstring>
+        <name>is_loop_active_</name>
+        <briefdescription>
+<para>This boolean makes sure that the loop is not active upon destruction of the current object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="302" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBus_1a906baf827eff3c2850728478764a4759" prot="private" static="no" mutable="no">
+        <type>real_time_tools::RealTimeThread</type>
+        <definition>real_time_tools::RealTimeThread blmc_drivers::CanBus::rt_thread_</definition>
+        <argsstring></argsstring>
+        <name>rt_thread_</name>
+        <briefdescription>
+<para>rt_thread_ is the thread object allowing us to spawn real-time threads. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="308" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBus_1aef341b0b36d3f02087047b5234ccbf79" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string blmc_drivers::CanBus::log_dir_</definition>
+        <argsstring></argsstring>
+        <name>log_dir_</name>
+        <briefdescription>
+<para>Log directory. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="313" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__drivers_1_1CanBus_1aa726bd0d63a783d2a3cc02e2ef9c929b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string blmc_drivers::CanBus::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <briefdescription>
+<para>time_log_name is the name of the loggin </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="318" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1a7d376f1ebd6dd8bc3299f6fc9f3d42c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_drivers::CanBus::CanBus</definition>
+        <argsstring>(const std::string &amp;can_interface_name, const size_t &amp;history_length=1000)</argsstring>
+        <name>CanBus</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>can_interface_name</declname>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>history_length</declname>
+          <defval>1000</defval>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classblmc__drivers_1_1CanBus" kindref="compound">CanBus</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>can_interface_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>history_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="159" column="1" bodyfile="src/can_bus.cpp" bodystart="21" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1aa79afdda8d7f28ea63d32bf1a5a0f196" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>blmc_drivers::CanBus::~CanBus</definition>
+        <argsstring>()</argsstring>
+        <name>~CanBus</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1CanBus" kindref="compound">CanBus</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="165" column="1" bodyfile="src/can_bus.cpp" bodystart="35" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1a449fa3c1b73a9282193ce85b56e9a729" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1CanBusInterface_1a2da2627c961927f48359ae7d7e1aa4da" kindref="member">CanframeTimeseries</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;const CanframeTimeseries&gt; blmc_drivers::CanBus::get_output_frame</definition>
+        <argsstring>() const</argsstring>
+        <name>get_output_frame</name>
+        <reimplements refid="classblmc__drivers_1_1CanBusInterface_1ac169b1c119b707d2946a999b81fb5a46">get_output_frame</reimplements>
+        <briefdescription>
+<para>Getters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get the output frame</para><para><simplesect kind="return"><para>std::shared_ptr&lt;const CanframeTimeseries&gt; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="176" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="176" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1a5b9282bc65bff196e6d6b393fbdc5891" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1CanBusInterface_1a2da2627c961927f48359ae7d7e1aa4da" kindref="member">CanframeTimeseries</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;const CanframeTimeseries&gt; blmc_drivers::CanBus::get_input_frame</definition>
+        <argsstring>()</argsstring>
+        <name>get_input_frame</name>
+        <reimplements refid="classblmc__drivers_1_1CanBusInterface_1a40b62805094dc0a454695a988ab0d403">get_input_frame</reimplements>
+        <briefdescription>
+<para>Get the input frame. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::shared_ptr&lt;const CanframeTimeseries&gt; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="186" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="186" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1a862e9898a6607ac2e00e712c30e7f348" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1CanBusInterface_1a2da2627c961927f48359ae7d7e1aa4da" kindref="member">CanframeTimeseries</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;const CanframeTimeseries&gt; blmc_drivers::CanBus::get_sent_input_frame</definition>
+        <argsstring>()</argsstring>
+        <name>get_sent_input_frame</name>
+        <reimplements refid="classblmc__drivers_1_1CanBusInterface_1aca7e703983284a09c497c8182c0684d5">get_sent_input_frame</reimplements>
+        <briefdescription>
+<para>Get the input frame thas has been sent. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::shared_ptr&lt;const CanframeTimeseries&gt; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="196" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1ae4887644960c0a92fc82f8bdffbe9c48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void blmc_drivers::CanBus::set_input_frame</definition>
+        <argsstring>(const CanBusFrame &amp;input_frame)</argsstring>
+        <name>set_input_frame</name>
+        <reimplements refid="classblmc__drivers_1_1CanBusInterface_1acf9305b548421e837950a0988172d57a">set_input_frame</reimplements>
+        <param>
+          <type>const <ref refid="classblmc__drivers_1_1CanBusFrame" kindref="compound">CanBusFrame</ref> &amp;</type>
+          <declname>input_frame</declname>
+        </param>
+        <briefdescription>
+<para>Setters. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set the input frame</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input_frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="210" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1acf90b96ca5727f9ecb328ce20d7a2cbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBus::send_if_input_changed</definition>
+        <argsstring>()</argsstring>
+        <name>send_if_input_changed</name>
+        <reimplements refid="classblmc__drivers_1_1CanBusInterface_1aa97ce2a204aa8354b8ea62af5f3820a2">send_if_input_changed</reimplements>
+        <briefdescription>
+<para>Sender. </para>        </briefdescription>
+        <detaileddescription>
+<para>Send the queue of message to the can network </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="222" column="1" bodyfile="src/can_bus.cpp" bodystart="42" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1ab39625e5a1fea7d25d0967b4a48de0b4" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>THREAD_FUNCTION_RETURN_TYPE</type>
+        <definition>static THREAD_FUNCTION_RETURN_TYPE blmc_drivers::CanBus::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+<para>private attributes and methods </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is an helper that allows us to launch real-time thread in xenaomai, ubunt, or rt-preempt seemlessly.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance_pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>THREAD_FUNCTION_RETURN_TYPE (is void or void* depending on the OS. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="237" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="237" bodyend="241"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1a65042f6d32e30c7c367d7e5780856a60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBus::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>Execute the communication loop with the can bus. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="246" column="1" bodyfile="src/can_bus.cpp" bodystart="56" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1ae445662e791d0b6149289d9df39e1ea0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_drivers::CanBus::send_frame</definition>
+        <argsstring>(const CanBusFrame &amp;unstamped_can_frame)</argsstring>
+        <name>send_frame</name>
+        <param>
+          <type>const <ref refid="classblmc__drivers_1_1CanBusFrame" kindref="compound">CanBusFrame</ref> &amp;</type>
+          <declname>unstamped_can_frame</declname>
+        </param>
+        <briefdescription>
+<para>Send input data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>unstamped_can_frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a frame without id nor time. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="253" column="1" bodyfile="src/can_bus.cpp" bodystart="64" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1ada25ff1dcd774666f423b23d4de664ea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classblmc__drivers_1_1CanBusFrame" kindref="compound">CanBusFrame</ref></type>
+        <definition>CanBusFrame blmc_drivers::CanBus::receive_frame</definition>
+        <argsstring>()</argsstring>
+        <name>receive_frame</name>
+        <briefdescription>
+<para>Get the output frame from the bus. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classblmc__drivers_1_1CanBusFrame" kindref="compound">CanBusFrame</ref> is the output frame data. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="260" column="1" bodyfile="src/can_bus.cpp" bodystart="87" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1CanBus_1a86826b4acc0833e041e6ea02824f8d48" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classblmc__drivers_1_1CanBusConnection" kindref="compound">CanBusConnection</ref></type>
+        <definition>CanBusConnection blmc_drivers::CanBus::setup_can</definition>
+        <argsstring>(std::string name, uint32_t err_mask)</argsstring>
+        <name>setup_can</name>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>err_mask</declname>
+        </param>
+        <briefdescription>
+<para>Setup and initialize the <ref refid="classblmc__drivers_1_1CanBus" kindref="compound">CanBus</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>It connects to the can bus. This method is used once in the constructor.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the can card name. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>err_mask</parametername>
+<parametername>always</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>used with &quot;0&quot; so far (TODO: Manuel explain) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classblmc__drivers_1_1CanBusConnection" kindref="compound">CanBusConnection</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/can_bus.hpp" line="270" column="1" bodyfile="src/can_bus.cpp" bodystart="131" bodyend="210"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classblmc__drivers_1_1CanBus" kindref="compound">CanBus</ref> is the implementation of the <ref refid="classblmc__drivers_1_1CanBusInterface" kindref="compound">CanBusInterface</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="13">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="12">
+        <label>blmc_drivers::CanBusInterface</label>
+        <link refid="classblmc__drivers_1_1CanBusInterface"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>blmc_drivers::CanBus</label>
+        <link refid="classblmc__drivers_1_1CanBus"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="16">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="15">
+        <label>blmc_drivers::CanBusInterface</label>
+        <link refid="classblmc__drivers_1_1CanBusInterface"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>blmc_drivers::CanBus</label>
+        <link refid="classblmc__drivers_1_1CanBus"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_drivers/devices/can_bus.hpp" line="151" column="1" bodyfile="include/blmc_drivers/devices/can_bus.hpp" bodystart="150" bodyend="319"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1CanBus_1a996c9b1bc46071b2d002de38d6e9f781" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>can_connection_</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1a7d376f1ebd6dd8bc3299f6fc9f3d42c6" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>CanBus</name></member>
+      <member refid="classblmc__drivers_1_1CanBusInterface_1a2da2627c961927f48359ae7d7e1aa4da" prot="public" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>CanframeTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1a5b9282bc65bff196e6d6b393fbdc5891" prot="public" virt="virtual"><scope>blmc_drivers::CanBus</scope><name>get_input_frame</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1a449fa3c1b73a9282193ce85b56e9a729" prot="public" virt="virtual"><scope>blmc_drivers::CanBus</scope><name>get_output_frame</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1a862e9898a6607ac2e00e712c30e7f348" prot="public" virt="virtual"><scope>blmc_drivers::CanBus</scope><name>get_sent_input_frame</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1ab09707f2c5f6cb7eb98f82e8e190d3c4" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>input_</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1a85c9d5d9c6413c6871d48a247660ac20" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>is_loop_active_</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1aef341b0b36d3f02087047b5234ccbf79" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>log_dir_</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1ab39625e5a1fea7d25d0967b4a48de0b4" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1a65042f6d32e30c7c367d7e5780856a60" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>loop</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1aa726bd0d63a783d2a3cc02e2ef9c929b" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>name_</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1ad9802d502698f202f9842a0c00372931" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>output_</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1ada25ff1dcd774666f423b23d4de664ea" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>receive_frame</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1a906baf827eff3c2850728478764a4759" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>rt_thread_</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1ae445662e791d0b6149289d9df39e1ea0" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>send_frame</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1acf90b96ca5727f9ecb328ce20d7a2cbc" prot="public" virt="virtual"><scope>blmc_drivers::CanBus</scope><name>send_if_input_changed</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1ae1ecf491b819c83eb999bb9cdde6fb21" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>sent_input_</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1ae4887644960c0a92fc82f8bdffbe9c48" prot="public" virt="virtual"><scope>blmc_drivers::CanBus</scope><name>set_input_frame</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1a86826b4acc0833e041e6ea02824f8d48" prot="private" virt="non-virtual"><scope>blmc_drivers::CanBus</scope><name>setup_can</name></member>
+      <member refid="classblmc__drivers_1_1CanBus_1aa79afdda8d7f28ea63d32bf1a5a0f196" prot="public" virt="virtual"><scope>blmc_drivers::CanBus</scope><name>~CanBus</name></member>
+      <member refid="classblmc__drivers_1_1CanBusInterface_1ac2c6e3ff3b49b04ad5f9f698eadc8690" prot="public" virt="virtual"><scope>blmc_drivers::CanBus</scope><name>~CanBusInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

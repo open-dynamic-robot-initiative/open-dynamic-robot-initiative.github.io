@@ -1,0 +1,223 @@
+\hypertarget{classblmc__drivers_1_1Motor}{}\section{blmc\+\_\+drivers\+:\+:Motor Class Reference}
+\label{classblmc__drivers_1_1Motor}\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+
+
+This class implements the \hyperlink{classblmc__drivers_1_1MotorInterface}{Motor\+Interface}.  
+
+
+
+
+{\ttfamily \#include $<$motor.\+hpp$>$}
+
+
+
+Inheritance diagram for blmc\+\_\+drivers\+:\+:Motor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classblmc__drivers_1_1Motor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for blmc\+\_\+drivers\+:\+:Motor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classblmc__drivers_1_1Motor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__drivers_1_1Motor_a923be3c8e5027cdead1006f3878b6ec3}{Motor} (\hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} $>$ board, bool motor\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__drivers_1_1Motor}{Motor} object. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1Motor_ad93b64d54b40ff12df7081e009c71239}{$\sim$\+Motor} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classblmc__drivers_1_1Motor}{Motor} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_acf7389e09918c1955986a641efd4f032}\label{classblmc__drivers_1_1Motor_acf7389e09918c1955986a641efd4f032}} 
+virtual void \hyperlink{classblmc__drivers_1_1Motor_acf7389e09918c1955986a641efd4f032}{send\+\_\+if\+\_\+input\+\_\+changed} ()
+\begin{DoxyCompactList}\small\item\em Actually send the command and controls via the network, See \hyperlink{classblmc__drivers_1_1MotorInterface}{Motor\+Interface} for more information. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1Motor_a0ff1a1b5eb5da4791cc27879e761eb22}{get\+\_\+measurement} (const int \&index=0) const
+\begin{DoxyCompactList}\small\item\em Getters. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1Motor_ace26e74e3c8072c8bee867a2a0a7e013}{get\+\_\+current\+\_\+target} () const
+\begin{DoxyCompactList}\small\item\em Get the current target to be sent. \end{DoxyCompactList}\item 
+virtual \hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Scalar\+Timeseries} $>$ \hyperlink{classblmc__drivers_1_1Motor_aed5e8ee5136b76a94fc17a4430b108c8}{get\+\_\+sent\+\_\+current\+\_\+target} () const
+\begin{DoxyCompactList}\small\item\em Get the already sent current target values. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1Motor_a48801c9858a7b1784b0a0ac4272fdaf5}{set\+\_\+current\+\_\+target} (const double \&current\+\_\+target)
+\begin{DoxyCompactList}\small\item\em Setters. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1Motor_a4af56df5466d011fc2a567dd815a6c1b}{set\+\_\+command} (const \hyperlink{classblmc__drivers_1_1MotorBoardCommand}{Motor\+Board\+Command} \&command)
+\begin{DoxyCompactList}\small\item\em Set the command. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classblmc__drivers_1_1Motor_a2779f53af7b066254cac47bf07a162a4}{print} () const
+\begin{DoxyCompactList}\small\item\em Print the motor status and state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_a779365c022edb7d4beb4060dcdb7dd72}\label{classblmc__drivers_1_1Motor_a779365c022edb7d4beb4060dcdb7dd72}} 
+\hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} $>$ \hyperlink{classblmc__drivers_1_1Motor_a779365c022edb7d4beb4060dcdb7dd72}{board\+\_\+}
+\begin{DoxyCompactList}\small\item\em The Motor\+Board to be used for the communication. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_a614903579bd6001169d11b72bc17042b}\label{classblmc__drivers_1_1Motor_a614903579bd6001169d11b72bc17042b}} 
+bool \hyperlink{classblmc__drivers_1_1Motor_a614903579bd6001169d11b72bc17042b}{motor\+\_\+id\+\_\+}
+\begin{DoxyCompactList}\small\item\em The id of the motor on the Motor\+Board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class implements the \hyperlink{classblmc__drivers_1_1MotorInterface}{Motor\+Interface}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_a923be3c8e5027cdead1006f3878b6ec3}\label{classblmc__drivers_1_1Motor_a923be3c8e5027cdead1006f3878b6ec3}} 
+\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}!Motor@{Motor}}
+\index{Motor@{Motor}!blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+\subsubsection{\texorpdfstring{Motor()}{Motor()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+Motor\+::\+Motor (\begin{DoxyParamCaption}\item[{\hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Ptr}$<$ \hyperlink{classblmc__drivers_1_1MotorBoardInterface}{Motor\+Board\+Interface} $>$}]{board,  }\item[{bool}]{motor\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Construct a new \hyperlink{classblmc__drivers_1_1Motor}{Motor} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & is the Motor\+Board to be used. \\
+\hline
+{\em motor\+\_\+id} & is the id of the motor on the on-\/board card \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_ad93b64d54b40ff12df7081e009c71239}\label{classblmc__drivers_1_1Motor_ad93b64d54b40ff12df7081e009c71239}} 
+\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}!````~Motor@{$\sim$\+Motor}}
+\index{````~Motor@{$\sim$\+Motor}!blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+\subsubsection{\texorpdfstring{$\sim$\+Motor()}{~Motor()}}
+{\footnotesize\ttfamily virtual blmc\+\_\+drivers\+::\+Motor\+::$\sim$\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destroy the \hyperlink{classblmc__drivers_1_1Motor}{Motor} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_ace26e74e3c8072c8bee867a2a0a7e013}\label{classblmc__drivers_1_1Motor_ace26e74e3c8072c8bee867a2a0a7e013}} 
+\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}!get\+\_\+current\+\_\+target@{get\+\_\+current\+\_\+target}}
+\index{get\+\_\+current\+\_\+target@{get\+\_\+current\+\_\+target}!blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+target()}{get\_current\_target()}}
+{\footnotesize\ttfamily \hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Motor\+::\+Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+::\+Scalar\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Motor\+::get\+\_\+current\+\_\+target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the current target to be sent. 
+
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Scalar\+Timeseries$>$ the list of current values to be sent. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorInterface_a167ffe5df0412b9abcac9a93861e58d2}{blmc\+\_\+drivers\+::\+Motor\+Interface}.
+
+
+
+Reimplemented in \hyperlink{classblmc__drivers_1_1SafeMotor_ae40e4c51272c46f037ea0ba393b2033e}{blmc\+\_\+drivers\+::\+Safe\+Motor}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_a0ff1a1b5eb5da4791cc27879e761eb22}\label{classblmc__drivers_1_1Motor_a0ff1a1b5eb5da4791cc27879e761eb22}} 
+\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}!get\+\_\+measurement@{get\+\_\+measurement}}
+\index{get\+\_\+measurement@{get\+\_\+measurement}!blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+measurement()}{get\_measurement()}}
+{\footnotesize\ttfamily \hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Motor\+::\+Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+::\+Scalar\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Motor\+::get\+\_\+measurement (\begin{DoxyParamCaption}\item[{const int \&}]{index = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Getters. 
+
+Get the measurements
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & is the kind of measurement we are instersted in. see \hyperlink{classblmc__drivers_1_1MotorInterface_a35c1217dd295078c67bacc2cba08ab33}{Motor\+Interface\+::\+Measurement\+Index}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Scalar\+Timeseries$>$ The history of the measurement 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorInterface_a7f6afed670f078518ccb46e1e3b44892}{blmc\+\_\+drivers\+::\+Motor\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_aed5e8ee5136b76a94fc17a4430b108c8}\label{classblmc__drivers_1_1Motor_aed5e8ee5136b76a94fc17a4430b108c8}} 
+\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}!get\+\_\+sent\+\_\+current\+\_\+target@{get\+\_\+sent\+\_\+current\+\_\+target}}
+\index{get\+\_\+sent\+\_\+current\+\_\+target@{get\+\_\+sent\+\_\+current\+\_\+target}!blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+sent\+\_\+current\+\_\+target()}{get\_sent\_current\_target()}}
+{\footnotesize\ttfamily \hyperlink{classblmc__drivers_1_1MotorInterface_ae31f230b9da3674a05543023c90b124c}{Motor\+::\+Ptr}$<$ const \hyperlink{classblmc__drivers_1_1MotorInterface_a49b8fc916b9f9debbd7b0988463db5cd}{Motor\+::\+Scalar\+Timeseries} $>$ blmc\+\_\+drivers\+::\+Motor\+::get\+\_\+sent\+\_\+current\+\_\+target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the already sent current target values. 
+
+\begin{DoxyReturn}{Returns}
+Ptr$<$const Scalar\+Timeseries$>$ 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorInterface_a709804e11aa22fbb3107e781c9799bdb}{blmc\+\_\+drivers\+::\+Motor\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_a2779f53af7b066254cac47bf07a162a4}\label{classblmc__drivers_1_1Motor_a2779f53af7b066254cac47bf07a162a4}} 
+\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}!print@{print}}
+\index{print@{print}!blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Motor\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print the motor status and state. 
+
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_a4af56df5466d011fc2a567dd815a6c1b}\label{classblmc__drivers_1_1Motor_a4af56df5466d011fc2a567dd815a6c1b}} 
+\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}!set\+\_\+command@{set\+\_\+command}}
+\index{set\+\_\+command@{set\+\_\+command}!blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+\subsubsection{\texorpdfstring{set\+\_\+command()}{set\_command()}}
+{\footnotesize\ttfamily virtual void blmc\+\_\+drivers\+::\+Motor\+::set\+\_\+command (\begin{DoxyParamCaption}\item[{const \hyperlink{classblmc__drivers_1_1MotorBoardCommand}{Motor\+Board\+Command} \&}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the command. 
+
+See \hyperlink{classblmc__drivers_1_1MotorInterface}{Motor\+Interface} for more information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorInterface_a723a772b2be5beb0f07097a5b3e00a89}{blmc\+\_\+drivers\+::\+Motor\+Interface}.
+
+\mbox{\Hypertarget{classblmc__drivers_1_1Motor_a48801c9858a7b1784b0a0ac4272fdaf5}\label{classblmc__drivers_1_1Motor_a48801c9858a7b1784b0a0ac4272fdaf5}} 
+\index{blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}!set\+\_\+current\+\_\+target@{set\+\_\+current\+\_\+target}}
+\index{set\+\_\+current\+\_\+target@{set\+\_\+current\+\_\+target}!blmc\+\_\+drivers\+::\+Motor@{blmc\+\_\+drivers\+::\+Motor}}
+\subsubsection{\texorpdfstring{set\+\_\+current\+\_\+target()}{set\_current\_target()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Motor\+::set\+\_\+current\+\_\+target (\begin{DoxyParamCaption}\item[{const double \&}]{current\+\_\+target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setters. 
+
+Set the current (Ampere) target. See \hyperlink{classblmc__drivers_1_1MotorInterface}{Motor\+Interface} for more information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+target} & in Ampere \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classblmc__drivers_1_1MotorInterface_a76b49a1228ad549fa407a54c8da14d13}{blmc\+\_\+drivers\+::\+Motor\+Interface}.
+
+
+
+Reimplemented in \hyperlink{classblmc__drivers_1_1SafeMotor_adedaee24408b94b3d1ed8f856e218b12}{blmc\+\_\+drivers\+::\+Safe\+Motor}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+drivers/devices/\hyperlink{motor_8hpp}{motor.\+hpp}\item 
+src/\hyperlink{motor_8cpp}{motor.\+cpp}\end{DoxyCompactItemize}

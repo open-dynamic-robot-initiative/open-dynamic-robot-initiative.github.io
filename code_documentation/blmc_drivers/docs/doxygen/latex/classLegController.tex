@@ -1,0 +1,85 @@
+\hypertarget{classLegController}{}\section{Leg\+Controller Class Reference}
+\label{classLegController}\index{Leg\+Controller@{Leg\+Controller}}
+
+
+Simple PD control on the leg.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLegController_a9d1253c4c70fe6b83e449830c7328b58}{Leg\+Controller} (std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1Leg}{blmc\+\_\+drivers\+::\+Leg} $>$ leg, std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1AnalogSensor}{blmc\+\_\+drivers\+::\+Analog\+Sensor} $>$ analog\+\_\+sensor)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classLegController}{Leg\+Controller} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLegController_ad7f3068767ed754bbefd1744463764d0}\label{classLegController_ad7f3068767ed754bbefd1744463764d0}} 
+\hyperlink{classLegController_ad7f3068767ed754bbefd1744463764d0}{$\sim$\+Leg\+Controller} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classLegController}{Leg\+Controller} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLegController_adacfe6a1709021da8cd7009672d01440}\label{classLegController_adacfe6a1709021da8cd7009672d01440}} 
+void \hyperlink{classLegController_adacfe6a1709021da8cd7009672d01440}{start\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em helper to strat the real time thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLegController_a87bba6942e6f8ba649f595e871d0d379}\label{classLegController_a87bba6942e6f8ba649f595e871d0d379}} 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classLegController_a87bba6942e6f8ba649f595e871d0d379}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLegController_a00000dd7bbaa4f1e05a9ea16f05e73e8}{loop} ()
+\begin{DoxyCompactList}\small\item\em this is a simple control loop which runs at a kilohertz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLegController_af2abd6d8c18c9653813bb231a0688a54}\label{classLegController_af2abd6d8c18c9653813bb231a0688a54}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1Leg}{blmc\+\_\+drivers\+::\+Leg} $>$ \hyperlink{classLegController_af2abd6d8c18c9653813bb231a0688a54}{leg\+\_\+}
+\begin{DoxyCompactList}\small\item\em is the leg to control \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLegController_a1a05529b6f3f40c7d3da6e6a9fa94cea}\label{classLegController_a1a05529b6f3f40c7d3da6e6a9fa94cea}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1AnalogSensor}{blmc\+\_\+drivers\+::\+Analog\+Sensor} $>$ \hyperlink{classLegController_a1a05529b6f3f40c7d3da6e6a9fa94cea}{analog\+\_\+sensor\+\_\+}
+\begin{DoxyCompactList}\small\item\em is the list of sliders \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLegController_a34aac27ee8efb204f98203b553094588}\label{classLegController_a34aac27ee8efb204f98203b553094588}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classLegController_a34aac27ee8efb204f98203b553094588}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em is the real time thread object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLegController_a991995e57f3581074b9c0eec32966e35}\label{classLegController_a991995e57f3581074b9c0eec32966e35}} 
+bool \hyperlink{classLegController_a991995e57f3581074b9c0eec32966e35}{stop\+\_\+loop\+\_\+}
+\begin{DoxyCompactList}\small\item\em manages the shutdown of the controller \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple PD control on the leg. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLegController_a9d1253c4c70fe6b83e449830c7328b58}\label{classLegController_a9d1253c4c70fe6b83e449830c7328b58}} 
+\index{Leg\+Controller@{Leg\+Controller}!Leg\+Controller@{Leg\+Controller}}
+\index{Leg\+Controller@{Leg\+Controller}!Leg\+Controller@{Leg\+Controller}}
+\subsubsection{\texorpdfstring{Leg\+Controller()}{LegController()}}
+{\footnotesize\ttfamily Leg\+Controller\+::\+Leg\+Controller (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1Leg}{blmc\+\_\+drivers\+::\+Leg} $>$}]{leg,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1AnalogSensor}{blmc\+\_\+drivers\+::\+Analog\+Sensor} $>$}]{analog\+\_\+sensor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{classLegController}{Leg\+Controller} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leg} & \\
+\hline
+{\em analog\+\_\+sensor} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLegController_a00000dd7bbaa4f1e05a9ea16f05e73e8}\label{classLegController_a00000dd7bbaa4f1e05a9ea16f05e73e8}} 
+\index{Leg\+Controller@{Leg\+Controller}!loop@{loop}}
+\index{loop@{loop}!Leg\+Controller@{Leg\+Controller}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void Leg\+Controller\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+this is a simple control loop which runs at a kilohertz. 
+
+it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+demos/\hyperlink{demo__leg_8cpp}{demo\+\_\+leg.\+cpp}\end{DoxyCompactItemize}

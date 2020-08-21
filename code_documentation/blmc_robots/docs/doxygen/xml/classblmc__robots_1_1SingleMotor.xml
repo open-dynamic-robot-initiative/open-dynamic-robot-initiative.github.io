@@ -1,0 +1,772 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__robots_1_1SingleMotor" kind="class" language="C++" prot="public">
+    <compoundname>blmc_robots::SingleMotor</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classblmc__robots_1_1SingleMotor_1ac383dc0615dcb6b6fb1470b517561c63" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 1, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 1, 1&gt; blmc_robots::SingleMotor::Vector1d</definition>
+        <argsstring></argsstring>
+        <name>Vector1d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="20" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classblmc__robots_1_1SingleMotor_1a586b21d344037450dca9b11c8a6882b9" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 1, 1 &gt;</type>
+        <definition>typedef Eigen::Matrix&lt;double, 1, 1&gt; blmc_robots::SingleMotor::VectorSlider</definition>
+        <argsstring></argsstring>
+        <name>VectorSlider</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="21" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a616badc749db3a0ce391ca154b602509" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_positions_</definition>
+        <argsstring></argsstring>
+        <name>motor_positions_</name>
+        <briefdescription>
+<para>Motor data. </para>        </briefdescription>
+        <detaileddescription>
+<para>motor_positions_ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="251" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1ab61a1f183a5ccae341e371f40405a41b" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_velocities_</definition>
+        <argsstring></argsstring>
+        <name>motor_velocities_</name>
+        <briefdescription>
+<para>motor_velocities_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="255" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1ac11fcd7ae54f11e2b419b11ac8dac87f" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_currents_</definition>
+        <argsstring></argsstring>
+        <name>motor_currents_</name>
+        <briefdescription>
+<para>motor_currents_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="259" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a4b37df380410959a4a0a0bf8315852dc" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_torques_</definition>
+        <argsstring></argsstring>
+        <name>motor_torques_</name>
+        <briefdescription>
+<para>motor_torques_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="263" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a55ad6b72e757fffb7424052c8381a354" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_inertias_</definition>
+        <argsstring></argsstring>
+        <name>motor_inertias_</name>
+        <briefdescription>
+<para>motor_inertias_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="267" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1ab0ec410b7018e2f1c71d779c4b018622" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_encoder_indexes_</definition>
+        <argsstring></argsstring>
+        <name>motor_encoder_indexes_</name>
+        <briefdescription>
+<para>motor_encoder_indexes_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="271" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1aa8abc257d4336ef830317f2371e3ce11" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_target_currents_</definition>
+        <argsstring></argsstring>
+        <name>motor_target_currents_</name>
+        <briefdescription>
+<para>motor_target_currents_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="275" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a787f1cf4697845acb7ad32f61ba2a610" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_target_torques_</definition>
+        <argsstring></argsstring>
+        <name>motor_target_torques_</name>
+        <briefdescription>
+<para>motor_target_torques_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="279" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1af3c3dd00a54f188ef35a0a58f2aeea9a" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_torque_constants_</definition>
+        <argsstring></argsstring>
+        <name>motor_torque_constants_</name>
+        <briefdescription>
+<para>motor_torque_constants_ are the motor torque constants </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="283" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a3bee7675bed7fe92763dbe5c63e5d38b" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::target_motor_current_tmp_</definition>
+        <argsstring></argsstring>
+        <name>target_motor_current_tmp_</name>
+        <briefdescription>
+<para>target_motor_current_tmp_ is used to convert the joint torque to motor current </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="288" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1aabf1cdb3cef190305e336d3c9dcc57ea" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::joint_positions_</definition>
+        <argsstring></argsstring>
+        <name>joint_positions_</name>
+        <briefdescription>
+<para>Joint data. </para>        </briefdescription>
+        <detaileddescription>
+<para>joint_positions_ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="297" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1aa23bcf53779b381c1456b136f2a4a49c" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::joint_velocities_</definition>
+        <argsstring></argsstring>
+        <name>joint_velocities_</name>
+        <briefdescription>
+<para>joint_velocities_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="301" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1ab986b97deafb5757a410bb345441061a" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::joint_torques_</definition>
+        <argsstring></argsstring>
+        <name>joint_torques_</name>
+        <briefdescription>
+<para>joint_torques_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="305" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1abe76b9fff81ee4ef1826333cbff81c25" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::joint_target_torques_</definition>
+        <argsstring></argsstring>
+        <name>joint_target_torques_</name>
+        <briefdescription>
+<para>joint_target_torques_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="309" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a18b52ed3777aa38a36e91ab3b4dc81fe" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::joint_gear_ratios_</definition>
+        <argsstring></argsstring>
+        <name>joint_gear_ratios_</name>
+        <briefdescription>
+<para>joint_gear_ratios are the joint gear ratios </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="313" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1ae993e954e97662c1381d72e015035ca6" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::joint_encoder_index_</definition>
+        <argsstring></argsstring>
+        <name>joint_encoder_index_</name>
+        <briefdescription>
+<para>joint_encoder_index_ The last observed encoder_index at the joints. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="318" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1afe177b30fe7465e605165c25f9f7e10e" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::joint_zero_positions_</definition>
+        <argsstring></argsstring>
+        <name>joint_zero_positions_</name>
+        <briefdescription>
+<para>joint_zero_positions_ is the configuration considered as zero position </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="324" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a30e231807cc6d74d52b40388f1cc2209" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::joint_max_torque_</definition>
+        <argsstring></argsstring>
+        <name>joint_max_torque_</name>
+        <briefdescription>
+<para>joint_max_torque_ </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="328" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a15774ca374fff212abe4d2b397263dc9" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::slider_positions_</definition>
+        <argsstring></argsstring>
+        <name>slider_positions_</name>
+        <briefdescription>
+<para>Additional data. </para>        </briefdescription>
+        <detaileddescription>
+<para>slider_positions_ is the position of the linear potentatiometer. Can be used as a joystick input. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="338" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a581cc65baa0d38dbe0dc63ff682da4cb" prot="private" static="no" mutable="no">
+        <type>Vector1d</type>
+        <definition>Vector1d blmc_robots::SingleMotor::motor_max_current_</definition>
+        <argsstring></argsstring>
+        <name>motor_max_current_</name>
+        <briefdescription>
+<para>max_current_ is the current limit to be send to the motors, this a safe guard for development </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="344" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a6a57409cef4dc0959ed6b442e7626ba2" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1a793c8789a7598e8aaf766939da7262af" kindref="member">CanBus_ptr</ref>, 1 &gt;</type>
+        <definition>std::array&lt;CanBus_ptr, 1&gt; blmc_robots::SingleMotor::can_buses_</definition>
+        <argsstring></argsstring>
+        <name>can_buses_</name>
+        <briefdescription>
+<para>Drivers communication objects. </para>        </briefdescription>
+        <detaileddescription>
+<para>can_buses_ are the 4 can buses on the robot. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="353" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="353" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a435394184e8e7325055685177fcf136d" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1aab1c6ddb1273247a1b45d5e8b417c216" kindref="member">CanBusMotorBoard_ptr</ref>, 1 &gt;</type>
+        <definition>std::array&lt;CanBusMotorBoard_ptr, 1&gt; blmc_robots::SingleMotor::can_motor_boards_</definition>
+        <argsstring></argsstring>
+        <name>can_motor_boards_</name>
+        <briefdescription>
+<para>can_motor_boards_ are the 4 can motor board. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="357" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1a0ea5ac9826c4a4cf31a422a904d45431" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1a9850cf917156e20846aef3f8195aea0f" kindref="member">SafeMotor_ptr</ref>, 1 &gt;</type>
+        <definition>std::array&lt;SafeMotor_ptr, 1&gt; blmc_robots::SingleMotor::motors_</definition>
+        <argsstring></argsstring>
+        <name>motors_</name>
+        <briefdescription>
+<para>motors_ are the objects alowing us to send motor commands and receive data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="362" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="362" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classblmc__robots_1_1SingleMotor_1ae0f47f4ffeba39ecf870f1b2b9116503" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="common__header_8hpp_1a4cb9a95e8b2c0bf237ce29f5252c7b73" kindref="member">Slider_ptr</ref>, 1 &gt;</type>
+        <definition>std::array&lt;Slider_ptr, 1&gt; blmc_robots::SingleMotor::sliders_</definition>
+        <argsstring></argsstring>
+        <name>sliders_</name>
+        <briefdescription>
+<para>sliders_ these are analogue input from linear potentiometers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="367" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a074ba2d9a982316a4aecac65b7c1b581" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blmc_robots::SingleMotor::SingleMotor</definition>
+        <argsstring>()</argsstring>
+        <name>SingleMotor</name>
+        <briefdescription>
+<para><ref refid="classblmc__robots_1_1SingleMotor" kindref="compound">SingleMotor</ref> is the constructor of the class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Motor data</para><para>Joint data</para><para>Additional data</para><para>Setup some known data</para>        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="26" column="1" bodyfile="src/single_motor.cpp" bodystart="6" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a2c547957aec36d6cbd02ead4882558d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::SingleMotor::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <briefdescription>
+<para>initialize the robot by setting aligning the motors and calibrate the sensors to 0 </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="32" column="1" bodyfile="src/single_motor.cpp" bodystart="53" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a2fa43cd18da7598b8a41da66ef9251ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::SingleMotor::send_target_motor_current</definition>
+        <argsstring>(const Eigen::Ref&lt; Vector1d &gt; target_motor_current)</argsstring>
+        <name>send_target_motor_current</name>
+        <param>
+          <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+          <declname>target_motor_current</declname>
+        </param>
+        <briefdescription>
+<para>send_target_torques sends the target currents to the motors </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="37" column="1" bodyfile="src/single_motor.cpp" bodystart="147" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a09a829c726847cf4e8fd34175ce1a139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::SingleMotor::send_target_joint_torque</definition>
+        <argsstring>(const Eigen::Ref&lt; Vector1d &gt; target_joint_torque)</argsstring>
+        <name>send_target_joint_torque</name>
+        <param>
+          <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+          <declname>target_joint_torque</declname>
+        </param>
+        <briefdescription>
+<para>send_target_torques sends the target currents to the motors </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="43" column="1" bodyfile="src/single_motor.cpp" bodystart="163" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1adbc3fb18b62ee085ff2d4d6bb2f107a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::SingleMotor::acquire_sensors</definition>
+        <argsstring>()</argsstring>
+        <name>acquire_sensors</name>
+        <briefdescription>
+<para>acquire_sensors acquire all available sensors, WARNING !!!! this method has to be called prior to any gettter to have up to date data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Motor data</para><para>Joint data</para><para>Additional data</para>        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="51" column="1" bodyfile="src/single_motor.cpp" bodystart="81" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1ac72b1daab642097f739ccdcb8388d6c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_motor_positions</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_positions</name>
+        <briefdescription>
+<para>get_motor_positions </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the current motors positions (rad). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="57" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a8ee1b2b7d9b5bf83cd43511836e6074a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_motor_velocities</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_velocities</name>
+        <briefdescription>
+<para>get_motor_velocities </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the current motors velocities (rad/s). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="66" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1ab3330ea642ca97c094f2af7b50a7a747" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_motor_currents</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_currents</name>
+        <briefdescription>
+<para>get_motor_currents </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the current motors currents in (Ampere: A). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="75" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1af48038f9bc14cb4971d3f1aa54573daf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_motor_target_currents</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_target_currents</name>
+        <briefdescription>
+<para>get_motor_target_currents </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the target current motors currents in (Ampere: A). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="84" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a375565046712276a1f3bd941078a44fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_motor_torques</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_torques</name>
+        <briefdescription>
+<para>get_motor_torques </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the motor torques in Nm </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="93" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a5fe1f45ebb4893b1b31e1f0f23fb48e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_target_motor_torques</definition>
+        <argsstring>()</argsstring>
+        <name>get_target_motor_torques</name>
+        <briefdescription>
+<para>get_target_motor_torques </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the target motor torques in Nm </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="102" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="102" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a7126966be33a93491dcf10d62f711768" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_motor_inertias</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_inertias</name>
+        <briefdescription>
+<para>get_motor_inertias </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the motor inertias </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="111" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="111" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a1a7ff027c499ed3fc164a399e5b498e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_motor_encoder_indexes</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_encoder_indexes</name>
+        <briefdescription>
+<para>get_motor_encoder_indexes </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the position of the index of the encoders a the motor level </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="120" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1ac368bb72104b1a2e076142d4002740fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_motor_torque_constants</definition>
+        <argsstring>()</argsstring>
+        <name>get_motor_torque_constants</name>
+        <briefdescription>
+<para>get_motor_torque_constants </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the torque constants of each motor </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="129" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a4d458d18608fbca78baf6331d27a431b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_joint_positions</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_positions</name>
+        <briefdescription>
+<para>get_joint_positions </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the joint angle of each module </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="138" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a9a2997aaadecda0b30530d8d5afeaddf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_joint_velocities</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_velocities</name>
+        <briefdescription>
+<para>get_joint_velocities </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the joint velocities </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="147" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="147" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a7ac6ae993e59e6f2ea5f83a643184a9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_joint_torques</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_torques</name>
+        <briefdescription>
+<para>get_joint_torques </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the joint torques </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="156" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a261200917e713211fa7652b1157eafa1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_joint_target_torques</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_target_torques</name>
+        <briefdescription>
+<para>get_joint_torques </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the target joint torques </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="165" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="165" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a8ec5c8ba70bc93ff728300e868755546" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_joint_gear_ratios</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_gear_ratios</name>
+        <briefdescription>
+<para>get_joint_gear_ratios </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the joint gear ratios </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="174" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="174" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1ab73b8091a40e846a1b6c08ac1d8e0db8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_joint_encoder_index</definition>
+        <argsstring>()</argsstring>
+        <name>get_joint_encoder_index</name>
+        <briefdescription>
+<para>get_joint_encoder_index </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The last observed encoder index in joint coordinates. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="183" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a3a753c2c1b7b82bd716caa4fc3b5f5f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_zero_positions</definition>
+        <argsstring>()</argsstring>
+        <name>get_zero_positions</name>
+        <briefdescription>
+<para>get_zero_positions </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the position where the robot should be in &quot;zero&quot; configuration </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="192" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a9c0f3d4686e13d2a8a668a8c26f0bd00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_slider_positions</definition>
+        <argsstring>()</argsstring>
+        <name>get_slider_positions</name>
+        <briefdescription>
+<para>get_slider_positions </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the current sliders positions. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="201" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="201" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1a5768cce6fef657b36648ea68fdbb3ed8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_max_current</definition>
+        <argsstring>()</argsstring>
+        <name>get_max_current</name>
+        <briefdescription>
+<para>get_max_current </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the max current that has been hard-coded in the constructor of this class. TODO: parametrize this via YAML or something else. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="211" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="211" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1af83ef444bdd1eebdac1df6d8035d2b75" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+        <definition>const Eigen::Ref&lt;Vector1d&gt; blmc_robots::SingleMotor::get_max_joint_torque</definition>
+        <argsstring>()</argsstring>
+        <name>get_max_joint_torque</name>
+        <briefdescription>
+<para>get_max_torque </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the max torque that has been hard-coded in the constructor of this class. TODO: parametrize this via YAML or something else. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="221" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="221" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__robots_1_1SingleMotor_1af2add59e3d08949c658568b6d161b5ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void blmc_robots::SingleMotor::set_max_current</definition>
+        <argsstring>(const Eigen::Ref&lt; Vector1d &gt; max_current)</argsstring>
+        <name>set_max_current</name>
+        <param>
+          <type>const Eigen::Ref&lt; Vector1d &gt;</type>
+          <declname>max_current</declname>
+        </param>
+        <briefdescription>
+<para>set_max_current sets the maximum current that the motor can to apply. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>max_current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>contain 1 value per each motors. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_robots/single_motor.hpp" line="231" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="231" bodyend="241"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/blmc_robots/single_motor.hpp" line="18" column="1" bodyfile="include/blmc_robots/single_motor.hpp" bodystart="17" bodyend="368"/>
+    <listofallmembers>
+      <member refid="classblmc__robots_1_1SingleMotor_1adbc3fb18b62ee085ff2d4d6bb2f107a4" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>acquire_sensors</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a6a57409cef4dc0959ed6b442e7626ba2" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>can_buses_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a435394184e8e7325055685177fcf136d" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>can_motor_boards_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ab73b8091a40e846a1b6c08ac1d8e0db8" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_joint_encoder_index</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a8ec5c8ba70bc93ff728300e868755546" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_joint_gear_ratios</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a4d458d18608fbca78baf6331d27a431b" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_joint_positions</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a261200917e713211fa7652b1157eafa1" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_joint_target_torques</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a7ac6ae993e59e6f2ea5f83a643184a9e" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_joint_torques</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a9a2997aaadecda0b30530d8d5afeaddf" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_joint_velocities</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a5768cce6fef657b36648ea68fdbb3ed8" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_max_current</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1af83ef444bdd1eebdac1df6d8035d2b75" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_max_joint_torque</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ab3330ea642ca97c094f2af7b50a7a747" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_motor_currents</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a1a7ff027c499ed3fc164a399e5b498e1" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_motor_encoder_indexes</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a7126966be33a93491dcf10d62f711768" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_motor_inertias</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ac72b1daab642097f739ccdcb8388d6c9" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_motor_positions</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1af48038f9bc14cb4971d3f1aa54573daf" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_motor_target_currents</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ac368bb72104b1a2e076142d4002740fb" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_motor_torque_constants</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a375565046712276a1f3bd941078a44fb" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_motor_torques</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a8ee1b2b7d9b5bf83cd43511836e6074a" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_motor_velocities</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a9c0f3d4686e13d2a8a668a8c26f0bd00" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_slider_positions</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a5fe1f45ebb4893b1b31e1f0f23fb48e2" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_target_motor_torques</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a3a753c2c1b7b82bd716caa4fc3b5f5f0" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>get_zero_positions</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a2c547957aec36d6cbd02ead4882558d4" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>initialize</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ae993e954e97662c1381d72e015035ca6" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>joint_encoder_index_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a18b52ed3777aa38a36e91ab3b4dc81fe" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>joint_gear_ratios_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a30e231807cc6d74d52b40388f1cc2209" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>joint_max_torque_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1aabf1cdb3cef190305e336d3c9dcc57ea" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>joint_positions_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1abe76b9fff81ee4ef1826333cbff81c25" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>joint_target_torques_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ab986b97deafb5757a410bb345441061a" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>joint_torques_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1aa23bcf53779b381c1456b136f2a4a49c" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>joint_velocities_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1afe177b30fe7465e605165c25f9f7e10e" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>joint_zero_positions_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ac11fcd7ae54f11e2b419b11ac8dac87f" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_currents_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ab0ec410b7018e2f1c71d779c4b018622" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_encoder_indexes_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a55ad6b72e757fffb7424052c8381a354" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_inertias_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a581cc65baa0d38dbe0dc63ff682da4cb" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_max_current_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a616badc749db3a0ce391ca154b602509" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_positions_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1aa8abc257d4336ef830317f2371e3ce11" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_target_currents_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a787f1cf4697845acb7ad32f61ba2a610" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_target_torques_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1af3c3dd00a54f188ef35a0a58f2aeea9a" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_torque_constants_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a4b37df380410959a4a0a0bf8315852dc" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_torques_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ab61a1f183a5ccae341e371f40405a41b" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motor_velocities_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a0ea5ac9826c4a4cf31a422a904d45431" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>motors_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a09a829c726847cf4e8fd34175ce1a139" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>send_target_joint_torque</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a2fa43cd18da7598b8a41da66ef9251ff" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>send_target_motor_current</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1af2add59e3d08949c658568b6d161b5ba" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>set_max_current</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a074ba2d9a982316a4aecac65b7c1b581" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>SingleMotor</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a15774ca374fff212abe4d2b397263dc9" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>slider_positions_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ae0f47f4ffeba39ecf870f1b2b9116503" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>sliders_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a3bee7675bed7fe92763dbe5c63e5d38b" prot="private" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>target_motor_current_tmp_</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1ac383dc0615dcb6b6fb1470b517561c63" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>Vector1d</name></member>
+      <member refid="classblmc__robots_1_1SingleMotor_1a586b21d344037450dca9b11c8a6882b9" prot="public" virt="non-virtual"><scope>blmc_robots::SingleMotor</scope><name>VectorSlider</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -6,7 +6,7 @@ var searchData=
   ['send_5ftorque',['send_torque',['../classblmc__robots_1_1BlmcJointModule.html#af0484dd9efc47843706fc71d4351bdbd',1,'blmc_robots::BlmcJointModule']]],
   ['send_5ftorques',['send_torques',['../classblmc__robots_1_1BlmcJointModules.html#a26d4d675142bc783c1f983d135a41a09',1,'blmc_robots::BlmcJointModules::send_torques()'],['../classblmc__robots_1_1SpiJointModules.html#a13bab38386fcc431b89dd24e794fe90f',1,'blmc_robots::SpiJointModules::send_torques()']]],
   ['set_5fcoefficients',['set_coefficients',['../classblmc__robots_1_1Polynome.html#ad8daa2f5ffa1891aac2663519950afae',1,'blmc_robots::Polynome']]],
-  ['set_5fconfig_5fvalue',['set_config_value',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#a0d5d8b4ad8693498e56a95e5cbbad9f6',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
+  ['set_5fconfig_5fvalue',['set_config_value',['../structblmc__robots_1_1NJointBlmcRobotDriver_1_1Config.html#acf6b753c2a2cbf8cedc97da4a5a0f83c',1,'blmc_robots::NJointBlmcRobotDriver::Config']]],
   ['set_5fhardstop2zero_5foffsets',['set_hardstop2zero_offsets',['../classblmc__robots_1_1Stuggihop.html#a5f0707d8965fc98b36ca3fa42b57db5f',1,'blmc_robots::Stuggihop']]],
   ['set_5fjoint_5fpolarities',['set_joint_polarities',['../classblmc__robots_1_1BlmcJointModules.html#a97f538c52a1c00846497417333f93230',1,'blmc_robots::BlmcJointModules']]],
   ['set_5fjoint_5fpolarity',['set_joint_polarity',['../classblmc__robots_1_1BlmcJointModule.html#a137da65771a8628db4692e3bfc924f07',1,'blmc_robots::BlmcJointModule']]],

@@ -1,0 +1,67 @@
+\hypertarget{pd_8py}{}\section{python/robot\+\_\+properties\+\_\+bolt/pd.py File Reference}
+\label{pd_8py}\index{python/robot\+\_\+properties\+\_\+bolt/pd.\+py@{python/robot\+\_\+properties\+\_\+bolt/pd.\+py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacerobot__properties__bolt_1_1pd}{robot\+\_\+properties\+\_\+bolt.\+pd}
+\begin{DoxyCompactList}\small\item\em This module reads planner data from files and runs a PD controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_aefad3d3447a097bbda79da022146dc01}\label{namespacerobot__properties__bolt_1_1pd_aefad3d3447a097bbda79da022146dc01}} 
+def {\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+plot} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_a4ea1ee8c05aad280197204fb29e4e503}\label{namespacerobot__properties__bolt_1_1pd_a4ea1ee8c05aad280197204fb29e4e503}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+robot} = Bolt\+Robot()
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_aaa85f193a577d2844e0ef55ff88a3b92}\label{namespacerobot__properties__bolt_1_1pd_aaa85f193a577d2844e0ef55ff88a3b92}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+torque} = np.\+loadtxt(\char`\"{}Torque.\+txt\char`\"{})
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_a9659711d6dd60b9130da2f187ad45ce1}\label{namespacerobot__properties__bolt_1_1pd_a9659711d6dd60b9130da2f187ad45ce1}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+pos} = np.\+loadtxt(\char`\"{}Position.\+txt\char`\"{})
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_aec9f899bd4d65c3af623ad8ba7766921}\label{namespacerobot__properties__bolt_1_1pd_aec9f899bd4d65c3af623ad8ba7766921}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+vel} = np.\+loadtxt(\char`\"{}Velocity.\+txt\char`\"{})
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_a0aaa7a1517bdb4c50d64270c7793e25f}\label{namespacerobot__properties__bolt_1_1pd_a0aaa7a1517bdb4c50d64270c7793e25f}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+q0} = Bolt\+Config.\+initial\+\_\+configuration
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_a8c20dabb913f3b7dd3ac129f20d087ea}\label{namespacerobot__properties__bolt_1_1pd_a8c20dabb913f3b7dd3ac129f20d087ea}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+dq0} = Bolt\+Config.\+initial\+\_\+velocity
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_ac45beac2298c90f363b3a6d41d1f0a7d}\label{namespacerobot__properties__bolt_1_1pd_ac45beac2298c90f363b3a6d41d1f0a7d}} 
+int {\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+kp} = 20
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_ac1f10d4b84bc9dea26f7c4cd8e72e248}\label{namespacerobot__properties__bolt_1_1pd_ac1f10d4b84bc9dea26f7c4cd8e72e248}} 
+float {\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+kd} = 0.\+1
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_a611603e2281532f181f08e35c72f8458}\label{namespacerobot__properties__bolt_1_1pd_a611603e2281532f181f08e35c72f8458}} 
+list {\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+pos\+History} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_a9a39a51b2f763e8a21ef887e9e3d9798}\label{namespacerobot__properties__bolt_1_1pd_a9a39a51b2f763e8a21ef887e9e3d9798}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+delta\+Pos} = pos\mbox{[}i\mbox{]} -\/ np.\+squeeze(np.\+asarray(robot.\+get\+\_\+state()\mbox{[}0\mbox{]}\mbox{[}7\+:\mbox{]}))
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_aba4eaf4c107132793a0b485aefaaafeb}\label{namespacerobot__properties__bolt_1_1pd_aba4eaf4c107132793a0b485aefaaafeb}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+delta\+Vel} = vel\mbox{[}i\mbox{]} -\/ np.\+squeeze(np.\+asarray(robot.\+get\+\_\+state()\mbox{[}1\mbox{]}\mbox{[}6\+:\mbox{]}))
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_a34cb69b502b8932afd00a74d722f6f35}\label{namespacerobot__properties__bolt_1_1pd_a34cb69b502b8932afd00a74d722f6f35}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+q}
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_a0a1e0aab2ba1ec88672f657be05c1ae5}\label{namespacerobot__properties__bolt_1_1pd_a0a1e0aab2ba1ec88672f657be05c1ae5}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+dq}
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_aa6415397e803d7de4f890a0a81c65485}\label{namespacerobot__properties__bolt_1_1pd_aa6415397e803d7de4f890a0a81c65485}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+active\+\_\+eff}
+\item 
+\mbox{\Hypertarget{namespacerobot__properties__bolt_1_1pd_aedae664053ed1b910c01d24ec83dda9f}\label{namespacerobot__properties__bolt_1_1pd_aedae664053ed1b910c01d24ec83dda9f}} 
+{\bfseries robot\+\_\+properties\+\_\+bolt.\+pd.\+forces}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020, New York University and Max Planck Gesellschaft, License B\+S\+D-\/3-\/\+Clause 
+\end{DoxyCopyright}

@@ -1,0 +1,77 @@
+\hypertarget{classrobot__interfaces_1_1SensorBackend}{}\section{robot\+\_\+interfaces\+:\+:Sensor\+Backend$<$ Observation\+Type $>$ Class Template Reference}
+\label{classrobot__interfaces_1_1SensorBackend}\index{robot\+\_\+interfaces\+::\+Sensor\+Backend$<$ Observation\+Type $>$@{robot\+\_\+interfaces\+::\+Sensor\+Backend$<$ Observation\+Type $>$}}
+
+
+Communication link between \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data} and \hyperlink{classrobot__interfaces_1_1SensorDriver}{Sensor\+Driver}.  
+
+
+
+
+{\ttfamily \#include $<$sensor\+\_\+backend.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrobot__interfaces_1_1SensorBackend_af24fda0e1d54274cf8122195f82acea9}{Sensor\+Backend} (std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorDriver}{Sensor\+Driver}$<$ Observation\+Type $>$$>$ sensor\+\_\+driver, std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data}$<$ Observation\+Type $>$$>$ sensor\+\_\+data)
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorBackend_a50a8691ab6bdfb1bc39fc55266ffb76c}\label{classrobot__interfaces_1_1SensorBackend_a50a8691ab6bdfb1bc39fc55266ffb76c}} 
+{\bfseries Sensor\+Backend} (\hyperlink{classrobot__interfaces_1_1SensorBackend}{Sensor\+Backend} \&\&)=default
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorBackend_aee2c015c331cf8acd80b57523f10beaa}\label{classrobot__interfaces_1_1SensorBackend_aee2c015c331cf8acd80b57523f10beaa}} 
+void \hyperlink{classrobot__interfaces_1_1SensorBackend_aee2c015c331cf8acd80b57523f10beaa}{loop} ()
+\begin{DoxyCompactList}\small\item\em Main loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorBackend_a72fda090e697edcda5f92d7542788171}\label{classrobot__interfaces_1_1SensorBackend_a72fda090e697edcda5f92d7542788171}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorDriver}{Sensor\+Driver}$<$ Observation\+Type $>$ $>$ {\bfseries sensor\+\_\+driver\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorBackend_a93c993a56270f282235df08337e0bc26}\label{classrobot__interfaces_1_1SensorBackend_a93c993a56270f282235df08337e0bc26}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data}$<$ Observation\+Type $>$ $>$ {\bfseries sensor\+\_\+data\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorBackend_a479d96dc0a9fce6c72c7957e005530f7}\label{classrobot__interfaces_1_1SensorBackend_a479d96dc0a9fce6c72c7957e005530f7}} 
+bool {\bfseries destructor\+\_\+was\+\_\+called\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorBackend_ac9ca3c3602264de39a6bca792b51dcd4}\label{classrobot__interfaces_1_1SensorBackend_ac9ca3c3602264de39a6bca792b51dcd4}} 
+std\+::thread {\bfseries thread\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Observation\+Type$>$\newline
+class robot\+\_\+interfaces\+::\+Sensor\+Backend$<$ Observation\+Type $>$}
+
+Communication link between \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data} and \hyperlink{classrobot__interfaces_1_1SensorDriver}{Sensor\+Driver}. 
+
+At each instant, it checks if the sensor can be accessed, and then gets the observation from it (the observation type depends on the sensor) and appends it to the sensor data.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Observation\+Type} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrobot__interfaces_1_1SensorBackend_af24fda0e1d54274cf8122195f82acea9}\label{classrobot__interfaces_1_1SensorBackend_af24fda0e1d54274cf8122195f82acea9}} 
+\index{robot\+\_\+interfaces\+::\+Sensor\+Backend@{robot\+\_\+interfaces\+::\+Sensor\+Backend}!Sensor\+Backend@{Sensor\+Backend}}
+\index{Sensor\+Backend@{Sensor\+Backend}!robot\+\_\+interfaces\+::\+Sensor\+Backend@{robot\+\_\+interfaces\+::\+Sensor\+Backend}}
+\subsubsection{\texorpdfstring{Sensor\+Backend()}{SensorBackend()}}
+{\footnotesize\ttfamily template$<$typename Observation\+Type $>$ \\
+\hyperlink{classrobot__interfaces_1_1SensorBackend}{robot\+\_\+interfaces\+::\+Sensor\+Backend}$<$ Observation\+Type $>$\+::\hyperlink{classrobot__interfaces_1_1SensorBackend}{Sensor\+Backend} (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorDriver}{Sensor\+Driver}$<$ Observation\+Type $>$$>$}]{sensor\+\_\+driver,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classrobot__interfaces_1_1SensorData}{Sensor\+Data}$<$ Observation\+Type $>$$>$}]{sensor\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+\_\+driver} & \hyperlink{classDriver}{Driver} instance for the sensor. \\
+\hline
+{\em sensor\+\_\+data} & Data is sent to/retrieved from here. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/sensors/\hyperlink{sensor__backend_8hpp}{sensor\+\_\+backend.\+hpp}\end{DoxyCompactItemize}

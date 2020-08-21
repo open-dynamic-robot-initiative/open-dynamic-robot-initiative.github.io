@@ -1,0 +1,112 @@
+\hypertarget{classblmc__drivers_1_1SinePositionControl}{}\section{blmc\+\_\+drivers\+:\+:Sine\+Position\+Control Class Reference}
+\label{classblmc__drivers_1_1SinePositionControl}\index{blmc\+\_\+drivers\+::\+Sine\+Position\+Control@{blmc\+\_\+drivers\+::\+Sine\+Position\+Control}}
+
+
+This is a basic PD controller to be used in the demos of this package.  
+
+
+
+
+{\ttfamily \#include $<$sine\+\_\+position\+\_\+control.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__drivers_1_1SinePositionControl_a6f5a006338c7975f9aeef5987384c661}{Sine\+Position\+Control} (std\+::vector$<$ \hyperlink{namespaceblmc__drivers_ab975c3be3c53a93a10c491f07a132e2b}{Safe\+Motor\+\_\+ptr} $>$ motor\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__drivers_1_1SinePositionControl}{Sine\+Position\+Control} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a35004249215059c73863e71680b977a8}\label{classblmc__drivers_1_1SinePositionControl_a35004249215059c73863e71680b977a8}} 
+\hyperlink{classblmc__drivers_1_1SinePositionControl_a35004249215059c73863e71680b977a8}{$\sim$\+Sine\+Position\+Control} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classblmc__drivers_1_1SinePositionControl}{Sine\+Position\+Control} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a0766604ca7e58200e97547e61e0f4cc8}\label{classblmc__drivers_1_1SinePositionControl_a0766604ca7e58200e97547e61e0f4cc8}} 
+void \hyperlink{classblmc__drivers_1_1SinePositionControl_a0766604ca7e58200e97547e61e0f4cc8}{start\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em This method is a helper to start the thread loop. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a61875cedee870d5cc0cb5e10799b1c24}\label{classblmc__drivers_1_1SinePositionControl_a61875cedee870d5cc0cb5e10799b1c24}} 
+void \hyperlink{classblmc__drivers_1_1SinePositionControl_a61875cedee870d5cc0cb5e10799b1c24}{stop\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em Stop the control and dump the data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a0a86810773b5a172cbc5f407fa59df4d}\label{classblmc__drivers_1_1SinePositionControl_a0a86810773b5a172cbc5f407fa59df4d}} 
+void {\bfseries set\+\_\+gains} (double kp, double kd)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classblmc__drivers_1_1SinePositionControl_a1e5ab43762ca2511a6badc7065f47e4b}{loop} ()
+\begin{DoxyCompactList}\small\item\em this is a simple control loop which runs at a kilohertz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_ad24e437d64cd1ac1fca2bc5428c844f4}\label{classblmc__drivers_1_1SinePositionControl_ad24e437d64cd1ac1fca2bc5428c844f4}} 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classblmc__drivers_1_1SinePositionControl_ad24e437d64cd1ac1fca2bc5428c844f4}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_af210bec9cf5b60d5f6a481449e65112b}\label{classblmc__drivers_1_1SinePositionControl_af210bec9cf5b60d5f6a481449e65112b}} 
+std\+::vector$<$ \hyperlink{namespaceblmc__drivers_ab975c3be3c53a93a10c491f07a132e2b}{Safe\+Motor\+\_\+ptr} $>$ \hyperlink{classblmc__drivers_1_1SinePositionControl_af210bec9cf5b60d5f6a481449e65112b}{motor\+\_\+list\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is list of motors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a89c0d71051efbc318f80833b3dc50b55}\label{classblmc__drivers_1_1SinePositionControl_a89c0d71051efbc318f80833b3dc50b55}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classblmc__drivers_1_1SinePositionControl_a89c0d71051efbc318f80833b3dc50b55}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the real time thread object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a65b832cf1c7762140b79bbac39f42a09}\label{classblmc__drivers_1_1SinePositionControl_a65b832cf1c7762140b79bbac39f42a09}} 
+bool \hyperlink{classblmc__drivers_1_1SinePositionControl_a65b832cf1c7762140b79bbac39f42a09}{stop\+\_\+loop\+\_\+}
+\begin{DoxyCompactList}\small\item\em managing the stopping of the loop \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a6d934043fd7ef066c5cd680e0c055b58}\label{classblmc__drivers_1_1SinePositionControl_a6d934043fd7ef066c5cd680e0c055b58}} 
+unsigned \hyperlink{classblmc__drivers_1_1SinePositionControl_a6d934043fd7ef066c5cd680e0c055b58}{memory\+\_\+buffer\+\_\+size\+\_\+}
+\begin{DoxyCompactList}\small\item\em memory\+\_\+buffer\+\_\+size\+\_\+ is the max size of the memory buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a8d9d600b107301dfec87f04615e3721a}\label{classblmc__drivers_1_1SinePositionControl_a8d9d600b107301dfec87f04615e3721a}} 
+std\+::vector$<$ std\+::deque$<$ double $>$ $>$ \hyperlink{classblmc__drivers_1_1SinePositionControl_a8d9d600b107301dfec87f04615e3721a}{encoders\+\_\+}
+\begin{DoxyCompactList}\small\item\em Encoder data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a1ad95cec3a68d2dff06219dff5f83ab8}\label{classblmc__drivers_1_1SinePositionControl_a1ad95cec3a68d2dff06219dff5f83ab8}} 
+std\+::vector$<$ std\+::deque$<$ double $>$ $>$ \hyperlink{classblmc__drivers_1_1SinePositionControl_a1ad95cec3a68d2dff06219dff5f83ab8}{velocities\+\_\+}
+\begin{DoxyCompactList}\small\item\em Velocity data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_ab7903dd177f6dcaa7efa00591ad656d9}\label{classblmc__drivers_1_1SinePositionControl_ab7903dd177f6dcaa7efa00591ad656d9}} 
+std\+::vector$<$ std\+::deque$<$ double $>$ $>$ \hyperlink{classblmc__drivers_1_1SinePositionControl_ab7903dd177f6dcaa7efa00591ad656d9}{currents\+\_\+}
+\begin{DoxyCompactList}\small\item\em current data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a29bd0da456de8a71467de12a3ab42265}\label{classblmc__drivers_1_1SinePositionControl_a29bd0da456de8a71467de12a3ab42265}} 
+std\+::vector$<$ std\+::deque$<$ double $>$ $>$ \hyperlink{classblmc__drivers_1_1SinePositionControl_a29bd0da456de8a71467de12a3ab42265}{control\+\_\+buffer\+\_\+}
+\begin{DoxyCompactList}\small\item\em control\+\_\+buffer\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a1b9b44bf55c548c937b4a8ff06d0102d}\label{classblmc__drivers_1_1SinePositionControl_a1b9b44bf55c548c937b4a8ff06d0102d}} 
+double \hyperlink{classblmc__drivers_1_1SinePositionControl_a1b9b44bf55c548c937b4a8ff06d0102d}{kp\+\_\+}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classController}{Controller} proportional gain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_ab48d1f5927551b7856474b92a84859e9}\label{classblmc__drivers_1_1SinePositionControl_ab48d1f5927551b7856474b92a84859e9}} 
+double \hyperlink{classblmc__drivers_1_1SinePositionControl_ab48d1f5927551b7856474b92a84859e9}{kd\+\_\+}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classController}{Controller} derivative gain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a basic PD controller to be used in the demos of this package. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a6f5a006338c7975f9aeef5987384c661}\label{classblmc__drivers_1_1SinePositionControl_a6f5a006338c7975f9aeef5987384c661}} 
+\index{blmc\+\_\+drivers\+::\+Sine\+Position\+Control@{blmc\+\_\+drivers\+::\+Sine\+Position\+Control}!Sine\+Position\+Control@{Sine\+Position\+Control}}
+\index{Sine\+Position\+Control@{Sine\+Position\+Control}!blmc\+\_\+drivers\+::\+Sine\+Position\+Control@{blmc\+\_\+drivers\+::\+Sine\+Position\+Control}}
+\subsubsection{\texorpdfstring{Sine\+Position\+Control()}{SinePositionControl()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+Sine\+Position\+Control\+::\+Sine\+Position\+Control (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{namespaceblmc__drivers_ab975c3be3c53a93a10c491f07a132e2b}{Safe\+Motor\+\_\+ptr} $>$}]{motor\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{classblmc__drivers_1_1SinePositionControl}{Sine\+Position\+Control} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+slider\+\_\+pairs} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SinePositionControl_a1e5ab43762ca2511a6badc7065f47e4b}\label{classblmc__drivers_1_1SinePositionControl_a1e5ab43762ca2511a6badc7065f47e4b}} 
+\index{blmc\+\_\+drivers\+::\+Sine\+Position\+Control@{blmc\+\_\+drivers\+::\+Sine\+Position\+Control}!loop@{loop}}
+\index{loop@{loop}!blmc\+\_\+drivers\+::\+Sine\+Position\+Control@{blmc\+\_\+drivers\+::\+Sine\+Position\+Control}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+Sine\+Position\+Control\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+this is a simple control loop which runs at a kilohertz. 
+
+it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+demos/\hyperlink{sine__position__control_8hpp}{sine\+\_\+position\+\_\+control.\+hpp}\item 
+demos/\hyperlink{sine__position__control_8cpp}{sine\+\_\+position\+\_\+control.\+cpp}\end{DoxyCompactItemize}

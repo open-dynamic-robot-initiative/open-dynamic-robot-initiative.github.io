@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceosi" kind="namespace" language="C++">
+    <compoundname>osi</compoundname>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceosi_1ac3d484da0f89f06e329d4b84d7459d9b" prot="public" static="no">
+        <type>std::mutex</type>
+        <definition>typedef std::mutex osi::Mutex</definition>
+        <argsstring></argsstring>
+        <name>Mutex</name>
+        <briefdescription>
+<para>Wrapper around the posix specific Mutex implementation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="224" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceosi_1a31b1ce104b168554e4832b5d3b684073" prot="public" static="no">
+        <type>std::condition_variable</type>
+        <definition>typedef std::condition_variable osi::ConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>ConditionVariable</name>
+        <briefdescription>
+<para>Wrapper around the posix specific ConditionVariable implementation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="230" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceosi_1a001686caee0f34611f14ab94c7303254" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void osi::send_to_can_device</definition>
+        <argsstring>(int fd, const void *buf, size_t len, int flags, const struct sockaddr *to, socklen_t tolen)</argsstring>
+        <name>send_to_can_device</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const struct sockaddr *</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>socklen_t</type>
+          <declname>tolen</declname>
+        </param>
+        <briefdescription>
+<para>Use the osi workspace API to communicate with the can bus. </para>        </briefdescription>
+        <detaileddescription>
+<para>/todo Manuel can you describe the argument of this function? <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>to</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="243" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="243" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceosi_1a92dc20de3b4933a10f24c98cecf2568b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void osi::close_can_device</definition>
+        <argsstring>(int socket)</argsstring>
+        <name>close_can_device</name>
+        <param>
+          <type>int</type>
+          <declname>socket</declname>
+        </param>
+        <briefdescription>
+<para>This function is closing a socket on the Can device. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is os independent.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>socket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="290" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="290" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceosi_1a244466c0afc9ae9fe059cee665fb0603" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void osi::receive_message_from_can_device</definition>
+        <argsstring>(int fd, struct msghdr *msg, int flags)</argsstring>
+        <name>receive_message_from_can_device</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>struct msghdr *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Poll? a message from the CAN device. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>Manuel can you confrim this? And precise the arguments of the function?</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="308" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="308" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceosi_1a48e36c862c77befc86f53140722c3f43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void osi::initialize_realtime_printing</definition>
+        <argsstring>()</argsstring>
+        <name>initialize_realtime_printing</name>
+        <briefdescription>
+<para>This function is needed in xenomai to initialize the real time console display of text. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="325" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="325" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceosi_1a499cdf6336a907d1327044b0f595f3a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void osi::sleep_ms</definition>
+        <argsstring>(const double &amp;sleep_time_ms)</argsstring>
+        <name>sleep_ms</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>sleep_time_ms</declname>
+        </param>
+        <briefdescription>
+<para>This function uses eather the xenomai API or the posix one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sleep_time_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the sleeping time in milli seconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="337" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="337" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceosi_1a2409ab591c4f78d9a8bcfbbe38df9429" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double osi::get_current_time_ms</definition>
+        <argsstring>()</argsstring>
+        <name>get_current_time_ms</name>
+        <briefdescription>
+<para>Get the current time in millisecond. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>remove as the one form the Timer class is much better embeded.</para></xrefdescription></xrefsect></para><para><simplesect kind="return"><para>double which is the time in milli second </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="352" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="352" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceosi_1af6772d4aea95e99bc2bd0aabc557a20e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void osi::make_this_thread_realtime</definition>
+        <argsstring>()</argsstring>
+        <name>make_this_thread_realtime</name>
+        <briefdescription>
+<para>This methd is requiered in xenomai to create a real time thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/utils/os_interface.hpp" line="368" column="1" bodyfile="include/blmc_drivers/utils/os_interface.hpp" bodystart="368" bodyend="374"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Common include. </para>    </briefdescription>
+    <detaileddescription>
+<para>osi stands for Operating System Interface. <xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>This workspace should be replaced eventually by the real_time_tools package. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <location file="include/blmc_drivers/utils/os_interface.hpp" line="124" column="1"/>
+  </compounddef>
+</doxygen>

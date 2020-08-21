@@ -1,0 +1,109 @@
+\hypertarget{classblmc__drivers_1_1SerialReader}{}\section{blmc\+\_\+drivers\+:\+:Serial\+Reader Class Reference}
+\label{classblmc__drivers_1_1SerialReader}\index{blmc\+\_\+drivers\+::\+Serial\+Reader@{blmc\+\_\+drivers\+::\+Serial\+Reader}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__drivers_1_1SerialReader_a894216b6799b0ea9945f8a1cf98f9801}{Serial\+Reader} (const std\+::string \&serial\+\_\+port, const int \&num\+\_\+values)
+\item 
+int \hyperlink{classblmc__drivers_1_1SerialReader_aa590c82f97cfa6d9222bc3d19952f166}{fill\+\_\+vector} (std\+::vector$<$ int $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Fills a vector with the latest values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_a24a8f28fa8e56934baa1d0b9fef7a045}\label{classblmc__drivers_1_1SerialReader_a24a8f28fa8e56934baa1d0b9fef7a045}} 
+void \hyperlink{classblmc__drivers_1_1SerialReader_a24a8f28fa8e56934baa1d0b9fef7a045}{loop} ()
+\begin{DoxyCompactList}\small\item\em This is the real time thread that streams the data to/from the main board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classblmc__drivers_1_1SerialReader_aaa18311d9c274b0ac8a8bd86a311d3fc}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em This is the helper function used for spawning the real time thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_a37e1129c27b41cd9f5b4317081b217d8}\label{classblmc__drivers_1_1SerialReader_a37e1129c27b41cd9f5b4317081b217d8}} 
+bool \hyperlink{classblmc__drivers_1_1SerialReader_a37e1129c27b41cd9f5b4317081b217d8}{is\+\_\+loop\+\_\+active\+\_\+}
+\begin{DoxyCompactList}\small\item\em This boolean makes sure that the loop is stopped upon destruction of this object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_a89a2a93d8a9e59738f41d8b69cb112d0}\label{classblmc__drivers_1_1SerialReader_a89a2a93d8a9e59738f41d8b69cb112d0}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classblmc__drivers_1_1SerialReader_a89a2a93d8a9e59738f41d8b69cb112d0}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the thread object that allow to spwan a real-\/time thread or not dependening on the current OS. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_abf30ca34b8f61706a763a431dff68e94}\label{classblmc__drivers_1_1SerialReader_abf30ca34b8f61706a763a431dff68e94}} 
+int \hyperlink{classblmc__drivers_1_1SerialReader_abf30ca34b8f61706a763a431dff68e94}{fd\+\_\+}
+\begin{DoxyCompactList}\small\item\em Holds the device serial port. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_abb0700e8e752917876798db18a0421db}\label{classblmc__drivers_1_1SerialReader_abb0700e8e752917876798db18a0421db}} 
+bool \hyperlink{classblmc__drivers_1_1SerialReader_abb0700e8e752917876798db18a0421db}{has\+\_\+error\+\_\+}
+\begin{DoxyCompactList}\small\item\em If false, the communication is workinng as expected. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_abf6fd962e185be25e6c61c63f8eb0cc9}\label{classblmc__drivers_1_1SerialReader_abf6fd962e185be25e6c61c63f8eb0cc9}} 
+bool \hyperlink{classblmc__drivers_1_1SerialReader_abf6fd962e185be25e6c61c63f8eb0cc9}{is\+\_\+active\+\_\+}
+\begin{DoxyCompactList}\small\item\em If the communication is active. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_a862829c3e7f3c59b1e3be49b61e6cfb5}\label{classblmc__drivers_1_1SerialReader_a862829c3e7f3c59b1e3be49b61e6cfb5}} 
+int {\bfseries new\+\_\+data\+\_\+counter\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_a516bbec3112f46bb6442858d2d9446bf}\label{classblmc__drivers_1_1SerialReader_a516bbec3112f46bb6442858d2d9446bf}} 
+int {\bfseries missed\+\_\+data\+\_\+counter\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_ac6f46fc37c9ce41908ad76b012d2160b}\label{classblmc__drivers_1_1SerialReader_ac6f46fc37c9ce41908ad76b012d2160b}} 
+std\+::vector$<$ int $>$ \hyperlink{classblmc__drivers_1_1SerialReader_ac6f46fc37c9ce41908ad76b012d2160b}{latest\+\_\+values\+\_\+}
+\begin{DoxyCompactList}\small\item\em Holds vector with the latest double values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_a38d2ba095d199db4ae9858b888ef20de}\label{classblmc__drivers_1_1SerialReader_a38d2ba095d199db4ae9858b888ef20de}} 
+std\+::mutex \hyperlink{classblmc__drivers_1_1SerialReader_a38d2ba095d199db4ae9858b888ef20de}{mutex\+\_\+}
+\begin{DoxyCompactList}\small\item\em mutex\+\_\+ multithreading safety \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_a894216b6799b0ea9945f8a1cf98f9801}\label{classblmc__drivers_1_1SerialReader_a894216b6799b0ea9945f8a1cf98f9801}} 
+\index{blmc\+\_\+drivers\+::\+Serial\+Reader@{blmc\+\_\+drivers\+::\+Serial\+Reader}!Serial\+Reader@{Serial\+Reader}}
+\index{Serial\+Reader@{Serial\+Reader}!blmc\+\_\+drivers\+::\+Serial\+Reader@{blmc\+\_\+drivers\+::\+Serial\+Reader}}
+\subsubsection{\texorpdfstring{Serial\+Reader()}{SerialReader()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+Serial\+Reader\+::\+Serial\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{serial\+\_\+port,  }\item[{const int \&}]{num\+\_\+values }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+\_\+port} & The address of the serial port to use.  num\+\_\+values The number of values to read in each line. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_aa590c82f97cfa6d9222bc3d19952f166}\label{classblmc__drivers_1_1SerialReader_aa590c82f97cfa6d9222bc3d19952f166}} 
+\index{blmc\+\_\+drivers\+::\+Serial\+Reader@{blmc\+\_\+drivers\+::\+Serial\+Reader}!fill\+\_\+vector@{fill\+\_\+vector}}
+\index{fill\+\_\+vector@{fill\+\_\+vector}!blmc\+\_\+drivers\+::\+Serial\+Reader@{blmc\+\_\+drivers\+::\+Serial\+Reader}}
+\subsubsection{\texorpdfstring{fill\+\_\+vector()}{fill\_vector()}}
+{\footnotesize\ttfamily int blmc\+\_\+drivers\+::\+Serial\+Reader\+::fill\+\_\+vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{values }\end{DoxyParamCaption})}
+
+
+
+Fills a vector with the latest values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & Vector to place values into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+How often fill\+\_\+vector was called without new data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__drivers_1_1SerialReader_aaa18311d9c274b0ac8a8bd86a311d3fc}\label{classblmc__drivers_1_1SerialReader_aaa18311d9c274b0ac8a8bd86a311d3fc}} 
+\index{blmc\+\_\+drivers\+::\+Serial\+Reader@{blmc\+\_\+drivers\+::\+Serial\+Reader}!loop@{loop}}
+\index{loop@{loop}!blmc\+\_\+drivers\+::\+Serial\+Reader@{blmc\+\_\+drivers\+::\+Serial\+Reader}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE blmc\+\_\+drivers\+::\+Serial\+Reader\+::loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{instance\+\_\+pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+This is the helper function used for spawning the real time thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance\+\_\+pointer} & is the current object in this case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE depends on the current OS. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+drivers/\hyperlink{serial__reader_8hpp}{serial\+\_\+reader.\+hpp}\item 
+src/\hyperlink{serial__reader_8cpp}{serial\+\_\+reader.\+cpp}\end{DoxyCompactItemize}

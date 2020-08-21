@@ -1,0 +1,85 @@
+\hypertarget{classblmc__drivers_1_1PDController}{}\section{blmc\+\_\+drivers\+:\+:P\+D\+Controller Class Reference}
+\label{classblmc__drivers_1_1PDController}\index{blmc\+\_\+drivers\+::\+P\+D\+Controller@{blmc\+\_\+drivers\+::\+P\+D\+Controller}}
+
+
+This is a basic PD controller to be used in the demos of this package.  
+
+
+
+
+{\ttfamily \#include $<$pd\+\_\+control.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__drivers_1_1PDController_a78e3d01f6bcc263b20b81a7525d072cf}{P\+D\+Controller} (std\+::vector$<$ \hyperlink{namespaceblmc__drivers_a134270c90d29a9a28b64ab0e5f7158f7}{Pair\+Motor\+Slider} $>$ motor\+\_\+slider\+\_\+pairs)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classblmc__drivers_1_1PDController}{P\+D\+Controller} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1PDController_aed8ffc7914eb5976f95936315bcd9c47}\label{classblmc__drivers_1_1PDController_aed8ffc7914eb5976f95936315bcd9c47}} 
+\hyperlink{classblmc__drivers_1_1PDController_aed8ffc7914eb5976f95936315bcd9c47}{$\sim$\+P\+D\+Controller} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classblmc__drivers_1_1PDController}{P\+D\+Controller} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1PDController_a9c9258e9f1af0f4ca00d2ede682ad511}\label{classblmc__drivers_1_1PDController_a9c9258e9f1af0f4ca00d2ede682ad511}} 
+void \hyperlink{classblmc__drivers_1_1PDController_a9c9258e9f1af0f4ca00d2ede682ad511}{start\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em This method is a helper to start the thread loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classblmc__drivers_1_1PDController_ae00d08095b9ff6b6dfd550c59ba2857a}{loop} ()
+\begin{DoxyCompactList}\small\item\em this is a simple control loop which runs at a kilohertz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1PDController_aaae22ea8cb0324570926c16b43885948}\label{classblmc__drivers_1_1PDController_aaae22ea8cb0324570926c16b43885948}} 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classblmc__drivers_1_1PDController_aaae22ea8cb0324570926c16b43885948}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1PDController_a11b0e1df638bc792b752349f39187a67}\label{classblmc__drivers_1_1PDController_a11b0e1df638bc792b752349f39187a67}} 
+std\+::vector$<$ \hyperlink{namespaceblmc__drivers_a134270c90d29a9a28b64ab0e5f7158f7}{Pair\+Motor\+Slider} $>$ \hyperlink{classblmc__drivers_1_1PDController_a11b0e1df638bc792b752349f39187a67}{motor\+\_\+slider\+\_\+pairs\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is a pair of motor and sliders so that we associate one with the other. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1PDController_a425d7f9c093a0c586ef608d4c11c8889}\label{classblmc__drivers_1_1PDController_a425d7f9c093a0c586ef608d4c11c8889}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classblmc__drivers_1_1PDController_a425d7f9c093a0c586ef608d4c11c8889}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em This is the real time thread object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1PDController_a3520dd968bde954399bf3ef4508c3d54}\label{classblmc__drivers_1_1PDController_a3520dd968bde954399bf3ef4508c3d54}} 
+bool \hyperlink{classblmc__drivers_1_1PDController_a3520dd968bde954399bf3ef4508c3d54}{stop\+\_\+loop}
+\begin{DoxyCompactList}\small\item\em managing the stopping of the loop \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a basic PD controller to be used in the demos of this package. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1PDController_a78e3d01f6bcc263b20b81a7525d072cf}\label{classblmc__drivers_1_1PDController_a78e3d01f6bcc263b20b81a7525d072cf}} 
+\index{blmc\+\_\+drivers\+::\+P\+D\+Controller@{blmc\+\_\+drivers\+::\+P\+D\+Controller}!P\+D\+Controller@{P\+D\+Controller}}
+\index{P\+D\+Controller@{P\+D\+Controller}!blmc\+\_\+drivers\+::\+P\+D\+Controller@{blmc\+\_\+drivers\+::\+P\+D\+Controller}}
+\subsubsection{\texorpdfstring{P\+D\+Controller()}{PDController()}}
+{\footnotesize\ttfamily blmc\+\_\+drivers\+::\+P\+D\+Controller\+::\+P\+D\+Controller (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{namespaceblmc__drivers_a134270c90d29a9a28b64ab0e5f7158f7}{Pair\+Motor\+Slider} $>$}]{motor\+\_\+slider\+\_\+pairs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{classblmc__drivers_1_1PDController}{P\+D\+Controller} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+slider\+\_\+pairs} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1PDController_ae00d08095b9ff6b6dfd550c59ba2857a}\label{classblmc__drivers_1_1PDController_ae00d08095b9ff6b6dfd550c59ba2857a}} 
+\index{blmc\+\_\+drivers\+::\+P\+D\+Controller@{blmc\+\_\+drivers\+::\+P\+D\+Controller}!loop@{loop}}
+\index{loop@{loop}!blmc\+\_\+drivers\+::\+P\+D\+Controller@{blmc\+\_\+drivers\+::\+P\+D\+Controller}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void blmc\+\_\+drivers\+::\+P\+D\+Controller\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+this is a simple control loop which runs at a kilohertz. 
+
+it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+demos/\hyperlink{pd__control_8hpp}{pd\+\_\+control.\+hpp}\item 
+demos/\hyperlink{pd__control_8cpp}{pd\+\_\+control.\+cpp}\end{DoxyCompactItemize}

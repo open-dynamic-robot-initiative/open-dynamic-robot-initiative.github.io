@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classrobot__interfaces_1_1MonitoredRobotDriver" kind="class" language="C++" prot="public">
+    <compoundname>robot_interfaces::MonitoredRobotDriver</compoundname>
+    <basecompoundref refid="classrobot__interfaces_1_1RobotDriver" prot="public" virt="non-virtual">robot_interfaces::RobotDriver&lt; Driver::Action, Driver::Observation &gt;</basecompoundref>
+    <includes refid="monitored__robot__driver_8hpp" local="no">monitored_robot_driver.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename <ref refid="classDriver" kindref="compound">Driver</ref></type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a272fbf2c9bf93f568c00dd1e37e62e97" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classDriver" kindref="compound">Driver</ref> &gt;</type>
+        <definition>typedef std::shared_ptr&lt;Driver&gt; robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::RobotDriverPtr</definition>
+        <argsstring></argsstring>
+        <name>RobotDriverPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="53" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__interfaces_1_1MonitoredRobotDriver_1ae43540d38c9414d8ad734a9c88155a6e" prot="private" static="no" mutable="no">
+        <type>RobotDriverPtr</type>
+        <definition>RobotDriverPtr robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::robot_driver_</definition>
+        <argsstring></argsstring>
+        <name>robot_driver_</name>
+        <briefdescription>
+<para>The actual robot driver. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="168" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a860e5a4835a916faf08e1ab932b34bb1" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::max_action_duration_s_</definition>
+        <argsstring></argsstring>
+        <name>max_action_duration_s_</name>
+        <briefdescription>
+<para>Max. time for executing an action. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="170" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1MonitoredRobotDriver_1acef35c51b51f1d05453b5b672f43a516" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::max_inter_action_duration_s_</definition>
+        <argsstring></argsstring>
+        <name>max_inter_action_duration_s_</name>
+        <briefdescription>
+<para>Max. idle time between actions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="172" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a8200e14e4d9e4d1d8c2fc4e0134cf7cd" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::is_shutdown_</definition>
+        <argsstring></argsstring>
+        <name>is_shutdown_</name>
+        <briefdescription>
+<para>Whether shutdown was initiated. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="175" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a5c02465be067a76143495c47469d0ae3" prot="private" static="no" mutable="no">
+        <type>time_series::TimeSeries&lt; bool &gt;</type>
+        <definition>time_series::TimeSeries&lt;bool&gt; robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::action_start_logger_</definition>
+        <argsstring></argsstring>
+        <name>action_start_logger_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="177" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a469ee1c7ec3565e391c9ac1758b702f6" prot="private" static="no" mutable="no">
+        <type>time_series::TimeSeries&lt; bool &gt;</type>
+        <definition>time_series::TimeSeries&lt;bool&gt; robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::action_end_logger_</definition>
+        <argsstring></argsstring>
+        <name>action_end_logger_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="178" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1MonitoredRobotDriver_1aaa3c0cd73914d3d3118a78252ed13631" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; real_time_tools::RealTimeThread &gt;</type>
+        <definition>std::shared_ptr&lt;real_time_tools::RealTimeThread&gt; robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::thread_</definition>
+        <argsstring></argsstring>
+        <name>thread_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="180" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a123c65db418751fccfd681e0cc53348a" prot="private" static="no" mutable="no">
+        <type>real_time_tools::SingletypeThreadsafeObject&lt; std::string, 1 &gt;</type>
+        <definition>real_time_tools::SingletypeThreadsafeObject&lt;std::string, 1&gt; robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::error_message_</definition>
+        <argsstring></argsstring>
+        <name>error_message_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="182" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a2ea1456e85ad7596295cb047e552dc06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::MonitoredRobotDriver</definition>
+        <argsstring>(RobotDriverPtr robot_driver, const double max_action_duration_s, const double max_inter_action_duration_s)</argsstring>
+        <name>MonitoredRobotDriver</name>
+        <param>
+          <type>RobotDriverPtr</type>
+          <declname>robot_driver</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>max_action_duration_s</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>max_inter_action_duration_s</declname>
+        </param>
+        <briefdescription>
+<para>Starts a thread for monitoring timing of action execution. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>robot_driver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actual robot driver instance. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_action_duration_s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum time allowed for an action to be executed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_inter_action_duration_s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum time allowed between end of the previous action and receival of the next one. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="64" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="64" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a07dfd2cc6f1dc07fad82914814a43188" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::~MonitoredRobotDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~MonitoredRobotDriver</name>
+        <briefdescription>
+<para>Shuts down the robot and stops the monitoring thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="97" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="97" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a3f0f7cbf74236e91d33dcfc08206b5e9" prot="public" static="no" const="no" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>Driver::Action</type>
+        <definition>virtual Driver::Action robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::apply_action</definition>
+        <argsstring>(const typename Driver::Action &amp;desired_action) final</argsstring>
+        <name>apply_action</name>
+        <param>
+          <type>const typename Driver::Action &amp;</type>
+          <declname>desired_action</declname>
+        </param>
+        <briefdescription>
+<para>Apply desired action on the robot. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the robot is shut down, no more actions will be applied (the method will just ignore them silently.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired_action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired action. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The action that is actually applied on the robot (may differ from desired action due to safety limitations). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="113" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="113" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a47b68c24afaa087e4e60e6413ab7ac89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1af3cbef570a455e1f8085d701282264ff">initialize</reimplements>
+        <briefdescription>
+<para>Initialize the robot. </para>        </briefdescription>
+        <detaileddescription>
+<para>Any initialization procedures that need to be done before sending actions to the robot should be done in this method (e.g. homing to find the absolute position). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="129" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a97774dddcda1038f338d18ef0b572ad8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Driver::Observation</type>
+        <definition>virtual Driver::Observation robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::get_latest_observation</definition>
+        <argsstring>()</argsstring>
+        <name>get_latest_observation</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1ad13d4f4fdfe78bdde4fc964f07fa45e2">get_latest_observation</reimplements>
+        <briefdescription>
+<para>Return the latest observation immediately. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Observation </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="134" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="134" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a944425cc7e0845184f33b16405a9e61e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::get_error</definition>
+        <argsstring>()</argsstring>
+        <name>get_error</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1acdf4c5d6993b836a180e6b6fc12b3445">get_error</reimplements>
+        <briefdescription>
+<para>Get error message if there is any error. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns an error message or an empty string if there is no error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="139" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="139" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a95714a60e69a3ac06461382a7b391289" prot="public" static="no" const="no" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::shutdown</definition>
+        <argsstring>() final</argsstring>
+        <name>shutdown</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1a3451fb8b15d2840b559f3ee858de01f8">shutdown</reimplements>
+        <briefdescription>
+<para>Shut down the robot safely. </para>        </briefdescription>
+        <detaileddescription>
+<para>After shutdown, actions sent by the user are ignored. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="157" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="157" bodyend="164"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a6ed3d940dce484dcdc558a52a8dfe8a5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>Monitor the timing of action execution. </para>        </briefdescription>
+        <detaileddescription>
+<para>If one of the timing constrains is violated, the robot is immediately shut down. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="190" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="190" bodyend="222"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1MonitoredRobotDriver_1a46ddb0472196631d6cdd109f3753c693" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void *</type>
+        <definition>static void* robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;::loop</definition>
+        <argsstring>(void *instance_pointer)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void *</type>
+          <declname>instance_pointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="224" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="224" bodyend="228"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Wrapper for <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref> that monitors timing. </para>    </briefdescription>
+    <detaileddescription>
+<para>Takes a <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref> instance as input and forwards all method calls to it. A background loop monitors timing of actions to ensure the following constraints:</para><para><orderedlist>
+<listitem><para>The execution of an action does not take longer than <computeroutput>max_action_duration_s_</computeroutput> seconds.</para></listitem><listitem><para>The time interval between termination of the previous action and receival of the next one (through <computeroutput><ref refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a3f0f7cbf74236e91d33dcfc08206b5e9" kindref="member">apply_action()</ref></computeroutput>) does not exceed <computeroutput>max_inter_action_duration_s_</computeroutput>.</para></listitem></orderedlist>
+</para><para>If these timing constraints are not satisfied, the robot will be shutdown, and no more actions from the outside will be accepted.</para><para>This wrapper also makes sure that the <computeroutput><ref refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a95714a60e69a3ac06461382a7b391289" kindref="member">shutdown()</ref></computeroutput> method of the given <ref refid="classrobot__interfaces_1_1RobotDriver" kindref="compound">RobotDriver</ref> is called when wrapper is destroyed, so the robot should always be left in a safe state.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Observation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="26">
+        <label>robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;</label>
+        <link refid="classrobot__interfaces_1_1MonitoredRobotDriver"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>robot_interfaces::RobotDriver&lt; Driver::Action, Driver::Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotDriver"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="28">
+        <label>robot_interfaces::MonitoredRobotDriver&lt; Driver &gt;</label>
+        <link refid="classrobot__interfaces_1_1MonitoredRobotDriver"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>robot_interfaces::RobotDriver&lt; Driver::Action, Driver::Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotDriver"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/robot_interfaces/monitored_robot_driver.hpp" line="51" column="1" bodyfile="include/robot_interfaces/monitored_robot_driver.hpp" bodystart="49" bodyend="229"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1RobotDriver_1acbba637e7857bef5c7a1e64c9846ead7" prot="public" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>Action</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a469ee1c7ec3565e391c9ac1758b702f6" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>action_end_logger_</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a5c02465be067a76143495c47469d0ae3" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>action_start_logger_</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a3f0f7cbf74236e91d33dcfc08206b5e9" prot="public" virt="virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>apply_action</name></member>
+      <member refid="classrobot__interfaces_1_1RobotDriver_1a4294e522fcd12b38d69f7d53fae5d74a" prot="public" virt="pure-virtual" ambiguityscope="RobotDriver&lt; Driver::Action, Driver::Observation &gt;::"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>apply_action</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a123c65db418751fccfd681e0cc53348a" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>error_message_</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a944425cc7e0845184f33b16405a9e61e" prot="public" virt="virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>get_error</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a97774dddcda1038f338d18ef0b572ad8" prot="public" virt="virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>get_latest_observation</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a47b68c24afaa087e4e60e6413ab7ac89" prot="public" virt="virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>initialize</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a8200e14e4d9e4d1d8c2fc4e0134cf7cd" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>is_shutdown_</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a6ed3d940dce484dcdc558a52a8dfe8a5" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>loop</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a46ddb0472196631d6cdd109f3753c693" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>loop</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a860e5a4835a916faf08e1ab932b34bb1" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>max_action_duration_s_</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1acef35c51b51f1d05453b5b672f43a516" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>max_inter_action_duration_s_</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a2ea1456e85ad7596295cb047e552dc06" prot="public" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>MonitoredRobotDriver</name></member>
+      <member refid="classrobot__interfaces_1_1RobotDriver_1abcb094711d0ae09fd8e2fc9a6aa771f2" prot="public" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>Observation</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1ae43540d38c9414d8ad734a9c88155a6e" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>robot_driver_</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a272fbf2c9bf93f568c00dd1e37e62e97" prot="public" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>RobotDriverPtr</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a95714a60e69a3ac06461382a7b391289" prot="public" virt="virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>shutdown</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1aaa3c0cd73914d3d3118a78252ed13631" prot="private" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>thread_</name></member>
+      <member refid="classrobot__interfaces_1_1MonitoredRobotDriver_1a07dfd2cc6f1dc07fad82914814a43188" prot="public" virt="non-virtual"><scope>robot_interfaces::MonitoredRobotDriver</scope><name>~MonitoredRobotDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

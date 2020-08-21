@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="move__cube_8py" kind="file" language="Python">
+    <compoundname>move_cube.py</compoundname>
+    <innerclass refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError" prot="public">trifinger_simulation::tasks::move_cube::InvalidGoalError</innerclass>
+    <innerclass refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose" prot="public">trifinger_simulation::tasks::move_cube::Pose</innerclass>
+    <innernamespace refid="namespacetrifinger__simulation_1_1tasks_1_1move__cube">trifinger_simulation::tasks::move_cube</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="stringliteral">&quot;&quot;&quot;Functions<sp/>for<sp/>sampling,<sp/>validating<sp/>and<sp/>evaluating<sp/>&quot;move<sp/>cube&quot;<sp/>goals.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>json</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>scipy.spatial.transform<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Rotation</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">#:<sp/>Random<sp/>number<sp/>generator.<sp/><sp/>Replace<sp/>with<sp/>a<sp/>seeded<sp/>version<sp/>for<sp/>deterministic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#:<sp/>samples.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">random<sp/>=<sp/>np.random.RandomState()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">#:<sp/>Number<sp/>of<sp/>time<sp/>steps<sp/>in<sp/>one<sp/>episode<sp/>(3750<sp/>steps<sp/>per<sp/>0.004s<sp/>=<sp/>15s)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">episode_length<sp/>=<sp/>3750</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">_CUBE_WIDTH<sp/>=<sp/>0.065</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">_ARENA_RADIUS<sp/>=<sp/>0.195</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">_cube_3d_radius<sp/>=<sp/>_CUBE_WIDTH<sp/>*<sp/>np.sqrt(3)<sp/>/<sp/>2</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">_max_cube_com_distance_to_center<sp/>=<sp/>_ARENA_RADIUS<sp/>-<sp/>_cube_3d_radius</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">_min_height<sp/>=<sp/>_CUBE_WIDTH<sp/>/<sp/>2</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">_max_height<sp/>=<sp/>0.1</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">_cube_corners<sp/>=<sp/>np.array(</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>[</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[-1,<sp/>-1,<sp/>-1],</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[-1,<sp/>-1,<sp/>+1],</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[-1,<sp/>+1,<sp/>-1],</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[-1,<sp/>+1,<sp/>+1],</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[+1,<sp/>-1,<sp/>-1],</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[+1,<sp/>-1,<sp/>+1],</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[+1,<sp/>+1,<sp/>-1],</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[+1,<sp/>+1,<sp/>+1],</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">)<sp/>*<sp/>(_CUBE_WIDTH<sp/>/<sp/>2)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">InvalidGoalError(Exception):</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Exception<sp/>used<sp/>to<sp/>indicate<sp/>that<sp/>the<sp/>given<sp/>goal<sp/>is<sp/>invalid.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1sim__finger_1_1SimFinger_1a3bf64d6f490e704bfe3626bd0125451a" kindref="member">__init__</ref>(self,<sp/>message,<sp/>position,<sp/>orientation):</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super().<ref refid="classtrifinger__simulation_1_1sim__finger_1_1SimFinger_1a3bf64d6f490e704bfe3626bd0125451a" kindref="member">__init__</ref>(message)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.position<sp/>=<sp/>position</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.orientation<sp/>=<sp/>orientation</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Pose:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Represents<sp/>a<sp/>pose<sp/>given<sp/>by<sp/>position<sp/>and<sp/>orientation.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1sim__finger_1_1SimFinger_1a3bf64d6f490e704bfe3626bd0125451a" kindref="member">__init__</ref>(</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position=np.array([0,<sp/>0,<sp/>0],<sp/>dtype=np.float32),</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation=np.array([0,<sp/>0,<sp/>0,<sp/>1],<sp/>dtype=np.float32),</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>):</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Initialize.</highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position<sp/>(numpy.ndarray):<sp/>Position<sp/>(x,<sp/>y,<sp/>z)</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation<sp/>(numpy.ndarray):<sp/>Orientation<sp/>as<sp/>quaternion<sp/>(x,<sp/>y,<sp/>z,<sp/>w)</highlight></codeline>
+<codeline lineno="63" refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError" refkind="compound"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="64"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>Position<sp/>(x,<sp/>y,<sp/>z).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError_1a1f31c828b3dc9464138709c5a9e8a7d4" kindref="member">position</ref><sp/>=<sp/>position</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>Orientation<sp/>as<sp/>quaternion<sp/>(x,<sp/>y,<sp/>z,<sp/>w)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError_1ab4318be287d0fea40510bef529ef540a" kindref="member">orientation</ref><sp/>=<sp/>orientation</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">to_dict(self):</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Convert<sp/>to<sp/>dictionary.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="stringliteral">&quot;position&quot;</highlight><highlight class="normal">:<sp/>self.positions,<sp/></highlight><highlight class="stringliteral">&quot;orientation&quot;</highlight><highlight class="normal">:<sp/>self.<ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose_1a173fc702da0fbf3eaa4d37d89520914a" kindref="member">orientation</ref>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose_1ad7c514c49a45c669e4b22874a33d34f5" kindref="member">to_json</ref>(self):</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Convert<sp/>to<sp/>JSON<sp/>string.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>goal_to_json(self)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>@classmethod</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose_1a79bcc0819ca44da25ddc16973a001880" kindref="member">from_dict</ref>(cls,<sp/>dict):</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Create<sp/>Pose<sp/>instance<sp/>from<sp/>dictionary.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cls(dict[</highlight><highlight class="stringliteral">&quot;position&quot;</highlight><highlight class="normal">],<sp/>dict[</highlight><highlight class="stringliteral">&quot;orientation&quot;</highlight><highlight class="normal">])</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>@classmethod</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose_1a26062907cc8a9ddcbea181a0eb0510e5" kindref="member">from_json</ref>(cls,<sp/>json_str):</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Create<sp/>Pose<sp/>instance<sp/>from<sp/>JSON<sp/>string.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>goal_from_json(json_str)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">get_cube_corner_positions(pose):</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Get<sp/>the<sp/>positions<sp/>of<sp/>the<sp/>cube&apos;s<sp/>corners<sp/>with<sp/>the<sp/>given<sp/>pose.</highlight></codeline>
+<codeline lineno="91"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="92"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="93"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pose<sp/>(Pose):<sp/><sp/>Pose<sp/>of<sp/>the<sp/>cube.</highlight></codeline>
+<codeline lineno="94"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="95"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="96"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(array,<sp/>shape=(8,<sp/>3)):<sp/>Positions<sp/>of<sp/>the<sp/>corners<sp/>of<sp/>the<sp/>cube<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="97"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>given<sp/>pose.</highlight></codeline>
+<codeline lineno="98"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>rotation<sp/>=<sp/>Rotation.from_quat(pose.orientation)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>translation<sp/>=<sp/>np.asarray(pose.position)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rotation.apply(_cube_corners)<sp/>+<sp/>translation</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">sample_goal(difficulty):</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Sample<sp/>a<sp/>goal<sp/>pose<sp/>for<sp/>the<sp/>cube.</highlight></codeline>
+<codeline lineno="107"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="108"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="109"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>difficulty<sp/>(int):<sp/><sp/>Difficulty<sp/>level.<sp/><sp/>The<sp/>higher,<sp/>the<sp/>more<sp/>difficult<sp/>is</highlight></codeline>
+<codeline lineno="110"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>goal.<sp/><sp/>Possible<sp/>levels<sp/>are:</highlight></codeline>
+<codeline lineno="111"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="112"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>1:<sp/>Random<sp/>goal<sp/>position<sp/>on<sp/>the<sp/>table,<sp/>no<sp/>orientation.</highlight></codeline>
+<codeline lineno="113"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>2:<sp/>Fixed<sp/>goal<sp/>position<sp/>in<sp/>the<sp/>air<sp/>with<sp/>x,y<sp/>=<sp/>0.<sp/><sp/>No<sp/>orientation.</highlight></codeline>
+<codeline lineno="114"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>3:<sp/>Random<sp/>goal<sp/>position<sp/>in<sp/>the<sp/>air,<sp/>no<sp/>orientation.</highlight></codeline>
+<codeline lineno="115"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>4:<sp/>Random<sp/>goal<sp/>pose<sp/>in<sp/>the<sp/>air,<sp/>including<sp/>orientation.</highlight></codeline>
+<codeline lineno="116"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="117"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="118"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pose:<sp/>Goal<sp/>pose<sp/>of<sp/>the<sp/>cube<sp/>relative<sp/>to<sp/>the<sp/>world<sp/>frame.<sp/><sp/>Note<sp/>that</highlight></codeline>
+<codeline lineno="119"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>pose<sp/>always<sp/>contains<sp/>an<sp/>orientation.<sp/><sp/>For<sp/>difficulty<sp/>levels</highlight></codeline>
+<codeline lineno="120"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>where<sp/>the<sp/>orientation<sp/>is<sp/>not<sp/>considered,<sp/>this<sp/>is<sp/>set<sp/>to</highlight></codeline>
+<codeline lineno="121"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>``[0,<sp/>0,<sp/>0,<sp/>1]``<sp/>and<sp/>will<sp/>be<sp/>ignored<sp/>when<sp/>computing<sp/>the<sp/>reward.</highlight></codeline>
+<codeline lineno="122"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>difficulty<sp/>-1<sp/>is<sp/>for<sp/>initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">random_xy():</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>sample<sp/>uniform<sp/>position<sp/>in<sp/>circle<sp/>(https://stackoverflow.com/a/50746409)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radius<sp/>=<sp/>_max_cube_com_distance_to_center<sp/>*<sp/>np.sqrt(random.random())</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>theta<sp/>=<sp/>random.uniform(0,<sp/>2<sp/>*<sp/>np.pi)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>x,y-position<sp/>of<sp/>the<sp/>cube</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>radius<sp/>*<sp/>np.cos(theta)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>radius<sp/>*<sp/>np.sin(theta)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x,<sp/>y</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">random_yaw_orientation():</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yaw<sp/>=<sp/>random.uniform(0,<sp/>2<sp/>*<sp/>np.pi)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation<sp/>=<sp/>Rotation.from_euler(</highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">,<sp/>yaw)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>orientation.as_quat()</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>difficulty<sp/>==<sp/>-1:<sp/><sp/></highlight><highlight class="comment">#<sp/>for<sp/>initialization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>on<sp/>the<sp/>ground,<sp/>random<sp/>yaw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x,<sp/>y<sp/>=<sp/>random_xy()</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>_CUBE_WIDTH<sp/>/<sp/>2</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation<sp/>=<sp/>random_yaw_orientation()</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>difficulty<sp/>==<sp/>1:</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x,<sp/>y<sp/>=<sp/>random_xy()</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>_CUBE_WIDTH<sp/>/<sp/>2</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation<sp/>=<sp/>np.array([0,<sp/>0,<sp/>0,<sp/>1])</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>difficulty<sp/>==<sp/>2:</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0.0</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0.0</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>_min_height<sp/>+<sp/>0.05</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation<sp/>=<sp/>np.array([0,<sp/>0,<sp/>0,<sp/>1])</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>difficulty<sp/>==<sp/>3:</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x,<sp/>y<sp/>=<sp/>random_xy()</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>random.uniform(_min_height,<sp/>_max_height)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation<sp/>=<sp/>np.array([0,<sp/>0,<sp/>0,<sp/>1])</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>difficulty<sp/>==<sp/>4:</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x,<sp/>y<sp/>=<sp/>random_xy()</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Set<sp/>minimum<sp/>height<sp/>such<sp/>that<sp/>the<sp/>cube<sp/>does<sp/>not<sp/>intersect<sp/>with<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>ground<sp/>in<sp/>any<sp/>orientation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>random.uniform(_cube_3d_radius,<sp/>_max_height)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation<sp/>=<sp/>Rotation.random(random_state=random).as_quat()</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>difficulty<sp/>%d&quot;</highlight><highlight class="normal"><sp/>%<sp/>difficulty)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>goal<sp/>=<sp/><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose" kindref="compound">Pose</ref>()</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.position<sp/>=<sp/>np.array((x,<sp/>y,<sp/>z))</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.orientation<sp/>=<sp/>orientation</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>goal</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">validate_goal(goal):</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Validate<sp/>that<sp/>the<sp/>given<sp/>pose<sp/>is<sp/>a<sp/>valid<sp/>goal<sp/>(e.g.<sp/>no<sp/>collision)</highlight></codeline>
+<codeline lineno="182"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="183"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Raises<sp/>an<sp/>error<sp/>if<sp/>the<sp/>given<sp/>goal<sp/>pose<sp/>is<sp/>invalid.</highlight></codeline>
+<codeline lineno="184"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="185"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="186"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal<sp/>(Pose):<sp/><sp/>Goal<sp/>pose.</highlight></codeline>
+<codeline lineno="187"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="188"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Raises:</highlight></codeline>
+<codeline lineno="189"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ValueError:<sp/><sp/>If<sp/>given<sp/>values<sp/>are<sp/>not<sp/>a<sp/>valid<sp/>3d<sp/>position/orientation.</highlight></codeline>
+<codeline lineno="190"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InvalidGoalError:<sp/><sp/>If<sp/>the<sp/>given<sp/>pose<sp/>exceeds<sp/>the<sp/>allowed<sp/>goal<sp/>space.</highlight></codeline>
+<codeline lineno="191"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(goal.position)<sp/>!=<sp/>3:</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&quot;len(goal.position)<sp/>!=<sp/>3&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(goal.orientation)<sp/>!=<sp/>4:</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&quot;len(goal.orientation)<sp/>!=<sp/>4&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>np.linalg.norm(goal.position[:2])<sp/>&gt;<sp/>_max_cube_com_distance_to_center:</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError" kindref="compound">InvalidGoalError</ref>(</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Position<sp/>is<sp/>outside<sp/>of<sp/>the<sp/>arena<sp/>circle.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.position,</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.orientation,</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>goal.position[2]<sp/>&lt;<sp/>_min_height:</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError" kindref="compound">InvalidGoalError</ref>(</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Position<sp/>is<sp/>too<sp/>low.&quot;</highlight><highlight class="normal">,<sp/>goal.position,<sp/>goal.orientation</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>goal.position[2]<sp/>&gt;<sp/>_max_height:</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError" kindref="compound">InvalidGoalError</ref>(</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Position<sp/>is<sp/>too<sp/>high.&quot;</highlight><highlight class="normal">,<sp/>goal.position,<sp/>goal.orientation</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>even<sp/>if<sp/>the<sp/>CoM<sp/>is<sp/>above<sp/>_min_height,<sp/>a<sp/>corner<sp/>could<sp/>be<sp/>intersecting<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>the<sp/>bottom<sp/>depending<sp/>on<sp/>the<sp/>orientation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>corners<sp/>=<sp/>get_cube_corner_positions(goal)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>min_z<sp/>=<sp/>min(z<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>x,<sp/>y,<sp/>z<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>corners)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>allow<sp/>a<sp/>bit<sp/>below<sp/>zero<sp/>to<sp/>compensate<sp/>numerical<sp/>inaccuracies</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>min_z<sp/>&lt;<sp/>-1e-10:</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError" kindref="compound">InvalidGoalError</ref>(</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Position<sp/>of<sp/>a<sp/>corner<sp/>is<sp/>too<sp/>low<sp/>(z<sp/>=<sp/>{}).&quot;</highlight><highlight class="normal">.format(min_z),</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.position,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.orientation,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">evaluate_state(goal_pose,<sp/>actual_pose,<sp/>difficulty):</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Compute<sp/>cost<sp/>of<sp/>a<sp/>given<sp/>cube<sp/>pose.<sp/><sp/>Less<sp/>is<sp/>better.</highlight></codeline>
+<codeline lineno="226"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="227"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="228"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal_pose:<sp/><sp/>Goal<sp/>pose<sp/>of<sp/>the<sp/>cube.</highlight></codeline>
+<codeline lineno="229"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>actual_pose:<sp/><sp/>Actual<sp/>pose<sp/>of<sp/>the<sp/>cube.</highlight></codeline>
+<codeline lineno="230"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>difficulty:<sp/><sp/>The<sp/>difficulty<sp/>level<sp/>of<sp/>the<sp/>goal<sp/>(see</highlight></codeline>
+<codeline lineno="231"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:func:`sample_goal`).<sp/><sp/>The<sp/>metric<sp/>for<sp/>evaluating<sp/>a<sp/>state<sp/>differs</highlight></codeline>
+<codeline lineno="232"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depending<sp/>on<sp/>the<sp/>level.</highlight></codeline>
+<codeline lineno="233"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="234"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="235"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Cost<sp/>of<sp/>the<sp/>actual<sp/>pose<sp/>w.r.t.<sp/>to<sp/>the<sp/>goal<sp/>pose.<sp/><sp/>Lower<sp/>value<sp/>means</highlight></codeline>
+<codeline lineno="236"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>that<sp/>the<sp/>actual<sp/>pose<sp/>is<sp/>closer<sp/>to<sp/>the<sp/>goal.<sp/><sp/>Zero<sp/>if<sp/>actual<sp/>==<sp/>goal.</highlight></codeline>
+<codeline lineno="237"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">weighted_position_error():</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>range_xy_dist<sp/>=<sp/>_ARENA_RADIUS<sp/>*<sp/>2</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>range_z_dist<sp/>=<sp/>_max_height</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xy_dist<sp/>=<sp/>np.linalg.norm(</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal_pose.position[:2]<sp/>-<sp/>actual_pose.position[:2]</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z_dist<sp/>=<sp/>abs(goal_pose.position[2]<sp/>-<sp/>actual_pose.position[2])</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>weight<sp/>xy-<sp/>and<sp/>z-parts<sp/>by<sp/>their<sp/>expected<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(xy_dist<sp/>/<sp/>range_xy_dist<sp/>+<sp/>z_dist<sp/>/<sp/>range_z_dist)<sp/>/<sp/>2</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>difficulty<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>(1,<sp/>2,<sp/>3):</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>consider<sp/>only<sp/>3d<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>weighted_position_error()</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>difficulty<sp/>==<sp/>4:</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>consider<sp/>whole<sp/>pose</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled_position_error<sp/>=<sp/>weighted_position_error()</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>https://stackoverflow.com/a/21905553</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal_rot<sp/>=<sp/>Rotation.from_quat(goal_pose.orientation)</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>actual_rot<sp/>=<sp/>Rotation.from_quat(actual_pose.orientation)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error_rot<sp/>=<sp/>goal_rot.inv()<sp/>*<sp/>actual_rot</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientation_error<sp/>=<sp/>error_rot.magnitude()</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>scale<sp/>both<sp/>position<sp/>and<sp/>orientation<sp/>error<sp/>to<sp/>be<sp/>within<sp/>[0,<sp/>1]<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>their<sp/>expected<sp/>ranges</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled_orientation_error<sp/>=<sp/>orientation_error<sp/>/<sp/>np.pi</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scaled_error<sp/>=<sp/>(scaled_position_error<sp/>+<sp/>scaled_orientation_error)<sp/>/<sp/>2</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>scaled_error</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Use<sp/>DISP<sp/>distance<sp/>(max.<sp/>displacement<sp/>of<sp/>the<sp/>corners)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>goal_corners<sp/>=<sp/>get_cube_corner_positions(goal_pose)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>actual_corners<sp/>=<sp/>get_cube_corner_positions(actual_pose)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>disp<sp/>=<sp/>max(np.linalg.norm(goal_corners<sp/>-<sp/>actual_corners,<sp/>axis=1))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>ValueError(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>difficulty<sp/>%d&quot;</highlight><highlight class="normal"><sp/>%<sp/>difficulty)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">goal_to_json(goal):</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Convert<sp/>goal<sp/>object<sp/>to<sp/>JSON<sp/>string.</highlight></codeline>
+<codeline lineno="281"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="282"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="283"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal<sp/>(Pose):<sp/><sp/>A<sp/>goal<sp/>pose.</highlight></codeline>
+<codeline lineno="284"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="285"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="286"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str:<sp/><sp/>JSON<sp/>string<sp/>representing<sp/>the<sp/>goal<sp/>pose.</highlight></codeline>
+<codeline lineno="287"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>goal_dict<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;position&quot;</highlight><highlight class="normal">:<sp/>goal.position.tolist(),</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;orientation&quot;</highlight><highlight class="normal">:<sp/>goal.orientation.tolist(),</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>json.dumps(goal_dict)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">goal_from_json(json_string):</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Create<sp/>goal<sp/>object<sp/>from<sp/>JSON<sp/>string.</highlight></codeline>
+<codeline lineno="297"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="298"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="299"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>json_string<sp/>(str):<sp/><sp/>JSON<sp/>string<sp/>containing<sp/>&quot;position&quot;<sp/>and<sp/>&quot;orientation&quot;</highlight></codeline>
+<codeline lineno="300"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>keys.</highlight></codeline>
+<codeline lineno="301"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="302"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="303"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pose:<sp/><sp/>Goal<sp/>pose.</highlight></codeline>
+<codeline lineno="304"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>goal_dict<sp/>=<sp/>json.loads(json_string)</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>goal<sp/>=<sp/><ref refid="classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose" kindref="compound">Pose</ref>()</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.position<sp/>=<sp/>np.array(goal_dict[</highlight><highlight class="stringliteral">&quot;position&quot;</highlight><highlight class="normal">])</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.orientation<sp/>=<sp/>np.array(goal_dict[</highlight><highlight class="stringliteral">&quot;orientation&quot;</highlight><highlight class="normal">])</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>goal</highlight></codeline>
+    </programlisting>
+    <location file="python/trifinger_simulation/tasks/move_cube.py"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,147 @@
+\hypertarget{classblmc__drivers_1_1MotorBoardStatus}{}\section{blmc\+\_\+drivers\+:\+:Motor\+Board\+Status Class Reference}
+\label{classblmc__drivers_1_1MotorBoardStatus}\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}
+
+
+This class represent a 8 bits message that describe the state (enable/disabled) of the card and the two motors.  
+
+
+
+
+{\ttfamily \#include $<$motor\+\_\+board.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cf}{Error\+Codes} \{ \newline
+\hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa99d623b3894cfb91a0626b56d0583f84}{N\+O\+NE} = 0, 
+\hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfab3a0b4c22659f24593503e41fce561d0}{E\+N\+C\+O\+D\+ER} = 1, 
+\hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa25dd0ce676d69449a6fe0a02fa6e6a5d}{C\+A\+N\+\_\+\+R\+E\+C\+V\+\_\+\+T\+I\+M\+E\+O\+UT} = 2, 
+\hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa43b0778d39a1aa2c193e2b511f2fe511}{C\+R\+I\+T\+\_\+\+T\+E\+MP} = 3, 
+\newline
+\hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa3134cc4a15dfbbeccd1305ad7f0e56cf}{P\+O\+S\+C\+O\+NV} = 4, 
+\hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa87717db1d2ce92549a0bd95890c45f63}{P\+O\+S\+\_\+\+R\+O\+L\+L\+O\+V\+ER} = 5, 
+\hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa2b6b3fa06a4bf24105805b604aff7280}{O\+T\+H\+ER} = 7
+ \}\begin{DoxyCompactList}\small\item\em This is the list of the error codes. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_abae870151b4e76163d2e3ef6a209e555}\label{classblmc__drivers_1_1MotorBoardStatus_abae870151b4e76163d2e3ef6a209e555}} 
+void \hyperlink{classblmc__drivers_1_1MotorBoardStatus_abae870151b4e76163d2e3ef6a209e555}{print} () const
+\begin{DoxyCompactList}\small\item\em Simply print the status of the motor board. \end{DoxyCompactList}\item 
+bool \hyperlink{classblmc__drivers_1_1MotorBoardStatus_a1da75ba70f6ad31fa7c880b5c673cc89}{is\+\_\+ready} ()
+\begin{DoxyCompactList}\small\item\em Check if the all status are green. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9984f10f289f1a853dd4e34544be2c9d}{system\+\_\+enabled}\+:1
+\begin{DoxyCompactList}\small\item\em These are the list of bits of the message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_ae571da09a338790e07847efb068168af}\label{classblmc__drivers_1_1MotorBoardStatus_ae571da09a338790e07847efb068168af}} 
+uint8\+\_\+t \hyperlink{classblmc__drivers_1_1MotorBoardStatus_ae571da09a338790e07847efb068168af}{motor1\+\_\+enabled}\+:1
+\begin{DoxyCompactList}\small\item\em Bits 1 enables/disable of the motor 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a223efb9b461331c2e80b922ec29458cf}\label{classblmc__drivers_1_1MotorBoardStatus_a223efb9b461331c2e80b922ec29458cf}} 
+uint8\+\_\+t \hyperlink{classblmc__drivers_1_1MotorBoardStatus_a223efb9b461331c2e80b922ec29458cf}{motor1\+\_\+ready}\+:1
+\begin{DoxyCompactList}\small\item\em Bits 2 checks if the motor 1 is ready or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a3f21330096dc12e6ef6fa2cd2d628c06}\label{classblmc__drivers_1_1MotorBoardStatus_a3f21330096dc12e6ef6fa2cd2d628c06}} 
+uint8\+\_\+t \hyperlink{classblmc__drivers_1_1MotorBoardStatus_a3f21330096dc12e6ef6fa2cd2d628c06}{motor2\+\_\+enabled}\+:1
+\begin{DoxyCompactList}\small\item\em Bits 3 enables/disable of the motor 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a4f0191a042a1968c8938177ad13fb760}\label{classblmc__drivers_1_1MotorBoardStatus_a4f0191a042a1968c8938177ad13fb760}} 
+uint8\+\_\+t \hyperlink{classblmc__drivers_1_1MotorBoardStatus_a4f0191a042a1968c8938177ad13fb760}{motor2\+\_\+ready}\+:1
+\begin{DoxyCompactList}\small\item\em Bits 4 checks if the motor 2 is ready or not. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classblmc__drivers_1_1MotorBoardStatus_ad1a5cb78d86e76a60750c0e3e6b34b7e}{error\+\_\+code}\+:3
+\begin{DoxyCompactList}\small\item\em This encodes the error codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represent a 8 bits message that describe the state (enable/disabled) of the card and the two motors. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cf}\label{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cf}} 
+\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!Error\+Codes@{Error\+Codes}}
+\index{Error\+Codes@{Error\+Codes}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}
+\subsubsection{\texorpdfstring{Error\+Codes}{ErrorCodes}}
+{\footnotesize\ttfamily enum \hyperlink{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cf}{blmc\+\_\+drivers\+::\+Motor\+Board\+Status\+::\+Error\+Codes}}
+
+
+
+This is the list of the error codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+NE@{N\+O\+NE}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!N\+O\+NE@{N\+O\+NE}}}\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa99d623b3894cfb91a0626b56d0583f84}\label{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa99d623b3894cfb91a0626b56d0583f84}} 
+N\+O\+NE&No error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+N\+C\+O\+D\+ER@{E\+N\+C\+O\+D\+ER}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!E\+N\+C\+O\+D\+ER@{E\+N\+C\+O\+D\+ER}}}\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfab3a0b4c22659f24593503e41fce561d0}\label{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfab3a0b4c22659f24593503e41fce561d0}} 
+E\+N\+C\+O\+D\+ER&Encoder error too high. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+A\+N\+\_\+\+R\+E\+C\+V\+\_\+\+T\+I\+M\+E\+O\+UT@{C\+A\+N\+\_\+\+R\+E\+C\+V\+\_\+\+T\+I\+M\+E\+O\+UT}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!C\+A\+N\+\_\+\+R\+E\+C\+V\+\_\+\+T\+I\+M\+E\+O\+UT@{C\+A\+N\+\_\+\+R\+E\+C\+V\+\_\+\+T\+I\+M\+E\+O\+UT}}}\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa25dd0ce676d69449a6fe0a02fa6e6a5d}\label{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa25dd0ce676d69449a6fe0a02fa6e6a5d}} 
+C\+A\+N\+\_\+\+R\+E\+C\+V\+\_\+\+T\+I\+M\+E\+O\+UT&Timeout for receiving current references exceeded. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+R\+I\+T\+\_\+\+T\+E\+MP@{C\+R\+I\+T\+\_\+\+T\+E\+MP}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!C\+R\+I\+T\+\_\+\+T\+E\+MP@{C\+R\+I\+T\+\_\+\+T\+E\+MP}}}\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa43b0778d39a1aa2c193e2b511f2fe511}\label{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa43b0778d39a1aa2c193e2b511f2fe511}} 
+C\+R\+I\+T\+\_\+\+T\+E\+MP&\hyperlink{classblmc__drivers_1_1Motor}{Motor} temperature reached critical value. \begin{DoxyNote}{Note}
+This is currently unused as no temperature sensing is done. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+O\+S\+C\+O\+NV@{P\+O\+S\+C\+O\+NV}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!P\+O\+S\+C\+O\+NV@{P\+O\+S\+C\+O\+NV}}}\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa3134cc4a15dfbbeccd1305ad7f0e56cf}\label{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa3134cc4a15dfbbeccd1305ad7f0e56cf}} 
+P\+O\+S\+C\+O\+NV&Some error in the Spin\+T\+AC Position Convert module. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+O\+S\+\_\+\+R\+O\+L\+L\+O\+V\+ER@{P\+O\+S\+\_\+\+R\+O\+L\+L\+O\+V\+ER}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!P\+O\+S\+\_\+\+R\+O\+L\+L\+O\+V\+ER@{P\+O\+S\+\_\+\+R\+O\+L\+L\+O\+V\+ER}}}\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa87717db1d2ce92549a0bd95890c45f63}\label{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa87717db1d2ce92549a0bd95890c45f63}} 
+P\+O\+S\+\_\+\+R\+O\+L\+L\+O\+V\+ER&Position Rollover occured. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+T\+H\+ER@{O\+T\+H\+ER}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!O\+T\+H\+ER@{O\+T\+H\+ER}}}\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa2b6b3fa06a4bf24105805b604aff7280}\label{classblmc__drivers_1_1MotorBoardStatus_a9fd931e24550f5e5877d7a6cf499f6cfa2b6b3fa06a4bf24105805b604aff7280}} 
+O\+T\+H\+ER&Some other error. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a1da75ba70f6ad31fa7c880b5c673cc89}\label{classblmc__drivers_1_1MotorBoardStatus_a1da75ba70f6ad31fa7c880b5c673cc89}} 
+\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!is\+\_\+ready@{is\+\_\+ready}}
+\index{is\+\_\+ready@{is\+\_\+ready}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}
+\subsubsection{\texorpdfstring{is\+\_\+ready()}{is\_ready()}}
+{\footnotesize\ttfamily bool blmc\+\_\+drivers\+::\+Motor\+Board\+Status\+::is\+\_\+ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the all status are green. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_ad1a5cb78d86e76a60750c0e3e6b34b7e}\label{classblmc__drivers_1_1MotorBoardStatus_ad1a5cb78d86e76a60750c0e3e6b34b7e}} 
+\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!error\+\_\+code@{error\+\_\+code}}
+\index{error\+\_\+code@{error\+\_\+code}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}
+\subsubsection{\texorpdfstring{error\+\_\+code}{error\_code}}
+{\footnotesize\ttfamily uint8\+\_\+t blmc\+\_\+drivers\+::\+Motor\+Board\+Status\+::error\+\_\+code}
+
+
+
+This encodes the error codes. 
+
+See \char`\"{}\+Error\+Codes\char`\"{} for more details. \mbox{\Hypertarget{classblmc__drivers_1_1MotorBoardStatus_a9984f10f289f1a853dd4e34544be2c9d}\label{classblmc__drivers_1_1MotorBoardStatus_a9984f10f289f1a853dd4e34544be2c9d}} 
+\index{blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}!system\+\_\+enabled@{system\+\_\+enabled}}
+\index{system\+\_\+enabled@{system\+\_\+enabled}!blmc\+\_\+drivers\+::\+Motor\+Board\+Status@{blmc\+\_\+drivers\+::\+Motor\+Board\+Status}}
+\subsubsection{\texorpdfstring{system\+\_\+enabled}{system\_enabled}}
+{\footnotesize\ttfamily uint8\+\_\+t blmc\+\_\+drivers\+::\+Motor\+Board\+Status\+::system\+\_\+enabled}
+
+
+
+These are the list of bits of the message. 
+
+Bits 0 enables/disable of the system (motor board). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+drivers/devices/\hyperlink{motor__board_8hpp}{motor\+\_\+board.\+hpp}\end{DoxyCompactItemize}

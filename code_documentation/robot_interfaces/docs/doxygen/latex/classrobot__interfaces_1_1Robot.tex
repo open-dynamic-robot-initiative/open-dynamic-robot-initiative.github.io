@@ -1,0 +1,120 @@
+\hypertarget{classrobot__interfaces_1_1Robot}{}\section{robot\+\_\+interfaces\+:\+:Robot$<$ Action, Observation, Driver, Data $>$ Class Template Reference}
+\label{classrobot__interfaces_1_1Robot}\index{robot\+\_\+interfaces\+::\+Robot$<$ Action, Observation, Driver, Data $>$@{robot\+\_\+interfaces\+::\+Robot$<$ Action, Observation, Driver, Data $>$}}
+
+
+\hyperlink{classrobot__interfaces_1_1RobotFrontend}{Robot\+Frontend} that construct and encapsulates its related \hyperlink{classrobot__interfaces_1_1RobotBackend}{Robot\+Backend}.  
+
+
+
+
+{\ttfamily \#include $<$robot.\+hpp$>$}
+
+
+
+Inheritance diagram for robot\+\_\+interfaces\+:\+:Robot$<$ Action, Observation, Driver, Data $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classrobot__interfaces_1_1Robot__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for robot\+\_\+interfaces\+:\+:Robot$<$ Action, Observation, Driver, Data $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classrobot__interfaces_1_1Robot__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\hyperlink{classrobot__interfaces_1_1Robot_ad91be1a022f648a691de55202f58543e}{Robot} (double max\+\_\+action\+\_\+duration\+\_\+s, double max\+\_\+inter\+\_\+action\+\_\+duration\+\_\+s, Args... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\hyperlink{classrobot__interfaces_1_1Robot_a2db649f1bb6951f30111e0d35b760407}{Robot} (Args... args)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classrobot__interfaces_1_1Robot}{Robot} which instantiates a non real time mode backend. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1Robot_af2d47a88a06f94e90bc0145ba1171cd0}\label{classrobot__interfaces_1_1Robot_af2d47a88a06f94e90bc0145ba1171cd0}} 
+void \hyperlink{classrobot__interfaces_1_1Robot_af2d47a88a06f94e90bc0145ba1171cd0}{initialize} ()
+\begin{DoxyCompactList}\small\item\em initialize the backend \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1Robot_af6e817bb62ff3d22ce1a9353709818c3}\label{classrobot__interfaces_1_1Robot_af6e817bb62ff3d22ce1a9353709818c3}} 
+const Data \& \hyperlink{classrobot__interfaces_1_1Robot_af6e817bb62ff3d22ce1a9353709818c3}{get\+\_\+data} () const
+\begin{DoxyCompactList}\small\item\em return the data shared by the frontend and the backend. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1Robot_aae6cdfcef2853a056a6f7d7d2356b7df}\label{classrobot__interfaces_1_1Robot_aae6cdfcef2853a056a6f7d7d2356b7df}} 
+typedef std\+::shared\+\_\+ptr$<$ Data $>$ {\bfseries Data\+Ptr}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1Robot_a8aa32d96551cdd9234288203b1790f6d}\label{classrobot__interfaces_1_1Robot_a8aa32d96551cdd9234288203b1790f6d}} 
+typedef std\+::shared\+\_\+ptr$<$ \hyperlink{classDriver}{Driver} $>$ {\bfseries Robot\+Driver\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1Robot_add04574720fb6d4ecc9fd74678b3627e}\label{classrobot__interfaces_1_1Robot_add04574720fb6d4ecc9fd74678b3627e}} 
+Robot\+Driver\+Ptr {\bfseries driver\+\_\+ptr\+\_\+}
+\item 
+\mbox{\Hypertarget{classrobot__interfaces_1_1Robot_abefd57cd42aad6c21b3db990d4488db4}\label{classrobot__interfaces_1_1Robot_abefd57cd42aad6c21b3db990d4488db4}} 
+\hyperlink{classrobot__interfaces_1_1RobotBackend}{Robot\+Backend}$<$ Action, Observation $>$ {\bfseries backend\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Action, typename Observation, typename Driver, typename Data = Single\+Process\+Robot\+Data$<$\+Action, Observation$>$$>$\newline
+class robot\+\_\+interfaces\+::\+Robot$<$ Action, Observation, Driver, Data $>$}
+
+\hyperlink{classrobot__interfaces_1_1RobotFrontend}{Robot\+Frontend} that construct and encapsulates its related \hyperlink{classrobot__interfaces_1_1RobotBackend}{Robot\+Backend}. 
+
+It also construct and starts the robot driver. \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{demo_8cpp-example}{demo.\+cpp}.\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrobot__interfaces_1_1Robot_ad91be1a022f648a691de55202f58543e}\label{classrobot__interfaces_1_1Robot_ad91be1a022f648a691de55202f58543e}} 
+\index{robot\+\_\+interfaces\+::\+Robot@{robot\+\_\+interfaces\+::\+Robot}!Robot@{Robot}}
+\index{Robot@{Robot}!robot\+\_\+interfaces\+::\+Robot@{robot\+\_\+interfaces\+::\+Robot}}
+\subsubsection{\texorpdfstring{Robot()}{Robot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation , typename Driver , typename Data  = Single\+Process\+Robot\+Data$<$\+Action, Observation$>$$>$ \\
+template$<$typename... Args$>$ \\
+\hyperlink{classrobot__interfaces_1_1Robot}{robot\+\_\+interfaces\+::\+Robot}$<$ Action, Observation, \hyperlink{classDriver}{Driver}, Data $>$\+::\hyperlink{classrobot__interfaces_1_1Robot}{Robot} (\begin{DoxyParamCaption}\item[{double}]{max\+\_\+action\+\_\+duration\+\_\+s,  }\item[{double}]{max\+\_\+inter\+\_\+action\+\_\+duration\+\_\+s,  }\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+action\+\_\+duration\+\_\+s} & See \hyperlink{classrobot__interfaces_1_1MonitoredRobotDriver}{Monitored\+Robot\+Driver}. \\
+\hline
+{\em max\+\_\+inter\+\_\+action\+\_\+duration\+\_\+s} & See \hyperlink{classrobot__interfaces_1_1MonitoredRobotDriver}{Monitored\+Robot\+Driver}. \\
+\hline
+{\em args} & Arguments for instantiating \hyperlink{classDriver}{Driver} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrobot__interfaces_1_1Robot_a2db649f1bb6951f30111e0d35b760407}\label{classrobot__interfaces_1_1Robot_a2db649f1bb6951f30111e0d35b760407}} 
+\index{robot\+\_\+interfaces\+::\+Robot@{robot\+\_\+interfaces\+::\+Robot}!Robot@{Robot}}
+\index{Robot@{Robot}!robot\+\_\+interfaces\+::\+Robot@{robot\+\_\+interfaces\+::\+Robot}}
+\subsubsection{\texorpdfstring{Robot()}{Robot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Action , typename Observation , typename Driver , typename Data  = Single\+Process\+Robot\+Data$<$\+Action, Observation$>$$>$ \\
+template$<$typename... Args$>$ \\
+\hyperlink{classrobot__interfaces_1_1Robot}{robot\+\_\+interfaces\+::\+Robot}$<$ Action, Observation, \hyperlink{classDriver}{Driver}, Data $>$\+::\hyperlink{classrobot__interfaces_1_1Robot}{Robot} (\begin{DoxyParamCaption}\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\hyperlink{classrobot__interfaces_1_1Robot}{Robot} which instantiates a non real time mode backend. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+action\+\_\+duration\+\_\+s} & See \hyperlink{classrobot__interfaces_1_1MonitoredRobotDriver}{Monitored\+Robot\+Driver}. \\
+\hline
+{\em max\+\_\+inter\+\_\+action\+\_\+duration\+\_\+s} & See \hyperlink{classrobot__interfaces_1_1MonitoredRobotDriver}{Monitored\+Robot\+Driver}. \\
+\hline
+{\em args} & Arguments for instantiating \hyperlink{classDriver}{Driver} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/robot\+\_\+interfaces/robot.\+hpp\end{DoxyCompactItemize}

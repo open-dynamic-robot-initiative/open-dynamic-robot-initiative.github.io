@@ -1,0 +1,79 @@
+\hypertarget{classController}{}\section{Controller Class Reference}
+\label{classController}\index{Controller@{Controller}}
+
+
+This is a simple PD control on one motor and one slider.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classController_aceedb7c8fbd0fab8080fd7273d9dc65d}{Controller} (std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1Motor}{blmc\+\_\+drivers\+::\+Motor} $>$ motor, std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1AnalogSensor}{blmc\+\_\+drivers\+::\+Analog\+Sensor} $>$ analog\+\_\+sensor)
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classController}{Controller} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classController_a63abf4d0c948dca6887de01050491f8d}\label{classController_a63abf4d0c948dca6887de01050491f8d}} 
+void \hyperlink{classController_a63abf4d0c948dca6887de01050491f8d}{start\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em main control loop \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classController_a596a9a35dcda61307e36bb2d8c4f067e}\label{classController_a596a9a35dcda61307e36bb2d8c4f067e}} 
+static T\+H\+R\+E\+A\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE \hyperlink{classController_a596a9a35dcda61307e36bb2d8c4f067e}{loop} (void $\ast$instance\+\_\+pointer)
+\begin{DoxyCompactList}\small\item\em this function is just a wrapper around the actual loop function, such that it can be spawned as a posix thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classController_a9ec8c2d4a68acccd118537c36894e516}{loop} ()
+\begin{DoxyCompactList}\small\item\em this is a simple control loop which runs at a kilohertz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classController_abad7e0e003f885504b2de5e929afd187}\label{classController_abad7e0e003f885504b2de5e929afd187}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1Motor}{blmc\+\_\+drivers\+::\+Motor} $>$ \hyperlink{classController_abad7e0e003f885504b2de5e929afd187}{motor\+\_\+}
+\begin{DoxyCompactList}\small\item\em one motor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classController_a33ba57988a9da049562e61572ae53a05}\label{classController_a33ba57988a9da049562e61572ae53a05}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1AnalogSensor}{blmc\+\_\+drivers\+::\+Analog\+Sensor} $>$ \hyperlink{classController_a33ba57988a9da049562e61572ae53a05}{analog\+\_\+sensor\+\_\+}
+\begin{DoxyCompactList}\small\item\em one slider. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classController_abef4676ee65620e3e61fd2fb6107c00e}\label{classController_abef4676ee65620e3e61fd2fb6107c00e}} 
+real\+\_\+time\+\_\+tools\+::\+Real\+Time\+Thread \hyperlink{classController_abef4676ee65620e3e61fd2fb6107c00e}{rt\+\_\+thread\+\_\+}
+\begin{DoxyCompactList}\small\item\em the realt time thread object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a simple PD control on one motor and one slider. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classController_aceedb7c8fbd0fab8080fd7273d9dc65d}\label{classController_aceedb7c8fbd0fab8080fd7273d9dc65d}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1Motor}{blmc\+\_\+drivers\+::\+Motor} $>$}]{motor,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classblmc__drivers_1_1AnalogSensor}{blmc\+\_\+drivers\+::\+Analog\+Sensor} $>$}]{analog\+\_\+sensor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{classController}{Controller} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & \\
+\hline
+{\em analog\+\_\+sensor} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classController_a9ec8c2d4a68acccd118537c36894e516}\label{classController_a9ec8c2d4a68acccd118537c36894e516}} 
+\index{Controller@{Controller}!loop@{loop}}
+\index{loop@{loop}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void Controller\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+this is a simple control loop which runs at a kilohertz. 
+
+it reads the measurement from the analog sensor, in this case the slider. then it scales it and sends it as the current target to the motor. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+demos/\hyperlink{demo__leg_8cpp}{demo\+\_\+leg.\+cpp}\end{DoxyCompactItemize}

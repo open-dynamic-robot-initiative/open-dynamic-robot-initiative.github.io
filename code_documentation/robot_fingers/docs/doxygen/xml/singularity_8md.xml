@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="singularity_8md" kind="file" language="Markdown">
+    <compoundname>singularity.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">About<sp/>Singularity</highlight></codeline>
+<codeline><highlight class="normal">=================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">What<sp/>is<sp/>Singularity?</highlight></codeline>
+<codeline><highlight class="normal">--------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Singularity<sp/>is<sp/>a<sp/>tool<sp/>to<sp/>run<sp/>software<sp/>inside<sp/>containers,<sp/>similar<sp/>to<sp/>Docker.</highlight></codeline>
+<codeline><highlight class="normal">Compared<sp/>to<sp/>Docker<sp/>it<sp/>has<sp/>a<sp/>higher<sp/>focus<sp/>on<sp/>security<sp/>and<sp/>can<sp/>be<sp/>used<sp/>without</highlight></codeline>
+<codeline><highlight class="normal">root<sp/>permission.<sp/><sp/>Also<sp/>programs<sp/>in<sp/>the<sp/>container<sp/>are<sp/>executed<sp/>as<sp/>the<sp/>user<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">host<sp/>system<sp/>which<sp/>makes<sp/>it<sp/>much<sp/>more<sp/>convenient<sp/>when<sp/>touching<sp/>files<sp/>of<sp/>the<sp/>host</highlight></codeline>
+<codeline><highlight class="normal">system<sp/>(as<sp/>it<sp/>is<sp/>happening<sp/>when<sp/>building<sp/>a<sp/>mounted<sp/>workspace).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Get<sp/>our<sp/>Singularity<sp/>Image</highlight></codeline>
+<codeline><highlight class="normal">-------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>provide<sp/>a<sp/>Singularity<sp/>image<sp/>with<sp/>Ubuntu<sp/>18.04<sp/>with<sp/>all<sp/>dependencies<sp/>needed<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">build<sp/>and<sp/>run<sp/>the<sp/>software<sp/>here:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[Download<sp/>Singularity<sp/>Image](https://drive.google.com/file/d/1yJ_RI1GpnPcs_fxcNYYUXZtQPHvhlGNH/view?usp=sharing)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Install<sp/>Singularity</highlight></codeline>
+<codeline><highlight class="normal">-------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>are<sp/>using<sp/>Singularity<sp/>version<sp/>3.6.<sp/>Other<sp/>recent<sp/>versions<sp/>are<sp/>probably</highlight></codeline>
+<codeline><highlight class="normal">also<sp/>so<sp/>fine,<sp/>however,<sp/>we<sp/>cannot<sp/>guarantee<sp/>compatibility<sp/>for<sp/>those.</highlight></codeline>
+<codeline><highlight class="normal">Unfortunately,<sp/>most<sp/>versions<sp/>of<sp/>Ubuntu<sp/>still<sp/>provide<sp/>Singularity<sp/>version</highlight></codeline>
+<codeline><highlight class="normal">2.x<sp/>in<sp/>their<sp/>official<sp/>repositories.<sp/>A<sp/>newer<sp/>version<sp/>can<sp/>be<sp/>installed</highlight></codeline>
+<codeline><highlight class="normal">from<sp/>source<sp/>in<sp/>this<sp/>case.<sp/>For<sp/>this<sp/>you<sp/>may<sp/>follow<sp/>the<sp/>[official<sp/>installation</highlight></codeline>
+<codeline><highlight class="normal">instructions](https://sylabs.io/guides/3.6/user-guide/quick_start.html#quick-installation-steps)</highlight></codeline>
+<codeline><highlight class="normal">or<sp/>use<sp/>the<sp/>following,<sp/>slightly<sp/>simplified<sp/>instructions<sp/>(assuming<sp/>you<sp/>are<sp/>working</highlight></codeline>
+<codeline><highlight class="normal">with<sp/>Ubuntu).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Install<sp/>system<sp/>dependencies:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>sudo<sp/>apt-get<sp/>update<sp/>&amp;&amp;<sp/>sudo<sp/>apt-get<sp/>install<sp/>-y<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>build-essential<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libssl-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uuid-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libgpgme11-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>squashfs-tools<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libseccomp-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wget<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pkg-config<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>git<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cryptsetup</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Get<sp/>the<sp/>required<sp/>version<sp/>of<sp/>the<sp/>Go<sp/>compiler:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>~/Downloads<sp/><sp/>#<sp/>you<sp/>can<sp/>save<sp/>it<sp/>anywhere<sp/>else,<sp/>just<sp/>adjust<sp/>paths<sp/>below</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wget<sp/>https://dl.google.com/go/go1.13.linux-amd64.tar.gz</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>tar<sp/>-xzf<sp/>go1.13.linux-amd64.tar.gz</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Note<sp/>that<sp/>it<sp/>is<sp/>only<sp/>needed<sp/>once<sp/>for<sp/>building<sp/>singularity,<sp/>so<sp/>no<sp/>need<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">install<sp/>it<sp/>permanently<sp/>(we<sp/>just<sp/>add<sp/>it<sp/>to<sp/>PATH<sp/>temporarily<sp/>for<sp/>building,</highlight></codeline>
+<codeline><highlight class="normal">see<sp/>below).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Now<sp/>download<sp/>and<sp/>unpack<sp/>the<sp/>singularity<sp/>source:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wget<sp/>https://github.com/sylabs/singularity/releases/download/v3.6.1/singularity-3.6.1.tar.gz</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>tar<sp/>-xzf<sp/>singularity-3.6.1.tar.gz</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>finally<sp/>build<sp/>and<sp/>install<sp/>it:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>export<sp/>PATH=~/Downloads/go/bin:${PATH}<sp/><sp/>#<sp/>adjust<sp/>path<sp/>if<sp/>you<sp/>used<sp/>a<sp/>different<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>singularity<sp/><sp/>#<sp/>the<sp/>folder<sp/>to<sp/>which<sp/>the<sp/>singularity<sp/>source<sp/>was<sp/>extracted</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>./mconfig</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>builddir</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>make</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>make<sp/>install</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Now<sp/>you<sp/>should<sp/>be<sp/>able<sp/>to<sp/>use<sp/>Singularity.<sp/>You<sp/>can<sp/>test<sp/>this,<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">example,<sp/>by<sp/>running<sp/>`singularity<sp/>--version`<sp/>which<sp/>should<sp/>print</highlight></codeline>
+<codeline><highlight class="normal">&quot;singularity<sp/>version<sp/>3.6.1&quot;.<sp/>For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>to<sp/>use</highlight></codeline>
+<codeline><highlight class="normal">Singularity,<sp/>see<sp/>the<sp/>[official</highlight></codeline>
+<codeline><highlight class="normal">documentation](https://sylabs.io/guides/3.6/user-guide/index.html).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Run<sp/>Something<sp/>in<sp/>the<sp/>Container</highlight></codeline>
+<codeline><highlight class="normal">------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>the<sp/>container<sp/>in<sp/>shell<sp/>mode<sp/>(i.e.<sp/>opening<sp/>a<sp/>shell<sp/>inside<sp/>the<sp/>container),</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>following<sp/>is<sp/>often<sp/>enough:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>singularity<sp/>shell<sp/>path/to/image.sif</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>will,<sp/>however,<sp/>be<sp/>influenced<sp/>by<sp/>your<sp/>local<sp/>setup<sp/>as<sp/>environment<sp/>variables</highlight></codeline>
+<codeline><highlight class="normal">are<sp/>exported<sp/>and<sp/>the<sp/>home<sp/>directory<sp/>is<sp/>mounted<sp/>by<sp/>default.<sp/><sp/>Further<sp/>the<sp/>current</highlight></codeline>
+<codeline><highlight class="normal">working<sp/>directory<sp/>from<sp/>which<sp/>singularity<sp/>is<sp/>run<sp/>is<sp/>also<sp/>bound<sp/>inside<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">container.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>default<sp/>behaviour<sp/>is<sp/>often<sp/>convenient<sp/>but<sp/>can<sp/>cause<sp/>issues<sp/>in<sp/>some<sp/>cases.</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>typical<sp/>example<sp/>would<sp/>be<sp/>a<sp/>Python<sp/>package<sp/>installed<sp/>in<sp/>your<sp/>home<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">(which<sp/>will<sp/>then<sp/>be<sp/>available<sp/>in<sp/>the<sp/>container)<sp/>which<sp/>is<sp/>not<sp/>compatible<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">versions<sp/>of<sp/>other<sp/>packages<sp/>inside<sp/>the<sp/>container.<sp/><sp/>To<sp/>avoid<sp/>these<sp/>kind<sp/>of<sp/>issues</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>is<sp/>recommended<sp/>to<sp/>use<sp/>the<sp/>following<sp/>command<sp/>to<sp/>run<sp/>the<sp/>container<sp/>in<sp/>a<sp/>more</highlight></codeline>
+<codeline><highlight class="normal">isolated<sp/>way:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>export<sp/>SINGULARITYENV_DISPLAY=$DISPLAY</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>singularity<sp/>shell<sp/>-e<sp/>--no-home<sp/>-B<sp/>$(pwd)<sp/>path/to/image.sif</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>arguments<sp/>explained:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>first<sp/>line<sp/>makes<sp/>sure<sp/>the<sp/>DISPLAY<sp/>environment<sp/>variable<sp/>is<sp/>set<sp/>correctly</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>inside<sp/>the<sp/>container<sp/>(only<sp/>needed<sp/>if<sp/>you<sp/>want<sp/>to<sp/>run<sp/>GUI-based<sp/>applications).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`-e`<sp/>(short<sp/>for<sp/>`--cleanenv`)<sp/>prevents<sp/>environment<sp/>variables<sp/>to<sp/>be</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>exported.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`--no-home`<sp/>prevents<sp/>your<sp/>home<sp/>directory<sp/>from<sp/>being<sp/>bound.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`-B<sp/>$(pwd)`<sp/>explicitly<sp/>binds<sp/>the<sp/>current<sp/>working<sp/>directory.<sp/><sp/>This<sp/>should</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>normally<sp/>not<sp/>be<sp/>necessary<sp/>but<sp/>Singularity<sp/>3.6<sp/>seems<sp/>to<sp/>have<sp/>a<sp/>bug<sp/>that<sp/>the<sp/>PWD</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>is<sp/>not<sp/>bound<sp/>automatically<sp/>if<sp/>it<sp/>is<sp/>somewhere<sp/>inside<sp/>your<sp/>home<sp/>directory<sp/>and</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>`--no-home`<sp/>is<sp/>used.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Note<sp/>that<sp/>with<sp/>the<sp/>above<sp/>the<sp/>current<sp/>working<sp/>directory<sp/>is<sp/>still<sp/>bound<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">image,<sp/>so<sp/>it<sp/>is<sp/>possible<sp/>to<sp/>build/modify<sp/>the<sp/>workspace<sp/>from<sp/>the<sp/>host-system<sp/>when</highlight></codeline>
+<codeline><highlight class="normal">Singularity<sp/>is<sp/>run<sp/>from<sp/>the<sp/>root<sp/>directory<sp/>of<sp/>the<sp/>workspace.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Compatibility<sp/>with<sp/>Nvidia<sp/>Drivers</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>you<sp/>are<sp/>using<sp/>Nvidia<sp/>drivers<sp/>and<sp/>want<sp/>to<sp/>run<sp/>a<sp/>GUI-based<sp/>application<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">container,<sp/>you<sp/>may<sp/>need<sp/>to<sp/>add<sp/>the<sp/>`--nv`<sp/>flag:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>singularity<sp/>shell<sp/>--nv<sp/>...<sp/>path/to/image.sif</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Add<sp/>Custom<sp/>Dependencies<sp/>to<sp/>the<sp/>Container</highlight></codeline>
+<codeline><highlight class="normal">----------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>image<sp/>we<sp/>provide<sp/>already<sp/>includes<sp/>everything<sp/>needed<sp/>to<sp/>run<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>the<sp/>simulation.<sp/>However,<sp/>you<sp/>may<sp/>need<sp/>additional<sp/>libraries<sp/>to<sp/>use</highlight></codeline>
+<codeline><highlight class="normal">them<sp/>in<sp/>our<sp/>own<sp/>code,<sp/>which<sp/>are<sp/>not<sp/>yet<sp/>present.<sp/>In<sp/>this<sp/>case,<sp/>you<sp/>can</highlight></codeline>
+<codeline><highlight class="normal">create<sp/>your<sp/>own<sp/>image<sp/>which<sp/>is<sp/>based<sp/>on<sp/>our<sp/>standard<sp/>image<sp/>but<sp/>extends</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>with<sp/>your<sp/>additional<sp/>dependencies.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>extend<sp/>the<sp/>image,<sp/>create<sp/>*definition<sp/>file*<sp/>like<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>Specify<sp/>the<sp/>name<sp/>of<sp/>the<sp/>base<sp/>image<sp/>below</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Bootstrap:<sp/>localimage</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>From:<sp/>./base_image.sif</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>%post</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Put<sp/>commands<sp/>to<sp/>install<sp/>additional<sp/>dependencies<sp/>here.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Make<sp/>sure<sp/>everything<sp/>runs<sp/>automatically<sp/>without<sp/>human<sp/>input<sp/>(e.g.<sp/>add</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>`-y`<sp/>to<sp/>automatically<sp/>say<sp/>&quot;yes&quot;<sp/>below).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apt-get<sp/>install<sp/>-y<sp/>package_name</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>the<sp/>official<sp/>[Documentation<sp/>for<sp/>Definition</highlight></codeline>
+<codeline><highlight class="normal">Files](https://sylabs.io/guides/3.6/user-guide/definition_files.html)</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>all<sp/>options<sp/>in<sp/>the<sp/>definition<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Assuming<sp/>you<sp/>called<sp/>your<sp/>definition<sp/>file<sp/>`user_image.def`,<sp/>use<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">following<sp/>command<sp/>to<sp/>build<sp/>the<sp/>image.<sp/>Note<sp/>that<sp/>the<sp/>base<sp/>image</highlight></codeline>
+<codeline><highlight class="normal">(specified<sp/>in<sp/>the<sp/>`From:`<sp/>line)<sp/>needs<sp/>to<sp/>be<sp/>present<sp/>in<sp/>the<sp/>directory<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">which<sp/>you<sp/>call<sp/>the<sp/>command.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>singularity<sp/>build<sp/>--fakeroot<sp/>user_image.sif<sp/>path/to/user_image.def</highlight></codeline>
+    </programlisting>
+    <location file="doc/singularity.md"/>
+  </compounddef>
+</doxygen>

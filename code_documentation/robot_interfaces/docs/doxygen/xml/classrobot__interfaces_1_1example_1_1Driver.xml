@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classrobot__interfaces_1_1example_1_1Driver" kind="class" language="C++" prot="public">
+    <compoundname>robot_interfaces::example::Driver</compoundname>
+    <basecompoundref refid="classrobot__interfaces_1_1RobotDriver" prot="public" virt="non-virtual">robot_interfaces::RobotDriver&lt; Action, Observation &gt;</basecompoundref>
+    <includes refid="example_8hpp" local="no">example.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__interfaces_1_1example_1_1Driver_1a86c0ec3574adbdb190ee17c51068b59a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int robot_interfaces::example::Driver::state_[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>state_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="123" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1example_1_1Driver_1a6ffdfed257b3b4466615ec9d4cd7c2d1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int robot_interfaces::example::Driver::min_</definition>
+        <argsstring></argsstring>
+        <name>min_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="124" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1example_1_1Driver_1a3d788870eb3c8043e0f3e278a11b87f6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int robot_interfaces::example::Driver::max_</definition>
+        <argsstring></argsstring>
+        <name>max_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="125" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1example_1_1Driver_1a83743c88f8873685b3b628e393ffe9fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::example::Driver::Driver</definition>
+        <argsstring>(int min, int max)</argsstring>
+        <name>Driver</name>
+        <param>
+          <type>int</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="67" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1example_1_1Driver_1ab6f6c3f3ffb730d162bec70313f8aab7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::example::Driver::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1af3cbef570a455e1f8085d701282264ff">initialize</reimplements>
+        <briefdescription>
+<para>Initialize the robot. </para>        </briefdescription>
+        <detaileddescription>
+<para>Any initialization procedures that need to be done before sending actions to the robot should be done in this method (e.g. homing to find the absolute position). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="72" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1example_1_1Driver_1aa18b1bc90441395e86794a90dfdac9fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Action</type>
+        <definition>Action robot_interfaces::example::Driver::apply_action</definition>
+        <argsstring>(const Action &amp;action_to_apply)</argsstring>
+        <name>apply_action</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1a4294e522fcd12b38d69f7d53fae5d74a">apply_action</reimplements>
+        <param>
+          <type>const Action &amp;</type>
+          <declname>desired_action</declname>
+        </param>
+        <briefdescription>
+<para>Apply action immediately and block until it is executed. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method must apply the desired_action immediately when it is called, and only return once the action has been executed completely. This way we can accommodate both simulators and real robots with this interface.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired_action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The action we want to apply. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The action that was actually applied (since due to safety reasons it might not be possible to apply the desired action). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="80" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="80" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1example_1_1Driver_1a2fa7ee03258e65037ed69d9a8363bfe8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Observation</type>
+        <definition>Observation robot_interfaces::example::Driver::get_latest_observation</definition>
+        <argsstring>()</argsstring>
+        <name>get_latest_observation</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1ad13d4f4fdfe78bdde4fc964f07fa45e2">get_latest_observation</reimplements>
+        <briefdescription>
+<para>Return the latest observation immediately. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classrobot__interfaces_1_1example_1_1Observation" kindref="compound">Observation</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="105" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="105" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1example_1_1Driver_1a8465b912da8f11a6db271f11ff4eced1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string robot_interfaces::example::Driver::get_error</definition>
+        <argsstring>()</argsstring>
+        <name>get_error</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1acdf4c5d6993b836a180e6b6fc12b3445">get_error</reimplements>
+        <briefdescription>
+<para>Get error message if there is any error. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns an error message or an empty string if there is no error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="113" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1example_1_1Driver_1a91cbe74896c9ed56ff7eee6380964dfe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::example::Driver::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1a3451fb8b15d2840b559f3ee858de01f8">shutdown</reimplements>
+        <briefdescription>
+<para>Shut down the robot safely. </para>        </briefdescription>
+        <detaileddescription>
+<para>Use this method if your robot needs to perform some action when shutting down, e.g. to move it to a defined rest position. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/example.hpp" line="118" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="118" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Example <ref refid="classrobot__interfaces_1_1Robot" kindref="compound">Robot</ref> <ref refid="classrobot__interfaces_1_1example_1_1Driver" kindref="compound">Driver</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>Send command to the robot and read observation from the robot. The DOF positions simply becomes the ones set by the latest action, capped between a min and a max value. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="13">
+        <label>robot_interfaces::RobotDriver&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotDriver"/>
+      </node>
+      <node id="12">
+        <label>robot_interfaces::example::Driver</label>
+        <link refid="classrobot__interfaces_1_1example_1_1Driver"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="15">
+        <label>robot_interfaces::RobotDriver&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotDriver"/>
+      </node>
+      <node id="14">
+        <label>robot_interfaces::example::Driver</label>
+        <link refid="classrobot__interfaces_1_1example_1_1Driver"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/robot_interfaces/example.hpp" line="65" column="1" bodyfile="include/robot_interfaces/example.hpp" bodystart="64" bodyend="126"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1RobotDriver_1acbba637e7857bef5c7a1e64c9846ead7" prot="public" virt="non-virtual"><scope>robot_interfaces::example::Driver</scope><name>Action</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1aa18b1bc90441395e86794a90dfdac9fa" prot="public" virt="virtual"><scope>robot_interfaces::example::Driver</scope><name>apply_action</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1a83743c88f8873685b3b628e393ffe9fe" prot="public" virt="non-virtual"><scope>robot_interfaces::example::Driver</scope><name>Driver</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1a8465b912da8f11a6db271f11ff4eced1" prot="public" virt="virtual"><scope>robot_interfaces::example::Driver</scope><name>get_error</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1a2fa7ee03258e65037ed69d9a8363bfe8" prot="public" virt="virtual"><scope>robot_interfaces::example::Driver</scope><name>get_latest_observation</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1ab6f6c3f3ffb730d162bec70313f8aab7" prot="public" virt="virtual"><scope>robot_interfaces::example::Driver</scope><name>initialize</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1a3d788870eb3c8043e0f3e278a11b87f6" prot="private" virt="non-virtual"><scope>robot_interfaces::example::Driver</scope><name>max_</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1a6ffdfed257b3b4466615ec9d4cd7c2d1" prot="private" virt="non-virtual"><scope>robot_interfaces::example::Driver</scope><name>min_</name></member>
+      <member refid="classrobot__interfaces_1_1RobotDriver_1abcb094711d0ae09fd8e2fc9a6aa771f2" prot="public" virt="non-virtual"><scope>robot_interfaces::example::Driver</scope><name>Observation</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1a91cbe74896c9ed56ff7eee6380964dfe" prot="public" virt="virtual"><scope>robot_interfaces::example::Driver</scope><name>shutdown</name></member>
+      <member refid="classrobot__interfaces_1_1example_1_1Driver_1a86c0ec3574adbdb190ee17c51068b59a" prot="private" virt="non-virtual"><scope>robot_interfaces::example::Driver</scope><name>state_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

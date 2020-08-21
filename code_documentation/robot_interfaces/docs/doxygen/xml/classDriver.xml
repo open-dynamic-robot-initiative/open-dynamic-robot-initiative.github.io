@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classDriver" kind="class" language="C++" prot="public">
+    <compoundname>Driver</compoundname>
+    <basecompoundref refid="classrobot__interfaces_1_1RobotDriver" prot="public" virt="non-virtual">robot_interfaces::RobotDriver&lt; Action, Observation &gt;</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDriver_1acf6c56cd7c260695439a8625fa07aef9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Driver::state_[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>state_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="93" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classDriver_1a2f75d16f4af650ca9cf1cdd8b653cc18" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int Driver::MAX</definition>
+        <argsstring></argsstring>
+        <name>MAX</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="95" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDriver_1a09b06e92e4ea9df756e3b6e038fa25f6" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int Driver::MIN</definition>
+        <argsstring></argsstring>
+        <name>MIN</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="96" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDriver_1af0658d103e3e810a8e9ef0a53bb2e261" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Driver::Driver</definition>
+        <argsstring>()</argsstring>
+        <name>Driver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="33" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classDriver_1a81c0beb523fad80cd40cfcc6a6e3de2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Driver::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1af3cbef570a455e1f8085d701282264ff">initialize</reimplements>
+        <briefdescription>
+<para>Initialize the robot. </para>        </briefdescription>
+        <detaileddescription>
+<para>Any initialization procedures that need to be done before sending actions to the robot should be done in this method (e.g. homing to find the absolute position). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="38" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="38" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classDriver_1a0f8d51bef151ccc38a0cb7b226048e28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Action</type>
+        <definition>Action Driver::apply_action</definition>
+        <argsstring>(const Action &amp;action_to_apply)</argsstring>
+        <name>apply_action</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1a4294e522fcd12b38d69f7d53fae5d74a">apply_action</reimplements>
+        <param>
+          <type>const Action &amp;</type>
+          <declname>desired_action</declname>
+        </param>
+        <briefdescription>
+<para>Apply action immediately and block until it is executed. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method must apply the desired_action immediately when it is called, and only return once the action has been executed completely. This way we can accommodate both simulators and real robots with this interface.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desired_action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The action we want to apply. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The action that was actually applied (since due to safety reasons it might not be possible to apply the desired action). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="46" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="46" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classDriver_1afb09663997bffc5c694fb5aa8aca243a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Observation</type>
+        <definition>Observation Driver::get_latest_observation</definition>
+        <argsstring>()</argsstring>
+        <name>get_latest_observation</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1ad13d4f4fdfe78bdde4fc964f07fa45e2">get_latest_observation</reimplements>
+        <briefdescription>
+<para>Return the latest observation immediately. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Observation </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="74" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="74" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classDriver_1a6fb739b87c892c4102e838508855c0be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Driver::get_error</definition>
+        <argsstring>()</argsstring>
+        <name>get_error</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1acdf4c5d6993b836a180e6b6fc12b3445">get_error</reimplements>
+        <briefdescription>
+<para>Get error message if there is any error. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns an error message or an empty string if there is no error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="82" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classDriver_1a630fc9183eb419beb09b5828b4547b6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Driver::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <reimplements refid="classrobot__interfaces_1_1RobotDriver_1a3451fb8b15d2840b559f3ee858de01f8">shutdown</reimplements>
+        <briefdescription>
+<para>Shut down the robot safely. </para>        </briefdescription>
+        <detaileddescription>
+<para>Use this method if your robot needs to perform some action when shutting down, e.g. to move it to a defined rest position. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="demos/demo_multiprocess_backend.cpp" line="87" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="87" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>robot_interfaces::RobotDriver&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotDriver"/>
+      </node>
+      <node id="8">
+        <label>Driver</label>
+        <link refid="classDriver"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>robot_interfaces::RobotDriver&lt; Action, Observation &gt;</label>
+        <link refid="classrobot__interfaces_1_1RobotDriver"/>
+      </node>
+      <node id="10">
+        <label>Driver</label>
+        <link refid="classDriver"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="demos/demo_multiprocess_backend.cpp" line="31" column="1" bodyfile="demos/demo_multiprocess_backend.cpp" bodystart="30" bodyend="97"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1RobotDriver_1acbba637e7857bef5c7a1e64c9846ead7" prot="public" virt="non-virtual"><scope>Driver</scope><name>Action</name></member>
+      <member refid="classDriver_1a0f8d51bef151ccc38a0cb7b226048e28" prot="public" virt="virtual"><scope>Driver</scope><name>apply_action</name></member>
+      <member refid="classDriver_1af0658d103e3e810a8e9ef0a53bb2e261" prot="public" virt="non-virtual"><scope>Driver</scope><name>Driver</name></member>
+      <member refid="classDriver_1a6fb739b87c892c4102e838508855c0be" prot="public" virt="virtual"><scope>Driver</scope><name>get_error</name></member>
+      <member refid="classDriver_1afb09663997bffc5c694fb5aa8aca243a" prot="public" virt="virtual"><scope>Driver</scope><name>get_latest_observation</name></member>
+      <member refid="classDriver_1a81c0beb523fad80cd40cfcc6a6e3de2d" prot="public" virt="virtual"><scope>Driver</scope><name>initialize</name></member>
+      <member refid="classDriver_1a2f75d16f4af650ca9cf1cdd8b653cc18" prot="private" virt="non-virtual"><scope>Driver</scope><name>MAX</name></member>
+      <member refid="classDriver_1a09b06e92e4ea9df756e3b6e038fa25f6" prot="private" virt="non-virtual"><scope>Driver</scope><name>MIN</name></member>
+      <member refid="classrobot__interfaces_1_1RobotDriver_1abcb094711d0ae09fd8e2fc9a6aa771f2" prot="public" virt="non-virtual"><scope>Driver</scope><name>Observation</name></member>
+      <member refid="classDriver_1a630fc9183eb419beb09b5828b4547b6d" prot="public" virt="virtual"><scope>Driver</scope><name>shutdown</name></member>
+      <member refid="classDriver_1acf6c56cd7c260695439a8625fa07aef9" prot="private" virt="non-virtual"><scope>Driver</scope><name>state_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

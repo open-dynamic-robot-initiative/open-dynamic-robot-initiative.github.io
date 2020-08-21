@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classblmc__drivers_1_1AnalogSensorInterface" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>blmc_drivers::AnalogSensorInterface</compoundname>
+    <basecompoundref refid="classblmc__drivers_1_1DeviceInterface" prot="public" virt="non-virtual">blmc_drivers::DeviceInterface</basecompoundref>
+    <derivedcompoundref refid="classblmc__drivers_1_1AnalogSensor" prot="public" virt="non-virtual">blmc_drivers::AnalogSensor</derivedcompoundref>
+    <includes refid="analog__sensor_8hpp" local="no">analog_sensor.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classblmc__drivers_1_1AnalogSensorInterface_1a4e4a853aa044b7d3afbaa3fe20477602" prot="public" static="no">
+        <type>real_time_tools::ThreadsafeTimeseries&lt; double &gt;</type>
+        <definition>typedef real_time_tools::ThreadsafeTimeseries&lt;double&gt; blmc_drivers::AnalogSensorInterface::ScalarTimeseries</definition>
+        <argsstring></argsstring>
+        <name>ScalarTimeseries</name>
+        <briefdescription>
+<para>This is just a short cut for the time series types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/analog_sensor.hpp" line="33" column="1" bodyfile="include/blmc_drivers/devices/analog_sensor.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classblmc__drivers_1_1AnalogSensorInterface_1afd694f79c9fec5a35984d468f59f315c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; const <ref refid="classblmc__drivers_1_1AnalogSensorInterface_1a4e4a853aa044b7d3afbaa3fe20477602" kindref="member">ScalarTimeseries</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;const ScalarTimeseries&gt; blmc_drivers::AnalogSensorInterface::get_measurement</definition>
+        <argsstring>() const =0</argsstring>
+        <name>get_measurement</name>
+        <reimplementedby refid="classblmc__drivers_1_1AnalogSensor_1af90fc9f142c7855b50f8d295b50d18e6">get_measurement</reimplementedby>
+        <briefdescription>
+<para>Get the measurement object which is the list of time stamped data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::shared_ptr&lt;const ScalarTimeseries&gt; which is a pointer to the a list of time stamped data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/analog_sensor.hpp" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classblmc__drivers_1_1AnalogSensorInterface_1a809cd9b86ae1cb9119a2ad025163afa9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual blmc_drivers::AnalogSensorInterface::~AnalogSensorInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~AnalogSensorInterface</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classblmc__drivers_1_1AnalogSensorInterface" kindref="compound">AnalogSensorInterface</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/blmc_drivers/devices/analog_sensor.hpp" line="48" column="1" bodyfile="include/blmc_drivers/devices/analog_sensor.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classblmc__drivers_1_1AnalogSensorInterface" kindref="compound">AnalogSensorInterface</ref> class is a simple abstract interface for using blmc analog measurements. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="7">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="6">
+        <label>blmc_drivers::AnalogSensorInterface</label>
+        <link refid="classblmc__drivers_1_1AnalogSensorInterface"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>blmc_drivers::AnalogSensor</label>
+        <link refid="classblmc__drivers_1_1AnalogSensor"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>blmc_drivers::DeviceInterface</label>
+        <link refid="classblmc__drivers_1_1DeviceInterface"/>
+      </node>
+      <node id="9">
+        <label>blmc_drivers::AnalogSensorInterface</label>
+        <link refid="classblmc__drivers_1_1AnalogSensorInterface"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/blmc_drivers/devices/analog_sensor.hpp" line="28" column="1" bodyfile="include/blmc_drivers/devices/analog_sensor.hpp" bodystart="27" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classblmc__drivers_1_1AnalogSensorInterface_1afd694f79c9fec5a35984d468f59f315c" prot="public" virt="pure-virtual"><scope>blmc_drivers::AnalogSensorInterface</scope><name>get_measurement</name></member>
+      <member refid="classblmc__drivers_1_1AnalogSensorInterface_1a4e4a853aa044b7d3afbaa3fe20477602" prot="public" virt="non-virtual"><scope>blmc_drivers::AnalogSensorInterface</scope><name>ScalarTimeseries</name></member>
+      <member refid="classblmc__drivers_1_1AnalogSensorInterface_1a809cd9b86ae1cb9119a2ad025163afa9" prot="public" virt="virtual"><scope>blmc_drivers::AnalogSensorInterface</scope><name>~AnalogSensorInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacetrifinger__simulation" kind="namespace" language="C++">
+    <compoundname>trifinger_simulation</compoundname>
+    <innerclass refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver" prot="public">trifinger_simulation::BasePyBulletFingerDriver</innerclass>
+    <innerclass refid="classtrifinger__simulation_1_1PyBulletSingleFingerDriver" prot="public">trifinger_simulation::PyBulletSingleFingerDriver</innerclass>
+    <innerclass refid="classtrifinger__simulation_1_1PyBulletTriFingerDriver" prot="public">trifinger_simulation::PyBulletTriFingerDriver</innerclass>
+    <innernamespace refid="namespacetrifinger__simulation_1_1action">trifinger_simulation::action</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1camera">trifinger_simulation::camera</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1collision__objects">trifinger_simulation::collision_objects</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1finger__types__data">trifinger_simulation::finger_types_data</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1gym__wrapper">trifinger_simulation::gym_wrapper</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1observation">trifinger_simulation::observation</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1pinocchio__utils">trifinger_simulation::pinocchio_utils</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1real__finger">trifinger_simulation::real_finger</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1sample">trifinger_simulation::sample</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1sim__finger">trifinger_simulation::sim_finger</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1tasks">trifinger_simulation::tasks</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1trifinger__platform">trifinger_simulation::trifinger_platform</innernamespace>
+    <innernamespace refid="namespacetrifinger__simulation_1_1visual__objects">trifinger_simulation::visual_objects</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="pybullet__driver_8hpp_1a41d03263393c283e44ad605b4acc0d8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Types</type>
+          </param>
+          <param>
+            <type>typename Driver</type>
+          </param>
+        </templateparamlist>
+        <type>Types::BackendPtr</type>
+        <definition>Types::BackendPtr trifinger_simulation::create_finger_backend</definition>
+        <argsstring>(typename Types::BaseDataPtr robot_data, const bool real_time_mode, const bool visualize, const double first_action_timeout=std::numeric_limits&lt; double &gt;::infinity(), const uint32_t max_number_of_actions=0)</argsstring>
+        <name>create_finger_backend</name>
+        <param>
+          <type>typename Types::BaseDataPtr</type>
+          <declname>robot_data</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>real_time_mode</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>visualize</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>first_action_timeout</declname>
+          <defval>std::numeric_limits&lt; double &gt;::infinity()</defval>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>max_number_of_actions</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Create a Finger/TriFinger-backend using pyBullet. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Types</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The struct providing the types for action, observation, etc. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Driver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pyBullet-Driver class for either single Finger or TriFinger.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>robot_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RobotData instance for the backend. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>real_time_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, step the simulation in real time, otherwise as fast as possible. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>visualize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, pyBullet&apos;s GUI is started for visualization. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>first_action_timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>See RobotBackend </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_number_of_actions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>See RobotBackend</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Backend using a driver of the specified type. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/trifinger_simulation/pybullet_driver.hpp" line="140" column="1" bodyfile="include/trifinger_simulation/pybullet_driver.hpp" bodystart="140" bodyend="169"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/trifinger_simulation/pybullet_driver.hpp" line="17" column="1"/>
+  </compounddef>
+</doxygen>

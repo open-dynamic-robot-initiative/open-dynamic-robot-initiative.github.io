@@ -1,0 +1,111 @@
+\hypertarget{common__header_8hpp}{}\section{include/blmc\+\_\+robots/common\+\_\+header.hpp File Reference}
+\label{common__header_8hpp}\index{include/blmc\+\_\+robots/common\+\_\+header.\+hpp@{include/blmc\+\_\+robots/common\+\_\+header.\+hpp}}
+
+
+The hardware wrapper of the quadruped.  
+
+
+{\ttfamily \#include \char`\"{}yaml\+\_\+cpp\+\_\+catkin/yaml\+\_\+cpp\+\_\+fwd.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Eigen$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/iostream.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/spinner.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/thread.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}real\+\_\+time\+\_\+tools/timer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$blmc\+\_\+drivers/devices/analog\+\_\+sensor.\+hpp$>$}\newline
+{\ttfamily \#include $<$blmc\+\_\+drivers/devices/motor.\+hpp$>$}\newline
+Include dependency graph for common\+\_\+header.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__header_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__header_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}\label{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}} 
+typedef Eigen\+::\+Matrix$<$ double, 1, 1 $>$ \hyperlink{common__header_8hpp_a932c1319d78144ebcaa8938ae070b784}{blmc\+\_\+robots\+::\+Vector1d}
+\begin{DoxyCompactList}\small\item\em Vector2d shortcut for the eigen vector of size 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}\label{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}} 
+typedef Eigen\+::\+Matrix$<$ double, 2, 1 $>$ \hyperlink{common__header_8hpp_acb6916bc8c9fe9d98c484fd4cc201447}{blmc\+\_\+robots\+::\+Vector2d}
+\begin{DoxyCompactList}\small\item\em Vector2d shortcut for the eigen vector of size 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_ac3c26fc5a016ed8f49235f2b3cd38aa2}\label{common__header_8hpp_ac3c26fc5a016ed8f49235f2b3cd38aa2}} 
+typedef Eigen\+::\+Matrix$<$ double, 6, 1 $>$ \hyperlink{common__header_8hpp_ac3c26fc5a016ed8f49235f2b3cd38aa2}{blmc\+\_\+robots\+::\+Vector6d}
+\begin{DoxyCompactList}\small\item\em Vector2d shortcut for the eigen vector of size 6. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}\label{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}} 
+typedef Eigen\+::\+Matrix$<$ double, 8, 1 $>$ \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{blmc\+\_\+robots\+::\+Vector8d}
+\begin{DoxyCompactList}\small\item\em Vector8d shortcut for the eigen vector of size 8. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_a80313eb420184518596e745eecf4b494}\label{common__header_8hpp_a80313eb420184518596e745eecf4b494}} 
+typedef Eigen\+::\+Matrix$<$ double, 12, 1 $>$ \hyperlink{common__header_8hpp_a80313eb420184518596e745eecf4b494}{blmc\+\_\+robots\+::\+Vector12d}
+\begin{DoxyCompactList}\small\item\em Vector8d shortcut for the eigen vector of size 12. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_a793c8789a7598e8aaf766939da7262af}\label{common__header_8hpp_a793c8789a7598e8aaf766939da7262af}} 
+typedef std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus $>$ \hyperlink{common__header_8hpp_a793c8789a7598e8aaf766939da7262af}{blmc\+\_\+robots\+::\+Can\+Bus\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Can\+Bus\+\_\+ptr shortcut for the shared pointer Can\+Bus type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_aab1c6ddb1273247a1b45d5e8b417c216}\label{common__header_8hpp_aab1c6ddb1273247a1b45d5e8b417c216}} 
+typedef std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board $>$ \hyperlink{common__header_8hpp_aab1c6ddb1273247a1b45d5e8b417c216}{blmc\+\_\+robots\+::\+Can\+Bus\+Motor\+Board\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Can\+Bus\+Motor\+Board\+\_\+\+Ptr shortcut for the shared pointer Can\+Bus type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_ae1a0f9992bc8fbbc1943d887f517c180}\label{common__header_8hpp_ae1a0f9992bc8fbbc1943d887f517c180}} 
+typedef std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Motor\+Interface $>$ \hyperlink{common__header_8hpp_ae1a0f9992bc8fbbc1943d887f517c180}{blmc\+\_\+robots\+::\+Motor\+Interface\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Motor\+Interface\+\_\+ptr shortcut for the shared pointer Motor\+Interface type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_aeba0df1e898326cde4922419d871c5c6}\label{common__header_8hpp_aeba0df1e898326cde4922419d871c5c6}} 
+typedef std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Motor $>$ \hyperlink{common__header_8hpp_aeba0df1e898326cde4922419d871c5c6}{blmc\+\_\+robots\+::\+Motor\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Motor\+\_\+ptr shortcut for the shared pointer Motor type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}\label{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}} 
+typedef std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Safe\+Motor $>$ \hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{blmc\+\_\+robots\+::\+Safe\+Motor\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Safe\+Motor\+\_\+ptr shortcut for the shared pointer Safe\+Motor type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}\label{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}} 
+typedef std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Analog\+Sensor $>$ \hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{blmc\+\_\+robots\+::\+Slider\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Slider\+\_\+ptr shortcut for the linear potentiometer analog sensor. \end{DoxyCompactList}\item 
+typedef std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Analog\+Sensor $>$ \hyperlink{common__header_8hpp_ac78fe5c68e56a3b884117109959e4d58}{blmc\+\_\+robots\+::\+Contact\+Sensor\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Contact\+Sensor\+\_\+ptr shortcut for the contact sensor. \end{DoxyCompactList}\item 
+typedef std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Analog\+Sensor $>$ \hyperlink{common__header_8hpp_a921d3f5a8878524375bf7e740f2fb788}{blmc\+\_\+robots\+::\+Height\+Sensor\+\_\+ptr}
+\begin{DoxyCompactList}\small\item\em Height\+Sensor\+\_\+ptr shortcut for the height sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{common__header_8hpp_a1975c6bb47bc85dfc8edfe349c30dae1}\label{common__header_8hpp_a1975c6bb47bc85dfc8edfe349c30dae1}} 
+typedef blmc\+\_\+drivers\+::\+Motor\+Interface\+::\+Measurement\+Index \hyperlink{common__header_8hpp_a1975c6bb47bc85dfc8edfe349c30dae1}{blmc\+\_\+robots\+::mi}
+\begin{DoxyCompactList}\small\item\em mi, this typedef is used to get the measurements from the blmc api \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The hardware wrapper of the quadruped. 
+
+\begin{DoxyAuthor}{Author}
+Maximilien Naveau 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018
+\end{DoxyDate}
+This file declares the Test\+Bench8\+Motors class which defines the test bench with 8 motors. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{common__header_8hpp_file_ac78fe5c68e56a3b884117109959e4d58}\label{common__header_8hpp_file_ac78fe5c68e56a3b884117109959e4d58}} 
+\index{common\+\_\+header.\+hpp@{common\+\_\+header.\+hpp}!Contact\+Sensor\+\_\+ptr@{Contact\+Sensor\+\_\+ptr}}
+\index{Contact\+Sensor\+\_\+ptr@{Contact\+Sensor\+\_\+ptr}!common\+\_\+header.\+hpp@{common\+\_\+header.\+hpp}}
+\subsubsection{\texorpdfstring{Contact\+Sensor\+\_\+ptr}{ContactSensor\_ptr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$blmc\+\_\+drivers\+::\+Analog\+Sensor$>$ \hyperlink{common__header_8hpp_ac78fe5c68e56a3b884117109959e4d58}{blmc\+\_\+robots\+::\+Contact\+Sensor\+\_\+ptr}}
+
+
+
+Contact\+Sensor\+\_\+ptr shortcut for the contact sensor. 
+
+It is also an analog sensor \mbox{\Hypertarget{common__header_8hpp_file_a921d3f5a8878524375bf7e740f2fb788}\label{common__header_8hpp_file_a921d3f5a8878524375bf7e740f2fb788}} 
+\index{common\+\_\+header.\+hpp@{common\+\_\+header.\+hpp}!Height\+Sensor\+\_\+ptr@{Height\+Sensor\+\_\+ptr}}
+\index{Height\+Sensor\+\_\+ptr@{Height\+Sensor\+\_\+ptr}!common\+\_\+header.\+hpp@{common\+\_\+header.\+hpp}}
+\subsubsection{\texorpdfstring{Height\+Sensor\+\_\+ptr}{HeightSensor\_ptr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$blmc\+\_\+drivers\+::\+Analog\+Sensor$>$ \hyperlink{common__header_8hpp_a921d3f5a8878524375bf7e740f2fb788}{blmc\+\_\+robots\+::\+Height\+Sensor\+\_\+ptr}}
+
+
+
+Height\+Sensor\+\_\+ptr shortcut for the height sensor. 
+
+It is also an analog sensor 

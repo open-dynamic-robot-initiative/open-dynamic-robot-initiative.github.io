@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="pybullet__driver_8hpp" kind="file" language="C++">
+    <compoundname>pybullet_driver.hpp</compoundname>
+    <includes local="no">chrono</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">pybind11/eigen.h</includes>
+    <includes local="no">pybind11/embed.h</includes>
+    <includes local="no">robot_interfaces/finger_types.hpp</includes>
+    <includedby refid="drivers_8cpp" local="no">srcpy/drivers.cpp</includedby>
+    <incdepgraph>
+      <node id="31">
+        <label>pybind11/eigen.h</label>
+      </node>
+      <node id="28">
+        <label>include/trifinger_simulation/pybullet_driver.hpp</label>
+        <link refid="pybullet__driver_8hpp"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>pybind11/embed.h</label>
+      </node>
+      <node id="29">
+        <label>chrono</label>
+      </node>
+      <node id="30">
+        <label>thread</label>
+      </node>
+      <node id="33">
+        <label>robot_interfaces/finger_types.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver" prot="public">trifinger_simulation::BasePyBulletFingerDriver</innerclass>
+    <innerclass refid="classtrifinger__simulation_1_1PyBulletSingleFingerDriver" prot="public">trifinger_simulation::PyBulletSingleFingerDriver</innerclass>
+    <innerclass refid="classtrifinger__simulation_1_1PyBulletTriFingerDriver" prot="public">trifinger_simulation::PyBulletTriFingerDriver</innerclass>
+    <innernamespace refid="namespacetrifinger__simulation">trifinger_simulation</innernamespace>
+    <briefdescription>
+<para>C++ wrappers to use pyBullet simulation of fingers as robot_interfaces::RobotDriver. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pybind11/eigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pybind11/embed.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;robot_interfaces/finger_types.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetrifinger__simulation" kindref="compound">trifinger_simulation</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">py<sp/>=<sp/>pybind11;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Action,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Observation&gt;</highlight></codeline>
+<codeline lineno="34" refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver" kindref="compound">BasePyBulletFingerDriver</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>robot_interfaces::RobotDriver&lt;Action,<sp/>Observation&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1aa7f77e383b6f5cd7ea49c31d2dd10092" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1aa7f77e383b6f5cd7ea49c31d2dd10092" kindref="member">real_time_mode_</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a337afe3f5bf8d1d7a16b4634004f92d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a337afe3f5bf8d1d7a16b4634004f92d4" kindref="member">visualize_</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a9f997da6855f64ca5c483093cfb66b06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>py::object<sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a9f997da6855f64ca5c483093cfb66b06" kindref="member">sim_finger_</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Observation::JointVector<sp/>JointVector;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver" kindref="compound">BasePyBulletFingerDriver</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>real_time_mode,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visualize)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>real_time_mode_(real_time_mode),<sp/>visualize_(visualize)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>Python<sp/>interpreter<sp/>if<sp/>not<sp/>already<sp/>done</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!Py_IsInitialized())</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::initialize_interpreter();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1observation_1_1Observation" kindref="compound">Observation</ref><sp/>get_latest_observation()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="66"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1observation_1_1Observation" kindref="compound">Observation</ref><sp/>observation;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::gil_scoped_acquire<sp/>acquire;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>latest<sp/>observation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::object<sp/>py_obs<sp/>=<sp/>sim_finger_.attr(</highlight><highlight class="stringliteral">&quot;_get_latest_observation&quot;</highlight><highlight class="normal">)();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>this<sp/>would<sp/>be<sp/>even<sp/>simpler<sp/>when<sp/>SimFinger<sp/>would<sp/>use<sp/>the<sp/>correct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>observation<sp/>type<sp/>as<sp/>there<sp/>are<sp/>already<sp/>bindings<sp/>for<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observation.position<sp/>=<sp/>py_obs.attr(</highlight><highlight class="stringliteral">&quot;position&quot;</highlight><highlight class="normal">).cast&lt;JointVector&gt;();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observation.velocity<sp/>=<sp/>py_obs.attr(</highlight><highlight class="stringliteral">&quot;velocity&quot;</highlight><highlight class="normal">).cast&lt;JointVector&gt;();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observation.torque<sp/>=<sp/>py_obs.attr(</highlight><highlight class="stringliteral">&quot;torque&quot;</highlight><highlight class="normal">).cast&lt;JointVector&gt;();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observation.tip_force<sp/>=</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py_obs.attr(</highlight><highlight class="stringliteral">&quot;tip_force&quot;</highlight><highlight class="normal">).cast&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Observation::FingerVector&gt;();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>observation;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1action_1_1Action" kindref="compound">Action</ref><sp/>apply_action(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1action_1_1Action" kindref="compound">Action</ref><sp/>&amp;desired_action)</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="86"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>start_time<sp/>=<sp/>std::chrono::system_clock::now();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1action_1_1Action" kindref="compound">Action</ref><sp/>applied_action;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wrap<sp/>python<sp/>calls<sp/>in<sp/>a<sp/>block<sp/>so<sp/>GIL<sp/>is<sp/>only<sp/>kept<sp/>as<sp/>long<sp/>as<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>is<sp/>really<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::gil_scoped_acquire<sp/>acquire;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::object<sp/>py_action<sp/>=<sp/>py::cast(desired_action);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::object<sp/>py_applied_action<sp/>=</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sim_finger_.attr(</highlight><highlight class="stringliteral">&quot;_set_desired_action&quot;</highlight><highlight class="normal">)(py_action);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sim_finger_.attr(</highlight><highlight class="stringliteral">&quot;_step_simulation&quot;</highlight><highlight class="normal">)();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>applied_action<sp/>=<sp/>py_applied_action.cast&lt;<ref refid="classtrifinger__simulation_1_1action_1_1Action" kindref="compound">Action</ref>&gt;();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(real_time_mode_)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std::chrono_literals;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::this_thread::sleep_until(start_time<sp/>+<sp/>1ms);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>applied_action;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>get_error()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="113"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>no<sp/>errors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>shutdown()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="118"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::gil_scoped_acquire<sp/>acquire;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sim_finger_.attr(</highlight><highlight class="stringliteral">&quot;_disconnect_from_pybullet&quot;</highlight><highlight class="normal">)();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Types,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Driver&gt;</highlight></codeline>
+<codeline lineno="140" refid="pybullet__driver_8hpp_1a41d03263393c283e44ad605b4acc0d8b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Types::BackendPtr<sp/><ref refid="pybullet__driver_8hpp_1a41d03263393c283e44ad605b4acc0d8b" kindref="member">create_finger_backend</ref>(</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Types::BaseDataPtr<sp/>robot_data,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>real_time_mode,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visualize,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>first_action_timeout<sp/>=<sp/>std::numeric_limits&lt;double&gt;::infinity(),</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>max_number_of_actions<sp/>=<sp/>0)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>robot<sp/>=<sp/>std::make_shared&lt;Driver&gt;(real_time_mode,<sp/>visualize);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>backend<sp/>=</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_shared&lt;typename<sp/>Types::Backend&gt;(robot,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robot_data,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_time_mode,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>first_action_timeout,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_number_of_actions);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(real_time_mode)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>real-time<sp/>mode<sp/>use<sp/>action<sp/>repetition<sp/>like<sp/>on<sp/>the<sp/>real<sp/>robot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>backend-&gt;set_max_action_repetitions(</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::numeric_limits&lt;uint32_t&gt;::max());</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>non-real-time<sp/>mode,<sp/>disable<sp/>repetitions<sp/>as<sp/>the<sp/>simulation<sp/>can</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>simply<sp/>wait</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>backend-&gt;set_max_action_repetitions(0);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>backend;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="classtrifinger__simulation_1_1PyBulletSingleFingerDriver" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1PyBulletSingleFingerDriver" kindref="compound">PyBulletSingleFingerDriver</ref></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver" kindref="compound">BasePyBulletFingerDriver</ref>&lt;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robot_interfaces::MonoFingerTypes::Action,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robot_interfaces::MonoFingerTypes::Observation&gt;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>inherit<sp/>the<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>BasePyBulletFingerDriver::BasePyBulletFingerDriver;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="184"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::gil_scoped_acquire<sp/>acquire;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>need<sp/>to<sp/>import<sp/>the<sp/>type<sp/>bindins<sp/>for<sp/>casts<sp/>between<sp/>C++<sp/>and<sp/>Python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>types<sp/>to<sp/>work</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::module::import(</highlight><highlight class="stringliteral">&quot;robot_interfaces.py_finger_types&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::module<sp/>sim_finger<sp/>=</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::module::import(</highlight><highlight class="stringliteral">&quot;trifinger_simulation.sim_finger&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a9f997da6855f64ca5c483093cfb66b06" kindref="member">sim_finger_</ref><sp/>=</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sim_finger.attr(</highlight><highlight class="stringliteral">&quot;SimFinger&quot;</highlight><highlight class="normal">)(</highlight><highlight class="stringliteral">&quot;fingerone&quot;</highlight><highlight class="normal">,<sp/>0.001,<sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a337afe3f5bf8d1d7a16b4634004f92d4" kindref="member">visualize_</ref>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JointVector<sp/>initial_position;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initial_position<sp/>&lt;&lt;<sp/>0,<sp/>-0.7,<sp/>-1.5;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a9f997da6855f64ca5c483093cfb66b06" kindref="member">sim_finger_</ref>.attr(</highlight><highlight class="stringliteral">&quot;reset_finger_positions_and_velocities&quot;</highlight><highlight class="normal">)(initial_position);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="classtrifinger__simulation_1_1PyBulletTriFingerDriver" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1PyBulletTriFingerDriver" kindref="compound">PyBulletTriFingerDriver</ref></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver" kindref="compound">BasePyBulletFingerDriver</ref>&lt;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robot_interfaces::TriFingerTypes::Action,</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>robot_interfaces::TriFingerTypes::Observation&gt;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>inherit<sp/>the<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>BasePyBulletFingerDriver::BasePyBulletFingerDriver;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialize()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="215"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::gil_scoped_acquire<sp/>acquire;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>need<sp/>to<sp/>import<sp/>the<sp/>type<sp/>bindins<sp/>for<sp/>casts<sp/>between<sp/>C++<sp/>and<sp/>Python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>types<sp/>to<sp/>work</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::module::import(</highlight><highlight class="stringliteral">&quot;robot_interfaces.py_trifinger_types&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::module<sp/>sim_finger<sp/>=</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py::module::import(</highlight><highlight class="stringliteral">&quot;trifinger_simulation.sim_finger&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a9f997da6855f64ca5c483093cfb66b06" kindref="member">sim_finger_</ref><sp/>=</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sim_finger.attr(</highlight><highlight class="stringliteral">&quot;SimFinger&quot;</highlight><highlight class="normal">)(</highlight><highlight class="stringliteral">&quot;trifingerone&quot;</highlight><highlight class="normal">,<sp/>0.001,<sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a337afe3f5bf8d1d7a16b4634004f92d4" kindref="member">visualize_</ref>);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JointVector<sp/>initial_position;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initial_position<sp/>&lt;&lt;<sp/>0,<sp/>-0.7,<sp/>-1.5,<sp/>0,<sp/>-0.7,<sp/>-1.5,<sp/>0,<sp/>-0.7,<sp/>-1.5;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtrifinger__simulation_1_1BasePyBulletFingerDriver_1a9f997da6855f64ca5c483093cfb66b06" kindref="member">sim_finger_</ref>.attr(</highlight><highlight class="stringliteral">&quot;reset_finger_positions_and_velocities&quot;</highlight><highlight class="normal">)(initial_position);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>trifinger_simulation</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/trifinger_simulation/pybullet_driver.hpp"/>
+  </compounddef>
+</doxygen>

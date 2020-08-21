@@ -1,0 +1,248 @@
+\hypertarget{classblmc__robots_1_1TestBench8Motors}{}\section{blmc\+\_\+robots\+:\+:Test\+Bench8\+Motors Class Reference}
+\label{classblmc__robots_1_1TestBench8Motors}\index{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}}
+
+
+The \hyperlink{classblmc__robots_1_1TestBench8Motors}{Test\+Bench8\+Motors} class implements the control of the test bench containing 8 motors and 8 sliders using the blmc drivers.  
+
+
+
+
+{\ttfamily \#include $<$test\+\_\+bench\+\_\+8\+\_\+motors.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a049fd1c22b23b81372f2a57a03bf1303}\label{classblmc__robots_1_1TestBench8Motors_a049fd1c22b23b81372f2a57a03bf1303}} 
+typedef blmc\+\_\+drivers\+::\+Motor\+Interface\+::\+Measurement\+Index \hyperlink{classblmc__robots_1_1TestBench8Motors_a049fd1c22b23b81372f2a57a03bf1303}{mi}
+\begin{DoxyCompactList}\small\item\em mi this typdef is used to get the measurements form the blmc api \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a99006d989ac690956a2e1ab9b710de0f}\label{classblmc__robots_1_1TestBench8Motors_a99006d989ac690956a2e1ab9b710de0f}} 
+\hyperlink{classblmc__robots_1_1TestBench8Motors_a99006d989ac690956a2e1ab9b710de0f}{Test\+Bench8\+Motors} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classblmc__robots_1_1TestBench8Motors}{Test\+Bench8\+Motors} is the constructor of the class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_aa8981496d1193752de3017a3eebb87dc}\label{classblmc__robots_1_1TestBench8Motors_aa8981496d1193752de3017a3eebb87dc}} 
+void \hyperlink{classblmc__robots_1_1TestBench8Motors_aa8981496d1193752de3017a3eebb87dc}{initialize} ()
+\begin{DoxyCompactList}\small\item\em initialize the robot by setting aligning the motors and calibrate the sensors to 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a5194da9e85b4391e9ff6c5bf5a07faf2}\label{classblmc__robots_1_1TestBench8Motors_a5194da9e85b4391e9ff6c5bf5a07faf2}} 
+void \hyperlink{classblmc__robots_1_1TestBench8Motors_a5194da9e85b4391e9ff6c5bf5a07faf2}{send\+\_\+target\+\_\+current} (const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} target\+\_\+currents)
+\begin{DoxyCompactList}\small\item\em send\+\_\+target\+\_\+torques sends the target currents to the motors \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a2792f7d4866c396ddfb88730a1644988}\label{classblmc__robots_1_1TestBench8Motors_a2792f7d4866c396ddfb88730a1644988}} 
+void \hyperlink{classblmc__robots_1_1TestBench8Motors_a2792f7d4866c396ddfb88730a1644988}{acquire\+\_\+sensors} ()
+\begin{DoxyCompactList}\small\item\em acquire\+\_\+sensors acquire all available sensors, W\+A\+R\+N\+I\+NG !!!! this method has to be called prior to any getter to have up to date data. \end{DoxyCompactList}\item 
+const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} \hyperlink{classblmc__robots_1_1TestBench8Motors_a9372bd2722944fa510aa56323f8955b8}{get\+\_\+motor\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+positions \end{DoxyCompactList}\item 
+const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} \hyperlink{classblmc__robots_1_1TestBench8Motors_aaf4aa80251af98000ffad95eddf0b449}{get\+\_\+motor\+\_\+velocities} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+velocities \end{DoxyCompactList}\item 
+const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} \hyperlink{classblmc__robots_1_1TestBench8Motors_a9bac22cb6522afd6412e8fbb56f11fbf}{get\+\_\+motor\+\_\+currents} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+currents \end{DoxyCompactList}\item 
+const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} \hyperlink{classblmc__robots_1_1TestBench8Motors_ab1d81b573c721e5c8ad400ed4fb4d6ef}{get\+\_\+motor\+\_\+encoder\+\_\+indexes} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+encoder\+\_\+indexes \end{DoxyCompactList}\item 
+const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} \hyperlink{classblmc__robots_1_1TestBench8Motors_a11bdbb6f0e4dd0824075ba309f69ad3a}{get\+\_\+slider\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+slider\+\_\+positions \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1TestBench8Motors_abd3b8a40787ad9e6c019b849da9ca07c}{get\+\_\+max\+\_\+current} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+max\+\_\+current \end{DoxyCompactList}\item 
+double \hyperlink{classblmc__robots_1_1TestBench8Motors_a17ac05712b3cb4e63dfd8cdb80b16eea}{get\+\_\+max\+\_\+range} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+max\+\_\+current \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ac32c6d0f719d3c625c40a63f1eefc449}\label{classblmc__robots_1_1TestBench8Motors_ac32c6d0f719d3c625c40a63f1eefc449}} 
+\hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} {\bfseries motor\+\_\+positions\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a594bd5780d360e70e17e37756d0f537e}\label{classblmc__robots_1_1TestBench8Motors_a594bd5780d360e70e17e37756d0f537e}} 
+\hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} {\bfseries motor\+\_\+velocities\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ac361dfc4c7af6920b13e224a141829e4}\label{classblmc__robots_1_1TestBench8Motors_ac361dfc4c7af6920b13e224a141829e4}} 
+\hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} {\bfseries motor\+\_\+currents\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a8d4a175fb4f3f3c909938fd2d2da68f3}\label{classblmc__robots_1_1TestBench8Motors_a8d4a175fb4f3f3c909938fd2d2da68f3}} 
+\hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} {\bfseries motor\+\_\+encoder\+\_\+indexes\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a72f68c2eca0d4753145aba745d1d099e}\label{classblmc__robots_1_1TestBench8Motors_a72f68c2eca0d4753145aba745d1d099e}} 
+\hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} {\bfseries slider\+\_\+positions\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ae84b85450353d1ce04fb35e24359276a}\label{classblmc__robots_1_1TestBench8Motors_ae84b85450353d1ce04fb35e24359276a}} 
+\hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} {\bfseries target\+\_\+currents}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a0c50382c9a1a27f421bf67d867261478}\label{classblmc__robots_1_1TestBench8Motors_a0c50382c9a1a27f421bf67d867261478}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus $>$ {\bfseries can\+\_\+bus0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a9b4a13816d05e28f40704dbb4d5b3493}\label{classblmc__robots_1_1TestBench8Motors_a9b4a13816d05e28f40704dbb4d5b3493}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus $>$ {\bfseries can\+\_\+bus1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a03c639acbe8e378ec5f0abcf75d57ffd}\label{classblmc__robots_1_1TestBench8Motors_a03c639acbe8e378ec5f0abcf75d57ffd}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus $>$ {\bfseries can\+\_\+bus2\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a7ef6e4ecd491d5b038155819adb017e0}\label{classblmc__robots_1_1TestBench8Motors_a7ef6e4ecd491d5b038155819adb017e0}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus $>$ {\bfseries can\+\_\+bus3\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a0b1cb9e8d84ef3d0b2df34adb40e9c15}\label{classblmc__robots_1_1TestBench8Motors_a0b1cb9e8d84ef3d0b2df34adb40e9c15}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board $>$ {\bfseries board0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a41d3e420d16362137e340ce8b13b4170}\label{classblmc__robots_1_1TestBench8Motors_a41d3e420d16362137e340ce8b13b4170}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board $>$ {\bfseries board1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a1744f0e28bc2d3a1dd6333392b1ca1cf}\label{classblmc__robots_1_1TestBench8Motors_a1744f0e28bc2d3a1dd6333392b1ca1cf}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board $>$ {\bfseries board2\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ac47ed8b0deb7a22bacdbdc922e541163}\label{classblmc__robots_1_1TestBench8Motors_ac47ed8b0deb7a22bacdbdc922e541163}} 
+std\+::shared\+\_\+ptr$<$ blmc\+\_\+drivers\+::\+Can\+Bus\+Motor\+Board $>$ {\bfseries board3\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a1ecda19afe926a4ed3aed04acfc23986}\label{classblmc__robots_1_1TestBench8Motors_a1ecda19afe926a4ed3aed04acfc23986}} 
+double {\bfseries max\+\_\+current\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a429d3d865f5d74f0f94e3dbed5dd13a1}\label{classblmc__robots_1_1TestBench8Motors_a429d3d865f5d74f0f94e3dbed5dd13a1}} 
+double {\bfseries max\+\_\+range\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_af79ae2204b227f32dd5c5c5a560711df}\label{classblmc__robots_1_1TestBench8Motors_af79ae2204b227f32dd5c5c5a560711df}} 
+\hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr} {\bfseries board0\+\_\+motor0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ac2bb52e78c17fcea75e3a91c244dc09e}\label{classblmc__robots_1_1TestBench8Motors_ac2bb52e78c17fcea75e3a91c244dc09e}} 
+\hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr} {\bfseries board0\+\_\+motor1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a86f530c047571b4ade3f7bcbbb8fe26c}\label{classblmc__robots_1_1TestBench8Motors_a86f530c047571b4ade3f7bcbbb8fe26c}} 
+\hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr} {\bfseries board0\+\_\+slider0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a08081f0220df84ec7468e073b611146c}\label{classblmc__robots_1_1TestBench8Motors_a08081f0220df84ec7468e073b611146c}} 
+\hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr} {\bfseries board0\+\_\+slider1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a30caad29725a11b77840e5e98fbc385c}\label{classblmc__robots_1_1TestBench8Motors_a30caad29725a11b77840e5e98fbc385c}} 
+\hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr} {\bfseries board1\+\_\+motor0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a479fbb39ee03915376d6019e7f1da441}\label{classblmc__robots_1_1TestBench8Motors_a479fbb39ee03915376d6019e7f1da441}} 
+\hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr} {\bfseries board1\+\_\+motor1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ac78fdbd416fc3a80ffd496cd7ab41557}\label{classblmc__robots_1_1TestBench8Motors_ac78fdbd416fc3a80ffd496cd7ab41557}} 
+\hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr} {\bfseries board1\+\_\+slider0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a52ee837f59773887558537c021e68917}\label{classblmc__robots_1_1TestBench8Motors_a52ee837f59773887558537c021e68917}} 
+\hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr} {\bfseries board1\+\_\+slider1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_aa3c38bbacb7b105665ff94c9d2f49a26}\label{classblmc__robots_1_1TestBench8Motors_aa3c38bbacb7b105665ff94c9d2f49a26}} 
+\hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr} {\bfseries board2\+\_\+motor0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ada8b6a7336ac665c33100040340cc441}\label{classblmc__robots_1_1TestBench8Motors_ada8b6a7336ac665c33100040340cc441}} 
+\hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr} {\bfseries board2\+\_\+motor1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a25db374e33ea4d2adc87b6edebca8241}\label{classblmc__robots_1_1TestBench8Motors_a25db374e33ea4d2adc87b6edebca8241}} 
+\hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr} {\bfseries board2\+\_\+slider0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a78827cac3f53f38fb8e483ade41036ef}\label{classblmc__robots_1_1TestBench8Motors_a78827cac3f53f38fb8e483ade41036ef}} 
+\hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr} {\bfseries board2\+\_\+slider1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a5ebaf5d505f3a5d8e099e63753150e17}\label{classblmc__robots_1_1TestBench8Motors_a5ebaf5d505f3a5d8e099e63753150e17}} 
+\hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr} {\bfseries board3\+\_\+motor0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a692ec92bbdbaa332682f4fd6d7e7178b}\label{classblmc__robots_1_1TestBench8Motors_a692ec92bbdbaa332682f4fd6d7e7178b}} 
+\hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr} {\bfseries board3\+\_\+motor1\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ae69b7b79fc8b6f325e82bdc08244c8d3}\label{classblmc__robots_1_1TestBench8Motors_ae69b7b79fc8b6f325e82bdc08244c8d3}} 
+\hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr} {\bfseries board3\+\_\+slider0\+\_\+}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a24e5c4b114a0baf6556123aced4fd683}\label{classblmc__robots_1_1TestBench8Motors_a24e5c4b114a0baf6556123aced4fd683}} 
+\hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr} {\bfseries board3\+\_\+slider1\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classblmc__robots_1_1TestBench8Motors}{Test\+Bench8\+Motors} class implements the control of the test bench containing 8 motors and 8 sliders using the blmc drivers. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_abd3b8a40787ad9e6c019b849da9ca07c}\label{classblmc__robots_1_1TestBench8Motors_abd3b8a40787ad9e6c019b849da9ca07c}} 
+\index{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}!get\+\_\+max\+\_\+current@{get\+\_\+max\+\_\+current}}
+\index{get\+\_\+max\+\_\+current@{get\+\_\+max\+\_\+current}!blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+current()}{get\_max\_current()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Test\+Bench8\+Motors\+::get\+\_\+max\+\_\+current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+max\+\_\+current 
+
+\begin{DoxyReturn}{Returns}
+the maximum current to apply to the motors 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a17ac05712b3cb4e63dfd8cdb80b16eea}\label{classblmc__robots_1_1TestBench8Motors_a17ac05712b3cb4e63dfd8cdb80b16eea}} 
+\index{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}!get\+\_\+max\+\_\+range@{get\+\_\+max\+\_\+range}}
+\index{get\+\_\+max\+\_\+range@{get\+\_\+max\+\_\+range}!blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+range()}{get\_max\_range()}}
+{\footnotesize\ttfamily double blmc\+\_\+robots\+::\+Test\+Bench8\+Motors\+::get\+\_\+max\+\_\+range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+max\+\_\+current 
+
+\begin{DoxyReturn}{Returns}
+the maximum current to apply to the motors 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a9bac22cb6522afd6412e8fbb56f11fbf}\label{classblmc__robots_1_1TestBench8Motors_a9bac22cb6522afd6412e8fbb56f11fbf}} 
+\index{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}!get\+\_\+motor\+\_\+currents@{get\+\_\+motor\+\_\+currents}}
+\index{get\+\_\+motor\+\_\+currents@{get\+\_\+motor\+\_\+currents}!blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+currents()}{get\_motor\_currents()}}
+{\footnotesize\ttfamily const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} blmc\+\_\+robots\+::\+Test\+Bench8\+Motors\+::get\+\_\+motor\+\_\+currents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+currents 
+
+\begin{DoxyReturn}{Returns}
+the current motors currents in (Ampere\+: A). W\+A\+R\+N\+I\+NG !!!! The method $<$acquire\+\_\+sensors$>$\char`\"{}()\char`\"{} has to be called prior to any getter to have up to date data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_ab1d81b573c721e5c8ad400ed4fb4d6ef}\label{classblmc__robots_1_1TestBench8Motors_ab1d81b573c721e5c8ad400ed4fb4d6ef}} 
+\index{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}!get\+\_\+motor\+\_\+encoder\+\_\+indexes@{get\+\_\+motor\+\_\+encoder\+\_\+indexes}}
+\index{get\+\_\+motor\+\_\+encoder\+\_\+indexes@{get\+\_\+motor\+\_\+encoder\+\_\+indexes}!blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+encoder\+\_\+indexes()}{get\_motor\_encoder\_indexes()}}
+{\footnotesize\ttfamily const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} blmc\+\_\+robots\+::\+Test\+Bench8\+Motors\+::get\+\_\+motor\+\_\+encoder\+\_\+indexes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+encoder\+\_\+indexes 
+
+\begin{DoxyReturn}{Returns}
+T\+O\+DO\+: ask Manuel what is this exactly. W\+A\+R\+N\+I\+NG !!!! The method $<$acquire\+\_\+sensors$>$\char`\"{}()\char`\"{} has to be called prior to any getter to have up to date data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a9372bd2722944fa510aa56323f8955b8}\label{classblmc__robots_1_1TestBench8Motors_a9372bd2722944fa510aa56323f8955b8}} 
+\index{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}!get\+\_\+motor\+\_\+positions@{get\+\_\+motor\+\_\+positions}}
+\index{get\+\_\+motor\+\_\+positions@{get\+\_\+motor\+\_\+positions}!blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+positions()}{get\_motor\_positions()}}
+{\footnotesize\ttfamily const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} blmc\+\_\+robots\+::\+Test\+Bench8\+Motors\+::get\+\_\+motor\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+positions 
+
+\begin{DoxyReturn}{Returns}
+the current motors positions (rad). W\+A\+R\+N\+I\+NG !!!! The method $<$acquire\+\_\+sensors$>$\char`\"{}()\char`\"{} has to be called prior to any getter to have up to date data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_aaf4aa80251af98000ffad95eddf0b449}\label{classblmc__robots_1_1TestBench8Motors_aaf4aa80251af98000ffad95eddf0b449}} 
+\index{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}!get\+\_\+motor\+\_\+velocities@{get\+\_\+motor\+\_\+velocities}}
+\index{get\+\_\+motor\+\_\+velocities@{get\+\_\+motor\+\_\+velocities}!blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+velocities()}{get\_motor\_velocities()}}
+{\footnotesize\ttfamily const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} blmc\+\_\+robots\+::\+Test\+Bench8\+Motors\+::get\+\_\+motor\+\_\+velocities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+velocities 
+
+\begin{DoxyReturn}{Returns}
+the current motors velocities (rad/s). W\+A\+R\+N\+I\+NG !!!! The method $<$acquire\+\_\+sensors$>$\char`\"{}()\char`\"{} has to be called prior to any getter to have up to date data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1TestBench8Motors_a11bdbb6f0e4dd0824075ba309f69ad3a}\label{classblmc__robots_1_1TestBench8Motors_a11bdbb6f0e4dd0824075ba309f69ad3a}} 
+\index{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}!get\+\_\+slider\+\_\+positions@{get\+\_\+slider\+\_\+positions}}
+\index{get\+\_\+slider\+\_\+positions@{get\+\_\+slider\+\_\+positions}!blmc\+\_\+robots\+::\+Test\+Bench8\+Motors@{blmc\+\_\+robots\+::\+Test\+Bench8\+Motors}}
+\subsubsection{\texorpdfstring{get\+\_\+slider\+\_\+positions()}{get\_slider\_positions()}}
+{\footnotesize\ttfamily const \hyperlink{common__header_8hpp_a98975ffbe0bca1296078e0350dfedd60}{Vector8d} blmc\+\_\+robots\+::\+Test\+Bench8\+Motors\+::get\+\_\+slider\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+slider\+\_\+positions 
+
+\begin{DoxyReturn}{Returns}
+the current sliders positions. W\+A\+R\+N\+I\+NG !!!! The method $<$acquire\+\_\+sensors$>$\char`\"{}()\char`\"{} has to be called prior to any getter to have up to date data. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+robots/\hyperlink{test__bench__8__motors_8hpp}{test\+\_\+bench\+\_\+8\+\_\+motors.\+hpp}\item 
+src/\hyperlink{test__bench__8__motors_8cpp}{test\+\_\+bench\+\_\+8\+\_\+motors.\+cpp}\end{DoxyCompactItemize}

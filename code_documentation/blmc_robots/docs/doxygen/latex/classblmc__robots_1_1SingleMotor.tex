@@ -1,0 +1,485 @@
+\hypertarget{classblmc__robots_1_1SingleMotor}{}\section{blmc\+\_\+robots\+:\+:Single\+Motor Class Reference}
+\label{classblmc__robots_1_1SingleMotor}\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ac383dc0615dcb6b6fb1470b517561c63}\label{classblmc__robots_1_1SingleMotor_ac383dc0615dcb6b6fb1470b517561c63}} 
+typedef Eigen\+::\+Matrix$<$ double, 1, 1 $>$ {\bfseries Vector1d}
+\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a586b21d344037450dca9b11c8a6882b9}\label{classblmc__robots_1_1SingleMotor_a586b21d344037450dca9b11c8a6882b9}} 
+typedef Eigen\+::\+Matrix$<$ double, 1, 1 $>$ {\bfseries Vector\+Slider}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classblmc__robots_1_1SingleMotor_a074ba2d9a982316a4aecac65b7c1b581}{Single\+Motor} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classblmc__robots_1_1SingleMotor}{Single\+Motor} is the constructor of the class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a2c547957aec36d6cbd02ead4882558d4}\label{classblmc__robots_1_1SingleMotor_a2c547957aec36d6cbd02ead4882558d4}} 
+void \hyperlink{classblmc__robots_1_1SingleMotor_a2c547957aec36d6cbd02ead4882558d4}{initialize} ()
+\begin{DoxyCompactList}\small\item\em initialize the robot by setting aligning the motors and calibrate the sensors to 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a2fa43cd18da7598b8a41da66ef9251ff}\label{classblmc__robots_1_1SingleMotor_a2fa43cd18da7598b8a41da66ef9251ff}} 
+void \hyperlink{classblmc__robots_1_1SingleMotor_a2fa43cd18da7598b8a41da66ef9251ff}{send\+\_\+target\+\_\+motor\+\_\+current} (const Eigen\+::\+Ref$<$ Vector1d $>$ target\+\_\+motor\+\_\+current)
+\begin{DoxyCompactList}\small\item\em send\+\_\+target\+\_\+torques sends the target currents to the motors \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a09a829c726847cf4e8fd34175ce1a139}\label{classblmc__robots_1_1SingleMotor_a09a829c726847cf4e8fd34175ce1a139}} 
+void \hyperlink{classblmc__robots_1_1SingleMotor_a09a829c726847cf4e8fd34175ce1a139}{send\+\_\+target\+\_\+joint\+\_\+torque} (const Eigen\+::\+Ref$<$ Vector1d $>$ target\+\_\+joint\+\_\+torque)
+\begin{DoxyCompactList}\small\item\em send\+\_\+target\+\_\+torques sends the target currents to the motors \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1SingleMotor_adbc3fb18b62ee085ff2d4d6bb2f107a4}{acquire\+\_\+sensors} ()
+\begin{DoxyCompactList}\small\item\em acquire\+\_\+sensors acquire all available sensors, W\+A\+R\+N\+I\+NG !!!! this method has to be called prior to any gettter to have up to date data. \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_ac72b1daab642097f739ccdcb8388d6c9}{get\+\_\+motor\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+positions \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a8ee1b2b7d9b5bf83cd43511836e6074a}{get\+\_\+motor\+\_\+velocities} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+velocities \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_ab3330ea642ca97c094f2af7b50a7a747}{get\+\_\+motor\+\_\+currents} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+currents \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_af48038f9bc14cb4971d3f1aa54573daf}{get\+\_\+motor\+\_\+target\+\_\+currents} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+target\+\_\+currents \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a375565046712276a1f3bd941078a44fb}{get\+\_\+motor\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+torques \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a5fe1f45ebb4893b1b31e1f0f23fb48e2}{get\+\_\+target\+\_\+motor\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+target\+\_\+motor\+\_\+torques \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a7126966be33a93491dcf10d62f711768}{get\+\_\+motor\+\_\+inertias} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+inertias \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a1a7ff027c499ed3fc164a399e5b498e1}{get\+\_\+motor\+\_\+encoder\+\_\+indexes} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+encoder\+\_\+indexes \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_ac368bb72104b1a2e076142d4002740fb}{get\+\_\+motor\+\_\+torque\+\_\+constants} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+motor\+\_\+torque\+\_\+constants \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a4d458d18608fbca78baf6331d27a431b}{get\+\_\+joint\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+positions \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a9a2997aaadecda0b30530d8d5afeaddf}{get\+\_\+joint\+\_\+velocities} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+velocities \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a7ac6ae993e59e6f2ea5f83a643184a9e}{get\+\_\+joint\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+torques \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a261200917e713211fa7652b1157eafa1}{get\+\_\+joint\+\_\+target\+\_\+torques} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+torques \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a8ec5c8ba70bc93ff728300e868755546}{get\+\_\+joint\+\_\+gear\+\_\+ratios} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+gear\+\_\+ratios \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_ab73b8091a40e846a1b6c08ac1d8e0db8}{get\+\_\+joint\+\_\+encoder\+\_\+index} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+joint\+\_\+encoder\+\_\+index \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a3a753c2c1b7b82bd716caa4fc3b5f5f0}{get\+\_\+zero\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+zero\+\_\+positions \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a9c0f3d4686e13d2a8a668a8c26f0bd00}{get\+\_\+slider\+\_\+positions} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+slider\+\_\+positions \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a5768cce6fef657b36648ea68fdbb3ed8}{get\+\_\+max\+\_\+current} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+max\+\_\+current \end{DoxyCompactList}\item 
+const Eigen\+::\+Ref$<$ Vector1d $>$ \hyperlink{classblmc__robots_1_1SingleMotor_af83ef444bdd1eebdac1df6d8035d2b75}{get\+\_\+max\+\_\+joint\+\_\+torque} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+max\+\_\+torque \end{DoxyCompactList}\item 
+void \hyperlink{classblmc__robots_1_1SingleMotor_af2add59e3d08949c658568b6d161b5ba}{set\+\_\+max\+\_\+current} (const Eigen\+::\+Ref$<$ Vector1d $>$ max\+\_\+current)
+\begin{DoxyCompactList}\small\item\em set\+\_\+max\+\_\+current sets the maximum current that the motor can to apply. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a616badc749db3a0ce391ca154b602509}{motor\+\_\+positions\+\_\+}
+\begin{DoxyCompactList}\small\item\em Motor data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ab61a1f183a5ccae341e371f40405a41b}\label{classblmc__robots_1_1SingleMotor_ab61a1f183a5ccae341e371f40405a41b}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_ab61a1f183a5ccae341e371f40405a41b}{motor\+\_\+velocities\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+velocities\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ac11fcd7ae54f11e2b419b11ac8dac87f}\label{classblmc__robots_1_1SingleMotor_ac11fcd7ae54f11e2b419b11ac8dac87f}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_ac11fcd7ae54f11e2b419b11ac8dac87f}{motor\+\_\+currents\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+currents\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a4b37df380410959a4a0a0bf8315852dc}\label{classblmc__robots_1_1SingleMotor_a4b37df380410959a4a0a0bf8315852dc}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a4b37df380410959a4a0a0bf8315852dc}{motor\+\_\+torques\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+torques\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a55ad6b72e757fffb7424052c8381a354}\label{classblmc__robots_1_1SingleMotor_a55ad6b72e757fffb7424052c8381a354}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a55ad6b72e757fffb7424052c8381a354}{motor\+\_\+inertias\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+inertias\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ab0ec410b7018e2f1c71d779c4b018622}\label{classblmc__robots_1_1SingleMotor_ab0ec410b7018e2f1c71d779c4b018622}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_ab0ec410b7018e2f1c71d779c4b018622}{motor\+\_\+encoder\+\_\+indexes\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+encoder\+\_\+indexes\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_aa8abc257d4336ef830317f2371e3ce11}\label{classblmc__robots_1_1SingleMotor_aa8abc257d4336ef830317f2371e3ce11}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_aa8abc257d4336ef830317f2371e3ce11}{motor\+\_\+target\+\_\+currents\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+target\+\_\+currents\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a787f1cf4697845acb7ad32f61ba2a610}\label{classblmc__robots_1_1SingleMotor_a787f1cf4697845acb7ad32f61ba2a610}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a787f1cf4697845acb7ad32f61ba2a610}{motor\+\_\+target\+\_\+torques\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+target\+\_\+torques\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_af3c3dd00a54f188ef35a0a58f2aeea9a}\label{classblmc__robots_1_1SingleMotor_af3c3dd00a54f188ef35a0a58f2aeea9a}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_af3c3dd00a54f188ef35a0a58f2aeea9a}{motor\+\_\+torque\+\_\+constants\+\_\+}
+\begin{DoxyCompactList}\small\item\em motor\+\_\+torque\+\_\+constants\+\_\+ are the motor torque constants \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a3bee7675bed7fe92763dbe5c63e5d38b}\label{classblmc__robots_1_1SingleMotor_a3bee7675bed7fe92763dbe5c63e5d38b}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a3bee7675bed7fe92763dbe5c63e5d38b}{target\+\_\+motor\+\_\+current\+\_\+tmp\+\_\+}
+\begin{DoxyCompactList}\small\item\em target\+\_\+motor\+\_\+current\+\_\+tmp\+\_\+ is used to convert the joint torque to motor current \end{DoxyCompactList}\item 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_aabf1cdb3cef190305e336d3c9dcc57ea}{joint\+\_\+positions\+\_\+}
+\begin{DoxyCompactList}\small\item\em Joint data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_aa23bcf53779b381c1456b136f2a4a49c}\label{classblmc__robots_1_1SingleMotor_aa23bcf53779b381c1456b136f2a4a49c}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_aa23bcf53779b381c1456b136f2a4a49c}{joint\+\_\+velocities\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+velocities\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ab986b97deafb5757a410bb345441061a}\label{classblmc__robots_1_1SingleMotor_ab986b97deafb5757a410bb345441061a}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_ab986b97deafb5757a410bb345441061a}{joint\+\_\+torques\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+torques\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_abe76b9fff81ee4ef1826333cbff81c25}\label{classblmc__robots_1_1SingleMotor_abe76b9fff81ee4ef1826333cbff81c25}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_abe76b9fff81ee4ef1826333cbff81c25}{joint\+\_\+target\+\_\+torques\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+target\+\_\+torques\+\_\+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a18b52ed3777aa38a36e91ab3b4dc81fe}\label{classblmc__robots_1_1SingleMotor_a18b52ed3777aa38a36e91ab3b4dc81fe}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a18b52ed3777aa38a36e91ab3b4dc81fe}{joint\+\_\+gear\+\_\+ratios\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+gear\+\_\+ratios are the joint gear ratios \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ae993e954e97662c1381d72e015035ca6}\label{classblmc__robots_1_1SingleMotor_ae993e954e97662c1381d72e015035ca6}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_ae993e954e97662c1381d72e015035ca6}{joint\+\_\+encoder\+\_\+index\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+encoder\+\_\+index\+\_\+ The last observed encoder\+\_\+index at the joints. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_afe177b30fe7465e605165c25f9f7e10e}\label{classblmc__robots_1_1SingleMotor_afe177b30fe7465e605165c25f9f7e10e}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_afe177b30fe7465e605165c25f9f7e10e}{joint\+\_\+zero\+\_\+positions\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+zero\+\_\+positions\+\_\+ is the configuration considered as zero position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a30e231807cc6d74d52b40388f1cc2209}\label{classblmc__robots_1_1SingleMotor_a30e231807cc6d74d52b40388f1cc2209}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a30e231807cc6d74d52b40388f1cc2209}{joint\+\_\+max\+\_\+torque\+\_\+}
+\begin{DoxyCompactList}\small\item\em joint\+\_\+max\+\_\+torque\+\_\+ \end{DoxyCompactList}\item 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a15774ca374fff212abe4d2b397263dc9}{slider\+\_\+positions\+\_\+}
+\begin{DoxyCompactList}\small\item\em Additional data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a581cc65baa0d38dbe0dc63ff682da4cb}\label{classblmc__robots_1_1SingleMotor_a581cc65baa0d38dbe0dc63ff682da4cb}} 
+Vector1d \hyperlink{classblmc__robots_1_1SingleMotor_a581cc65baa0d38dbe0dc63ff682da4cb}{motor\+\_\+max\+\_\+current\+\_\+}
+\begin{DoxyCompactList}\small\item\em max\+\_\+current\+\_\+ is the current limit to be send to the motors, this a safe guard for development \end{DoxyCompactList}\item 
+std\+::array$<$ \hyperlink{common__header_8hpp_a793c8789a7598e8aaf766939da7262af}{Can\+Bus\+\_\+ptr}, 1 $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a6a57409cef4dc0959ed6b442e7626ba2}{can\+\_\+buses\+\_\+}
+\begin{DoxyCompactList}\small\item\em Drivers communication objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a435394184e8e7325055685177fcf136d}\label{classblmc__robots_1_1SingleMotor_a435394184e8e7325055685177fcf136d}} 
+std\+::array$<$ \hyperlink{common__header_8hpp_aab1c6ddb1273247a1b45d5e8b417c216}{Can\+Bus\+Motor\+Board\+\_\+ptr}, 1 $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a435394184e8e7325055685177fcf136d}{can\+\_\+motor\+\_\+boards\+\_\+}
+\begin{DoxyCompactList}\small\item\em can\+\_\+motor\+\_\+boards\+\_\+ are the 4 can motor board. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a0ea5ac9826c4a4cf31a422a904d45431}\label{classblmc__robots_1_1SingleMotor_a0ea5ac9826c4a4cf31a422a904d45431}} 
+std\+::array$<$ \hyperlink{common__header_8hpp_a9850cf917156e20846aef3f8195aea0f}{Safe\+Motor\+\_\+ptr}, 1 $>$ \hyperlink{classblmc__robots_1_1SingleMotor_a0ea5ac9826c4a4cf31a422a904d45431}{motors\+\_\+}
+\begin{DoxyCompactList}\small\item\em motors\+\_\+ are the objects alowing us to send motor commands and receive data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ae0f47f4ffeba39ecf870f1b2b9116503}\label{classblmc__robots_1_1SingleMotor_ae0f47f4ffeba39ecf870f1b2b9116503}} 
+std\+::array$<$ \hyperlink{common__header_8hpp_a4cb9a95e8b2c0bf237ce29f5252c7b73}{Slider\+\_\+ptr}, 1 $>$ \hyperlink{classblmc__robots_1_1SingleMotor_ae0f47f4ffeba39ecf870f1b2b9116503}{sliders\+\_\+}
+\begin{DoxyCompactList}\small\item\em sliders\+\_\+ these are analogue input from linear potentiometers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a074ba2d9a982316a4aecac65b7c1b581}\label{classblmc__robots_1_1SingleMotor_a074ba2d9a982316a4aecac65b7c1b581}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!Single\+Motor@{Single\+Motor}}
+\index{Single\+Motor@{Single\+Motor}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{Single\+Motor()}{SingleMotor()}}
+{\footnotesize\ttfamily blmc\+\_\+robots\+::\+Single\+Motor\+::\+Single\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classblmc__robots_1_1SingleMotor}{Single\+Motor} is the constructor of the class. 
+
+Motor data
+
+Joint data
+
+Additional data
+
+Setup some known data
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_adbc3fb18b62ee085ff2d4d6bb2f107a4}\label{classblmc__robots_1_1SingleMotor_adbc3fb18b62ee085ff2d4d6bb2f107a4}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!acquire\+\_\+sensors@{acquire\+\_\+sensors}}
+\index{acquire\+\_\+sensors@{acquire\+\_\+sensors}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{acquire\+\_\+sensors()}{acquire\_sensors()}}
+{\footnotesize\ttfamily void blmc\+\_\+robots\+::\+Single\+Motor\+::acquire\+\_\+sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+acquire\+\_\+sensors acquire all available sensors, W\+A\+R\+N\+I\+NG !!!! this method has to be called prior to any gettter to have up to date data. 
+
+Motor data
+
+Joint data
+
+Additional data\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ab73b8091a40e846a1b6c08ac1d8e0db8}\label{classblmc__robots_1_1SingleMotor_ab73b8091a40e846a1b6c08ac1d8e0db8}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+joint\+\_\+encoder\+\_\+index@{get\+\_\+joint\+\_\+encoder\+\_\+index}}
+\index{get\+\_\+joint\+\_\+encoder\+\_\+index@{get\+\_\+joint\+\_\+encoder\+\_\+index}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+encoder\+\_\+index()}{get\_joint\_encoder\_index()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+joint\+\_\+encoder\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+encoder\+\_\+index 
+
+\begin{DoxyReturn}{Returns}
+The last observed encoder index in joint coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a8ec5c8ba70bc93ff728300e868755546}\label{classblmc__robots_1_1SingleMotor_a8ec5c8ba70bc93ff728300e868755546}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+joint\+\_\+gear\+\_\+ratios@{get\+\_\+joint\+\_\+gear\+\_\+ratios}}
+\index{get\+\_\+joint\+\_\+gear\+\_\+ratios@{get\+\_\+joint\+\_\+gear\+\_\+ratios}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+gear\+\_\+ratios()}{get\_joint\_gear\_ratios()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+joint\+\_\+gear\+\_\+ratios (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+gear\+\_\+ratios 
+
+\begin{DoxyReturn}{Returns}
+the joint gear ratios 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a4d458d18608fbca78baf6331d27a431b}\label{classblmc__robots_1_1SingleMotor_a4d458d18608fbca78baf6331d27a431b}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+joint\+\_\+positions@{get\+\_\+joint\+\_\+positions}}
+\index{get\+\_\+joint\+\_\+positions@{get\+\_\+joint\+\_\+positions}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+positions()}{get\_joint\_positions()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+joint\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+positions 
+
+\begin{DoxyReturn}{Returns}
+the joint angle of each module 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a261200917e713211fa7652b1157eafa1}\label{classblmc__robots_1_1SingleMotor_a261200917e713211fa7652b1157eafa1}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+joint\+\_\+target\+\_\+torques@{get\+\_\+joint\+\_\+target\+\_\+torques}}
+\index{get\+\_\+joint\+\_\+target\+\_\+torques@{get\+\_\+joint\+\_\+target\+\_\+torques}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+target\+\_\+torques()}{get\_joint\_target\_torques()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+joint\+\_\+target\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+torques 
+
+\begin{DoxyReturn}{Returns}
+the target joint torques 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a7ac6ae993e59e6f2ea5f83a643184a9e}\label{classblmc__robots_1_1SingleMotor_a7ac6ae993e59e6f2ea5f83a643184a9e}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+joint\+\_\+torques@{get\+\_\+joint\+\_\+torques}}
+\index{get\+\_\+joint\+\_\+torques@{get\+\_\+joint\+\_\+torques}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+torques()}{get\_joint\_torques()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+joint\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+torques 
+
+\begin{DoxyReturn}{Returns}
+the joint torques 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a9a2997aaadecda0b30530d8d5afeaddf}\label{classblmc__robots_1_1SingleMotor_a9a2997aaadecda0b30530d8d5afeaddf}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+joint\+\_\+velocities@{get\+\_\+joint\+\_\+velocities}}
+\index{get\+\_\+joint\+\_\+velocities@{get\+\_\+joint\+\_\+velocities}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+joint\+\_\+velocities()}{get\_joint\_velocities()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+joint\+\_\+velocities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+joint\+\_\+velocities 
+
+\begin{DoxyReturn}{Returns}
+the joint velocities 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a5768cce6fef657b36648ea68fdbb3ed8}\label{classblmc__robots_1_1SingleMotor_a5768cce6fef657b36648ea68fdbb3ed8}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+max\+\_\+current@{get\+\_\+max\+\_\+current}}
+\index{get\+\_\+max\+\_\+current@{get\+\_\+max\+\_\+current}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+current()}{get\_max\_current()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+max\+\_\+current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+max\+\_\+current 
+
+\begin{DoxyReturn}{Returns}
+the max current that has been hard-\/coded in the constructor of this class. T\+O\+DO\+: parametrize this via Y\+A\+ML or something else. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_af83ef444bdd1eebdac1df6d8035d2b75}\label{classblmc__robots_1_1SingleMotor_af83ef444bdd1eebdac1df6d8035d2b75}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+max\+\_\+joint\+\_\+torque@{get\+\_\+max\+\_\+joint\+\_\+torque}}
+\index{get\+\_\+max\+\_\+joint\+\_\+torque@{get\+\_\+max\+\_\+joint\+\_\+torque}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+joint\+\_\+torque()}{get\_max\_joint\_torque()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+max\+\_\+joint\+\_\+torque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+max\+\_\+torque 
+
+\begin{DoxyReturn}{Returns}
+the max torque that has been hard-\/coded in the constructor of this class. T\+O\+DO\+: parametrize this via Y\+A\+ML or something else. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ab3330ea642ca97c094f2af7b50a7a747}\label{classblmc__robots_1_1SingleMotor_ab3330ea642ca97c094f2af7b50a7a747}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+motor\+\_\+currents@{get\+\_\+motor\+\_\+currents}}
+\index{get\+\_\+motor\+\_\+currents@{get\+\_\+motor\+\_\+currents}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+currents()}{get\_motor\_currents()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+motor\+\_\+currents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+currents 
+
+\begin{DoxyReturn}{Returns}
+the current motors currents in (Ampere\+: A). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a1a7ff027c499ed3fc164a399e5b498e1}\label{classblmc__robots_1_1SingleMotor_a1a7ff027c499ed3fc164a399e5b498e1}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+motor\+\_\+encoder\+\_\+indexes@{get\+\_\+motor\+\_\+encoder\+\_\+indexes}}
+\index{get\+\_\+motor\+\_\+encoder\+\_\+indexes@{get\+\_\+motor\+\_\+encoder\+\_\+indexes}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+encoder\+\_\+indexes()}{get\_motor\_encoder\_indexes()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+motor\+\_\+encoder\+\_\+indexes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+encoder\+\_\+indexes 
+
+\begin{DoxyReturn}{Returns}
+the position of the index of the encoders a the motor level 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a7126966be33a93491dcf10d62f711768}\label{classblmc__robots_1_1SingleMotor_a7126966be33a93491dcf10d62f711768}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+motor\+\_\+inertias@{get\+\_\+motor\+\_\+inertias}}
+\index{get\+\_\+motor\+\_\+inertias@{get\+\_\+motor\+\_\+inertias}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+inertias()}{get\_motor\_inertias()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+motor\+\_\+inertias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+inertias 
+
+\begin{DoxyReturn}{Returns}
+the motor inertias 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ac72b1daab642097f739ccdcb8388d6c9}\label{classblmc__robots_1_1SingleMotor_ac72b1daab642097f739ccdcb8388d6c9}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+motor\+\_\+positions@{get\+\_\+motor\+\_\+positions}}
+\index{get\+\_\+motor\+\_\+positions@{get\+\_\+motor\+\_\+positions}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+positions()}{get\_motor\_positions()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+motor\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+positions 
+
+\begin{DoxyReturn}{Returns}
+the current motors positions (rad). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_af48038f9bc14cb4971d3f1aa54573daf}\label{classblmc__robots_1_1SingleMotor_af48038f9bc14cb4971d3f1aa54573daf}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+motor\+\_\+target\+\_\+currents@{get\+\_\+motor\+\_\+target\+\_\+currents}}
+\index{get\+\_\+motor\+\_\+target\+\_\+currents@{get\+\_\+motor\+\_\+target\+\_\+currents}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+target\+\_\+currents()}{get\_motor\_target\_currents()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+motor\+\_\+target\+\_\+currents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+target\+\_\+currents 
+
+\begin{DoxyReturn}{Returns}
+the target current motors currents in (Ampere\+: A). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_ac368bb72104b1a2e076142d4002740fb}\label{classblmc__robots_1_1SingleMotor_ac368bb72104b1a2e076142d4002740fb}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+motor\+\_\+torque\+\_\+constants@{get\+\_\+motor\+\_\+torque\+\_\+constants}}
+\index{get\+\_\+motor\+\_\+torque\+\_\+constants@{get\+\_\+motor\+\_\+torque\+\_\+constants}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+torque\+\_\+constants()}{get\_motor\_torque\_constants()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+motor\+\_\+torque\+\_\+constants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+torque\+\_\+constants 
+
+\begin{DoxyReturn}{Returns}
+the torque constants of each motor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a375565046712276a1f3bd941078a44fb}\label{classblmc__robots_1_1SingleMotor_a375565046712276a1f3bd941078a44fb}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+motor\+\_\+torques@{get\+\_\+motor\+\_\+torques}}
+\index{get\+\_\+motor\+\_\+torques@{get\+\_\+motor\+\_\+torques}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+torques()}{get\_motor\_torques()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+motor\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+torques 
+
+\begin{DoxyReturn}{Returns}
+the motor torques in Nm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a8ee1b2b7d9b5bf83cd43511836e6074a}\label{classblmc__robots_1_1SingleMotor_a8ee1b2b7d9b5bf83cd43511836e6074a}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+motor\+\_\+velocities@{get\+\_\+motor\+\_\+velocities}}
+\index{get\+\_\+motor\+\_\+velocities@{get\+\_\+motor\+\_\+velocities}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+motor\+\_\+velocities()}{get\_motor\_velocities()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+motor\+\_\+velocities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+motor\+\_\+velocities 
+
+\begin{DoxyReturn}{Returns}
+the current motors velocities (rad/s). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a9c0f3d4686e13d2a8a668a8c26f0bd00}\label{classblmc__robots_1_1SingleMotor_a9c0f3d4686e13d2a8a668a8c26f0bd00}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+slider\+\_\+positions@{get\+\_\+slider\+\_\+positions}}
+\index{get\+\_\+slider\+\_\+positions@{get\+\_\+slider\+\_\+positions}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+slider\+\_\+positions()}{get\_slider\_positions()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+slider\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+slider\+\_\+positions 
+
+\begin{DoxyReturn}{Returns}
+the current sliders positions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a5fe1f45ebb4893b1b31e1f0f23fb48e2}\label{classblmc__robots_1_1SingleMotor_a5fe1f45ebb4893b1b31e1f0f23fb48e2}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+target\+\_\+motor\+\_\+torques@{get\+\_\+target\+\_\+motor\+\_\+torques}}
+\index{get\+\_\+target\+\_\+motor\+\_\+torques@{get\+\_\+target\+\_\+motor\+\_\+torques}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+target\+\_\+motor\+\_\+torques()}{get\_target\_motor\_torques()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+target\+\_\+motor\+\_\+torques (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+target\+\_\+motor\+\_\+torques 
+
+\begin{DoxyReturn}{Returns}
+the target motor torques in Nm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a3a753c2c1b7b82bd716caa4fc3b5f5f0}\label{classblmc__robots_1_1SingleMotor_a3a753c2c1b7b82bd716caa4fc3b5f5f0}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!get\+\_\+zero\+\_\+positions@{get\+\_\+zero\+\_\+positions}}
+\index{get\+\_\+zero\+\_\+positions@{get\+\_\+zero\+\_\+positions}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+zero\+\_\+positions()}{get\_zero\_positions()}}
+{\footnotesize\ttfamily const Eigen\+::\+Ref$<$Vector1d$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::get\+\_\+zero\+\_\+positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+\_\+zero\+\_\+positions 
+
+\begin{DoxyReturn}{Returns}
+the position where the robot should be in \char`\"{}zero\char`\"{} configuration 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_af2add59e3d08949c658568b6d161b5ba}\label{classblmc__robots_1_1SingleMotor_af2add59e3d08949c658568b6d161b5ba}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!set\+\_\+max\+\_\+current@{set\+\_\+max\+\_\+current}}
+\index{set\+\_\+max\+\_\+current@{set\+\_\+max\+\_\+current}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{set\+\_\+max\+\_\+current()}{set\_max\_current()}}
+{\footnotesize\ttfamily void blmc\+\_\+robots\+::\+Single\+Motor\+::set\+\_\+max\+\_\+current (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ Vector1d $>$}]{max\+\_\+current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+\_\+max\+\_\+current sets the maximum current that the motor can to apply. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+current} & contain 1 value per each motors. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a6a57409cef4dc0959ed6b442e7626ba2}\label{classblmc__robots_1_1SingleMotor_a6a57409cef4dc0959ed6b442e7626ba2}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!can\+\_\+buses\+\_\+@{can\+\_\+buses\+\_\+}}
+\index{can\+\_\+buses\+\_\+@{can\+\_\+buses\+\_\+}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{can\+\_\+buses\+\_\+}{can\_buses\_}}
+{\footnotesize\ttfamily std\+::array$<$\hyperlink{common__header_8hpp_a793c8789a7598e8aaf766939da7262af}{Can\+Bus\+\_\+ptr}, 1$>$ blmc\+\_\+robots\+::\+Single\+Motor\+::can\+\_\+buses\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Drivers communication objects. 
+
+can\+\_\+buses\+\_\+ are the 4 can buses on the robot. \mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_aabf1cdb3cef190305e336d3c9dcc57ea}\label{classblmc__robots_1_1SingleMotor_aabf1cdb3cef190305e336d3c9dcc57ea}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!joint\+\_\+positions\+\_\+@{joint\+\_\+positions\+\_\+}}
+\index{joint\+\_\+positions\+\_\+@{joint\+\_\+positions\+\_\+}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{joint\+\_\+positions\+\_\+}{joint\_positions\_}}
+{\footnotesize\ttfamily Vector1d blmc\+\_\+robots\+::\+Single\+Motor\+::joint\+\_\+positions\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Joint data. 
+
+joint\+\_\+positions\+\_\+ \mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a616badc749db3a0ce391ca154b602509}\label{classblmc__robots_1_1SingleMotor_a616badc749db3a0ce391ca154b602509}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!motor\+\_\+positions\+\_\+@{motor\+\_\+positions\+\_\+}}
+\index{motor\+\_\+positions\+\_\+@{motor\+\_\+positions\+\_\+}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{motor\+\_\+positions\+\_\+}{motor\_positions\_}}
+{\footnotesize\ttfamily Vector1d blmc\+\_\+robots\+::\+Single\+Motor\+::motor\+\_\+positions\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Motor data. 
+
+motor\+\_\+positions\+\_\+ \mbox{\Hypertarget{classblmc__robots_1_1SingleMotor_a15774ca374fff212abe4d2b397263dc9}\label{classblmc__robots_1_1SingleMotor_a15774ca374fff212abe4d2b397263dc9}} 
+\index{blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}!slider\+\_\+positions\+\_\+@{slider\+\_\+positions\+\_\+}}
+\index{slider\+\_\+positions\+\_\+@{slider\+\_\+positions\+\_\+}!blmc\+\_\+robots\+::\+Single\+Motor@{blmc\+\_\+robots\+::\+Single\+Motor}}
+\subsubsection{\texorpdfstring{slider\+\_\+positions\+\_\+}{slider\_positions\_}}
+{\footnotesize\ttfamily Vector1d blmc\+\_\+robots\+::\+Single\+Motor\+::slider\+\_\+positions\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Additional data. 
+
+slider\+\_\+positions\+\_\+ is the position of the linear potentatiometer. Can be used as a joystick input. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/blmc\+\_\+robots/\hyperlink{single__motor_8hpp}{single\+\_\+motor.\+hpp}\item 
+src/single\+\_\+motor.\+cpp\end{DoxyCompactItemize}

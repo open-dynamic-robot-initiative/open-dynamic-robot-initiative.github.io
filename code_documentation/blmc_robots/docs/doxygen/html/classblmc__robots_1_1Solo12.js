@@ -18,10 +18,11 @@ var classblmc__robots_1_1Solo12 =
     [ "get_motor_ready", "classblmc__robots_1_1Solo12.html#a37584471402cef8cf854d69bdbac98eb", null ],
     [ "get_motor_torque_constants", "classblmc__robots_1_1Solo12.html#a2135c79bff566dc0f8bace78bcf0b714", null ],
     [ "get_slider_positions", "classblmc__robots_1_1Solo12.html#a2881a38d56aece096ca2c0ca42f2d56c", null ],
-    [ "has_error", "classblmc__robots_1_1Solo12.html#a40cd1c76205f1a8a16c1cf1032697479", null ],
-    [ "initialize", "classblmc__robots_1_1Solo12.html#a44e7a3d9a2fe163758d63decfdc35b52", null ],
+    [ "has_error", "classblmc__robots_1_1Solo12.html#af8d51ec7885dab9c017aec9dd11937ad", null ],
+    [ "initialize", "classblmc__robots_1_1Solo12.html#ae3b1480bc12a079939b627950d55f66a", null ],
     [ "send_target_joint_torque", "classblmc__robots_1_1Solo12.html#a7f9bbd57bf8f0a9d54542c249c03fb47", null ],
     [ "set_max_joint_torques", "classblmc__robots_1_1Solo12.html#a9f0d4a95fd4f82681f78dda1d519e5f9", null ],
+    [ "active_estop_", "classblmc__robots_1_1Solo12.html#a9e28ceac427c283b4e66a1bde15baed8", null ],
     [ "contact_sensors_states_", "classblmc__robots_1_1Solo12.html#a04c43e0f8862e97e7902419edb7cd2a2", null ],
     [ "joint_encoder_index_", "classblmc__robots_1_1Solo12.html#a9e9743d8043db4b0a64fb914bda53714", null ],
     [ "joint_gear_ratios_", "classblmc__robots_1_1Solo12.html#a03d025b7fa51624e1de5865340429b9f", null ],
@@ -47,7 +48,9 @@ var classblmc__robots_1_1Solo12 =
     [ "motors_", "classblmc__robots_1_1Solo12.html#a91e6592fb8a24aabb9a9795cccc130cf", null ],
     [ "network_id_", "classblmc__robots_1_1Solo12.html#aa2fe5722e58645d80641238d1563b371", null ],
     [ "reverse_polarities_", "classblmc__robots_1_1Solo12.html#ace2b1af72676f4ec2d285f6166ba6922", null ],
+    [ "serial_reader_", "classblmc__robots_1_1Solo12.html#a640f378577e818ae36f96145760edd65", null ],
     [ "slider_positions_", "classblmc__robots_1_1Solo12.html#a67948750642c1e62f4aeadb4adac3bdd", null ],
+    [ "slider_positions_vector_", "classblmc__robots_1_1Solo12.html#a0d9feba0ec7b4b34e463f85e778dc171", null ],
     [ "sliders_", "classblmc__robots_1_1Solo12.html#a4119af8c0b732d5559f8d71a9714ac29", null ],
     [ "spi_bus_", "classblmc__robots_1_1Solo12.html#a416708664f404b0d140e02fe8b90bd00", null ]
 ];

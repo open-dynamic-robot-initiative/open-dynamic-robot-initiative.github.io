@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="common__demo__header_8hpp" kind="file" language="C++">
+    <compoundname>common_demo_header.hpp</compoundname>
+    <includes refid="common__programs__header_8hpp" local="yes">blmc_robots/common_programs_header.hpp</includes>
+    <includedby refid="demo__solo12__calibration_8cpp" local="yes">demos/demo_solo12_calibration.cpp</includedby>
+    <includedby refid="demo__solo8__calibration_8cpp" local="yes">demos/demo_solo8_calibration.cpp</includedby>
+    <includedby refid="demo__teststand__calibration_8cpp" local="yes">demos/demo_teststand_calibration.cpp</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>atomic</label>
+      </node>
+      <node id="10">
+        <label>real_time_tools/timer.hpp</label>
+      </node>
+      <node id="9">
+        <label>real_time_tools/thread.hpp</label>
+      </node>
+      <node id="4">
+        <label>Eigen/Eigen</label>
+      </node>
+      <node id="8">
+        <label>real_time_tools/spinner.hpp</label>
+      </node>
+      <node id="7">
+        <label>real_time_tools/iostream.hpp</label>
+      </node>
+      <node id="5">
+        <label>signal.h</label>
+      </node>
+      <node id="2">
+        <label>blmc_robots/common_header.hpp</label>
+        <link refid="common__header_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>blmc_robots/common_programs_header.hpp</label>
+        <link refid="common__programs__header_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>yaml_cpp_catkin/yaml_cpp_fwd.hpp</label>
+      </node>
+      <node id="11">
+        <label>blmc_drivers/devices/analog_sensor.hpp</label>
+      </node>
+      <node id="12">
+        <label>blmc_drivers/devices/motor.hpp</label>
+      </node>
+      <node id="0">
+        <label>demos/common_demo_header.hpp</label>
+        <link refid="common__demo__header_8hpp"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="14">
+        <label>demos/demo_solo12_calibration.cpp</label>
+        <link refid="demo__solo12__calibration_8cpp"/>
+      </node>
+      <node id="15">
+        <label>demos/demo_solo8_calibration.cpp</label>
+        <link refid="demo__solo8__calibration_8cpp"/>
+      </node>
+      <node id="13">
+        <label>demos/common_demo_header.hpp</label>
+        <link refid="common__demo__header_8hpp"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structblmc__robots_1_1ThreadCalibrationData" prot="public">blmc_robots::ThreadCalibrationData</innerclass>
+    <innernamespace refid="namespaceblmc__robots">blmc_robots</innernamespace>
+    <briefdescription>
+<para>Contains some default tools for creating demos. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Maximilien Naveau (<ulink url="mailto:maximilien.naveau@gmail.com">maximilien.naveau@gmail.com</ulink>) </para></simplesect>
+<simplesect kind="version"><para>0.1 </para></simplesect>
+<simplesect kind="date"><para>2019-11-07</para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="12"><highlight class="preprocessor">#include<sp/>&quot;blmc_robots/common_programs_header.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceblmc__robots" kindref="compound">blmc_robots</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>ROBOT_TYPE&gt;</highlight></codeline>
+<codeline lineno="23" refid="structblmc__robots_1_1ThreadCalibrationData" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structblmc__robots_1_1ThreadCalibrationData" kindref="compound">ThreadCalibrationData</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;ROBOT_TYPE&gt;<sp/>robot;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::VectorXd<sp/>joint_index_to_zero;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structblmc__robots_1_1ThreadCalibrationData" kindref="compound">ThreadCalibrationData</ref>(std::shared_ptr&lt;ROBOT_TYPE&gt;<sp/>robot_in)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>robot(robot_in)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Loading<sp/>paramters<sp/>from<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>YAML_PARAMS<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>YAML::Node<sp/>param<sp/>=<sp/>YAML::LoadFile(YAML_PARAMS);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>YAML::ReadParameter(param[</highlight><highlight class="stringliteral">&quot;hardware_communication&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;calibration&quot;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;index_to_zero_angle&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>joint_index_to_zero);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>blmc_robots</highlight></codeline>
+    </programlisting>
+    <location file="demos/common_demo_header.hpp"/>
+  </compounddef>
+</doxygen>

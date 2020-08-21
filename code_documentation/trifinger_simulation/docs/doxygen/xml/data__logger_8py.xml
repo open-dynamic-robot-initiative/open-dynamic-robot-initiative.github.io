@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="data__logger_8py" kind="file" language="Python">
+    <compoundname>data_logger.py</compoundname>
+    <innerclass refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData" prot="public">trifinger_simulation::gym_wrapper::data_logger::EpisodeData</innerclass>
+    <innerclass refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger" prot="public">trifinger_simulation::gym_wrapper::data_logger::DataLogger</innerclass>
+    <innernamespace refid="namespacetrifinger__simulation_1_1gym__wrapper_1_1data__logger">trifinger_simulation::gym_wrapper::data_logger</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pickle</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">EpisodeData:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>The<sp/>structure<sp/>in<sp/>which<sp/>the<sp/>data<sp/>from<sp/>each<sp/>episode</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>will<sp/>be<sp/>logged.</highlight></codeline>
+<codeline lineno="8" refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData" refkind="compound"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>joint_goal,<sp/>tip_goal):</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData_1a202f68a21b4e57bf292a8fbb67fcb4a6" kindref="member">joint_goal</ref><sp/>=<sp/>joint_goal</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData_1a4b0d1e86244d42540cf1564ffbaf0086" kindref="member">tip_goal</ref><sp/>=<sp/>tip_goal</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData_1a221bc67e1473d1b5becff014b2914ffe" kindref="member">joint_positions</ref><sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData_1a3d6a04f83f862d48be0e9b2500d5000c" kindref="member">tip_positions</ref><sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData_1a7cebf91d27c7060d8eccb2c975f368e7" kindref="member">timestamps</ref><sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">append(self,<sp/>joint_pos,<sp/>tip_pos,<sp/>timestamp):</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData_1a221bc67e1473d1b5becff014b2914ffe" kindref="member">joint_positions</ref>.append(joint_pos)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData_1a3d6a04f83f862d48be0e9b2500d5000c" kindref="member">tip_positions</ref>.append(tip_pos)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData_1a7cebf91d27c7060d8eccb2c975f368e7" kindref="member">timestamps</ref>.append(timestamp)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger" kindref="compound">DataLogger</ref>:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Dumps<sp/>the<sp/>env<sp/>episodic<sp/>data<sp/>to<sp/>a<sp/>pickle<sp/>file</highlight></codeline>
+<codeline lineno="26" refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger" refkind="compound"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self):</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger_1afaf8d0d5636dfa406e240991ad665acf" kindref="member">episodes</ref><sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger_1a855bce5dc38c90b0c0cfc1a6c034c511" kindref="member">_curr</ref><sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">new_episode(self,<sp/>joint_goal,<sp/>tip_goal):</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger_1a855bce5dc38c90b0c0cfc1a6c034c511" kindref="member">_curr</ref>:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>convert<sp/>to<sp/>dict<sp/>for<sp/>saving<sp/>so<sp/>loading<sp/>has<sp/>no<sp/>dependencies</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger_1afaf8d0d5636dfa406e240991ad665acf" kindref="member">episodes</ref>.append(self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger_1a855bce5dc38c90b0c0cfc1a6c034c511" kindref="member">_curr</ref>.__dict__)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger_1a855bce5dc38c90b0c0cfc1a6c034c511" kindref="member">_curr</ref><sp/>=<sp/><ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1EpisodeData" kindref="compound">EpisodeData</ref>(joint_goal,<sp/>tip_goal)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">append(self,<sp/>joint_pos,<sp/>tip_pos,<sp/>timestamp):</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger_1a855bce5dc38c90b0c0cfc1a6c034c511" kindref="member">_curr</ref>.append(joint_pos,<sp/>tip_pos,<sp/>timestamp)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">store(self,<sp/>filename):</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>with<sp/>open(filename,<sp/></highlight><highlight class="stringliteral">&quot;wb&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>file_handle:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pickle.dump(self.<ref refid="classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger_1afaf8d0d5636dfa406e240991ad665acf" kindref="member">episodes</ref>,<sp/>file_handle)</highlight></codeline>
+    </programlisting>
+    <location file="python/trifinger_simulation/gym_wrapper/data_logger.py"/>
+  </compounddef>
+</doxygen>

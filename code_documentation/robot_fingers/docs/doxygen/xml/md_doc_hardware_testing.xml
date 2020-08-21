@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_doc_hardware_testing" kind="page">
+    <compoundname>md_doc_hardware_testing</compoundname>
+    <title>Tools for Hardware Testing</title>
+    <detaileddescription>
+<para><heading level="2">Single Finger Test </heading>
+</para><para>The <computeroutput>robot_fingers</computeroutput> package provides a script <computeroutput>single_finger_test.py</computeroutput> for testing basic functionality of a single Finger. After initialization, it holds all joints at their current position using position control. All available data is shown and constantly updated on the terminal:</para><para><image type="html" name="single_finger_test_curses.png">Screenshot of the curses interface showing the robot data.</image>
+ <heading level="3">Running</heading>
+</para><para>Start the application with the following command: <verbatim>rosrun robot_fingers single_finger_test.py
+</verbatim></para><para>For this application, homing is done without end stops, that is the joints will simply home on the nearest encoder index without offset.</para><para>To quit simply press &quot;q&quot;.</para><para><heading level="3">Configuration</heading>
+</para><para>The robot configuration used in application is found in <computeroutput>robot_fingers/config/single_finger_test.yml</computeroutput>. Typically the configuration should work well, however, you may need to adjust the CAN ports to match the ports on which the finger is connected. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

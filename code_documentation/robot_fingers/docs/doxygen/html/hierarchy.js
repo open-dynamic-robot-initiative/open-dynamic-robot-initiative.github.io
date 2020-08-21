@@ -2,7 +2,6 @@ var hierarchy =
 [
     [ "joint_friction_calibration.AverageBuffer", "classjoint__friction__calibration_1_1AverageBuffer.html", null ],
     [ "position_control_on_off.CursesGUI", "classposition__control__on__off_1_1CursesGUI.html", null ],
-    [ "single_finger_test.CursesGUI", "classsingle__finger__test_1_1CursesGUI.html", null ],
     [ "NJointBlmcRobotDriver", null, [
       [ "robot_fingers::NFingerDriver< 1 >", "classrobot__fingers_1_1NFingerDriver.html", [
         [ "robot_fingers::RealFingerDriver", "classrobot__fingers_1_1RealFingerDriver.html", null ]

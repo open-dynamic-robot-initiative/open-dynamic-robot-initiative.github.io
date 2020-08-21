@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classrobot__interfaces_1_1SensorBackend" kind="class" language="C++" prot="public">
+    <compoundname>robot_interfaces::SensorBackend</compoundname>
+    <includes refid="sensor__backend_8hpp" local="no">sensor_backend.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename ObservationType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrobot__interfaces_1_1SensorBackend_1a72fda090e697edcda5f92d7542788171" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1SensorDriver" kindref="compound">SensorDriver</ref>&lt; ObservationType &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;SensorDriver&lt;ObservationType&gt; &gt; robot_interfaces::SensorBackend&lt; ObservationType &gt;::sensor_driver_</definition>
+        <argsstring></argsstring>
+        <name>sensor_driver_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="58" column="1" bodyfile="include/robot_interfaces/sensors/sensor_backend.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1SensorBackend_1a93c993a56270f282235df08337e0bc26" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1SensorData" kindref="compound">SensorData</ref>&lt; ObservationType &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;SensorData&lt;ObservationType&gt; &gt; robot_interfaces::SensorBackend&lt; ObservationType &gt;::sensor_data_</definition>
+        <argsstring></argsstring>
+        <name>sensor_data_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="59" column="1" bodyfile="include/robot_interfaces/sensors/sensor_backend.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1SensorBackend_1a479d96dc0a9fce6c72c7957e005530f7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool robot_interfaces::SensorBackend&lt; ObservationType &gt;::destructor_was_called_</definition>
+        <argsstring></argsstring>
+        <name>destructor_was_called_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="61" column="1" bodyfile="include/robot_interfaces/sensors/sensor_backend.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrobot__interfaces_1_1SensorBackend_1ac9ca3c3602264de39a6bca792b51dcd4" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread robot_interfaces::SensorBackend&lt; ObservationType &gt;::thread_</definition>
+        <argsstring></argsstring>
+        <name>thread_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="63" column="1" bodyfile="include/robot_interfaces/sensors/sensor_backend.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1SensorBackend_1af24fda0e1d54274cf8122195f82acea9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::SensorBackend&lt; ObservationType &gt;::SensorBackend</definition>
+        <argsstring>(std::shared_ptr&lt; SensorDriver&lt; ObservationType &gt;&gt; sensor_driver, std::shared_ptr&lt; SensorData&lt; ObservationType &gt;&gt; sensor_data)</argsstring>
+        <name>SensorBackend</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1SensorDriver" kindref="compound">SensorDriver</ref>&lt; ObservationType &gt;&gt;</type>
+          <declname>sensor_driver</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classrobot__interfaces_1_1SensorData" kindref="compound">SensorData</ref>&lt; ObservationType &gt;&gt;</type>
+          <declname>sensor_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sensor_driver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDriver" kindref="compound">Driver</ref> instance for the sensor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sensor_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data is sent to/retrieved from here. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="38" column="1" bodyfile="include/robot_interfaces/sensors/sensor_backend.hpp" bodystart="38" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1SensorBackend_1a50a8691ab6bdfb1bc39fc55266ffb76c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>robot_interfaces::SensorBackend&lt; ObservationType &gt;::SensorBackend</definition>
+        <argsstring>(SensorBackend &amp;&amp;)=default</argsstring>
+        <name>SensorBackend</name>
+        <param>
+          <type><ref refid="classrobot__interfaces_1_1SensorBackend" kindref="compound">SensorBackend</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="49" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classrobot__interfaces_1_1SensorBackend_1a32ced479c4ec68d7a0f509bcff41c0b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual robot_interfaces::SensorBackend&lt; ObservationType &gt;::~SensorBackend</definition>
+        <argsstring>()</argsstring>
+        <name>~SensorBackend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="51" column="1" bodyfile="include/robot_interfaces/sensors/sensor_backend.hpp" bodystart="51" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classrobot__interfaces_1_1SensorBackend_1aee2c015c331cf8acd80b57523f10beaa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void robot_interfaces::SensorBackend&lt; ObservationType &gt;::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>Main loop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="68" column="1" bodyfile="include/robot_interfaces/sensors/sensor_backend.hpp" bodystart="68" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Communication link between <ref refid="classrobot__interfaces_1_1SensorData" kindref="compound">SensorData</ref> and <ref refid="classrobot__interfaces_1_1SensorDriver" kindref="compound">SensorDriver</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>At each instant, it checks if the sensor can be accessed, and then gets the observation from it (the observation type depends on the sensor) and appends it to the sensor data.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>ObservationType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="include/robot_interfaces/sensors/sensor_backend.hpp" line="32" column="1" bodyfile="include/robot_interfaces/sensors/sensor_backend.hpp" bodystart="31" bodyend="84"/>
+    <listofallmembers>
+      <member refid="classrobot__interfaces_1_1SensorBackend_1a479d96dc0a9fce6c72c7957e005530f7" prot="private" virt="non-virtual"><scope>robot_interfaces::SensorBackend</scope><name>destructor_was_called_</name></member>
+      <member refid="classrobot__interfaces_1_1SensorBackend_1aee2c015c331cf8acd80b57523f10beaa" prot="private" virt="non-virtual"><scope>robot_interfaces::SensorBackend</scope><name>loop</name></member>
+      <member refid="classrobot__interfaces_1_1SensorBackend_1a93c993a56270f282235df08337e0bc26" prot="private" virt="non-virtual"><scope>robot_interfaces::SensorBackend</scope><name>sensor_data_</name></member>
+      <member refid="classrobot__interfaces_1_1SensorBackend_1a72fda090e697edcda5f92d7542788171" prot="private" virt="non-virtual"><scope>robot_interfaces::SensorBackend</scope><name>sensor_driver_</name></member>
+      <member refid="classrobot__interfaces_1_1SensorBackend_1af24fda0e1d54274cf8122195f82acea9" prot="public" virt="non-virtual"><scope>robot_interfaces::SensorBackend</scope><name>SensorBackend</name></member>
+      <member refid="classrobot__interfaces_1_1SensorBackend_1a50a8691ab6bdfb1bc39fc55266ffb76c" prot="public" virt="non-virtual"><scope>robot_interfaces::SensorBackend</scope><name>SensorBackend</name></member>
+      <member refid="classrobot__interfaces_1_1SensorBackend_1ac9ca3c3602264de39a6bca792b51dcd4" prot="private" virt="non-virtual"><scope>robot_interfaces::SensorBackend</scope><name>thread_</name></member>
+      <member refid="classrobot__interfaces_1_1SensorBackend_1a32ced479c4ec68d7a0f509bcff41c0b1" prot="public" virt="virtual"><scope>robot_interfaces::SensorBackend</scope><name>~SensorBackend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
