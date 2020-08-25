@@ -139,17 +139,17 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a988c07200135ba12bf9ec1bbe955bde8"><td class="memTemplParams" colspan="2">template&lt;typename Driver &gt; </td></tr>
-<tr class="memitem:a988c07200135ba12bf9ec1bbe955bde8"><td class="memTemplItemLeft" align="right" valign="top">Driver::Types::BackendPtr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="n__joint__blmc__robot__driver_8hpp.html#a988c07200135ba12bf9ec1bbe955bde8">blmc_robots::create_backend</a> (typename Driver::Types::BaseDataPtr robot_data, const std::string &amp;config_file_path, const double first_action_timeout=std::numeric_limits&lt; double &gt;::infinity())</td></tr>
-<tr class="memdesc:a988c07200135ba12bf9ec1bbe955bde8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create backend using the specified driver.  <a href="n__joint__blmc__robot__driver_8hpp.html#a988c07200135ba12bf9ec1bbe955bde8">More...</a><br /></td></tr>
-<tr class="separator:a988c07200135ba12bf9ec1bbe955bde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca4aacc4fe2917984029d7136140021"><td class="memTemplParams" colspan="2">template&lt;typename Driver &gt; </td></tr>
+<tr class="memitem:aaca4aacc4fe2917984029d7136140021"><td class="memTemplItemLeft" align="right" valign="top">Driver::Types::BackendPtr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="n__joint__blmc__robot__driver_8hpp.html#aaca4aacc4fe2917984029d7136140021">blmc_robots::create_backend</a> (typename Driver::Types::BaseDataPtr robot_data, const std::string &amp;config_file_path, const double first_action_timeout=std::numeric_limits&lt; double &gt;::infinity(), const uint32_t max_number_of_actions=0)</td></tr>
+<tr class="memdesc:aaca4aacc4fe2917984029d7136140021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create backend using the specified driver.  <a href="n__joint__blmc__robot__driver_8hpp.html#aaca4aacc4fe2917984029d7136140021">More...</a><br /></td></tr>
+<tr class="separator:aaca4aacc4fe2917984029d7136140021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base driver for a generic n-joint BLMC robot. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2019, New York University and Max Planck Gesellschaft. </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="file_a988c07200135ba12bf9ec1bbe955bde8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_a988c07200135ba12bf9ec1bbe955bde8">&#9670;&nbsp;</a></span>create_backend()</h2>
+<a id="file_aaca4aacc4fe2917984029d7136140021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#file_aaca4aacc4fe2917984029d7136140021">&#9670;&nbsp;</a></span>create_backend()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +172,13 @@ template&lt;typename Driver &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>first_action_timeout</em> = <code>std::numeric_limits&lt;double&gt;::infinity()</code>&#160;</td>
+          <td class="paramname"><em>first_action_timeout</em> = <code>std::numeric_limits&lt;double&gt;::infinity()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>max_number_of_actions</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -193,7 +199,8 @@ template&lt;typename Driver &gt; </div>
   <table class="params">
     <tr><td class="paramname">robot_data</td><td>Instance of RobotData used for communication. </td></tr>
     <tr><td class="paramname">config_file_path</td><td>Path to the driver configuration file. </td></tr>
-    <tr><td class="paramname">first_action_timeout</td><td>Duration for which the backend waits for the first action to arrive. If exceeded, the backend shuts down.</td></tr>
+    <tr><td class="paramname">first_action_timeout</td><td>Duration for which the backend waits for the first action to arrive. If exceeded, the backend shuts down. </td></tr>
+    <tr><td class="paramname">max_number_of_actions</td><td>Number of actions after which the backend automatically shuts down.</td></tr>
   </table>
   </dd>
 </dl>
