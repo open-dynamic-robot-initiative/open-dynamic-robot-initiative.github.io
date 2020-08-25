@@ -9,6 +9,7 @@ var classrobot__interfaces_1_1RobotBackend =
     [ "loop", "classrobot__interfaces_1_1RobotBackend.html#a7cc66183743f277c41614a44fcc47b1a", null ],
     [ "request_shutdown", "classrobot__interfaces_1_1RobotBackend.html#a3da1748227b56acf7b745aff64023715", null ],
     [ "set_max_action_repetitions", "classrobot__interfaces_1_1RobotBackend.html#aad761d1e0ab7296a9632b9c4cc9c91db", null ],
+    [ "wait_until_first_action", "classrobot__interfaces_1_1RobotBackend.html#acf72ec0a08dfbcb72b6c701e0cf1ac89", null ],
     [ "wait_until_terminated", "classrobot__interfaces_1_1RobotBackend.html#ad4e9c9fda8d3bbab60b1896df1e1e78b", null ],
     [ "first_action_timeout_", "classrobot__interfaces_1_1RobotBackend.html#a56f111a9e0663eedefbaf55de36f7cac", null ],
     [ "is_shutdown_requested_", "classrobot__interfaces_1_1RobotBackend.html#abe24206dcf102b33f8ee472e287f485a", null ],

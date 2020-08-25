@@ -32,7 +32,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"pybind__helper_8hpp.html"
+"py__two__joint__types_8cpp.html#a045f161d5577878718d68713b650463f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
