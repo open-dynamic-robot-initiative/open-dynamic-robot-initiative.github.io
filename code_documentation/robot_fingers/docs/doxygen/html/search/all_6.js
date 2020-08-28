@@ -4,7 +4,6 @@ var searchData=
   ['get_5fcamera_5fobservation',['get_camera_observation',['../classrobot__fingers_1_1TriFingerPlatformFrontend.html#a2b83c7b23977185f4a522e16077b204a',1,'robot_fingers::TriFingerPlatformFrontend']]],
   ['get_5fcurrent_5ftimeindex',['get_current_timeindex',['../classrobot__fingers_1_1TriFingerPlatformFrontend.html#a9c97379d70b40a023609521a83253177',1,'robot_fingers::TriFingerPlatformFrontend']]],
   ['get_5fdesired_5faction',['get_desired_action',['../classrobot__fingers_1_1TriFingerPlatformFrontend.html#acdb76e148024bfdcb59bf06a92f30222',1,'robot_fingers::TriFingerPlatformFrontend']]],
-  ['get_5fobject_5fpose',['get_object_pose',['../classrobot__fingers_1_1TriFingerPlatformFrontend.html#abb39cc97fbf08af6942f2de3e99e6f54',1,'robot_fingers::TriFingerPlatformFrontend']]],
   ['get_5fpressed_5fkey',['get_pressed_key',['../classdemonstrate__trajectory_1_1SimpleCursesGUI.html#a273895ec6e0192cc5284af7f91023c68',1,'demonstrate_trajectory::SimpleCursesGUI']]],
   ['get_5frobot_5fobservation',['get_robot_observation',['../classrobot__fingers_1_1TriFingerPlatformFrontend.html#a86149ce45a4ddada714eb0e0fde20e66',1,'robot_fingers::TriFingerPlatformFrontend']]],
   ['get_5frobot_5fstatus',['get_robot_status',['../classrobot__fingers_1_1TriFingerPlatformFrontend.html#afc30cd1aecd9967045a0365c21f964fe',1,'robot_fingers::TriFingerPlatformFrontend']]],
