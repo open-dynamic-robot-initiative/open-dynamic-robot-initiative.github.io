@@ -9,6 +9,7 @@ var NAVTREE =
     [ "RobotData -- Single or Multi Process", "md_docs_robot_data.html", null ],
     [ "Logic of Actions and Observations", "md_docs_timeseries.html", null ],
     [ "Robot interfaces", "md_readme.html", null ],
+    [ "Todo List", "todo.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "License", "license.html", null ],
     [ "Classes", "annotated.html", [

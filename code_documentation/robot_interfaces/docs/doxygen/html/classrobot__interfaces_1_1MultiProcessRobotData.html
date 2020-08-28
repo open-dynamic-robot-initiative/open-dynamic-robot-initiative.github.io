@@ -209,11 +209,12 @@ template&lt;typename Action , typename Observation &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">shared_memory_id_prefix</td><td>Prefix for the shared memory IDs. Since each time series needs its own memory ID, the given value is used as prefix and unique suffixes are appended. Make sure to use a prefix that cannot lead to name collisions on your system. </td></tr>
-    <tr><td class="paramname">is_master</td><td>If set to true, this instance will clear the shared memory on construction and destruction. Only once instance should act as master in a multi-process setup. </td></tr>
-    <tr><td class="paramname">history_length</td><td>History length of the time series. </td></tr>
+    <tr><td class="paramname">is_master</td><td>If set to true, this instance will clear the shared memory on construction and destruction. Only one instance should act as master in a multi-process setup. </td></tr>
+    <tr><td class="paramname">history_length</td><td>History length of the time series. Ignored if <code>is_master == false</code>.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Make this constructor protected and implement factory methods like in MultiprocessTimeSeries.. </dd></dl>
 
 </div>
 </div>

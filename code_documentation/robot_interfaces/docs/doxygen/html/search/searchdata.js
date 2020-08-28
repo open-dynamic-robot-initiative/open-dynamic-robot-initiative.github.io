@@ -7,7 +7,7 @@ var indexSectionsWithContent =
   4: "adefilmnoprstv",
   5: "e",
   6: "bdn",
-  7: "bdhlqr"
+  7: "bdhlqrt"
 };
 
 var indexSectionNames =
