@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"solo8__hardware__calibration_8cpp.html":[6,0,2,1,1],
 "solo8__hardware__calibration_8cpp.html#a39957cbbba118d0d10bbc093b6b1ff5a":[6,0,2,1,1,0],
 "solo8__hardware__calibration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[6,0,2,1,1,1],
 "solo8ti_8hpp_source.html":[6,0,1,0,12],

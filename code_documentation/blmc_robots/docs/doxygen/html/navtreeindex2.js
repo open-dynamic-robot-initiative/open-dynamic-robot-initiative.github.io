@@ -124,9 +124,10 @@ var NAVTREEINDEX2 =
 "common__header_8hpp_source.html":[6,0,1,0,3],
 "common__programs__header_8hpp_source.html":[6,0,1,0,4],
 "demo__solo12_8cpp.html":[6,0,0,1],
-"demo__solo12_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[6,0,0,1,1],
-"demo__solo12_8cpp.html#a5b91a2c54c5572ad9e3a9c2d295263b3":[6,0,0,1,2],
-"demo__solo12_8cpp.html#ad6c628b757f67738bfae2ffb51a453c1":[6,0,0,1,0],
+"demo__solo12_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[6,0,0,1,2],
+"demo__solo12_8cpp.html#a4061cd7d86b33a32f45bdce36ac5dea2":[6,0,0,1,1],
+"demo__solo12_8cpp.html#a5b91a2c54c5572ad9e3a9c2d295263b3":[6,0,0,1,3],
+"demo__solo12_8cpp.html#ab9d429cb6b4af0823d111594c5792593":[6,0,0,1,0],
 "demo__solo12__calibration_8cpp.html":[6,0,0,2],
 "demo__solo12__calibration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[6,0,0,2,2],
 "demo__solo12__calibration_8cpp.html#a4061cd7d86b33a32f45bdce36ac5dea2":[6,0,0,2,1],
@@ -193,8 +194,8 @@ var NAVTREEINDEX2 =
 "functions_type.html":[5,3,3],
 "functions_u.html":[5,3,0,18],
 "functions_v.html":[5,3,0,19],
-"functions_vars.html":[5,3,2],
 "functions_vars.html":[5,3,2,0],
+"functions_vars.html":[5,3,2],
 "functions_vars_b.html":[5,3,2,1],
 "functions_vars_c.html":[5,3,2,2],
 "functions_vars_e.html":[5,3,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "solo12__hardware__calibration_8cpp.html#a39957cbbba118d0d10bbc093b6b1ff5a":[6,0,2,1,0,0],
 "solo12__hardware__calibration_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[6,0,2,1,0,1],
 "solo8_8hpp.html":[6,0,1,0,11],
-"solo8_8hpp_source.html":[6,0,1,0,11],
-"solo8__hardware__calibration_8cpp.html":[6,0,2,1,1]
+"solo8_8hpp_source.html":[6,0,1,0,11]
 };

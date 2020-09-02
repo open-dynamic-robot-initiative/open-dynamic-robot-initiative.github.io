@@ -33,7 +33,7 @@ var NAVTREEINDEX =
 ".html",
 "classblmc__robots_1_1Solo12.html#a37584471402cef8cf854d69bdbac98eb",
 "classblmc__robots_1_1TestBench8Motors.html#a52ee837f59773887558537c021e68917",
-"solo8__hardware__calibration_8cpp.html#a39957cbbba118d0d10bbc093b6b1ff5a"
+"solo8__hardware__calibration_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
