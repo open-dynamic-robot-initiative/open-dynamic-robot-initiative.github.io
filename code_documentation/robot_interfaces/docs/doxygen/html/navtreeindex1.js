@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"py__trifinger__types_8cpp.html":[12,0,2,3],
+"py__trifinger__types_8cpp.html#acde80b8029ae46e9e6a8d87c2f464d94":[12,0,2,3,0],
+"py__two__joint__types_8cpp.html":[12,0,2,4],
 "py__two__joint__types_8cpp.html#a045f161d5577878718d68713b650463f":[12,0,2,4,0],
 "pybind__helper_8hpp.html":[12,0,1,0,9],
 "pybind__helper_8hpp.html#a82052567130c3000eeef9f5520885233":[12,0,1,0,9,2],
