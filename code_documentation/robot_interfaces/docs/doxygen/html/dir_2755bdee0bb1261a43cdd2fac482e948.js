@@ -31,6 +31,12 @@ var dir_2755bdee0bb1261a43cdd2fac482e948 =
     ] ],
     [ "robot_driver.hpp", "robot__driver_8hpp_source.html", null ],
     [ "robot_frontend.hpp", "robot__frontend_8hpp_source.html", null ],
+    [ "robot_log_entry.hpp", "robot__log__entry_8hpp.html", [
+      [ "RobotLogEntry", "structrobot__interfaces_1_1RobotLogEntry.html", "structrobot__interfaces_1_1RobotLogEntry" ]
+    ] ],
+    [ "robot_log_reader.hpp", "robot__log__reader_8hpp.html", [
+      [ "RobotBinaryLogReader", "classrobot__interfaces_1_1RobotBinaryLogReader.html", "classrobot__interfaces_1_1RobotBinaryLogReader" ]
+    ] ],
     [ "robot_logger.hpp", "robot__logger_8hpp_source.html", null ],
     [ "status.hpp", "status_8hpp.html", [
       [ "Status", "structrobot__interfaces_1_1Status.html", "structrobot__interfaces_1_1Status" ]

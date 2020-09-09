@@ -13,6 +13,7 @@ var hierarchy =
     [ "robot_interfaces::example::Observation", "classrobot__interfaces_1_1example_1_1Observation.html", null ],
     [ "robot_interfaces::demo::Observation", "classrobot__interfaces_1_1demo_1_1Observation.html", null ],
     [ "robot_interfaces::RobotBackend< Action, Observation >", "classrobot__interfaces_1_1RobotBackend.html", null ],
+    [ "robot_interfaces::RobotBinaryLogReader< Action, Observation >", "classrobot__interfaces_1_1RobotBinaryLogReader.html", null ],
     [ "robot_interfaces::RobotData< Action, Observation >", "classrobot__interfaces_1_1RobotData.html", [
       [ "robot_interfaces::MultiProcessRobotData< Action, Observation >", "classrobot__interfaces_1_1MultiProcessRobotData.html", null ],
       [ "robot_interfaces::SingleProcessRobotData< Action, Observation >", "classrobot__interfaces_1_1SingleProcessRobotData.html", null ]
@@ -35,6 +36,7 @@ var hierarchy =
     [ "robot_interfaces::RobotInterfaceTypes< NJointAction< N_FINGERS *JOINTS_PER_FINGER >, NFingerObservation< N_FINGERS > >", "structrobot__interfaces_1_1RobotInterfaceTypes.html", [
       [ "robot_interfaces::FingerTypes< N_FINGERS >", "structrobot__interfaces_1_1FingerTypes.html", null ]
     ] ],
+    [ "robot_interfaces::RobotLogEntry< Action, Observation >", "structrobot__interfaces_1_1RobotLogEntry.html", null ],
     [ "robot_interfaces::RobotLogger< Action, Observation >", "classrobot__interfaces_1_1RobotLogger.html", null ],
     [ "robot_interfaces::SensorBackend< ObservationType >", "classrobot__interfaces_1_1SensorBackend.html", null ],
     [ "robot_interfaces::SensorData< Observation >", "classrobot__interfaces_1_1SensorData.html", [

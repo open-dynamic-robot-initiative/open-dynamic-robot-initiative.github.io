@@ -1,5 +1,6 @@
 var classrobot__interfaces_1_1RobotLogger =
 [
+    [ "LogEntry", "classrobot__interfaces_1_1RobotLogger.html#a8c71f8c7c103d384e8a736ff20bdefec", null ],
     [ "RobotLogger", "classrobot__interfaces_1_1RobotLogger.html#aacc60628e6fd5ca26f15dfe51763697d", null ],
     [ "~RobotLogger", "classrobot__interfaces_1_1RobotLogger.html#aaa91bf14d3de20fed756c8aa5d60c5c3", null ],
     [ "append_field_data_to_file", "classrobot__interfaces_1_1RobotLogger.html#ac37dfe19cbd427ba3ecf1238e8a64bed", null ],
@@ -10,6 +11,7 @@ var classrobot__interfaces_1_1RobotLogger =
     [ "start", "classrobot__interfaces_1_1RobotLogger.html#a7a1b50c75aab3255ac7e6d412de833d1", null ],
     [ "stop", "classrobot__interfaces_1_1RobotLogger.html#a55ec7dcacd849adee53fa49a2a0c8234", null ],
     [ "write_current_buffer", "classrobot__interfaces_1_1RobotLogger.html#a36b22a51e9615ee696a5baa350d3dee0", null ],
+    [ "write_current_buffer_binary", "classrobot__interfaces_1_1RobotLogger.html#ac76a85ff2821ae790e60219ac3a49bbf", null ],
     [ "write_header_to_file", "classrobot__interfaces_1_1RobotLogger.html#a3ff864106933593e16e5f3d6b5a8c4c2", null ],
     [ "block_size_", "classrobot__interfaces_1_1RobotLogger.html#a0465f86efac78a429f8980bd2a12959e", null ],
     [ "index_", "classrobot__interfaces_1_1RobotLogger.html#ac47398855bcb94ca8a3e83334ee1d382", null ],
