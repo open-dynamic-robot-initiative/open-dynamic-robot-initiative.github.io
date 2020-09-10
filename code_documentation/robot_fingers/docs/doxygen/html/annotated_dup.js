@@ -13,6 +13,9 @@ var annotated_dup =
       [ "robot", null, [
         [ "Robot", "classrobot__fingers_1_1robot_1_1Robot.html", "classrobot__fingers_1_1robot_1_1Robot" ]
       ] ],
+      [ "utils", null, [
+        [ "TimePrinter", "classrobot__fingers_1_1utils_1_1TimePrinter.html", "classrobot__fingers_1_1utils_1_1TimePrinter" ]
+      ] ],
       [ "FakeFingerDriver", "classrobot__fingers_1_1FakeFingerDriver.html", "classrobot__fingers_1_1FakeFingerDriver" ],
       [ "NFingerDriver", "classrobot__fingers_1_1NFingerDriver.html", "classrobot__fingers_1_1NFingerDriver" ],
       [ "OneJointDriver", "classrobot__fingers_1_1OneJointDriver.html", "classrobot__fingers_1_1OneJointDriver" ],

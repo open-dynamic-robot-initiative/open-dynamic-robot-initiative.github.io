@@ -1,6 +1,7 @@
 var searchData=
 [
   ['tools_20for_20hardware_20testing',['Tools for Hardware Testing',['../md_doc_hardware_testing.html',1,'']]],
+  ['timeprinter',['TimePrinter',['../classrobot__fingers_1_1utils_1_1TimePrinter.html',1,'robot_fingers::utils']]],
   ['todo_20list',['Todo List',['../todo.html',1,'']]],
   ['trifinger_5fdriver_2ehpp',['trifinger_driver.hpp',['../trifinger__driver_8hpp.html',1,'']]],
   ['trifinger_5fplatform_5ffrontend_2ecpp',['trifinger_platform_frontend.cpp',['../trifinger__platform__frontend_8cpp.html',1,'']]],
