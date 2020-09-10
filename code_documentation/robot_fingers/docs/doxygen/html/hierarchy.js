@@ -21,5 +21,6 @@ var hierarchy =
       [ "robot_fingers::TwoJointDriver", "classrobot__fingers_1_1TwoJointDriver.html", null ]
     ] ],
     [ "robot_fingers.utils.TimePrinter", "classrobot__fingers_1_1utils_1_1TimePrinter.html", null ],
-    [ "robot_fingers::TriFingerPlatformFrontend", "classrobot__fingers_1_1TriFingerPlatformFrontend.html", null ]
+    [ "robot_fingers::TriFingerPlatformFrontend", "classrobot__fingers_1_1TriFingerPlatformFrontend.html", null ],
+    [ "robot_fingers::TriFingerPlatformLog", "classrobot__fingers_1_1TriFingerPlatformLog.html", null ]
 ];

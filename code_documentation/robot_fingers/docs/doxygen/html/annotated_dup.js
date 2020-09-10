@@ -22,6 +22,7 @@ var annotated_dup =
       [ "RealFingerDriver", "classrobot__fingers_1_1RealFingerDriver.html", "classrobot__fingers_1_1RealFingerDriver" ],
       [ "TriFingerDriver", "classrobot__fingers_1_1TriFingerDriver.html", "classrobot__fingers_1_1TriFingerDriver" ],
       [ "TriFingerPlatformFrontend", "classrobot__fingers_1_1TriFingerPlatformFrontend.html", "classrobot__fingers_1_1TriFingerPlatformFrontend" ],
+      [ "TriFingerPlatformLog", "classrobot__fingers_1_1TriFingerPlatformLog.html", "classrobot__fingers_1_1TriFingerPlatformLog" ],
       [ "TwoJointDriver", "classrobot__fingers_1_1TwoJointDriver.html", "classrobot__fingers_1_1TwoJointDriver" ]
     ] ]
 ];
