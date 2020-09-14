@@ -52,7 +52,7 @@ var annotated_dup =
         [ "Observation", "classtrifinger__simulation_1_1observation_1_1Observation.html", "classtrifinger__simulation_1_1observation_1_1Observation" ]
       ] ],
       [ "pinocchio_utils", null, [
-        [ "PinocchioUtils", "classtrifinger__simulation_1_1pinocchio__utils_1_1PinocchioUtils.html", "classtrifinger__simulation_1_1pinocchio__utils_1_1PinocchioUtils" ]
+        [ "Kinematics", "classtrifinger__simulation_1_1pinocchio__utils_1_1Kinematics.html", "classtrifinger__simulation_1_1pinocchio__utils_1_1Kinematics" ]
       ] ],
       [ "real_finger", null, [
         [ "RealFinger", "classtrifinger__simulation_1_1real__finger_1_1RealFinger.html", "classtrifinger__simulation_1_1real__finger_1_1RealFinger" ]

@@ -22,6 +22,7 @@ var classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform =
     [ "Action", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#ac1a05e90774daeeff64b31d89001c6f6", null ],
     [ "cube", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#a187854c0a1c9815d03c2796e868da03e", null ],
     [ "default", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#ab50bdd7002eb9220d21b51ad080f0d11", null ],
+    [ "dtype", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#a1ec0704aa28f1508b0474bbb8e5b66bb", null ],
     [ "enable_cameras", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#aa99761840d54c8b50d02f11267d15848", null ],
     [ "forward_kinematics", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#a7b936de6a534c18ec7f357a7cd6a8483", null ],
     [ "get_applied_action", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#af73b1f73050b144b6e8ad7d8ec427fa7", null ],

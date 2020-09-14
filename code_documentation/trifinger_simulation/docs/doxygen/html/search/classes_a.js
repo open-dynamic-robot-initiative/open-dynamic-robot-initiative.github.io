@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['randompolicy',['RandomPolicy',['../classevaluate__policy_1_1RandomPolicy.html',1,'evaluate_policy.RandomPolicy'],['../classdemo__random__policy_1_1RandomPolicy.html',1,'demo_random_policy.RandomPolicy']]],
-  ['realfinger',['RealFinger',['../classtrifinger__simulation_1_1real__finger_1_1RealFinger.html',1,'trifinger_simulation::real_finger']]]
+  ['pose',['Pose',['../classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose.html',1,'trifinger_simulation::tasks::move_cube']]],
+  ['ppopolicy',['PPOPolicy',['../classevaluate__policy_1_1PPOPolicy.html',1,'evaluate_policy']]],
+  ['pybulletsinglefingerdriver',['PyBulletSingleFingerDriver',['../classtrifinger__simulation_1_1PyBulletSingleFingerDriver.html',1,'trifinger_simulation']]],
+  ['pybullettrifingerdriver',['PyBulletTriFingerDriver',['../classtrifinger__simulation_1_1PyBulletTriFingerDriver.html',1,'trifinger_simulation']]]
 ];

@@ -15,6 +15,7 @@ var hierarchy =
       [ "trifinger_simulation.tasks.move_cube.InvalidGoalError", "classtrifinger__simulation_1_1tasks_1_1move__cube_1_1InvalidGoalError.html", null ]
     ] ],
     [ "trifinger_simulation.gym_wrapper.finger_spaces.FingerSpaces", "classtrifinger__simulation_1_1gym__wrapper_1_1finger__spaces_1_1FingerSpaces.html", null ],
+    [ "trifinger_simulation.pinocchio_utils.Kinematics", "classtrifinger__simulation_1_1pinocchio__utils_1_1Kinematics.html", null ],
     [ "trifinger_simulation.visual_objects.Marker", "classtrifinger__simulation_1_1visual__objects_1_1Marker.html", null ],
     [ "NamedTuple", null, [
       [ "run_evaluate_policy_all_levels.TestSample", "classrun__evaluate__policy__all__levels_1_1TestSample.html", null ],
@@ -29,7 +30,6 @@ var hierarchy =
     [ "ObservationWrapper", null, [
       [ "example_pushing_training_env.FlatObservationWrapper", "classexample__pushing__training__env_1_1FlatObservationWrapper.html", null ]
     ] ],
-    [ "trifinger_simulation.pinocchio_utils.PinocchioUtils", "classtrifinger__simulation_1_1pinocchio__utils_1_1PinocchioUtils.html", null ],
     [ "trifinger_simulation.tasks.move_cube.Pose", "classtrifinger__simulation_1_1tasks_1_1move__cube_1_1Pose.html", null ],
     [ "evaluate_policy.PPOPolicy", "classevaluate__policy_1_1PPOPolicy.html", null ],
     [ "evaluate_policy.RandomPolicy", "classevaluate__policy_1_1RandomPolicy.html", null ],

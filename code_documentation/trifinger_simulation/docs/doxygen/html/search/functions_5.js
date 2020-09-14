@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['reset',['reset',['../classtrifinger__simulation_1_1gym__wrapper_1_1envs_1_1trifinger__push_1_1TriFingerPush.html#a37f86f66dd9d3268f0df751fc295df23',1,'trifinger_simulation.gym_wrapper.envs.trifinger_push.TriFingerPush.reset()'],['../classtrifinger__simulation_1_1gym__wrapper_1_1envs_1_1trifinger__reach_1_1TriFingerReach.html#a46ae0ba9d5fc6cf4b8809db2fce2502b',1,'trifinger_simulation.gym_wrapper.envs.trifinger_reach.TriFingerReach.reset()']]]
+  ['inverse_5fkinematics',['inverse_kinematics',['../classtrifinger__simulation_1_1pinocchio__utils_1_1Kinematics.html#a201f9d854ff47326f5c3c24d73a096e4',1,'trifinger_simulation::pinocchio_utils::Kinematics']]],
+  ['inverse_5fkinematics_5fone_5ffinger',['inverse_kinematics_one_finger',['../classtrifinger__simulation_1_1pinocchio__utils_1_1Kinematics.html#a36aeb2f9f6379538c1e8f338ea7fa058',1,'trifinger_simulation::pinocchio_utils::Kinematics']]]
 ];
