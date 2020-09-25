@@ -5,7 +5,7 @@ var searchData=
   ['get_5fcamera_5fobservation',['get_camera_observation',['../classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#a805e6e931f01283be195d04a7138a3f4',1,'trifinger_simulation::trifinger_platform::TriFingerPlatform']]],
   ['get_5fcurrent_5ftimeindex',['get_current_timeindex',['../classtrifinger__simulation_1_1sim__finger_1_1SimFinger.html#a26ba218495f7bb5c1615184070100df5',1,'trifinger_simulation::sim_finger::SimFinger']]],
   ['get_5fdesired_5faction',['get_desired_action',['../classtrifinger__simulation_1_1sim__finger_1_1SimFinger.html#a1a808eb19a1a9a13a4c0fe4f2d07d26c',1,'trifinger_simulation::sim_finger::SimFinger']]],
-  ['get_5fimage',['get_image',['../classtrifinger__simulation_1_1camera_1_1Camera.html#a6055089009e1f63df5ced179e5c56254',1,'trifinger_simulation::camera::Camera']]],
+  ['get_5fimage',['get_image',['../classtrifinger__simulation_1_1camera_1_1Camera.html#a9c614de55e1408fa131d9f30a86759be',1,'trifinger_simulation::camera::Camera']]],
   ['get_5fimages',['get_images',['../classtrifinger__simulation_1_1camera_1_1TriFingerCameras.html#ab87b4d284e9a42deebe874ad5fb233b9',1,'trifinger_simulation::camera::TriFingerCameras']]],
   ['get_5fobject_5fpose',['get_object_pose',['../classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html#ad46ed81c3e6c557c9cce2ce919b6110b',1,'trifinger_simulation::trifinger_platform::TriFingerPlatform']]],
   ['get_5fobservation',['get_observation',['../classtrifinger__simulation_1_1real__finger_1_1RealFinger.html#a5e10f8a9627376f072ad2ea64ecdd361',1,'trifinger_simulation::real_finger::RealFinger']]],
