@@ -13,6 +13,7 @@ var classrobot__properties__solo_1_1config_1_1SoloConfig =
     [ "motor_inertia", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#a12d720f23faf864ef7647c757af1b218", null ],
     [ "nb_joints", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#af689510a467b1a99d82d484fdfee0e36", null ],
     [ "q0", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#ad8d81b53294542fc4523d65263e12cc1", null ],
+    [ "robot_family", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#aed1a074a3e16da873ac90f1cefd5e715", null ],
     [ "robot_model", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#a70f240a3708326aa2bb3272b00ce8cec", null ],
     [ "robot_name", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#a4e8858bf41253f84618b56cb4078a895", null ],
     [ "urdf_path", "classrobot__properties__solo_1_1config_1_1SoloConfig.html#a2ccf8dae7f440112401e8aa66c8ccdc9", null ],
