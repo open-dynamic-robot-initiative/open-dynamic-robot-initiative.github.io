@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"n__joint__robot__types_8hpp_source.html":[12,0,1,0,8],
 "pages.html":[],
 "py__finger__types_8cpp.html":[12,0,2,0],
 "py__finger__types_8cpp.html#ab295ef4cf11fbedce6a7b19f4adb60e6":[12,0,2,0,0],
