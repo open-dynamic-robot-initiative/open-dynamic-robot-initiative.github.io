@@ -1,7 +1,7 @@
 var classrobot__fingers_1_1TriFingerPlatformFrontend =
 [
     [ "Action", "classrobot__fingers_1_1TriFingerPlatformFrontend.html#af657fd0a6ea4023926ab23a225ca3bab", null ],
-    [ "CameraObservation", "classrobot__fingers_1_1TriFingerPlatformFrontend.html#a96f578b30c6f8e2220a8cbccc91974c1", null ],
+    [ "CameraObservation", "classrobot__fingers_1_1TriFingerPlatformFrontend.html#aa458dd5dc46fb329270bb894d0e018d5", null ],
     [ "RobotObservation", "classrobot__fingers_1_1TriFingerPlatformFrontend.html#a993606d1334ac3d932ba9b9637388cab", null ],
     [ "RobotStatus", "classrobot__fingers_1_1TriFingerPlatformFrontend.html#a2bb400ff94b8c528fd3be4a3112bda81", null ],
     [ "TriFingerPlatformFrontend", "classrobot__fingers_1_1TriFingerPlatformFrontend.html#af63cede1fa482e27aaafc3b54f6f3957", null ],
