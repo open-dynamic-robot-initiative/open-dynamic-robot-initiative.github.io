@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['max_5faction_5fduration_5fs_5f',['max_action_duration_s_',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#a860e5a4835a916faf08e1ab932b34bb1',1,'robot_interfaces::MonitoredRobotDriver']]],
-  ['max_5faction_5frepetitions_5f',['max_action_repetitions_',['../classrobot__interfaces_1_1RobotBackend.html#ae40ecdc44212f79f96d63a84f7b8a6e8',1,'robot_interfaces::RobotBackend']]],
-  ['max_5finter_5faction_5fduration_5fs_5f',['max_inter_action_duration_s_',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#acef35c51b51f1d05453b5b672f43a516',1,'robot_interfaces::MonitoredRobotDriver']]],
-  ['monitoredrobotdriver',['MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#a2ea1456e85ad7596295cb047e552dc06',1,'robot_interfaces::MonitoredRobotDriver']]],
-  ['monitoredrobotdriver',['MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html',1,'robot_interfaces']]],
-  ['multiprocessrobotdata',['MultiProcessRobotData',['../classrobot__interfaces_1_1MultiProcessRobotData.html',1,'robot_interfaces']]],
-  ['multiprocessrobotdata',['MultiProcessRobotData',['../classrobot__interfaces_1_1MultiProcessRobotData.html#a27bb5ee187ceacb386d89c828481b057',1,'robot_interfaces::MultiProcessRobotData']]]
+  ['license',['License',['../license.html',1,'']]],
+  ['loggable',['Loggable',['../classrobot__interfaces_1_1Loggable.html',1,'robot_interfaces']]],
+  ['loop',['loop',['../classrobot__interfaces_1_1MonitoredRobotDriver.html#a6ed3d940dce484dcdc558a52a8dfe8a5',1,'robot_interfaces::MonitoredRobotDriver::loop()'],['../classrobot__interfaces_1_1RobotBackend.html#a7cc66183743f277c41614a44fcc47b1a',1,'robot_interfaces::RobotBackend::loop()'],['../classrobot__interfaces_1_1RobotLogger.html#ad21b7aa8531a57bb3740ac5282093815',1,'robot_interfaces::RobotLogger::loop()'],['../classrobot__interfaces_1_1SensorBackend.html#aee2c015c331cf8acd80b57523f10beaa',1,'robot_interfaces::SensorBackend::loop()'],['../classrobot__interfaces_1_1SensorLogger.html#af05366bd0418ab2dea5a8f7de4031c5b',1,'robot_interfaces::SensorLogger::loop()']]],
+  ['loop_5fis_5frunning_5f',['loop_is_running_',['../classrobot__interfaces_1_1RobotBackend.html#a0e91800b352b7b52f22820775b1d5e99',1,'robot_interfaces::RobotBackend']]],
+  ['logic_20of_20actions_20and_20observations',['Logic of Actions and Observations',['../md_docs_timeseries.html',1,'']]]
 ];

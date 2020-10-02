@@ -10,7 +10,7 @@ var classblmc__drivers_1_1MotorBoardStatus =
       [ "OTHER", "classblmc__drivers_1_1MotorBoardStatus.html#a9fd931e24550f5e5877d7a6cf499f6cfa2b6b3fa06a4bf24105805b604aff7280", null ]
     ] ],
     [ "is_ready", "classblmc__drivers_1_1MotorBoardStatus.html#a1da75ba70f6ad31fa7c880b5c673cc89", null ],
-    [ "print", "classblmc__drivers_1_1MotorBoardStatus.html#ac050ae0cdf1c6e56ebd241c41330a42d", null ],
+    [ "print", "classblmc__drivers_1_1MotorBoardStatus.html#abae870151b4e76163d2e3ef6a209e555", null ],
     [ "error_code", "classblmc__drivers_1_1MotorBoardStatus.html#ad1a5cb78d86e76a60750c0e3e6b34b7e", null ],
     [ "motor1_enabled", "classblmc__drivers_1_1MotorBoardStatus.html#ae571da09a338790e07847efb068168af", null ],
     [ "motor1_ready", "classblmc__drivers_1_1MotorBoardStatus.html#a223efb9b461331c2e80b922ec29458cf", null ],

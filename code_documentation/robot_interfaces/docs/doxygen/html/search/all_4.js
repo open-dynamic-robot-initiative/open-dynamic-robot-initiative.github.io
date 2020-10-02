@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['fingertypes',['FingerTypes',['../structrobot__interfaces_1_1FingerTypes.html',1,'robot_interfaces']]],
-  ['first_5faction_5ftimeout_5f',['first_action_timeout_',['../classrobot__interfaces_1_1RobotBackend.html#a56f111a9e0663eedefbaf55de36f7cac',1,'robot_interfaces::RobotBackend']]]
+  ['error_5fmessage',['error_message',['../structrobot__interfaces_1_1Status.html#a7da10fb73cd19f2840c438d321eac744',1,'robot_interfaces::Status']]],
+  ['error_5fstatus',['error_status',['../structrobot__interfaces_1_1Status.html#a80ffe66121d425d48386b39984cd4c7b',1,'robot_interfaces::Status']]],
+  ['errorstatus',['ErrorStatus',['../structrobot__interfaces_1_1Status.html#a88f1cb8387648815ca75754985bdb3b6',1,'robot_interfaces::Status']]],
+  ['example_2ehpp',['example.hpp',['../example_8hpp.html',1,'']]]
 ];

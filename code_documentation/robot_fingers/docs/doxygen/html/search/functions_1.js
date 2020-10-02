@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initialize',['initialize',['../classrobot__fingers_1_1robot_1_1Robot.html#a68fd76fde66f13b697e2492932b2dca5',1,'robot_fingers::robot::Robot']]]
+  ['append_5fdesired_5faction',['append_desired_action',['../classrobot__fingers_1_1TriFingerPlatformFrontend.html#a474d2d6fd6c48fc16ccd60ac2bc21c2f',1,'robot_fingers::TriFingerPlatformFrontend']]]
 ];

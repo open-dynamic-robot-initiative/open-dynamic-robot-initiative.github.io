@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['realfingerdriver',['RealFingerDriver',['../classrobot__fingers_1_1RealFingerDriver.html',1,'robot_fingers']]],
-  ['robot',['Robot',['../classrobot__fingers_1_1robot_1_1Robot.html',1,'robot_fingers::robot']]]
+  ['nfingerdriver',['NFingerDriver',['../classrobot__fingers_1_1NFingerDriver.html',1,'robot_fingers']]],
+  ['nfingerdriver_3c_201_20_3e',['NFingerDriver&lt; 1 &gt;',['../classrobot__fingers_1_1NFingerDriver.html',1,'robot_fingers']]],
+  ['nfingerdriver_3c_203_20_3e',['NFingerDriver&lt; 3 &gt;',['../classrobot__fingers_1_1NFingerDriver.html',1,'robot_fingers']]]
 ];

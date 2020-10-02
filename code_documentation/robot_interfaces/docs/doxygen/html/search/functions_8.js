@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['position',['Position',['../structrobot__interfaces_1_1NJointRobotTypes_1_1Action.html#ad60ea89acc73e544634b47a74797afd1',1,'robot_interfaces::NJointRobotTypes::Action']]],
-  ['process_5fdesired_5faction',['process_desired_action',['../structrobot__interfaces_1_1NJointRobotFunctions.html#a25eefa719e07b4499fe3fd6462d866df',1,'robot_interfaces::NJointRobotFunctions']]],
-  ['pylondriver',['PylonDriver',['../classrobot__interfaces_1_1PylonDriver.html#aeebd4a6b394ec887a1f6043eb9b13643',1,'robot_interfaces::PylonDriver']]]
+  ['position',['Position',['../structrobot__interfaces_1_1NJointAction.html#ab90dfaabbae281108bf83337f455143c',1,'robot_interfaces::NJointAction']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['monitoredrobotdriver',['MonitoredRobotDriver',['../classrobot__interfaces_1_1MonitoredRobotDriver.html',1,'robot_interfaces']]],
-  ['multiprocessrobotdata',['MultiProcessRobotData',['../classrobot__interfaces_1_1MultiProcessRobotData.html',1,'robot_interfaces']]]
+  ['nfingerobservation',['NFingerObservation',['../structrobot__interfaces_1_1NFingerObservation.html',1,'robot_interfaces']]],
+  ['njointaction',['NJointAction',['../structrobot__interfaces_1_1NJointAction.html',1,'robot_interfaces']]],
+  ['njointobservation',['NJointObservation',['../structrobot__interfaces_1_1NJointObservation.html',1,'robot_interfaces']]]
 ];
