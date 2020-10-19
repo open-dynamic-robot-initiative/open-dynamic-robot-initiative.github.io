@@ -243,7 +243,7 @@ template&lt;size_t N&gt; </div>
 <p>The resulting torque command sent to the robot is </p><pre class="fragment">sent_torque = torque + PD(position)
 </pre><p>To disable the position controller, set the target position to NaN. The controller is executed joint-wise, so it is possible to run it only for some joints by setting a target position for these joints and setting the others to NaN.</p>
 <p>The specified torque is always added to the result of the position controller, so if you only want to run the position controller, make sure to set <code>torque</code> to zero for all joints.</p>
-<p>For more explicit code, the static factory methods <code>Troque</code>, <code>Position</code>, <code>TorqueAndPosition</code> and <code>Zero</code> should be used instead directly creating actions through this constuctor.</p>
+<p>For more explicit code, the static factory methods <code>Torque</code>, <code>Position</code>, <code>TorqueAndPosition</code> and <code>Zero</code> should be used instead directly creating actions through this constructor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">torque</td><td>Desired torque. </td></tr>

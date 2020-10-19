@@ -69,7 +69,7 @@ var annotated_dup =
       [ "trifinger_platform", null, [
         [ "CameraObservation", "classtrifinger__simulation_1_1trifinger__platform_1_1CameraObservation.html", "classtrifinger__simulation_1_1trifinger__platform_1_1CameraObservation" ],
         [ "ObjectPose", "classtrifinger__simulation_1_1trifinger__platform_1_1ObjectPose.html", "classtrifinger__simulation_1_1trifinger__platform_1_1ObjectPose" ],
-        [ "TriCameraObservation", "classtrifinger__simulation_1_1trifinger__platform_1_1TriCameraObservation.html", "classtrifinger__simulation_1_1trifinger__platform_1_1TriCameraObservation" ],
+        [ "TriCameraObjectObservation", "classtrifinger__simulation_1_1trifinger__platform_1_1TriCameraObjectObservation.html", "classtrifinger__simulation_1_1trifinger__platform_1_1TriCameraObjectObservation" ],
         [ "TriFingerPlatform", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform" ]
       ] ],
       [ "visual_objects", null, [

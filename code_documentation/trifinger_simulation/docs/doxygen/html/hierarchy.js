@@ -45,7 +45,7 @@ var hierarchy =
       [ "trifinger_simulation::BasePyBulletFingerDriver< Action, Observation >", "classtrifinger__simulation_1_1BasePyBulletFingerDriver.html", null ]
     ] ],
     [ "trifinger_simulation.sim_finger.SimFinger", "classtrifinger__simulation_1_1sim__finger_1_1SimFinger.html", null ],
-    [ "trifinger_simulation.trifinger_platform.TriCameraObservation", "classtrifinger__simulation_1_1trifinger__platform_1_1TriCameraObservation.html", null ],
+    [ "trifinger_simulation.trifinger_platform.TriCameraObjectObservation", "classtrifinger__simulation_1_1trifinger__platform_1_1TriCameraObjectObservation.html", null ],
     [ "trifinger_simulation.camera.TriFingerCameras", "classtrifinger__simulation_1_1camera_1_1TriFingerCameras.html", null ],
     [ "trifinger_simulation.trifinger_platform.TriFingerPlatform", "classtrifinger__simulation_1_1trifinger__platform_1_1TriFingerPlatform.html", null ]
 ];
