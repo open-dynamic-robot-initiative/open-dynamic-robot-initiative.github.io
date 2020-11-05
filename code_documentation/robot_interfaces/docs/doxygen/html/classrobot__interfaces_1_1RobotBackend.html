@@ -80,6 +80,7 @@ $(document).ready(function(){initNavTree('classrobot__interfaces_1_1RobotBackend
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
@@ -95,6 +96,20 @@ $(document).ready(function(){initNavTree('classrobot__interfaces_1_1RobotBackend
 
 <p><code>#include &lt;<a class="el" href="robot__backend_8hpp_source.html">robot_backend.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a7a63f21152c8ee5edf71fa049ce28159"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159">TerminationReason</a> : int { <br />
+&#160;&#160;<a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159ad4415db0cd24010c5b54bd3b9410698c">NOT_TERMINATED</a> = 0, 
+<a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159a388203a418e09025a0ed81e4f7a2d18e">SHUTDOWN_REQUESTED</a> = 1, 
+<a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159a64b32e420c93a194e338caf6dc1a29bb">MAXIMUM_NUMBER_OF_ACTIONS_REACHED</a> = 2, 
+<a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159a833c13e27f0c8c8375ebb1b8c2e82922">DRIVER_ERROR</a> = -1, 
+<br />
+&#160;&#160;<a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159afa216b0e9b0ca2c3b83c43b971bd9598">FIRST_ACTION_TIMEOUT</a> = -2, 
+<a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159aa982eef894a39f839cf41baa4f242964">NEXT_ACTION_TIMEOUT</a> = -3
+<br />
+ }</td></tr>
+<tr class="separator:a7a63f21152c8ee5edf71fa049ce28159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af454a09b5d269ed32b0ae2d35abdb833"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#af454a09b5d269ed32b0ae2d35abdb833">RobotBackend</a> (std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotDriver.html">RobotDriver</a>&lt; Action, Observation &gt;&gt; robot_driver, std::shared_ptr&lt; <a class="el" href="classrobot__interfaces_1_1RobotData.html">RobotData</a>&lt; Action, Observation &gt;&gt; robot_data, const bool real_time_mode=true, const double first_action_timeout=std::numeric_limits&lt; double &gt;::infinity(), const uint32_t max_number_of_actions=0)</td></tr>
@@ -115,10 +130,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#acf72ec0a08dfbcb72b6c701e0cf1ac89">wait_until_first_action</a> () const</td></tr>
 <tr class="memdesc:acf72ec0a08dfbcb72b6c701e0cf1ac89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until the first desired action is received. <br /></td></tr>
 <tr class="separator:acf72ec0a08dfbcb72b6c701e0cf1ac89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e9c9fda8d3bbab60b1896df1e1e78b"><td class="memItemLeft" align="right" valign="top"><a id="ad4e9c9fda8d3bbab60b1896df1e1e78b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#ad4e9c9fda8d3bbab60b1896df1e1e78b">wait_until_terminated</a> () const</td></tr>
-<tr class="memdesc:ad4e9c9fda8d3bbab60b1896df1e1e78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until the backend loop terminates. <br /></td></tr>
-<tr class="separator:ad4e9c9fda8d3bbab60b1896df1e1e78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68040bd611a6df70815e70dad722d692"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a68040bd611a6df70815e70dad722d692">wait_until_terminated</a> () const</td></tr>
+<tr class="memdesc:a68040bd611a6df70815e70dad722d692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until the backend loop terminates.  <a href="#a68040bd611a6df70815e70dad722d692">More...</a><br /></td></tr>
+<tr class="separator:a68040bd611a6df70815e70dad722d692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -169,6 +183,9 @@ real_time_tools::CheckpointTimer&lt; 6, false &gt;&#160;</td><td class="memItemR
 <tr class="memitem:afcf4f2443b7f3000cece9b0851284717"><td class="memItemLeft" align="right" valign="top"><a id="afcf4f2443b7f3000cece9b0851284717"></a>
 std::shared_ptr&lt; real_time_tools::RealTimeThread &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>thread_</b></td></tr>
 <tr class="separator:afcf4f2443b7f3000cece9b0851284717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c975705e05ecd43a2b1885e1ed1d858"><td class="memItemLeft" align="right" valign="top"><a id="a2c975705e05ecd43a2b1885e1ed1d858"></a>
+std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>termination_reason_</b></td></tr>
+<tr class="separator:a2c975705e05ecd43a2b1885e1ed1d858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Action, typename Observation&gt;<br />
@@ -184,7 +201,38 @@ class robot_interfaces::RobotBackend&lt; Action, Observation &gt;</h3>
   </dd>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="demo_8cpp-example.html#_a0">demo.cpp</a>, and <a class="el" href="demo_multiprocess_backend_8cpp-example.html#_a7">demo_multiprocess_backend.cpp</a>.</dd>
-</dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</dl></div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a7a63f21152c8ee5edf71fa049ce28159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a63f21152c8ee5edf71fa049ce28159">&#9670;&nbsp;</a></span>TerminationReason</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Action, typename Observation&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159">robot_interfaces::RobotBackend::TerminationReason</a> : int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7a63f21152c8ee5edf71fa049ce28159ad4415db0cd24010c5b54bd3b9410698c"></a>NOT_TERMINATED&#160;</td><td class="fielddoc"><p>Backend is still running. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a63f21152c8ee5edf71fa049ce28159a388203a418e09025a0ed81e4f7a2d18e"></a>SHUTDOWN_REQUESTED&#160;</td><td class="fielddoc"><p>Shutdown requested for non-failure reason (e.g. by SIGINT). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a63f21152c8ee5edf71fa049ce28159a64b32e420c93a194e338caf6dc1a29bb"></a>MAXIMUM_NUMBER_OF_ACTIONS_REACHED&#160;</td><td class="fielddoc"><p>Maximum number of actions was reached. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a63f21152c8ee5edf71fa049ce28159a833c13e27f0c8c8375ebb1b8c2e82922"></a>DRIVER_ERROR&#160;</td><td class="fielddoc"><p>Some error in the driver. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a63f21152c8ee5edf71fa049ce28159afa216b0e9b0ca2c3b83c43b971bd9598"></a>FIRST_ACTION_TIMEOUT&#160;</td><td class="fielddoc"><p>First action timeout was triggered. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a63f21152c8ee5edf71fa049ce28159aa982eef894a39f839cf41baa4f242964"></a>NEXT_ACTION_TIMEOUT&#160;</td><td class="fielddoc"><p>Next action timeout was triggered. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af454a09b5d269ed32b0ae2d35abdb833"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af454a09b5d269ed32b0ae2d35abdb833">&#9670;&nbsp;</a></span>RobotBackend()</h2>
 
@@ -308,7 +356,7 @@ template&lt;typename Action, typename Observation&gt; </div>
 </div><div class="memdoc">
 
 <p>Request shutdown of the backend loop. </p>
-<p>The loop may take some time to actually terminate after calling this function. Use <a class="el" href="classrobot__interfaces_1_1RobotBackend.html#ad4e9c9fda8d3bbab60b1896df1e1e78b" title="Wait until the backend loop terminates. ">wait_until_terminated()</a> to ensure it has really terminated. </p>
+<p>The loop may take some time to actually terminate after calling this function. Use <a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a68040bd611a6df70815e70dad722d692" title="Wait until the backend loop terminates. ">wait_until_terminated()</a> to ensure it has really terminated. </p>
 
 </div>
 </div>
@@ -348,6 +396,36 @@ template&lt;typename Action, typename Observation&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a68040bd611a6df70815e70dad722d692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68040bd611a6df70815e70dad722d692">&#9670;&nbsp;</a></span>wait_until_terminated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Action, typename Observation&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classrobot__interfaces_1_1RobotBackend.html">robot_interfaces::RobotBackend</a>&lt; Action, Observation &gt;::wait_until_terminated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait until the backend loop terminates. </p>
+<dl class="section return"><dt>Returns</dt><dd>Termination code (see <a class="el" href="classrobot__interfaces_1_1RobotBackend.html#a7a63f21152c8ee5edf71fa049ce28159">TerminationReason</a>). </dd></dl>
 
 </div>
 </div>
