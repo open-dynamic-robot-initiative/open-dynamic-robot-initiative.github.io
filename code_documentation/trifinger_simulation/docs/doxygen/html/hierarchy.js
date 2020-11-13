@@ -1,9 +1,10 @@
 var hierarchy =
 [
     [ "trifinger_simulation.action.Action", "classtrifinger__simulation_1_1action_1_1Action.html", null ],
-    [ "trifinger_simulation.collision_objects.Block", "classtrifinger__simulation_1_1collision__objects_1_1Block.html", null ],
     [ "trifinger_simulation.trifinger_platform.CameraObservation", "classtrifinger__simulation_1_1trifinger__platform_1_1CameraObservation.html", null ],
-    [ "trifinger_simulation.visual_objects.CubeMarker", "classtrifinger__simulation_1_1visual__objects_1_1CubeMarker.html", null ],
+    [ "trifinger_simulation.collision_objects.Cuboid", "classtrifinger__simulation_1_1collision__objects_1_1Cuboid.html", [
+      [ "trifinger_simulation.collision_objects.Cube", "classtrifinger__simulation_1_1collision__objects_1_1Cube.html", null ]
+    ] ],
     [ "trifinger_simulation.gym_wrapper.data_logger.DataLogger", "classtrifinger__simulation_1_1gym__wrapper_1_1data__logger_1_1DataLogger.html", null ],
     [ "Env", null, [
       [ "example_pushing_training_env.ExamplePushingTrainingEnv", "classexample__pushing__training__env_1_1ExamplePushingTrainingEnv.html", null ],
@@ -24,6 +25,11 @@ var hierarchy =
     ] ],
     [ "object", null, [
       [ "trifinger_simulation.camera.Camera", "classtrifinger__simulation_1_1camera_1_1Camera.html", null ]
+    ] ],
+    [ "trifinger_simulation.visual_objects.ObjectMarker", "classtrifinger__simulation_1_1visual__objects_1_1ObjectMarker.html", [
+      [ "trifinger_simulation.visual_objects.CuboidMarker", "classtrifinger__simulation_1_1visual__objects_1_1CuboidMarker.html", [
+        [ "trifinger_simulation.visual_objects.CubeMarker", "classtrifinger__simulation_1_1visual__objects_1_1CubeMarker.html", null ]
+      ] ]
     ] ],
     [ "trifinger_simulation.trifinger_platform.ObjectPose", "classtrifinger__simulation_1_1trifinger__platform_1_1ObjectPose.html", null ],
     [ "trifinger_simulation.observation.Observation", "classtrifinger__simulation_1_1observation_1_1Observation.html", null ],

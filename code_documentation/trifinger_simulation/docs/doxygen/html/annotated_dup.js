@@ -26,7 +26,8 @@ var annotated_dup =
         [ "TriFingerCameras", "classtrifinger__simulation_1_1camera_1_1TriFingerCameras.html", "classtrifinger__simulation_1_1camera_1_1TriFingerCameras" ]
       ] ],
       [ "collision_objects", null, [
-        [ "Block", "classtrifinger__simulation_1_1collision__objects_1_1Block.html", "classtrifinger__simulation_1_1collision__objects_1_1Block" ]
+        [ "Cube", "classtrifinger__simulation_1_1collision__objects_1_1Cube.html", "classtrifinger__simulation_1_1collision__objects_1_1Cube" ],
+        [ "Cuboid", "classtrifinger__simulation_1_1collision__objects_1_1Cuboid.html", "classtrifinger__simulation_1_1collision__objects_1_1Cuboid" ]
       ] ],
       [ "finger_types_data", null, [
         [ "FingerTypesDataFormat", "classtrifinger__simulation_1_1finger__types__data_1_1FingerTypesDataFormat.html", null ]
@@ -74,7 +75,9 @@ var annotated_dup =
       ] ],
       [ "visual_objects", null, [
         [ "CubeMarker", "classtrifinger__simulation_1_1visual__objects_1_1CubeMarker.html", "classtrifinger__simulation_1_1visual__objects_1_1CubeMarker" ],
-        [ "Marker", "classtrifinger__simulation_1_1visual__objects_1_1Marker.html", "classtrifinger__simulation_1_1visual__objects_1_1Marker" ]
+        [ "CuboidMarker", "classtrifinger__simulation_1_1visual__objects_1_1CuboidMarker.html", "classtrifinger__simulation_1_1visual__objects_1_1CuboidMarker" ],
+        [ "Marker", "classtrifinger__simulation_1_1visual__objects_1_1Marker.html", "classtrifinger__simulation_1_1visual__objects_1_1Marker" ],
+        [ "ObjectMarker", "classtrifinger__simulation_1_1visual__objects_1_1ObjectMarker.html", "classtrifinger__simulation_1_1visual__objects_1_1ObjectMarker" ]
       ] ],
       [ "BasePyBulletFingerDriver", "classtrifinger__simulation_1_1BasePyBulletFingerDriver.html", "classtrifinger__simulation_1_1BasePyBulletFingerDriver" ],
       [ "PyBulletSingleFingerDriver", "classtrifinger__simulation_1_1PyBulletSingleFingerDriver.html", "classtrifinger__simulation_1_1PyBulletSingleFingerDriver" ],
